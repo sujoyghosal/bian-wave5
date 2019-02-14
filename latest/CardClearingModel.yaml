@@ -1,0 +1,2155 @@
+definitions:
+ CardClearingClearingWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to a specific card clearing end to end process 
+   cardClearingProcessType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines the type of clearing process 
+   cardClearingProcessRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the control record/mechanism used to track the completion of the clearing process
+   cardClearingProcessDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: the scheduled time for the process 
+   cardClearingProcessStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: open, active, completed, etc.
+ CardClearingRecordWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to a specific card financial settlement process
+   recordingRecordReference:
+    type: string
+    example: "RRR720865"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the feedback/activity
+   recordingRecordType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the layout/type of the feedback provided
+   recordingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the feedback
+   recordingRecordDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Recording Record Date/Time
+   recordingRecordStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Status
+   employeeBusinessUnitReference:
+    type: string
+    example: "EUR768624"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: source of the recording detail 
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR702654"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank if providing feedback to the Network provider
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR742047"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank if providing feedback to the Network provider
+ CardClearingCaptureWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingCaptureTaskReference:
+    type: string
+    example: "CCCTR734944"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the transaction capture task within the clearing process instance 
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to the clearing process instance
+   cardClearingServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Clearing Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR702654"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates clearing processing
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR742047"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates clearing processing
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingCaptureTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record of the Network, Issuer and Acquirer card clearing transaction or transaction batch task
+ CardClearingAddressingWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingAddressingTaskReference:
+    type: string
+    example: "CCATR701718"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the transaction/batch addressing task within the clearing process instance 
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to the clearing process instance
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR702654"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR742047"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardClearingAddressingTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record of the Network, Issuer and Acquirer card addressing transaction or transaction batch task
+ CardClearingFXConversionWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingFXConversionTaskReference:
+    type: string
+    example: "CCFTR729505"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the FX Conversion task within the clearing process instance 
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to the clearing process instance
+   fXConversionRatesandFees:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines FX conversion rates and additional fees to be applied to card transactions
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingFXConversionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record of the FX Conversion task within the clearing process instance 
+ CardClearingFeesWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingFeesTaskReference:
+    type: string
+    example: "CCFTR729505"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the intercharge fee application task within the clearing process instance 
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to the clearing process instance
+   interchargeFees:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines intercharge rates and fees to be applied to card transactions
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingFeesTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the intercharge fee application task within the clearing process instance 
+ CardClearingMatchingWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingMatchingTaskReference:
+    type: string
+    example: "CCMTR795383"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the transaction matching task within the clearing process instance 
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to the clearing process instance
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingMatchingTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the transaction matching task within the clearing process instance 
+ CardClearingReconciliationWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingReconciliationTaskReference:
+    type: string
+    example: "CCRTR784049"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the transaction reconciliation task within the clearing process instance 
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to the clearing process instance
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingReconciliationTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the transaction reconciliation task within the clearing process instance 
+ CardClearingRoutingWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingRoutingTaskReference:
+    type: string
+    example: "CCRTR784049"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the transaction/batch routing task within the clearing process instance 
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to the clearing process instance
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR702654"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR742047"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingRoutingTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the transaction/batch routing task within the clearing process instance 
+ CardClearingReportingWithIdAndRoot:
+  type: object
+  properties:
+   cardClearingReportingTaskReference:
+    type: string
+    example: "CCRTR784049"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to a reporting request task, here focusing on extracted card transaction details 
+   cardClearingProcessReference:
+    type: string
+    example: "CCPR745219"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to the clearing process instance
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by network, issuer and/or acquirer
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingReportingTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: reporting record, containing results of reporting request
+ CardClearingClearingBase:
+  type: object
+  properties:
+   cardClearingProcessType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines the type of clearing process 
+   cardClearingProcessRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the control record/mechanism used to track the completion of the clearing process
+   cardClearingProcessDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: the scheduled time for the process 
+   cardClearingProcessStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: open, active, completed, etc.
+ CardClearingRecordBase:
+  type: object
+  properties:
+   recordingRecordReference:
+    type: string
+    example: "RRR720865"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the feedback/activity
+   recordingRecordType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the layout/type of the feedback provided
+   recordingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the feedback
+   recordingRecordDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Recording Record Date/Time
+   recordingRecordStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Status
+   employeeBusinessUnitReference:
+    type: string
+    example: "EUR768624"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: source of the recording detail 
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR702654"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank if providing feedback to the Network provider
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR742047"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank if providing feedback to the Network provider
+ CardClearingCaptureBase:
+  type: object
+  properties:
+   cardClearingServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Clearing Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR702654"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates clearing processing
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR742047"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates clearing processing
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingCaptureTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record of the Network, Issuer and Acquirer card clearing transaction or transaction batch task
+ CardClearingAddressingBase:
+  type: object
+  properties:
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR702654"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR742047"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardClearingAddressingTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record of the Network, Issuer and Acquirer card addressing transaction or transaction batch task
+ CardClearingFXConversionBase:
+  type: object
+  properties:
+   fXConversionRatesandFees:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines FX conversion rates and additional fees to be applied to card transactions
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingFXConversionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record of the FX Conversion task within the clearing process instance 
+ CardClearingFeesBase:
+  type: object
+  properties:
+   interchargeFees:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines intercharge rates and fees to be applied to card transactions
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingFeesTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the intercharge fee application task within the clearing process instance 
+ CardClearingMatchingBase:
+  type: object
+  properties:
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingMatchingTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the transaction matching task within the clearing process instance 
+ CardClearingReconciliationBase:
+  type: object
+  properties:
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingReconciliationTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the transaction reconciliation task within the clearing process instance 
+ CardClearingRoutingBase:
+  type: object
+  properties:
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR702654"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR742047"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingRoutingTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the transaction/batch routing task within the clearing process instance 
+ CardClearingReportingBase:
+  type: object
+  properties:
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR748992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by network, issuer and/or acquirer
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR752608"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction 
+   cardTransactionNetworkReference:
+    type: string
+    example: "CTNR797858"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: network the card transaction is handled by
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR759447"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR754663"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR702349"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR757099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR727011"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardTransactionFXConversionCharge:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied currency conversion charge
+   cardTransactionInterchargeFee:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: applied intercharge fee
+   cardTransactionAuthorizationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reference, amount, timestamp of the transaction authorization
+   cardClearingReportingTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: reporting record, containing results of reporting request

@@ -1,0 +1,1148 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Direct Debit Mandate'
+ description: 'Description'
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-direct-debit-mandate/1.0.0
+schemes:
+ - https
+paths:
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateDirectDebitMandateFulfillmentArrangement
+      summary: Initiate/set-up a new corporate direct debit mandate facility
+      description: Initiate  Set-up direct debit mandate facility,
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: Directdebitmandate Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateDirectdebitmandateBase'
+      responses:
+        201:
+          description: Successful Initiate/set-up a new corporate direct debit mandate facility
+          schema:
+            $ref: '#/definitions/DirectDebitMandateDirectdebitmandateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/updation:
+    put:
+      tags:
+      - update
+      operationId: updateDirectDebitMandateFulfillmentArrangement
+      summary: Update details of an active direct debit mandate facility
+      description: Update  Update configuration of an in-force direct debit mandate facility,
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Directdebitmandate Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateDirectdebitmandateBase'
+      responses:
+        200:
+          description: Successful Update details of an active direct debit mandate facility
+          schema:
+            $ref: '#/definitions/DirectDebitMandateDirectdebitmandateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/recording:
+    post:
+      tags:
+      - record
+      operationId: recordDirectDebitMandateFulfillmentArrangement
+      summary: Record activity/feedback against a direct debit mandate facility
+      description: Record  Record activity against a direct debit mandate facility,
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Record Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateRecordBase'
+      responses:
+        201:
+          description: Successful Record activity/feedback against a direct debit mandate facility
+          schema:
+            $ref: '#/definitions/DirectDebitMandateRecordBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/register/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeDirectDebitMandateFulfillmentArrangementRegisterUpdate
+      summary: Capture and process a new customer direct debit mandate application
+      description: Execute  Capture a customer mandate record maintained by the facility,
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Register BQ Reference Id
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Register Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateRegisterBase'
+      responses:
+        200:
+          description: Successful Capture and process a new customer direct debit mandate application
+          schema:
+            $ref: '#/definitions/DirectDebitMandateRegisterBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/register/execution:
+    post:
+      tags:
+      - execute
+      operationId: executeDirectDebitMandateFulfillmentArrangementRegisterCreate
+      summary: Capture and process a new customer direct debit mandate application
+      description: Execute  Capture a customer mandate record maintained by the facility,
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Register Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateRegisterBase'
+      responses:
+        201:
+          description: Successful Capture and process a new customer direct debit mandate application
+          schema:
+            $ref: '#/definitions/DirectDebitMandateRegisterBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/update/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeDirectDebitMandateFulfillmentArrangementUpdateUpdate
+      summary: Update details for an existing customer direct debit mandate
+      description: Execute  Update a customer mandate record maintained by the facility,
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Update BQ Reference Id
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Update Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateUpdateBase'
+      responses:
+        200:
+          description: Successful Update details for an existing customer direct debit mandate
+          schema:
+            $ref: '#/definitions/DirectDebitMandateUpdateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/update/execution:
+    post:
+      tags:
+      - execute
+      operationId: executeDirectDebitMandateFulfillmentArrangementUpdateCreate
+      summary: Update details for an existing customer direct debit mandate
+      description: Execute  Update a customer mandate record maintained by the facility,
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Update Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateUpdateBase'
+      responses:
+        201:
+          description: Successful Update details for an existing customer direct debit mandate
+          schema:
+            $ref: '#/definitions/DirectDebitMandateUpdateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/evaluate/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeDirectDebitMandateFulfillmentArrangementEvaluateUpdate
+      summary: Check whether a proposed direct debit payment is covered by the mandate on file
+      description: Execute  Evaluate/confirm a proposed debit is covered by the mandate
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Evaluate BQ Reference Id
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Evaluate Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateEvaluateBase'
+      responses:
+        200:
+          description: Successful Check whether a proposed direct debit payment is covered by the mandate on file
+          schema:
+            $ref: '#/definitions/DirectDebitMandateEvaluateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/evaluate/execution:
+    post:
+      tags:
+      - execute
+      operationId: executeDirectDebitMandateFulfillmentArrangementEvaluateCreate
+      summary: Check whether a proposed direct debit payment is covered by the mandate on file
+      description: Execute  Evaluate/confirm a proposed debit is covered by the mandate
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Evaluate Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateEvaluateBase'
+      responses:
+        201:
+          description: Successful Check whether a proposed direct debit payment is covered by the mandate on file
+          schema:
+            $ref: '#/definitions/DirectDebitMandateEvaluateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestDirectDebitMandateFulfillmentArrangementUpdate
+      summary: Request administrative support/task for the direct debit mandate facility
+      description: Request  Request administrative services associated with the facility,
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Directdebitmandate Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateDirectdebitmandateBase'
+      responses:
+        200:
+          description: Successful Request administrative support/task for the direct debit mandate facility
+          schema:
+            $ref: '#/definitions/DirectDebitMandateDirectdebitmandateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/requisition:
+    post:
+      tags:
+      - request
+      operationId: requestDirectDebitMandateFulfillmentArrangementCreate
+      summary: Request administrative support/task for the direct debit mandate facility
+      description: Request  Request administrative services associated with the facility,
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: Directdebitmandate Request Payload
+        schema:
+          $ref: '#/definitions/DirectDebitMandateDirectdebitmandateBase'
+      responses:
+        201:
+          description: Successful Request administrative support/task for the direct debit mandate facility
+          schema:
+            $ref: '#/definitions/DirectDebitMandateDirectdebitmandateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveDirectDebitMandateReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- 
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+              example: [ID726464, ID7264642]
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveDirectDebitMandateBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Register',  'Update',  'Evaluate', ]
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveDirectDebitMandateBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- 'BQ1'
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex-
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+              example: ['BQID1', 'BQID2']
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebitMandate
+      summary: Retrieve a Direct Debit Mandate Record
+      description: Retrieve a Direct Debit Mandate Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Direct Debit Mandate Report
+          schema:
+            $ref: '#/definitions/DirectDebitMandateDirectDebitMandateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/register/{bq-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebitMandateRegister
+      summary: Retrieve a Direct Debit Mandate Register Record
+      description: Retrieve a Direct Debit Mandate Register Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Register BQ Reference Id
+        required: true
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Direct Debit Mandate Register Report
+          schema:
+            $ref: '#/definitions/DirectDebitMandateRegisterBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/update/{bq-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebitMandateUpdate
+      summary: Retrieve a Direct Debit Mandate Update Record
+      description: Retrieve a Direct Debit Mandate Update Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Update BQ Reference Id
+        required: true
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Direct Debit Mandate Update Report
+          schema:
+            $ref: '#/definitions/DirectDebitMandateUpdateBaseWithIdAndRoot'
+  /direct-debit-mandate/direct-debit-mandate-fulfillment-arrangement/{cr-reference-id}/evaluate/{bq-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebitMandateEvaluate
+      summary: Retrieve a Direct Debit Mandate Evaluate Record
+      description: Retrieve a Direct Debit Mandate Evaluate Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Mandate Facility Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Evaluate BQ Reference Id
+        required: true
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Direct Debit Mandate Evaluate Report
+          schema:
+            $ref: '#/definitions/DirectDebitMandateEvaluateBaseWithIdAndRoot'
+definitions:
+ DirectDebitMandateDirectDebitMandateBaseWithIdAndRoot:
+  type: object
+  properties:
+   directDebitMandateFacilityReference:
+    type: string
+    example: DDMFR763359
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: corporate direct debit mandate facility unique identifier
+   customerReference:
+    type: string
+    example: CR734485
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the corporate entity owning the direct debit facility
+   directDebitMandateFacilityConfigurationSet:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Direct Debit Mandate Facility Configuration/Set
+   directDebitMandateFacilityServiceStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines the operational status of the facility
+   directDebitMandateDirectoryReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the directory facility maintaining all active customer mandates
+   directDebitMandateDirectoryEntry:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: a record of the direct debit details maintained for a customer mandate
+   directDebitMandateCustomerReference:
+    type: string
+    example: DDMCR720348
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the customer/payer reference for the mandate
+   directDebitMandateBankReference:
+    type: string
+    example: DDMBR788361
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the bank holdings the payer's account
+   directDebitMandateAccountReference:
+    type: string
+    example: DDMAR722970
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the payer's account
+   directDebitMandateValidtofromDates:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the period for which the mandate is in force
+   directDebitMandateTerms:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: and usage details/restrictions that apply to use of the mandate
+   directDebitMandateStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: current processing status for the mandate 
+ DirectDebitMandateRecordBaseWithIdAndRoot:
+  type: object
+  properties:
+   directDebitMandateFacilityReference:
+    type: string
+    example: DDMFR763359
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: corporate direct debit mandate facility unique identifier
+   recordingRecordReference:
+    type: string
+    example: RRR704954
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the feedback
+   recordingRecordType:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the layout/type of the feedback provided
+   recordingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the feedback
+   recordingRecordDateTime:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Date/Time
+   recordingRecordStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Status
+   employeeBusinessUnitReference:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Employee/Business Unit Reference 
+ DirectDebitMandateRegisterBaseWithIdAndRoot:
+  type: object
+  properties:
+   directDebitMandateRegistrationReference:
+    type: string
+    example: DDMRR738372
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the registration of a new direct debit mandate
+   directDebitMandateFacilityReference:
+    type: string
+    example: DDMFR763359
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: corporate direct debit mandate facility unique identifier
+   directDebitMandateDirectoryReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the directory facility maintaining all active mandates
+   directDebitMandateDirectoryEntry:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: a record of the direct debit details maintained for an individual's mandate
+   directDebitMandateCustomerReference:
+    type: string
+    example: DDMCR720348
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the individual/payer reference for the mandate
+   directDebitMandateBankReference:
+    type: string
+    example: DDMBR788361
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the bank holdings the payer's account
+   directDebitMandateAccountReference:
+    type: string
+    example: DDMAR722970
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the payer's account
+   directDebitMandateValidtofromDates:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the period for which the mandate is in force
+   directDebitMandateTerms:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: and usage details/restrictions that apply to use of the mandate
+   directDebitMandateStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: current processing status for the mandate 
+   correspondenceReference:
+    type: string
+    example: CR734485
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: exchanges with the individual providing the mandate
+   correspondenceContent:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: correspondence content
+   documentReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the mandate forms and other legal documents created & referenced
+   documentContent:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: document copy/content
+   directDebitMandateRegistrationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the customer mandate registration task
+ DirectDebitMandateUpdateBaseWithIdAndRoot:
+  type: object
+  properties:
+   directDebitMandateUpdateReference:
+    type: string
+    example: DDMUR776089
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to updates made to an existing direct debit mandate
+   directDebitMandateFacilityReference:
+    type: string
+    example: DDMFR763359
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: corporate direct debit mandate facility unique identifier
+   directDebitMandateDirectoryReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the directory facility maintaining all active direct debit mandates
+   directDebitMandateDirectoryEntry:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: a record of the direct debit details maintained for an individual's mandate
+   directDebitMandateCustomerReference:
+    type: string
+    example: DDMCR720348
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the individual/payer reference for the mandate
+   directDebitMandateBankReference:
+    type: string
+    example: DDMBR788361
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the bank holdings the payer's account
+   directDebitMandateAccountReference:
+    type: string
+    example: DDMAR722970
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the payer's account
+   directDebitMandateValidtofromDates:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the period for which the mandate is in force
+   directDebitMandateTerms:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: and usage details/restrictions that apply to use of the mandate
+   directDebitMandateStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: current processing status for the mandate 
+   directDebitMandateUpdateRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the direct debit mandate update task
+ DirectDebitMandateEvaluateBaseWithIdAndRoot:
+  type: object
+  properties:
+   directDebitMandateEvaluationReference:
+    type: string
+    example: DDMER737106
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the direct debit evaluation against the mandet
+   directDebitMandateFacilityReference:
+    type: string
+    example: DDMFR763359
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: corporate direct debit mandate facility unique identifier
+   directDebitMandateDirectoryReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the directory facility maintaining all active mandates
+   directDebitMandateDirectoryEntry:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: a record of the direct debit details maintained for an individual's mandate
+   directDebitTransactionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details of the proposed direct debit transaction
+   directDebitTransactionEvaluationResult:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the result of the evaluation 
+ DirectDebitMandateDirectDebitMandateBase:
+  type: object
+  properties:
+   customerReference:
+    type: string
+    example: CR734485
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the corporate entity owning the direct debit facility
+   directDebitMandateFacilityConfigurationSet:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Direct Debit Mandate Facility Configuration/Set
+   directDebitMandateFacilityServiceStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines the operational status of the facility
+   directDebitMandateDirectoryReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the directory facility maintaining all active customer mandates
+   directDebitMandateDirectoryEntry:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: a record of the direct debit details maintained for a customer mandate
+   directDebitMandateCustomerReference:
+    type: string
+    example: DDMCR720348
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the customer/payer reference for the mandate
+   directDebitMandateBankReference:
+    type: string
+    example: DDMBR788361
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the bank holdings the payer's account
+   directDebitMandateAccountReference:
+    type: string
+    example: DDMAR722970
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the payer's account
+   directDebitMandateValidtofromDates:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the period for which the mandate is in force
+   directDebitMandateTerms:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: and usage details/restrictions that apply to use of the mandate
+   directDebitMandateStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: current processing status for the mandate 
+ DirectDebitMandateRecordBase:
+  type: object
+  properties:
+   recordingRecordReference:
+    type: string
+    example: RRR704954
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the feedback
+   recordingRecordType:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the layout/type of the feedback provided
+   recordingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the feedback
+   recordingRecordDateTime:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Date/Time
+   recordingRecordStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Status
+   employeeBusinessUnitReference:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Employee/Business Unit Reference 
+ DirectDebitMandateRegisterBase:
+  type: object
+  properties:
+   directDebitMandateDirectoryReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the directory facility maintaining all active mandates
+   directDebitMandateDirectoryEntry:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: a record of the direct debit details maintained for an individual's mandate
+   directDebitMandateCustomerReference:
+    type: string
+    example: DDMCR720348
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the individual/payer reference for the mandate
+   directDebitMandateBankReference:
+    type: string
+    example: DDMBR788361
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the bank holdings the payer's account
+   directDebitMandateAccountReference:
+    type: string
+    example: DDMAR722970
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the payer's account
+   directDebitMandateValidtofromDates:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the period for which the mandate is in force
+   directDebitMandateTerms:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: and usage details/restrictions that apply to use of the mandate
+   directDebitMandateStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: current processing status for the mandate 
+   correspondenceReference:
+    type: string
+    example: CR734485
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: exchanges with the individual providing the mandate
+   correspondenceContent:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: correspondence content
+   documentReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the mandate forms and other legal documents created & referenced
+   documentContent:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: document copy/content
+   directDebitMandateRegistrationRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the customer mandate registration task
+ DirectDebitMandateUpdateBase:
+  type: object
+  properties:
+   directDebitMandateDirectoryReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the directory facility maintaining all active direct debit mandates
+   directDebitMandateDirectoryEntry:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: a record of the direct debit details maintained for an individual's mandate
+   directDebitMandateCustomerReference:
+    type: string
+    example: DDMCR720348
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the individual/payer reference for the mandate
+   directDebitMandateBankReference:
+    type: string
+    example: DDMBR788361
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the bank holdings the payer's account
+   directDebitMandateAccountReference:
+    type: string
+    example: DDMAR722970
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the payer's account
+   directDebitMandateValidtofromDates:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the period for which the mandate is in force
+   directDebitMandateTerms:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: and usage details/restrictions that apply to use of the mandate
+   directDebitMandateStatus:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: current processing status for the mandate 
+   directDebitMandateUpdateRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: processing record for the direct debit mandate update task
+ DirectDebitMandateEvaluateBase:
+  type: object
+  properties:
+   directDebitMandateDirectoryReference:
+    type: string
+    example: DDMDR747455
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the directory facility maintaining all active mandates
+   directDebitMandateDirectoryEntry:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: a record of the direct debit details maintained for an individual's mandate
+   directDebitTransactionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details of the proposed direct debit transaction
+   directDebitTransactionEvaluationResult:
+    type: string
+    example:
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the result of the evaluation 

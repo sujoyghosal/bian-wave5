@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Roboto" rel="stylesheet">
+    <style>
+        input[type=text] {
+            width: 70%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            outline: none;
+        }
+        
+        input[type=text]:focus {
+            background-color: lightblue;
+        }
+        
+        textarea {
+            width: 70%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+            resize: none;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Swagger Generator</h2>
+    <form action="/process" method="GET">
+        <p>
+            Service Domain (SD)*: [Service Domain from col J in API Directory]<br>
+            <input type="text" name="sd" placeholder="e.g. Card Clearing">
+            <br> SD Part of URL*: [SD part of URL in lower case hyphenated words]<br>
+            <input type="text" name="sdpath" placeholder="e.g. card-clearing">
+            <br> CR Part of URL*: [CR part of URL in lower case hyphenated words from col O in API Directory excel]<br>
+            <input type="text" name="crpath" placeholder="e.g. card-clearing-procedure">
+            <br> Control Record Reference (CRR)*: [CRR name from CR definition in col AC in excel]<br>
+            <input type="text" name="crr" placeholder="e.g. Card Clearing Process Reference">
+            <br> Behaviour Qualifiers (BQs)*: [Behaviour Qualifier names from col T in excel separated by single space]<br>
+            <input type="text" name="bqs" placeholder="e.g. Capture Addressing FXConversion Fees Matching Reconciliation Routing Reporting">
+            <br> API Config*: [copy rows U to AA from API dir excel with API definitions]<br>
+            <textarea name="config"></textarea> <br>
+            <br> Control Record*: [copy the Control Record cell in col AC and paste here]<br>
+            <textarea name="cr"></textarea>
+            <br><br>
+            <input class="button" type="submit" value="Submit">
+        </p>
+    </form>
+
+</body>
+
+</html>

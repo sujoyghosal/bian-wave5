@@ -1,0 +1,132 @@
+OperatingSession (the refers to the eCommerce Gateway operational service and associated session as the master record)
+CRR-eCommerce Gateway Service Session Reference (refers to the active eCommerce Gateway session)
+-eCommerce Gateway Reference (refers to the eCommerce Gateway service)
+-eCommerce Gateway Schedule (service availability)
+Record (recording activity related to the eCommerce Gateway - e.g.for reporting service failures/outages)
+CRR-eCommerce Gateway Session Reference (refers to the active eCommerce Gateway session)
+-Recording Record Reference (reference to the feedback/activity)
+-Recording Record Type (the layout/type of the feedback provided)
+-Recording Record (the feedback)
+-Recording Record Date/Time
+-Recording Record Status
+-Employee/Business Unit Reference (source of the recording detail)
+Capture (all data items used for the capture of an eCommerce card transaction)
+CRR-eCommerce Gateway Service Session Reference (refers to the active eCommerce Gateway session)
+BQR-eCommerce Transaction Reference
+-Product Instance Reference (card product identificier/number)
+-Customer Reference (card holder as detailed on the card)
+-Card expiration date (as detailed on the card/token)
+-Card CVV (as detailed on the card/token)
+-Card Issuing Bank Reference
+-Merchant Acquiring Bank Reference
+-eCommerce Transaction Type
+-eCommerce Transaction Currency
+-eCommerce Transaction Amount Type (Original amount, Billing currency amount, conversion rate, FX Mark-up)
+-eCommerce Transaction Amount
+-eCommerce Transaction Merchant Reference
+-eCommerce Transaction Location Reference (point of sale location)
+-eCommerce Transaction Product/Service Reference (e.g. purchased service/product)
+-eCommerce Transaction Date/Time
+Batch (data items for a batch/collection of transactions submitted for a merchant)
+CRR-eCommerce Gateway Service Session Reference (refers to the active eCommerce Gateway session)
+BQR-eCommerce Batch Transaction Reference
+-eCommerce Batch Transaction Date/Time
+-Transaction Merchant Reference
+-eCommerce Transaction Reference (Following fields are repreated for all transactions included in the batch)
+-Product Instance Reference (card product identificier/number)
+-Customer Reference (card holder as detailed on the card)
+-Card expiration date (as detailed on the card/token)
+-Card CVV (as detailed on the card/token)
+-eCommerce Transaction Record Reference 
+-Card Issuing Bank Reference
+-Merchant Acquiring Bank Reference
+-eCommerce Transaction Type
+-eCommerce Transaction Currency
+-eCommerce Transaction Amount Type (Original amount, Billing currency amount, conversion rate, FX Mark-up)
+-eCommerce Transaction Amount
+-eCommerce Transaction Merchant Reference (duplicate as batch is for a merchant)
+-eCommerce Transaction Location Reference (point of sale location)
+-eCommerce Transaction Product/Service Reference (e.g. purchased service/product)
+-eCommerce Transaction Date/Time
+Authentication (authentication of a card member based on information provided - routed to the card issuer for response)
+CRR-eCommerce Gateway Service Session Reference (refers to the active eCommerce Gateway session)
+BQR-eCommerce Transaction Authentication Reference
+-Product Instance Reference (card product identificier/number)
+-Customer Reference (card holder as detailed on the card)
+-Card expiration date (as detailed on the card/token)
+-Card CVV (as detailed on the card/token)
+-Card Issuing Bank Reference
+-Merchant Acquiring Bank Reference
+-eCommerce Transaction Reference (the following transaction details may not be required for card authentication)
+-eCommerce Transaction Type
+-eCommerce Transaction Currency
+-eCommerce Transaction Amount Type (Original amount, Billing currency amount, conversion rate, FX Mark-up)
+-eCommerce Transaction Amount
+-eCommerce Transaction Merchant Reference
+-eCommerce Transaction Location Reference (point of sale location)
+-eCommerce Transaction Product/Service Reference (e.g. purchased service/product)
+-eCommerce Transaction Date/Time
+-eCommerce Transaction Authentication Response (result of the card authentication request)
+Authorization (authorization of eCommerce transaction, call made to issuer for authorization) 
+CRR-eCommerce Gateway Service Session Reference (refers to the active eCommerce Gateway session)
+BQR-eCommerce Transaction Authorization Reference
+-Product Instance Reference (card product identificier/number)
+-Customer Reference (card holder as detailed on the card)
+-Card expiration date (as detailed on the card/token)
+-Card CVV (as detailed on the card/token)
+-Card Issuing Bank Reference
+-Merchant Acquiring Bank Reference
+-eCommerce Transaction Reference (the following transaction details may not be required for card authentication)
+-eCommerce Transaction Type
+-eCommerce Transaction Currency
+-eCommerce Transaction Amount Type (Original amount, Billing currency amount, conversion rate, FX Mark-up)
+-eCommerce Transaction Amount
+-eCommerce Transaction Merchant Reference
+-eCommerce Transaction Location Reference (point of sale location)
+-eCommerce Transaction Product/Service Reference (e.g. purchased service/product)
+-eCommerce Transaction Date/Time
+-eCommerce Transaction Authorization Response (result of the transaction authorization request)
+Update
+CRR-eCommerce Gateway Service Session Reference (refers to the active eCommerce Gateway session)
+BQR-eCommerce Transaction Update Reference
+-eCommerce Transaction Reference
+-eCommerce Transaction Update Record (details the reason and updates made to the transaction)
+-eCommerce Transaction Update Result
+-eCommerce Transaction Update Date/Time (the date/time of the amendement to the transaction)
+-Product Instance Reference (card product identificier/number)
+-Customer Reference (card holder as detailed on the card)
+-Card expiration date (as detailed on the card/token)
+-Card CVV (as detailed on the card/token)
+-Card Issuing Bank Reference
+-Merchant Acquiring Bank Reference
+-eCommerce Transaction Type
+-eCommerce Transaction Currency
+-eCommerce Transaction Amount Type (Original amount, Billing currency amount, conversion rate, FX Mark-up)
+-eCommerce Transaction Amount
+-eCommerce Transaction Merchant Reference
+-eCommerce Transaction Location Reference (point of sale location)
+-eCommerce Transaction Product/Service Reference (e.g. purchased service/product)
+-eCommerce Transaction Date/Time
+Reporting (periodic extract of eCommerce Transaction details - include authentication and authorization details)
+CRR-eCommerce Gateway Service Session Reference (refers to the active eCommerce Gateway session)
+BQR-eCommerce Transaction Reporting Reference
+-eCommerce Transaction Reporting Record (returned report - includes required combination of attributes listed below)
+-Product Instance Reference (card product identificier/number)
+-Customer Reference (card holder as detailed on the card)
+-Card expiration date (as detailed on the card/token)
+-Card CVV (as detailed on the card/token)
+-Card Issuing Bank Reference
+-Merchant Acquiring Bank Reference
+-eCommerce Transaction Reference (the following transaction details may not be required for card authentication)
+-eCommerce Transaction Type
+-eCommerce Transaction Currency
+-eCommerce Transaction Amount Type (Original amount, Billing currency amount, conversion rate, FX Mark-up)
+-eCommerce Transaction Amount
+-eCommerce Transaction Merchant Reference
+-eCommerce Transaction Location Reference (point of sale location)
+-eCommerce Transaction Product/Service Reference (e.g. purchased service/product)
+-eCommerce Transaction Date/Time
+-eCommerce Transaction Authentication Reference
+-eCommerce Transaction Authentication Response (result of the card authentication request)
+-eCommerce Transaction Authorization Reference
+-eCommerce Transaction Authorization Response (result of the transaction authorization request)

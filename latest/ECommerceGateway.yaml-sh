@@ -1,0 +1,1806 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Card ECommerce Gateway'
+ description: 'Description'
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+# basePath: /BIAN/sd-card-ecommerce-gateway/1.0.0
+schemes:
+ - https
+paths:
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/recording:
+    post:
+      tags:
+      - record
+      operationId: recordECommerceGatewayOperatingSession
+      summary: Record activity against an eCommerce operating session
+      description: Record feedback against the operating session,
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Record Request Payload
+        schema:
+          $ref: '#/definitions/ECommerceGatewayRecordBase'
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: '#/definitions/ECommerceGatewayRecordBaseWithIdAndRoot'
+            
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/capture/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeECommerceGatewayOperatingSessionCaptureUpdate
+      summary: Execute card transaction capture update
+      description:  Execute card transaction capture update
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: eCommerce Transaction Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Capture Request Payload
+        schema:
+          $ref: '#/definitions/ECommerceGatewayCaptureBase'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayCaptureBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/capture/execution:
+    post:
+      tags:
+      - execute
+      operationId: executeECommerceGatewayOperatingSessionCaptureCreate
+      summary: Execute card transaction capture create
+      description:  Execute card transaction capture create
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Capture Request Payload
+        schema:
+          $ref: '#/definitions/ECommerceGatewayCaptureBase'
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: '#/definitions/ECommerceGatewayCaptureBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/batches/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeECommerceGatewayOperatingSessionBatchUpdate
+      summary: Execute batch card transaction capture update
+      description: Execute batch card transaction extract and upload
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: eCommerce Batch Transaction Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Batch Request Payload
+        schema:
+          $ref: '#/definitions/ECommerceGatewayBatchBase'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayBatchBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/batches/execution:
+    post:
+      tags:
+      - execute
+      operationId: executeECommerceGatewayOperatingSessionBatchCreate
+      summary: Execute batch card transaction capture create
+      description:  Execute batch card transaction extract and upload
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Batch Request Payload
+        schema:
+          $ref: '#/definitions/ECommerceGatewayBatchBase'
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: '#/definitions/ECommerceGatewayBatchBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/updates/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestECommerceGatewayOperatingSessionUpdate
+      summary: Request reversal processing for a card transaction
+      description: Request card transaction reversal update
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: eCommerce Transaction Update Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: "body"
+        schema:
+          $ref: '#/definitions/ECommerceGatewayUpdateBase'
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayUpdateBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/updates/requisition:
+    post:
+      tags:
+      - request
+      operationId: requestECommerceGatewayOperatingSessionCreate
+      summary: Request reversal processing for a card transaction
+      description: Request  Request card transaction reversal,
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: "body"
+        schema:
+          $ref: '#/definitions/ECommerceGatewayUpdateBase'
+      responses:
+        201:
+          description: Created
+          schema:
+            $ref: '#/definitions/ECommerceGatewayUpdateBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCardECommerceGatewayReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- eCommerceGatewayReference = 'EGR779376'
+        required: false
+        type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['EGSSR769786', 'EGSSR769782']
+  /e-commerce-gateway/e-commerce-gateway-operating-session/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCardECommerceGatewayBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Capture',  'Batch',  'Authentication',  'Authorization',  'Update',  'Reporting', ]
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCardECommerceGatewayBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- 'Authorization'
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CardIssuingBankReference = 'PIR773535'
+        required: false
+        type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ETAR770653', 'ETAR770654']
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCardECommerceGateway
+      summary: Retrieve a Card ECommerce Gateway Record
+      description: Retrieve a Card ECommerce Gateway Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayOperatingSessionBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/captures/{bq-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCardECommerceGatewayCapture
+      summary: Retrieve a Card ECommerce Gateway Capture Record
+      description: Retrieve a Card ECommerce Gateway Capture Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: eCommerce Transaction Reference
+        required: true
+        type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayCaptureBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/batches/{bq-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCardECommerceGatewayBatch
+      summary: Retrieve a Card ECommerce Gateway Batch Record
+      description: Retrieve a Card ECommerce Gateway Batch Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: eCommerce Batch Transaction Reference
+        required: true
+        type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayBatchBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/authentications/{bq-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCardECommerceGatewayAuthentication
+      summary: Retrieve a Card ECommerce Gateway Authentication Record
+      description: Retrieve a Card ECommerce Gateway Authentication Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: eCommerce Transaction Authentication Reference
+        required: true
+        type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayAuthenticationBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/authorizations/{bq-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCardECommerceGatewayAuthorization
+      summary: Retrieve a Card ECommerce Gateway Authorization Record
+      description: Retrieve a Card ECommerce Gateway Authorization Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: eCommerce Transaction Authorization Reference
+        required: true
+        type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayAuthorizationBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/updates/{bq-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCardECommerceGatewayUpdate
+      summary: Retrieve a Card ECommerce Gateway Update Record
+      description: Retrieve a Card ECommerce Gateway Update Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: eCommerce Transaction Update Reference
+        required: true
+        type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayUpdateBaseWithIdAndRoot'
+  /e-commerce-gateway/e-commerce-gateway-operating-session/{cr-reference-id}/reportings/{bq-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCardECommerceGatewayReporting
+      summary: Retrieve a Card ECommerce Gateway Reporting Record
+      description: Retrieve a Card ECommerce Gateway Reporting Record
+      produces:
+      - application/json
+      parameters:
+      - name: cr-reference-id
+        in: path
+        description: eCommerce Gateway Service Session Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: eCommerce Transaction Reporting Reference
+        required: true
+        type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/ECommerceGatewayReportingBaseWithIdAndRoot'
+definitions:
+ ECommerceGatewayOperatingSessionBaseWithIdAndRoot:
+  type: object
+  properties:
+   eCommerceGatewayServiceSessionReference:
+    type: string
+    example: "EGSSR769786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the active eCommerce Gateway session
+   eCommerceGatewayReference:
+    type: string
+    example: "EGR717099"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the eCommerce Gateway service
+   eCommerceGatewaySchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: service availability
+ ECommerceGatewayRecordBaseWithIdAndRoot:
+  type: object
+  properties:
+   recordingRecordReference:
+    type: string
+    example: "RRR787374"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the feedback/activity
+   recordingRecordStatus:
+    type: string
+    example: Active
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Status
+ ECommerceGatewayCaptureBaseWithIdAndRoot:
+  type: object
+  properties:
+   eCommerceGatewayServiceSessionReference:
+    type: string
+    example: "EGSSR769786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the active eCommerce Gateway session
+   eCommerceTransactionReference:
+    type: string
+    example: "ETR798527"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Reference
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Merchant Reference
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+ ECommerceGatewayBatchBaseWithIdAndRoot:
+  type: object
+  properties:
+   eCommerceGatewayServiceSessionReference:
+    type: string
+    example: "EGSSR769786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the active eCommerce Gateway session
+   eCommerceBatchTransactionReference:
+    type: string
+    example: "EBTR717342"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Batch Transaction Reference
+   eCommerceBatchTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Batch Transaction Date/Time
+   transactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Transaction Merchant Reference
+   eCommerceTransactionReference:
+    type: string
+    example: "ETR798527"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Following fields are repreated for all transactions included in the batch
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   eCommerceTransactionRecordReference:
+    type: string
+    example: "ETRR797967"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Record Reference
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: duplicate as batch is for a merchant
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+ ECommerceGatewayAuthenticationBaseWithIdAndRoot:
+  type: object
+  properties:
+   eCommerceGatewayServiceSessionReference:
+    type: string
+    example: "EGSSR769786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the active eCommerce Gateway session
+   eCommerceTransactionAuthenticationReference:
+    type: string
+    example: "ETAR799353"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Authentication Reference
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionReference:
+    type: string
+    example: "ETR798527"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the following transaction details may not be required for card authentication
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Merchant Reference
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+   eCommerceTransactionAuthenticationResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: result of the card authentication request
+ ECommerceGatewayAuthorizationBaseWithIdAndRoot:
+  type: object
+  properties:
+   eCommerceGatewayServiceSessionReference:
+    type: string
+    example: "EGSSR769786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the active eCommerce Gateway session
+   eCommerceTransactionAuthorizationReference:
+    type: string
+    example: "ETAR799353"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Authorization Reference
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionReference:
+    type: string
+    example: "ETR798527"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the following transaction details may not be required for card authentication
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Merchant Reference
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+   eCommerceTransactionAuthorizationResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: result of the transaction authorization request
+ ECommerceGatewayUpdateBaseWithIdAndRoot:
+  type: object
+  properties:
+   eCommerceGatewayServiceSessionReference:
+    type: string
+    example: "EGSSR769786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the active eCommerce Gateway session
+   eCommerceTransactionUpdateReference:
+    type: string
+    example: "ETUR783509"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Update Reference
+   eCommerceTransactionReference:
+    type: string
+    example: "ETR798527"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Reference
+   eCommerceTransactionUpdateRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reason and updates made to the transaction
+   eCommerceTransactionUpdateResult:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Update Result
+   eCommerceTransactionUpdateDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: the date/time of the amendement to the transaction
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Merchant Reference
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+ ECommerceGatewayReportingBaseWithIdAndRoot:
+  type: object
+  properties:
+   eCommerceGatewayServiceSessionReference:
+    type: string
+    example: "EGSSR769786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the active eCommerce Gateway session
+   eCommerceTransactionReportingReference:
+    type: string
+    example: "ETRR797967"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Reporting Reference
+   eCommerceTransactionReportingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: returned report 
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionReference:
+    type: string
+    example: "ETR798527"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the following transaction details may not be required for card authentication
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Merchant Reference
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+   eCommerceTransactionAuthenticationReference:
+    type: string
+    example: "ETAR799353"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Authentication Reference
+   eCommerceTransactionAuthenticationResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: result of the card authentication request
+   eCommerceTransactionAuthorizationReference:
+    type: string
+    example: "ETAR799353"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Authorization Reference
+   eCommerceTransactionAuthorizationResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: result of the transaction authorization request
+ ECommerceGatewayRecordBase:
+  type: object
+  properties:
+   recordingRecordType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the layout/type of the feedback provided
+   recordingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the feedback
+   recordingRecordDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Recording Record Date/Time
+   employeeBusinessUnitReference:
+    type: string
+    example: "EUR741569"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: source of the recording detail
+ ECommerceGatewayCaptureBase:
+  type: object
+  properties:
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Merchant Reference
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+ ECommerceGatewayBatchBase:
+  type: object
+  properties:
+   eCommerceBatchTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Batch Transaction Date/Time
+   transactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Transaction Merchant Reference
+   eCommerceTransactionReference:
+    type: string
+    example: "ETR798527"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Following fields are repreated for all transactions included in the batch
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   eCommerceTransactionRecordReference:
+    type: string
+    example: "ETRR797967"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Record Reference
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: duplicate as batch is for a merchant
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+
+ ECommerceGatewayUpdateBase:
+  type: object
+  properties:
+   eCommerceTransactionReference:
+    type: string
+    example: "ETR798527"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Reference
+   eCommerceTransactionUpdateRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the reason and updates made to the transaction
+   eCommerceTransactionUpdateResult:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Update Result
+   eCommerceTransactionUpdateDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: the date/time of the amendement to the transaction
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Merchant Reference
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+ ECommerceGatewayReportingBase:
+  type: object
+  properties:
+   eCommerceTransactionReportingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: returned report 
+   productInstanceReference:
+    type: string
+    example: "PIR739256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card product identificier/number
+   customerReference:
+    type: string
+    example: "CR787144"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: card holder as detailed on the card
+   cardexpirationdate:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: as detailed on the card/token
+   cardCVV:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: as detailed on the card/token
+   cardIssuingBankReference:
+    type: string
+    example: "CIBR798537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Issuing Bank Reference
+   merchantAcquiringBankReference:
+    type: string
+    example: "MABR718922"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Merchant Acquiring Bank Reference
+   eCommerceTransactionReference:
+    type: string
+    example: "ETR798527"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: the following transaction details may not be required for card authentication
+   eCommerceTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: eCommerce Transaction Type
+   eCommerceTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: eCommerce Transaction Currency
+   eCommerceTransactionAmountType:
+    type: string
+    example: Original amount
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Original amount, Billing currency amount, conversion rate, FX Mark
+   eCommerceTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: eCommerce Transaction Amount
+   eCommerceTransactionMerchantReference:
+    type: string
+    example: "ETMR749507"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Merchant Reference
+   eCommerceTransactionLocationReference:
+    type: string
+    example: "ETLR756933"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   eCommerceTransactionProductServiceReference:
+    type: string
+    example: "ETPR782786"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   eCommerceTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: eCommerce Transaction Date/Time
+   eCommerceTransactionAuthenticationReference:
+    type: string
+    example: "ETAR799353"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Authentication Reference
+   eCommerceTransactionAuthenticationResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: result of the card authentication request
+   eCommerceTransactionAuthorizationReference:
+    type: string
+    example: "ETAR799353"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: eCommerce Transaction Authorization Reference
+   eCommerceTransactionAuthorizationResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: result of the transaction authorization request

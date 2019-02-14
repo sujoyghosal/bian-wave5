@@ -1,0 +1,1289 @@
+definitions:
+ CustomerOfferOfferWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer
+      general-info: Customer Offer Reference
+   customerOfferRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: this is the record combining all information and activities in a single reference record
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer
+      general-info: Customer Reference
+   productReference:
+    type: string
+    example: "PR782318"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product
+      general-info: Product Reference
+   dateType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: e.g. when started, updates, completed
+   date:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Date
+   employeeBusinessUnitReference:
+    type: string
+    example: "EUR713868"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer.RelationshipManager.BusinessUnit
+      general-info: employee/unit processing the customer offer 
+ CustomerOfferRecordWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   recordingRecordReference:
+    type: string
+    example: "RRR777064"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the feedback
+   recordingRecordType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the layout/type of the feedback provided
+   recordingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the feedback
+   recordingRecordDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Recording Record Date/Time
+   recordingRecordStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Status
+   employeeBusinessUnitReference:
+    type: string
+    example: "EUR713868"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Employee/Business Unit Reference
+ CustomerOfferCustomerWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer
+      general-info: Customer Offer Reference
+   customerOfferCustomerReferenceTaskReference:
+    type: string
+    example: "COCRTR734226"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Customer Reference Task Reference
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Reference
+   partyReference:
+    type: string
+    example: "PR782318"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer(as Role).Player(as Party).AccountableParty
+      general-info: Party Reference
+ CustomerOfferProductWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferCustomerProductTaskReference:
+    type: string
+    example: "COCPTR722083"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Customer Product Task Reference
+   productReference:
+    type: string
+    example: "PR782318"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).ProductUsage4Supplemental.UsedProduct
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).ProductUsage4Override.UsedProduct 
+      general-info: Product Reference
+   productOption:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.AvailableOption.OptionType
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.AvailableOption.OptionDescription
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.SelectedOption
+      general-info: feature that can be configured for the customer
+   productOptionDescription:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.AvailableOption.OptionDescription
+      general-info: feature description for review
+   productOptionSelection:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.SelectedOption
+      general-info: setting agreed/defined with customer
+ CustomerOfferDisclosuresWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferDisclosureTaskReference:
+    type: string
+    example: "CODTR768353"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Disclosure Task Reference
+   disclosureType:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_9ju10HltEeG7BsjMvd1mEw_-739610260/elements/_9j4m0HltEeG7BsjMvd1mEw_-611051048
+      bian-reference: CustomerOffer.OfferedAgreement.Disclosure(as Undertaking).Type
+      general-info: Disclosure Type
+   disclosureTextDescription:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_9ju10HltEeG7BsjMvd1mEw_-739610260/elements/_9j4m0XltEeG7BsjMvd1mEw_369279782
+      bian-reference: CustomerOffer.OfferedAgreement.Disclosure(as Undertaking).Purpose
+      general-info: for customer review
+   customerAcceptanceIndicator:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_9ju10HltEeG7BsjMvd1mEw_-739610260/elements/_9j4m03ltEeG7BsjMvd1mEw_-1318630222
+      bian-reference: CustomerOffer.OfferedAgreement.Disclosure(as Undertaking).ConfirmationIndicator
+      general-info: Customer Acceptance Indicator
+   documentReference:
+    type: string
+    example: "DR701468"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_9ju10HltEeG7BsjMvd1mEw_-739610260/elements/_9kx-tHltEeG7BsjMvd1mEw_2137767733
+      bian-reference: CustomerOffer.OfferedAgreement.Disclosure (as Undertaking).SpecifiedDocument
+      general-info: for customer signature/acceptance record
+ CustomerOfferPricingWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferPricingTaskReference:
+    type: string
+    example: "COPTR702069"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Pricing Task Reference
+   productPricing:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FKYzQMTGEeChad0JzLk7QA_-1231897848/elements/___L8Y2IiEeGD28DQaMef-g
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Quantity.GrossPriceQuantityRelatedLineItem
+      general-info: includes ranges by customer measures e.g. credit grade
+   negotiationGuidelinesRules:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.PricingRules
+      general-info: defines allowed situation
+   agreedPricing:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: covers all negotiable prices/fees/penalties
+   pricingAdjustments:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Penalty)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/dictionaryModel/repositorySearch.xhtml#query=Penalty/status=ANY/object=BUSINESS_COMPONENT
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Charges)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FMBK9sTGEeChad0JzLk7QA_-398781908
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Discount)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_TkWg4A35EeKdSdbhKHXCPg_1501219725
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Allowance)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_Flzj8MTGEeChad0JzLk7QA_-1112623234
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Commission)                             
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FZSK58TGEeChad0JzLk7QA_-927609616
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment.Price
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E5GO-MTGEeChad0JzLk7QA_602584288
+      bian-reference: 
+      general-info: customer profile and/or bank imposed adjustments/discounts
+ CustomerOfferCreditWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferCreditTaskReference:
+    type: string
+    example: "COCTR732024"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Credit Task Reference
+   customerCreditRating:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.CreditRating
+      general-info: Customer Credit Rating
+   creditAuthorizationDecisionReference:
+    type: string
+    example: "CADR703442"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.CreditAuthorisation(as Assessment)
+      general-info: where credit authorization required
+   creditAuthorizationDecision:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.CreditAuthorisation(as Assessment)
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.CreditAuthorisation(as Assessment).AssessmentResult
+      general-info: Credit Authorization Decision
+ CustomerOfferUnderwritingWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferUnderwritingTaskReference:
+    type: string
+    example: "COUTR752522"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Underwriting Task Reference
+   customerIncomeStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: historical
+   customerDebtStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: bank and known non
+   customerAssetStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: bank and known non
+   underwritingAssessmentReference:
+    type: string
+    example: "UAR795575"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Underwriting Assessment Reference
+ CustomerOfferComplianceWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferComplianceTaskReference:
+    type: string
+    example: "COCTR732024"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Compliance Task Reference
+   regulatoryComplianceCheckType:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryCompliance.RegulatoryComplianceCheck (as Assessment).AssessmentTemplate
+      general-info: Regulatory Compliance Check Type
+   regulatoryComplianceCheckRequirement:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryComplianceCheck.Regulation(as GuidelineRule).SubmissionRequirement
+      general-info: submission requirements
+   regulatoryComplianceCheckSubmission:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryComplianceCheck(as Assessment).SupportingDocument
+      general-info: submitted materials
+   regulatoryComplianceAdjustmentRequirement:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryComplianceCheck(as Assessment).RequiredAdjustment
+      general-info: change needed to comply
+   regulatoryComplianceCheckAssessment:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryCompliance.RegulatoryComplianceCheck
+      general-info: compliance assessment result
+ CustomerOfferAuditWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferComplianceTaskReference:
+    type: string
+    example: "COCTR732024"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Compliance Task Reference
+   guidelineComplianceCheckType:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck(as Assessment).AssessmentTemplate
+      general-info: Guideline Compliance Check Type
+   guidelineComplianceCheckRequirement:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck.CheckedGuideline(as GovernanceRule).SubmissionRequirement
+      general-info: submission requirements
+   guidelineComplianceCheckSubmission:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck(as Assessment).SupportingDocument 
+      general-info: submitted materials
+   guidelineComplianceAdjustmentRequirement:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck(as Assessment).RequiredAdjustment
+      general-info: change needed to comply
+   guidelineComplianceCheckAssessment:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck
+      general-info: compliance assessment result
+ CustomerOfferCollateralWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferCollateralTaskReference:
+    type: string
+    example: "COCTR732024"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Collateral Task Reference
+   collateralRequirement:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FLlGEcTGEeChad0JzLk7QA_1826831344/elements/_FLlGE8TGEeChad0JzLk7QA_-1191802314
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as CollateralAgreement).Collateral.CollateralAmount
+      general-info: collateral amount
+   collateralEarmarkReference:
+    type: string
+    example: "CER754255"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E6vNtsTGEeChad0JzLk7QA_393174175/elements/_lrcFQC1hEeGp2Zpvgj9Dtw_-638405304
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as CollateralAgreement).Collateral
+      general-info: earmarked collateral
+   collateralAllocationReference:
+    type: string
+    example: "CAR709793"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E6vNtsTGEeChad0JzLk7QA_393174175/elements/_lrcFQC1hEeGp2Zpvgj9Dtw_-638405304
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as CollateralAgreement).Collateral 
+      general-info: allocated collateral 
+   collateralAssetReference:
+    type: string
+    example: "CAR709793"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E5111cTGEeChad0JzLk7QA_-802839934/elements/_E5_m0MTGEeChad0JzLk7QA_-670722578
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as Collateral Agreement).Collateral.AssetHolding.Asset
+      general-info: pointer to collateralized item
+ CustomerOfferBookingWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferBookingTaskReference:
+    type: string
+    example: "COBTR741537"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Booking Task Reference
+   productInstanceReference:
+    type: string
+    example: "PIR756360"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.Product
+      general-info: Product Instance Reference
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer
+      general-info: Customer Reference
+   businessUnitReference:
+    type: string
+    example: "BUR716730"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer.RelationshipManager.BusinessUnit
+      general-info: defines booking category
+   assetLiabilityType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines booking rules/ratios
+   amount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_mw1ysHJTEeWwf47VrwMaTQ/elements/_QLjLYHJUEeWwf47VrwMaTQ
+      bian-reference: CustomerOffer.OfferedAgreement(as LoanAgreement).LoanProduct.Loan.PrincipalAmount
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E5_m18TGEeChad0JzLk7QA_1218233457/elements/_90le4M7aEeOja4FVfmtKbg
+      bian-reference: CustomerOffer.OfferedDeposit.CashAmount
+      general-info: defines principle amount for booking
+ CustomerOfferCorrespondenceWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferCorrespondenceTaskReference:
+    type: string
+    example: "COCTR732024"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Correspondence Task Reference
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Reference
+   customerMailingAddress:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Customer Mailing Address
+   correspondenceReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: to handle request/receipt of documents
+ CustomerOfferDocumentationWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferDocumentationTaskReference:
+    type: string
+    example: "CODTR768353"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Documentation Task Reference
+   documentReference:
+    type: string
+    example: "DR701468"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E2tpUMTGEeChad0JzLk7QA_1799405832/elements/_K5uxMMRaEeGGj8mSL0xBEQ_-912494530
+      bian-reference: CustomerOffer.OfferedAgreement.Document
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E2tpUMTGEeChad0JzLk7QA_1799405832/elements/_K5uxMMRaEeGGj8mSL0xBEQ_-912494530
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract.Document
+      general-info: offer related documents
+   documentLocation:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: physical master version and copies
+   documentContent:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: any suitable format/media
+   documentStatus:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FNET28TGEeChad0JzLk7QA_1924783636/elements/_FNNdwcTGEeChad0JzLk7QA_-1077516966
+      bian-reference: CustomerOffer.OfferedAgreement.Document.Status
+      general-info: to track processing state/location of documents
+ CustomerOfferAgreementWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Reference
+   customerOfferAgreementTaskReference:
+    type: string
+    example: "COATR724944"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Agreement Task Reference
+   customerAgreementReference:
+    type: string
+    example: "CAR709793"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement
+      general-info: customer master agreement
+   salesProductAgreementReference:
+    type: string
+    example: "SPAR798587"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E2tpUMTGEeChad0JzLk7QA_1799405832
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product
+      general-info: product specific sub/clause of master agreement
+ CustomerOfferClosingWithIdAndRoot:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer
+      general-info: Customer Offer Reference
+   customerOfferClosingTaskReference:
+    type: string
+    example: "COCTR732024"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Offer Closing Task Reference
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer
+      general-info: Customer Offer Reference
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer
+      general-info: Customer Reference
+   productInstanceReference:
+    type: string
+    example: "PIR756360"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as Agreement).Product
+      general-info: reference once set
+   employeeBusinessUnitReference:
+    type: string
+    example: "EUR713868"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer.RelationshipManager.BusinessUnit
+      general-info: Employee/Business Unit Reference
+   dateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Milestone
+      general-info: Date/Time
+   customerOfferResult:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Result
+      general-info: Customer Offer Result
+ CustomerOfferOfferBase:
+  type: object
+  properties:
+   customerOfferRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: this is the record combining all information and activities in a single reference record
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer
+      general-info: Customer Reference
+   productReference:
+    type: string
+    example: "PR782318"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product
+      general-info: Product Reference
+   dateType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: e.g. when started, updates, completed
+   date:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Date
+   employeeBusinessUnitReference:
+    type: string
+    example: "EUR713868"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer.RelationshipManager.BusinessUnit
+      general-info: employee/unit processing the customer offer 
+ CustomerOfferRecordBase:
+  type: object
+  properties:
+   recordingRecordReference:
+    type: string
+    example: "RRR777064"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the feedback
+   recordingRecordType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the layout/type of the feedback provided
+   recordingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the feedback
+   recordingRecordDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Recording Record Date/Time
+   recordingRecordStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Status
+   employeeBusinessUnitReference:
+    type: string
+    example: "EUR713868"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Employee/Business Unit Reference
+ CustomerOfferCustomerBase:
+  type: object
+  properties:
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Reference
+   partyReference:
+    type: string
+    example: "PR782318"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer(as Role).Player(as Party).AccountableParty
+      general-info: Party Reference
+ CustomerOfferProductBase:
+  type: object
+  properties:
+   productReference:
+    type: string
+    example: "PR782318"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).ProductUsage4Supplemental.UsedProduct
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).ProductUsage4Override.UsedProduct 
+      general-info: Product Reference
+   productOption:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.AvailableOption.OptionType
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.AvailableOption.OptionDescription
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.SelectedOption
+      general-info: feature that can be configured for the customer
+   productOptionDescription:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.AvailableOption.OptionDescription
+      general-info: feature description for review
+   productOptionSelection:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.SelectedOption
+      general-info: setting agreed/defined with customer
+ CustomerOfferDisclosuresBase:
+  type: object
+  properties:
+   disclosureType:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_9ju10HltEeG7BsjMvd1mEw_-739610260/elements/_9j4m0HltEeG7BsjMvd1mEw_-611051048
+      bian-reference: CustomerOffer.OfferedAgreement.Disclosure(as Undertaking).Type
+      general-info: Disclosure Type
+   disclosureTextDescription:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_9ju10HltEeG7BsjMvd1mEw_-739610260/elements/_9j4m0XltEeG7BsjMvd1mEw_369279782
+      bian-reference: CustomerOffer.OfferedAgreement.Disclosure(as Undertaking).Purpose
+      general-info: for customer review
+   customerAcceptanceIndicator:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_9ju10HltEeG7BsjMvd1mEw_-739610260/elements/_9j4m03ltEeG7BsjMvd1mEw_-1318630222
+      bian-reference: CustomerOffer.OfferedAgreement.Disclosure(as Undertaking).ConfirmationIndicator
+      general-info: Customer Acceptance Indicator
+   documentReference:
+    type: string
+    example: "DR701468"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_9ju10HltEeG7BsjMvd1mEw_-739610260/elements/_9kx-tHltEeG7BsjMvd1mEw_2137767733
+      bian-reference: CustomerOffer.OfferedAgreement.Disclosure (as Undertaking).SpecifiedDocument
+      general-info: for customer signature/acceptance record
+ CustomerOfferPricingBase:
+  type: object
+  properties:
+   productPricing:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FKYzQMTGEeChad0JzLk7QA_-1231897848/elements/___L8Y2IiEeGD28DQaMef-g
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Quantity.GrossPriceQuantityRelatedLineItem
+      general-info: includes ranges by customer measures e.g. credit grade
+   negotiationGuidelinesRules:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.PricingRules
+      general-info: defines allowed situation
+   agreedPricing:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: covers all negotiable prices/fees/penalties
+   pricingAdjustments:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Penalty)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/dictionaryModel/repositorySearch.xhtml#query=Penalty/status=ANY/object=BUSINESS_COMPONENT
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Charges)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FMBK9sTGEeChad0JzLk7QA_-398781908
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Discount)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_TkWg4A35EeKdSdbhKHXCPg_1501219725
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Allowance)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_Flzj8MTGEeChad0JzLk7QA_-1112623234
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment(as Commission)                             
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FZSK58TGEeChad0JzLk7QA_-927609616
+      bian-reference: 
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product.Adjustment.Price
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E5GO-MTGEeChad0JzLk7QA_602584288
+      bian-reference: 
+      general-info: customer profile and/or bank imposed adjustments/discounts
+ CustomerOfferCreditBase:
+  type: object
+  properties:
+   customerCreditRating:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.CreditRating
+      general-info: Customer Credit Rating
+   creditAuthorizationDecisionReference:
+    type: string
+    example: "CADR703442"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.CreditAuthorisation(as Assessment)
+      general-info: where credit authorization required
+   creditAuthorizationDecision:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.CreditAuthorisation(as Assessment)
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.CreditAuthorisation(as Assessment).AssessmentResult
+      general-info: Credit Authorization Decision
+ CustomerOfferUnderwritingBase:
+  type: object
+  properties:
+   customerIncomeStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: historical
+   customerDebtStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: bank and known non
+   customerAssetStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: bank and known non
+   underwritingAssessmentReference:
+    type: string
+    example: "UAR795575"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Underwriting Assessment Reference
+ CustomerOfferComplianceBase:
+  type: object
+  properties:
+   regulatoryComplianceCheckType:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryCompliance.RegulatoryComplianceCheck (as Assessment).AssessmentTemplate
+      general-info: Regulatory Compliance Check Type
+   regulatoryComplianceCheckRequirement:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryComplianceCheck.Regulation(as GuidelineRule).SubmissionRequirement
+      general-info: submission requirements
+   regulatoryComplianceCheckSubmission:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryComplianceCheck(as Assessment).SupportingDocument
+      general-info: submitted materials
+   regulatoryComplianceAdjustmentRequirement:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryComplianceCheck(as Assessment).RequiredAdjustment
+      general-info: change needed to comply
+   regulatoryComplianceCheckAssessment:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.RegulatoryReport.RegulatoryCompliance.RegulatoryComplianceCheck
+      general-info: compliance assessment result
+ CustomerOfferAuditBase:
+  type: object
+  properties:
+   guidelineComplianceCheckType:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck(as Assessment).AssessmentTemplate
+      general-info: Guideline Compliance Check Type
+   guidelineComplianceCheckRequirement:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck.CheckedGuideline(as GovernanceRule).SubmissionRequirement
+      general-info: submission requirements
+   guidelineComplianceCheckSubmission:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck(as Assessment).SupportingDocument 
+      general-info: submitted materials
+   guidelineComplianceAdjustmentRequirement:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck(as Assessment).RequiredAdjustment
+      general-info: change needed to comply
+   guidelineComplianceCheckAssessment:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Audit.GuidelineComplianceCheck
+      general-info: compliance assessment result
+ CustomerOfferCollateralBase:
+  type: object
+  properties:
+   collateralRequirement:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FLlGEcTGEeChad0JzLk7QA_1826831344/elements/_FLlGE8TGEeChad0JzLk7QA_-1191802314
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as CollateralAgreement).Collateral.CollateralAmount
+      general-info: collateral amount
+   collateralEarmarkReference:
+    type: string
+    example: "CER754255"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E6vNtsTGEeChad0JzLk7QA_393174175/elements/_lrcFQC1hEeGp2Zpvgj9Dtw_-638405304
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as CollateralAgreement).Collateral
+      general-info: earmarked collateral
+   collateralAllocationReference:
+    type: string
+    example: "CAR709793"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E6vNtsTGEeChad0JzLk7QA_393174175/elements/_lrcFQC1hEeGp2Zpvgj9Dtw_-638405304
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as CollateralAgreement).Collateral 
+      general-info: allocated collateral 
+   collateralAssetReference:
+    type: string
+    example: "CAR709793"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E5111cTGEeChad0JzLk7QA_-802839934/elements/_E5_m0MTGEeChad0JzLk7QA_-670722578
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as Collateral Agreement).Collateral.AssetHolding.Asset
+      general-info: pointer to collateralized item
+ CustomerOfferBookingBase:
+  type: object
+  properties:
+   productInstanceReference:
+    type: string
+    example: "PIR756360"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.Product
+      general-info: Product Instance Reference
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer
+      general-info: Customer Reference
+   businessUnitReference:
+    type: string
+    example: "BUR716730"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer.RelationshipManager.BusinessUnit
+      general-info: defines booking category
+   assetLiabilityType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines booking rules/ratios
+   amount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_mw1ysHJTEeWwf47VrwMaTQ/elements/_QLjLYHJUEeWwf47VrwMaTQ
+      bian-reference: CustomerOffer.OfferedAgreement(as LoanAgreement).LoanProduct.Loan.PrincipalAmount
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E5_m18TGEeChad0JzLk7QA_1218233457/elements/_90le4M7aEeOja4FVfmtKbg
+      bian-reference: CustomerOffer.OfferedDeposit.CashAmount
+      general-info: defines principle amount for booking
+ CustomerOfferCorrespondenceBase:
+  type: object
+  properties:
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Customer Reference
+   customerMailingAddress:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Customer Mailing Address
+   correspondenceReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: to handle request/receipt of documents
+ CustomerOfferDocumentationBase:
+  type: object
+  properties:
+   documentReference:
+    type: string
+    example: "DR701468"
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E2tpUMTGEeChad0JzLk7QA_1799405832/elements/_K5uxMMRaEeGGj8mSL0xBEQ_-912494530
+      bian-reference: CustomerOffer.OfferedAgreement.Document
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E2tpUMTGEeChad0JzLk7QA_1799405832/elements/_K5uxMMRaEeGGj8mSL0xBEQ_-912494530
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract.Document
+      general-info: offer related documents
+   documentLocation:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: physical master version and copies
+   documentContent:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: any suitable format/media
+   documentStatus:
+    type: string
+    description: |
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_FNET28TGEeChad0JzLk7QA_1924783636/elements/_FNNdwcTGEeChad0JzLk7QA_-1077516966
+      bian-reference: CustomerOffer.OfferedAgreement.Document.Status
+      general-info: to track processing state/location of documents
+ CustomerOfferAgreementBase:
+  type: object
+  properties:
+   customerAgreementReference:
+    type: string
+    example: "CAR709793"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement
+      general-info: customer master agreement
+   salesProductAgreementReference:
+    type: string
+    example: "SPAR798587"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement)
+     `status: Registered`
+      iso-link: https://www.iso20022.org/standardsrepository/public/wqt/Description/mx/dico/bc/_E2tpUMTGEeChad0JzLk7QA_1799405832
+      bian-reference: CustomerOffer.OfferedAgreement.GovernedContract(as Agreement).Product
+      general-info: product specific sub/clause of master agreement
+ CustomerOfferClosingBase:
+  type: object
+  properties:
+   customerOfferReference:
+    type: string
+    example: "COR739358"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer
+      general-info: Customer Offer Reference
+   customerReference:
+    type: string
+    example: "CR762940"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer
+      general-info: Customer Reference
+   productInstanceReference:
+    type: string
+    example: "PIR756360"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.OfferedAgreement(as MasterAgreement).GovernedContract(as Agreement).Product
+      general-info: reference once set
+   employeeBusinessUnitReference:
+    type: string
+    example: "EUR713868"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.TargetCustomer.RelationshipManager.BusinessUnit
+      general-info: Employee/Business Unit Reference
+   dateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Milestone
+      general-info: Date/Time
+   customerOfferResult:
+    type: string
+    description: |
+     `status: Provisionally Registered`
+      bian-reference: CustomerOffer.Result
+      general-info: Customer Offer Result

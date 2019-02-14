@@ -1,0 +1,849 @@
+definitions:
+ CardFinancialSettlementSettlementBaseWithIdAndRoot:
+  type: object
+  properties:
+   cardFinancialSettlementProcessReference:
+    type: string
+    example: "CFSPR716620"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Financial Settlement Process Reference
+   cardFinancialSettlementProcessType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines the type of settlement process 
+   cardFinancialSettlementProcessRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the control record/mechanism used to track the completion of the settlement process
+   cardFinancialSettlementProcessDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: the scheduled time for the process 
+   cardFinancialSettlementProcessStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: open, active, completed, etc.
+ CardFinancialSettlementRecordBaseWithIdAndRoot:
+  type: object
+  properties:
+   recordingRecordReference:
+    type: string
+    example: "RRR764798"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: reference to the feedback/activity
+   recordingRecordStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Recording Record Status
+ CardFinancialSettlementConsolidationBaseWithIdAndRoot:
+  type: object
+  properties:
+   cardFinancialSettlementProcessTransactionConsolidationTaskReference:
+    type: string
+    example: "CFSPTCTR790278"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the transaction consolidation task for the settlement processing instance
+   cardFinancialSettlementProcessReference:
+    type: string
+    example: "CFSPR716620"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to the settlement process instance
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR716114"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR720016"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR737270"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR789146"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR756649"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR706924"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR798763"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardFinancialSettlementProcessTransactionConsolidationTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of Issuer and Acquirer transactions for settlement window
+ CardFinancialSettlementProcessingBaseWithIdAndRoot:
+  type: object
+  properties:
+   cardFinancialSettlementProcessProcessingTaskReference:
+    type: string
+    example: "CFSPPTR722523"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to processing task for the processing instance
+   cardFinancialSettlementProcessReference:
+    type: string
+    example: "CFSPR716620"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to settlement process instance
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantAcquirerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   participantIssuerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force
+   cardFinancialSettlementProcessTransactionConsolidationTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of Issuer and Acquirer transactions for this settlement window 
+   cardFinancialSettlementServicePaymentAdviceRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the individual Acquirer and Issuer payments calculated to be due for this settlement window
+ CardFinancialSettlementInstructionBaseWithIdAndRoot:
+  type: object
+  properties:
+   cardFinancialSettlementProcessInstructionTaskReference:
+    type: string
+    example: "CFSPITR715967"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to payment instruction task for the processing instance
+   cardFinancialSettlementProcessReference:
+    type: string
+    example: "CFSPR716620"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to settlement process instance
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantAcquirerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   participantIssuerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force
+   cardFinancialSettlementServicePaymentAdviceRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the collection of individual Acquirer and Issuer payments calculated to be due for this settlement window
+   participantAcquirerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
+   participantIssuerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
+   cardFinancialSettlementProcessInstructionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of payment instructions and settlement accounts reference in this settlement processing instance
+ CardFinancialSettlementPaymentBaseWithIdAndRoot:
+  type: object
+  properties:
+   cardFinancialSettlementProcessPaymentTaskReference:
+    type: string
+    example: "CFSPPTR722523"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to individual participant payment task for the processing instance
+   cardFinancialSettlementProcessReference:
+    type: string
+    example: "CFSPR716620"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to overarching settlement process instance
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantAcquirerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force 
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   participantIssuerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force 
+   cardFinancialSettlementServicePaymentAdviceRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the individual participant Issuer or Acquirer payments calculated to be due for this settlement window 
+   participantPaymentTransaction:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: details the payment made, typically from Issuer to Acquirer participant bank
+   participantAcquirerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
+   participantIssuerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
+ CardFinancialSettlementReportingBaseWithIdAndRoot:
+  type: object
+  properties:
+   cardFinancialSettlementProcessReportingTaskReference:
+    type: string
+    example: "CFSPRTR773100"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to reporting task for the settlement processing instance
+   cardFinancialSettlementProcessReference:
+    type: string
+    example: "CFSPR716620"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: referes to overarching settlement process instance
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantAcquirerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force 
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   participantIssuerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force 
+   cardFinancialSettlementProcessTransactionConsolidationTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of Issuer and Acquirer transactions for settlement window
+   cardFinancialSettlementServicePaymentAdviceRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the individual Acquirer and Issuer payments calculated to be due for this settlement window
+   cardFinancialSettlementProcessInstructionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of payment instructions and settlement accounts reference in this settlement processing instance
+   participantAcquirerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
+ CardFinancialSettlementSettlementBase:
+  type: object
+  properties:
+   cardFinancialSettlementProcessType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines the type of settlement process 
+   cardFinancialSettlementProcessRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the control record/mechanism used to track the completion of the settlement process
+   cardFinancialSettlementProcessDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: the scheduled time for the process 
+   cardFinancialSettlementProcessStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: open, active, completed, etc.
+ CardFinancialSettlementRecordBase:
+  type: object
+  properties:
+   recordingRecordType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: the layout/type of the feedback provided
+   recordingRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: the feedback
+   recordingRecordDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Recording Record Date/Time
+   employeeBusinessUnitReference:
+    type: string
+    example: EUR782293
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: source of the recording detail
+ CardFinancialSettlementConsolidationBase:
+  type: object
+  properties:
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   cardTransactionRecordReference:
+    type: string
+    example: "CTRR716114"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the card transaction as recorded by issuer and/or acquirer 
+   cardTransactionProductInstanceReference:
+    type: string
+    example: "CTPIR720016"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: account number associated with the card transaction
+   cardTransactionIssuingBankReference:
+    type: string
+    example: "CTIBR737270"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Issuing Bank Reference
+   cardTransactionMerchantAcquiringBankReference:
+    type: string
+    example: "CTMABR789146"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Acquiring Bank Reference
+   cardTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Transaction Type
+   cardTransactionCurrency:
+    type: string
+    example: USD
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
+      general-info: Card Transaction Currency
+   cardTransactionAmountType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: original amount, billing currency amount, conversion rate, FX mark
+   cardTransactionAmount:
+    type: string
+    example: USD 250
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Amount
+      general-info: Card Transaction Amount
+   cardTransactionMerchantReference:
+    type: string
+    example: "CTMR756649"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Card Transaction Merchant Reference
+   cardTransactionLocationReference:
+    type: string
+    example: "CTLR706924"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: point of sale location
+   cardTransactionProductServiceReference:
+    type: string
+    example: "CTPR798763"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: e.g. purchased service/product
+   cardTransactionDateTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Card Transaction Date/Time
+   cardFinancialSettlementProcessTransactionConsolidationTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of Issuer and Acquirer transactions for settlement window
+ CardFinancialSettlementProcessingBase:
+  type: object
+  properties:
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantAcquirerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   participantIssuerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force
+   cardFinancialSettlementProcessTransactionConsolidationTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of Issuer and Acquirer transactions for this settlement window 
+   cardFinancialSettlementServicePaymentAdviceRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the individual Acquirer and Issuer payments calculated to be due for this settlement window
+ CardFinancialSettlementInstructionBase:
+  type: object
+  properties:
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantAcquirerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   participantIssuerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force
+   cardFinancialSettlementServicePaymentAdviceRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the collection of individual Acquirer and Issuer payments calculated to be due for this settlement window
+   participantAcquirerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
+   participantIssuerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
+   cardFinancialSettlementProcessInstructionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of payment instructions and settlement accounts reference in this settlement processing instance
+ CardFinancialSettlementPaymentBase:
+  type: object
+  properties:
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantAcquirerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force 
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   participantIssuerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force 
+   cardFinancialSettlementServicePaymentAdviceRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the individual participant Issuer or Acquirer payments calculated to be due for this settlement window 
+   participantPaymentTransaction:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: details the payment made, typically from Issuer to Acquirer participant bank
+   participantAcquirerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
+   participantIssuerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
+ CardFinancialSettlementReportingBase:
+  type: object
+  properties:
+   cardFinancialSettlementServiceSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Card Financial Settlement Service Schedule
+   participantAcquirerBankReference:
+    type: string
+    example: "PABR751479"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Acquiring bank for which the Network orchestrates settlement processing
+   participantAcquirerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force 
+   participantIssuerBankReference:
+    type: string
+    example: "PIBR783999"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: refers to the Issuing bank for which the Network orchestrates settlement processing
+   participantIssuerBankSettlementTerms:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: defines card settlement fees/terms in force 
+   cardFinancialSettlementProcessTransactionConsolidationTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of Issuer and Acquirer transactions for settlement window
+   cardFinancialSettlementServicePaymentAdviceRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: details the individual Acquirer and Issuer payments calculated to be due for this settlement window
+   cardFinancialSettlementProcessInstructionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: consolidated record of payment instructions and settlement accounts reference in this settlement processing instance
+   participantAcquirerBankSettlementAccountStatement:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: settlement account statement for processing window 
