@@ -53,7 +53,7 @@ do
     then
         line=`echo $line|sed 's/    /|/g'`
         cr=`echo $line|cut -f1 -d"|" |tr '[:upper:]' '[:lower:]'`
-        bcr=`echo ${cr:0:1} | tr  '[a-z]' '[A-Z]'`${cr:1} #first character big letter
+        bcr=`echo ${cr:0:1} | tr  '[a-z]' '[A-Z]'`${cr:1} #first character capital letter
         action=`echo $line|cut -f2 -d"|"`
         desc=`echo $line|cut -f3 -d"|"|sed 's/[:]/ /g'`
         extOp=`echo $line|cut -f4 -d"|"`
