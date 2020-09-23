@@ -1150,46 +1150,46 @@ definitions:
  SDATMNetworkOperationsActivateInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsActivationActionTaskRecord:
+   ATMNetworkOperationsActivationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The activation service call consolidated processing record
-   aTMNetworkOperationsCenterReference:
+   ATMNetworkOperationsCenterReference:
     type: string
     example: "SCR793499"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the service center/operational unit
-   aTMNetworkOperationsServiceReference:
+   ATMNetworkOperationsServiceReference:
     type: string
     example: "CPASSR703914"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service offered by the service center
-   aTMNetworkOperationsServiceConfigurationRecord:
+   ATMNetworkOperationsServiceConfigurationRecord:
     type: object
     properties:
-     aTMNetworkOperationsServiceConfigurationSettingReference:
+     ATMNetworkOperationsServiceConfigurationSettingReference:
       type: string
       example: "700761"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Refers to the service configuration parameter for the service
-     aTMNetworkOperationsServiceConfigurationSettingType:
+     ATMNetworkOperationsServiceConfigurationSettingType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The type of service configuration parameter
-     aTMNetworkOperationsServiceConfigurationSetup:
+     ATMNetworkOperationsServiceConfigurationSetup:
       type: object
       properties:
-       aTMNetworkOperationsServiceConfigurationParameter:
+       ATMNetworkOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
@@ -1198,103 +1198,103 @@ definitions:
  SDATMNetworkOperationsActivateOutputModel:
   type: object
   properties: 
-   aTMNetworkOperationsActivationActionTaskReference:
+   ATMNetworkOperationsActivationActionTaskReference:
     type: string
     example: "SAATR758836"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service activation service call
-   aTMNetworkOperationsActivationActionTaskRecord:
+   ATMNetworkOperationsActivationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The activation service call consolidated processing record
-   aTMNetworkOperationsServicingSessionReference:
+   ATMNetworkOperationsServicingSessionReference:
     type: string
     example: "SSSR783215"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   aTMNetworkOperationsServicingSessionRecord:
+   ATMNetworkOperationsServicingSessionRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: Consolidated information record for the servicing session
-   aTMNetworkOperationsServiceConfigurationRecord:
+   ATMNetworkOperationsServiceConfigurationRecord:
     type: object
     properties:
-     aTMNetworkOperationsServiceConfigurationSettingReference:
+     ATMNetworkOperationsServiceConfigurationSettingReference:
       type: string
       example: "700761"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Refers to the service configuration parameter for the service
-     aTMNetworkOperationsServiceConfigurationSettingDescription:
+     ATMNetworkOperationsServiceConfigurationSettingDescription:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: Description of the configuration parameter, allowed values and processing impact
-     aTMNetworkOperationsServiceConfigurationSetup:
+     ATMNetworkOperationsServiceConfigurationSetup:
       type: object
       properties:
-       aTMNetworkOperationsServiceConfigurationParameter:
+       ATMNetworkOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The default activation setting for the offered service configuration parameter 
-     aTMNetworkOperationsServiceSubscription:
+     ATMNetworkOperationsServiceSubscription:
       type: object
       properties:
-       aTMNetworkOperationsServiceSubscriberReference:
+       ATMNetworkOperationsServiceSubscriberReference:
         type: string
         example: "769192"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
-       aTMNetworkOperationsServiceSubscriberAccessProfile:
+       ATMNetworkOperationsServiceSubscriberAccessProfile:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The allowed service access for a user or subscriber to the service which can be any known party
-     aTMNetworkOperationsServiceAgreement:
+     ATMNetworkOperationsServiceAgreement:
       type: object
       properties:
-       aTMNetworkOperationsServiceAgreementReference:
+       ATMNetworkOperationsServiceAgreementReference:
         type: string
         example: "791202"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the offered service agreement
-       aTMNetworkOperationsServiceUserReference:
+       ATMNetworkOperationsServiceUserReference:
         type: string
         example: "767210"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the user covered by the contract
-       aTMNetworkOperationsServiceAgreementTermsandConditions:
+       ATMNetworkOperationsServiceAgreementTermsandConditions:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Terms and conditions covering the service agreement
-     aTMNetworkOperationsServiceStatus:
+     ATMNetworkOperationsServiceStatus:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The status of the offered service (e.g. active, suspended, idle)
-   aTMNetworkOperationsServicingSessionStatus:
+   ATMNetworkOperationsServicingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
@@ -1303,85 +1303,85 @@ definitions:
  SDATMNetworkOperationsConfigureInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsConfigurationActionTaskRecord:
+   ATMNetworkOperationsConfigurationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The configuration service call consolidated processing record
-   aTMNetworkOperationsServicingSessionReference:
+   ATMNetworkOperationsServicingSessionReference:
     type: string
     example: "SSSR764367"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   aTMNetworkOperationsServiceReference:
+   ATMNetworkOperationsServiceReference:
     type: string
     example: "CPASSR744740"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service offered by the service center
-   aTMNetworkOperationsServiceConfigurationRecord:
+   ATMNetworkOperationsServiceConfigurationRecord:
     type: object
     properties:
-     aTMNetworkOperationsServiceConfigurationSettingReference:
+     ATMNetworkOperationsServiceConfigurationSettingReference:
       type: string
       example: "710630"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Refers to the service configuration parameter for the service
-     aTMNetworkOperationsServiceConfigurationSettingType:
+     ATMNetworkOperationsServiceConfigurationSettingType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The type of service configuration parameter
-     aTMNetworkOperationsServiceConfigurationSetup:
+     ATMNetworkOperationsServiceConfigurationSetup:
       type: object
       properties:
-       aTMNetworkOperationsServiceConfigurationParameter:
+       ATMNetworkOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The requested and current activation values for the service configuration parameter 
-     aTMNetworkOperationsServiceSubscription:
+     ATMNetworkOperationsServiceSubscription:
       type: object
       properties:
-       aTMNetworkOperationsServiceSubscriberReference:
+       ATMNetworkOperationsServiceSubscriberReference:
         type: string
         example: "756221"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
-       aTMNetworkOperationsServiceSubscriberAccessProfile:
+       ATMNetworkOperationsServiceSubscriberAccessProfile:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The allowed service access for a user or subscriber to the service which can be any known party
-     aTMNetworkOperationsServiceAgreement:
+     ATMNetworkOperationsServiceAgreement:
       type: object
       properties:
-       aTMNetworkOperationsServiceAgreementReference:
+       ATMNetworkOperationsServiceAgreementReference:
         type: string
         example: "721156"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the offered service agreement
-       aTMNetworkOperationsServiceUserReference:
+       ATMNetworkOperationsServiceUserReference:
         type: string
         example: "733696"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the user covered by the contract
-       aTMNetworkOperationsServiceAgreementTermsandConditions:
+       ATMNetworkOperationsServiceAgreementTermsandConditions:
         type: string
         description: |
          `status: Not Mapped`
@@ -1390,83 +1390,83 @@ definitions:
  SDATMNetworkOperationsConfigureOutputModel:
   type: object
   properties: 
-   aTMNetworkOperationsConfigurationActionTaskReference:
+   ATMNetworkOperationsConfigurationActionTaskReference:
     type: string
     example: "SCATR765419"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service configuration service call
-   aTMNetworkOperationsConfigurationActionTaskRecord:
+   ATMNetworkOperationsConfigurationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The configuration service call consolidated processing record
-   aTMNetworkOperationsServiceConfigurationRecord:
+   ATMNetworkOperationsServiceConfigurationRecord:
     type: object
     properties:
-     aTMNetworkOperationsServiceConfigurationSettingDescription:
+     ATMNetworkOperationsServiceConfigurationSettingDescription:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: Description of the configuration parameter, allowed values and processing impact
-     aTMNetworkOperationsServiceConfigurationSetup:
+     ATMNetworkOperationsServiceConfigurationSetup:
       type: object
       properties:
-       aTMNetworkOperationsServiceConfigurationParameter:
+       ATMNetworkOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The requested and current activation values for the service configuration parameter 
-     aTMNetworkOperationsServiceSubscription:
+     ATMNetworkOperationsServiceSubscription:
       type: object
       properties:
-       aTMNetworkOperationsServiceSubscriberReference:
+       ATMNetworkOperationsServiceSubscriberReference:
         type: string
         example: "756221"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
-       aTMNetworkOperationsServiceSubscriberAccessProfile:
+       ATMNetworkOperationsServiceSubscriberAccessProfile:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The allowed service access for a user or subscriber to the service which can be any known party
-     aTMNetworkOperationsServiceAgreement:
+     ATMNetworkOperationsServiceAgreement:
       type: object
       properties:
-       aTMNetworkOperationsServiceAgreementReference:
+       ATMNetworkOperationsServiceAgreementReference:
         type: string
         example: "721156"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the offered service agreement
-       aTMNetworkOperationsServiceUserReference:
+       ATMNetworkOperationsServiceUserReference:
         type: string
         example: "733696"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the user covered by the contract
-       aTMNetworkOperationsServiceAgreementTermsandConditions:
+       ATMNetworkOperationsServiceAgreementTermsandConditions:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Terms and conditions covering the service agreement
-     aTMNetworkOperationsServiceStatus:
+     ATMNetworkOperationsServiceStatus:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The status of the offered service (e.g. active, suspended, idle)
-   aTMNetworkOperationsServicingSessionStatus:
+   ATMNetworkOperationsServicingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
@@ -1475,16 +1475,16 @@ definitions:
  SDATMNetworkOperationsFeedbackInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsFeedbackActionTaskRecord:
+   ATMNetworkOperationsFeedbackActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The feedback service call consolidated processing record
-   aTMNetworkOperationsFeedbackActionRecord:
+   ATMNetworkOperationsFeedbackActionRecord:
     type: object
     properties:
-     aTMNetworkOperationsServicingSessionReference:
+     ATMNetworkOperationsServicingSessionReference:
       type: string
       example: "796678"
       description: |
@@ -1520,20 +1520,20 @@ definitions:
  SDATMNetworkOperationsFeedbackOutputModel:
   type: object
   properties: 
-   aTMNetworkOperationsFeedbackActionTaskReference:
+   ATMNetworkOperationsFeedbackActionTaskReference:
     type: string
     example: "SFATR765157"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a feedback service call
-   aTMNetworkOperationsFeedbackActionTaskRecord:
+   ATMNetworkOperationsFeedbackActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The feedback service call consolidated processing record
-   aTMNetworkOperationsFeedbackActionRecord:
+   ATMNetworkOperationsFeedbackActionRecord:
     type: object
     properties:
      feedbackRecordDateTime:
@@ -1559,22 +1559,22 @@ definitions:
  SDATMNetworkOperationsRetrieveInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsRetrieveActionTaskRecord:
+   ATMNetworkOperationsRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   aTMNetworkOperationsRetrieveActionRequest:
+   ATMNetworkOperationsRetrieveActionRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service request (lists requested reports)
-   aTMNetworkOperationsRetrieveActionRecord:
+   ATMNetworkOperationsRetrieveActionRecord:
     type: object
     properties:
-     aTMNetworkOperationsActivityAnalysis:
+     ATMNetworkOperationsActivityAnalysis:
       type: object
       properties:
        activityAnalysisReference:
@@ -1584,7 +1584,7 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the internal activity analysis view maintained by the service center
-     aTMNetworkOperationsPerformanceAnalysis:
+     ATMNetworkOperationsPerformanceAnalysis:
       type: object
       properties:
        performanceAnalysisReference:
@@ -1604,20 +1604,20 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the control record portfolio analysis view maintained by the service center
-   aTMNetworkOperationsOfferedService:
+   ATMNetworkOperationsOfferedService:
     type: object
     properties:
-     aTMNetworkOperationsServiceReference:
+     ATMNetworkOperationsServiceReference:
       type: string
       example: "776158"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to a service offered by the service center
-     aTMNetworkOperationsServiceRecord:
+     ATMNetworkOperationsServiceRecord:
       type: object
       properties:
-       aTMNetworkOperationsServiceVersion:
+       ATMNetworkOperationsServiceVersion:
         type: string
         description: |
          `status: Not Mapped`
@@ -1626,29 +1626,29 @@ definitions:
  SDATMNetworkOperationsRetrieveOutputModel:
   type: object
   properties: 
-   aTMNetworkOperationsRetrieveActionTaskReference:
+   ATMNetworkOperationsRetrieveActionTaskReference:
     type: string
     example: "SRATR795161"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a retrieve service call
-   aTMNetworkOperationsRetrieveActionTaskRecord:
+   ATMNetworkOperationsRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   aTMNetworkOperationsRetrieveActionResponse:
+   ATMNetworkOperationsRetrieveActionResponse:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service response (lists returned reports)
-   aTMNetworkOperationsRetrieveActionRecord:
+   ATMNetworkOperationsRetrieveActionRecord:
     type: object
     properties:
-     aTMNetworkOperationsActivityAnalysis:
+     ATMNetworkOperationsActivityAnalysis:
       type: object
       properties:
        activityAnalysisReference:
@@ -1676,7 +1676,7 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
           general-info: The activity analysis report in any suitable form including selection filters where appropriate
-     aTMNetworkOperationsPerformanceAnalysis:
+     ATMNetworkOperationsPerformanceAnalysis:
       type: object
       properties:
        performanceAnalysisReference:
@@ -1732,59 +1732,59 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
           general-info: The external analysis report in any suitable form including selection filters where appropriate
-   aTMNetworkOperationsOfferedService:
+   ATMNetworkOperationsOfferedService:
     type: object
     properties:
-     aTMNetworkOperationsServiceReference:
+     ATMNetworkOperationsServiceReference:
       type: string
       example: "776158"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to a service offered by the service center
-     aTMNetworkOperationsServiceRecord:
+     ATMNetworkOperationsServiceRecord:
       type: object
       properties:
-       aTMNetworkOperationsServiceType:
+       ATMNetworkOperationsServiceType:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Refers to the different types of services offered
-       aTMNetworkOperationsServiceVersion:
+       ATMNetworkOperationsServiceVersion:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The version details of the service when appropriate
-       aTMNetworkOperationsServiceDescription:
+       ATMNetworkOperationsServiceDescription:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Description of the offered service 
-       aTMNetworkOperationsServicePoliciesandGuidelines:
+       ATMNetworkOperationsServicePoliciesandGuidelines:
         type: object
         properties:
-         aTMNetworkOperationsServiceEligibility:
+         ATMNetworkOperationsServiceEligibility:
           type: string
           description: |
            `status: Not Mapped`
             core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
             general-info: Policies and rules governing access to the offered service, includes eligibility and qualifications
-         aTMNetworkOperationsServiceIntendedUses:
+         ATMNetworkOperationsServiceIntendedUses:
           type: string
           description: |
            `status: Not Mapped`
             core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
             general-info: Guidelines covering allowed, intended use of the service
-         aTMNetworkOperationsServicePricingandTerms:
+         ATMNetworkOperationsServicePricingandTerms:
           type: string
           description: |
            `status: Not Mapped`
             core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
             general-info: Terms, prices, penalties associated with use of the service
-       aTMNetworkOperationsServiceSchedule:
+       ATMNetworkOperationsServiceSchedule:
         type: string
         description: |
          `status: Not Mapped`
@@ -1793,76 +1793,76 @@ definitions:
  CRATMNetworkOperatingSessionInitiateInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsServicingSessionReference:
+   ATMNetworkOperationsServicingSessionReference:
     type: string
     example: "ANOSSR726365"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   aTMNetworkOperatingSessionInitiateActionRecord:
+   ATMNetworkOperatingSessionInitiateActionRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The Initiate service call input and output record
-   aTMNetworkOperatingSessionInstanceStatus:
+   ATMNetworkOperatingSessionInstanceStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The status of the ATM Network Operating Session instance (e.g. initialised, pending, active)
-   aTMNetworkOperatingSessionSchedule:
+   ATMNetworkOperatingSessionSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionStatus:
+   ATMNetworkOperatingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionUsageLog:
+   ATMNetworkOperatingSessionUsageLog:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR794400"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR795963"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceConfiguration:
+   ATMNetworkOperatingSessionServiceConfiguration:
     type: string
     description: |
      `status: Not Mapped`
@@ -1871,59 +1871,59 @@ definitions:
  CRATMNetworkOperatingSessionInitiateOutputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR777952"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the ATM Network Operating Session instance
-   aTMNetworkOperatingSessionInitiateActionReference:
+   ATMNetworkOperatingSessionInitiateActionReference:
     type: string
     example: "ANOSIAR704976"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to an Initiate service call
-   aTMNetworkOperatingSessionInitiateActionRecord:
+   ATMNetworkOperatingSessionInitiateActionRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The Initiate service call input and output record
-   aTMNetworkOperatingSessionInstanceStatus:
+   ATMNetworkOperatingSessionInstanceStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The status of the ATM Network Operating Session instance (e.g. initialised, pending, active)
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR794400"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR795963"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
@@ -1932,77 +1932,77 @@ definitions:
  CRATMNetworkOperatingSessionUpdateInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsServicingSessionReference:
+   ATMNetworkOperationsServicingSessionReference:
     type: string
     example: "ANOSSR732342"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR787216"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the ATM Network Operating Session instance
-   aTMNetworkOperatingSessionSchedule:
+   ATMNetworkOperatingSessionSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionStatus:
+   ATMNetworkOperatingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionUsageLog:
+   ATMNetworkOperatingSessionUsageLog:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR798484"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR759005"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceConfiguration:
+   ATMNetworkOperatingSessionServiceConfiguration:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionUpdateActionTaskRecord:
+   ATMNetworkOperatingSessionUpdateActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
@@ -2017,46 +2017,46 @@ definitions:
  CRATMNetworkOperatingSessionUpdateOutputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR798484"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR759005"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionUpdateActionTaskReference:
+   ATMNetworkOperatingSessionUpdateActionTaskReference:
     type: string
     example: "ANOSUATR718220"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to an update service call
-   aTMNetworkOperatingSessionUpdateActionTaskRecord:
+   ATMNetworkOperatingSessionUpdateActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
@@ -2071,83 +2071,83 @@ definitions:
  CRATMNetworkOperatingSessionControlInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsServicingSessionReference:
+   ATMNetworkOperationsServicingSessionReference:
     type: string
     example: "ANOSSR767469"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR736277"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the ATM Network Operating Session instance
-   aTMNetworkOperatingSessionSchedule:
+   ATMNetworkOperatingSessionSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionStatus:
+   ATMNetworkOperatingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionUsageLog:
+   ATMNetworkOperatingSessionUsageLog:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR718846"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR712644"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceConfiguration:
+   ATMNetworkOperatingSessionServiceConfiguration:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionControlActionTaskRecord:
+   ATMNetworkOperatingSessionControlActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The processing control service call consolidated processing record
-   aTMNetworkOperatingSessionControlActionRequest:
+   ATMNetworkOperatingSessionControlActionRequest:
     type: object
     properties:
      controlActionType:
@@ -2159,52 +2159,52 @@ definitions:
  CRATMNetworkOperatingSessionControlOutputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR718846"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR712644"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionControlActionTaskReference:
+   ATMNetworkOperatingSessionControlActionTaskReference:
     type: string
     example: "ANOSCATR700042"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a ATM Network Operating Session instance control processing service call
-   aTMNetworkOperatingSessionControlActionTaskRecord:
+   ATMNetworkOperatingSessionControlActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The processing control service call consolidated processing record
-   aTMNetworkOperatingSessionControlActionResponse:
+   ATMNetworkOperatingSessionControlActionResponse:
     type: string
     description: |
      `status: Not Mapped`
@@ -2213,83 +2213,83 @@ definitions:
  CRATMNetworkOperatingSessionExchangeInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsServicingSessionReference:
+   ATMNetworkOperationsServicingSessionReference:
     type: string
     example: "ANOSSR769976"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR704093"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the ATM Network Operating Session instance
-   aTMNetworkOperatingSessionSchedule:
+   ATMNetworkOperatingSessionSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionStatus:
+   ATMNetworkOperatingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionUsageLog:
+   ATMNetworkOperatingSessionUsageLog:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR704812"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR741527"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceConfiguration:
+   ATMNetworkOperatingSessionServiceConfiguration:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionExchangeActionTaskRecord:
+   ATMNetworkOperatingSessionExchangeActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The exchange service call consolidated processing record
-   aTMNetworkOperatingSessionExchangeActionRequest:
+   ATMNetworkOperatingSessionExchangeActionRequest:
     type: object
     properties:
      exchangeActionType:
@@ -2301,52 +2301,52 @@ definitions:
  CRATMNetworkOperatingSessionExchangeOutputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR704812"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR741527"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionExchangeActionTaskReference:
+   ATMNetworkOperatingSessionExchangeActionTaskReference:
     type: string
     example: "ANOSEATR721042"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a ATM Network Operating Session instance exchange service call
-   aTMNetworkOperatingSessionExchangeActionTaskRecord:
+   ATMNetworkOperatingSessionExchangeActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The exchange service call consolidated processing record
-   aTMNetworkOperatingSessionExchangeActionResponse:
+   ATMNetworkOperatingSessionExchangeActionResponse:
     type: string
     description: |
      `status: Not Mapped`
@@ -2355,77 +2355,77 @@ definitions:
  CRATMNetworkOperatingSessionExecuteInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsServicingSessionReference:
+   ATMNetworkOperationsServicingSessionReference:
     type: string
     example: "ANOSSR771729"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR720551"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the ATM Network Operating Session instance
-   aTMNetworkOperatingSessionSchedule:
+   ATMNetworkOperatingSessionSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionStatus:
+   ATMNetworkOperatingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionUsageLog:
+   ATMNetworkOperatingSessionUsageLog:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR760064"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR734820"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceConfiguration:
+   ATMNetworkOperatingSessionServiceConfiguration:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionExecuteActionTaskRecord:
+   ATMNetworkOperatingSessionExecuteActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
@@ -2443,46 +2443,46 @@ definitions:
  CRATMNetworkOperatingSessionExecuteOutputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR760064"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR734820"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionExecuteActionTaskReference:
+   ATMNetworkOperatingSessionExecuteActionTaskReference:
     type: string
     example: "ANOSEATR728246"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a ATM Network Operating Session instance execute service call
-   aTMNetworkOperatingSessionExecuteActionTaskRecord:
+   ATMNetworkOperatingSessionExecuteActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
@@ -2504,77 +2504,77 @@ definitions:
  CRATMNetworkOperatingSessionRequestInputModel:
   type: object
   properties: 
-   aTMNetworkOperationsServicingSessionReference:
+   ATMNetworkOperationsServicingSessionReference:
     type: string
     example: "ANOSSR794974"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR750702"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the ATM Network Operating Session instance
-   aTMNetworkOperatingSessionSchedule:
+   ATMNetworkOperatingSessionSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionStatus:
+   ATMNetworkOperatingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionUsageLog:
+   ATMNetworkOperatingSessionUsageLog:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR717694"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR759860"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceConfiguration:
+   ATMNetworkOperatingSessionServiceConfiguration:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionRequestActionTaskRecord:
+   ATMNetworkOperatingSessionRequestActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
@@ -2592,46 +2592,46 @@ definitions:
  CRATMNetworkOperatingSessionRequestOutputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR717694"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR759860"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionRequestActionTaskReference:
+   ATMNetworkOperatingSessionRequestActionTaskReference:
     type: string
     example: "ANOSRATR752339"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a ATM Network Operating Session instance request service call
-   aTMNetworkOperatingSessionRequestActionTaskRecord:
+   ATMNetworkOperatingSessionRequestActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
@@ -2653,57 +2653,57 @@ definitions:
  CRATMNetworkOperatingSessionRetrieveInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionRetrieveActionTaskRecord:
+   ATMNetworkOperatingSessionRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   aTMNetworkOperatingSessionRetrieveActionRequest:
+   ATMNetworkOperatingSessionRetrieveActionRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service request (lists requested reports)
-   aTMNetworkOperatingSessionInstanceReportRecord:
+   ATMNetworkOperatingSessionInstanceReportRecord:
     type: object
     properties:
-     aTMNetworkOperatingSessionInstanceReportReference:
+     ATMNetworkOperatingSessionInstanceReportReference:
       type: string
       example: "761075"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to the control record instance report
-     aTMNetworkOperatingSessionInstanceReportType:
+     ATMNetworkOperatingSessionInstanceReportType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
         general-info: The type of external report available
-     aTMNetworkOperatingSessionInstanceReportParameters:
+     ATMNetworkOperatingSessionInstanceReportParameters:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The selection parameters for the report (e.g. period, content type)
-   aTMNetworkOperatingSessionInstanceAnalysis:
+   ATMNetworkOperatingSessionInstanceAnalysis:
     type: object
     properties:
-     aTMNetworkOperatingSessionInstanceAnalysisReference:
+     ATMNetworkOperatingSessionInstanceAnalysisReference:
       type: string
       example: "718736"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to the control record instance analysis view
-     aTMNetworkOperatingSessionInstanceAnalysisReportType:
+     ATMNetworkOperatingSessionInstanceAnalysisReportType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
         general-info: The type of external performance analysis report available
-     aTMNetworkOperatingSessionInstanceAnalysisParameters:
+     ATMNetworkOperatingSessionInstanceAnalysisParameters:
       type: string
       description: |
        `status: Not Mapped`
@@ -2712,118 +2712,118 @@ definitions:
  CRATMNetworkOperatingSessionRetrieveOutputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionSchedule:
+   ATMNetworkOperatingSessionSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionStatus:
+   ATMNetworkOperatingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionUsageLog:
+   ATMNetworkOperatingSessionUsageLog:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionReference:
+   ATMNetworkOperatingSessionReference:
     type: string
     example: "AOSR718788"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderReference:
+   ATMNetworkOperatingSessionServiceProviderReference:
     type: string
     example: "AOSSR782607"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
-   aTMNetworkOperatingSessionType:
+   ATMNetworkOperatingSessionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceProviderSchedule:
+   ATMNetworkOperatingSessionServiceProviderSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceType:
+   ATMNetworkOperatingSessionServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionServiceConfiguration:
+   ATMNetworkOperatingSessionServiceConfiguration:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
-   aTMNetworkOperatingSessionRetrieveActionTaskReference:
+   ATMNetworkOperatingSessionRetrieveActionTaskReference:
     type: string
     example: "ANOSRATR743596"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a ATM Network Operating Session instance retrieve service call
-   aTMNetworkOperatingSessionRetrieveActionTaskRecord:
+   ATMNetworkOperatingSessionRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   aTMNetworkOperatingSessionRetrieveActionResponse:
+   ATMNetworkOperatingSessionRetrieveActionResponse:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service response (lists returned reports)
-   aTMNetworkOperatingSessionInstanceReportRecord:
+   ATMNetworkOperatingSessionInstanceReportRecord:
     type: object
     properties:
-     aTMNetworkOperatingSessionInstanceReportData:
+     ATMNetworkOperatingSessionInstanceReportData:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The input information used to assemble the report that can be on-going, periodic and actual and projected
-     aTMNetworkOperatingSessionInstanceReportType:
+     ATMNetworkOperatingSessionInstanceReportType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
         general-info: The type of external report available
-     aTMNetworkOperatingSessionInstanceReport:
+     ATMNetworkOperatingSessionInstanceReport:
       type: object
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The external report in any suitable form including selection filters where appropriate
-   aTMNetworkOperatingSessionInstanceAnalysis:
+   ATMNetworkOperatingSessionInstanceAnalysis:
     type: object
     properties:
-     aTMNetworkOperatingSessionInstanceAnalysisData:
+     ATMNetworkOperatingSessionInstanceAnalysisData:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The inputs and results of the instance analysis that can be on-going, periodic and actual and projected
-     aTMNetworkOperatingSessionInstanceAnalysisReportType:
+     ATMNetworkOperatingSessionInstanceAnalysisReportType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
         general-info: The type of external performance analysis report available
-     aTMNetworkOperatingSessionInstanceAnalysisReport:
+     ATMNetworkOperatingSessionInstanceAnalysisReport:
       type: object
       description: |
        `status: Not Mapped`
@@ -2832,7 +2832,7 @@ definitions:
  BQFinancialDocumentHandlingInitiateInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR755079"
     description: |
@@ -2973,7 +2973,7 @@ definitions:
  BQFinancialDocumentHandlingUpdateInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR713698"
     description: |
@@ -3120,7 +3120,7 @@ definitions:
  BQFinancialDocumentHandlingExchangeInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR731905"
     description: |
@@ -3276,7 +3276,7 @@ definitions:
  BQFinancialDocumentHandlingExecuteInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR782185"
     description: |
@@ -3592,7 +3592,7 @@ definitions:
  BQNetworkOperationInitiateInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR745689"
     description: |
@@ -3721,7 +3721,7 @@ definitions:
  BQNetworkOperationUpdateInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR743418"
     description: |
@@ -3856,7 +3856,7 @@ definitions:
  BQNetworkOperationControlInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR757618"
     description: |
@@ -4153,7 +4153,7 @@ definitions:
  BQCashDistributionExchangeInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR747885"
     description: |
@@ -4297,7 +4297,7 @@ definitions:
  BQCashDistributionRequestInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR797448"
     description: |
@@ -4595,7 +4595,7 @@ definitions:
  BQDeviceTrackingUpdateInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR790536"
     description: |
@@ -4730,7 +4730,7 @@ definitions:
  BQDeviceTrackingExchangeInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR708276"
     description: |
@@ -4874,7 +4874,7 @@ definitions:
  BQDeviceTrackingExecuteInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR754993"
     description: |
@@ -5172,7 +5172,7 @@ definitions:
  BQFinancialTransactionCaptureInitiateInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR776582"
     description: |
@@ -5313,7 +5313,7 @@ definitions:
  BQFinancialTransactionCaptureUpdateInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR710526"
     description: |
@@ -5460,7 +5460,7 @@ definitions:
  BQFinancialTransactionCaptureExchangeInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR740497"
     description: |
@@ -5616,7 +5616,7 @@ definitions:
  BQFinancialTransactionCaptureExecuteInputModel:
   type: object
   properties: 
-   aTMNetworkOperatingSessionInstanceReference:
+   ATMNetworkOperatingSessionInstanceReference:
     type: string
     example: "ANOSIR788862"
     description: |
