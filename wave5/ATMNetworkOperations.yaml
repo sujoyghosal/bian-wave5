@@ -119,7 +119,7 @@ paths:
           description: Successful Service Retrieve
           schema:
             $ref: '#/definitions/SDATMNetworkOperationsRetrieveOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/initiation:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/initiation:
     post:
       tags:
       - initiate
@@ -145,7 +145,7 @@ paths:
           description: Successful initiation of new ATMNetworkOperatingSession instance
           schema:
             $ref: '#/definitions/CRATMNetworkOperatingSessionInitiateOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/update:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/update:
     put:
       tags:
       - update
@@ -162,21 +162,21 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: ATMNetworkOperatingSession Request Payload
+        description: ATM Network Operating Session Request Payload
         schema:
           $ref: '#/definitions/CRATMNetworkOperatingSessionUpdateInputModel'
       responses:
         200:
-          description: Successfully Updated ATMNetworkOperatingSession Instance
+          description: Successfully Updated ATM Network Operating Session Instance
           schema:
             $ref: '#/definitions/CRATMNetworkOperatingSessionUpdateOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/control:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/control:
     put:
       tags:
       - control
@@ -193,21 +193,21 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: ATMNetworkOperatingSession Request Payload
+        description: ATM Network Operating Session Request Payload
         schema:
           $ref: '#/definitions/CRATMNetworkOperatingSessionControlInputModel'
       responses:
         200:
-          description: Successful control of ATMNetworkOperatingSession Instance
+          description: Successful control of ATM Network Operating Session Instance
           schema:
             $ref: '#/definitions/CRATMNetworkOperatingSessionControlOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/exchange:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/exchange:
     put:
       tags:
       - exchange
@@ -224,21 +224,21 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: ATMNetworkOperatingSession Request Payload
+        description: ATM Network Operating Session Request Payload
         schema:
           $ref: '#/definitions/CRATMNetworkOperatingSessionExchangeInputModel'
       responses:
         200:
-          description: Successful exchange of ATMNetworkOperatingSession Instance
+          description: Successful exchange of ATM Network Operating Session Instance
           schema:
             $ref: '#/definitions/CRATMNetworkOperatingSessionExchangeOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/execution:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/execution:
     put:
       tags:
       - execute
@@ -255,21 +255,21 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: ATMNetworkOperatingSession Request Payload
+        description: ATM Network Operating Session Request Payload
         schema:
           $ref: '#/definitions/CRATMNetworkOperatingSessionExecuteInputModel'
       responses:
         200:
-          description: Successful execution of ATMNetworkOperatingSession Instance
+          description: Successful execution of ATM Network Operating Session Instance
           schema:
             $ref: '#/definitions/CRATMNetworkOperatingSessionExecuteOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/requisition:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/requisition:
     put:
       tags:
       - request
@@ -286,26 +286,26 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: ATMNetworkOperatingSession Request Payload
+        description: ATM Network Operating Session Request Payload
         schema:
           $ref: '#/definitions/CRATMNetworkOperatingSessionRequestInputModel'
       responses:
         200:
-          description: Successful requisition of ATMNetworkOperatingSession Instance
+          description: Successful requisition of ATM Network Operating Session Instance
           schema:
             $ref: '#/definitions/CRATMNetworkOperatingSessionRequestOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}:
     get:
       tags:
       - retrieve
       operationId: retrieveATMNetworkOperations
-      summary: Invoke a reporting action to obtain a ATMNetworkOperatingSession instance related report
+      summary: Invoke a reporting action to obtain a ATM Network Operating Session instance related report
       description: Retrieve details about any aspect of ATM Network Operating Session
       produces:
       - application/json
@@ -317,7 +317,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - in: query
@@ -327,10 +327,10 @@ paths:
         type: string
       responses:
         200:
-          description: Successfully Retrieved ATMNetworkOperatingSession Instance
+          description: Successfully Retrieved ATM Network Operating Session Instance
           schema:
             $ref: '#/definitions/CRATMNetworkOperatingSessionRetrieveOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialdocumenthandling/initiation:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/initiation:
     post:
       tags:
       - initiate
@@ -347,21 +347,21 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: ATMNetworkOperatingSession Request Payload
+        description: ATM Network Operating Session Request Payload
         schema:
           $ref: '#/definitions/BQFinancialDocumentHandlingInitiateInputModel'
       responses:
         201:
-          description: Successful initiation of ATMNetworkOperatingSession instance
+          description: Successful initiation of ATM Network Operating Session instance
           schema:
             $ref: '#/definitions/BQFinancialDocumentHandlingInitiateOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/update:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/update:
     put:
       tags:
       - update
@@ -378,7 +378,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -397,7 +397,7 @@ paths:
           description: Successfully Updated FinancialDocumentHandling Instance
           schema:
             $ref: '#/definitions/BQFinancialDocumentHandlingUpdateOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/exchange:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/exchange:
     put:
       tags:
       - exchange
@@ -414,7 +414,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -433,7 +433,7 @@ paths:
           description: Successful exchange of FinancialDocumentHandling Instance Record
           schema:
             $ref: '#/definitions/BQFinancialDocumentHandlingExchangeOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/execution:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/execution:
     put:
       tags:
       - execute
@@ -450,7 +450,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -469,7 +469,7 @@ paths:
           description: Successful execution of FinancialDocumentHandling Instance Record
           schema:
             $ref: '#/definitions/BQFinancialDocumentHandlingExecuteOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/:
     get:
       tags:
       - retrieve
@@ -486,7 +486,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -504,7 +504,7 @@ paths:
           description: Successfully  Retrieved FinancialDocumentHandling Instance Record
           schema:
             $ref: '#/definitions/BQFinancialDocumentHandlingRetrieveOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/networkoperation/initiation:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/networkoperation/initiation:
     post:
       tags:
       - initiate
@@ -521,21 +521,21 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: ATMNetworkOperatingSession Request Payload
+        description: ATM Network Operating Session Request Payload
         schema:
           $ref: '#/definitions/BQNetworkOperationInitiateInputModel'
       responses:
         201:
-          description: Successful initiation of ATMNetworkOperatingSession instance
+          description: Successful initiation of ATM Network Operating Session instance
           schema:
             $ref: '#/definitions/BQNetworkOperationInitiateOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/networkoperation/{bq-reference-id}/update:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/networkoperation/{bq-reference-id}/update:
     put:
       tags:
       - update
@@ -552,7 +552,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -571,7 +571,7 @@ paths:
           description: Successfully Updated NetworkOperation Instance
           schema:
             $ref: '#/definitions/BQNetworkOperationUpdateOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/networkoperation/{bq-reference-id}/control:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/networkoperation/{bq-reference-id}/control:
     put:
       tags:
       - control
@@ -588,7 +588,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -607,7 +607,7 @@ paths:
           description: Successful control of NetworkOperation Instance Record
           schema:
             $ref: '#/definitions/BQNetworkOperationControlOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/networkoperation/{bq-reference-id}/:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/networkoperation/{bq-reference-id}/:
     get:
       tags:
       - retrieve
@@ -624,7 +624,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -642,7 +642,7 @@ paths:
           description: Successfully  Retrieved NetworkOperation Instance Record
           schema:
             $ref: '#/definitions/BQNetworkOperationRetrieveOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/cashdistribution/{bq-reference-id}/exchange:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/cashdistribution/{bq-reference-id}/exchange:
     put:
       tags:
       - exchange
@@ -659,7 +659,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -678,7 +678,7 @@ paths:
           description: Successful exchange of CashDistribution Instance Record
           schema:
             $ref: '#/definitions/BQCashDistributionExchangeOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/cashdistribution/{bq-reference-id}/requisition:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/cashdistribution/{bq-reference-id}/requisition:
     put:
       tags:
       - request
@@ -695,7 +695,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -714,7 +714,7 @@ paths:
           description: Successful requisition of CashDistribution Instance Record
           schema:
             $ref: '#/definitions/BQCashDistributionRequestOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/cashdistribution/{bq-reference-id}/:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/cashdistribution/{bq-reference-id}/:
     get:
       tags:
       - retrieve
@@ -731,7 +731,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -749,7 +749,7 @@ paths:
           description: Successfully  Retrieved CashDistribution Instance Record
           schema:
             $ref: '#/definitions/BQCashDistributionRetrieveOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/devicetracking/{bq-reference-id}/update:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/devicetracking/{bq-reference-id}/update:
     put:
       tags:
       - update
@@ -766,7 +766,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -785,7 +785,7 @@ paths:
           description: Successfully Updated DeviceTracking Instance
           schema:
             $ref: '#/definitions/BQDeviceTrackingUpdateOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/devicetracking/{bq-reference-id}/exchange:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/devicetracking/{bq-reference-id}/exchange:
     put:
       tags:
       - exchange
@@ -802,7 +802,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -821,7 +821,7 @@ paths:
           description: Successful exchange of DeviceTracking Instance Record
           schema:
             $ref: '#/definitions/BQDeviceTrackingExchangeOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/devicetracking/{bq-reference-id}/execution:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/devicetracking/{bq-reference-id}/execution:
     put:
       tags:
       - execute
@@ -838,7 +838,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -857,7 +857,7 @@ paths:
           description: Successful execution of DeviceTracking Instance Record
           schema:
             $ref: '#/definitions/BQDeviceTrackingExecuteOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/devicetracking/{bq-reference-id}/:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/devicetracking/{bq-reference-id}/:
     get:
       tags:
       - retrieve
@@ -874,7 +874,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -892,7 +892,7 @@ paths:
           description: Successfully  Retrieved DeviceTracking Instance Record
           schema:
             $ref: '#/definitions/BQDeviceTrackingRetrieveOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialtransactioncapture/initiation:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/initiation:
     post:
       tags:
       - initiate
@@ -909,21 +909,21 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: ATMNetworkOperatingSession Request Payload
+        description: ATM Network Operating Session Request Payload
         schema:
           $ref: '#/definitions/BQFinancialTransactionCaptureInitiateInputModel'
       responses:
         201:
-          description: Successful initiation of ATMNetworkOperatingSession instance
+          description: Successful initiation of ATM Network Operating Session instance
           schema:
             $ref: '#/definitions/BQFinancialTransactionCaptureInitiateOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/update:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/update:
     put:
       tags:
       - update
@@ -940,7 +940,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -959,7 +959,7 @@ paths:
           description: Successfully Updated FinancialTransactionCapture Instance
           schema:
             $ref: '#/definitions/BQFinancialTransactionCaptureUpdateOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/exchange:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/exchange:
     put:
       tags:
       - exchange
@@ -976,7 +976,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -995,7 +995,7 @@ paths:
           description: Successful exchange of FinancialTransactionCapture Instance Record
           schema:
             $ref: '#/definitions/BQFinancialTransactionCaptureExchangeOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/execution:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/execution:
     put:
       tags:
       - execute
@@ -1012,7 +1012,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -1031,7 +1031,7 @@ paths:
           description: Successful execution of FinancialTransactionCapture Instance Record
           schema:
             $ref: '#/definitions/BQFinancialTransactionCaptureExecuteOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/:
     get:
       tags:
       - retrieve
@@ -1048,7 +1048,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name: bq-reference-id
@@ -1066,7 +1066,7 @@ paths:
           description: Successfully  Retrieved FinancialTransactionCapture Instance Record
           schema:
             $ref: '#/definitions/BQFinancialTransactionCaptureRetrieveOutputModel'
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session:
     get:
       tags:
       - retrieve
@@ -1093,7 +1093,7 @@ paths:
             items:
               type: string
             example: ['ID726464', 'ID7264642']
-  /atm-network-operations/atmnetworkoperatingsession/behavior-qualifiers/:
+  /atm-network-operations/atm-network-operating-session/behavior-qualifiers/:
     get:
       tags:
       - retrieve
@@ -1109,7 +1109,7 @@ paths:
             items:
               type: string
             example: [ 'DeviceTracking',  'CashDistribution',  'NetworkOperation',  'FinancialTransactionCapture',  'FinancialDocumentHandling', ]
-  /atm-network-operations/{sd-reference-id}/atmnetworkoperatingsession/{cr-reference-id}/{behavior-qualifier}/:
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/{behavior-qualifier}/:
     get:
       tags:
       - retrieve
@@ -1125,7 +1125,7 @@ paths:
         type: string
       - name: cr-reference-id
         in: path
-        description: ATMNetworkOperatingSession Instance Reference
+        description: ATM Network Operating Session Instance Reference
         required: true
         type: string
       - name : behavior-qualifier
@@ -1795,7 +1795,7 @@ definitions:
   properties: 
    aTMNetworkOperationsServicingSessionReference:
     type: string
-    example: "ANOSSR720503"
+    example: "ANOSSR726365"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1811,7 +1811,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The status of the ATMNetworkOperatingSession instance (e.g. initialised, pending, active)
+      general-info: The status of the ATM Network Operating Session instance (e.g. initialised, pending, active)
    aTMNetworkOperatingSessionSchedule:
     type: string
     description: |
@@ -1832,14 +1832,14 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR718131"
+    example: "AOSR794400"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR726246"
+    example: "AOSSR795963"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1873,14 +1873,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR740908"
+    example: "ANOSIR777952"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the ATMNetworkOperatingSession instance
+      general-info: Reference to the ATM Network Operating Session instance
    aTMNetworkOperatingSessionInitiateActionReference:
     type: string
-    example: "AIAR752354"
+    example: "ANOSIAR704976"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1896,17 +1896,17 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The status of the ATMNetworkOperatingSession instance (e.g. initialised, pending, active)
+      general-info: The status of the ATM Network Operating Session instance (e.g. initialised, pending, active)
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR718131"
+    example: "AOSR794400"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR726246"
+    example: "AOSSR795963"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1934,18 +1934,18 @@ definitions:
   properties: 
    aTMNetworkOperationsServicingSessionReference:
     type: string
-    example: "ANOSSR769084"
+    example: "ANOSSR732342"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR763600"
+    example: "ANOSIR787216"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the ATMNetworkOperatingSession instance
+      general-info: Reference to the ATM Network Operating Session instance
    aTMNetworkOperatingSessionSchedule:
     type: string
     description: |
@@ -1966,14 +1966,14 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR776412"
+    example: "AOSR798484"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR705962"
+    example: "AOSSR759005"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2019,14 +2019,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR776412"
+    example: "AOSR798484"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR705962"
+    example: "AOSSR759005"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2051,7 +2051,7 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionUpdateActionTaskReference:
     type: string
-    example: "AUATR795850"
+    example: "ANOSUATR718220"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2073,18 +2073,18 @@ definitions:
   properties: 
    aTMNetworkOperationsServicingSessionReference:
     type: string
-    example: "ANOSSR740280"
+    example: "ANOSSR767469"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR797802"
+    example: "ANOSIR736277"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the ATMNetworkOperatingSession instance
+      general-info: Reference to the ATM Network Operating Session instance
    aTMNetworkOperatingSessionSchedule:
     type: string
     description: |
@@ -2105,14 +2105,14 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR731828"
+    example: "AOSR718846"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR775399"
+    example: "AOSSR712644"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2161,14 +2161,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR731828"
+    example: "AOSR718846"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR775399"
+    example: "AOSSR712644"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2193,11 +2193,11 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionControlActionTaskReference:
     type: string
-    example: "ACATR708542"
+    example: "ANOSCATR700042"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to a ATMNetworkOperatingSession instance control processing service call
+      general-info: Reference to a ATM Network Operating Session instance control processing service call
    aTMNetworkOperatingSessionControlActionTaskRecord:
     type: object
     description: |
@@ -2215,18 +2215,18 @@ definitions:
   properties: 
    aTMNetworkOperationsServicingSessionReference:
     type: string
-    example: "ANOSSR716925"
+    example: "ANOSSR769976"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR715564"
+    example: "ANOSIR704093"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the ATMNetworkOperatingSession instance
+      general-info: Reference to the ATM Network Operating Session instance
    aTMNetworkOperatingSessionSchedule:
     type: string
     description: |
@@ -2247,14 +2247,14 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR765935"
+    example: "AOSR704812"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR758682"
+    example: "AOSSR741527"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2303,14 +2303,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR765935"
+    example: "AOSR704812"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR758682"
+    example: "AOSSR741527"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2335,11 +2335,11 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionExchangeActionTaskReference:
     type: string
-    example: "AEATR799453"
+    example: "ANOSEATR721042"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to a ATMNetworkOperatingSession instance exchange service call
+      general-info: Reference to a ATM Network Operating Session instance exchange service call
    aTMNetworkOperatingSessionExchangeActionTaskRecord:
     type: object
     description: |
@@ -2357,18 +2357,18 @@ definitions:
   properties: 
    aTMNetworkOperationsServicingSessionReference:
     type: string
-    example: "ANOSSR753011"
+    example: "ANOSSR771729"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR719118"
+    example: "ANOSIR720551"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the ATMNetworkOperatingSession instance
+      general-info: Reference to the ATM Network Operating Session instance
    aTMNetworkOperatingSessionSchedule:
     type: string
     description: |
@@ -2389,14 +2389,14 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR764692"
+    example: "AOSR760064"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR746005"
+    example: "AOSSR734820"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2445,14 +2445,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR764692"
+    example: "AOSR760064"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR746005"
+    example: "AOSSR734820"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2477,11 +2477,11 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionExecuteActionTaskReference:
     type: string
-    example: "AEATR778946"
+    example: "ANOSEATR728246"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to a ATMNetworkOperatingSession instance execute service call
+      general-info: Reference to a ATM Network Operating Session instance execute service call
    aTMNetworkOperatingSessionExecuteActionTaskRecord:
     type: object
     description: |
@@ -2490,7 +2490,7 @@ definitions:
       general-info: The execute service call consolidated processing record
    executeRecordReference:
     type: string
-    example: "ERR775741"
+    example: "ERR754385"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2506,18 +2506,18 @@ definitions:
   properties: 
    aTMNetworkOperationsServicingSessionReference:
     type: string
-    example: "ANOSSR756641"
+    example: "ANOSSR794974"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR706181"
+    example: "ANOSIR750702"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the ATMNetworkOperatingSession instance
+      general-info: Reference to the ATM Network Operating Session instance
    aTMNetworkOperatingSessionSchedule:
     type: string
     description: |
@@ -2538,14 +2538,14 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR744149"
+    example: "AOSR717694"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR732004"
+    example: "AOSSR759860"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2594,14 +2594,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR744149"
+    example: "AOSR717694"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR732004"
+    example: "AOSSR759860"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2626,11 +2626,11 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionRequestActionTaskReference:
     type: string
-    example: "ARATR798962"
+    example: "ANOSRATR752339"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to a ATMNetworkOperatingSession instance request service call
+      general-info: Reference to a ATM Network Operating Session instance request service call
    aTMNetworkOperatingSessionRequestActionTaskRecord:
     type: object
     description: |
@@ -2639,7 +2639,7 @@ definitions:
       general-info: The request service call consolidated processing record
    requestRecordReference:
     type: string
-    example: "RRR737374"
+    example: "RRR708643"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2670,7 +2670,7 @@ definitions:
     properties:
      aTMNetworkOperatingSessionInstanceReportReference:
       type: string
-      example: "763674"
+      example: "761075"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2692,7 +2692,7 @@ definitions:
     properties:
      aTMNetworkOperatingSessionInstanceAnalysisReference:
       type: string
-      example: "771480"
+      example: "718736"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2732,14 +2732,14 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionReference:
     type: string
-    example: "AOSR783772"
+    example: "AOSR718788"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: 
    aTMNetworkOperatingSessionServiceProviderReference:
     type: string
-    example: "AOSSR716995"
+    example: "AOSSR782607"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2770,11 +2770,11 @@ definitions:
       general-info: 
    aTMNetworkOperatingSessionRetrieveActionTaskReference:
     type: string
-    example: "ARATR716610"
+    example: "ANOSRATR743596"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to a ATMNetworkOperatingSession instance retrieve service call
+      general-info: Reference to a ATM Network Operating Session instance retrieve service call
    aTMNetworkOperatingSessionRetrieveActionTaskRecord:
     type: object
     description: |
@@ -2834,11 +2834,11 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR762641"
+    example: "ANOSIR755079"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    financialDocumentHandlingInitiateActionRecord:
     type: object
     description: |
@@ -2898,14 +2898,14 @@ definitions:
   properties: 
    financialDocumentHandlingInstanceReference:
     type: string
-    example: "FDHIR748609"
+    example: "FDHIR746920"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Financial Document Handling instance
    financialDocumentHandlingInitiateActionReference:
     type: string
-    example: "FDHIAR720264"
+    example: "FDHIAR723610"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2975,14 +2975,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR764825"
+    example: "ANOSIR713698"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    financialDocumentHandlingInstanceReference:
     type: string
-    example: "FDHIR772247"
+    example: "FDHIR708722"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3100,7 +3100,7 @@ definitions:
       general-info: 
    financialDocumentHandlingUpdateActionTaskReference:
     type: string
-    example: "FDHUATR789267"
+    example: "FDHUATR718460"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3122,14 +3122,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR729271"
+    example: "ANOSIR731905"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    financialDocumentHandlingInstanceReference:
     type: string
-    example: "FDHIR773311"
+    example: "FDHIR790369"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3250,7 +3250,7 @@ definitions:
       general-info: 
    financialDocumentHandlingExchangeActionTaskReference:
     type: string
-    example: "FDHEATR738015"
+    example: "FDHEATR787428"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3278,14 +3278,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR785960"
+    example: "ANOSIR782185"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    financialDocumentHandlingInstanceReference:
     type: string
-    example: "FDHIR716835"
+    example: "FDHIR759853"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3406,7 +3406,7 @@ definitions:
       general-info: 
    financialDocumentHandlingExecuteActionTaskReference:
     type: string
-    example: "FDHEATR701350"
+    example: "FDHEATR754083"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3419,7 +3419,7 @@ definitions:
       general-info: The execute service call consolidated processing record
    financialDocumentHandlingExecuteRecordReference:
     type: string
-    example: "FDHERR724388"
+    example: "FDHERR743866"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3450,7 +3450,7 @@ definitions:
     properties:
      financialDocumentHandlingInstanceReportReference:
       type: string
-      example: "764626"
+      example: "732624"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3460,7 +3460,7 @@ definitions:
     properties:
      financialDocumentHandlingInstanceAnalysisReference:
       type: string
-      example: "779928"
+      example: "792681"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3518,7 +3518,7 @@ definitions:
       general-info: 
    financialDocumentHandlingRetrieveActionTaskReference:
     type: string
-    example: "FDHRATR787925"
+    example: "FDHRATR788150"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3594,11 +3594,11 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR789392"
+    example: "ANOSIR745689"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    networkOperationInitiateActionRecord:
     type: object
     description: |
@@ -3652,14 +3652,14 @@ definitions:
   properties: 
    networkOperationInstanceReference:
     type: string
-    example: "NOIR735694"
+    example: "NOIR757046"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Network Operation instance
    networkOperationInitiateActionReference:
     type: string
-    example: "NOIAR723913"
+    example: "NOIAR700763"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3723,14 +3723,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR735211"
+    example: "ANOSIR743418"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    networkOperationInstanceReference:
     type: string
-    example: "NOIR737363"
+    example: "NOIR788135"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3836,7 +3836,7 @@ definitions:
       general-info: 
    networkOperationUpdateActionTaskReference:
     type: string
-    example: "NOUATR739895"
+    example: "NOUATR727171"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3858,14 +3858,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR767204"
+    example: "ANOSIR757618"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    networkOperationInstanceReference:
     type: string
-    example: "NOIR727536"
+    example: "NOIR785322"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3974,7 +3974,7 @@ definitions:
       general-info: 
    networkOperationControlActionTaskReference:
     type: string
-    example: "NOCATR749554"
+    example: "NOCATR778357"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4017,7 +4017,7 @@ definitions:
     properties:
      networkOperationInstanceReportReference:
       type: string
-      example: "799042"
+      example: "703391"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4027,7 +4027,7 @@ definitions:
     properties:
      networkOperationInstanceAnalysisReference:
       type: string
-      example: "721143"
+      example: "740035"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4079,7 +4079,7 @@ definitions:
       general-info: 
    networkOperationRetrieveActionTaskReference:
     type: string
-    example: "NORATR794654"
+    example: "NORATR768237"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4155,14 +4155,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR723314"
+    example: "ANOSIR747885"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    cashDistributionInstanceReference:
     type: string
-    example: "CDIR742824"
+    example: "CDIR731243"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4271,7 +4271,7 @@ definitions:
       general-info: 
    cashDistributionExchangeActionTaskReference:
     type: string
-    example: "CDEATR755189"
+    example: "CDEATR798397"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4299,14 +4299,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR748793"
+    example: "ANOSIR797448"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    cashDistributionInstanceReference:
     type: string
-    example: "CDIR758120"
+    example: "CDIR766760"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4415,7 +4415,7 @@ definitions:
       general-info: 
    cashDistributionRequestActionTaskReference:
     type: string
-    example: "CDRATR779942"
+    example: "CDRATR782258"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4428,7 +4428,7 @@ definitions:
       general-info: The request service call consolidated processing record
    cashDistributionRequestRecordReference:
     type: string
-    example: "CDRRR770106"
+    example: "CDRRR750870"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4459,7 +4459,7 @@ definitions:
     properties:
      cashDistributionInstanceReportReference:
       type: string
-      example: "783017"
+      example: "724282"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4469,7 +4469,7 @@ definitions:
     properties:
      cashDistributionInstanceAnalysisReference:
       type: string
-      example: "783032"
+      example: "744849"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4521,7 +4521,7 @@ definitions:
       general-info: 
    cashDistributionRetrieveActionTaskReference:
     type: string
-    example: "CDRATR722998"
+    example: "CDRATR722524"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4597,14 +4597,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR789989"
+    example: "ANOSIR790536"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    deviceTrackingInstanceReference:
     type: string
-    example: "DTIR711846"
+    example: "DTIR753425"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4710,7 +4710,7 @@ definitions:
       general-info: 
    deviceTrackingUpdateActionTaskReference:
     type: string
-    example: "DTUATR760672"
+    example: "DTUATR763301"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4732,14 +4732,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR750478"
+    example: "ANOSIR708276"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    deviceTrackingInstanceReference:
     type: string
-    example: "DTIR793591"
+    example: "DTIR798645"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4848,7 +4848,7 @@ definitions:
       general-info: 
    deviceTrackingExchangeActionTaskReference:
     type: string
-    example: "DTEATR761082"
+    example: "DTEATR722460"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4876,14 +4876,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR740395"
+    example: "ANOSIR754993"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    deviceTrackingInstanceReference:
     type: string
-    example: "DTIR761116"
+    example: "DTIR764257"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4992,7 +4992,7 @@ definitions:
       general-info: 
    deviceTrackingExecuteActionTaskReference:
     type: string
-    example: "DTEATR713201"
+    example: "DTEATR721276"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5005,7 +5005,7 @@ definitions:
       general-info: The execute service call consolidated processing record
    deviceTrackingExecuteRecordReference:
     type: string
-    example: "DTERR792685"
+    example: "DTERR724931"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5036,7 +5036,7 @@ definitions:
     properties:
      deviceTrackingInstanceReportReference:
       type: string
-      example: "700442"
+      example: "724925"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5046,7 +5046,7 @@ definitions:
     properties:
      deviceTrackingInstanceAnalysisReference:
       type: string
-      example: "736753"
+      example: "778177"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5098,7 +5098,7 @@ definitions:
       general-info: 
    deviceTrackingRetrieveActionTaskReference:
     type: string
-    example: "DTRATR719309"
+    example: "DTRATR795424"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5174,11 +5174,11 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR715507"
+    example: "ANOSIR776582"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    financialTransactionCaptureInitiateActionRecord:
     type: object
     description: |
@@ -5238,14 +5238,14 @@ definitions:
   properties: 
    financialTransactionCaptureInstanceReference:
     type: string
-    example: "FTCIR710019"
+    example: "FTCIR744900"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Financial Transaction Capture instance
    financialTransactionCaptureInitiateActionReference:
     type: string
-    example: "FTCIAR751563"
+    example: "FTCIAR767768"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5315,14 +5315,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR739087"
+    example: "ANOSIR710526"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    financialTransactionCaptureInstanceReference:
     type: string
-    example: "FTCIR715683"
+    example: "FTCIR784573"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5440,7 +5440,7 @@ definitions:
       general-info: 
    financialTransactionCaptureUpdateActionTaskReference:
     type: string
-    example: "FTCUATR795254"
+    example: "FTCUATR779890"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5462,14 +5462,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR760239"
+    example: "ANOSIR740497"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    financialTransactionCaptureInstanceReference:
     type: string
-    example: "FTCIR713501"
+    example: "FTCIR746761"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5590,7 +5590,7 @@ definitions:
       general-info: 
    financialTransactionCaptureExchangeActionTaskReference:
     type: string
-    example: "FTCEATR770049"
+    example: "FTCEATR791478"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5618,14 +5618,14 @@ definitions:
   properties: 
    aTMNetworkOperatingSessionInstanceReference:
     type: string
-    example: "AIR715136"
+    example: "ANOSIR788862"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent ATMNetworkOperatingSession instance
+      general-info: Reference to the parent ATM Network Operating Session instance
    financialTransactionCaptureInstanceReference:
     type: string
-    example: "FTCIR712397"
+    example: "FTCIR766604"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5746,7 +5746,7 @@ definitions:
       general-info: 
    financialTransactionCaptureExecuteActionTaskReference:
     type: string
-    example: "FTCEATR790054"
+    example: "FTCEATR739259"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5759,7 +5759,7 @@ definitions:
       general-info: The execute service call consolidated processing record
    financialTransactionCaptureExecuteRecordReference:
     type: string
-    example: "FTCERR757664"
+    example: "FTCERR766160"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5790,7 +5790,7 @@ definitions:
     properties:
      financialTransactionCaptureInstanceReportReference:
       type: string
-      example: "735267"
+      example: "700780"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5800,7 +5800,7 @@ definitions:
     properties:
      financialTransactionCaptureInstanceAnalysisReference:
       type: string
-      example: "770027"
+      example: "788247"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5858,7 +5858,7 @@ definitions:
       general-info: 
    financialTransactionCaptureRetrieveActionTaskReference:
     type: string
-    example: "FTCRATR741100"
+    example: "FTCRATR774537"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
