@@ -118,7 +118,7 @@ paths:
         200:
           description: Successful Service Retrieve
           schema:
-            $ref: '#/definitions/SDBranchCurrencyManagementRetrieveOutputModel'
+            $ref: '#/definitions/SDBranchCurrencyManagementRetrieveOutputModel'  
   /branch-currency-management/{sd-reference-id}/branch-cash-allocation/initiation:
     post:
       tags:
@@ -480,7 +480,7 @@ paths:
       - retrieve
       operationId: retrieveBranchCashAllocationInventoryAllocation
       summary: Invoke a reporting action to obtain a InventoryAllocation instance related report.
-      description: Retrieve details about any aspect of Inventory Allocation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
       produces:
       - application/json
       parameters:
@@ -1238,7 +1238,7 @@ definitions:
   properties: 
    branchCurrencyManagementServicingSessionReference:
     type: string
-    example: "BCMSSR757702"
+    example: "BCMSSR711818"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1260,115 +1260,115 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocation<SubjectArea>Type:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value, that distinguishes between the the type of resource allocated withing the Branch Cash Allocation
    branchCashAllocationDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation of Branch Cash Allocation
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationReference:
     type: string
-    example: "BCAR788875"
+    example: "BCAR724436"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the party who is involved in Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR736404"
+    example: "BCACR798265"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationCurrency:
     type: string
     example: USD
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
-      general-info: 
+      general-info: The curreny which is arranged/used for Branch Cash Allocation
    branchCashAllocationRegulationReference:
     type: string
-    example: "BCARR768310"
+    example: "BCARR797835"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the regulation which is defined for Branch Cash Allocation
    branchCashAllocationRegulationType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification that distinguishes between the regularity domains of Branch Cash Allocation
    branchCashAllocationJurisdiction:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Reference to the jurisdiction that is assigned to Branch Cash Allocation in case of legal dispute.
    branchCashAllocationBookingLocation:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement, are entered.
    branchCashAllocationAccountType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The type of account which is linked to Branch Cash Allocation
    branchCashAllocationAccountReference:
     type: string
-    example: "BCAAR755660"
+    example: "BCAAR728154"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the account which is linked to Branch Cash Allocation
  CRBranchCashAllocationInitiateOutputModel:
   type: object
   properties: 
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR793233"
+    example: "BCAIR700046"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Branch Cash Allocation instance
    branchCashAllocationInitiateActionReference:
     type: string
-    example: "BCAIAR758968"
+    example: "BCAIAR711672"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1390,51 +1390,51 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR736404"
+    example: "BCACR798265"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
  CRBranchCashAllocationUpdateInputModel:
   type: object
   properties: 
    branchCurrencyManagementServicingSessionReference:
     type: string
-    example: "BCMSSR756164"
+    example: "BCMSSR748057"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR798622"
+    example: "BCAIR719262"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1444,102 +1444,102 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocation<SubjectArea>Type:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value, that distinguishes between the the type of resource allocated withing the Branch Cash Allocation
    branchCashAllocationDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation of Branch Cash Allocation
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationReference:
     type: string
-    example: "BCAR770003"
+    example: "BCAR723994"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the party who is involved in Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR740542"
+    example: "BCACR718775"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationCurrency:
     type: string
     example: USD
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
-      general-info: 
+      general-info: The curreny which is arranged/used for Branch Cash Allocation
    branchCashAllocationRegulationReference:
     type: string
-    example: "BCARR761942"
+    example: "BCARR794228"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the regulation which is defined for Branch Cash Allocation
    branchCashAllocationRegulationType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification that distinguishes between the regularity domains of Branch Cash Allocation
    branchCashAllocationJurisdiction:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Reference to the jurisdiction that is assigned to Branch Cash Allocation in case of legal dispute.
    branchCashAllocationBookingLocation:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement, are entered.
    branchCashAllocationAccountType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The type of account which is linked to Branch Cash Allocation
    branchCashAllocationAccountReference:
     type: string
-    example: "BCAAR742259"
+    example: "BCAAR767791"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the account which is linked to Branch Cash Allocation
    branchCashAllocationUpdateActionTaskRecord:
     type: object
     description: |
@@ -1560,41 +1560,41 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR740542"
+    example: "BCACR718775"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationUpdateActionTaskReference:
     type: string
-    example: "BCAUATR748230"
+    example: "BCAUATR708866"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1616,14 +1616,14 @@ definitions:
   properties: 
    branchCurrencyManagementServicingSessionReference:
     type: string
-    example: "BCMSSR760374"
+    example: "BCMSSR742516"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR738556"
+    example: "BCAIR741188"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1633,102 +1633,102 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocation<SubjectArea>Type:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value, that distinguishes between the the type of resource allocated withing the Branch Cash Allocation
    branchCashAllocationDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation of Branch Cash Allocation
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationReference:
     type: string
-    example: "BCAR704420"
+    example: "BCAR786056"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the party who is involved in Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR757607"
+    example: "BCACR782375"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationCurrency:
     type: string
     example: USD
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
-      general-info: 
+      general-info: The curreny which is arranged/used for Branch Cash Allocation
    branchCashAllocationRegulationReference:
     type: string
-    example: "BCARR707823"
+    example: "BCARR747366"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the regulation which is defined for Branch Cash Allocation
    branchCashAllocationRegulationType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification that distinguishes between the regularity domains of Branch Cash Allocation
    branchCashAllocationJurisdiction:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Reference to the jurisdiction that is assigned to Branch Cash Allocation in case of legal dispute.
    branchCashAllocationBookingLocation:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement, are entered.
    branchCashAllocationAccountType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The type of account which is linked to Branch Cash Allocation
    branchCashAllocationAccountReference:
     type: string
-    example: "BCAAR769304"
+    example: "BCAAR727599"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the account which is linked to Branch Cash Allocation
    branchCashAllocationControlActionTaskRecord:
     type: object
     description: |
@@ -1752,41 +1752,41 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR757607"
+    example: "BCACR782375"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationControlActionTaskReference:
     type: string
-    example: "BCACATR754297"
+    example: "BCACATR736432"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1808,14 +1808,14 @@ definitions:
   properties: 
    branchCurrencyManagementServicingSessionReference:
     type: string
-    example: "BCMSSR778562"
+    example: "BCMSSR743994"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR704488"
+    example: "BCAIR769911"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1825,102 +1825,102 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocation<SubjectArea>Type:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value, that distinguishes between the the type of resource allocated withing the Branch Cash Allocation
    branchCashAllocationDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation of Branch Cash Allocation
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationReference:
     type: string
-    example: "BCAR723914"
+    example: "BCAR715038"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the party who is involved in Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR737747"
+    example: "BCACR705572"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationCurrency:
     type: string
     example: USD
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
-      general-info: 
+      general-info: The curreny which is arranged/used for Branch Cash Allocation
    branchCashAllocationRegulationReference:
     type: string
-    example: "BCARR705454"
+    example: "BCARR792132"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the regulation which is defined for Branch Cash Allocation
    branchCashAllocationRegulationType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification that distinguishes between the regularity domains of Branch Cash Allocation
    branchCashAllocationJurisdiction:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Reference to the jurisdiction that is assigned to Branch Cash Allocation in case of legal dispute.
    branchCashAllocationBookingLocation:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement, are entered.
    branchCashAllocationAccountType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The type of account which is linked to Branch Cash Allocation
    branchCashAllocationAccountReference:
     type: string
-    example: "BCAAR746354"
+    example: "BCAAR705449"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the account which is linked to Branch Cash Allocation
    branchCashAllocationExchangeActionTaskRecord:
     type: object
     description: |
@@ -1944,41 +1944,41 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR737747"
+    example: "BCACR705572"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationExchangeActionTaskReference:
     type: string
-    example: "BCAEATR784208"
+    example: "BCAEATR794342"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2000,14 +2000,14 @@ definitions:
   properties: 
    branchCurrencyManagementServicingSessionReference:
     type: string
-    example: "BCMSSR725971"
+    example: "BCMSSR757186"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR729035"
+    example: "BCAIR726069"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2017,102 +2017,102 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocation<SubjectArea>Type:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value, that distinguishes between the the type of resource allocated withing the Branch Cash Allocation
    branchCashAllocationDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation of Branch Cash Allocation
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationReference:
     type: string
-    example: "BCAR740391"
+    example: "BCAR790738"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the party who is involved in Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR782890"
+    example: "BCACR710992"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationCurrency:
     type: string
     example: USD
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
-      general-info: 
+      general-info: The curreny which is arranged/used for Branch Cash Allocation
    branchCashAllocationRegulationReference:
     type: string
-    example: "BCARR763260"
+    example: "BCARR796811"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the regulation which is defined for Branch Cash Allocation
    branchCashAllocationRegulationType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification that distinguishes between the regularity domains of Branch Cash Allocation
    branchCashAllocationJurisdiction:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Reference to the jurisdiction that is assigned to Branch Cash Allocation in case of legal dispute.
    branchCashAllocationBookingLocation:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement, are entered.
    branchCashAllocationAccountType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The type of account which is linked to Branch Cash Allocation
    branchCashAllocationAccountReference:
     type: string
-    example: "BCAAR787034"
+    example: "BCAAR729174"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the account which is linked to Branch Cash Allocation
    branchCashAllocationCaptureActionTaskRecord:
     type: object
     description: |
@@ -2136,41 +2136,41 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR782890"
+    example: "BCACR710992"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationCaptureActionTaskReference:
     type: string
-    example: "BCACATR719947"
+    example: "BCACATR768517"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2183,7 +2183,7 @@ definitions:
       general-info: The capture service call consolidated processing record
    captureRecordReference:
     type: string
-    example: "CRR787974"
+    example: "CRR750694"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2214,7 +2214,7 @@ definitions:
     properties:
      branchCashAllocationInstanceReportReference:
       type: string
-      example: "725117"
+      example: "BCMSSR770814"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2236,7 +2236,7 @@ definitions:
     properties:
      branchCashAllocationInstanceAnalysisReference:
       type: string
-      example: "704052"
+      example: "BCMSSR770814"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2261,105 +2261,105 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation
    branchCashAllocationSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A selected optional business service for which resources are allocated
    branchCashAllocation<SubjectArea>Type:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value, that distinguishes between the the type of resource allocated withing the Branch Cash Allocation
    branchCashAllocationDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation of Branch Cash Allocation
    branchCashAllocationRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Request to allocate BranchCash
    branchCashAllocationSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Timetable to allocate BranchCash
    branchCashAllocationStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Branch Cash Allocation
    branchCashAllocationReference:
     type: string
-    example: "BCAR759233"
+    example: "BCAR781162"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the party who is involved in Branch Cash Allocation
    branchCashAllocationCustomerReference:
     type: string
-    example: "BCACR762768"
+    example: "BCACR788204"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the customer who is involved in Branch Cash Allocation
    branchCashAllocationCurrency:
     type: string
     example: USD
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Currency
-      general-info: 
+      general-info: The curreny which is arranged/used for Branch Cash Allocation
    branchCashAllocationRegulationReference:
     type: string
-    example: "BCARR713563"
+    example: "BCARR738977"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the regulation which is defined for Branch Cash Allocation
    branchCashAllocationRegulationType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification that distinguishes between the regularity domains of Branch Cash Allocation
    branchCashAllocationJurisdiction:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Reference to the jurisdiction that is assigned to Branch Cash Allocation in case of legal dispute.
    branchCashAllocationBookingLocation:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement, are entered.
    branchCashAllocationAccountType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The type of account which is linked to Branch Cash Allocation
    branchCashAllocationAccountReference:
     type: string
-    example: "BCAAR732990"
+    example: "BCAAR746000"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: 
+      general-info: Reference to the account which is linked to Branch Cash Allocation
    branchCashAllocationRetrieveActionTaskReference:
     type: string
-    example: "BCARATR786125"
+    example: "BCARATR783655"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2423,7 +2423,7 @@ definitions:
   properties: 
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR763488"
+    example: "BCAIR784962"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2451,50 +2451,44 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
  BQInventoryAllocationInitiateOutputModel:
   type: object
   properties: 
    inventoryAllocationInstanceReference:
     type: string
-    example: "IAIR701845"
+    example: "IAIR763255"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Inventory Allocation instance
    inventoryAllocationInitiateActionReference:
     type: string
-    example: "IAIAR755896"
+    example: "IAIAR717626"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2528,50 +2522,44 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
  BQInventoryAllocationUpdateInputModel:
   type: object
   properties: 
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR744248"
+    example: "BCAIR780570"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Branch Cash Allocation instance
    inventoryAllocationInstanceReference:
     type: string
-    example: "IAIR744909"
+    example: "IAIR796274"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2593,37 +2581,31 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    inventoryAllocationUpdateActionTaskRecord:
     type: object
     description: |
@@ -2656,40 +2638,34 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    inventoryAllocationUpdateActionTaskReference:
     type: string
-    example: "IAUATR718643"
+    example: "IAUATR715334"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2711,14 +2687,14 @@ definitions:
   properties: 
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR742238"
+    example: "BCAIR785584"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Branch Cash Allocation instance
    inventoryAllocationInstanceReference:
     type: string
-    example: "IAIR751822"
+    example: "IAIR766589"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2740,37 +2716,31 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    inventoryAllocationControlActionTaskRecord:
     type: object
     description: |
@@ -2806,40 +2776,34 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    inventoryAllocationControlActionTaskReference:
     type: string
-    example: "IACATR750095"
+    example: "IACATR785535"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2867,14 +2831,14 @@ definitions:
   properties: 
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR742408"
+    example: "BCAIR747282"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Branch Cash Allocation instance
    inventoryAllocationInstanceReference:
     type: string
-    example: "IAIR729816"
+    example: "IAIR779231"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2896,37 +2860,31 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    inventoryAllocationExchangeActionTaskRecord:
     type: object
     description: |
@@ -2962,40 +2920,34 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    inventoryAllocationExchangeActionTaskReference:
     type: string
-    example: "IAEATR766056"
+    example: "IAEATR780870"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3023,14 +2975,14 @@ definitions:
   properties: 
    branchCashAllocationInstanceReference:
     type: string
-    example: "BCAIR750087"
+    example: "BCAIR763360"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Branch Cash Allocation instance
    inventoryAllocationInstanceReference:
     type: string
-    example: "IAIR746759"
+    example: "IAIR760862"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3052,37 +3004,31 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    inventoryAllocationCaptureActionTaskRecord:
     type: object
     description: |
@@ -3118,40 +3064,34 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    inventoryAllocationCaptureActionTaskReference:
     type: string
-    example: "IACATR779901"
+    example: "IACATR751842"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3164,7 +3104,7 @@ definitions:
       general-info: The capture service call consolidated processing record
    inventoryAllocationCaptureRecordReference:
     type: string
-    example: "IACRR792523"
+    example: "IACRR741117"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3195,7 +3135,7 @@ definitions:
     properties:
      inventoryAllocationInstanceReportReference:
       type: string
-      example: "741721"
+      example: "BCMSSR717576"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3205,7 +3145,7 @@ definitions:
     properties:
      inventoryAllocationInstanceAnalysisReference:
       type: string
-      example: "764789"
+      example: "BCMSSR717576"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3230,40 +3170,34 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Branch Cash Allocation specific Business Service
    cashInventoryAllocationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    cashInventoryAllocationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    cashInventoryAllocationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    cashInventoryAllocationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   cashInventoryAllocationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    inventoryAllocationRetrieveActionTaskReference:
     type: string
-    example: "IARATR753206"
+    example: "IARATR757785"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier

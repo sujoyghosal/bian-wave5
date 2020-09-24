@@ -817,7 +817,7 @@ paths:
       - retrieve
       operationId: retrieveCreditCardFinancialCaptureTransactionTransactionReversal
       summary: Invoke a reporting action to obtain a TransactionReversal instance related report.
-      description: Retrieve details about any aspect of Transaction Reversal .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
       produces:
       - application/json
       parameters:
@@ -1575,7 +1575,7 @@ definitions:
   properties: 
    cardCaptureServicingSessionReference:
     type: string
-    example: "CCSSR734955"
+    example: "CCSSR719231"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1592,49 +1592,49 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The status of the Credit Card Financial Capture Transaction instance (e.g. initialised, pending, active)
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionType:
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionTransactionType:
+      general-info: A Classification value that specifies type of business action for this Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that specifies type of transaction for this Credit/Charge Card Financial Capture Transaction
  CRCreditCardFinancialCaptureTransactionInitiateOutputModel:
   type: object
   properties: 
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR733387"
+    example: "CCFCTIR710366"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Credit Card Financial Capture Transaction instance
    creditCardFinancialCaptureTransactionInitiateActionReference:
     type: string
-    example: "CCFCTIAR747420"
+    example: "CCFCTIAR746940"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1651,71 +1651,71 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The status of the Credit Card Financial Capture Transaction instance (e.g. initialised, pending, active)
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
  CRCreditCardFinancialCaptureTransactionUpdateInputModel:
   type: object
   properties: 
    cardCaptureServicingSessionReference:
     type: string
-    example: "CCSSR720200"
+    example: "CCSSR796445"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR779857"
+    example: "CCFCTIR732395"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Credit Card Financial Capture Transaction instance
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionType:
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionTransactionType:
+      general-info: A Classification value that specifies type of business action for this Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that specifies type of transaction for this Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionUpdateActionTaskRecord:
     type: object
     description: |
@@ -1731,27 +1731,27 @@ definitions:
  CRCreditCardFinancialCaptureTransactionUpdateOutputModel:
   type: object
   properties: 
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionUpdateActionTaskReference:
     type: string
-    example: "CCFCTUATR782086"
+    example: "CCFCTUATR788548"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1773,48 +1773,48 @@ definitions:
   properties: 
    cardCaptureServicingSessionReference:
     type: string
-    example: "CCSSR700945"
+    example: "CCSSR761333"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR770537"
+    example: "CCFCTIR774069"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Credit Card Financial Capture Transaction instance
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionType:
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionTransactionType:
+      general-info: A Classification value that specifies type of business action for this Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that specifies type of transaction for this Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionControlActionTaskRecord:
     type: object
     description: |
@@ -1833,27 +1833,27 @@ definitions:
  CRCreditCardFinancialCaptureTransactionControlOutputModel:
   type: object
   properties: 
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionControlActionTaskReference:
     type: string
-    example: "CCFCTCATR706714"
+    example: "CCFCTCATR749798"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1875,48 +1875,48 @@ definitions:
   properties: 
    cardCaptureServicingSessionReference:
     type: string
-    example: "CCSSR701517"
+    example: "CCSSR749240"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR711797"
+    example: "CCFCTIR756106"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Credit Card Financial Capture Transaction instance
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionType:
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionTransactionType:
+      general-info: A Classification value that specifies type of business action for this Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that specifies type of transaction for this Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionExchangeActionTaskRecord:
     type: object
     description: |
@@ -1935,27 +1935,27 @@ definitions:
  CRCreditCardFinancialCaptureTransactionExchangeOutputModel:
   type: object
   properties: 
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionExchangeActionTaskReference:
     type: string
-    example: "CCFCTEATR712636"
+    example: "CCFCTEATR769794"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1977,48 +1977,48 @@ definitions:
   properties: 
    cardCaptureServicingSessionReference:
     type: string
-    example: "CCSSR746488"
+    example: "CCSSR720019"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR750973"
+    example: "CCFCTIR725236"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Credit Card Financial Capture Transaction instance
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionType:
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionTransactionType:
+      general-info: A Classification value that specifies type of business action for this Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that specifies type of transaction for this Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionExecuteActionTaskRecord:
     type: object
     description: |
@@ -2037,27 +2037,27 @@ definitions:
  CRCreditCardFinancialCaptureTransactionExecuteOutputModel:
   type: object
   properties: 
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionExecuteActionTaskReference:
     type: string
-    example: "CCFCTEATR715628"
+    example: "CCFCTEATR736620"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2070,7 +2070,7 @@ definitions:
       general-info: The execute service call consolidated processing record
    executeRecordReference:
     type: string
-    example: "ERR791530"
+    example: "ERR743727"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2086,48 +2086,48 @@ definitions:
   properties: 
    cardCaptureServicingSessionReference:
     type: string
-    example: "CCSSR733549"
+    example: "CCSSR769877"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR779532"
+    example: "CCFCTIR769297"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Credit Card Financial Capture Transaction instance
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionType:
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionTransactionType:
+      general-info: A Classification value that specifies type of business action for this Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that specifies type of transaction for this Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionRequestActionTaskRecord:
     type: object
     description: |
@@ -2146,27 +2146,27 @@ definitions:
  CRCreditCardFinancialCaptureTransactionRequestOutputModel:
   type: object
   properties: 
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionRequestActionTaskReference:
     type: string
-    example: "CCFCTRATR798689"
+    example: "CCFCTRATR749360"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2179,7 +2179,7 @@ definitions:
       general-info: The request service call consolidated processing record
    requestRecordReference:
     type: string
-    example: "RRR797515"
+    example: "RRR749275"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2210,7 +2210,7 @@ definitions:
     properties:
      creditCardFinancialCaptureTransactionInstanceReportReference:
       type: string
-      example: "726441"
+      example: "CCSSR794728"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2232,7 +2232,7 @@ definitions:
     properties:
      creditCardFinancialCaptureTransactionInstanceAnalysisReference:
       type: string
-      example: "750557"
+      example: "CCSSR794728"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2252,39 +2252,39 @@ definitions:
  CRCreditCardFinancialCaptureTransactionRetrieveOutputModel:
   type: object
   properties: 
-   creditCardFinancialCaptureTransactionParameterType:
+   creditChargeCardFinancialCaptureTransactionParameterType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionSelectedOption:
+      general-info: A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionSelectedOption:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionStatus:
+      general-info: A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionStatus:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionType:
+      general-info: The status of Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
-   creditCardFinancialCaptureTransactionTransactionType:
+      general-info: A Classification value that specifies type of business action for this Credit/Charge Card Financial Capture Transaction
+   creditChargeCardFinancialCaptureTransactionTransactionType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: A Classification value that specifies type of transaction for this Credit/Charge Card Financial Capture Transaction
    creditCardFinancialCaptureTransactionRetrieveActionTaskReference:
     type: string
-    example: "CCFCTRATR741283"
+    example: "CCFCTRATR703234"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2348,7 +2348,7 @@ definitions:
   properties: 
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR721960"
+    example: "CCFCTIR746188"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2359,55 +2359,55 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The Initiate service call input and output record
-   transactionCapturePreconditions:
+   transactionReversalPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionCaptureTaskSchedule:
+   transactionReversalTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The timing and key actions/milestones involved in completing the transaction task
-   businessService:
+   cardTransactionReversal:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionCapturePostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionReversalPostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionCaptureServiceType:
+   transactionReversalCardTransactionReversalServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionCaptureServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionReversalCardTransactionReversalServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionCaptureServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionReversalCardTransactionReversalServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionCaptureServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionReversalCardTransactionReversalServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionCaptureServiceName:
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionReversalCardTransactionReversalServiceName:
     type: string
     description: |
      `status: Not Mapped`
@@ -2418,14 +2418,14 @@ definitions:
   properties: 
    transactionCaptureInstanceReference:
     type: string
-    example: "TCIR707114"
+    example: "TCIR704399"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Transaction Capture instance
    transactionCaptureInitiateActionReference:
     type: string
-    example: "TCIAR738856"
+    example: "TCIAR767148"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2442,55 +2442,55 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The status of the Transaction Capture instance (e.g. initialised, pending, active)
-   transactionCapturePreconditions:
+   transactionReversalPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionCaptureTaskSchedule:
+   transactionReversalTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The timing and key actions/milestones involved in completing the transaction task
-   businessService:
+   cardTransactionReversal:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionCapturePostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionReversalPostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionCaptureServiceType:
+   transactionReversalCardTransactionReversalServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionCaptureServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionReversalCardTransactionReversalServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionCaptureServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionReversalCardTransactionReversalServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionCaptureServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionReversalCardTransactionReversalServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionCaptureServiceName:
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionReversalCardTransactionReversalServiceName:
     type: string
     description: |
      `status: Not Mapped`
@@ -2501,72 +2501,18 @@ definitions:
   properties: 
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR779185"
+    example: "CCFCTIR703891"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Credit Card Financial Capture Transaction instance
    transactionCaptureInstanceReference:
     type: string
-    example: "TCIR744359"
+    example: "TCIR799318"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Transaction Capture instance
-   transactionCapturePreconditions:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The required status/situation prior to the execution of the task
-   transactionCaptureTaskSchedule:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The timing and key actions/milestones involved in completing the transaction task
-   businessService:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionCapturePostconditions:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionCaptureServiceType:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionCaptureServiceDescription:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionCaptureServiceInputsandOuputs:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionCaptureServiceWorkProduct:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionCaptureServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
    transactionCaptureUpdateActionTaskRecord:
     type: object
     description: |
@@ -2579,66 +2525,66 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the update action service request
- BQTransactionCaptureUpdateOutputModel:
-  type: object
-  properties: 
-   transactionCapturePreconditions:
+   transactionReversalPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionCaptureTaskSchedule:
+   transactionReversalTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The timing and key actions/milestones involved in completing the transaction task
-   businessService:
+   cardTransactionReversal:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionCapturePostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionReversalPostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionCaptureServiceType:
+   transactionReversalCardTransactionReversalServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionCaptureServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionReversalCardTransactionReversalServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionCaptureServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionReversalCardTransactionReversalServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionCaptureServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionReversalCardTransactionReversalServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionCaptureServiceName:
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionReversalCardTransactionReversalServiceName:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
+ BQTransactionCaptureUpdateOutputModel:
+  type: object
+  properties: 
    transactionCaptureUpdateActionTaskReference:
     type: string
-    example: "TCUATR728324"
+    example: "TCUATR777587"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2655,6 +2601,60 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: Details of the Update action service response
+   transactionReversalPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the execution of the task
+   transactionReversalTaskSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the transaction task
+   cardTransactionReversal:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionReversalPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the task has been completed
+   transactionReversalCardTransactionReversalServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   transactionReversalCardTransactionReversalServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   transactionReversalCardTransactionReversalServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionReversalCardTransactionReversalServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionReversalCardTransactionReversalServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
  BQTransactionCaptureRetrieveInputModel:
   type: object
   properties: 
@@ -2675,7 +2675,7 @@ definitions:
     properties:
      transactionCaptureInstanceReportReference:
       type: string
-      example: "785182"
+      example: "CCSSR757504"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2685,7 +2685,7 @@ definitions:
     properties:
      transactionCaptureInstanceAnalysisReference:
       type: string
-      example: "708699"
+      example: "CCSSR757504"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2693,63 +2693,9 @@ definitions:
  BQTransactionCaptureRetrieveOutputModel:
   type: object
   properties: 
-   transactionCapturePreconditions:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The required status/situation prior to the execution of the task
-   transactionCaptureTaskSchedule:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The timing and key actions/milestones involved in completing the transaction task
-   businessService:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionCapturePostconditions:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionCaptureServiceType:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionCaptureServiceDescription:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionCaptureServiceInputsandOuputs:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionCaptureServiceWorkProduct:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionCaptureServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
    transactionCaptureRetrieveActionTaskReference:
     type: string
-    example: "TCRATR721718"
+    example: "TCRATR782667"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2820,29 +2766,70 @@ definitions:
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The external analysis report in any suitable form including selection filters where appropriate
- BQTransactionAuthorizationInitiateInputModel:
-  type: object
-  properties: 
-   creditCardFinancialCaptureTransactionInstanceReference:
-    type: string
-    example: "CCFCTIR745155"
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the parent Credit Card Financial Capture Transaction instance
-   transactionAuthorizationInitiateActionRecord:
-    type: object
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
-      general-info: The Initiate service call input and output record
-   transactionAuthorizationPreconditions:
+   transactionReversalPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionAuthorizationTaskSchedule:
+   transactionReversalTaskSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the transaction task
+   cardTransactionReversal:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionReversalPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the task has been completed
+   transactionReversalCardTransactionReversalServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   transactionReversalCardTransactionReversalServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   transactionReversalCardTransactionReversalServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionReversalCardTransactionReversalServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionReversalCardTransactionReversalServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+ BQTransactionAuthorizationInitiateInputModel:
+  type: object
+  properties: 
+   transactionCapturePreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the execution of the task
+   transactionCaptureTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
@@ -2853,56 +2840,123 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionAuthorizationPostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionCapturePostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionAuthorizationServiceType:
+   transactionCaptureServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionAuthorizationServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionCaptureServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionAuthorizationServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionCaptureServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionAuthorizationServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionCaptureServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionAuthorizationServiceName:
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionCaptureServiceName:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
+   creditCardFinancialCaptureTransactionInstanceReference:
+    type: string
+    example: "CCFCTIR713504"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the parent Credit Card Financial Capture Transaction instance
+   transactionAuthorizationInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
  BQTransactionAuthorizationInitiateOutputModel:
   type: object
   properties: 
+   transactionCapturePreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the execution of the task
+   transactionCaptureTaskSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the transaction task
+   businessService:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionCapturePostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the task has been completed
+   transactionCaptureServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   transactionCaptureServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   transactionCaptureServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionCaptureServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionCaptureServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
    transactionAuthorizationInstanceReference:
     type: string
-    example: "TAIR745232"
+    example: "TAIR753422"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Transaction Authorization instance
    transactionAuthorizationInitiateActionReference:
     type: string
-    example: "TAIAR769929"
+    example: "TAIAR743624"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2919,13 +2973,16 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The status of the Transaction Authorization instance (e.g. initialised, pending, active)
-   transactionAuthorizationPreconditions:
+ BQTransactionAuthorizationUpdateInputModel:
+  type: object
+  properties: 
+   transactionCapturePreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionAuthorizationTaskSchedule:
+   transactionCaptureTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
@@ -2936,114 +2993,57 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionAuthorizationPostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionCapturePostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionAuthorizationServiceType:
+   transactionCaptureServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionAuthorizationServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionCaptureServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionAuthorizationServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionCaptureServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionAuthorizationServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionCaptureServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionAuthorizationServiceName:
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionCaptureServiceName:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: 
- BQTransactionAuthorizationUpdateInputModel:
-  type: object
-  properties: 
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR725375"
+    example: "CCFCTIR755216"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Credit Card Financial Capture Transaction instance
    transactionAuthorizationInstanceReference:
     type: string
-    example: "TAIR708070"
+    example: "TAIR794551"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Transaction Authorization instance
-   transactionAuthorizationPreconditions:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The required status/situation prior to the execution of the task
-   transactionAuthorizationTaskSchedule:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The timing and key actions/milestones involved in completing the transaction task
-   businessService:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionAuthorizationPostconditions:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionAuthorizationServiceType:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionAuthorizationServiceDescription:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionAuthorizationServiceInputsandOuputs:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionAuthorizationServiceWorkProduct:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionAuthorizationServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
    transactionAuthorizationUpdateActionTaskRecord:
     type: object
     description: |
@@ -3059,13 +3059,13 @@ definitions:
  BQTransactionAuthorizationUpdateOutputModel:
   type: object
   properties: 
-   transactionAuthorizationPreconditions:
+   transactionCapturePreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionAuthorizationTaskSchedule:
+   transactionCaptureTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
@@ -3076,38 +3076,38 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionAuthorizationPostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionCapturePostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionAuthorizationServiceType:
+   transactionCaptureServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionAuthorizationServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionCaptureServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionAuthorizationServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionCaptureServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionAuthorizationServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionCaptureServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionAuthorizationServiceName:
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionCaptureServiceName:
     type: string
     description: |
      `status: Not Mapped`
@@ -3115,7 +3115,7 @@ definitions:
       general-info: 
    transactionAuthorizationUpdateActionTaskReference:
     type: string
-    example: "TAUATR741961"
+    example: "TAUATR728928"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3152,7 +3152,7 @@ definitions:
     properties:
      transactionAuthorizationInstanceReportReference:
       type: string
-      example: "796583"
+      example: "CCSSR791585"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3162,7 +3162,7 @@ definitions:
     properties:
      transactionAuthorizationInstanceAnalysisReference:
       type: string
-      example: "767126"
+      example: "CCSSR791585"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3170,13 +3170,13 @@ definitions:
  BQTransactionAuthorizationRetrieveOutputModel:
   type: object
   properties: 
-   transactionAuthorizationPreconditions:
+   transactionCapturePreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionAuthorizationTaskSchedule:
+   transactionCaptureTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
@@ -3187,38 +3187,38 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionAuthorizationPostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionCapturePostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionAuthorizationServiceType:
+   transactionCaptureServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionAuthorizationServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionCaptureServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionAuthorizationServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionCaptureServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionAuthorizationServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionCaptureServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionAuthorizationServiceName:
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   transactionCaptureServiceName:
     type: string
     description: |
      `status: Not Mapped`
@@ -3226,7 +3226,7 @@ definitions:
       general-info: 
    transactionAuthorizationRetrieveActionTaskReference:
     type: string
-    example: "TARATR705342"
+    example: "TARATR741240"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3302,7 +3302,7 @@ definitions:
   properties: 
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR714182"
+    example: "CCFCTIR702643"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3330,7 +3330,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -3342,25 +3342,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -3372,14 +3372,14 @@ definitions:
   properties: 
    transactionConsolidationInstanceReference:
     type: string
-    example: "TCIR775400"
+    example: "TCIR790192"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Transaction Consolidation instance
    transactionConsolidationInitiateActionReference:
     type: string
-    example: "TCIAR730779"
+    example: "TCIAR771057"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3413,7 +3413,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -3425,25 +3425,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -3455,14 +3455,14 @@ definitions:
   properties: 
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR794126"
+    example: "CCFCTIR711222"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Credit Card Financial Capture Transaction instance
    transactionConsolidationInstanceReference:
     type: string
-    example: "TCIR765311"
+    example: "TCIR747086"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3484,7 +3484,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -3496,25 +3496,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -3553,7 +3553,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -3565,25 +3565,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -3592,7 +3592,7 @@ definitions:
       general-info: 
    transactionConsolidationUpdateActionTaskReference:
     type: string
-    example: "TCUATR707210"
+    example: "TCUATR767382"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3614,14 +3614,14 @@ definitions:
   properties: 
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR735073"
+    example: "CCFCTIR776362"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Credit Card Financial Capture Transaction instance
    transactionConsolidationInstanceReference:
     type: string
-    example: "TCIR780417"
+    example: "TCIR753506"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3643,7 +3643,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -3655,25 +3655,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -3715,7 +3715,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -3727,25 +3727,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -3754,7 +3754,7 @@ definitions:
       general-info: 
    transactionConsolidationControlActionTaskReference:
     type: string
-    example: "TCCATR710860"
+    example: "TCCATR785172"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3782,14 +3782,14 @@ definitions:
   properties: 
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR786425"
+    example: "CCFCTIR796902"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Credit Card Financial Capture Transaction instance
    transactionConsolidationInstanceReference:
     type: string
-    example: "TCIR780713"
+    example: "TCIR706948"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3811,7 +3811,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -3823,25 +3823,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -3883,7 +3883,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -3895,25 +3895,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -3922,7 +3922,7 @@ definitions:
       general-info: 
    transactionConsolidationExchangeActionTaskReference:
     type: string
-    example: "TCEATR746051"
+    example: "TCEATR710881"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3950,14 +3950,14 @@ definitions:
   properties: 
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR704163"
+    example: "CCFCTIR750847"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Credit Card Financial Capture Transaction instance
    transactionConsolidationInstanceReference:
     type: string
-    example: "TCIR727779"
+    example: "TCIR724372"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3979,7 +3979,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -3991,25 +3991,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -4051,7 +4051,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -4063,25 +4063,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -4090,7 +4090,7 @@ definitions:
       general-info: 
    transactionConsolidationExecuteActionTaskReference:
     type: string
-    example: "TCEATR788421"
+    example: "TCEATR706494"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4103,7 +4103,7 @@ definitions:
       general-info: The execute service call consolidated processing record
    transactionConsolidationExecuteRecordReference:
     type: string
-    example: "TCERR787083"
+    example: "TCERR707786"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4134,7 +4134,7 @@ definitions:
     properties:
      transactionConsolidationInstanceReportReference:
       type: string
-      example: "748987"
+      example: "CCSSR791927"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4144,7 +4144,7 @@ definitions:
     properties:
      transactionConsolidationInstanceAnalysisReference:
       type: string
-      example: "748435"
+      example: "CCSSR791927"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4169,7 +4169,7 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
    transactionConsolidationPostconditions:
     type: string
     description: |
@@ -4181,25 +4181,25 @@ definitions:
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
+      general-info: Reference to the specific business service type
    transactionConsolidationCardTransactionConsolidationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
+      general-info: Description of the performed business service
    transactionConsolidationCardTransactionConsolidationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
+      general-info: Mandatory and optional inputs and output information for the business service
    transactionConsolidationCardTransactionConsolidationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionConsolidationCardTransactionConsolidationServiceName:
     type: string
     description: |
@@ -4208,7 +4208,7 @@ definitions:
       general-info: 
    transactionConsolidationRetrieveActionTaskReference:
     type: string
-    example: "TCRATR760933"
+    example: "TCRATR762149"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4282,9 +4282,57 @@ definitions:
  BQTransactionReversalInitiateInputModel:
   type: object
   properties: 
+   transactionAuthorizationPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the execution of the task
+   transactionAuthorizationTaskSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the transaction task
+   businessService:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionAuthorizationPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the task has been completed
+   transactionAuthorizationServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   transactionAuthorizationServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   transactionAuthorizationServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionAuthorizationServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR771947"
+    example: "CCFCTIR734837"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4295,73 +4343,67 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The Initiate service call input and output record
-   transactionReversalPreconditions:
+ BQTransactionReversalInitiateOutputModel:
+  type: object
+  properties: 
+   transactionAuthorizationPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionReversalTaskSchedule:
+   transactionAuthorizationTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The timing and key actions/milestones involved in completing the transaction task
-   cardTransactionReversal:
+   businessService:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionReversalPostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionAuthorizationPostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionReversalCardTransactionReversalServiceType:
+   transactionAuthorizationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionReversalCardTransactionReversalServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionAuthorizationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionReversalCardTransactionReversalServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionAuthorizationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionReversalCardTransactionReversalServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionAuthorizationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionReversalCardTransactionReversalServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
- BQTransactionReversalInitiateOutputModel:
-  type: object
-  properties: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionReversalInstanceReference:
     type: string
-    example: "TRIR746420"
+    example: "TRIR777862"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Transaction Reversal instance
    transactionReversalInitiateActionReference:
     type: string
-    example: "TRIAR708748"
+    example: "TRIAR701381"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4378,131 +4420,71 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The status of the Transaction Reversal instance (e.g. initialised, pending, active)
-   transactionReversalPreconditions:
+ BQTransactionReversalUpdateInputModel:
+  type: object
+  properties: 
+   transactionAuthorizationPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionReversalTaskSchedule:
+   transactionAuthorizationTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The timing and key actions/milestones involved in completing the transaction task
-   cardTransactionReversal:
+   businessService:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionReversalPostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionAuthorizationPostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionReversalCardTransactionReversalServiceType:
+   transactionAuthorizationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionReversalCardTransactionReversalServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionAuthorizationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionReversalCardTransactionReversalServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionAuthorizationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionReversalCardTransactionReversalServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionAuthorizationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionReversalCardTransactionReversalServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
- BQTransactionReversalUpdateInputModel:
-  type: object
-  properties: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    creditCardFinancialCaptureTransactionInstanceReference:
     type: string
-    example: "CCFCTIR754982"
+    example: "CCFCTIR799093"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Credit Card Financial Capture Transaction instance
    transactionReversalInstanceReference:
     type: string
-    example: "TRIR758551"
+    example: "TRIR794246"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Transaction Reversal instance
-   transactionReversalPreconditions:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The required status/situation prior to the execution of the task
-   transactionReversalTaskSchedule:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The timing and key actions/milestones involved in completing the transaction task
-   cardTransactionReversal:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionReversalPostconditions:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionReversalCardTransactionReversalServiceType:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionReversalCardTransactionReversalServiceDescription:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionReversalCardTransactionReversalServiceInputsandOuputs:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionReversalCardTransactionReversalServiceWorkProduct:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionReversalCardTransactionReversalServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
    transactionReversalUpdateActionTaskRecord:
     type: object
     description: |
@@ -4518,63 +4500,57 @@ definitions:
  BQTransactionReversalUpdateOutputModel:
   type: object
   properties: 
-   transactionReversalPreconditions:
+   transactionAuthorizationPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionReversalTaskSchedule:
+   transactionAuthorizationTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The timing and key actions/milestones involved in completing the transaction task
-   cardTransactionReversal:
+   businessService:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionReversalPostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionAuthorizationPostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionReversalCardTransactionReversalServiceType:
+   transactionAuthorizationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionReversalCardTransactionReversalServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionAuthorizationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionReversalCardTransactionReversalServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionAuthorizationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionReversalCardTransactionReversalServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionAuthorizationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionReversalCardTransactionReversalServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionReversalUpdateActionTaskReference:
     type: string
-    example: "TRUATR777749"
+    example: "TRUATR783691"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4611,7 +4587,7 @@ definitions:
     properties:
      transactionReversalInstanceReportReference:
       type: string
-      example: "732348"
+      example: "CCSSR795403"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4621,7 +4597,7 @@ definitions:
     properties:
      transactionReversalInstanceAnalysisReference:
       type: string
-      example: "765763"
+      example: "CCSSR795403"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4629,63 +4605,57 @@ definitions:
  BQTransactionReversalRetrieveOutputModel:
   type: object
   properties: 
-   transactionReversalPreconditions:
+   transactionAuthorizationPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The required status/situation prior to the execution of the task
-   transactionReversalTaskSchedule:
+   transactionAuthorizationTaskSchedule:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The timing and key actions/milestones involved in completing the transaction task
-   cardTransactionReversal:
+   businessService:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The BQ specific Business Service
-   transactionReversalPostconditions:
+      general-info: The Credit/Charge Card Financial Capture Transaction specific Business Service
+   transactionAuthorizationPostconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: The completion status and any triggered/dependent actions once the task has been completed
-   transactionReversalCardTransactionReversalServiceType:
+   transactionAuthorizationServiceType:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Reference to the specific [BS] business service type
-   transactionReversalCardTransactionReversalServiceDescription:
+      general-info: Reference to the specific business service type
+   transactionAuthorizationServiceDescription:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Description of the performed [BS] business service
-   transactionReversalCardTransactionReversalServiceInputsandOuputs:
+      general-info: Description of the performed business service
+   transactionAuthorizationServiceInputsandOuputs:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Mandatory and optional inputs and output information for the BS business service
-   transactionReversalCardTransactionReversalServiceWorkProduct:
+      general-info: Mandatory and optional inputs and output information for the business service
+   transactionAuthorizationServiceWorkProduct:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the [BS] business service
-   transactionReversalCardTransactionReversalServiceName:
-    type: string
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: 
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
    transactionReversalRetrieveActionTaskReference:
     type: string
-    example: "TRRATR782752"
+    example: "TRRATR776944"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
