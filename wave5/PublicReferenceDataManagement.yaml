@@ -1,0 +1,2015 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Public Reference Data Management'
+ description: >
+
+    ## Executive Summary:
+
+    Provide structured access to standard 'global' reference data and definitions associated with market activity such as currency, country and segment identifiers.
+
+    ## Example of Use:
+
+    The international ISO standard definitions are maintained and applied across production systems of the bank
+
+    ## Description:
+
+    This service domain maintains and provides structured access to standard 'global' reference data and definitions associated with market activity such as currency, country and segment identifiers. These values will typically be externally sourced using market information feeds and distributed using whatever is the appropriate mechanism within the bank
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-public-reference-data-management/1.0.0
+schemes:
+ - https
+paths:
+  /public-reference-data-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDPublicReferenceDataManagement
+      summary: Activate  a SDPublicReferenceDataManagement servicing session
+      description: Activate  a  SDPublicReferenceDataManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDPublicReferenceDataManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDPublicReferenceDataManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDPublicReferenceDataManagementActivateOutputModel'
+  /public-reference-data-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDPublicReferenceDataManagement
+      summary: Update an active SDPublicReferenceDataManagement session configuration
+      description: Update an active SDPublicReferenceDataManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPublicReferenceDataManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDPublicReferenceDataManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDPublicReferenceDataManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDPublicReferenceDataManagementConfigureOutputModel'
+  /public-reference-data-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDPublicReferenceDataManagement
+      summary: "Capturing feedback against the SDPublicReferenceDataManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDPublicReferenceDataManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPublicReferenceDataManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDPublicReferenceDataManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDPublicReferenceDataManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDPublicReferenceDataManagementFeedbackOutputModel'
+  /public-reference-data-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDPublicReferenceDataManagement
+      summary: Analytical views maintained by the SDPublicReferenceDataManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDPublicReferenceDataManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPublicReferenceDataManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDPublicReferenceDataManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDPublicReferenceDataManagementRetrieveOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateGlobalStandardSpecification
+      summary: Details of a new GlobalStandardSpecification instance
+      description: Instantiate a new Global Standard Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: GlobalStandardSpecification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new GlobalStandardSpecification instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationInitiateOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateGlobalStandardSpecification
+      summary: Update to any amendable fields of the GlobalStandardSpecification instance
+      description: Update details relating to Global Standard Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationUpdateOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlGlobalStandardSpecificationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Global Standard Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationControlInputModel'
+      responses:
+        200:
+          description: Successful control of Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationControlOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeGlobalStandardSpecificationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Global Standard Specification processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationExchangeOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureGlobalStandardSpecificationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Global Standard Specification activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationCaptureOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestGlobalStandardSpecificationUpdate
+      summary: Invoke a service request action against the GlobalStandardSpecification instance
+      description: Request manual intervention or a decision with respect to Global Standard Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationRequestOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePublicReferenceDataManagement
+      summary: Invoke a reporting action to obtain a Global Standard Specification instance related report
+      description: 
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRGlobalStandardSpecificationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationRetrieveOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePublicReferenceDataManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- PublicReferenceDataManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /public-reference-data-management/global-standard-specification/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePublicReferenceDataManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'GlobalReferenceData', ]
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePublicReferenceDataManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- GlobalReferenceData
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- GlobalReferenceData Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [GlobalReferenceDataID1, GlobalReferenceDataID2]
+definitions:
+ SDPublicReferenceDataManagementActivateInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementActivationActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The activation service call consolidated processing record
+   publicReferenceDataManagementCenterReference:
+    type: string
+    example: "SCR793499"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the service center/operational unit
+   publicReferenceDataManagementServiceReference:
+    type: string
+    example: "CPASSR703914"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a service offered by the service center
+   publicReferenceDataManagementServiceConfigurationRecord:
+    type: object
+    properties:
+     publicReferenceDataManagementServiceConfigurationSettingReference:
+      type: string
+      example: "700761"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Refers to the service configuration parameter for the service
+     publicReferenceDataManagementServiceConfigurationSettingType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The type of service configuration parameter
+     publicReferenceDataManagementServiceConfigurationSetup:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceConfigurationParameter:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The default activation setting for the offered service configuration parameter 
+ SDPublicReferenceDataManagementActivateOutputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementActivationActionTaskReference:
+    type: string
+    example: "SAATR758836"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a service activation service call
+   publicReferenceDataManagementActivationActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The activation service call consolidated processing record
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "SSSR783215"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   publicReferenceDataManagementServicingSessionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Consolidated information record for the servicing session
+   publicReferenceDataManagementServiceConfigurationRecord:
+    type: object
+    properties:
+     publicReferenceDataManagementServiceConfigurationSettingReference:
+      type: string
+      example: "700761"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Refers to the service configuration parameter for the service
+     publicReferenceDataManagementServiceConfigurationSettingDescription:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: Description of the configuration parameter, allowed values and processing impact
+     publicReferenceDataManagementServiceConfigurationSetup:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceConfigurationParameter:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The default activation setting for the offered service configuration parameter 
+     publicReferenceDataManagementServiceSubscription:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceSubscriberReference:
+        type: string
+        example: "769192"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
+       publicReferenceDataManagementServiceSubscriberAccessProfile:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The allowed service access for a user or subscriber to the service which can be any known party
+     publicReferenceDataManagementServiceAgreement:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceAgreementReference:
+        type: string
+        example: "791202"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the offered service agreement
+       publicReferenceDataManagementServiceUserReference:
+        type: string
+        example: "767210"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the user covered by the contract
+       publicReferenceDataManagementServiceAgreementTermsandConditions:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Terms and conditions covering the service agreement
+     publicReferenceDataManagementServiceStatus:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The status of the offered service (e.g. active, suspended, idle)
+   publicReferenceDataManagementServicingSessionStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The current operating status of the overall servicing session
+ SDPublicReferenceDataManagementConfigureInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementConfigurationActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The configuration service call consolidated processing record
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "SSSR764367"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   publicReferenceDataManagementServiceReference:
+    type: string
+    example: "CPASSR744740"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a service offered by the service center
+   publicReferenceDataManagementServiceConfigurationRecord:
+    type: object
+    properties:
+     publicReferenceDataManagementServiceConfigurationSettingReference:
+      type: string
+      example: "710630"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Refers to the service configuration parameter for the service
+     publicReferenceDataManagementServiceConfigurationSettingType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The type of service configuration parameter
+     publicReferenceDataManagementServiceConfigurationSetup:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceConfigurationParameter:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The requested and current activation values for the service configuration parameter 
+     publicReferenceDataManagementServiceSubscription:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceSubscriberReference:
+        type: string
+        example: "756221"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
+       publicReferenceDataManagementServiceSubscriberAccessProfile:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The allowed service access for a user or subscriber to the service which can be any known party
+     publicReferenceDataManagementServiceAgreement:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceAgreementReference:
+        type: string
+        example: "721156"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the offered service agreement
+       publicReferenceDataManagementServiceUserReference:
+        type: string
+        example: "733696"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the user covered by the contract
+       publicReferenceDataManagementServiceAgreementTermsandConditions:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Terms and conditions covering the service agreement
+ SDPublicReferenceDataManagementConfigureOutputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementConfigurationActionTaskReference:
+    type: string
+    example: "SCATR765419"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a service configuration service call
+   publicReferenceDataManagementConfigurationActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The configuration service call consolidated processing record
+   publicReferenceDataManagementServiceConfigurationRecord:
+    type: object
+    properties:
+     publicReferenceDataManagementServiceConfigurationSettingDescription:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: Description of the configuration parameter, allowed values and processing impact
+     publicReferenceDataManagementServiceConfigurationSetup:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceConfigurationParameter:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The requested and current activation values for the service configuration parameter 
+     publicReferenceDataManagementServiceSubscription:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceSubscriberReference:
+        type: string
+        example: "756221"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
+       publicReferenceDataManagementServiceSubscriberAccessProfile:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The allowed service access for a user or subscriber to the service which can be any known party
+     publicReferenceDataManagementServiceAgreement:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceAgreementReference:
+        type: string
+        example: "721156"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the offered service agreement
+       publicReferenceDataManagementServiceUserReference:
+        type: string
+        example: "733696"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the user covered by the contract
+       publicReferenceDataManagementServiceAgreementTermsandConditions:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Terms and conditions covering the service agreement
+     publicReferenceDataManagementServiceStatus:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The status of the offered service (e.g. active, suspended, idle)
+   publicReferenceDataManagementServicingSessionStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The current operating status of the overall servicing session
+ SDPublicReferenceDataManagementFeedbackInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementFeedbackActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The feedback service call consolidated processing record
+   publicReferenceDataManagementFeedbackActionRecord:
+    type: object
+    properties:
+     publicReferenceDataManagementServicingSessionReference:
+      type: string
+      example: "796678"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the active servicing session
+     controlRecordInstanceReference:
+      type: string
+      example: "724385"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance if appropriate
+     behaviorQualifierInstanceReference:
+      type: string
+      example: "789747"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the behavior qualifier instance if appropriate
+     feedbackRecordType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The layout/type of the feedback provided
+     feedbackRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The content of the feedback in any suitable format and media
+ SDPublicReferenceDataManagementFeedbackOutputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementFeedbackActionTaskReference:
+    type: string
+    example: "SFATR765157"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a feedback service call
+   publicReferenceDataManagementFeedbackActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The feedback service call consolidated processing record
+   publicReferenceDataManagementFeedbackActionRecord:
+    type: object
+    properties:
+     feedbackRecordDateTime:
+      type: string
+      example: "09-22-2018"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+        general-info: The date/time the feedback submitted for consideration
+     feedbackRecordStatus:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The status of processing the feedback e.g. received, considered, responded to
+     employeeBusinessUnitReference:
+      type: string
+      example: "769031"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to business unit/employee responsible for handling feedback
+ SDPublicReferenceDataManagementRetrieveInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   publicReferenceDataManagementRetrieveActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service request (lists requested reports)
+   publicReferenceDataManagementRetrieveActionRecord:
+    type: object
+    properties:
+     publicReferenceDataManagementActivityAnalysis:
+      type: object
+      properties:
+       activityAnalysisReference:
+        type: string
+        example: "730230"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the internal activity analysis view maintained by the service center
+     publicReferenceDataManagementPerformanceAnalysis:
+      type: object
+      properties:
+       performanceAnalysisReference:
+        type: string
+        example: "761670"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the internal performance analysis view maintained by the service center
+     controlRecordPortfolioAnalysis:
+      type: object
+      properties:
+       controlRecordPortfolioAnalysisReference:
+        type: string
+        example: "739764"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the control record portfolio analysis view maintained by the service center
+   publicReferenceDataManagementOfferedService:
+    type: object
+    properties:
+     publicReferenceDataManagementServiceReference:
+      type: string
+      example: "776158"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to a service offered by the service center
+     publicReferenceDataManagementServiceRecord:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceVersion:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The version details of the service when appropriate
+ SDPublicReferenceDataManagementRetrieveOutputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementRetrieveActionTaskReference:
+    type: string
+    example: "SRATR795161"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a retrieve service call
+   publicReferenceDataManagementRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   publicReferenceDataManagementRetrieveActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service response (lists returned reports)
+   publicReferenceDataManagementRetrieveActionRecord:
+    type: object
+    properties:
+     publicReferenceDataManagementActivityAnalysis:
+      type: object
+      properties:
+       activityAnalysisReference:
+        type: string
+        example: "730230"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the internal activity analysis view maintained by the service center
+       activityAnalysisResult:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The results of the activity analysis that can be on-going, periodic and actual and projected
+       activityAnalysisReportType:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+          general-info: The type of activity analysis report available
+       activityAnalysisReport:
+        type: object
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+          general-info: The activity analysis report in any suitable form including selection filters where appropriate
+     publicReferenceDataManagementPerformanceAnalysis:
+      type: object
+      properties:
+       performanceAnalysisReference:
+        type: string
+        example: "761670"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the internal performance analysis view maintained by the service center
+       performanceAnalysisResult:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The results of the performance analysis that can be on-going or periodic
+       performanceAnalysisReportType:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+          general-info: The type of performance analysis report available
+       performanceAnalysisReport:
+        type: object
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+          general-info: The performance analysis report in any suitable form including selection filters where appropriate
+     controlRecordPortfolioAnalysis:
+      type: object
+      properties:
+       controlRecordPortfolioAnalysisReference:
+        type: string
+        example: "739764"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the control record portfolio analysis view maintained by the service center
+       controlRecordPortfolioAnalysisResult:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The results of the portfolio analysis that can be on-going, periodic and actual and projected (can be unstructured data)
+       controlRecordPortfolioAnalysisReportType:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+          general-info: The type of external portfolio analysis report available
+       controlRecordAnalysisReport:
+        type: object
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+          general-info: The external analysis report in any suitable form including selection filters where appropriate
+   publicReferenceDataManagementOfferedService:
+    type: object
+    properties:
+     publicReferenceDataManagementServiceReference:
+      type: string
+      example: "776158"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to a service offered by the service center
+     publicReferenceDataManagementServiceRecord:
+      type: object
+      properties:
+       publicReferenceDataManagementServiceType:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Refers to the different types of services offered
+       publicReferenceDataManagementServiceVersion:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The version details of the service when appropriate
+       publicReferenceDataManagementServiceDescription:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Description of the offered service 
+       publicReferenceDataManagementServicePoliciesandGuidelines:
+        type: object
+        properties:
+         publicReferenceDataManagementServiceEligibility:
+          type: string
+          description: |
+           `status: Not Mapped`
+            core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+            general-info: Policies and rules governing access to the offered service, includes eligibility and qualifications
+         publicReferenceDataManagementServiceIntendedUses:
+          type: string
+          description: |
+           `status: Not Mapped`
+            core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+            general-info: Guidelines covering allowed, intended use of the service
+         publicReferenceDataManagementServicePricingandTerms:
+          type: string
+          description: |
+           `status: Not Mapped`
+            core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+            general-info: Terms, prices, penalties associated with use of the service
+       publicReferenceDataManagementServiceSchedule:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Schedule defining when the accessed service is available
+ CRGlobalStandardSpecificationInitiateInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776314"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   globalStandardSpecificationInstanceStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of the Global Standard Specification instance (e.g. initialised, pending, active)
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776314"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR785986"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776314"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR785986"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776314"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR785986"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776314"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR785986"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776314"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR785986"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776314"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR785986"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+ CRGlobalStandardSpecificationInitiateOutputModel:
+  type: object
+  properties: 
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR785986"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   globalStandardSpecificationInitiateActionReference:
+    type: string
+    example: "GSSIAR733445"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an Initiate service call
+   globalStandardSpecificationInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   globalStandardSpecificationInstanceStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of the Global Standard Specification instance (e.g. initialised, pending, active)
+ CRGlobalStandardSpecificationUpdateInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR786992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR736381"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR786992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR736381"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   globalStandardSpecificationUpdateActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The update service call consolidated processing record
+   updateActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the update action service request
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR786992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR736381"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR786992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR736381"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR786992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR736381"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR786992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR736381"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR786992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR736381"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+ CRGlobalStandardSpecificationUpdateOutputModel:
+  type: object
+  properties: 
+   globalStandardSpecificationUpdateActionTaskReference:
+    type: string
+    example: "GSSUATR725815"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an update service call
+   globalStandardSpecificationUpdateActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The update service call consolidated processing record
+   updateResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the Update action service response
+ CRGlobalStandardSpecificationControlInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776440"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR760367"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776440"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR760367"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776440"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR760367"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   globalStandardSpecificationControlActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The processing control service call consolidated processing record
+   globalStandardSpecificationControlActionRequest:
+    type: object
+    properties:
+     controlActionType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The type of processing action requested (e.g. suspend, skip, terminate)
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776440"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR760367"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776440"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR760367"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776440"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR760367"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR776440"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR760367"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+ CRGlobalStandardSpecificationControlOutputModel:
+  type: object
+  properties: 
+   globalStandardSpecificationControlActionTaskReference:
+    type: string
+    example: "GSSCATR778648"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Global Standard Specification instance control processing service call
+   globalStandardSpecificationControlActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The processing control service call consolidated processing record
+   globalStandardSpecificationControlActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the control action service response
+ CRGlobalStandardSpecificationExchangeInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR723813"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR799069"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR723813"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR799069"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR723813"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR799069"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR723813"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR799069"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   globalStandardSpecificationExchangeActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The exchange service call consolidated processing record
+   globalStandardSpecificationExchangeActionRequest:
+    type: object
+    properties:
+     exchangeActionType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The type of exchange (e.g. accept, reject, verify)
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR723813"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR799069"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR723813"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR799069"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR723813"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR799069"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+ CRGlobalStandardSpecificationExchangeOutputModel:
+  type: object
+  properties: 
+   globalStandardSpecificationExchangeActionTaskReference:
+    type: string
+    example: "GSSEATR757842"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Global Standard Specification instance exchange service call
+   globalStandardSpecificationExchangeActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The exchange service call consolidated processing record
+   globalStandardSpecificationExchangeActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the exchange action service response
+ CRGlobalStandardSpecificationCaptureInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR707068"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR704001"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR707068"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR704001"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR707068"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR704001"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR707068"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR704001"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR707068"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR704001"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   globalStandardSpecificationCaptureActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The capture service call consolidated processing record
+   captureRecordType:
+    type: object
+    properties:
+     captureInputRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: Structured input transaction/record (e.g. timesheet, event record, account posting)
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR707068"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR704001"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR707068"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR704001"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+ CRGlobalStandardSpecificationCaptureOutputModel:
+  type: object
+  properties: 
+   globalStandardSpecificationCaptureActionTaskReference:
+    type: string
+    example: "GSSCATR786971"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Global Standard Specification instance capture service call
+   globalStandardSpecificationCaptureActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The capture service call consolidated processing record
+   captureRecordReference:
+    type: string
+    example: "CRR715521"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the structured input transaction/record
+   captureResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the capture action service response
+ CRGlobalStandardSpecificationRequestInputModel:
+  type: object
+  properties: 
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR783044"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR726756"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR783044"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR726756"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR783044"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR726756"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR783044"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR726756"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR783044"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR726756"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR783044"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR726756"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+   globalStandardSpecificationRequestActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The request service call consolidated processing record
+   requestRecordType:
+    type: object
+    properties:
+     requestInputRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: Request service record (e.g. rework function, refresh record, process workstep)
+   publicReferenceDataManagementServicingSessionReference:
+    type: string
+    example: "PRDMSSR783044"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   globalStandardSpecificationInstanceReference:
+    type: string
+    example: "GSSIR726756"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Global Standard Specification instance
+ CRGlobalStandardSpecificationRequestOutputModel:
+  type: object
+  properties: 
+   globalStandardSpecificationRequestActionTaskReference:
+    type: string
+    example: "GSSRATR759547"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Global Standard Specification instance request service call
+   globalStandardSpecificationRequestActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The request service call consolidated processing record
+   requestRecordReference:
+    type: string
+    example: "RRR727072"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the service request record
+   requestResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the request action service response
+ CRGlobalStandardSpecificationRetrieveInputModel:
+  type: object
+  properties: 
+   globalStandardSpecificationRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   globalStandardSpecificationRetrieveActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service request (lists requested reports)
+   globalStandardSpecificationInstanceReportRecord:
+    type: object
+    properties:
+     globalStandardSpecificationInstanceReportReference:
+      type: string
+      example: "PRDMSSR719269"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance report
+     globalStandardSpecificationInstanceReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external report available
+     globalStandardSpecificationInstanceReportParameters:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The selection parameters for the report (e.g. period, content type)
+   globalStandardSpecificationInstanceAnalysis:
+    type: object
+    properties:
+     globalStandardSpecificationInstanceAnalysisReference:
+      type: string
+      example: "PRDMSSR719269"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance analysis view
+     globalStandardSpecificationInstanceAnalysisReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external performance analysis report available
+     globalStandardSpecificationInstanceAnalysisParameters:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The selection parameters for the analysis (e.g. period, algorithm type)
+ CRGlobalStandardSpecificationRetrieveOutputModel:
+  type: object
+  properties: 
+   globalStandardSpecificationRetrieveActionTaskReference:
+    type: string
+    example: "GSSRATR788671"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Global Standard Specification instance retrieve service call
+   globalStandardSpecificationRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   globalStandardSpecificationRetrieveActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service response (lists returned reports)
+   globalStandardSpecificationInstanceReportRecord:
+    type: object
+    properties:
+     globalStandardSpecificationInstanceReportData:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The input information used to assemble the report that can be on-going, periodic and actual and projected
+     globalStandardSpecificationInstanceReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external report available
+     globalStandardSpecificationInstanceReport:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The external report in any suitable form including selection filters where appropriate
+   globalStandardSpecificationInstanceAnalysis:
+    type: object
+    properties:
+     globalStandardSpecificationInstanceAnalysisData:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The inputs and results of the instance analysis that can be on-going, periodic and actual and projected
+     globalStandardSpecificationInstanceAnalysisReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external performance analysis report available
+     globalStandardSpecificationInstanceAnalysisReport:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The external analysis report in any suitable form including selection filters where appropriate
