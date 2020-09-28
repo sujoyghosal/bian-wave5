@@ -1433,12 +1433,12 @@ paths:
           description: Successfully  Retrieved Withdrawals Instance Record
           schema:
             $ref: '#/definitions/BQWithdrawalsRetrieveOutputModel'
-  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/bqcorporateaction/initiation:
+  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/corporateaction/initiation:
     post:
       tags:
       - initiate
-      operationId: initiateLeasingArrangementBQCorporateAction
-      summary: Details of a new BQCorporateAction instance
+      operationId: initiateLeasingArrangementCorporateAction
+      summary: Details of a new CorporateAction instance
       description: Instantiate a new Corporate Action
       produces:
       - application/json
@@ -1458,18 +1458,18 @@ paths:
         required: true
         description: Leasing Arrangement Request Payload
         schema:
-          $ref: '#/definitions/BQBQCorporateActionInitiateInputModel'
+          $ref: '#/definitions/BQCorporateActionInitiateInputModel'
       responses:
         201:
           description: Successful initiation of Leasing Arrangement instance
           schema:
-            $ref: '#/definitions/BQBQCorporateActionInitiateOutputModel'
-  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/bqcorporateaction/{bq-reference-id}/update:
+            $ref: '#/definitions/BQCorporateActionInitiateOutputModel'
+  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/corporateaction/{bq-reference-id}/update:
     put:
       tags:
       - update
-      operationId: updateLeasingArrangementBQCorporateAction
-      summary: Update to any amendable fields of the BQCorporateAction instance
+      operationId: updateLeasingArrangementCorporateAction
+      summary: Update to any amendable fields of the CorporateAction instance
       description: Update details relating to Corporate Action
       produces:
       - application/json
@@ -1486,26 +1486,26 @@ paths:
         type: string
       - name: bq-reference-id
         in: path
-        description: BQCorporateAction Instance Reference
+        description: CorporateAction Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: BQCorporateAction Request Payload
+        description: CorporateAction Request Payload
         schema:
-          $ref: '#/definitions/BQBQCorporateActionUpdateInputModel'
+          $ref: '#/definitions/BQCorporateActionUpdateInputModel'
       responses:
         200:
-          description: Successfully Updated BQCorporateAction Instance
+          description: Successfully Updated CorporateAction Instance
           schema:
-            $ref: '#/definitions/BQBQCorporateActionUpdateOutputModel'
-  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/bqcorporateaction/{bq-reference-id}/:
+            $ref: '#/definitions/BQCorporateActionUpdateOutputModel'
+  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/corporateaction/{bq-reference-id}/:
     get:
       tags:
       - retrieve
-      operationId: retrieveLeasingArrangementBQCorporateAction
-      summary: Invoke a reporting action to obtain a BQCorporateAction instance related report.
+      operationId: retrieveLeasingArrangementCorporateAction
+      summary: Invoke a reporting action to obtain a CorporateAction instance related report.
       description: Retrieve details about any aspect of Corporate Action .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
       produces:
       - application/json
@@ -1522,25 +1522,25 @@ paths:
         type: string
       - name: bq-reference-id
         in: path
-        description: BQCorporateAction Instance Reference
+        description: CorporateAction Instance Reference
         required: true
         type: string
       - in: query
         name: queryparams
         required: false
-        description: Query params from schema '#/definitions/BQBQCorporateActionRetrieveInputModel'
+        description: Query params from schema '#/definitions/BQCorporateActionRetrieveInputModel'
         type: string
       responses:
         200:
-          description: Successfully  Retrieved BQCorporateAction Instance Record
+          description: Successfully  Retrieved CorporateAction Instance Record
           schema:
-            $ref: '#/definitions/BQBQCorporateActionRetrieveOutputModel'
-  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/bqfinancialinstrument/initiation:
+            $ref: '#/definitions/BQCorporateActionRetrieveOutputModel'
+  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/financialinstrument/initiation:
     post:
       tags:
       - initiate
-      operationId: initiateLeasingArrangementBQFinancialInstrument
-      summary: Details of a new BQFinancialInstrument instance
+      operationId: initiateLeasingArrangementFinancialInstrument
+      summary: Details of a new FinancialInstrument instance
       description: Instantiate a new Financial Instrument
       produces:
       - application/json
@@ -1560,18 +1560,18 @@ paths:
         required: true
         description: Leasing Arrangement Request Payload
         schema:
-          $ref: '#/definitions/BQBQFinancialInstrumentInitiateInputModel'
+          $ref: '#/definitions/BQFinancialInstrumentInitiateInputModel'
       responses:
         201:
           description: Successful initiation of Leasing Arrangement instance
           schema:
-            $ref: '#/definitions/BQBQFinancialInstrumentInitiateOutputModel'
-  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/bqfinancialinstrument/{bq-reference-id}/update:
+            $ref: '#/definitions/BQFinancialInstrumentInitiateOutputModel'
+  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/financialinstrument/{bq-reference-id}/update:
     put:
       tags:
       - update
-      operationId: updateLeasingArrangementBQFinancialInstrument
-      summary: Update to any amendable fields of the BQFinancialInstrument instance
+      operationId: updateLeasingArrangementFinancialInstrument
+      summary: Update to any amendable fields of the FinancialInstrument instance
       description: Update details relating to Financial Instrument
       produces:
       - application/json
@@ -1588,26 +1588,26 @@ paths:
         type: string
       - name: bq-reference-id
         in: path
-        description: BQFinancialInstrument Instance Reference
+        description: FinancialInstrument Instance Reference
         required: true
         type: string
       - in: body
         name: body
         required: true
-        description: BQFinancialInstrument Request Payload
+        description: FinancialInstrument Request Payload
         schema:
-          $ref: '#/definitions/BQBQFinancialInstrumentUpdateInputModel'
+          $ref: '#/definitions/BQFinancialInstrumentUpdateInputModel'
       responses:
         200:
-          description: Successfully Updated BQFinancialInstrument Instance
+          description: Successfully Updated FinancialInstrument Instance
           schema:
-            $ref: '#/definitions/BQBQFinancialInstrumentUpdateOutputModel'
-  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/bqfinancialinstrument/{bq-reference-id}/:
+            $ref: '#/definitions/BQFinancialInstrumentUpdateOutputModel'
+  /leasing/{sd-reference-id}/leasing-arrangement/{cr-reference-id}/financialinstrument/{bq-reference-id}/:
     get:
       tags:
       - retrieve
-      operationId: retrieveLeasingArrangementBQFinancialInstrument
-      summary: Invoke a reporting action to obtain a BQFinancialInstrument instance related report.
+      operationId: retrieveLeasingArrangementFinancialInstrument
+      summary: Invoke a reporting action to obtain a FinancialInstrument instance related report.
       description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
       produces:
       - application/json
@@ -1624,19 +1624,19 @@ paths:
         type: string
       - name: bq-reference-id
         in: path
-        description: BQFinancialInstrument Instance Reference
+        description: FinancialInstrument Instance Reference
         required: true
         type: string
       - in: query
         name: queryparams
         required: false
-        description: Query params from schema '#/definitions/BQBQFinancialInstrumentRetrieveInputModel'
+        description: Query params from schema '#/definitions/BQFinancialInstrumentRetrieveInputModel'
         type: string
       responses:
         200:
-          description: Successfully  Retrieved BQFinancialInstrument Instance Record
+          description: Successfully  Retrieved FinancialInstrument Instance Record
           schema:
-            $ref: '#/definitions/BQBQFinancialInstrumentRetrieveOutputModel'
+            $ref: '#/definitions/BQFinancialInstrumentRetrieveOutputModel'
   /leasing/{sd-reference-id}/leasing-arrangement:
     get:
       tags:
@@ -2366,7 +2366,7 @@ definitions:
   properties: 
    leasingServicingSessionReference:
     type: string
-    example: "LSSR737631"
+    example: "LSSR787792"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2403,7 +2403,7 @@ definitions:
       general-info: The type of Leasing Arrangement
    leasingArrangementReference:
     type: string
-    example: "LAR700230"
+    example: "LAR741028"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2429,7 +2429,7 @@ definitions:
       general-info: The curreny which is arranged in Leasing Arrangement
    leasingArrangementRegulationReference:
     type: string
-    example: "LARR748352"
+    example: "LARR796929"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2460,7 +2460,7 @@ definitions:
       general-info: The type of account which is linked to Leasing Arrangement
    leasingArrangementAccountReference:
     type: string
-    example: "LAAR792778"
+    example: "LAAR732660"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2470,14 +2470,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR714282"
+    example: "LAIR799889"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Leasing Arrangement instance
    leasingArrangementInitiateActionReference:
     type: string
-    example: "LAIAR783722"
+    example: "LAIAR763623"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2523,14 +2523,14 @@ definitions:
   properties: 
    leasingServicingSessionReference:
     type: string
-    example: "LSSR793040"
+    example: "LSSR729575"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR702758"
+    example: "LAIR706667"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2555,7 +2555,7 @@ definitions:
       general-info: The type of Leasing Arrangement
    leasingArrangementReference:
     type: string
-    example: "LAR784665"
+    example: "LAR753586"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2581,7 +2581,7 @@ definitions:
       general-info: The curreny which is arranged in Leasing Arrangement
    leasingArrangementRegulationReference:
     type: string
-    example: "LARR731185"
+    example: "LARR707070"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2612,7 +2612,7 @@ definitions:
       general-info: The type of account which is linked to Leasing Arrangement
    leasingArrangementAccountReference:
     type: string
-    example: "LAAR757815"
+    example: "LAAR791904"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2658,7 +2658,7 @@ definitions:
       general-info: The status of Leasing Arrangement
    leasingArrangementUpdateActionTaskReference:
     type: string
-    example: "LAUATR700493"
+    example: "LAUATR740711"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2680,14 +2680,14 @@ definitions:
   properties: 
    leasingServicingSessionReference:
     type: string
-    example: "LSSR784946"
+    example: "LSSR769508"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR758816"
+    example: "LAIR779073"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2712,7 +2712,7 @@ definitions:
       general-info: The type of Leasing Arrangement
    leasingArrangementReference:
     type: string
-    example: "LAR775085"
+    example: "LAR711640"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2738,7 +2738,7 @@ definitions:
       general-info: The curreny which is arranged in Leasing Arrangement
    leasingArrangementRegulationReference:
     type: string
-    example: "LARR719659"
+    example: "LARR726625"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2769,7 +2769,7 @@ definitions:
       general-info: The type of account which is linked to Leasing Arrangement
    leasingArrangementAccountReference:
     type: string
-    example: "LAAR716681"
+    example: "LAAR713866"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2818,7 +2818,7 @@ definitions:
       general-info: The status of Leasing Arrangement
    leasingArrangementControlActionTaskReference:
     type: string
-    example: "LACATR779113"
+    example: "LACATR784900"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2840,14 +2840,14 @@ definitions:
   properties: 
    leasingServicingSessionReference:
     type: string
-    example: "LSSR751731"
+    example: "LSSR714451"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR739563"
+    example: "LAIR700292"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2872,7 +2872,7 @@ definitions:
       general-info: The type of Leasing Arrangement
    leasingArrangementReference:
     type: string
-    example: "LAR753759"
+    example: "LAR767604"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2898,7 +2898,7 @@ definitions:
       general-info: The curreny which is arranged in Leasing Arrangement
    leasingArrangementRegulationReference:
     type: string
-    example: "LARR712889"
+    example: "LARR790498"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2929,7 +2929,7 @@ definitions:
       general-info: The type of account which is linked to Leasing Arrangement
    leasingArrangementAccountReference:
     type: string
-    example: "LAAR778663"
+    example: "LAAR767498"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2978,7 +2978,7 @@ definitions:
       general-info: The status of Leasing Arrangement
    leasingArrangementExchangeActionTaskReference:
     type: string
-    example: "LAEATR733063"
+    example: "LAEATR704795"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3000,14 +3000,14 @@ definitions:
   properties: 
    leasingServicingSessionReference:
     type: string
-    example: "LSSR735648"
+    example: "LSSR720687"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR760036"
+    example: "LAIR756227"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3032,7 +3032,7 @@ definitions:
       general-info: The type of Leasing Arrangement
    leasingArrangementReference:
     type: string
-    example: "LAR770728"
+    example: "LAR792651"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3058,7 +3058,7 @@ definitions:
       general-info: The curreny which is arranged in Leasing Arrangement
    leasingArrangementRegulationReference:
     type: string
-    example: "LARR704603"
+    example: "LARR738800"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3089,7 +3089,7 @@ definitions:
       general-info: The type of account which is linked to Leasing Arrangement
    leasingArrangementAccountReference:
     type: string
-    example: "LAAR775965"
+    example: "LAAR749534"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3138,7 +3138,7 @@ definitions:
       general-info: The status of Leasing Arrangement
    leasingArrangementExecuteActionTaskReference:
     type: string
-    example: "LAEATR778859"
+    example: "LAEATR771715"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3151,7 +3151,7 @@ definitions:
       general-info: The execute service call consolidated processing record
    executeRecordReference:
     type: string
-    example: "ERR799916"
+    example: "ERR716158"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3167,14 +3167,14 @@ definitions:
   properties: 
    leasingServicingSessionReference:
     type: string
-    example: "LSSR780254"
+    example: "LSSR756733"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR714069"
+    example: "LAIR793552"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3199,7 +3199,7 @@ definitions:
       general-info: The type of Leasing Arrangement
    leasingArrangementReference:
     type: string
-    example: "LAR765467"
+    example: "LAR796718"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3225,7 +3225,7 @@ definitions:
       general-info: The curreny which is arranged in Leasing Arrangement
    leasingArrangementRegulationReference:
     type: string
-    example: "LARR752473"
+    example: "LARR786008"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3256,7 +3256,7 @@ definitions:
       general-info: The type of account which is linked to Leasing Arrangement
    leasingArrangementAccountReference:
     type: string
-    example: "LAAR742830"
+    example: "LAAR745314"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3305,7 +3305,7 @@ definitions:
       general-info: The status of Leasing Arrangement
    leasingArrangementRequestActionTaskReference:
     type: string
-    example: "LARATR767785"
+    example: "LARATR773673"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3318,7 +3318,7 @@ definitions:
       general-info: The request service call consolidated processing record
    requestRecordReference:
     type: string
-    example: "RRR728804"
+    example: "RRR727619"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3349,7 +3349,7 @@ definitions:
     properties:
      leasingArrangementInstanceReportReference:
       type: string
-      example: "LSSR753436"
+      example: "LSSR751044"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3371,7 +3371,7 @@ definitions:
     properties:
      leasingArrangementInstanceAnalysisReference:
       type: string
-      example: "LSSR753436"
+      example: "LSSR751044"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3411,7 +3411,7 @@ definitions:
       general-info: The type of Leasing Arrangement
    leasingArrangementReference:
     type: string
-    example: "LAR729422"
+    example: "LAR745590"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3437,7 +3437,7 @@ definitions:
       general-info: The curreny which is arranged in Leasing Arrangement
    leasingArrangementRegulationReference:
     type: string
-    example: "LARR771980"
+    example: "LARR747068"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3468,14 +3468,14 @@ definitions:
       general-info: The type of account which is linked to Leasing Arrangement
    leasingArrangementAccountReference:
     type: string
-    example: "LAAR740923"
+    example: "LAAR762688"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the account which is linked to Leasing Arrangement
    leasingArrangementRetrieveActionTaskReference:
     type: string
-    example: "LARATR756287"
+    example: "LARATR756262"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3539,14 +3539,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR704567"
+    example: "LAIR764731"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    interestInstanceReference:
     type: string
-    example: "IIR779472"
+    example: "IIR716796"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3676,7 +3676,7 @@ definitions:
       general-info: 
    interestUpdateActionTaskReference:
     type: string
-    example: "IUATR752008"
+    example: "IUATR784535"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3713,7 +3713,7 @@ definitions:
     properties:
      interestInstanceReportReference:
       type: string
-      example: "LSSR705264"
+      example: "LSSR746958"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3723,7 +3723,7 @@ definitions:
     properties:
      interestInstanceAnalysisReference:
       type: string
-      example: "LSSR705264"
+      example: "LSSR746958"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3787,7 +3787,7 @@ definitions:
       general-info: 
    interestRetrieveActionTaskReference:
     type: string
-    example: "IRATR739258"
+    example: "IRATR722982"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3863,7 +3863,7 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR773549"
+    example: "LAIR779254"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3933,14 +3933,14 @@ definitions:
   properties: 
    issuedDeviceInstanceReference:
     type: string
-    example: "IDIR748970"
+    example: "IDIR770447"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Issued Device instance
    issuedDeviceInitiateActionReference:
     type: string
-    example: "IDIAR793608"
+    example: "IDIAR785254"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4016,14 +4016,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR720563"
+    example: "LAIR786322"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    issuedDeviceInstanceReference:
     type: string
-    example: "IDIR782677"
+    example: "IDIR725232"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4153,7 +4153,7 @@ definitions:
       general-info: 
    issuedDeviceUpdateActionTaskReference:
     type: string
-    example: "IDUATR775976"
+    example: "IDUATR767262"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4190,7 +4190,7 @@ definitions:
     properties:
      issuedDeviceInstanceReportReference:
       type: string
-      example: "LSSR790185"
+      example: "LSSR791823"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4200,7 +4200,7 @@ definitions:
     properties:
      issuedDeviceInstanceAnalysisReference:
       type: string
-      example: "LSSR790185"
+      example: "LSSR791823"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4264,7 +4264,7 @@ definitions:
       general-info: 
    issuedDeviceRetrieveActionTaskReference:
     type: string
-    example: "IDRATR719939"
+    example: "IDRATR797916"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4340,7 +4340,7 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR731586"
+    example: "LAIR758178"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4410,14 +4410,14 @@ definitions:
   properties: 
    feesInstanceReference:
     type: string
-    example: "FIR736308"
+    example: "FIR726759"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Fees instance
    feesInitiateActionReference:
     type: string
-    example: "FIAR792524"
+    example: "FIAR705753"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4493,14 +4493,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR719123"
+    example: "LAIR775211"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    feesInstanceReference:
     type: string
-    example: "FIR724166"
+    example: "FIR743823"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4630,7 +4630,7 @@ definitions:
       general-info: 
    feesUpdateActionTaskReference:
     type: string
-    example: "FUATR793557"
+    example: "FUATR753643"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4652,14 +4652,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR707030"
+    example: "LAIR702467"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    feesInstanceReference:
     type: string
-    example: "FIR707576"
+    example: "FIR706006"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4792,7 +4792,7 @@ definitions:
       general-info: 
    feesExchangeActionTaskReference:
     type: string
-    example: "FEATR760618"
+    example: "FEATR760601"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4820,14 +4820,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR741877"
+    example: "LAIR719644"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    feesInstanceReference:
     type: string
-    example: "FIR710466"
+    example: "FIR758084"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4960,7 +4960,7 @@ definitions:
       general-info: 
    feesRequestActionTaskReference:
     type: string
-    example: "FRATR755703"
+    example: "FRATR778656"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -4973,7 +4973,7 @@ definitions:
       general-info: The request service call consolidated processing record
    feesRequestRecordReference:
     type: string
-    example: "FRRR791071"
+    example: "FRRR711149"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5004,7 +5004,7 @@ definitions:
     properties:
      feesInstanceReportReference:
       type: string
-      example: "LSSR768480"
+      example: "LSSR769001"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5014,7 +5014,7 @@ definitions:
     properties:
      feesInstanceAnalysisReference:
       type: string
-      example: "LSSR768480"
+      example: "LSSR769001"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5078,7 +5078,7 @@ definitions:
       general-info: 
    feesRetrieveActionTaskReference:
     type: string
-    example: "FRATR741508"
+    example: "FRATR758716"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5154,7 +5154,7 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR753318"
+    example: "LAIR774128"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5224,14 +5224,14 @@ definitions:
   properties: 
    paymentsInstanceReference:
     type: string
-    example: "PIR733967"
+    example: "PIR778768"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Payments instance
    paymentsInitiateActionReference:
     type: string
-    example: "PIAR784798"
+    example: "PIAR784981"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5307,14 +5307,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR703689"
+    example: "LAIR796508"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    paymentsInstanceReference:
     type: string
-    example: "PIR730414"
+    example: "PIR714382"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5444,7 +5444,7 @@ definitions:
       general-info: 
    paymentsUpdateActionTaskReference:
     type: string
-    example: "PUATR760101"
+    example: "PUATR712556"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5466,14 +5466,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR707777"
+    example: "LAIR763006"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    paymentsInstanceReference:
     type: string
-    example: "PIR790650"
+    example: "PIR757980"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5606,7 +5606,7 @@ definitions:
       general-info: 
    paymentsExchangeActionTaskReference:
     type: string
-    example: "PEATR764684"
+    example: "PEATR764805"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5649,7 +5649,7 @@ definitions:
     properties:
      paymentsInstanceReportReference:
       type: string
-      example: "LSSR716825"
+      example: "LSSR795226"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5659,7 +5659,7 @@ definitions:
     properties:
      paymentsInstanceAnalysisReference:
       type: string
-      example: "LSSR716825"
+      example: "LSSR795226"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5723,7 +5723,7 @@ definitions:
       general-info: 
    paymentsRetrieveActionTaskReference:
     type: string
-    example: "PRATR727674"
+    example: "PRATR757769"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5799,7 +5799,7 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR759716"
+    example: "LAIR701526"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5869,14 +5869,14 @@ definitions:
   properties: 
    collateralInstanceReference:
     type: string
-    example: "CIR779392"
+    example: "CIR736500"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Collateral instance
    collateralInitiateActionReference:
     type: string
-    example: "CIAR722957"
+    example: "CIAR789669"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -5952,14 +5952,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR745556"
+    example: "LAIR720034"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    collateralInstanceReference:
     type: string
-    example: "CIR750724"
+    example: "CIR748243"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6089,7 +6089,7 @@ definitions:
       general-info: 
    collateralUpdateActionTaskReference:
     type: string
-    example: "CUATR727253"
+    example: "CUATR728395"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6111,14 +6111,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR712661"
+    example: "LAIR716923"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    collateralInstanceReference:
     type: string
-    example: "CIR776337"
+    example: "CIR706816"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6251,7 +6251,7 @@ definitions:
       general-info: 
    collateralRequestActionTaskReference:
     type: string
-    example: "CRATR719871"
+    example: "CRATR729712"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6264,7 +6264,7 @@ definitions:
       general-info: The request service call consolidated processing record
    collateralRequestRecordReference:
     type: string
-    example: "CRRR726615"
+    example: "CRRR766478"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6295,7 +6295,7 @@ definitions:
     properties:
      collateralInstanceReportReference:
       type: string
-      example: "LSSR764324"
+      example: "LSSR735237"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6305,7 +6305,7 @@ definitions:
     properties:
      collateralInstanceAnalysisReference:
       type: string
-      example: "LSSR764324"
+      example: "LSSR735237"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6369,7 +6369,7 @@ definitions:
       general-info: 
    collateralRetrieveActionTaskReference:
     type: string
-    example: "CRATR710082"
+    example: "CRATR717377"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6445,7 +6445,7 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR780721"
+    example: "LAIR768985"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6515,14 +6515,14 @@ definitions:
   properties: 
    lienInstanceReference:
     type: string
-    example: "LIR744454"
+    example: "LIR732119"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Lien instance
    lienInitiateActionReference:
     type: string
-    example: "LIAR780515"
+    example: "LIAR701971"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6598,14 +6598,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR772696"
+    example: "LAIR755738"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    lienInstanceReference:
     type: string
-    example: "LIR754946"
+    example: "LIR787376"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6735,7 +6735,7 @@ definitions:
       general-info: 
    lienUpdateActionTaskReference:
     type: string
-    example: "LUATR797243"
+    example: "LUATR795915"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6757,14 +6757,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR728972"
+    example: "LAIR773224"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    lienInstanceReference:
     type: string
-    example: "LIR782229"
+    example: "LIR793078"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6897,7 +6897,7 @@ definitions:
       general-info: 
    lienExchangeActionTaskReference:
     type: string
-    example: "LEATR788328"
+    example: "LEATR719615"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6940,7 +6940,7 @@ definitions:
     properties:
      lienInstanceReportReference:
       type: string
-      example: "LSSR746385"
+      example: "LSSR787825"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -6950,7 +6950,7 @@ definitions:
     properties:
      lienInstanceAnalysisReference:
       type: string
-      example: "LSSR746385"
+      example: "LSSR787825"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7014,7 +7014,7 @@ definitions:
       general-info: 
    lienRetrieveActionTaskReference:
     type: string
-    example: "LRATR787047"
+    example: "LRATR765541"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7090,7 +7090,7 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR745567"
+    example: "LAIR706001"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7160,14 +7160,14 @@ definitions:
   properties: 
    sweepInstanceReference:
     type: string
-    example: "SIR784616"
+    example: "SIR768049"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Sweep instance
    sweepInitiateActionReference:
     type: string
-    example: "SIAR731753"
+    example: "SIAR728930"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7243,14 +7243,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR761747"
+    example: "LAIR762082"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    sweepInstanceReference:
     type: string
-    example: "SIR763590"
+    example: "SIR783022"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7380,7 +7380,7 @@ definitions:
       general-info: 
    sweepUpdateActionTaskReference:
     type: string
-    example: "SUATR763463"
+    example: "SUATR712725"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7402,14 +7402,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR735038"
+    example: "LAIR737563"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    sweepInstanceReference:
     type: string
-    example: "SIR750090"
+    example: "SIR745353"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7542,7 +7542,7 @@ definitions:
       general-info: 
    sweepExchangeActionTaskReference:
     type: string
-    example: "SEATR736399"
+    example: "SEATR759287"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7585,7 +7585,7 @@ definitions:
     properties:
      sweepInstanceReportReference:
       type: string
-      example: "LSSR762563"
+      example: "LSSR751691"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7595,7 +7595,7 @@ definitions:
     properties:
      sweepInstanceAnalysisReference:
       type: string
-      example: "LSSR762563"
+      example: "LSSR751691"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7659,7 +7659,7 @@ definitions:
       general-info: 
    sweepRetrieveActionTaskReference:
     type: string
-    example: "SRATR751670"
+    example: "SRATR729484"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7735,7 +7735,7 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR725297"
+    example: "LAIR762622"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7805,14 +7805,14 @@ definitions:
   properties: 
    depositsInstanceReference:
     type: string
-    example: "IDIR758875"
+    example: "IDIR715422"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Deposits instance
    depositsInitiateActionReference:
     type: string
-    example: "IDIAR761447"
+    example: "IDIAR737342"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -7888,14 +7888,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR775483"
+    example: "LAIR704456"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    depositsInstanceReference:
     type: string
-    example: "IDIR762850"
+    example: "IDIR734567"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8025,7 +8025,7 @@ definitions:
       general-info: 
    depositsUpdateActionTaskReference:
     type: string
-    example: "IDUATR716305"
+    example: "IDUATR713589"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8062,7 +8062,7 @@ definitions:
     properties:
      depositsInstanceReportReference:
       type: string
-      example: "LSSR791014"
+      example: "LSSR781885"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8072,7 +8072,7 @@ definitions:
     properties:
      depositsInstanceAnalysisReference:
       type: string
-      example: "LSSR791014"
+      example: "LSSR781885"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8136,7 +8136,7 @@ definitions:
       general-info: 
    depositsRetrieveActionTaskReference:
     type: string
-    example: "IDRATR752570"
+    example: "IDRATR711771"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8212,7 +8212,7 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR738783"
+    example: "LAIR766553"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8282,14 +8282,14 @@ definitions:
   properties: 
    withdrawalsInstanceReference:
     type: string
-    example: "WIR788249"
+    example: "WIR778833"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Withdrawals instance
    withdrawalsInitiateActionReference:
     type: string
-    example: "WIAR718996"
+    example: "WIAR744258"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8365,14 +8365,14 @@ definitions:
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR776854"
+    example: "LAIR785307"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
    withdrawalsInstanceReference:
     type: string
-    example: "WIR729817"
+    example: "WIR787855"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8502,7 +8502,7 @@ definitions:
       general-info: 
    withdrawalsUpdateActionTaskReference:
     type: string
-    example: "WUATR737716"
+    example: "WUATR725577"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8539,7 +8539,7 @@ definitions:
     properties:
      withdrawalsInstanceReportReference:
       type: string
-      example: "LSSR791263"
+      example: "LSSR749964"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8549,7 +8549,7 @@ definitions:
     properties:
      withdrawalsInstanceAnalysisReference:
       type: string
-      example: "LSSR791263"
+      example: "LSSR749964"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8613,7 +8613,7 @@ definitions:
       general-info: 
    withdrawalsRetrieveActionTaskReference:
     type: string
-    example: "WRATR766131"
+    example: "WRATR709595"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -8684,91 +8684,307 @@ definitions:
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The external analysis report in any suitable form including selection filters where appropriate
- BQBQCorporateActionInitiateInputModel:
+ BQCorporateActionInitiateInputModel:
   type: object
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR794985"
+    example: "LAIR733048"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
-   bQCorporateActionInitiateActionRecord:
+   corporateActionInitiateActionRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The Initiate service call input and output record
- BQBQCorporateActionInitiateOutputModel:
-  type: object
-  properties: 
-   bQCorporateActionInstanceReference:
-    type: string
-    example: "BCAIR736835"
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the BQ Corporate Action instance
-   bQCorporateActionInitiateActionReference:
-    type: string
-    example: "BCAIAR726079"
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to an Initiate service call
-   bQCorporateActionInitiateActionRecord:
-    type: object
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
-      general-info: The Initiate service call input and output record
-   bQCorporateActionInstanceStatus:
+   corporateActionPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The status of the BQ Corporate Action instance (e.g. initialised, pending, active)
- BQBQCorporateActionUpdateInputModel:
+      general-info: The required status/situation prior to the implementation of the feature
+   corporateActionFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   bSCorporateActionProcessing:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Leasing Arrangement specific Business Service
+   corporateActionPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   corporateActionBSCorporateActionProcessingServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   corporateActionBSCorporateActionProcessingServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   corporateActionBSCorporateActionProcessingServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   corporateActionBSCorporateActionProcessingServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   corporateActionBSCorporateActionProcessingServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+ BQCorporateActionInitiateOutputModel:
+  type: object
+  properties: 
+   corporateActionInstanceReference:
+    type: string
+    example: "CAIR706825"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Corporate Action instance
+   corporateActionInitiateActionReference:
+    type: string
+    example: "CAIAR716018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an Initiate service call
+   corporateActionInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   corporateActionInstanceStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of the Corporate Action instance (e.g. initialised, pending, active)
+   corporateActionPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the implementation of the feature
+   corporateActionFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   bSCorporateActionProcessing:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Leasing Arrangement specific Business Service
+   corporateActionPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   corporateActionBSCorporateActionProcessingServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   corporateActionBSCorporateActionProcessingServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   corporateActionBSCorporateActionProcessingServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   corporateActionBSCorporateActionProcessingServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   corporateActionBSCorporateActionProcessingServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+ BQCorporateActionUpdateInputModel:
   type: object
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR793329"
+    example: "LAIR724181"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
-   bQCorporateActionInstanceReference:
+   corporateActionInstanceReference:
     type: string
-    example: "BCAIR743031"
+    example: "CAIR717876"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the BQ Corporate Action instance
-   bQCorporateActionUpdateActionTaskRecord:
+      general-info: Reference to the Corporate Action instance
+   corporateActionPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the implementation of the feature
+   corporateActionFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   bSCorporateActionProcessing:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Leasing Arrangement specific Business Service
+   corporateActionPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   corporateActionBSCorporateActionProcessingServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   corporateActionBSCorporateActionProcessingServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   corporateActionBSCorporateActionProcessingServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   corporateActionBSCorporateActionProcessingServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   corporateActionBSCorporateActionProcessingServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+   corporateActionUpdateActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The update service call consolidated processing record
-   bQCorporateActionUpdateActionRequest:
+   corporateActionUpdateActionRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the update action service request
- BQBQCorporateActionUpdateOutputModel:
+ BQCorporateActionUpdateOutputModel:
   type: object
   properties: 
-   bQCorporateActionUpdateActionTaskReference:
+   corporateActionPreconditions:
     type: string
-    example: "BCAUATR766354"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the implementation of the feature
+   corporateActionFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   bSCorporateActionProcessing:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Leasing Arrangement specific Business Service
+   corporateActionPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   corporateActionBSCorporateActionProcessingServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   corporateActionBSCorporateActionProcessingServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   corporateActionBSCorporateActionProcessingServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   corporateActionBSCorporateActionProcessingServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   corporateActionBSCorporateActionProcessingServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+   corporateActionUpdateActionTaskReference:
+    type: string
+    example: "CAUATR715664"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to an update service call
-   bQCorporateActionUpdateActionTaskRecord:
+   corporateActionUpdateActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
@@ -8780,202 +8996,424 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: Details of the Update action service response
- BQBQCorporateActionRetrieveInputModel:
+ BQCorporateActionRetrieveInputModel:
   type: object
   properties: 
-   bQCorporateActionRetrieveActionTaskRecord:
+   corporateActionRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   bQCorporateActionRetrieveActionRequest:
+   corporateActionRetrieveActionRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service request (lists requested reports)
-   bQCorporateActionInstanceReport:
+   corporateActionInstanceReport:
     type: object
     properties:
-     bQCorporateActionInstanceReportReference:
+     corporateActionInstanceReportReference:
       type: string
-      example: "LSSR718258"
+      example: "LSSR713667"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to the control record instance report
-   bQCorporateActionInstanceAnalysis:
+   corporateActionInstanceAnalysis:
     type: object
     properties:
-     bQCorporateActionInstanceAnalysisReference:
+     corporateActionInstanceAnalysisReference:
       type: string
-      example: "LSSR718258"
+      example: "LSSR713667"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to the control record instance analysis view
- BQBQCorporateActionRetrieveOutputModel:
+ BQCorporateActionRetrieveOutputModel:
   type: object
   properties: 
-   bQCorporateActionRetrieveActionTaskReference:
+   corporateActionPreconditions:
     type: string
-    example: "BCARATR747557"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the implementation of the feature
+   corporateActionFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   bSCorporateActionProcessing:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Leasing Arrangement specific Business Service
+   corporateActionPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   corporateActionBSCorporateActionProcessingServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   corporateActionBSCorporateActionProcessingServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   corporateActionBSCorporateActionProcessingServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   corporateActionBSCorporateActionProcessingServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   corporateActionBSCorporateActionProcessingServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+   corporateActionRetrieveActionTaskReference:
+    type: string
+    example: "CARATR758947"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to a BQ Corporate Action instance retrieve service call
-   bQCorporateActionRetrieveActionTaskRecord:
+      general-info: Reference to a Corporate Action instance retrieve service call
+   corporateActionRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   bQCorporateActionRetrieveActionResponse:
+   corporateActionRetrieveActionResponse:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service response (lists returned reports)
-   bQCorporateActionInstanceReport:
+   corporateActionInstanceReport:
     type: object
     properties:
-     bQCorporateActionInstanceReportRecord:
+     corporateActionInstanceReportRecord:
       type: object
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The input information used to assemble the report that can be on-going, periodic and actual and projected
-     bQCorporateActionInstanceReportType:
+     corporateActionInstanceReportType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
         general-info: The type of external report available
-     bQCorporateActionInstanceReportParameters:
+     corporateActionInstanceReportParameters:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The selection parameters for the report (e.g. period, content type)
-     bQCorporateActionInstanceReport:
+     corporateActionInstanceReport:
       type: object
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The external report in any suitable form including selection filters where appropriate
-   bQCorporateActionInstanceAnalysis:
+   corporateActionInstanceAnalysis:
     type: object
     properties:
-     bQCorporateActionInstanceAnalysisRecord:
+     corporateActionInstanceAnalysisRecord:
       type: object
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The inputs and results of the instance analysis that can be on-going, periodic and actual and projected
-     bQCorporateActionInstanceAnalysisReportType:
+     corporateActionInstanceAnalysisReportType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
         general-info: The type of external performance analysis report available
-     bQCorporateActionInstanceAnalysisParameters:
+     corporateActionInstanceAnalysisParameters:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The selection parameters for the analysis (e.g. period, algorithm type)
-     bQCorporateActionInstanceAnalysisReport:
+     corporateActionInstanceAnalysisReport:
       type: object
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The external analysis report in any suitable form including selection filters where appropriate
- BQBQFinancialInstrumentInitiateInputModel:
+ BQFinancialInstrumentInitiateInputModel:
   type: object
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR739346"
+    example: "LAIR773317"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
-   bQFinancialInstrumentInitiateActionRecord:
+   financialInstrumentInitiateActionRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The Initiate service call input and output record
- BQBQFinancialInstrumentInitiateOutputModel:
-  type: object
-  properties: 
-   bQFinancialInstrumentInstanceReference:
-    type: string
-    example: "BFIIR713014"
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the BQ Financial Instrument instance
-   bQFinancialInstrumentInitiateActionReference:
-    type: string
-    example: "BFIIAR724826"
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to an Initiate service call
-   bQFinancialInstrumentInitiateActionRecord:
-    type: object
-    description: |
-     `status: Not Mapped`
-      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
-      general-info: The Initiate service call input and output record
-   bQFinancialInstrumentInstanceStatus:
+   financialInstrumentPreconditions:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
-      general-info: The status of the BQ Financial Instrument instance (e.g. initialised, pending, active)
- BQBQFinancialInstrumentUpdateInputModel:
+      general-info: The required status/situation prior to the implementation of the feature
+   financialInstrumentFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   financialInstrumentPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   financialInstrumentFinancialInstrumentServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   financialInstrumentFinancialInstrumentServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   financialInstrumentFinancialInstrumentServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   financialInstrumentFinancialInstrumentServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+ BQFinancialInstrumentInitiateOutputModel:
+  type: object
+  properties: 
+   financialInstrumentInstanceReference:
+    type: string
+    example: "FIIR700952"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Financial Instrument instance
+   financialInstrumentInitiateActionReference:
+    type: string
+    example: "FIIAR751692"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an Initiate service call
+   financialInstrumentInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   financialInstrumentInstanceStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of the Financial Instrument instance (e.g. initialised, pending, active)
+   financialInstrumentPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the implementation of the feature
+   financialInstrumentFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   financialInstrumentPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   financialInstrumentFinancialInstrumentServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   financialInstrumentFinancialInstrumentServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   financialInstrumentFinancialInstrumentServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   financialInstrumentFinancialInstrumentServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+ BQFinancialInstrumentUpdateInputModel:
   type: object
   properties: 
    leasingArrangementInstanceReference:
     type: string
-    example: "LAIR730509"
+    example: "LAIR779369"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Leasing Arrangement instance
-   bQFinancialInstrumentInstanceReference:
+   financialInstrumentInstanceReference:
     type: string
-    example: "BFIIR799235"
+    example: "FIIR739692"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to the BQ Financial Instrument instance
-   bQFinancialInstrumentUpdateActionTaskRecord:
+      general-info: Reference to the Financial Instrument instance
+   financialInstrumentPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the implementation of the feature
+   financialInstrumentFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   financialInstrumentPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   financialInstrumentFinancialInstrumentServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   financialInstrumentFinancialInstrumentServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   financialInstrumentFinancialInstrumentServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   financialInstrumentFinancialInstrumentServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   financialInstrumentUpdateActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The update service call consolidated processing record
-   bQFinancialInstrumentUpdateActionRequest:
+   financialInstrumentUpdateActionRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the update action service request
- BQBQFinancialInstrumentUpdateOutputModel:
+ BQFinancialInstrumentUpdateOutputModel:
   type: object
   properties: 
-   bQFinancialInstrumentUpdateActionTaskReference:
+   financialInstrumentPreconditions:
     type: string
-    example: "BFIUATR702177"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the implementation of the feature
+   financialInstrumentFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   financialInstrumentPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   financialInstrumentFinancialInstrumentServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   financialInstrumentFinancialInstrumentServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   financialInstrumentFinancialInstrumentServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   financialInstrumentFinancialInstrumentServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   financialInstrumentUpdateActionTaskReference:
+    type: string
+    example: "FIUATR760189"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to an update service call
-   bQFinancialInstrumentUpdateActionTaskRecord:
+   financialInstrumentUpdateActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
@@ -8987,112 +9425,154 @@ definitions:
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: Details of the Update action service response
- BQBQFinancialInstrumentRetrieveInputModel:
+ BQFinancialInstrumentRetrieveInputModel:
   type: object
   properties: 
-   bQFinancialInstrumentRetrieveActionTaskRecord:
+   financialInstrumentRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   bQFinancialInstrumentRetrieveActionRequest:
+   financialInstrumentRetrieveActionRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service request (lists requested reports)
-   bQFinancialInstrumentInstanceReport:
+   financialInstrumentInstanceReport:
     type: object
     properties:
-     bQFinancialInstrumentInstanceReportReference:
+     financialInstrumentInstanceReportReference:
       type: string
-      example: "LSSR714792"
+      example: "LSSR725789"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to the control record instance report
-   bQFinancialInstrumentInstanceAnalysis:
+   financialInstrumentInstanceAnalysis:
     type: object
     properties:
-     bQFinancialInstrumentInstanceAnalysisReference:
+     financialInstrumentInstanceAnalysisReference:
       type: string
-      example: "LSSR714792"
+      example: "LSSR725789"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to the control record instance analysis view
- BQBQFinancialInstrumentRetrieveOutputModel:
+ BQFinancialInstrumentRetrieveOutputModel:
   type: object
   properties: 
-   bQFinancialInstrumentRetrieveActionTaskReference:
+   financialInstrumentPreconditions:
     type: string
-    example: "BFIRATR795961"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation prior to the implementation of the feature
+   financialInstrumentFeatureSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in completing the fulfillment feature instance
+   financialInstrumentPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status and any triggered/dependent actions once the feature instance has been fulfilled
+   financialInstrumentFinancialInstrumentServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   financialInstrumentFinancialInstrumentServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   financialInstrumentFinancialInstrumentServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   financialInstrumentFinancialInstrumentServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   financialInstrumentRetrieveActionTaskReference:
+    type: string
+    example: "FIRATR701563"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
-      general-info: Reference to a BQ Financial Instrument instance retrieve service call
-   bQFinancialInstrumentRetrieveActionTaskRecord:
+      general-info: Reference to a Financial Instrument instance retrieve service call
+   financialInstrumentRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   bQFinancialInstrumentRetrieveActionResponse:
+   financialInstrumentRetrieveActionResponse:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service response (lists returned reports)
-   bQFinancialInstrumentInstanceReport:
+   financialInstrumentInstanceReport:
     type: object
     properties:
-     bQFinancialInstrumentInstanceReportRecord:
+     financialInstrumentInstanceReportRecord:
       type: object
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The input information used to assemble the report that can be on-going, periodic and actual and projected
-     bQFinancialInstrumentInstanceReportType:
+     financialInstrumentInstanceReportType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
         general-info: The type of external report available
-     bQFinancialInstrumentInstanceReportParameters:
+     financialInstrumentInstanceReportParameters:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The selection parameters for the report (e.g. period, content type)
-     bQFinancialInstrumentInstanceReport:
+     financialInstrumentInstanceReport:
       type: object
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The external report in any suitable form including selection filters where appropriate
-   bQFinancialInstrumentInstanceAnalysis:
+   financialInstrumentInstanceAnalysis:
     type: object
     properties:
-     bQFinancialInstrumentInstanceAnalysisRecord:
+     financialInstrumentInstanceAnalysisRecord:
       type: object
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
         general-info: The inputs and results of the instance analysis that can be on-going, periodic and actual and projected
-     bQFinancialInstrumentInstanceAnalysisReportType:
+     financialInstrumentInstanceAnalysisReportType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
         general-info: The type of external performance analysis report available
-     bQFinancialInstrumentInstanceAnalysisParameters:
+     financialInstrumentInstanceAnalysisParameters:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The selection parameters for the analysis (e.g. period, algorithm type)
-     bQFinancialInstrumentInstanceAnalysisReport:
+     financialInstrumentInstanceAnalysisReport:
       type: object
       description: |
        `status: Not Mapped`
