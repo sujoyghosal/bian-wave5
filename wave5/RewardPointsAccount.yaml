@@ -1,0 +1,4095 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Reward Points Account'
+ description: >
+
+    ## Executive Summary:
+
+    Administer the booking and remittance of rewards points
+
+    ## Example of Use:
+
+    A customer transaction that generates reward points is captured on the log, resulting in an increase in their available point balance
+
+    ## Description:
+
+    Track/log the allocation and remittance of rewards points. The service domain acts as a transaction log similar where the instrument is not subject to interest considerations (as with cash) but may have a finite life-time with expiry dates on reward points
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-reward-points-account/1.0.0
+schemes:
+ - https
+paths:
+  /reward-points-account/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDRewardPointsAccount
+      summary: Activate  a SDRewardPointsAccount servicing session
+      description: Activate  a  SDRewardPointsAccount servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDRewardPointsAccount Request Payload
+        schema:
+          $ref: '#/definitions/SDRewardPointsAccountActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDRewardPointsAccountActivateOutputModel'
+  /reward-points-account/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDRewardPointsAccount
+      summary: Update an active SDRewardPointsAccount session configuration
+      description: Update an active SDRewardPointsAccount session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDRewardPointsAccount Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDRewardPointsAccount Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDRewardPointsAccountConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDRewardPointsAccountConfigureOutputModel'
+  /reward-points-account/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDRewardPointsAccount
+      summary: "Capturing feedback against the SDRewardPointsAccount service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDRewardPointsAccount service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDRewardPointsAccount Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDRewardPointsAccount Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDRewardPointsAccountFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDRewardPointsAccountFeedbackOutputModel'
+  /reward-points-account/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDRewardPointsAccount
+      summary: Analytical views maintained by the SDRewardPointsAccount service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDRewardPointsAccount service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDRewardPointsAccount Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDRewardPointsAccountRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDRewardPointsAccountRetrieveOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateRewardPointsLog
+      summary: Details of a new RewardPointsLog instance
+      description: Instantiate a new Reward Points Log
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: RewardPointsLog Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsLogInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new RewardPointsLog instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsLogInitiateOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateRewardPointsLog
+      summary: Update to any amendable fields of the RewardPointsLog instance
+      description: Update details relating to Reward Points Log
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Log Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsLogUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Reward Points Log Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsLogUpdateOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlRewardPointsLogUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Reward Points Log
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Log Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsLogControlInputModel'
+      responses:
+        200:
+          description: Successful control of Reward Points Log Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsLogControlOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeRewardPointsLogUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Reward Points Log processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Log Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsLogExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Reward Points Log Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsLogExchangeOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureRewardPointsLogUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Reward Points Log activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Log Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsLogCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Reward Points Log Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsLogCaptureOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestRewardPointsLogUpdate
+      summary: Invoke a service request action against the RewardPointsLog instance
+      description: Request manual intervention or a decision with respect to Reward Points Log
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Log Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsLogRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Reward Points Log Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsLogRequestOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantRewardPointsLogUpdate
+      summary: Invoke a grant request action from the RewardPointsLog instance to obtain access permission
+      description: Obtain permission to act in relation to Reward Points Log
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Log Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsLogGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Reward Points Log Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsLogGrantOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveRewardPointsAccount
+      summary: Invoke a reporting action to obtain a Reward Points Log instance related report
+      description: Retrieve details about any aspect of Reward Points Log
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRRewardPointsLogRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Reward Points Log Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsLogRetrieveOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/expiration/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateRewardPointsLogExpiration
+      summary: Details of a new Expiration instance
+      description: Instantiate a new Expiration
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Log Request Payload
+        schema:
+          $ref: '#/definitions/BQExpirationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Reward Points Log instance
+          schema:
+            $ref: '#/definitions/BQExpirationInitiateOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/expiration/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateRewardPointsLogExpiration
+      summary: Update to any amendable fields of the Expiration instance
+      description: Update details relating to Expiration
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Expiration Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Expiration Request Payload
+        schema:
+          $ref: '#/definitions/BQExpirationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Expiration Instance
+          schema:
+            $ref: '#/definitions/BQExpirationUpdateOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/expiration/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureRewardPointsLogExpirationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Expiration activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Expiration Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Expiration request payload
+        schema:
+          $ref: '#/definitions/BQExpirationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Expiration Instance Record
+          schema:
+            $ref: '#/definitions/BQExpirationCaptureOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/expiration/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveRewardPointsLogExpiration
+      summary: Invoke a reporting action to obtain a Expiration instance related report.
+      description: Retrieve details about any aspect of Expiration .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Expiration Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQExpirationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Expiration Instance Record
+          schema:
+            $ref: '#/definitions/BQExpirationRetrieveOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/capture/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateRewardPointsLogCapture
+      summary: Details of a new Capture instance
+      description: Instantiate a new Capture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Log Request Payload
+        schema:
+          $ref: '#/definitions/BQCaptureInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Reward Points Log instance
+          schema:
+            $ref: '#/definitions/BQCaptureInitiateOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/capture/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateRewardPointsLogCapture
+      summary: Update to any amendable fields of the Capture instance
+      description: Update details relating to Capture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Capture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Capture Request Payload
+        schema:
+          $ref: '#/definitions/BQCaptureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Capture Instance
+          schema:
+            $ref: '#/definitions/BQCaptureUpdateOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/capture/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureRewardPointsLogCaptureUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Capture activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Capture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Capture request payload
+        schema:
+          $ref: '#/definitions/BQCaptureCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Capture Instance Record
+          schema:
+            $ref: '#/definitions/BQCaptureCaptureOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/capture/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveRewardPointsLogCapture
+      summary: Invoke a reporting action to obtain a Capture instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Capture Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCaptureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Capture Instance Record
+          schema:
+            $ref: '#/definitions/BQCaptureRetrieveOutputModel'
+  /reward-points-account/{sd-reference-id}/reward-points-log:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveRewardPointsAccountReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- RewardPointsAccount Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /reward-points-account/reward-points-log/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveRewardPointsAccountBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Expiration',  'Capture', ]
+  /reward-points-account/{sd-reference-id}/reward-points-log/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveRewardPointsAccountBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Account Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Log Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Capture
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Capture Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [CaptureID1, CaptureID2]
+definitions:
+ SDRewardPointsAccountActivateInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountActivationActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The activation service call consolidated processing record
+   rewardPointsAccountCenterReference:
+    type: string
+    example: "SCR793499"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the service center/operational unit
+   rewardPointsAccountServiceReference:
+    type: string
+    example: "CPASSR703914"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a service offered by the service center
+   rewardPointsAccountServiceConfigurationRecord:
+    type: object
+    properties:
+     rewardPointsAccountServiceConfigurationSettingReference:
+      type: string
+      example: "700761"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Refers to the service configuration parameter for the service
+     rewardPointsAccountServiceConfigurationSettingType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The type of service configuration parameter
+     rewardPointsAccountServiceConfigurationSetup:
+      type: object
+      properties:
+       rewardPointsAccountServiceConfigurationParameter:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The default activation setting for the offered service configuration parameter 
+ SDRewardPointsAccountActivateOutputModel:
+  type: object
+  properties: 
+   rewardPointsAccountActivationActionTaskReference:
+    type: string
+    example: "SAATR758836"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a service activation service call
+   rewardPointsAccountActivationActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The activation service call consolidated processing record
+   rewardPointsAccountServicingSessionReference:
+    type: string
+    example: "SSSR783215"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsAccountServicingSessionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Consolidated information record for the servicing session
+   rewardPointsAccountServiceConfigurationRecord:
+    type: object
+    properties:
+     rewardPointsAccountServiceConfigurationSettingReference:
+      type: string
+      example: "700761"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Refers to the service configuration parameter for the service
+     rewardPointsAccountServiceConfigurationSettingDescription:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: Description of the configuration parameter, allowed values and processing impact
+     rewardPointsAccountServiceConfigurationSetup:
+      type: object
+      properties:
+       rewardPointsAccountServiceConfigurationParameter:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The default activation setting for the offered service configuration parameter 
+     rewardPointsAccountServiceSubscription:
+      type: object
+      properties:
+       rewardPointsAccountServiceSubscriberReference:
+        type: string
+        example: "769192"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
+       rewardPointsAccountServiceSubscriberAccessProfile:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The allowed service access for a user or subscriber to the service which can be any known party
+     rewardPointsAccountServiceAgreement:
+      type: object
+      properties:
+       rewardPointsAccountServiceAgreementReference:
+        type: string
+        example: "791202"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the offered service agreement
+       rewardPointsAccountServiceUserReference:
+        type: string
+        example: "767210"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the user covered by the contract
+       rewardPointsAccountServiceAgreementTermsandConditions:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Terms and conditions covering the service agreement
+     rewardPointsAccountServiceStatus:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The status of the offered service (e.g. active, suspended, idle)
+   rewardPointsAccountServicingSessionStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The current operating status of the overall servicing session
+ SDRewardPointsAccountConfigureInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountConfigurationActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The configuration service call consolidated processing record
+   rewardPointsAccountServicingSessionReference:
+    type: string
+    example: "SSSR764367"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsAccountServiceReference:
+    type: string
+    example: "CPASSR744740"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a service offered by the service center
+   rewardPointsAccountServiceConfigurationRecord:
+    type: object
+    properties:
+     rewardPointsAccountServiceConfigurationSettingReference:
+      type: string
+      example: "710630"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Refers to the service configuration parameter for the service
+     rewardPointsAccountServiceConfigurationSettingType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The type of service configuration parameter
+     rewardPointsAccountServiceConfigurationSetup:
+      type: object
+      properties:
+       rewardPointsAccountServiceConfigurationParameter:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The requested and current activation values for the service configuration parameter 
+     rewardPointsAccountServiceSubscription:
+      type: object
+      properties:
+       rewardPointsAccountServiceSubscriberReference:
+        type: string
+        example: "756221"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
+       rewardPointsAccountServiceSubscriberAccessProfile:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The allowed service access for a user or subscriber to the service which can be any known party
+     rewardPointsAccountServiceAgreement:
+      type: object
+      properties:
+       rewardPointsAccountServiceAgreementReference:
+        type: string
+        example: "721156"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the offered service agreement
+       rewardPointsAccountServiceUserReference:
+        type: string
+        example: "733696"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the user covered by the contract
+       rewardPointsAccountServiceAgreementTermsandConditions:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Terms and conditions covering the service agreement
+ SDRewardPointsAccountConfigureOutputModel:
+  type: object
+  properties: 
+   rewardPointsAccountConfigurationActionTaskReference:
+    type: string
+    example: "SCATR765419"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a service configuration service call
+   rewardPointsAccountConfigurationActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The configuration service call consolidated processing record
+   rewardPointsAccountServiceConfigurationRecord:
+    type: object
+    properties:
+     rewardPointsAccountServiceConfigurationSettingDescription:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: Description of the configuration parameter, allowed values and processing impact
+     rewardPointsAccountServiceConfigurationSetup:
+      type: object
+      properties:
+       rewardPointsAccountServiceConfigurationParameter:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The requested and current activation values for the service configuration parameter 
+     rewardPointsAccountServiceSubscription:
+      type: object
+      properties:
+       rewardPointsAccountServiceSubscriberReference:
+        type: string
+        example: "756221"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
+       rewardPointsAccountServiceSubscriberAccessProfile:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The allowed service access for a user or subscriber to the service which can be any known party
+     rewardPointsAccountServiceAgreement:
+      type: object
+      properties:
+       rewardPointsAccountServiceAgreementReference:
+        type: string
+        example: "721156"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the offered service agreement
+       rewardPointsAccountServiceUserReference:
+        type: string
+        example: "733696"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the user covered by the contract
+       rewardPointsAccountServiceAgreementTermsandConditions:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Terms and conditions covering the service agreement
+     rewardPointsAccountServiceStatus:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The status of the offered service (e.g. active, suspended, idle)
+   rewardPointsAccountServicingSessionStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The current operating status of the overall servicing session
+ SDRewardPointsAccountFeedbackInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountFeedbackActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The feedback service call consolidated processing record
+   rewardPointsAccountFeedbackActionRecord:
+    type: object
+    properties:
+     rewardPointsAccountServicingSessionReference:
+      type: string
+      example: "796678"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the active servicing session
+     controlRecordInstanceReference:
+      type: string
+      example: "724385"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance if appropriate
+     behaviorQualifierInstanceReference:
+      type: string
+      example: "789747"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the behavior qualifier instance if appropriate
+     feedbackRecordType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The layout/type of the feedback provided
+     feedbackRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The content of the feedback in any suitable format and media
+ SDRewardPointsAccountFeedbackOutputModel:
+  type: object
+  properties: 
+   rewardPointsAccountFeedbackActionTaskReference:
+    type: string
+    example: "SFATR765157"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a feedback service call
+   rewardPointsAccountFeedbackActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The feedback service call consolidated processing record
+   rewardPointsAccountFeedbackActionRecord:
+    type: object
+    properties:
+     feedbackRecordDateTime:
+      type: string
+      example: "09-22-2018"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+        general-info: The date/time the feedback submitted for consideration
+     feedbackRecordStatus:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The status of processing the feedback e.g. received, considered, responded to
+     employeeBusinessUnitReference:
+      type: string
+      example: "769031"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to business unit/employee responsible for handling feedback
+ SDRewardPointsAccountRetrieveInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   rewardPointsAccountRetrieveActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service request (lists requested reports)
+   rewardPointsAccountRetrieveActionRecord:
+    type: object
+    properties:
+     rewardPointsAccountActivityAnalysis:
+      type: object
+      properties:
+       activityAnalysisReference:
+        type: string
+        example: "730230"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the internal activity analysis view maintained by the service center
+     rewardPointsAccountPerformanceAnalysis:
+      type: object
+      properties:
+       performanceAnalysisReference:
+        type: string
+        example: "761670"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the internal performance analysis view maintained by the service center
+     controlRecordPortfolioAnalysis:
+      type: object
+      properties:
+       controlRecordPortfolioAnalysisReference:
+        type: string
+        example: "739764"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the control record portfolio analysis view maintained by the service center
+   rewardPointsAccountOfferedService:
+    type: object
+    properties:
+     rewardPointsAccountServiceReference:
+      type: string
+      example: "776158"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to a service offered by the service center
+     rewardPointsAccountServiceRecord:
+      type: object
+      properties:
+       rewardPointsAccountServiceVersion:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The version details of the service when appropriate
+ SDRewardPointsAccountRetrieveOutputModel:
+  type: object
+  properties: 
+   rewardPointsAccountRetrieveActionTaskReference:
+    type: string
+    example: "SRATR795161"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a retrieve service call
+   rewardPointsAccountRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   rewardPointsAccountRetrieveActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service response (lists returned reports)
+   rewardPointsAccountRetrieveActionRecord:
+    type: object
+    properties:
+     rewardPointsAccountActivityAnalysis:
+      type: object
+      properties:
+       activityAnalysisReference:
+        type: string
+        example: "730230"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the internal activity analysis view maintained by the service center
+       activityAnalysisResult:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The results of the activity analysis that can be on-going, periodic and actual and projected
+       activityAnalysisReportType:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+          general-info: The type of activity analysis report available
+       activityAnalysisReport:
+        type: object
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+          general-info: The activity analysis report in any suitable form including selection filters where appropriate
+     rewardPointsAccountPerformanceAnalysis:
+      type: object
+      properties:
+       performanceAnalysisReference:
+        type: string
+        example: "761670"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the internal performance analysis view maintained by the service center
+       performanceAnalysisResult:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The results of the performance analysis that can be on-going or periodic
+       performanceAnalysisReportType:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+          general-info: The type of performance analysis report available
+       performanceAnalysisReport:
+        type: object
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+          general-info: The performance analysis report in any suitable form including selection filters where appropriate
+     controlRecordPortfolioAnalysis:
+      type: object
+      properties:
+       controlRecordPortfolioAnalysisReference:
+        type: string
+        example: "739764"
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+          general-info: Reference to the control record portfolio analysis view maintained by the service center
+       controlRecordPortfolioAnalysisResult:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The results of the portfolio analysis that can be on-going, periodic and actual and projected (can be unstructured data)
+       controlRecordPortfolioAnalysisReportType:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+          general-info: The type of external portfolio analysis report available
+       controlRecordAnalysisReport:
+        type: object
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+          general-info: The external analysis report in any suitable form including selection filters where appropriate
+   rewardPointsAccountOfferedService:
+    type: object
+    properties:
+     rewardPointsAccountServiceReference:
+      type: string
+      example: "776158"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to a service offered by the service center
+     rewardPointsAccountServiceRecord:
+      type: object
+      properties:
+       rewardPointsAccountServiceType:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Refers to the different types of services offered
+       rewardPointsAccountServiceVersion:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: The version details of the service when appropriate
+       rewardPointsAccountServiceDescription:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Description of the offered service 
+       rewardPointsAccountServicePoliciesandGuidelines:
+        type: object
+        properties:
+         rewardPointsAccountServiceEligibility:
+          type: string
+          description: |
+           `status: Not Mapped`
+            core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+            general-info: Policies and rules governing access to the offered service, includes eligibility and qualifications
+         rewardPointsAccountServiceIntendedUses:
+          type: string
+          description: |
+           `status: Not Mapped`
+            core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+            general-info: Guidelines covering allowed, intended use of the service
+         rewardPointsAccountServicePricingandTerms:
+          type: string
+          description: |
+           `status: Not Mapped`
+            core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+            general-info: Terms, prices, penalties associated with use of the service
+       rewardPointsAccountServiceSchedule:
+        type: string
+        description: |
+         `status: Not Mapped`
+          core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+          general-info: Schedule defining when the accessed service is available
+ CRRewardPointsLogInitiateInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountServicingSessionReference:
+    type: string
+    example: "RPASSR742455"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsLogInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   rewardPointsLogInstanceStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of the Reward Points Log instance (e.g. initialised, pending, active)
+   rewardPointsLogParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service events logged within Reward Points Log
+   rewardPointsLogSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Log
+   rewardPointsLogType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The type of Reward Points Log
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogReference:
+    type: string
+    example: "RPLR713239"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the party who is involved in Reward Points Log
+   rewardPointsLogBusinessUnitReference:
+    type: string
+    example: "RPLBUR717714"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the business unit which is involved in Reward Points Log
+   rewardPointsLogCustomerReference:
+    type: string
+    example: "RPLCR743266"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the customer who is involved in Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+ CRRewardPointsLogInitiateOutputModel:
+  type: object
+  properties: 
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR722149"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Reward Points Log instance
+   rewardPointsLogInitiateActionReference:
+    type: string
+    example: "RPLIAR704810"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an Initiate service call
+   rewardPointsLogInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   rewardPointsLogInstanceStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of the Reward Points Log instance (e.g. initialised, pending, active)
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+ CRRewardPointsLogUpdateInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountServicingSessionReference:
+    type: string
+    example: "RPASSR780532"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR717467"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Reward Points Log instance
+   rewardPointsLogParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service events logged within Reward Points Log
+   rewardPointsLogSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Log
+   rewardPointsLogType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The type of Reward Points Log
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogReference:
+    type: string
+    example: "RPLR738801"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the party who is involved in Reward Points Log
+   rewardPointsLogBusinessUnitReference:
+    type: string
+    example: "RPLBUR759509"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the business unit which is involved in Reward Points Log
+   rewardPointsLogCustomerReference:
+    type: string
+    example: "RPLCR712563"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the customer who is involved in Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogUpdateActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The update service call consolidated processing record
+   updateActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the update action service request
+ CRRewardPointsLogUpdateOutputModel:
+  type: object
+  properties: 
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogUpdateActionTaskReference:
+    type: string
+    example: "RPLUATR738321"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an update service call
+   rewardPointsLogUpdateActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The update service call consolidated processing record
+   updateResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the Update action service response
+ CRRewardPointsLogControlInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountServicingSessionReference:
+    type: string
+    example: "RPASSR743303"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR753584"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Reward Points Log instance
+   rewardPointsLogParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service events logged within Reward Points Log
+   rewardPointsLogSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Log
+   rewardPointsLogType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The type of Reward Points Log
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogReference:
+    type: string
+    example: "RPLR743992"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the party who is involved in Reward Points Log
+   rewardPointsLogBusinessUnitReference:
+    type: string
+    example: "RPLBUR708366"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the business unit which is involved in Reward Points Log
+   rewardPointsLogCustomerReference:
+    type: string
+    example: "RPLCR716556"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the customer who is involved in Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogControlActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The processing control service call consolidated processing record
+   rewardPointsLogControlActionRequest:
+    type: object
+    properties:
+     controlActionType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The type of processing action requested (e.g. suspend, skip, terminate)
+ CRRewardPointsLogControlOutputModel:
+  type: object
+  properties: 
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogControlActionTaskReference:
+    type: string
+    example: "RPLCATR728015"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Reward Points Log instance control processing service call
+   rewardPointsLogControlActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The processing control service call consolidated processing record
+   rewardPointsLogControlActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the control action service response
+ CRRewardPointsLogExchangeInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountServicingSessionReference:
+    type: string
+    example: "RPASSR730641"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR792262"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Reward Points Log instance
+   rewardPointsLogParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service events logged within Reward Points Log
+   rewardPointsLogSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Log
+   rewardPointsLogType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The type of Reward Points Log
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogReference:
+    type: string
+    example: "RPLR773141"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the party who is involved in Reward Points Log
+   rewardPointsLogBusinessUnitReference:
+    type: string
+    example: "RPLBUR738606"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the business unit which is involved in Reward Points Log
+   rewardPointsLogCustomerReference:
+    type: string
+    example: "RPLCR760748"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the customer who is involved in Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogExchangeActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The exchange service call consolidated processing record
+   rewardPointsLogExchangeActionRequest:
+    type: object
+    properties:
+     exchangeActionType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The type of exchange (e.g. accept, reject, verify)
+ CRRewardPointsLogExchangeOutputModel:
+  type: object
+  properties: 
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogExchangeActionTaskReference:
+    type: string
+    example: "RPLEATR713822"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Reward Points Log instance exchange service call
+   rewardPointsLogExchangeActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The exchange service call consolidated processing record
+   rewardPointsLogExchangeActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the exchange action service response
+ CRRewardPointsLogCaptureInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountServicingSessionReference:
+    type: string
+    example: "RPASSR721060"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR712173"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Reward Points Log instance
+   rewardPointsLogParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service events logged within Reward Points Log
+   rewardPointsLogSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Log
+   rewardPointsLogType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The type of Reward Points Log
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogReference:
+    type: string
+    example: "RPLR781678"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the party who is involved in Reward Points Log
+   rewardPointsLogBusinessUnitReference:
+    type: string
+    example: "RPLBUR742387"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the business unit which is involved in Reward Points Log
+   rewardPointsLogCustomerReference:
+    type: string
+    example: "RPLCR790506"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the customer who is involved in Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogCaptureActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The capture service call consolidated processing record
+   captureRecordType:
+    type: object
+    properties:
+     captureInputRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: Structured input transaction/record (e.g. timesheet, event record, account posting)
+ CRRewardPointsLogCaptureOutputModel:
+  type: object
+  properties: 
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogCaptureActionTaskReference:
+    type: string
+    example: "RPLCATR766903"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Reward Points Log instance capture service call
+   rewardPointsLogCaptureActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The capture service call consolidated processing record
+   captureRecordReference:
+    type: string
+    example: "CRR776240"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the structured input transaction/record
+   captureResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the capture action service response
+ CRRewardPointsLogRequestInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountServicingSessionReference:
+    type: string
+    example: "RPASSR729123"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR769589"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Reward Points Log instance
+   rewardPointsLogParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service events logged within Reward Points Log
+   rewardPointsLogSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Log
+   rewardPointsLogType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The type of Reward Points Log
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogReference:
+    type: string
+    example: "RPLR791949"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the party who is involved in Reward Points Log
+   rewardPointsLogBusinessUnitReference:
+    type: string
+    example: "RPLBUR766114"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the business unit which is involved in Reward Points Log
+   rewardPointsLogCustomerReference:
+    type: string
+    example: "RPLCR771410"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the customer who is involved in Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogRequestActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The request service call consolidated processing record
+   requestRecordType:
+    type: object
+    properties:
+     requestInputRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: Request service record (e.g. rework function, refresh record, process workstep)
+ CRRewardPointsLogRequestOutputModel:
+  type: object
+  properties: 
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogRequestActionTaskReference:
+    type: string
+    example: "RPLRATR735256"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Reward Points Log instance request service call
+   rewardPointsLogRequestActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The request service call consolidated processing record
+   requestRecordReference:
+    type: string
+    example: "RRR729217"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the service request record
+   requestResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the request action service response
+ CRRewardPointsLogGrantInputModel:
+  type: object
+  properties: 
+   rewardPointsAccountServicingSessionReference:
+    type: string
+    example: "RPASSR728981"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR767843"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Reward Points Log instance
+   rewardPointsLogParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service events logged within Reward Points Log
+   rewardPointsLogSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Log
+   rewardPointsLogType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The type of Reward Points Log
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogReference:
+    type: string
+    example: "RPLR725494"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the party who is involved in Reward Points Log
+   rewardPointsLogBusinessUnitReference:
+    type: string
+    example: "RPLBUR725955"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the business unit which is involved in Reward Points Log
+   rewardPointsLogCustomerReference:
+    type: string
+    example: "RPLCR709852"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the customer who is involved in Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogGrantActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The grant service call consolidated processing record
+   grantRequestRecordType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Grant request type (e.g. access permission)
+   grantRequestInputRecord:
+    type: object
+    properties:
+     grantRequestDetails:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: Details of the permissions requested
+ CRRewardPointsLogGrantOutputModel:
+  type: object
+  properties: 
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogGrantActionTaskReference:
+    type: string
+    example: "RPLGATR783081"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Reward Points Log instance grant service call
+   rewardPointsLogGrantActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The grant service call consolidated processing record
+   grantRequestRecordReference:
+    type: string
+    example: "GRRR752317"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the grant request record
+   grantRequestResponseRecord:
+    type: object
+    properties:
+     grantPermissionDetails:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: Details of the permissions granted
+ CRRewardPointsLogRetrieveInputModel:
+  type: object
+  properties: 
+   rewardPointsLogRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   rewardPointsLogRetrieveActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service request (lists requested reports)
+   rewardPointsLogInstanceReportRecord:
+    type: object
+    properties:
+     rewardPointsLogInstanceReportReference:
+      type: string
+      example: "RPASSR758656"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance report
+     rewardPointsLogInstanceReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external report available
+     rewardPointsLogInstanceReportParameters:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The selection parameters for the report (e.g. period, content type)
+   rewardPointsLogInstanceAnalysis:
+    type: object
+    properties:
+     rewardPointsLogInstanceAnalysisReference:
+      type: string
+      example: "RPASSR758656"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance analysis view
+     rewardPointsLogInstanceAnalysisReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external performance analysis report available
+     rewardPointsLogInstanceAnalysisParameters:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The selection parameters for the analysis (e.g. period, algorithm type)
+ CRRewardPointsLogRetrieveOutputModel:
+  type: object
+  properties: 
+   rewardPointsLogParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service events logged within Reward Points Log
+   rewardPointsLogSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Log
+   rewardPointsLogType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The type of Reward Points Log
+   rewardPointsLogSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Timetable to track RewardPoints
+   rewardPointsLogUsageLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (usage) ativities/events of Reward Points Log
+   rewardPointsLogUpdateLog:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the log of (update) ativities/events of Reward Points Log
+   rewardPointsLogReference:
+    type: string
+    example: "RPLR718944"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the party who is involved in Reward Points Log
+   rewardPointsLogBusinessUnitReference:
+    type: string
+    example: "RPLBUR708599"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the business unit which is involved in Reward Points Log
+   rewardPointsLogCustomerReference:
+    type: string
+    example: "RPLCR772961"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the customer who is involved in Reward Points Log
+   rewardPointsLogServiceConfiguration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The configuration of Reward Points Log
+   rewardPointsLogPosition:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The position of Reward Points Log
+   rewardPointsLogPositionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A classification value expressing the kind of position withing the Reward Points Log
+   rewardPointsLogPositionLimitTime:
+    type: string
+    example: "09-22-2018"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::DateTime
+      general-info: Reference to the time limitation related to the position of Reward Points Log
+   rewardPointsLogRetrieveActionTaskReference:
+    type: string
+    example: "RPLRATR736448"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Reward Points Log instance retrieve service call
+   rewardPointsLogRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   rewardPointsLogRetrieveActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service response (lists returned reports)
+   rewardPointsLogInstanceReportRecord:
+    type: object
+    properties:
+     rewardPointsLogInstanceReportData:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The input information used to assemble the report that can be on-going, periodic and actual and projected
+     rewardPointsLogInstanceReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external report available
+     rewardPointsLogInstanceReport:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The external report in any suitable form including selection filters where appropriate
+   rewardPointsLogInstanceAnalysis:
+    type: object
+    properties:
+     rewardPointsLogInstanceAnalysisData:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The inputs and results of the instance analysis that can be on-going, periodic and actual and projected
+     rewardPointsLogInstanceAnalysisReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external performance analysis report available
+     rewardPointsLogInstanceAnalysisReport:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The external analysis report in any suitable form including selection filters where appropriate
+ BQExpirationInitiateInputModel:
+  type: object
+  properties: 
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR768509"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the parent Reward Points Log instance
+   expirationInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   expirationPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   expirationEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   logEventExpiration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   expirationPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   expirationLogEventExpirationServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   expirationLogEventExpirationServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   expirationLogEventExpirationServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   expirationLogEventExpirationServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   expirationLogEventExpirationServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+ BQExpirationInitiateOutputModel:
+  type: object
+  properties: 
+   expirationInstanceReference:
+    type: string
+    example: "EIR757790"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Expiration instance
+   expirationInitiateActionReference:
+    type: string
+    example: "EIAR798539"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an Initiate service call
+   expirationInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   expirationInstanceStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of the Expiration instance (e.g. initialised, pending, active)
+   expirationPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   expirationEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   logEventExpiration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   expirationPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   expirationLogEventExpirationServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   expirationLogEventExpirationServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   expirationLogEventExpirationServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   expirationLogEventExpirationServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   expirationLogEventExpirationServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+ BQExpirationUpdateInputModel:
+  type: object
+  properties: 
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR751305"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the parent Reward Points Log instance
+   expirationInstanceReference:
+    type: string
+    example: "EIR752978"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Expiration instance
+   expirationPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   expirationEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   logEventExpiration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   expirationPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   expirationLogEventExpirationServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   expirationLogEventExpirationServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   expirationLogEventExpirationServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   expirationLogEventExpirationServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   expirationLogEventExpirationServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+   expirationUpdateActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The update service call consolidated processing record
+   expirationUpdateActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the update action service request
+ BQExpirationUpdateOutputModel:
+  type: object
+  properties: 
+   expirationPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   expirationEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   logEventExpiration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   expirationPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   expirationLogEventExpirationServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   expirationLogEventExpirationServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   expirationLogEventExpirationServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   expirationLogEventExpirationServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   expirationLogEventExpirationServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+   expirationUpdateActionTaskReference:
+    type: string
+    example: "EUATR771886"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an update service call
+   expirationUpdateActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The update service call consolidated processing record
+   updateResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the Update action service response
+ BQExpirationCaptureInputModel:
+  type: object
+  properties: 
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR707046"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the parent Reward Points Log instance
+   expirationInstanceReference:
+    type: string
+    example: "EIR737764"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Expiration instance
+   expirationPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   expirationEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   logEventExpiration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   expirationPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   expirationLogEventExpirationServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   expirationLogEventExpirationServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   expirationLogEventExpirationServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   expirationLogEventExpirationServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   expirationLogEventExpirationServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+   expirationCaptureActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The capture service call consolidated processing record
+   captureRecordType:
+    type: object
+    properties:
+     captureInputRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: Structured input transaction/record (e.g. timesheet, event record, account posting)
+ BQExpirationCaptureOutputModel:
+  type: object
+  properties: 
+   expirationPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   expirationEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   logEventExpiration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   expirationPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   expirationLogEventExpirationServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   expirationLogEventExpirationServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   expirationLogEventExpirationServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   expirationLogEventExpirationServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   expirationLogEventExpirationServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+   expirationCaptureActionTaskReference:
+    type: string
+    example: "ECATR713046"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Expiration instance capture service call
+   expirationCaptureActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The capture service call consolidated processing record
+   expirationCaptureRecordReference:
+    type: string
+    example: "ECRR711004"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Expiration structured input transaction/record
+   captureResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the capture action service response
+ BQExpirationRetrieveInputModel:
+  type: object
+  properties: 
+   expirationRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   expirationRetrieveActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service request (lists requested reports)
+   expirationInstanceReport:
+    type: object
+    properties:
+     expirationInstanceReportReference:
+      type: string
+      example: "RPASSR710226"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance report
+   expirationInstanceAnalysis:
+    type: object
+    properties:
+     expirationInstanceAnalysisReference:
+      type: string
+      example: "RPASSR710226"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance analysis view
+ BQExpirationRetrieveOutputModel:
+  type: object
+  properties: 
+   expirationPreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   expirationEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   logEventExpiration:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   expirationPostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   expirationLogEventExpirationServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   expirationLogEventExpirationServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   expirationLogEventExpirationServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   expirationLogEventExpirationServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   expirationLogEventExpirationServiceName:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: 
+   expirationRetrieveActionTaskReference:
+    type: string
+    example: "ERATR747658"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Expiration instance retrieve service call
+   expirationRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   expirationRetrieveActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service response (lists returned reports)
+   expirationInstanceReport:
+    type: object
+    properties:
+     expirationInstanceReportRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The input information used to assemble the report that can be on-going, periodic and actual and projected
+     expirationInstanceReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external report available
+     expirationInstanceReportParameters:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The selection parameters for the report (e.g. period, content type)
+     expirationInstanceReport:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The external report in any suitable form including selection filters where appropriate
+   expirationInstanceAnalysis:
+    type: object
+    properties:
+     expirationInstanceAnalysisRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The inputs and results of the instance analysis that can be on-going, periodic and actual and projected
+     expirationInstanceAnalysisReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external performance analysis report available
+     expirationInstanceAnalysisParameters:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The selection parameters for the analysis (e.g. period, algorithm type)
+     expirationInstanceAnalysisReport:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The external analysis report in any suitable form including selection filters where appropriate
+ BQCaptureInitiateInputModel:
+  type: object
+  properties: 
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR762107"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the parent Reward Points Log instance
+   captureInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   capturePreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   captureEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   businessService:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   capturePostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   captureServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   captureServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   captureServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   captureServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+ BQCaptureInitiateOutputModel:
+  type: object
+  properties: 
+   captureInstanceReference:
+    type: string
+    example: "CIR794497"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Capture instance
+   captureInitiateActionReference:
+    type: string
+    example: "CIAR754797"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an Initiate service call
+   captureInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   captureInstanceStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of the Capture instance (e.g. initialised, pending, active)
+   capturePreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   captureEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   businessService:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   capturePostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   captureServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   captureServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   captureServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   captureServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+ BQCaptureUpdateInputModel:
+  type: object
+  properties: 
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR721324"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the parent Reward Points Log instance
+   captureInstanceReference:
+    type: string
+    example: "CIR723882"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Capture instance
+   capturePreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   captureEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   businessService:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   capturePostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   captureServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   captureServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   captureServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   captureServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   captureUpdateActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The update service call consolidated processing record
+   captureUpdateActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the update action service request
+ BQCaptureUpdateOutputModel:
+  type: object
+  properties: 
+   capturePreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   captureEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   businessService:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   capturePostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   captureServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   captureServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   captureServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   captureServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   captureUpdateActionTaskReference:
+    type: string
+    example: "CUATR753439"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an update service call
+   captureUpdateActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The update service call consolidated processing record
+   updateResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the Update action service response
+ BQCaptureCaptureInputModel:
+  type: object
+  properties: 
+   rewardPointsLogInstanceReference:
+    type: string
+    example: "RPLIR748395"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the parent Reward Points Log instance
+   captureInstanceReference:
+    type: string
+    example: "CIR752720"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Capture instance
+   capturePreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   captureEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   businessService:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   capturePostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   captureServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   captureServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   captureServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   captureServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   captureCaptureActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The capture service call consolidated processing record
+   captureRecordType:
+    type: object
+    properties:
+     captureInputRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: Structured input transaction/record (e.g. timesheet, event record, account posting)
+ BQCaptureCaptureOutputModel:
+  type: object
+  properties: 
+   capturePreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   captureEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   businessService:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   capturePostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   captureServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   captureServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   captureServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   captureServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   captureCaptureActionTaskReference:
+    type: string
+    example: "CCATR762254"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Capture instance capture service call
+   captureCaptureActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The capture service call consolidated processing record
+   captureCaptureRecordReference:
+    type: string
+    example: "CCRR768774"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Capture structured input transaction/record
+   captureResponseRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: Details of the capture action service response
+ BQCaptureRetrieveInputModel:
+  type: object
+  properties: 
+   captureRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   captureRetrieveActionRequest:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service request (lists requested reports)
+   captureInstanceReport:
+    type: object
+    properties:
+     captureInstanceReportReference:
+      type: string
+      example: "RPASSR781191"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance report
+   captureInstanceAnalysis:
+    type: object
+    properties:
+     captureInstanceAnalysisReference:
+      type: string
+      example: "RPASSR781191"
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+        general-info: Reference to the control record instance analysis view
+ BQCaptureRetrieveOutputModel:
+  type: object
+  properties: 
+   capturePreconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The required status/situation before the event is captured
+   captureEventSchedule:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The timing and key actions/milestones involved in capturing the event
+   businessService:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The Reward Points Log specific Business Service
+   capturePostconditions:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The completion status once the event has been captured
+   captureServiceType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Reference to the specific business service type
+   captureServiceDescription:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Description of the performed business service
+   captureServiceInputsandOuputs:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Mandatory and optional inputs and output information for the business service
+   captureServiceWorkProduct:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service
+   captureRetrieveActionTaskReference:
+    type: string
+    example: "CRATR732681"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to a Capture instance retrieve service call
+   captureRetrieveActionTaskRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The retrieve service call consolidated processing record
+   captureRetrieveActionResponse:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: Details of the retrieve action service response (lists returned reports)
+   captureInstanceReport:
+    type: object
+    properties:
+     captureInstanceReportRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The input information used to assemble the report that can be on-going, periodic and actual and projected
+     captureInstanceReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external report available
+     captureInstanceReportParameters:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The selection parameters for the report (e.g. period, content type)
+     captureInstanceReport:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The external report in any suitable form including selection filters where appropriate
+   captureInstanceAnalysis:
+    type: object
+    properties:
+     captureInstanceAnalysisRecord:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The inputs and results of the instance analysis that can be on-going, periodic and actual and projected
+     captureInstanceAnalysisReportType:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Code
+        general-info: The type of external performance analysis report available
+     captureInstanceAnalysisParameters:
+      type: string
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+        general-info: The selection parameters for the analysis (e.g. period, algorithm type)
+     captureInstanceAnalysisReport:
+      type: object
+      description: |
+       `status: Not Mapped`
+        core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+        general-info: The external analysis report in any suitable form including selection filters where appropriate
