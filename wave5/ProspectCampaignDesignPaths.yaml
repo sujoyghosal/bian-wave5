@@ -1,0 +1,443 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Prospect Campaign Design'
+ description: >
+
+    ## Executive Summary:
+
+    Design and refine prospect campaign specifications based on their impact
+
+    ## Example of Use:
+
+    A prospect acquisition campaign is updated to provide amended/improved pricing terms that can be offered to targeted prospects poor take-up rate has been detected for the campaign
+
+    ## Description:
+
+    This Service Domain designs and refines prospect campaigns (or integrates designs from external campaign specialists). Prospect campaigns target new customer acquisition and are typically proactive (involving prospect targeting, contact and solicitation). Version numbering is used to track the impact of changes made to campaigns over their usage.
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-prospect-campaign-design/1.0.0
+schemes:
+ - https
+paths:
+  /prospect-campaign-design/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDProspectCampaignDesign
+      summary: Activate  a SDProspectCampaignDesign servicing session
+      description: Activate  a  SDProspectCampaignDesign servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDProspectCampaignDesign Request Payload
+        schema:
+          $ref: '#/definitions/SDProspectCampaignDesignActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDProspectCampaignDesignActivateOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDProspectCampaignDesign
+      summary: Update an active SDProspectCampaignDesign session configuration
+      description: Update an active SDProspectCampaignDesign session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProspectCampaignDesign Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDProspectCampaignDesign Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDProspectCampaignDesignConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDProspectCampaignDesignConfigureOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDProspectCampaignDesign
+      summary: "Capturing feedback against the SDProspectCampaignDesign service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDProspectCampaignDesign service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProspectCampaignDesign Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDProspectCampaignDesign Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDProspectCampaignDesignFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDProspectCampaignDesignFeedbackOutputModel'
+  /prospect-campaign-design/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDProspectCampaignDesign
+      summary: Analytical views maintained by the SDProspectCampaignDesign service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDProspectCampaignDesign service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProspectCampaignDesign Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDProspectCampaignDesignRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDProspectCampaignDesignRetrieveOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification/creation:
+    post:
+      tags:
+      - create
+      operationId: createProspectCampaignSpecification
+      summary: Details of a new ProspectCampaignSpecification instance
+      description: Create or register an imported prospect campaign design
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProspectCampaignSpecification Request Payload
+        schema:
+          $ref: '#/definitions/CRProspectCampaignSpecificationCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new ProspectCampaignSpecification instance
+          schema:
+            $ref: '#/definitions/CRProspectCampaignSpecificationCreateOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProspectCampaignSpecification
+      summary: Update to any amendable fields of the ProspectCampaignSpecification instance
+      description: Update details of a prospect campaign specification or usage record
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Prospect Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Prospect Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRProspectCampaignSpecificationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Prospect Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRProspectCampaignSpecificationUpdateOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlProspectCampaignSpecificationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the use of a prospect campaign specification (e.g. suspend pending revision)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Prospect Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Prospect Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRProspectCampaignSpecificationControlInputModel'
+      responses:
+        200:
+          description: Successful control of Prospect Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRProspectCampaignSpecificationControlOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeProspectCampaignSpecificationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, etc. a prospect campaign specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Prospect Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Prospect Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRProspectCampaignSpecificationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Prospect Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRProspectCampaignSpecificationExchangeOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureProspectCampaignSpecificationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture impact feedback against a prospect campaign specification (by version number)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Prospect Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Prospect Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRProspectCampaignSpecificationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Prospect Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRProspectCampaignSpecificationCaptureOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeProspectCampaignSpecificationUpdate
+      summary: Invoke an automated execute action against the ProspectCampaignSpecification instance
+      description: Execute an automated action for a prospect campaign specification (e.g. confirm eligibility requirements)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Prospect Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Prospect Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRProspectCampaignSpecificationExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Prospect Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRProspectCampaignSpecificationExecuteOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestProspectCampaignSpecificationUpdate
+      summary: Invoke a service request action against the ProspectCampaignSpecification instance
+      description: Request manual intervention with a prospect campaign specification (e.g. obtain interpretation guidance)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Prospect Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Prospect Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRProspectCampaignSpecificationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Prospect Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRProspectCampaignSpecificationRequestOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProspectCampaignDesign
+      summary: Invoke a reporting action to obtain a Prospect Campaign Specification instance related report
+      description: Retrieve details about a prospect campaign specification (e.g. obtain use and impact reports)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Prospect Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRProspectCampaignSpecificationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Prospect Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRProspectCampaignSpecificationRetrieveOutputModel'
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProspectCampaignDesignReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ProspectCampaignDesign Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /prospect-campaign-design/prospect-campaign-specification/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProspectCampaignDesignBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: []
+  /prospect-campaign-design/{sd-reference-id}/prospect-campaign-specification/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProspectCampaignDesignBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Prospect Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Prospect Campaign Specification Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- 
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex-  Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ID1, ID2]

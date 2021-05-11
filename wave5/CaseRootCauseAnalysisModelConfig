@@ -1,0 +1,151 @@
+CR Customer Case Root Cause Analysis Instance Record|Customer Case Root Cause Analysis||||||CR Customer Case Root Cause Analysis Initiate|CR Customer Case Root Cause Analysis Update|CR Customer Case Root Cause Analysis Execute|CR Customer Case Root Cause Analysis Request|CR Customer Case Root Cause Analysis Retrieve|BQ Credit and Fraud Related Issue Analysis Initiate|BQ Credit and Fraud Related Issue Analysis Update|BQ Credit and Fraud Related Issue Analysis Execute|BQ Credit and Fraud Related Issue Analysis Request|BQ Credit and Fraud Related Issue Analysis Retrieve|BQ Operations and Servicing Issue Analysis Initiate|BQ Operations and Servicing Issue Analysis Update|BQ Operations and Servicing Issue Analysis Execute|BQ Operations and Servicing Issue Analysis Request|BQ Operations and Servicing Issue Analysis Retrieve|
+Mandatory||Case Root Cause Analysis Servicing Session Reference||||Reference to the active servicing session|I|I|I|I
+Mandatory||Customer Case Root Cause Analysis Instance Reference||||Reference to the Customer Case Root Cause Analysis instance|O|I|I|I
+Initiate||Customer Case Root Cause Analysis Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Customer Case Root Cause Analysis Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Customer Case Root Cause Analysis Instance Status||||The status of the Customer Case Root Cause Analysis instance (e.g. initialised, pending, active)|IO
+||Customer Case Root Cause Analysis Instance Record||||Analyze the performance or behavior of some on-going activity or entity within Case Root Cause Analysis.
+Examples: Provide behavioral insights and analysis into customer behavior and analyze financial market activity in order to identify opportunities, define pricing and evaluate risks.
+
+Analyze the performance or behavior of some on-going activity or entity. Examples: Provide behavioral insights and analysis into customer behavior and analyze financial market activity in order to identify opportunities, define pricing and evaluate risks.|||||||||||||||
+||Customer Case Root Cause Analysis Parameter Type||||A Classification value that distinguishes between Analysis according to the type of business services and/or type of concern defined within Customer Case Root Cause Analysis . Eg Market Analysis, Risk Analysis, Perfomance Analysis, etc.|IO|IO|IO|IO|O||||||||||
+||Customer Case Root Cause Analysis Selected Option||||A selected optional business service as subject matter of analysis|IO|IO|IO|IO|O||||||||||
+||Customer Case Root Cause Analysis Request||||Request to perform Customer Case Root Cause Analysis|IO|IO|IO|IO|O||||||||||
+||Customer Case Root Cause Analysis Schedule||||Timetable to perform Customer Case Root Cause Analysis|I|I|I|I|O||||||||||
+||Customer Case Root Cause Analysis Status||||The status of Customer Case Root Cause Analysis|IO|IO|IO|IO|O||||||||||
+||Customer Case Root Cause Analysis Usage Log||||Reference to the log of (usage) ativities/events of Customer Case Root Cause Analysis|IO|IO|IO|IO|O||||||||||
+||Customer Case Root Cause Analysis Requester Reference||||Reference to the party who has requested Customer Case Root Cause Analysis|I|I|I|I|O||||||||||
+Update||Customer Case Root Cause Analysis Update Action Task Reference||||Reference to an update service call||O
+Update||Customer Case Root Cause Analysis Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+EXECUTE||Customer Case Root Cause Analysis Execute Action Task Reference||||Reference to a Customer Case Root Cause Analysis instance execute service call|||O
+EXECUTE||Customer Case Root Cause Analysis Execute Action Task Record||||The execute service call consolidated processing record|||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||O
+REQUEST||Customer Case Root Cause Analysis Request Action Task Reference||||Reference to a Customer Case Root Cause Analysis instance request service call||||O
+REQUEST||Customer Case Root Cause Analysis Request Action Task Record||||The request service call consolidated processing record||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||I
+REQUEST||Request Response Record||||Details of the request action service response||||O
+RETRIEVE||Customer Case Root Cause Analysis Retrieve Action Task Reference||||Reference to a Customer Case Root Cause Analysis instance retrieve service call|||||O
+RETRIEVE||Customer Case Root Cause Analysis Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||IO
+RETRIEVE||Customer Case Root Cause Analysis Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||I
+RETRIEVE||Customer Case Root Cause Analysis Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||O
+RETRIEVE||Customer Case Root Cause Analysis Instance Report Record|##|||A specific Customer Case Root Cause Analysis instance formatted report|||||IO
+RETRIEVE|||Customer Case Root Cause Analysis Instance Report Reference|||Reference to the control record instance report|||||I
+RETRIEVE|||Customer Case Root Cause Analysis Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||Customer Case Root Cause Analysis Instance Report Type|||The type of external report available|||||IO
+RETRIEVE|||Customer Case Root Cause Analysis Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||I
+RETRIEVE|||Customer Case Root Cause Analysis Instance Report|||The external report in any suitable form including selection filters where appropriate|||||O
+RETRIEVE||Customer Case Root Cause Analysis Instance Analysis|##|||A specific Customer Case Root Cause Analysis instance analytical report|||||IO
+RETRIEVE|||Customer Case Root Cause Analysis Instance Analysis Reference|||Reference to the control record instance analysis view|||||I
+RETRIEVE|||Customer Case Root Cause Analysis Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||Customer Case Root Cause Analysis Instance Analysis Report Type|||The type of external performance analysis report available|||||IO
+RETRIEVE|||Customer Case Root Cause Analysis Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||I
+RETRIEVE|||Customer Case Root Cause Analysis Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||O
+BQ Credit and Fraud Related Issue Analysis Instance Record|Credit and Fraud Related Issue Analysis||||||
+Mandatory||Customer Case Root Cause Analysis Instance Reference||||Reference to the parent Customer Case Root Cause Analysis instance||||||I|I|I|I
+Mandatory||Credit and Fraud Related Issue Analysis Instance Reference||||Reference to the Credit and Fraud Related Issue Analysis instance||||||O|I|I|I
+Initiate||Credit and Fraud Related Issue Analysis Initiate Action Reference||||Reference to an Initiate service call||||||O
+Initiate||Credit and Fraud Related Issue Analysis Initiate Action Record||||The Initiate service call input and output record||||||I/O
+Initiate||Credit and Fraud Related Issue Analysis Instance Status||||The status of the Credit and Fraud Related Issue Analysis instance (e.g. initialised, pending, active)||||||O
+||Credit and Fraud Related Issue Analysis Instance Record||||Analyze the performance or behavior of some on-going activity or entity within Case Root Cause Analysis.
+||Examples: Provide behavioral insights and analysis into customer behavior and analyze financial market activity in order to identify opportunities, define pricing and evaluate risks.
+||
+|||||||||||||||
+||Credit and Fraud Related Issue Analysis Preconditions||||The required status/situation before the algorithm can be applied||||||IO|IO|IO|IO|O|||||
+||Credit and Fraud Related Issue Analysis Analysis Schedule||||The schedule and timing of the analysis performed using the algorithm||||||IO|IO|IO|IO|O|||||
+||Credit and Fraud Related Issue Analysis Version Number||||The algorithm version employed in the analysis||||||IO|IO|IO|IO|O|||||
+||Credit and Fraud Related Issue Analysis||||The Customer Case Root Cause Analysis specific Business Service||||||IO|IO|IO|IO|O|||||
+||Credit and Fraud Related Issue Analysis Service Type||||Reference to the specific business service type||||||IO|IO|IO|IO|O|||||
+||Credit and Fraud Related Issue Analysis Service Description||||Description of the performed business service||||||IO|IO|IO|IO|O|||||
+||Credit and Fraud Related Issue Analysis Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||IO|IO|IO|IO|O|||||
+||Credit and Fraud Related Issue Analysis Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||IO|IO|IO|IO|O|||||
+||Credit and Fraud Related Issue Analysis Service Name||||||||||IO|IO|IO|IO|O|||||
+Update||Credit and Fraud Related Issue Analysis Update Action Task Reference||||Reference to an update service call|||||||O
+Update||Credit and Fraud Related Issue Analysis Update Action Task Record||||The update service call consolidated processing record|||||||I/O
+Update||Credit and Fraud Related Issue Analysis Update Action Request||||Details of the update action service request|||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||O
+Execute||Credit and Fraud Related Issue Analysis Execute Action Task Reference||||Reference to a Credit and Fraud Related Issue Analysis instance execute service call||||||||O
+Execute||Credit and Fraud Related Issue Analysis Execute Action Task Record||||The execute service call consolidated processing record||||||||I/O
+Execute||Credit and Fraud Related Issue Analysis Execute Record Reference||||Reference to the Credit and Fraud Related Issue Analysis execute transaction/record||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||O
+Request||Credit and Fraud Related Issue Analysis Request Action Task Reference||||Reference to a Credit and Fraud Related Issue Analysis instance request service call|||||||||O
+Request||Credit and Fraud Related Issue Analysis Request Action Task Record||||The request service call consolidated processing record|||||||||I/O
+Request||Credit and Fraud Related Issue Analysis Request Record Reference||||Reference to the Credit and Fraud Related Issue Analysis service request record|||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||O
+Retrieve||Credit and Fraud Related Issue Analysis Retrieve Action Task Reference||||Reference to a Credit and Fraud Related Issue Analysis instance retrieve service call||||||||||O
+Retrieve||Credit and Fraud Related Issue Analysis Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Credit and Fraud Related Issue Analysis Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Credit and Fraud Related Issue Analysis Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Credit and Fraud Related Issue Analysis Instance Report|##|||A specific Credit and Fraud Related Issue Analysis instance formatted report||||||||||IO
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Credit and Fraud Related Issue Analysis Instance Analysis|##|||A specific Credit and Fraud Related Issue Analysis instance analytical report||||||||||IO
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Credit and Fraud Related Issue Analysis Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Operations and Servicing Issue Analysis Instance Record|Operations and Servicing Issue Analysis||||||
+Mandatory||Customer Case Root Cause Analysis Instance Reference||||Reference to the parent Customer Case Root Cause Analysis instance|||||||||||I|I|I|I
+Mandatory||Operations and Servicing Issue Analysis Instance Reference||||Reference to the Operations and Servicing Issue Analysis instance|||||||||||O|I|I|I
+Initiate||Operations and Servicing Issue Analysis Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Initiate||Operations and Servicing Issue Analysis Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Initiate||Operations and Servicing Issue Analysis Instance Status||||The status of the Operations and Servicing Issue Analysis instance (e.g. initialised, pending, active)|||||||||||O
+||Operations and Servicing Issue Analysis Instance Record||||Analyze the performance or behavior of some on-going activity or entity within Case Root Cause Analysis.
+||Examples: Provide behavioral insights and analysis into customer behavior and analyze financial market activity in order to identify opportunities, define pricing and evaluate risks.
+||
+|||||||||||||||
+||Operations and Servicing Issue Analysis Preconditions||||The required status/situation before the algorithm can be applied|||||||||||IO|IO|IO|IO|O
+||Operations and Servicing Issue Analysis Analysis Schedule||||The schedule and timing of the analysis performed using the algorithm|||||||||||IO|IO|IO|IO|O
+||Operations and Servicing Issue Analysis Version Number||||The algorithm version employed in the analysis|||||||||||IO|IO|IO|IO|O
+||Operations and Servicing Issue Analysis||||The Customer Case Root Cause Analysis specific Business Service|||||||||||IO|IO|IO|IO|O
+||Operations and Servicing Issue Analysis Service Type||||Reference to the specific business service type|||||||||||IO|IO|IO|IO|O
+||Operations and Servicing Issue Analysis Service Description||||Description of the performed business service|||||||||||IO|IO|IO|IO|O
+||Operations and Servicing Issue Analysis Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|IO|IO|IO|O
+||Operations and Servicing Issue Analysis Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|IO|IO|IO|O
+||Operations and Servicing Issue Analysis Service Name|||||||||||||||IO|IO|IO|IO|O
+Update||Operations and Servicing Issue Analysis Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Operations and Servicing Issue Analysis Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Operations and Servicing Issue Analysis Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Execute||Operations and Servicing Issue Analysis Execute Action Task Reference||||Reference to a Operations and Servicing Issue Analysis instance execute service call|||||||||||||O
+Execute||Operations and Servicing Issue Analysis Execute Action Task Record||||The execute service call consolidated processing record|||||||||||||I/O
+Execute||Operations and Servicing Issue Analysis Execute Record Reference||||Reference to the Operations and Servicing Issue Analysis execute transaction/record|||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response|||||||||||||O
+Request||Operations and Servicing Issue Analysis Request Action Task Reference||||Reference to a Operations and Servicing Issue Analysis instance request service call||||||||||||||O
+Request||Operations and Servicing Issue Analysis Request Action Task Record||||The request service call consolidated processing record||||||||||||||I/O
+Request||Operations and Servicing Issue Analysis Request Record Reference||||Reference to the Operations and Servicing Issue Analysis service request record||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||O
+Retrieve||Operations and Servicing Issue Analysis Retrieve Action Task Reference||||Reference to a Operations and Servicing Issue Analysis instance retrieve service call|||||||||||||||O
+Retrieve||Operations and Servicing Issue Analysis Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||I/O
+Retrieve||Operations and Servicing Issue Analysis Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||I
+Retrieve||Operations and Servicing Issue Analysis Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||O
+Retrieve||Operations and Servicing Issue Analysis Instance Report|##|||A specific Operations and Servicing Issue Analysis instance formatted report|||||||||||||||IO
+Retrieve|||Operations and Servicing Issue Analysis Instance Report Reference|||Reference to the control record instance report|||||||||||||||I
+Retrieve|||Operations and Servicing Issue Analysis Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Operations and Servicing Issue Analysis Instance Report Type|||The type of external report available|||||||||||||||O
+Retrieve|||Operations and Servicing Issue Analysis Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||O
+Retrieve|||Operations and Servicing Issue Analysis Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||O
+Retrieve||Operations and Servicing Issue Analysis Instance Analysis|##|||A specific Operations and Servicing Issue Analysis instance analytical report|||||||||||||||IO
+Retrieve|||Operations and Servicing Issue Analysis Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||I
+Retrieve|||Operations and Servicing Issue Analysis Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Operations and Servicing Issue Analysis Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||O
+Retrieve|||Operations and Servicing Issue Analysis Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||O
+Retrieve|||Operations and Servicing Issue Analysis Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||O

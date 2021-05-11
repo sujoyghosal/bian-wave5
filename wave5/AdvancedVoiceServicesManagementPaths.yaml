@@ -1,0 +1,702 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Advanced Voice Services Management'
+ description: >
+
+    ## Executive Summary:
+
+    Oversee the configuration and operation of the voice channel facilities
+
+    ## Example of Use:
+
+    Management review and define the reconfiguration requirements for the voice channel based on capacity/volume projections
+
+    ## Description:
+
+    Handles the oversight and configuration of the PBX (telephony/voice) access channel. This includes assessing capacity, performance, scheduling maintenance and updates to the channel configuration. Also determining allowed access and usage and troubleshooting major production problems
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-advanced-voice-services-management/1.0.0
+schemes:
+ - https
+paths:
+  /advanced-voice-services-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDAdvancedVoiceServicesManagement
+      summary: Activate  a SDAdvancedVoiceServicesManagement servicing session
+      description: Activate  a  SDAdvancedVoiceServicesManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDAdvancedVoiceServicesManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDAdvancedVoiceServicesManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDAdvancedVoiceServicesManagementActivateOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDAdvancedVoiceServicesManagement
+      summary: Update an active SDAdvancedVoiceServicesManagement session configuration
+      description: Update an active SDAdvancedVoiceServicesManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDAdvancedVoiceServicesManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDAdvancedVoiceServicesManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDAdvancedVoiceServicesManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDAdvancedVoiceServicesManagementConfigureOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDAdvancedVoiceServicesManagement
+      summary: "Capturing feedback against the SDAdvancedVoiceServicesManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDAdvancedVoiceServicesManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDAdvancedVoiceServicesManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDAdvancedVoiceServicesManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDAdvancedVoiceServicesManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDAdvancedVoiceServicesManagementFeedbackOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDAdvancedVoiceServicesManagement
+      summary: Analytical views maintained by the SDAdvancedVoiceServicesManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDAdvancedVoiceServicesManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDAdvancedVoiceServicesManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDAdvancedVoiceServicesManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDAdvancedVoiceServicesManagementRetrieveOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/creation:
+    post:
+      tags:
+      - create
+      operationId: createVoiceChannelManagementPlan
+      summary: Details of a new VoiceChannelManagementPlan instance
+      description: Create the management plan for the voice channel
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: VoiceChannelManagementPlan Request Payload
+        schema:
+          $ref: '#/definitions/CRVoiceChannelManagementPlanCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new VoiceChannelManagementPlan instance
+          schema:
+            $ref: '#/definitions/CRVoiceChannelManagementPlanCreateOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateVoiceChannelManagementPlan
+      summary: Update to any amendable fields of the VoiceChannelManagementPlan instance
+      description: Update aspects of the voice channel management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Voice Channel Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRVoiceChannelManagementPlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Voice Channel Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRVoiceChannelManagementPlanUpdateOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeVoiceChannelManagementPlanUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, etc. aspects of the voice channel management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Voice Channel Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRVoiceChannelManagementPlanExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Voice Channel Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRVoiceChannelManagementPlanExchangeOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestVoiceChannelManagementPlanUpdate
+      summary: Invoke a service request action against the VoiceChannelManagementPlan instance
+      description: Request manual intervention with the plan (e.g. reprioritize activities)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Voice Channel Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRVoiceChannelManagementPlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Voice Channel Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRVoiceChannelManagementPlanRequestOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveAdvancedVoiceServicesManagement
+      summary: Invoke a reporting action to obtain a Voice Channel Management Plan instance related report
+      description: Retrieve details about the voice channel management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRVoiceChannelManagementPlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Voice Channel Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRVoiceChannelManagementPlanRetrieveOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/capacityplanning/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateVoiceChannelManagementPlanCapacityPlanning
+      summary: Update to any amendable fields of the CapacityPlanning instance
+      description: Update details of the capacity management plan for the channel
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CapacityPlanning Request Payload
+        schema:
+          $ref: '#/definitions/BQCapacityPlanningUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CapacityPlanning Instance
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningUpdateOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/capacityplanning/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestVoiceChannelManagementPlanCapacityPlanningUpdate
+      summary: Invoke a service request action against the CapacityPlanning instance
+      description: Request manual intervention in the capacity plan (e.g. revise projections)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CapacityPlanning request payload
+        schema:
+          $ref: '#/definitions/BQCapacityPlanningRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of CapacityPlanning Instance Record
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningRequestOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/capacityplanning/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveVoiceChannelManagementPlanCapacityPlanning
+      summary: Invoke a reporting action to obtain a CapacityPlanning instance related report.
+      description: Retrieve details about the channel capacity plan .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanning Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCapacityPlanningRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CapacityPlanning Instance Record
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningRetrieveOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/maintenanceandupgrades/creation:
+    post:
+      tags:
+      - create
+      operationId: createVoiceChannelManagementPlanMaintenanceAndUpgrades
+      summary: Details of a new MaintenanceAndUpgrades instance
+      description: Create a maintenance or upgrade task plan item for the channel
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Voice Channel Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQMaintenanceAndUpgradesCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Voice Channel Management Plan instance
+          schema:
+            $ref: '#/definitions/BQMaintenanceAndUpgradesCreateOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/maintenanceandupgrades/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateVoiceChannelManagementPlanMaintenanceAndUpgrades
+      summary: Update to any amendable fields of the MaintenanceAndUpgrades instance
+      description: Update details of a maintenance or upgrade management plan item
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MaintenanceAndUpgrades Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MaintenanceAndUpgrades Request Payload
+        schema:
+          $ref: '#/definitions/BQMaintenanceAndUpgradesUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated MaintenanceAndUpgrades Instance
+          schema:
+            $ref: '#/definitions/BQMaintenanceAndUpgradesUpdateOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/maintenanceandupgrades/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestVoiceChannelManagementPlanMaintenanceAndUpgradesUpdate
+      summary: Invoke a service request action against the MaintenanceAndUpgrades instance
+      description: Request manual intervention to a maintenance or upgrade action
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MaintenanceAndUpgrades Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MaintenanceAndUpgrades request payload
+        schema:
+          $ref: '#/definitions/BQMaintenanceAndUpgradesRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of MaintenanceAndUpgrades Instance Record
+          schema:
+            $ref: '#/definitions/BQMaintenanceAndUpgradesRequestOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/maintenanceandupgrades/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveVoiceChannelManagementPlanMaintenanceAndUpgrades
+      summary: Invoke a reporting action to obtain a MaintenanceAndUpgrades instance related report.
+      description: Retrieve details about a maintenance or upgrade management plan .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MaintenanceAndUpgrades Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQMaintenanceAndUpgradesRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved MaintenanceAndUpgrades Instance Record
+          schema:
+            $ref: '#/definitions/BQMaintenanceAndUpgradesRetrieveOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateVoiceChannelManagementPlanTroubleshooting
+      summary: Update to any amendable fields of the Troubleshooting instance
+      description: Update details of a production issue, root cause or remedial action recommendation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshooting Request Payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Troubleshooting Instance
+          schema:
+            $ref: '#/definitions/BQTroubleshootingUpdateOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestVoiceChannelManagementPlanTroubleshootingUpdate
+      summary: Invoke a service request action against the Troubleshooting instance
+      description: Request manual intervention in troubleshooting tasks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshooting request payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Troubleshooting Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootingRequestOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveVoiceChannelManagementPlanTroubleshooting
+      summary: Invoke a reporting action to obtain a Troubleshooting instance related report.
+      description: Retrieve details about troubleshooting tasks, root cause and proposed remedial actions .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTroubleshootingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Troubleshooting Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootingRetrieveOutputModel'
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveAdvancedVoiceServicesManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- AdvancedVoiceServicesManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /advanced-voice-services-management/voice-channel-management-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveAdvancedVoiceServicesManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'CapacityPlanning',  'MaintenanceAndUpgrades',  'Troubleshooting', ]
+  /advanced-voice-services-management/{sd-reference-id}/voice-channel-management-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveAdvancedVoiceServicesManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Advanced Voice Services Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Voice Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Troubleshooting
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Troubleshooting Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [TroubleshootingID1, TroubleshootingID2]

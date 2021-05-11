@@ -1,0 +1,24 @@
+sd=Commissions	The service domain processes commissions for transactions for eligible employees	A qualified servicing representative succeeds in selling an opportunity to an established customer and is awarded a commission	Capture and structure commissionable transactions that are subsequently processed against an existing commission agreement
+sdpath=commissions
+crpath=commission-transaction
+crr=Commission Transaction Instance
+mcr=Commission Transaction
+bqs=Payment Calculation Check
+CONFIG
+CommissionTransaction	initiate	Instantiate a new Commission Transaction		initiateCommissionTransaction		#desc
+CommissionTransaction	update	Update details relating to Commission Transaction		updateCommissionTransaction		#desc
+CommissionTransaction	control	Control the processing of Commission Transaction		controlCommissionTransaction		#desc
+CommissionTransaction	exchange	Accept, verify, etc. aspects of Commission Transaction processing		exchangeCommissionTransaction		#desc
+CommissionTransaction	execute	Execute an available automated action for Commission Transaction		executeCommissionTransaction		#desc
+CommissionTransaction	request	Request manual intervention or a decision with respect to Commission Transaction		requestCommissionTransaction		#desc
+CommissionTransaction	retrieve	Retrieve details about any aspect of Commission Transaction		retrieveCommissionTransaction		#desc
+Calculation	update	Update details relating to Calculation	updateCommissionTransactionCalculation	updateCommissionTransactionCalculation		Update to any amendable fields of the Calculation instance
+Calculation	exchange	Accept, verify, etc. aspects of Calculation processing	exchangeCommissionTransactionCalculation	exchangeCommissionTransactionCalculation		Handle an external exchange (e.g. accept, reject, verify)
+Calculation	retrieve	Retrieve details about any aspect of Calculation	retrieveCommissionTransactionCalculation	retrieveCommissionTransactionCalculation		Invoke a reporting action to obtain a Calculation instance related report
+Payment	update	Update details relating to Payment	updateCommissionTransactionPayment	updateCommissionTransactionPayment		Update to any amendable fields of the Payment instance
+Payment	exchange	Accept, verify, etc. aspects of Payment processing	exchangeCommissionTransactionPayment	exchangeCommissionTransactionPayment		Handle an external exchange (e.g. accept, reject, verify)
+Payment	retrieve	Retrieve details about any aspect of Payment	retrieveCommissionTransactionPayment	retrieveCommissionTransactionPayment		Invoke a reporting action to obtain a Payment instance related report
+Check	initiate	Instantiate a new Check	initiateCommissionTransactionCheck	initiateCommissionTransactionCheck		Details of a new Check instance
+Check	update	Update details relating to Check	updateCommissionTransactionCheck	updateCommissionTransactionCheck		Update to any amendable fields of the Check instance
+Check	exchange	Accept, verify, etc. aspects of Check processing	exchangeCommissionTransactionCheck	exchangeCommissionTransactionCheck		Handle an external exchange (e.g. accept, reject, verify)
+Check	retrieve		retrieveCommissionTransactionCheck	retrieveCommissionTransactionCheck		Invoke a reporting action to obtain a Check instance related report

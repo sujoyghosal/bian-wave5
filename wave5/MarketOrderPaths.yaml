@@ -1,0 +1,464 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Market Order'
+ description: >
+
+    ## Executive Summary:
+
+    Orchestrate the completion of market orders from the customer perspective
+
+    ## Example of Use:
+
+    An investment manager initiates a market order to rebalance a customer's investment portfolio
+
+    ## Description:
+
+    Orchestrate market orders. This handles the customer side of the transaction, confirming details executing customer related checks and any specific processing requirements/preferences. A market order may be broken into multiple market trades or combined with other market orders for a block trade at the bank's discretion (see the Service Domain Market Trade)
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-market-order/1.0.0
+schemes:
+ - https
+paths:
+  /market-order/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDMarketOrder
+      summary: Activate  a SDMarketOrder servicing session
+      description: Activate  a  SDMarketOrder servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDMarketOrder Request Payload
+        schema:
+          $ref: '#/definitions/SDMarketOrderActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDMarketOrderActivateOutputModel'
+  /market-order/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDMarketOrder
+      summary: Update an active SDMarketOrder session configuration
+      description: Update an active SDMarketOrder session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDMarketOrder Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDMarketOrder Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDMarketOrderConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDMarketOrderConfigureOutputModel'
+  /market-order/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDMarketOrder
+      summary: "Capturing feedback against the SDMarketOrder service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDMarketOrder service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDMarketOrder Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDMarketOrder Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDMarketOrderFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDMarketOrderFeedbackOutputModel'
+  /market-order/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDMarketOrder
+      summary: Analytical views maintained by the SDMarketOrder service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDMarketOrder service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDMarketOrder Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDMarketOrderRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDMarketOrderRetrieveOutputModel'
+  /market-order/{sd-reference-id}/market-order-transaction/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateMarketOrderTransaction
+      summary: Details of a new MarketOrderTransaction instance
+      description: Initiate a market order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MarketOrderTransaction Request Payload
+        schema:
+          $ref: '#/definitions/CRMarketOrderTransactionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new MarketOrderTransaction instance
+          schema:
+            $ref: '#/definitions/CRMarketOrderTransactionInitiateOutputModel'
+  /market-order/{sd-reference-id}/market-order-transaction/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateMarketOrderTransaction
+      summary: Update to any amendable fields of the MarketOrderTransaction instance
+      description: Update details on an active market order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Order Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Market Order Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRMarketOrderTransactionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Market Order Transaction Instance
+          schema:
+            $ref: '#/definitions/CRMarketOrderTransactionUpdateOutputModel'
+  /market-order/{sd-reference-id}/market-order-transaction/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketOrder
+      summary: Invoke a reporting action to obtain a Market Order Transaction instance related report
+      description: Retrieve details about a market order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Order Transaction Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRMarketOrderTransactionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Market Order Transaction Instance
+          schema:
+            $ref: '#/definitions/CRMarketOrderTransactionRetrieveOutputModel'
+  /market-order/{sd-reference-id}/market-order-transaction/{cr-reference-id}/compliance/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketOrderTransactionCompliance
+      summary: Invoke a reporting action to obtain a Compliance instance related report.
+      description: Retrieve details about a market order compliance check .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Compliance Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQComplianceRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Compliance Instance Record
+          schema:
+            $ref: '#/definitions/BQComplianceRetrieveOutputModel'
+  /market-order/{sd-reference-id}/market-order-transaction/{cr-reference-id}/fundingcheck/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketOrderTransactionFundingCheck
+      summary: Invoke a reporting action to obtain a FundingCheck instance related report.
+      description: Retrieve details about a market order funding check .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FundingCheck Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFundingCheckRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved FundingCheck Instance Record
+          schema:
+            $ref: '#/definitions/BQFundingCheckRetrieveOutputModel'
+  /market-order/{sd-reference-id}/market-order-transaction/{cr-reference-id}/customerprocessing/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketOrderTransactionCustomerProcessing
+      summary: Invoke a reporting action to obtain a CustomerProcessing instance related report.
+      description: Retrieve details about customer specific processing for a market order .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CustomerProcessing Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCustomerProcessingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CustomerProcessing Instance Record
+          schema:
+            $ref: '#/definitions/BQCustomerProcessingRetrieveOutputModel'
+  /market-order/{sd-reference-id}/market-order-transaction/{cr-reference-id}/tradeinitiation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeMarketOrderTransactionTradeInitiationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject etc. a proposed market order market trade
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TradeInitiation request payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of TradeInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQTradeInitiationExchangeOutputModel'
+  /market-order/{sd-reference-id}/market-order-transaction/{cr-reference-id}/tradeinitiation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketOrderTransactionTradeInitiation
+      summary: Invoke a reporting action to obtain a TradeInitiation instance related report.
+      description: Retrieve details about a market order's market trade .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTradeInitiationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TradeInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQTradeInitiationRetrieveOutputModel'
+  /market-order/{sd-reference-id}/market-order-transaction:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveMarketOrderReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- MarketOrder Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /market-order/market-order-transaction/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveMarketOrderBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Compliance',  'FundingCheck',  'CustomerProcessing',  'TradeInitiation', ]
+  /market-order/{sd-reference-id}/market-order-transaction/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveMarketOrderBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Order Transaction Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- TradeInitiation
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- TradeInitiation Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [TradeInitiationID1, TradeInitiationID2]

@@ -1,0 +1,40 @@
+SD=Position Management
+CR= Financial Position State
+BQs= Trial Transaction  Transaction Application     
+Position Management||Referenced Information|Description||||||||CR - Financial Position State|||||||||BQ 1 - Trial Transaction|||||||||BQ 2 - Transaction Application|||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Name (#SD)|Position Management|NA|NA||||||||1|2|3||||||4|5|6|||||||7|8|9|||||||10||||||||||||||||||||||||||||||||||||||||||||||REF|Identified Semantic APIs
+Description|Maintain on-line and near-time cross account complex positions. Includes consolidated currency, instrument, sector and counterparty views as appropriate||||||||||E|E|E||||||E|E|E|||||||E|E|E|||||||E|||||||||||||||||||||||||||||||||||||||||||||||Triggering
+Example of Use|Example of use:
+A major corporate or institutional customer's consolidated position is refenced when the corporate customer sufferes a major incident|||CR Position Management Instance Record|Position Management Instance Record|||||A monitored complex financial position|IO|IO|||||||O|IO|||||||||IO||||||||||||||||||||||||||||||||||||||||||||||||||||||#|Listed Semantic API Descriptions
+Executive Summary|The Service Domain tracks the bank's consolidated financial positions for major customers and complex market conditions|||||Position Type||||The type of position being monitored (e.g. consolidated customer exposure, geographic/sector exposure)|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||1|InCR Initialize a monitored financial position
+Key Features|Consolidate key transaction details
+Evaluate likey position impact (absolute and estimated)
+Maintain position and supporting commentary/explanation
+Notify trends and projected postion breaches
+|||||Position Customer Reference||||The customer or customer type associated with the position if applicable|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||2|UpCR Update the settings and notification arrangements for a position
+Functional Pattern|Monitor|||||Position Sector||||The sector or segment associated with the position if applicable|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||3|CoCR Change the status/handling of a monitored position
+Asset Type|Financial Position|||||Position Product Type||||The product type or specific product associated with the position if applicable|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||4|ReCR Get details and the current value of a monitored position
+Generic Artifact|State|||||Position Definition||||Description of the specification and purpose position monitoring (e.g. real-time limit, trend)|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||5|InBQ Initiate the evaluation impact of a trial transaction
+Control Record|Financial Position State|||||Position Thresholds/Limits||||Thresholds limits associated with the position|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||6|UpBQ Update details of a trial transaction
+Behavior Qualifier Type|Measures|||||Position Value||||The current, historical and if applicable projected values of the monitored position|O||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||7|ReBQ Retrieve details about a trial transaction and its position impact
+||||||Position Notification Arrangement Reference||||Reference to a notification source requesting updates on position changes|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||8|InBQ Initiate the registering of a transaction against the position
+Service Domain Handling||Behavior Qualifiers (#BQ)|Description|||Position Notification Arrangement Record||||The details maintained for the notification service|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||9|UpBQ Update details of a registered transaction
+VC Business Area|Finance & Risk Management|Trial Transaction|Check the impact of a transaction on the position||||Position Notification Business Unit Reference|||Reference to the notified party|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||10|ReBQ Retrieve details about a registered transaction and its position impact
+VC Business Domain|Market Risk|Transaction Application|Apply a committed transaction to the position||||Position Notification Details|||Details of the requirements/schedule for position notification|I|IO|||||||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+M Business Area|Operations and Execution||||||Position Notification Record|||The position notification record generated as required|O||||||||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+M Business Domain|Account Management|||BQ Trial Transaction Instance Record||Trial Transaction Instance Record||||A test to see what the impact or a proposed transaction will be on a managed position||||||||||IO|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Service Domain #|1||||||Trial Transaction Reference|||A trial transaction that will impacts a managed position)||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+API Type|Internal||||||Trial Transaction Type||| The type of transaction that would be applied to the managed position||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Comment|||||||Trial Transaction Record |||Key details of the trial transaction||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Wave 1||||||||Trial Transaction Amount||The make up of the values of the transaction||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Wave 2||||||||Trial Transaction Date||Key dates and times associated with the trial transaction||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Wave 3||||||||Trial Transaction Booking Entity||The booking entity where the trial transaction would be made||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Wave 4|||||||Trail Transaction Position Impact Assessment|||The projected impact the trial transaction will have on the managed position||||||||||O||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||BQ Transaction Application Instance Record||Transaction Application Instance Record||||The capture of a transaction against an associated managed position|||||||||||||||||||IO|IO|||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||Transaction Reference|||A trial transaction that will impacts a managed position)|||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||Transaction Type||| The type of transaction that would be applied to the managed position|||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||Transaction Record |||Key details of the trial transaction|||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Transaction Amount||The make up of the values of the transaction|||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Transaction Date||Key dates and times associated with the trial transaction|||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Transaction Booking Entity||The booking entity where the trial transaction would be made|||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||Transaction Position Impact Assessment|||The projected impact the trial transaction will have on the managed position|||||||||||||||||||O||||||||O|||||||||||||||||||||||||||||||||||||||||||||||

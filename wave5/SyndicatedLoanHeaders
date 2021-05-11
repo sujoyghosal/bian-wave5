@@ -1,0 +1,32 @@
+SD=Syndicated Loan
+CR=Syndicated Loan Arrangement
+BQs= Fulfillment Origination SyndicateAssembly Structuring
+This service domain fulfills a syndicated loan, including the coordination with syndicate members and clarification/administration of their obligations under the arrangement. It is assumed the bank is acting as the syndicate lead in this arrangement, coordinating with other lending banks in the syndicate in order to manage the transfer of funds. The syndicated loan can be for a single amount or be implemented as a more general loan facility that the customer can draw upon over its term. Note that initial customer offer processing may have covered many of these tasks informally, but once the syndicated loan initiation is made more formal syndicate arrangements must be established as an aspect of fulfillment handled here
+A major corporate customer obtains a syndicated loan to finance a major project and the bank arranges to distribute the loan with several other interested banks to share the loan exposure
+Handle the processing of syndicated loans with the bank playing the lead coordination role with other syndicate bank members. Note some initial preparation may have been made through prior customer offer processing.
+CR - Syndicated Loan Arrangement							BQ - Fulfillment				BQ - Structuring					BQ - Origination				BQ - Syndicate Assembly			
+In	Up	Co	Ec	Ex	Rq	Re	Up	Ec	Rq	Re	In	Up	Ec	Rq	Re	Up	Ec	Rq	Re	Up	Ec	Rq	Re
+InCR Instantiate a new Syndicated Loan Arrangement
+UpCR Update details relating to Syndicated Loan Arrangement
+CoCR Control the processing of Syndicated Loan Arrangement
+EcCR Accept, verify, etc. aspects of Syndicated Loan Arrangement processing
+ExCR Execute an available automated action for Syndicated Loan Arrangement
+RqCR Request manual intervention or a decision with respect to Syndicated Loan Arrangement
+ReCR Retrieve details about any aspect of Syndicated Loan Arrangement
+UpBQ Update details relating to Fulfillment
+EcBQ Accept, verify, etc. aspects of Fulfillment processing
+RqBQ Request manual intervention or a decision with respect to Fulfillment
+ReBQ Retrieve details about any aspect of Fulfillment
+InBQ Instantiate a new Structuring
+UpBQ Update details relating to Structuring
+EcBQ Accept, verify, etc. aspects of Structuring processing
+RqBQ Request manual intervention or a decision with respect to Structuring
+ReBQ Retrieve details about any aspect of Structuring
+UpBQ Update details relating to Origination
+EcBQ Accept, verify, etc. aspects of Origination processing
+RqBQ Request manual intervention or a decision with respect to Origination
+ReBQ Retrieve details about any aspect of Origination
+UpBQ Update details relating to Syndicate Assembly
+EcBQ Accept, verify, etc. aspects of Syndicate Assembly processing
+RqBQ Request manual intervention or a decision with respect to Syndicate Assembly
+ReBQ Retrieve details about any aspect of Syndicate Assembly

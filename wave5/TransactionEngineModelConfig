@@ -1,0 +1,65 @@
+CR Transaction Schedule Fulfillment Arrangement Instance Record|Transaction Schedule Fulfillment Arrangement||||||CR Transaction Schedule Fulfillment Arrangement Initiate|CR Transaction Schedule Fulfillment Arrangement Update|CR Transaction Schedule Fulfillment Arrangement Control|CR Transaction Schedule Fulfillment Arrangement Exchange|CR Transaction Schedule Fulfillment Arrangement Execute|CR Transaction Schedule Fulfillment Arrangement Retrieve|
+Mandatory||Transaction Engine Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Transaction Schedule Fulfillment Arrangement Instance Reference||||Reference to the Transaction Schedule Fulfillment Arrangement instance|O|I|I|I|I
+Initiate||Transaction Schedule Fulfillment Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Transaction Schedule Fulfillment Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Transaction Schedule Fulfillment Arrangement Instance Status||||The status of the Transaction Schedule Fulfillment Arrangement instance (e.g. initialised, pending, active)|IO
+||Transaction Schedule Fulfillment Arrangement Instance Record|##|||The control record maintains the fulfillment details for the transaction engine service domain to execute a schedule of work tasks and financial transactions against a 'parent' product instance|IO|IO|||IO|O
+|||Product Instance Reference|||Reference to the product instance for which the transaction processing is being handled|IO|IO|||IO|O
+|||Product/Service Type|||The type or category of product or service that is being supported (e.g. mortgage, term loan)|IO|IO|||IO|O
+|||Transaction Schedule Fulfillment Schedule|||The processing schedule, covering reporting and financial transactions that are to be executed|IO|IO|||IO|O
+|||Transaction Schedule Work Task Record|##||A record of an instance of the work tasks that can be performed by the service on behalf of the fulfillment product instance|IO|IO|||IO|O
+||||Transaction Schedule Work Task Type||The type of work task (e.g. generate report/notification)|IO|IO|||IO|O
+||||Transaction Schedule Work Task Description||Description of the task performed|O|IO|||O|O
+||||Transaction Schedule Work Task Work Products ||File of consolidated notes, forms and documents for the work task|IO|IO|||IO|O
+||||Document Directory Entry Instance Reference||Reference to associated documents|IO|IO|||IO|O
+||||Transaction Schedule Work Task Result||Details of the outcome or result of the work task|O|IO|||O|O
+||||Transaction Schedule Task Fee Transaction|##|A record of an applied fee if applicable (this is charged to the parent product instance)|O|IO|||O|O
+|||||Transaction Schedule Work Task Fee Transaction Description|General description of the fee|O|IO|||O|O
+|||||Transaction Schedule Work Task Fee Transaction Type|The fee type applied|O|IO|||O|O
+|||||Transaction Schedule Work Task Fee Transaction Charge|The derived fee amount to be charged|O|IO|||O|O
+||Transaction Schedule Financial Transaction|##|||Details of the financial transactions that are executed on behalf of the fulfillment product instance|IO|IO|||IO|O
+|||Transaction Schedule Financial Transaction Product Instance Reference|||Identifies the payment source of the transaction - usually a reference to the parent product instance|O|IO|||O|O
+|||Transaction Schedule Financial Transaction Type|||The sub-type of financial transaction|O|IO|||O|O
+|||Transaction Schedule Financial Transaction Description |||Any necessary details describing the purpose or reference properties of the transaction|O|IO|||O|O
+|||Transaction Schedule Financial Transaction Amount|||The volume or value of the transaction|O|IO|||O|O
+|||Document Directory Entry Instance Reference|||Reference to associated documents|O|IO|||O|O
+|||Correspondence Instance Reference|||Reference to the correspondence generated for the transaction (e.g. confirmation note)|O|IO|||O|O
+|||Date Type|##||Key dates and times associated with the transaction schedule financial transaction (e.g. initiation date, confirmation date)|IO|IO|||IO|O
+||||Date||Value of the date type|IO|IO|||IO|O
+Update||Transaction Schedule Fulfillment Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||Transaction Schedule Fulfillment Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Transaction Schedule Fulfillment Arrangement Control Action Task Reference||||Reference to a Transaction Schedule Fulfillment Arrangement instance control processing service call|||O
+CONTROL||Transaction Schedule Fulfillment Arrangement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Transaction Schedule Fulfillment Arrangement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Transaction Schedule Fulfillment Arrangement Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Transaction Schedule Fulfillment Arrangement Exchange Action Task Reference||||Reference to a Transaction Schedule Fulfillment Arrangement instance exchange service call||||O
+EXCHANGE||Transaction Schedule Fulfillment Arrangement Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Transaction Schedule Fulfillment Arrangement Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Transaction Schedule Fulfillment Arrangement Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Transaction Schedule Fulfillment Arrangement Execute Action Task Reference||||Reference to a Transaction Schedule Fulfillment Arrangement instance execute service call|||||O
+EXECUTE||Transaction Schedule Fulfillment Arrangement Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+RETRIEVE||Transaction Schedule Fulfillment Arrangement Retrieve Action Task Reference||||Reference to a Transaction Schedule Fulfillment Arrangement instance retrieve service call||||||O
+RETRIEVE||Transaction Schedule Fulfillment Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||IO
+RETRIEVE||Transaction Schedule Fulfillment Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||I
+RETRIEVE||Transaction Schedule Fulfillment Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||O
+RETRIEVE||Transaction Schedule Fulfillment Arrangement Instance Report Record|##|||A specific Transaction Schedule Fulfillment Arrangement instance formatted report||||||IO
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Report Reference|||Reference to the control record instance report||||||I
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Report Type|||The type of external report available||||||IO
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||I
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate||||||O
+RETRIEVE||Transaction Schedule Fulfillment Arrangement Instance Analysis|##|||A specific Transaction Schedule Fulfillment Arrangement instance analytical report||||||IO
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view||||||I
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Analysis Report Type|||The type of external performance analysis report available||||||IO
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||I
+RETRIEVE|||Transaction Schedule Fulfillment Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||O

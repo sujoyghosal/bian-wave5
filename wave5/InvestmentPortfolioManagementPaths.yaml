@@ -1,0 +1,656 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Investment Portfolio Management'
+ description: >
+
+    ## Executive Summary:
+
+    Manage an investment portfolio, initiating trading to leverage market opportunities, remaining within portfolio trading policies
+
+    ## Example of Use:
+
+    An investment manager monitoring the markets determines that an identified opportunity can be exploited for the portfolio, remaining in line with the portfolio policies
+
+    ## Description:
+
+    Orchestrate the investment/ rebalancing of an investment portfolio to optimize gains remaining within the terms of the portfolio 'charter' or agreement
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-investment-portfolio-management/1.0.0
+schemes:
+ - https
+paths:
+  /investment-portfolio-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDInvestmentPortfolioManagement
+      summary: Activate  a SDInvestmentPortfolioManagement servicing session
+      description: Activate  a  SDInvestmentPortfolioManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDInvestmentPortfolioManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDInvestmentPortfolioManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDInvestmentPortfolioManagementActivateOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDInvestmentPortfolioManagement
+      summary: Update an active SDInvestmentPortfolioManagement session configuration
+      description: Update an active SDInvestmentPortfolioManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInvestmentPortfolioManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInvestmentPortfolioManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDInvestmentPortfolioManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDInvestmentPortfolioManagementConfigureOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDInvestmentPortfolioManagement
+      summary: "Capturing feedback against the SDInvestmentPortfolioManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDInvestmentPortfolioManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInvestmentPortfolioManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInvestmentPortfolioManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDInvestmentPortfolioManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDInvestmentPortfolioManagementFeedbackOutputModel'
+  /investment-portfolio-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDInvestmentPortfolioManagement
+      summary: Analytical views maintained by the SDInvestmentPortfolioManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDInvestmentPortfolioManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInvestmentPortfolioManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDInvestmentPortfolioManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDInvestmentPortfolioManagementRetrieveOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateManagedInvestmentPortfolioFulfillmentArrangement
+      summary: Details of a new ManagedInvestmentPortfolioFulfillmentArrangement instance
+      description: Initiate investment portfolio management activity for a customer
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ManagedInvestmentPortfolioFulfillmentArrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new ManagedInvestmentPortfolioFulfillmentArrangement instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementInitiateOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateManagedInvestmentPortfolioFulfillmentArrangement
+      summary: Update to any amendable fields of the ManagedInvestmentPortfolioFulfillmentArrangement instance
+      description: Update details of an active investment portfolio management arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Managed Investment Portfolio Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementUpdateOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlManagedInvestmentPortfolioFulfillmentArrangementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the handling of an investment portfolio (e.g. suspend)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Managed Investment Portfolio Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementControlOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeManagedInvestmentPortfolioFulfillmentArrangementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Approve, reject etc. actions performed for investment portfolio management
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Managed Investment Portfolio Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementExchangeOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeManagedInvestmentPortfolioFulfillmentArrangementUpdate
+      summary: Invoke an automated execute action against the ManagedInvestmentPortfolioFulfillmentArrangement instance
+      description: Execute an automated service (such as trigger rebalancing)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Managed Investment Portfolio Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementExecuteOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestManagedInvestmentPortfolioFulfillmentArrangementUpdate
+      summary: Invoke a service request action against the ManagedInvestmentPortfolioFulfillmentArrangement instance
+      description: Request manual intervention (such as initiate a review of the status)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Managed Investment Portfolio Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementRequestOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveInvestmentPortfolioManagement
+      summary: Invoke a reporting action to obtain a Managed Investment Portfolio Fulfillment Arrangement instance related report
+      description: Retrieve details about a managed investment portfolio
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Managed Investment Portfolio Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioFulfillmentArrangementRetrieveOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/track/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveManagedInvestmentPortfolioFulfillmentArrangementTrack
+      summary: Invoke a reporting action to obtain a Track instance related report.
+      description: Retrieve details about tracking insights for the portfolio .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Track Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTrackRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Track Instance Record
+          schema:
+            $ref: '#/definitions/BQTrackRetrieveOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/marketopportunity/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveManagedInvestmentPortfolioFulfillmentArrangementMarketOpportunity
+      summary: Invoke a reporting action to obtain a MarketOpportunity instance related report.
+      description: Retrieve details about a related market opportunity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MarketOpportunity Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQMarketOpportunityRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved MarketOpportunity Instance Record
+          schema:
+            $ref: '#/definitions/BQMarketOpportunityRetrieveOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/tradeinitiation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateManagedInvestmentPortfolioFulfillmentArrangementTradeInitiation
+      summary: Details of a new TradeInitiation instance
+      description: Initiate a trade against the investment portfolio holdings
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Managed Investment Portfolio Fulfillment Arrangement instance
+          schema:
+            $ref: '#/definitions/BQTradeInitiationInitiateOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/tradeinitiation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateManagedInvestmentPortfolioFulfillmentArrangementTradeInitiation
+      summary: Update to any amendable fields of the TradeInitiation instance
+      description: Update a market trade request
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TradeInitiation Request Payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TradeInitiation Instance
+          schema:
+            $ref: '#/definitions/BQTradeInitiationUpdateOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/tradeinitiation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeManagedInvestmentPortfolioFulfillmentArrangementTradeInitiationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject etc. a market trade proposed for the portfolio
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TradeInitiation request payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of TradeInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQTradeInitiationExchangeOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/tradeinitiation/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestManagedInvestmentPortfolioFulfillmentArrangementTradeInitiationUpdate
+      summary: Invoke a service request action against the TradeInitiation instance
+      description: Request manual intervention to a related market trade (e.g. request specific placement approaches)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TradeInitiation request payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of TradeInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQTradeInitiationRequestOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/tradeinitiation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveManagedInvestmentPortfolioFulfillmentArrangementTradeInitiation
+      summary: Invoke a reporting action to obtain a TradeInitiation instance related report.
+      description: Retrieve details about a related market trade request .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTradeInitiationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TradeInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQTradeInitiationRetrieveOutputModel'
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInvestmentPortfolioManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- InvestmentPortfolioManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /investment-portfolio-management/managed-investment-portfolio-fulfillment-arrangement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInvestmentPortfolioManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Track',  'MarketOpportunity',  'TradeInitiation', ]
+  /investment-portfolio-management/{sd-reference-id}/managed-investment-portfolio-fulfillment-arrangement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInvestmentPortfolioManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- TradeInitiation
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- TradeInitiation Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [TradeInitiationID1, TradeInitiationID2]

@@ -1,0 +1,29 @@
+sd=Accounts Receivable	This service domain handles accounts receivable for invoices issue by the bank to customers and partners. It includes follow-up and resolution activity for delayed/missed payments	A product business unit submits an invoice to a customer for services rendered that requires customer payment from an account not managed by the bank.	Manage the tracking, chasing and receipt of scheduled payments against issued invoices. For the significant majority accounts are likely to be settled in compliance with established arrangements. For late payment the Service Domain includes actions to negotiate with the customer and handle defaulted payments
+sdpath=accounts-receivable
+crpath=accounts-receivable-procedure
+crr=Accounts Receivable Procedure Instance
+mcr=Accounts Receivable Procedure
+bqs=Payment CustomerNegotiation Resolution ReceivablesEvaluation
+CONFIG
+AccountsReceivableProcedure	initiate	Instantiate a new Accounts Receivable Procedure		initiateAccountsReceivableProcedure		#desc
+AccountsReceivableProcedure	update	Update details relating to Accounts Receivable Procedure		updateAccountsReceivableProcedure		#desc
+AccountsReceivableProcedure	control	Control the processing of Accounts Receivable Procedure		controlAccountsReceivableProcedure		#desc
+AccountsReceivableProcedure	exchange	Accept, verify, etc. aspects of Accounts Receivable Procedure processing		exchangeAccountsReceivableProcedure		#desc
+AccountsReceivableProcedure	execute	Execute an available automated action for Accounts Receivable Procedure		executeAccountsReceivableProcedure		#desc
+AccountsReceivableProcedure	request	Request manual intervention or a decision with respect to Accounts Receivable Procedure		requestAccountsReceivableProcedure		#desc
+AccountsReceivableProcedure	retrieve	Retrieve details about any aspect of Accounts Receivable Procedure		retrieveAccountsReceivableProcedure		#desc
+CustomerNegotiation	initiate	Instantiate a new Customer Negotiation	initiateAccountsReceivableProcedureCustomerNegotiation	initiateAccountsReceivableProcedureCustomerNegotiation		Details of a new Customer Negotiation instance
+BQCustomerNegotiation	update	Update details relating to Customer Negotiation	updateAccountsReceivableProcedureBQCustomerNegotiation	updateAccountsReceivableProcedureBQCustomerNegotiation		Update to any amendable fields of the BQ Customer Negotiation instance
+BQCustomerNegotiation	exchange	Accept, verify, etc. aspects of Customer Negotiation processing	exchangeAccountsReceivableProcedureBQCustomerNegotiation	exchangeAccountsReceivableProcedureBQCustomerNegotiation		Handle an external exchange (e.g. accept, reject, verify)
+BQCustomerNegotiation	request	Request manual intervention or a decision with respect to Customer Negotiation	requestAccountsReceivableProcedureBQCustomerNegotiation	requestAccountsReceivableProcedureBQCustomerNegotiation		Invoke a service request action against the BQ Customer Negotiation instance
+BQCustomerNegotiation	retrieve	Retrieve details about any aspect of Customer Negotiation	retrieveAccountsReceivableProcedureBQCustomerNegotiation	retrieveAccountsReceivableProcedureBQCustomerNegotiation		Invoke a reporting action to obtain a BQ Customer Negotiation instance related report
+Resolution	initiate	Instantiate a new Resolution	initiateAccountsReceivableProcedureResolution	initiateAccountsReceivableProcedureResolution		Details of a new Resolution instance
+Resolution	update	Update details relating to Resolution	updateAccountsReceivableProcedureResolution	updateAccountsReceivableProcedureResolution		Update to any amendable fields of the Resolution instance
+Resolution	retrieve	Retrieve details about any aspect of Resolution	retrieveAccountsReceivableProcedureResolution	retrieveAccountsReceivableProcedureResolution		Invoke a reporting action to obtain a Resolution instance related report
+Payment	initiate	Instantiate a new Payment	initiateAccountsReceivableProcedurePayment	initiateAccountsReceivableProcedurePayment		Details of a new Payment instance
+Payment	update	Update details relating to Payment	updateAccountsReceivableProcedurePayment	updateAccountsReceivableProcedurePayment		Update to any amendable fields of the Payment instance
+Payment	retrieve	Retrieve details about any aspect of Payment	retrieveAccountsReceivableProcedurePayment	retrieveAccountsReceivableProcedurePayment		Invoke a reporting action to obtain a Payment instance related report
+ReceivablesEvaluation	initiate	Instantiate a new Receivables Evaluation	initiateAccountsReceivableProcedureReceivablesEvaluation	initiateAccountsReceivableProcedureReceivablesEvaluation		Details of a new Receivables Evaluation instance
+ReceivablesEvaluation	update	Update details relating to Receivables Evaluation	updateAccountsReceivableProcedureReceivablesEvaluation	updateAccountsReceivableProcedureReceivablesEvaluation		Update to any amendable fields of the Receivables Evaluation instance
+ReceivablesEvaluation	exchange	Accept, verify, etc. aspects of Receivables Evaluation processing	exchangeAccountsReceivableProcedureReceivablesEvaluation	exchangeAccountsReceivableProcedureReceivablesEvaluation		Handle an external exchange (e.g. accept, reject, verify)
+ReceivablesEvaluation	retrieve		retrieveAccountsReceivableProcedureReceivablesEvaluation	retrieveAccountsReceivableProcedureReceivablesEvaluation		Invoke a reporting action to obtain a Receivables Evaluation instance related report

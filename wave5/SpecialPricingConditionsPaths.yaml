@@ -1,0 +1,514 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Special Pricing Conditions'
+ description: >
+
+    ## Executive Summary:
+
+    Maintain a pricing list or conditions (with ranges and optional terms) categorized by various dimensions to impose exceptional product pricing conditions that override standard pricing terms (for special events/situations)
+
+    ## Example of Use:
+
+    The bank suspends certain product fees during a major brand awareness campaign
+
+    ## Description:
+
+    This service domain allows the bank to apply special pricing terms and conditions that override standard price calculations. These override facilities are to be used in specific situations where a bank level decision is taken to amend prices or pricing terms in response to some major event or business development action
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-special-pricing-conditions/1.0.0
+schemes:
+ - https
+paths:
+  /special-pricing-conditions/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDSpecialPricingConditions
+      summary: Activate  a SDSpecialPricingConditions servicing session
+      description: Activate  a  SDSpecialPricingConditions servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDSpecialPricingConditions Request Payload
+        schema:
+          $ref: '#/definitions/SDSpecialPricingConditionsActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDSpecialPricingConditionsActivateOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDSpecialPricingConditions
+      summary: Update an active SDSpecialPricingConditions session configuration
+      description: Update an active SDSpecialPricingConditions session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDSpecialPricingConditions Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDSpecialPricingConditions Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDSpecialPricingConditionsConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDSpecialPricingConditionsConfigureOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDSpecialPricingConditions
+      summary: "Capturing feedback against the SDSpecialPricingConditions service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDSpecialPricingConditions service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDSpecialPricingConditions Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDSpecialPricingConditions Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDSpecialPricingConditionsFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDSpecialPricingConditionsFeedbackOutputModel'
+  /special-pricing-conditions/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDSpecialPricingConditions
+      summary: Analytical views maintained by the SDSpecialPricingConditions service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDSpecialPricingConditions service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDSpecialPricingConditions Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDSpecialPricingConditionsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDSpecialPricingConditionsRetrieveOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateSpecialPricingConditionsDirectoryEntry
+      summary: Details of a new SpecialPricingConditionsDirectoryEntry instance
+      description: Instantiate a new Special Pricing Conditions Directory Entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SpecialPricingConditionsDirectoryEntry Request Payload
+        schema:
+          $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new SpecialPricingConditionsDirectoryEntry instance
+          schema:
+            $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryInitiateOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateSpecialPricingConditionsDirectoryEntry
+      summary: Update to any amendable fields of the SpecialPricingConditionsDirectoryEntry instance
+      description: Update details relating to Special Pricing Conditions Directory Entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Special Pricing Conditions Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Special Pricing Conditions Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryUpdateOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlSpecialPricingConditionsDirectoryEntryUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Special Pricing Conditions Directory Entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Special Pricing Conditions Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryControlInputModel'
+      responses:
+        200:
+          description: Successful control of Special Pricing Conditions Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryControlOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeSpecialPricingConditionsDirectoryEntryUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Special Pricing Conditions Directory Entry processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Special Pricing Conditions Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Special Pricing Conditions Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryExchangeOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeSpecialPricingConditionsDirectoryEntryUpdate
+      summary: Invoke an automated execute action against the SpecialPricingConditionsDirectoryEntry instance
+      description: Execute an available automated action for Special Pricing Conditions Directory Entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Special Pricing Conditions Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Special Pricing Conditions Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryExecuteOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestSpecialPricingConditionsDirectoryEntryUpdate
+      summary: Invoke a service request action against the SpecialPricingConditionsDirectoryEntry instance
+      description: Request manual intervention or a decision with respect to Special Pricing Conditions Directory Entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Special Pricing Conditions Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Special Pricing Conditions Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryRequestOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSpecialPricingConditions
+      summary: Invoke a reporting action to obtain a Special Pricing Conditions Directory Entry instance related report
+      description: Retrieve details about any aspect of Special Pricing Conditions Directory Entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRSpecialPricingConditionsDirectoryEntryRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Special Pricing Conditions Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRSpecialPricingConditionsDirectoryEntryRetrieveOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}/pricingterms/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateSpecialPricingConditionsDirectoryEntryPricingTerms
+      summary: Details of a new PricingTerms instance
+      description: Instantiate a new Pricing Terms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Special Pricing Conditions Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/BQPricingTermsInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Special Pricing Conditions Directory Entry instance
+          schema:
+            $ref: '#/definitions/BQPricingTermsInitiateOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}/pricingterms/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateSpecialPricingConditionsDirectoryEntryPricingTerms
+      summary: Update to any amendable fields of the PricingTerms instance
+      description: Update details relating to Pricing Terms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PricingTerms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PricingTerms Request Payload
+        schema:
+          $ref: '#/definitions/BQPricingTermsUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated PricingTerms Instance
+          schema:
+            $ref: '#/definitions/BQPricingTermsUpdateOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}/pricingterms/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSpecialPricingConditionsDirectoryEntryPricingTerms
+      summary: Invoke a reporting action to obtain a PricingTerms instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PricingTerms Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQPricingTermsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved PricingTerms Instance Record
+          schema:
+            $ref: '#/definitions/BQPricingTermsRetrieveOutputModel'
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveSpecialPricingConditionsReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- SpecialPricingConditions Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /special-pricing-conditions/special-pricing-conditions-directory-entry/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveSpecialPricingConditionsBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'PricingTerms', ]
+  /special-pricing-conditions/{sd-reference-id}/special-pricing-conditions-directory-entry/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveSpecialPricingConditionsBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Special Pricing Conditions Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Special Pricing Conditions Directory Entry Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- PricingTerms
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- PricingTerms Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [PricingTermsID1, PricingTermsID2]

@@ -1,0 +1,28 @@
+CR - Consumer Securities Order Transaction Instance Record	CR - Consumer Securities Order Transaction Instance Record	Consumer Securities Order Transaction Instance Record	##			The transaction processing for a consumer customer securities order	IO	IO	O	O	O	O		O
+			Consumer Securities Order Instruction Type			The type of market order request (e.g. Customer discretion)	IO	IO	O	O	O	O		O
+			Customer Reference			Reference to the account primary party/owner for the market order	I	IO	O	O	O	O		O
+			Employee/Business Unit Reference			The employee/business unit placing the market order	I	IO	O	O	O	O		O
+			Investment Portfolio Instance Reference			Reference to the associated customer investment portfolio record of all holdings (referenced to check securities availability if necessary)	I	IO	O	O	O	O		O
+			Consumer Securities Order Processing Instruction			Any customer specific processing preferences or requirements	IO	IO	O	O	O	O		O
+			Document Directory Entry Instance Reference			The document reference for the order confirmation notice	O	IO	O	O	O	O		O
+			Correspondence Instance Reference			Reference to the correspondence generated for the order confirmation	O	IO	O	O	O	O		O
+			Consumer Securities Order Transaction	##		The details of the market order transaction captured for the consumer securities trade	IO	IO	O	O	O	O		O
+				Investment Account Fulfillment Arrangement Instance Reference		Reference to the underlying investment account supporting the transaction	IO	IO	O	O	O	O		O
+				Current Account Fulfillment Arrangement Instance Reference		Reference to the underlying cash account supporting the transaction	IO	IO	O	O	O	O		O
+				Market Order Type		The type of market order underlying the consumer securities order request (e.g. Day Order. Order on Open/Close, Fill or Kill, Limit Order - if allowed for consumer trading)	IO	IO	O	O	O	O		O
+				Security Type		The security to be traded	IO	IO	O	O	O	O		O
+				Amount		The volume of shares to be bought or sold	IO	IO	O	O	O	O		O
+				Date Type	##	Key dates associated with the transaction (e.g. order capture, order execution, order completion)	IO	IO	O	O	O	O		O
+					Date	Value of the specific date type	IO	IO	O	O	O	O		O
+BQ Quote Instance Record	BQ Quote Instance Record	Quote Instance Record	##			Simple exchange to provide the current bank quote for the security. Note the order may be tied to this rate or executed at the rate that applies at the time of final instruction depending on the bank's policies				O				
+			Securities Price			The prevailing bank buy/sell quote for the security				O				
+BQ Compliance Instance Record	BQ Compliance Instance Record	Compliance Instance Record	##			Details of compliance checks performed					O			
+			Consumer Securities Order Transaction Compliance Check Type			The type of compliance check performed (e.g. AML, Watch lists)					O			
+			Consumer Securities Order Transaction Compliance Check Result			The outcome of the compliance check					O			
+			Consumer Securities Order Transaction Compliance Task Result			Details of the overall compliance checking process					O			
+BQ Funding Check Instance Record	BQ Funding Check Instance Record	Funding Check Instance Record	##			Check that funds are available for the payment						O		
+			Consumer Securities Order Transaction Funding Check Result			The outcome of the funds available check						O		
+BQ Order Initiation Instance Record	BQ Order Initiation Instance Record	Order Initiation Instance Record	##			Initiate one (or more) market trades to fulfill the market order								O
+			Consumer Securities Order Transaction Instance Reference			The reference to the market order. Note this can be the internal bank 'order' made against the bank's managed position and may not result in a matched trade in the wholesale markets								O
+			Consumer Securities Order Transaction Instance Status			The returned status of the customer securities order								O
+			Consumer Securities Order Initiation Task Result			Details of the market order initiation task								O

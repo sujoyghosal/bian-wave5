@@ -1,0 +1,273 @@
+CR Management Manual Specification Instance Record|Management Manual Specification||||||CR Management Manual Specification Initiate|CR Management Manual Specification Update|CR Management Manual Specification Control|CR Management Manual Specification Exchange|CR Management Manual Specification Capture|CR Management Manual Specification Request|CR Management Manual Specification Retrieve|BQ Company Mission and Policies Initiate|BQ Company Mission and Policies Update|BQ Company Mission and Policies Capture|BQ Company Mission and Policies Retrieve|BQ Legal and Regulatory Obligations and Guidelines Initiate|BQ Legal and Regulatory Obligations and Guidelines Update|BQ Legal and Regulatory Obligations and Guidelines Capture|BQ Legal and Regulatory Obligations and Guidelines Retrieve|BQ Operational and Production Procedures and Guidelines Initiate|BQ Operational and Production Procedures and Guidelines Update|BQ Operational and Production Procedures and Guidelines Capture|BQ Operational and Production Procedures and Guidelines Retrieve|BQ Employment Related Procedures and Guidelines Initiate|BQ Employment Related Procedures and Guidelines Update|BQ Employment Related Procedures and Guidelines Capture|BQ Employment Related Procedures and Guidelines Retrieve|BQ Staff Management Procedures and Guidelines Initiate|BQ Staff Management Procedures and Guidelines Update|BQ Staff Management Procedures and Guidelines Capture|BQ Staff Management Procedures and Guidelines Retrieve|
+Mandatory||Management Manual Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Management Manual Specification Instance Reference||||Reference to the Management Manual Specification instance|O|I|I|I|I|I
+Initiate||Management Manual Specification Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Management Manual Specification Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Management Manual Specification Instance Status||||The status of the Management Manual Specification instance (e.g. initialised, pending, active)|IO
+||Management Manual Specification Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Management Manual.
+Example: Create and maintain product designs and analytical models.|||||||||||||||||||||||||||||||
+||Management Manual Specification Parameter Type||||A Classification value that distinguishes between designs according to the type of business services and/or aspect within Management Manual Specification . Eg Product Design, Campaign Design, Risk Model Design etc. |IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||Management Manual Specification Selected Option||||A selected optional business service as subject matter of design|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||Management Manual Specification Description||||Documentation of Management Manual Specification|I|I|I|I|I|I|O||||||||||||||||||||||||
+||Management Manual Specification Version||||The version of Management Manual Specification|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||Management Manual Specification Status||||The status of Management Manual Specification|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||Management Manual Specification Usage Log||||Reference to the log of (usage) ativities/events of Management Manual Specification|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||Management Manual Specification Feedback||||Information about reactions to a design which is used as a basis for improvement for the Management Manual Specification.|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||Management Manual Specification ServiceProvider Reference||||Reference to the party who has provided Management Manual Specification|I|I|I|I|I|I|O||||||||||||||||||||||||
+Update||Management Manual Specification Update Action Task Reference||||Reference to an update service call||O
+Update||Management Manual Specification Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Management Manual Specification Control Action Task Reference||||Reference to a Management Manual Specification instance control processing service call|||O
+CONTROL||Management Manual Specification Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Management Manual Specification Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Management Manual Specification Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Management Manual Specification Exchange Action Task Reference||||Reference to a Management Manual Specification instance exchange service call||||O
+EXCHANGE||Management Manual Specification Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Management Manual Specification Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Management Manual Specification Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Management Manual Specification Capture Action Task Reference||||Reference to a Management Manual Specification instance capture service call|||||O
+CAPTURE||Management Manual Specification Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Management Manual Specification Request Action Task Reference||||Reference to a Management Manual Specification instance request service call||||||O
+REQUEST||Management Manual Specification Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Management Manual Specification Retrieve Action Task Reference||||Reference to a Management Manual Specification instance retrieve service call|||||||O
+RETRIEVE||Management Manual Specification Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Management Manual Specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Management Manual Specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Management Manual Specification Instance Report Record|##|||A specific Management Manual Specification instance formatted report|||||||IO
+RETRIEVE|||Management Manual Specification Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Management Manual Specification Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Management Manual Specification Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Management Manual Specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Management Manual Specification Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Management Manual Specification Instance Analysis|##|||A specific Management Manual Specification instance analytical report|||||||IO
+RETRIEVE|||Management Manual Specification Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Management Manual Specification Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Management Manual Specification Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Management Manual Specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Management Manual Specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Company Mission and Policies Instance Record|Company Mission and Policies||||||
+Mandatory||Management Manual Specification Instance Reference||||Reference to the parent Management Manual Specification instance||||||||I|I|I
+Mandatory||Company Mission and Policies Instance Reference||||Reference to the Company Mission and Policies instance||||||||O|I|I
+Initiate||Company Mission and Policies Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Company Mission and Policies Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Company Mission and Policies Instance Status||||The status of the Company Mission and Policies instance (e.g. initialised, pending, active)||||||||O
+||Company Mission and Policies Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Management Manual.
+|||||||||||||||||||||||||||||||
+||Company Mission and Policies Preconditions||||The required status/situation before the specification aspect can be defined||||||||IO|IO|IO|O||||||||||||||||||||
+||Company Mission and Policies Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||IO|IO|IO|O||||||||||||||||||||
+||Company Mission and Policies Version Number||||The current version, and version history as appropriate for the specification aspect||||||||IO|IO|IO|O||||||||||||||||||||
+||Company Mission and Policies||||The Management Manual Specification specific Business Service||||||||IO|IO|IO|O||||||||||||||||||||
+||Company Mission and Policies Service Type||||Reference to the specific business service type||||||||IO|IO|IO|O||||||||||||||||||||
+||Company Mission and Policies Service Description||||Description of the performed business service||||||||IO|IO|IO|O||||||||||||||||||||
+||Company Mission and Policies Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|O||||||||||||||||||||
+||Company Mission and Policies Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|O||||||||||||||||||||
+||Company Mission and Policies Service Name||||||||||||IO|IO|IO|O||||||||||||||||||||
+Update||Company Mission and Policies Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Company Mission and Policies Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Company Mission and Policies Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Capture||Company Mission and Policies Capture Action Task Reference||||Reference to a Company Mission and Policies instance capture service call||||||||||O
+Capture||Company Mission and Policies Capture Action Task Record||||The capture service call consolidated processing record||||||||||I/O
+Capture||Company Mission and Policies Capture Record Reference||||Reference to the Company Mission and Policies structured input transaction/record||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||O
+Retrieve||Company Mission and Policies Retrieve Action Task Reference||||Reference to a Company Mission and Policies instance retrieve service call|||||||||||O
+Retrieve||Company Mission and Policies Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||Company Mission and Policies Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||Company Mission and Policies Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||Company Mission and Policies Instance Report|##|||A specific Company Mission and Policies instance formatted report|||||||||||IO
+Retrieve|||Company Mission and Policies Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||Company Mission and Policies Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Company Mission and Policies Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||Company Mission and Policies Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||Company Mission and Policies Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||Company Mission and Policies Instance Analysis|##|||A specific Company Mission and Policies instance analytical report|||||||||||IO
+Retrieve|||Company Mission and Policies Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||Company Mission and Policies Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Company Mission and Policies Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||Company Mission and Policies Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||Company Mission and Policies Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O
+BQ Legal and Regulatory Obligations and Guidelines Instance Record|Legal and Regulatory Obligations and Guidelines||||||
+Mandatory||Management Manual Specification Instance Reference||||Reference to the parent Management Manual Specification instance||||||||||||I|I|I
+Mandatory||Legal and Regulatory Obligations and Guidelines Instance Reference||||Reference to the Legal and Regulatory Obligations and Guidelines instance||||||||||||O|I|I
+Initiate||Legal and Regulatory Obligations and Guidelines Initiate Action Reference||||Reference to an Initiate service call||||||||||||O
+Initiate||Legal and Regulatory Obligations and Guidelines Initiate Action Record||||The Initiate service call input and output record||||||||||||I/O
+Initiate||Legal and Regulatory Obligations and Guidelines Instance Status||||The status of the Legal and Regulatory Obligations and Guidelines instance (e.g. initialised, pending, active)||||||||||||O
+||Legal and Regulatory Obligations and Guidelines Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Management Manual.
+|||||||||||||||||||||||||||||||
+||Legal and Regulatory Obligations and Guidelines Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||IO|IO|IO|O||||||||||||||||
+||Legal and Regulatory Obligations and Guidelines Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||IO|IO|IO|O||||||||||||||||
+||Legal and Regulatory Obligations and Guidelines Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||IO|IO|IO|O||||||||||||||||
+||Legal and Regulatory Obligations and Guidelines||||The Management Manual Specification specific Business Service||||||||||||IO|IO|IO|O||||||||||||||||
+||Legal and Regulatory Obligations and Guidelines Service Type||||Reference to the specific business service type||||||||||||IO|IO|IO|O||||||||||||||||
+||Legal and Regulatory Obligations and Guidelines Service Description||||Description of the performed business service||||||||||||IO|IO|IO|O||||||||||||||||
+||Legal and Regulatory Obligations and Guidelines Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||IO|IO|IO|O||||||||||||||||
+||Legal and Regulatory Obligations and Guidelines Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||IO|IO|IO|O||||||||||||||||
+||Legal and Regulatory Obligations and Guidelines Service Name||||||||||||||||IO|IO|IO|O||||||||||||||||
+Update||Legal and Regulatory Obligations and Guidelines Update Action Task Reference||||Reference to an update service call|||||||||||||O
+Update||Legal and Regulatory Obligations and Guidelines Update Action Task Record||||The update service call consolidated processing record|||||||||||||I/O
+Update||Legal and Regulatory Obligations and Guidelines Update Action Request||||Details of the update action service request|||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||O
+Capture||Legal and Regulatory Obligations and Guidelines Capture Action Task Reference||||Reference to a Legal and Regulatory Obligations and Guidelines instance capture service call||||||||||||||O
+Capture||Legal and Regulatory Obligations and Guidelines Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||I/O
+Capture||Legal and Regulatory Obligations and Guidelines Capture Record Reference||||Reference to the Legal and Regulatory Obligations and Guidelines structured input transaction/record||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||O
+Retrieve||Legal and Regulatory Obligations and Guidelines Retrieve Action Task Reference||||Reference to a Legal and Regulatory Obligations and Guidelines instance retrieve service call|||||||||||||||O
+Retrieve||Legal and Regulatory Obligations and Guidelines Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||I/O
+Retrieve||Legal and Regulatory Obligations and Guidelines Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||I
+Retrieve||Legal and Regulatory Obligations and Guidelines Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||O
+Retrieve||Legal and Regulatory Obligations and Guidelines Instance Report|##|||A specific Legal and Regulatory Obligations and Guidelines instance formatted report|||||||||||||||IO
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Report Reference|||Reference to the control record instance report|||||||||||||||I
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Report Type|||The type of external report available|||||||||||||||O
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||O
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||O
+Retrieve||Legal and Regulatory Obligations and Guidelines Instance Analysis|##|||A specific Legal and Regulatory Obligations and Guidelines instance analytical report|||||||||||||||IO
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||I
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||O
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||O
+Retrieve|||Legal and Regulatory Obligations and Guidelines Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||O
+BQ Operational and Production Procedures and Guidelines Instance Record|Operational and Production Procedures and Guidelines||||||
+Mandatory||Management Manual Specification Instance Reference||||Reference to the parent Management Manual Specification instance||||||||||||||||I|I|I
+Mandatory||Operational and Production Procedures and Guidelines Instance Reference||||Reference to the Operational and Production Procedures and Guidelines instance||||||||||||||||O|I|I
+Initiate||Operational and Production Procedures and Guidelines Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||O
+Initiate||Operational and Production Procedures and Guidelines Initiate Action Record||||The Initiate service call input and output record||||||||||||||||I/O
+Initiate||Operational and Production Procedures and Guidelines Instance Status||||The status of the Operational and Production Procedures and Guidelines instance (e.g. initialised, pending, active)||||||||||||||||O
+||Operational and Production Procedures and Guidelines Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Management Manual.
+|||||||||||||||||||||||||||||||
+||Operational and Production Procedures and Guidelines Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||IO|IO|IO|O||||||||||||
+||Operational and Production Procedures and Guidelines Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||IO|IO|IO|O||||||||||||
+||Operational and Production Procedures and Guidelines Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||IO|IO|IO|O||||||||||||
+||Operational and Production Procedures and Guidelines||||The Management Manual Specification specific Business Service||||||||||||||||IO|IO|IO|O||||||||||||
+||Operational and Production Procedures and Guidelines Service Type||||Reference to the specific business service type||||||||||||||||IO|IO|IO|O||||||||||||
+||Operational and Production Procedures and Guidelines Service Description||||Description of the performed business service||||||||||||||||IO|IO|IO|O||||||||||||
+||Operational and Production Procedures and Guidelines Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||IO|IO|IO|O||||||||||||
+||Operational and Production Procedures and Guidelines Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||IO|IO|IO|O||||||||||||
+||Operational and Production Procedures and Guidelines Service Name||||||||||||||||||||IO|IO|IO|O||||||||||||
+Update||Operational and Production Procedures and Guidelines Update Action Task Reference||||Reference to an update service call|||||||||||||||||O
+Update||Operational and Production Procedures and Guidelines Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||I/O
+Update||Operational and Production Procedures and Guidelines Update Action Request||||Details of the update action service request|||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||O
+Capture||Operational and Production Procedures and Guidelines Capture Action Task Reference||||Reference to a Operational and Production Procedures and Guidelines instance capture service call||||||||||||||||||O
+Capture||Operational and Production Procedures and Guidelines Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||||I/O
+Capture||Operational and Production Procedures and Guidelines Capture Record Reference||||Reference to the Operational and Production Procedures and Guidelines structured input transaction/record||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||||O
+Retrieve||Operational and Production Procedures and Guidelines Retrieve Action Task Reference||||Reference to a Operational and Production Procedures and Guidelines instance retrieve service call|||||||||||||||||||O
+Retrieve||Operational and Production Procedures and Guidelines Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Operational and Production Procedures and Guidelines Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Operational and Production Procedures and Guidelines Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Operational and Production Procedures and Guidelines Instance Report|##|||A specific Operational and Production Procedures and Guidelines instance formatted report|||||||||||||||||||IO
+Retrieve|||Operational and Production Procedures and Guidelines Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Operational and Production Procedures and Guidelines Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Operational and Production Procedures and Guidelines Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Operational and Production Procedures and Guidelines Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Operational and Production Procedures and Guidelines Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Operational and Production Procedures and Guidelines Instance Analysis|##|||A specific Operational and Production Procedures and Guidelines instance analytical report|||||||||||||||||||IO
+Retrieve|||Operational and Production Procedures and Guidelines Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Operational and Production Procedures and Guidelines Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Operational and Production Procedures and Guidelines Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Operational and Production Procedures and Guidelines Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Operational and Production Procedures and Guidelines Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+BQ Employment Related Procedures and Guidelines Instance Record|Employment Related Procedures and Guidelines||||||
+Mandatory||Management Manual Specification Instance Reference||||Reference to the parent Management Manual Specification instance||||||||||||||||||||I|I|I
+Mandatory||Employment Related Procedures and Guidelines Instance Reference||||Reference to the Employment Related Procedures and Guidelines instance||||||||||||||||||||O|I|I
+Initiate||Employment Related Procedures and Guidelines Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||O
+Initiate||Employment Related Procedures and Guidelines Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||I/O
+Initiate||Employment Related Procedures and Guidelines Instance Status||||The status of the Employment Related Procedures and Guidelines instance (e.g. initialised, pending, active)||||||||||||||||||||O
+||Employment Related Procedures and Guidelines Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Management Manual.
+|||||||||||||||||||||||||||||||
+||Employment Related Procedures and Guidelines Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||||||IO|IO|IO|O||||||||
+||Employment Related Procedures and Guidelines Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||||||IO|IO|IO|O||||||||
+||Employment Related Procedures and Guidelines Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||||||IO|IO|IO|O||||||||
+||Employment Related Procedures and Guidelines||||The Management Manual Specification specific Business Service||||||||||||||||||||IO|IO|IO|O||||||||
+||Employment Related Procedures and Guidelines Service Type||||Reference to the specific business service type||||||||||||||||||||IO|IO|IO|O||||||||
+||Employment Related Procedures and Guidelines Service Description||||Description of the performed business service||||||||||||||||||||IO|IO|IO|O||||||||
+||Employment Related Procedures and Guidelines Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||IO|IO|IO|O||||||||
+||Employment Related Procedures and Guidelines Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||IO|IO|IO|O||||||||
+||Employment Related Procedures and Guidelines Service Name||||||||||||||||||||||||IO|IO|IO|O||||||||
+Update||Employment Related Procedures and Guidelines Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||O
+Update||Employment Related Procedures and Guidelines Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||I/O
+Update||Employment Related Procedures and Guidelines Update Action Request||||Details of the update action service request|||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||O
+Capture||Employment Related Procedures and Guidelines Capture Action Task Reference||||Reference to a Employment Related Procedures and Guidelines instance capture service call||||||||||||||||||||||O
+Capture||Employment Related Procedures and Guidelines Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||||||||I/O
+Capture||Employment Related Procedures and Guidelines Capture Record Reference||||Reference to the Employment Related Procedures and Guidelines structured input transaction/record||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||||||||O
+Retrieve||Employment Related Procedures and Guidelines Retrieve Action Task Reference||||Reference to a Employment Related Procedures and Guidelines instance retrieve service call|||||||||||||||||||||||O
+Retrieve||Employment Related Procedures and Guidelines Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||I/O
+Retrieve||Employment Related Procedures and Guidelines Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||I
+Retrieve||Employment Related Procedures and Guidelines Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||O
+Retrieve||Employment Related Procedures and Guidelines Instance Report|##|||A specific Employment Related Procedures and Guidelines instance formatted report|||||||||||||||||||||||IO
+Retrieve|||Employment Related Procedures and Guidelines Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||I
+Retrieve|||Employment Related Procedures and Guidelines Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Employment Related Procedures and Guidelines Instance Report Type|||The type of external report available|||||||||||||||||||||||O
+Retrieve|||Employment Related Procedures and Guidelines Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||O
+Retrieve|||Employment Related Procedures and Guidelines Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O
+Retrieve||Employment Related Procedures and Guidelines Instance Analysis|##|||A specific Employment Related Procedures and Guidelines instance analytical report|||||||||||||||||||||||IO
+Retrieve|||Employment Related Procedures and Guidelines Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||I
+Retrieve|||Employment Related Procedures and Guidelines Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Employment Related Procedures and Guidelines Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||O
+Retrieve|||Employment Related Procedures and Guidelines Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||O
+Retrieve|||Employment Related Procedures and Guidelines Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O
+BQ Staff Management Procedures and Guidelines Instance Record|Staff Management Procedures and Guidelines||||||
+Mandatory||Management Manual Specification Instance Reference||||Reference to the parent Management Manual Specification instance||||||||||||||||||||||||I|I|I
+Mandatory||Staff Management Procedures and Guidelines Instance Reference||||Reference to the Staff Management Procedures and Guidelines instance||||||||||||||||||||||||O|I|I
+Initiate||Staff Management Procedures and Guidelines Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||||||O
+Initiate||Staff Management Procedures and Guidelines Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||||||I/O
+Initiate||Staff Management Procedures and Guidelines Instance Status||||The status of the Staff Management Procedures and Guidelines instance (e.g. initialised, pending, active)||||||||||||||||||||||||O
+||Staff Management Procedures and Guidelines Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Management Manual.
+|||||||||||||||||||||||||||||||
+||Staff Management Procedures and Guidelines Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||||||||||IO|IO|IO|O||||
+||Staff Management Procedures and Guidelines Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||||||||||IO|IO|IO|O||||
+||Staff Management Procedures and Guidelines Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||||||||||IO|IO|IO|O||||
+||Staff Management Procedures and Guidelines||||The Management Manual Specification specific Business Service||||||||||||||||||||||||IO|IO|IO|O||||
+||Staff Management Procedures and Guidelines Service Type||||Reference to the specific business service type||||||||||||||||||||||||IO|IO|IO|O||||
+||Staff Management Procedures and Guidelines Service Description||||Description of the performed business service||||||||||||||||||||||||IO|IO|IO|O||||
+||Staff Management Procedures and Guidelines Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||||||IO|IO|IO|O||||
+||Staff Management Procedures and Guidelines Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||||||IO|IO|IO|O||||
+||Staff Management Procedures and Guidelines Service Name||||||||||||||||||||||||||||IO|IO|IO|O||||
+Update||Staff Management Procedures and Guidelines Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||O
+Update||Staff Management Procedures and Guidelines Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||I/O
+Update||Staff Management Procedures and Guidelines Update Action Request||||Details of the update action service request|||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||O
+Capture||Staff Management Procedures and Guidelines Capture Action Task Reference||||Reference to a Staff Management Procedures and Guidelines instance capture service call||||||||||||||||||||||||||O
+Capture||Staff Management Procedures and Guidelines Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||||||||||||I/O
+Capture||Staff Management Procedures and Guidelines Capture Record Reference||||Reference to the Staff Management Procedures and Guidelines structured input transaction/record||||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||||||||||||O
+Retrieve||Staff Management Procedures and Guidelines Retrieve Action Task Reference||||Reference to a Staff Management Procedures and Guidelines instance retrieve service call|||||||||||||||||||||||||||O
+Retrieve||Staff Management Procedures and Guidelines Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||I/O
+Retrieve||Staff Management Procedures and Guidelines Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||I
+Retrieve||Staff Management Procedures and Guidelines Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||O
+Retrieve||Staff Management Procedures and Guidelines Instance Report|##|||A specific Staff Management Procedures and Guidelines instance formatted report|||||||||||||||||||||||||||IO
+Retrieve|||Staff Management Procedures and Guidelines Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||I
+Retrieve|||Staff Management Procedures and Guidelines Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||O
+Retrieve|||Staff Management Procedures and Guidelines Instance Report Type|||The type of external report available|||||||||||||||||||||||||||O
+Retrieve|||Staff Management Procedures and Guidelines Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||O
+Retrieve|||Staff Management Procedures and Guidelines Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||O
+Retrieve||Staff Management Procedures and Guidelines Instance Analysis|##|||A specific Staff Management Procedures and Guidelines instance analytical report|||||||||||||||||||||||||||IO
+Retrieve|||Staff Management Procedures and Guidelines Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||I
+Retrieve|||Staff Management Procedures and Guidelines Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||O
+Retrieve|||Staff Management Procedures and Guidelines Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||O
+Retrieve|||Staff Management Procedures and Guidelines Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||O
+Retrieve|||Staff Management Procedures and Guidelines Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||O

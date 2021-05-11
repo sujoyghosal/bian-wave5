@@ -1,0 +1,15 @@
+CR Servicing Root Cause Analysis Instance Record	CR Servicing Root Cause Analysis Instance Record	Servicing Root Cause Analysis Instance Record	##			Servicing analysis identifies repeating patterns of servicing issues that can indicate a root cause that can be mitigated to improve servicing quality	IO	IO	IO	IO	O	IO		O
+			Servicing Activity Type			The type of servicing activity for which the analysis is performed (e.g. self service, contact center assisted, ATM access)	IO	IO	IO	IO	O	IO		O
+			Servicing Activity Analysis Period			The period covered by the analysis (from to date time)	IO	IO	IO	IO	O	IO		O
+			Servicing Activity Analysis Type			The type of root cause analysis - defines the scope and type of root cause issue that is being detected (e.g. service dialogue, click-stream, product processing issues, servicing representative performance)	IO	IO	IO	IO	O	IO		O
+			Servicing Activity Analysis Result			The result of the servicing activity analysis - typically the consolidated view from applying multiple underlying root cause algorithms to highlight patterns that indicate potential root cause issues	O	IO	O	O	O	IO		O
+			Servicing Activity Analysis Determination			An analysis of the root causes for the detected service anomalies	O	IO	O	O	O			
+			Servicing Activity Analysis Recommendation			Proposed changes to procedures/organization etc that can mitigate the detected servicing issues	O	IO	I	I	O			
+			Servicing Activity History Report 			The raw data used in the analysis (retrieved from Servicing Activity History)	IO	IO	IO	IO	O	IO		O
+BQ Root Cause Algorithm Instance Record	BQ Root Cause Algorithm Instance Record	Root Cause Algorithm Instance Record	##			The record of the application of a specific root cause pattern detection algorithm to the servicing history in order to identify possible servicing anomalies						IO	IO	O
+			Servicing Activity Root Cause Algorithm Specification			Defines the algorithm used and its intended analytical insights						IO	IO	O
+			Servicing Activity Root Cause Analysis Work Task Type			The type of work task (e.g. consolidate servicing activity history, apply pattern detection, refine/qualify detected servicing pattern definition)						IO	IO	O
+			Servicing Activity Root Cause Analysis Work Task			The make-up/schedule of the work task performed						IO	IO	O
+			Servicing Activity Root Cause Analysis Work Task Work Products 			File of consolidated notes, evaluations and findings for the work task						O	IO	O
+			Servicing Activity Root Cause Analysis Work Task Result			Details of the outcome or result of the work task - indication of the nature of any identified servicing patterns and the associated root cause hypotheses						O	IO	O
+			Servicing Activity Root Cause Analysis Work Task Date-Time			The date-time the specific work task is performed						IO	IO	O

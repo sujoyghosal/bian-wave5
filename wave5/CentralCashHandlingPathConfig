@@ -1,0 +1,25 @@
+sd=Central Cash Handling	Track cash inventory, project demand and allocate inventory across the branch/ATM network	The central cash management function reviews the current and projected available float at locations across the network to ensure adequate supply to meet projected demand	This service domain is responsible for tracking the available cash inventory held centrally and distributed/collected throughout the branch/ATM network and making allocation/redistribution requests to ensure adequate float is available at all locations and that excess cash at any location is transferred to central secure locations as appropriate. Also coordinating with other banks and central banks to ensure sufficient cash is on hand to support the branch network requirements
+sdpath=central-cash-handling
+crpath=central-cash-allocation
+crr=Central Cash Allocation Instance
+mcr=Central Cash Allocation
+bqs=ProjectionandAllocation TrackingandAllocation
+CONFIG
+CentralCashAllocation	initiate	Instantiate a new Central Cash Allocation		initiateCentralCashAllocation		#desc
+CentralCashAllocation	update	Update details relating to Central Cash Allocation		updateCentralCashAllocation		#desc
+CentralCashAllocation	control	Control the processing of Central Cash Allocation		controlCentralCashAllocation		#desc
+CentralCashAllocation	exchange	Accept, verify, etc. aspects of Central Cash Allocation processing		exchangeCentralCashAllocation		#desc
+CentralCashAllocation	capture	Capture Central Cash Allocation activity or event related information		captureCentralCashAllocation		#desc
+CentralCashAllocation	retrieve	Retrieve details about any aspect of Central Cash Allocation		retrieveCentralCashAllocation		#desc
+TrackingandAllocation	initiate	Instantiate a new Tracking and Allocation	initiateCentralCashAllocationTrackingandAllocation	initiateCentralCashAllocationTrackingandAllocation		Details of a new Tracking and Allocation instance
+TrackingandAllocation	update	Update details relating to Tracking and Allocation	updateCentralCashAllocationTrackingandAllocation	updateCentralCashAllocationTrackingandAllocation		Update to any amendable fields of the Tracking and Allocation instance
+TrackingandAllocation	control	Control the processing of Tracking and Allocation	controlCentralCashAllocationTrackingandAllocation	controlCentralCashAllocationTrackingandAllocation		Request specific processing (e.g. suspend, skip, terminate)
+TrackingandAllocation	exchange	Accept, verify, etc. aspects of Tracking and Allocation processing	exchangeCentralCashAllocationTrackingandAllocation	exchangeCentralCashAllocationTrackingandAllocation		Handle an external exchange (e.g. accept, reject, verify)
+TrackingandAllocation	capture	Capture Tracking and Allocation activity or event related information	captureCentralCashAllocationTrackingandAllocation	captureCentralCashAllocationTrackingandAllocation		Provide a structured input transaction/record (e.g. timesheet, event)
+TrackingandAllocation	retrieve	Retrieve details about any aspect of Tracking and Allocation	retrieveCentralCashAllocationTrackingandAllocation	retrieveCentralCashAllocationTrackingandAllocation		Invoke a reporting action to obtain a Tracking and Allocation instance related report
+ProjectionandAllocation	initiate	Instantiate a new Projection and Allocation	initiateCentralCashAllocationProjectionandAllocation	initiateCentralCashAllocationProjectionandAllocation		Details of a new Projection and Allocation instance
+ProjectionandAllocation	update	Update details relating to Projection and Allocation	updateCentralCashAllocationProjectionandAllocation	updateCentralCashAllocationProjectionandAllocation		Update to any amendable fields of the Projection and Allocation instance
+ProjectionandAllocation	control	Control the processing of Projection and Allocation	controlCentralCashAllocationProjectionandAllocation	controlCentralCashAllocationProjectionandAllocation		Request specific processing (e.g. suspend, skip, terminate)
+ProjectionandAllocation	exchange	Accept, verify, etc. aspects of Projection and Allocation processing	exchangeCentralCashAllocationProjectionandAllocation	exchangeCentralCashAllocationProjectionandAllocation		Handle an external exchange (e.g. accept, reject, verify)
+ProjectionandAllocation	capture	Capture Projection and Allocation activity or event related information	captureCentralCashAllocationProjectionandAllocation	captureCentralCashAllocationProjectionandAllocation		Provide a structured input transaction/record (e.g. timesheet, event)
+ProjectionandAllocation	retrieve		retrieveCentralCashAllocationProjectionandAllocation	retrieveCentralCashAllocationProjectionandAllocation		Invoke a reporting action to obtain a Projection and Allocation instance related report

@@ -1,0 +1,810 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Party Data Management'
+ description: >
+
+    ## Executive Summary:
+
+    This service domain maintains details of the legal entity structure of the party including dependents and associations for individuals and ownership/subsidiary structures for corporations. Some financial indicators and product coverage/activity details can be included where this defines the nature of the legal entity relationship in particular for corporate entities
+
+    ## Example of Use:
+
+    Party legal entity details are checked for the financial booking of a major loan
+
+    ## Description:
+
+    Maintain the legal entity structure including ownership, subsidiaries and partnership details
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-party-data-management/1.0.0
+schemes:
+ - https
+paths:
+  /party-data-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDPartyDataManagement
+      summary: Activate  a SDPartyDataManagement servicing session
+      description: Activate  a  SDPartyDataManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDPartyDataManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDPartyDataManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDPartyDataManagementActivateOutputModel'
+  /party-data-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDPartyDataManagement
+      summary: Update an active SDPartyDataManagement session configuration
+      description: Update an active SDPartyDataManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPartyDataManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDPartyDataManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDPartyDataManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDPartyDataManagementConfigureOutputModel'
+  /party-data-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDPartyDataManagement
+      summary: "Capturing feedback against the SDPartyDataManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDPartyDataManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPartyDataManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDPartyDataManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDPartyDataManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDPartyDataManagementFeedbackOutputModel'
+  /party-data-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDPartyDataManagement
+      summary: Analytical views maintained by the SDPartyDataManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDPartyDataManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPartyDataManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDPartyDataManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDPartyDataManagementRetrieveOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/registration:
+    post:
+      tags:
+      - register
+      operationId: registerPartyDirectoryEntry
+      summary: Details of a new PartyDirectoryEntry instance
+      description: Register a new legal entity in the catalog
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PartyDirectoryEntry Request Payload
+        schema:
+          $ref: '#/definitions/CRPartyDirectoryEntryRegisterInputModel'
+      responses:
+        201:
+          description: Successful registration of new PartyDirectoryEntry instance
+          schema:
+            $ref: '#/definitions/CRPartyDirectoryEntryRegisterOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updatePartyDirectoryEntry
+      summary: Update to any amendable fields of the PartyDirectoryEntry instance
+      description: Update details about the legal entity directory entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Party Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/CRPartyDirectoryEntryUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Party Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRPartyDirectoryEntryUpdateOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlPartyDirectoryEntryUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the handling of an entity entry (e.g. terminate)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Party Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/CRPartyDirectoryEntryControlInputModel'
+      responses:
+        200:
+          description: Successful control of Party Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRPartyDirectoryEntryControlOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangePartyDirectoryEntryUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, reject etc. details of a legal entity directory entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Party Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/CRPartyDirectoryEntryExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Party Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRPartyDirectoryEntryExchangeOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestPartyDirectoryEntryUpdate
+      summary: Invoke a service request action against the PartyDirectoryEntry instance
+      description: Request manual intervention with an entry (e.g. refresh content)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Party Directory Entry Request Payload
+        schema:
+          $ref: '#/definitions/CRPartyDirectoryEntryRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Party Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRPartyDirectoryEntryRequestOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePartyDataManagement
+      summary: Invoke a reporting action to obtain a Party Directory Entry instance related report
+      description: Retrieve details about a legal entity directory entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRPartyDirectoryEntryRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Party Directory Entry Instance
+          schema:
+            $ref: '#/definitions/CRPartyDirectoryEntryRetrieveOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/reference/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updatePartyDirectoryEntryReference
+      summary: Update to any amendable fields of the Reference instance
+      description: Update details about a reference entry for the legal entity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reference Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reference Request Payload
+        schema:
+          $ref: '#/definitions/BQReferenceUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Reference Instance
+          schema:
+            $ref: '#/definitions/BQReferenceUpdateOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/reference/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangePartyDirectoryEntryReferenceUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, reject a directory entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reference Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reference request payload
+        schema:
+          $ref: '#/definitions/BQReferenceExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Reference Instance Record
+          schema:
+            $ref: '#/definitions/BQReferenceExchangeOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/reference/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executePartyDirectoryEntryReferenceUpdate
+      summary: Invoke an automated execute action against the Reference instance
+      description: Execute an automated action against an entry (e.g. notify status update)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reference Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reference request payload
+        schema:
+          $ref: '#/definitions/BQReferenceExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Reference Instance Record
+          schema:
+            $ref: '#/definitions/BQReferenceExecuteOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/reference/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePartyDirectoryEntryReference
+      summary: Invoke a reporting action to obtain a Reference instance related report.
+      description: Retrieve details about reference entries in the directory record .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reference Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQReferenceRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Reference Instance Record
+          schema:
+            $ref: '#/definitions/BQReferenceRetrieveOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/profile/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updatePartyDirectoryEntryProfile
+      summary: Update to any amendable fields of the Profile instance
+      description: Update details about a profile entry for the legal entity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Profile Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Profile Request Payload
+        schema:
+          $ref: '#/definitions/BQProfileUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Profile Instance
+          schema:
+            $ref: '#/definitions/BQProfileUpdateOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/profile/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangePartyDirectoryEntryProfileUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, reject a directory entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Profile Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Profile request payload
+        schema:
+          $ref: '#/definitions/BQProfileExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Profile Instance Record
+          schema:
+            $ref: '#/definitions/BQProfileExchangeOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/profile/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executePartyDirectoryEntryProfileUpdate
+      summary: Invoke an automated execute action against the Profile instance
+      description: Execute an automated action against an entry (e.g. notify status update)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Profile Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Profile request payload
+        schema:
+          $ref: '#/definitions/BQProfileExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Profile Instance Record
+          schema:
+            $ref: '#/definitions/BQProfileExecuteOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/profile/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePartyDirectoryEntryProfile
+      summary: Invoke a reporting action to obtain a Profile instance related report.
+      description: Retrieve details about profile entries in the directory record .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Profile Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQProfileRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Profile Instance Record
+          schema:
+            $ref: '#/definitions/BQProfileRetrieveOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/associations/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updatePartyDirectoryEntryAssociations
+      summary: Update to any amendable fields of the Associations instance
+      description: Update details about an association entry for the legal entity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Associations Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Associations Request Payload
+        schema:
+          $ref: '#/definitions/BQAssociationsUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Associations Instance
+          schema:
+            $ref: '#/definitions/BQAssociationsUpdateOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/associations/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangePartyDirectoryEntryAssociationsUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, reject a directory entry
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Associations Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Associations request payload
+        schema:
+          $ref: '#/definitions/BQAssociationsExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Associations Instance Record
+          schema:
+            $ref: '#/definitions/BQAssociationsExchangeOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/associations/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executePartyDirectoryEntryAssociationsUpdate
+      summary: Invoke an automated execute action against the Associations instance
+      description: Execute an automated action against an entry (e.g. notify status update)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Associations Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Associations request payload
+        schema:
+          $ref: '#/definitions/BQAssociationsExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Associations Instance Record
+          schema:
+            $ref: '#/definitions/BQAssociationsExecuteOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/associations/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePartyDirectoryEntryAssociations
+      summary: Invoke a reporting action to obtain a Associations instance related report.
+      description: Retrieve details about association entries in the directory record .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Associations Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQAssociationsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Associations Instance Record
+          schema:
+            $ref: '#/definitions/BQAssociationsRetrieveOutputModel'
+  /party-data-management/{sd-reference-id}/party-directory-entry:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePartyDataManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- PartyDataManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /party-data-management/party-directory-entry/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePartyDataManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Reference',  'Profile',  'Associations', ]
+  /party-data-management/{sd-reference-id}/party-directory-entry/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePartyDataManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Party Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Party Directory Entry Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Associations
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Associations Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [AssociationsID1, AssociationsID2]

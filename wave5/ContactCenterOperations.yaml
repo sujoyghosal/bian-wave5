@@ -802,46 +802,46 @@ definitions:
  SDContactCenterOperationsActivateInputModel:
   type: object
   properties: 
-   SDContactCenterOperationsActivationActionTaskRecord:
+   contactCenterOperationsActivationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The activation service call consolidated processing record
-   SDContactCenterOperationsCenterReference:
+   contactCenterOperationsCenterReference:
     type: string
     example: "SCR793499"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the service center/operational unit
-   SDContactCenterOperationsServiceReference:
+   contactCenterOperationsServiceReference:
     type: string
     example: "CPASSR703914"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service offered by the service center
-   SDContactCenterOperationsServiceConfigurationRecord:
+   contactCenterOperationsServiceConfigurationRecord:
     type: object
     properties:
-     SDContactCenterOperationsServiceConfigurationSettingReference:
+     contactCenterOperationsServiceConfigurationSettingReference:
       type: string
       example: "700761"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Refers to the service configuration parameter for the service
-     SDContactCenterOperationsServiceConfigurationSettingType:
+     contactCenterOperationsServiceConfigurationSettingType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The type of service configuration parameter
-     SDContactCenterOperationsServiceConfigurationSetup:
+     contactCenterOperationsServiceConfigurationSetup:
       type: object
       properties:
-       SDContactCenterOperationsServiceConfigurationParameter:
+       contactCenterOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
@@ -850,103 +850,103 @@ definitions:
  SDContactCenterOperationsActivateOutputModel:
   type: object
   properties: 
-   SDContactCenterOperationsActivationActionTaskReference:
+   contactCenterOperationsActivationActionTaskReference:
     type: string
     example: "SAATR758836"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service activation service call
-   SDContactCenterOperationsActivationActionTaskRecord:
+   contactCenterOperationsActivationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The activation service call consolidated processing record
-   SDContactCenterOperationsServicingSessionReference:
+   contactCenterOperationsServicingSessionReference:
     type: string
     example: "SSSR783215"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   SDContactCenterOperationsServicingSessionRecord:
+   contactCenterOperationsServicingSessionRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: Consolidated information record for the servicing session
-   SDContactCenterOperationsServiceConfigurationRecord:
+   contactCenterOperationsServiceConfigurationRecord:
     type: object
     properties:
-     SDContactCenterOperationsServiceConfigurationSettingReference:
+     contactCenterOperationsServiceConfigurationSettingReference:
       type: string
       example: "700761"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Refers to the service configuration parameter for the service
-     SDContactCenterOperationsServiceConfigurationSettingDescription:
+     contactCenterOperationsServiceConfigurationSettingDescription:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: Description of the configuration parameter, allowed values and processing impact
-     SDContactCenterOperationsServiceConfigurationSetup:
+     contactCenterOperationsServiceConfigurationSetup:
       type: object
       properties:
-       SDContactCenterOperationsServiceConfigurationParameter:
+       contactCenterOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The default activation setting for the offered service configuration parameter 
-     SDContactCenterOperationsServiceSubscription:
+     contactCenterOperationsServiceSubscription:
       type: object
       properties:
-       SDContactCenterOperationsServiceSubscriberReference:
+       contactCenterOperationsServiceSubscriberReference:
         type: string
         example: "769192"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
-       SDContactCenterOperationsServiceSubscriberAccessProfile:
+       contactCenterOperationsServiceSubscriberAccessProfile:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The allowed service access for a user or subscriber to the service which can be any known party
-     SDContactCenterOperationsServiceAgreement:
+     contactCenterOperationsServiceAgreement:
       type: object
       properties:
-       SDContactCenterOperationsServiceAgreementReference:
+       contactCenterOperationsServiceAgreementReference:
         type: string
         example: "791202"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the offered service agreement
-       SDContactCenterOperationsServiceUserReference:
+       contactCenterOperationsServiceUserReference:
         type: string
         example: "767210"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the user covered by the contract
-       SDContactCenterOperationsServiceAgreementTermsandConditions:
+       contactCenterOperationsServiceAgreementTermsandConditions:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Terms and conditions covering the service agreement
-     SDContactCenterOperationsServiceStatus:
+     contactCenterOperationsServiceStatus:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The status of the offered service (e.g. active, suspended, idle)
-   SDContactCenterOperationsServicingSessionStatus:
+   contactCenterOperationsServicingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
@@ -955,85 +955,85 @@ definitions:
  SDContactCenterOperationsConfigureInputModel:
   type: object
   properties: 
-   SDContactCenterOperationsConfigurationActionTaskRecord:
+   contactCenterOperationsConfigurationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The configuration service call consolidated processing record
-   SDContactCenterOperationsServicingSessionReference:
+   contactCenterOperationsServicingSessionReference:
     type: string
     example: "SSSR764367"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   SDContactCenterOperationsServiceReference:
+   contactCenterOperationsServiceReference:
     type: string
     example: "CPASSR744740"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service offered by the service center
-   SDContactCenterOperationsServiceConfigurationRecord:
+   contactCenterOperationsServiceConfigurationRecord:
     type: object
     properties:
-     SDContactCenterOperationsServiceConfigurationSettingReference:
+     contactCenterOperationsServiceConfigurationSettingReference:
       type: string
       example: "710630"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Refers to the service configuration parameter for the service
-     SDContactCenterOperationsServiceConfigurationSettingType:
+     contactCenterOperationsServiceConfigurationSettingType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The type of service configuration parameter
-     SDContactCenterOperationsServiceConfigurationSetup:
+     contactCenterOperationsServiceConfigurationSetup:
       type: object
       properties:
-       SDContactCenterOperationsServiceConfigurationParameter:
+       contactCenterOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The requested and current activation values for the service configuration parameter 
-     SDContactCenterOperationsServiceSubscription:
+     contactCenterOperationsServiceSubscription:
       type: object
       properties:
-       SDContactCenterOperationsServiceSubscriberReference:
+       contactCenterOperationsServiceSubscriberReference:
         type: string
         example: "756221"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
-       SDContactCenterOperationsServiceSubscriberAccessProfile:
+       contactCenterOperationsServiceSubscriberAccessProfile:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The allowed service access for a user or subscriber to the service which can be any known party
-     SDContactCenterOperationsServiceAgreement:
+     contactCenterOperationsServiceAgreement:
       type: object
       properties:
-       SDContactCenterOperationsServiceAgreementReference:
+       contactCenterOperationsServiceAgreementReference:
         type: string
         example: "721156"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the offered service agreement
-       SDContactCenterOperationsServiceUserReference:
+       contactCenterOperationsServiceUserReference:
         type: string
         example: "733696"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the user covered by the contract
-       SDContactCenterOperationsServiceAgreementTermsandConditions:
+       contactCenterOperationsServiceAgreementTermsandConditions:
         type: string
         description: |
          `status: Not Mapped`
@@ -1042,83 +1042,83 @@ definitions:
  SDContactCenterOperationsConfigureOutputModel:
   type: object
   properties: 
-   SDContactCenterOperationsConfigurationActionTaskReference:
+   contactCenterOperationsConfigurationActionTaskReference:
     type: string
     example: "SCATR765419"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service configuration service call
-   SDContactCenterOperationsConfigurationActionTaskRecord:
+   contactCenterOperationsConfigurationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The configuration service call consolidated processing record
-   SDContactCenterOperationsServiceConfigurationRecord:
+   contactCenterOperationsServiceConfigurationRecord:
     type: object
     properties:
-     SDContactCenterOperationsServiceConfigurationSettingDescription:
+     contactCenterOperationsServiceConfigurationSettingDescription:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: Description of the configuration parameter, allowed values and processing impact
-     SDContactCenterOperationsServiceConfigurationSetup:
+     contactCenterOperationsServiceConfigurationSetup:
       type: object
       properties:
-       SDContactCenterOperationsServiceConfigurationParameter:
+       contactCenterOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The requested and current activation values for the service configuration parameter 
-     SDContactCenterOperationsServiceSubscription:
+     contactCenterOperationsServiceSubscription:
       type: object
       properties:
-       SDContactCenterOperationsServiceSubscriberReference:
+       contactCenterOperationsServiceSubscriberReference:
         type: string
         example: "756221"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
-       SDContactCenterOperationsServiceSubscriberAccessProfile:
+       contactCenterOperationsServiceSubscriberAccessProfile:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The allowed service access for a user or subscriber to the service which can be any known party
-     SDContactCenterOperationsServiceAgreement:
+     contactCenterOperationsServiceAgreement:
       type: object
       properties:
-       SDContactCenterOperationsServiceAgreementReference:
+       contactCenterOperationsServiceAgreementReference:
         type: string
         example: "721156"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the offered service agreement
-       SDContactCenterOperationsServiceUserReference:
+       contactCenterOperationsServiceUserReference:
         type: string
         example: "733696"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the user covered by the contract
-       SDContactCenterOperationsServiceAgreementTermsandConditions:
+       contactCenterOperationsServiceAgreementTermsandConditions:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Terms and conditions covering the service agreement
-     SDContactCenterOperationsServiceStatus:
+     contactCenterOperationsServiceStatus:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The status of the offered service (e.g. active, suspended, idle)
-   SDContactCenterOperationsServicingSessionStatus:
+   contactCenterOperationsServicingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
@@ -1127,16 +1127,16 @@ definitions:
  SDContactCenterOperationsFeedbackInputModel:
   type: object
   properties: 
-   SDContactCenterOperationsFeedbackActionTaskRecord:
+   contactCenterOperationsFeedbackActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The feedback service call consolidated processing record
-   SDContactCenterOperationsFeedbackActionRecord:
+   contactCenterOperationsFeedbackActionRecord:
     type: object
     properties:
-     SDContactCenterOperationsServicingSessionReference:
+     contactCenterOperationsServicingSessionReference:
       type: string
       example: "796678"
       description: |
@@ -1172,20 +1172,20 @@ definitions:
  SDContactCenterOperationsFeedbackOutputModel:
   type: object
   properties: 
-   SDContactCenterOperationsFeedbackActionTaskReference:
+   contactCenterOperationsFeedbackActionTaskReference:
     type: string
     example: "SFATR765157"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a feedback service call
-   SDContactCenterOperationsFeedbackActionTaskRecord:
+   contactCenterOperationsFeedbackActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The feedback service call consolidated processing record
-   SDContactCenterOperationsFeedbackActionRecord:
+   contactCenterOperationsFeedbackActionRecord:
     type: object
     properties:
      feedbackRecordDateTime:
@@ -1211,22 +1211,22 @@ definitions:
  SDContactCenterOperationsRetrieveInputModel:
   type: object
   properties: 
-   SDContactCenterOperationsRetrieveActionTaskRecord:
+   contactCenterOperationsRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   SDContactCenterOperationsRetrieveActionRequest:
+   contactCenterOperationsRetrieveActionRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service request (lists requested reports)
-   SDContactCenterOperationsRetrieveActionRecord:
+   contactCenterOperationsRetrieveActionRecord:
     type: object
     properties:
-     SDContactCenterOperationsActivityAnalysis:
+     contactCenterOperationsActivityAnalysis:
       type: object
       properties:
        activityAnalysisReference:
@@ -1236,7 +1236,7 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the internal activity analysis view maintained by the service center
-     SDContactCenterOperationsPerformanceAnalysis:
+     contactCenterOperationsPerformanceAnalysis:
       type: object
       properties:
        performanceAnalysisReference:
@@ -1256,20 +1256,20 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the control record portfolio analysis view maintained by the service center
-   SDContactCenterOperationsOfferedService:
+   contactCenterOperationsOfferedService:
     type: object
     properties:
-     SDContactCenterOperationsServiceReference:
+     contactCenterOperationsServiceReference:
       type: string
       example: "776158"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to a service offered by the service center
-     SDContactCenterOperationsServiceRecord:
+     contactCenterOperationsServiceRecord:
       type: object
       properties:
-       SDContactCenterOperationsServiceVersion:
+       contactCenterOperationsServiceVersion:
         type: string
         description: |
          `status: Not Mapped`
@@ -1278,29 +1278,29 @@ definitions:
  SDContactCenterOperationsRetrieveOutputModel:
   type: object
   properties: 
-   SDContactCenterOperationsRetrieveActionTaskReference:
+   contactCenterOperationsRetrieveActionTaskReference:
     type: string
     example: "SRATR795161"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a retrieve service call
-   SDContactCenterOperationsRetrieveActionTaskRecord:
+   contactCenterOperationsRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   SDContactCenterOperationsRetrieveActionResponse:
+   contactCenterOperationsRetrieveActionResponse:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service response (lists returned reports)
-   SDContactCenterOperationsRetrieveActionRecord:
+   contactCenterOperationsRetrieveActionRecord:
     type: object
     properties:
-     SDContactCenterOperationsActivityAnalysis:
+     contactCenterOperationsActivityAnalysis:
       type: object
       properties:
        activityAnalysisReference:
@@ -1328,7 +1328,7 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
           general-info: The activity analysis report in any suitable form including selection filters where appropriate
-     SDContactCenterOperationsPerformanceAnalysis:
+     contactCenterOperationsPerformanceAnalysis:
       type: object
       properties:
        performanceAnalysisReference:
@@ -1384,59 +1384,59 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
           general-info: The external analysis report in any suitable form including selection filters where appropriate
-   SDContactCenterOperationsOfferedService:
+   contactCenterOperationsOfferedService:
     type: object
     properties:
-     SDContactCenterOperationsServiceReference:
+     contactCenterOperationsServiceReference:
       type: string
       example: "776158"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to a service offered by the service center
-     SDContactCenterOperationsServiceRecord:
+     contactCenterOperationsServiceRecord:
       type: object
       properties:
-       SDContactCenterOperationsServiceType:
+       contactCenterOperationsServiceType:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Refers to the different types of services offered
-       SDContactCenterOperationsServiceVersion:
+       contactCenterOperationsServiceVersion:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The version details of the service when appropriate
-       SDContactCenterOperationsServiceDescription:
+       contactCenterOperationsServiceDescription:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Description of the offered service 
-       SDContactCenterOperationsServicePoliciesandGuidelines:
+       contactCenterOperationsServicePoliciesandGuidelines:
         type: object
         properties:
-         SDContactCenterOperationsServiceEligibility:
+         contactCenterOperationsServiceEligibility:
           type: string
           description: |
            `status: Not Mapped`
             core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
             general-info: Policies and rules governing access to the offered service, includes eligibility and qualifications
-         SDContactCenterOperationsServiceIntendedUses:
+         contactCenterOperationsServiceIntendedUses:
           type: string
           description: |
            `status: Not Mapped`
             core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
             general-info: Guidelines covering allowed, intended use of the service
-         SDContactCenterOperationsServicePricingandTerms:
+         contactCenterOperationsServicePricingandTerms:
           type: string
           description: |
            `status: Not Mapped`
             core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
             general-info: Terms, prices, penalties associated with use of the service
-       SDContactCenterOperationsServiceSchedule:
+       contactCenterOperationsServiceSchedule:
         type: string
         description: |
          `status: Not Mapped`
@@ -1447,7 +1447,7 @@ definitions:
   properties: 
    contactCenterOperationsServicingSessionReference:
     type: string
-    example: "CCOSSR792978"
+    example: "CCOSSR773563"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1469,14 +1469,14 @@ definitions:
   properties: 
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR754819"
+    example: "CCAPIR702240"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Contact Center Administrative Plan instance
    contactCenterAdministrativePlanCreateActionReference:
     type: string
-    example: "CCAPCAR701786"
+    example: "CCAPCAR762801"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1498,14 +1498,14 @@ definitions:
   properties: 
    contactCenterOperationsServicingSessionReference:
     type: string
-    example: "CCOSSR717483"
+    example: "CCOSSR718447"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR727592"
+    example: "CCAPIR779112"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1530,7 +1530,7 @@ definitions:
       general-info: Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements
    customerServicingRepresentativeReference:
     type: string
-    example: "CSRR768774"
+    example: "CSRR764352"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1609,7 +1609,7 @@ definitions:
       general-info: Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements
    customerServicingRepresentativeReference:
     type: string
-    example: "CSRR768774"
+    example: "CSRR764352"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1652,7 +1652,7 @@ definitions:
       general-info: Reference to a consolidated record of assignments. This is used to track utilization and performance
    contactCenterAdministrativePlanExecuteActionTaskReference:
     type: string
-    example: "CCAPEATR731275"
+    example: "CCAPEATR791223"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1665,7 +1665,7 @@ definitions:
       general-info: The execute service call consolidated processing record
    executeRecordReference:
     type: string
-    example: "ERR737607"
+    example: "ERR734285"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1681,14 +1681,14 @@ definitions:
   properties: 
    contactCenterOperationsServicingSessionReference:
     type: string
-    example: "CCOSSR785355"
+    example: "CCOSSR780498"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR763376"
+    example: "CCAPIR756175"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1713,7 +1713,7 @@ definitions:
       general-info: Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements
    customerServicingRepresentativeReference:
     type: string
-    example: "CSRR755541"
+    example: "CSRR701895"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1771,7 +1771,7 @@ definitions:
     properties:
      contactCenterAdministrativePlanInstanceReportReference:
       type: string
-      example: "789011"
+      example: "751961"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1793,7 +1793,7 @@ definitions:
     properties:
      contactCenterAdministrativePlanInstanceAnalysisReference:
       type: string
-      example: "794467"
+      example: "740715"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1833,7 +1833,7 @@ definitions:
       general-info: Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements
    customerServicingRepresentativeReference:
     type: string
-    example: "CSRR755541"
+    example: "CSRR701895"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1876,7 +1876,7 @@ definitions:
       general-info: Reference to a consolidated record of assignments. This is used to track utilization and performance
    contactCenterAdministrativePlanRetrieveActionTaskReference:
     type: string
-    example: "CCAPRATR799674"
+    example: "CCAPRATR771518"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1940,14 +1940,14 @@ definitions:
   properties: 
    contactCenterOperationsServicingSessionReference:
     type: string
-    example: "CCOSSR713548"
+    example: "CCOSSR720334"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR703700"
+    example: "CCAPIR702057"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1990,7 +1990,7 @@ definitions:
       general-info: Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements
    customerServicingRepresentativeReference:
     type: string
-    example: "CSRR796405"
+    example: "CSRR731378"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2033,7 +2033,7 @@ definitions:
       general-info: Reference to a consolidated record of assignments. This is used to track utilization and performance
    contactCenterAdministrativePlanRequestActionTaskReference:
     type: string
-    example: "CCAPRATR792462"
+    example: "CCAPRATR740669"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2046,7 +2046,7 @@ definitions:
       general-info: The request service call consolidated processing record
    requestRecordReference:
     type: string
-    example: "RRR727329"
+    example: "RRR750895"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2062,14 +2062,14 @@ definitions:
   properties: 
    contactCenterOperationsServicingSessionReference:
     type: string
-    example: "CCOSSR761467"
+    example: "CCOSSR771215"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR789780"
+    example: "CCAPIR714293"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2094,7 +2094,7 @@ definitions:
       general-info: Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements
    customerServicingRepresentativeReference:
     type: string
-    example: "CSRR717072"
+    example: "CSRR705153"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2170,7 +2170,7 @@ definitions:
       general-info: Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements
    customerServicingRepresentativeReference:
     type: string
-    example: "CSRR717072"
+    example: "CSRR705153"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2213,7 +2213,7 @@ definitions:
       general-info: Reference to a consolidated record of assignments. This is used to track utilization and performance
    contactCenterAdministrativePlanUpdateActionTaskReference:
     type: string
-    example: "CCAPUATR730358"
+    example: "CCAPUATR767197"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2253,7 +2253,7 @@ definitions:
       general-info: Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements
    customerServicingRepresentativeReference:
     type: string
-    example: "CSRR740518"
+    example: "CSRR734616"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2332,7 +2332,7 @@ definitions:
       general-info: Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements
    customerServicingRepresentativeReference:
     type: string
-    example: "CSRR740518"
+    example: "CSRR734616"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2375,7 +2375,7 @@ definitions:
       general-info: Reference to a consolidated record of assignments. This is used to track utilization and performance
    contactCenterAdministrativePlanControlActionTaskReference:
     type: string
-    example: "CCAPCATR799887"
+    example: "CCAPCATR744978"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2397,14 +2397,14 @@ definitions:
   properties: 
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR752910"
+    example: "CCAPIR728599"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Contact Center Administrative Plan instance
    peakLoadInstanceReference:
     type: string
-    example: "PLIR717248"
+    example: "PLIR732422"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2426,7 +2426,7 @@ definitions:
     properties:
      peakLoadInstanceReportReference:
       type: string
-      example: "743085"
+      example: "792348"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2436,7 +2436,7 @@ definitions:
     properties:
      peakLoadInstanceAnalysisReference:
       type: string
-      example: "710349"
+      example: "734413"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2446,7 +2446,7 @@ definitions:
   properties: 
    peakLoadRetrieveActionTaskReference:
     type: string
-    example: "PLRATR710464"
+    example: "PLRATR720597"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2522,14 +2522,14 @@ definitions:
   properties: 
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR753411"
+    example: "CCAPIR777956"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Contact Center Administrative Plan instance
    peakLoadInstanceReference:
     type: string
-    example: "PLIR777086"
+    example: "PLIR765688"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2590,7 +2590,7 @@ definitions:
       general-info: Description of the action taken and impact to service performance
    peakLoadRequestActionTaskReference:
     type: string
-    example: "PLRATR755431"
+    example: "PLRATR759444"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2603,7 +2603,7 @@ definitions:
       general-info: The request service call consolidated processing record
    peakLoadRequestRecordReference:
     type: string
-    example: "PLRRR734384"
+    example: "PLRRR746252"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2706,7 +2706,7 @@ definitions:
       general-info: Description of the action taken and impact to service performance
    peakLoadUpdateActionTaskReference:
     type: string
-    example: "PLUATR701448"
+    example: "PLUATR704581"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2764,7 +2764,7 @@ definitions:
       general-info: Description of the action taken and impact to service performance
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR711976"
+    example: "CCAPIR736476"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2816,14 +2816,14 @@ definitions:
       general-info: Description of the action taken and impact to service performance
    troubleshootingInstanceReference:
     type: string
-    example: "TIR705654"
+    example: "TIR731955"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Troubleshooting instance
    troubleshootingInitiateActionReference:
     type: string
-    example: "TIAR779692"
+    example: "TIAR779534"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2845,14 +2845,14 @@ definitions:
   properties: 
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR721547"
+    example: "CCAPIR725086"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Contact Center Administrative Plan instance
    troubleshootingInstanceReference:
     type: string
-    example: "TIR779476"
+    example: "TIR749911"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2892,7 +2892,7 @@ definitions:
     properties:
      troubleshootingInstanceReportReference:
       type: string
-      example: "729992"
+      example: "790127"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2902,7 +2902,7 @@ definitions:
     properties:
      troubleshootingInstanceAnalysisReference:
       type: string
-      example: "764734"
+      example: "712938"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2930,7 +2930,7 @@ definitions:
       general-info: A record of the root cause analysis for recurring issues and suggested remedial action
    troubleshootingRetrieveActionTaskReference:
     type: string
-    example: "TRATR789439"
+    example: "TRATR734996"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3006,14 +3006,14 @@ definitions:
   properties: 
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR715114"
+    example: "CCAPIR783680"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Contact Center Administrative Plan instance
    troubleshootingInstanceReference:
     type: string
-    example: "TIR745616"
+    example: "TIR761380"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3056,7 +3056,7 @@ definitions:
       general-info: A record of the root cause analysis for recurring issues and suggested remedial action
    troubleshootingRequestActionTaskReference:
     type: string
-    example: "TRATR729153"
+    example: "TRATR754963"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3069,7 +3069,7 @@ definitions:
       general-info: The request service call consolidated processing record
    troubleshootingRequestRecordReference:
     type: string
-    example: "TRRR784769"
+    example: "TRRR722742"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3136,7 +3136,7 @@ definitions:
       general-info: A record of the root cause analysis for recurring issues and suggested remedial action
    troubleshootingUpdateActionTaskReference:
     type: string
-    example: "TUATR754945"
+    example: "TUATR767197"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3176,14 +3176,14 @@ definitions:
       general-info: A record of the root cause analysis for recurring issues and suggested remedial action
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR748950"
+    example: "CCAPIR796595"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Contact Center Administrative Plan instance
    assignmentInstanceReference:
     type: string
-    example: "AIR744284"
+    example: "AIR780579"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3226,7 +3226,7 @@ definitions:
       general-info: A record of the root cause analysis for recurring issues and suggested remedial action
    assignmentControlActionTaskReference:
     type: string
-    example: "ACATR793095"
+    example: "ACATR789018"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3254,14 +3254,14 @@ definitions:
   properties: 
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR753799"
+    example: "CCAPIR762138"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Contact Center Administrative Plan instance
    assignmentInstanceReference:
     type: string
-    example: "AIR763921"
+    example: "AIR772059"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3277,7 +3277,7 @@ definitions:
   properties: 
    assignmentInitiateActionReference:
     type: string
-    example: "AIAR718640"
+    example: "AIAR711055"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3299,14 +3299,14 @@ definitions:
   properties: 
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR722546"
+    example: "CCAPIR731461"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Contact Center Administrative Plan instance
    assignmentInstanceReference:
     type: string
-    example: "AIR736506"
+    example: "AIR772228"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3325,7 +3325,7 @@ definitions:
       general-info: Reference to the servicing representative
    assignmentCustomerServicingPositionReference:
     type: string
-    example: "ACSPR758079"
+    example: "ACSPR782292"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3344,7 +3344,7 @@ definitions:
       general-info: Planned and actual servicing activity at the position during the session (records inbound contact details and allows for pre-assigned servicing actions e.g. outbound customer contacts for issue resolution/sales)
    customerContactSessionProcedureInstanceReference:
     type: string
-    example: "CCSPIR759579"
+    example: "CCSPIR709496"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3366,7 +3366,7 @@ definitions:
     properties:
      assignmentInstanceReportReference:
       type: string
-      example: "725660"
+      example: "786895"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3376,7 +3376,7 @@ definitions:
     properties:
      assignmentInstanceAnalysisReference:
       type: string
-      example: "741527"
+      example: "745087"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3398,7 +3398,7 @@ definitions:
       general-info: Reference to the servicing representative
    assignmentCustomerServicingPositionReference:
     type: string
-    example: "ACSPR758079"
+    example: "ACSPR782292"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3417,14 +3417,14 @@ definitions:
       general-info: Planned and actual servicing activity at the position during the session (records inbound contact details and allows for pre-assigned servicing actions e.g. outbound customer contacts for issue resolution/sales)
    customerContactSessionProcedureInstanceReference:
     type: string
-    example: "CCSPIR759579"
+    example: "CCSPIR709496"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the customer contact record for customer interactions during the servicing session
    assignmentRetrieveActionTaskReference:
     type: string
-    example: "ARATR796523"
+    example: "ARATR728809"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3500,14 +3500,14 @@ definitions:
   properties: 
    contactCenterAdministrativePlanInstanceReference:
     type: string
-    example: "CCAPIR710888"
+    example: "CCAPIR741320"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the parent Contact Center Administrative Plan instance
    assignmentInstanceReference:
     type: string
-    example: "AIR729891"
+    example: "AIR714684"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3544,7 +3544,7 @@ definitions:
       general-info: Reference to the servicing representative
    assignmentCustomerServicingPositionReference:
     type: string
-    example: "ACSPR772068"
+    example: "ACSPR717158"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3563,14 +3563,14 @@ definitions:
       general-info: Planned and actual servicing activity at the position during the session (records inbound contact details and allows for pre-assigned servicing actions e.g. outbound customer contacts for issue resolution/sales)
    customerContactSessionProcedureInstanceReference:
     type: string
-    example: "CCSPIR761685"
+    example: "CCSPIR707565"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the customer contact record for customer interactions during the servicing session
    assignmentRequestActionTaskReference:
     type: string
-    example: "ARATR763157"
+    example: "ARATR748045"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3583,7 +3583,7 @@ definitions:
       general-info: The request service call consolidated processing record
    assignmentRequestRecordReference:
     type: string
-    example: "ARRR767970"
+    example: "ARRR794988"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3611,7 +3611,7 @@ definitions:
       general-info: Reference to the servicing representative
    customerContactSessionProcedureInstanceReference:
     type: string
-    example: "CCSPIR777129"
+    example: "CCSPIR763213"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -3645,14 +3645,14 @@ definitions:
       general-info: Reference to the servicing representative
    customerContactSessionProcedureInstanceReference:
     type: string
-    example: "CCSPIR777129"
+    example: "CCSPIR763213"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the customer contact record for customer interactions during the servicing session
    assignmentUpdateActionTaskReference:
     type: string
-    example: "AUATR703234"
+    example: "AUATR745539"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier

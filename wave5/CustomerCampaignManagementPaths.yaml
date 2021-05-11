@@ -1,0 +1,805 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Customer Campaign Management'
+ description: >
+
+    ## Executive Summary:
+
+    Assess the coverage and impact of internal/customer campaigns and redirect campaign development and execution activity accordingly
+
+    ## Example of Use:
+
+    Customer Campaign Management identifies competitor activity that poses a threat to existing customers. Campaign design is initiated to develop a retention campaign to address the threat
+
+    ## Description:
+
+    Oversee the use and assess the coverage and impact of internal/customer campaigns. Direct customer campaign execution resources to maximize business impact and in response to any identified market opportunities and threats. Oversee campaign design and development activity.
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-customer-campaign-management/1.0.0
+schemes:
+ - https
+paths:
+  /customer-campaign-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCustomerCampaignManagement
+      summary: Activate  a SDCustomerCampaignManagement servicing session
+      description: Activate  a  SDCustomerCampaignManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCustomerCampaignManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDCustomerCampaignManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCustomerCampaignManagementActivateOutputModel'
+  /customer-campaign-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCustomerCampaignManagement
+      summary: Update an active SDCustomerCampaignManagement session configuration
+      description: Update an active SDCustomerCampaignManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustomerCampaignManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCustomerCampaignManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCustomerCampaignManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCustomerCampaignManagementConfigureOutputModel'
+  /customer-campaign-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCustomerCampaignManagement
+      summary: "Capturing feedback against the SDCustomerCampaignManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCustomerCampaignManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustomerCampaignManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCustomerCampaignManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCustomerCampaignManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCustomerCampaignManagementFeedbackOutputModel'
+  /customer-campaign-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCustomerCampaignManagement
+      summary: Analytical views maintained by the SDCustomerCampaignManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCustomerCampaignManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustomerCampaignManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCustomerCampaignManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCustomerCampaignManagementRetrieveOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/creation:
+    post:
+      tags:
+      - create
+      operationId: createCustomerCampaignPortfolioManagementPlan
+      summary: Details of a new CustomerCampaignPortfolioManagementPlan instance
+      description: Create and invoke the customer campaign portfolio management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CustomerCampaignPortfolioManagementPlan Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignPortfolioManagementPlanCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new CustomerCampaignPortfolioManagementPlan instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignPortfolioManagementPlanCreateOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerCampaignPortfolioManagementPlan
+      summary: Update to any amendable fields of the CustomerCampaignPortfolioManagementPlan instance
+      description: Update details of the customer campaign portfolio management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Portfolio Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignPortfolioManagementPlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Customer Campaign Portfolio Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignPortfolioManagementPlanUpdateOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustomerCampaignPortfolioManagementPlanUpdate
+      summary: Invoke a service request action against the CustomerCampaignPortfolioManagementPlan instance
+      description: Request manual intervention in the campaign plan (e.g. rework campaign priorities)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Portfolio Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignPortfolioManagementPlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Customer Campaign Portfolio Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignPortfolioManagementPlanRequestOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantCustomerCampaignPortfolioManagementPlanUpdate
+      summary: Invoke a grant request action from the CustomerCampaignPortfolioManagementPlan instance to obtain access permission
+      description: Obtain a permission grant against the plan (e.g. obtain authority to develop materials)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Portfolio Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignPortfolioManagementPlanGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Customer Campaign Portfolio Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignPortfolioManagementPlanGrantOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerCampaignManagement
+      summary: Invoke a reporting action to obtain a Customer Campaign Portfolio Management Plan instance related report
+      description: Retrieve details about the customer campaign portfolio management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCustomerCampaignPortfolioManagementPlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Customer Campaign Portfolio Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignPortfolioManagementPlanRetrieveOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/markettracking/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerCampaignPortfolioManagementPlanMarketTracking
+      summary: Update to any amendable fields of the MarketTracking instance
+      description: Update details of the market tracking activity (e.g. change source)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MarketTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MarketTracking Request Payload
+        schema:
+          $ref: '#/definitions/BQMarketTrackingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated MarketTracking Instance
+          schema:
+            $ref: '#/definitions/BQMarketTrackingUpdateOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/markettracking/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCustomerCampaignPortfolioManagementPlanMarketTrackingUpdate
+      summary: Invoke an automated execute action against the MarketTracking instance
+      description: Execute an automated task for the tracking activity (e.g. upload new data)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MarketTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MarketTracking request payload
+        schema:
+          $ref: '#/definitions/BQMarketTrackingExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of MarketTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQMarketTrackingExecuteOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/markettracking/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustomerCampaignPortfolioManagementPlanMarketTrackingUpdate
+      summary: Invoke a service request action against the MarketTracking instance
+      description: Request manual intervention in the market tracking (e.g. request reworking of the analysis)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MarketTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MarketTracking request payload
+        schema:
+          $ref: '#/definitions/BQMarketTrackingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of MarketTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQMarketTrackingRequestOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/markettracking/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerCampaignPortfolioManagementPlanMarketTracking
+      summary: Invoke a reporting action to obtain a MarketTracking instance related report.
+      description: Retrieve details about the market tracking activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MarketTracking Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQMarketTrackingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved MarketTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQMarketTrackingRetrieveOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/performanceassessment/creation:
+    post:
+      tags:
+      - create
+      operationId: createCustomerCampaignPortfolioManagementPlanPerformanceAssessment
+      summary: Details of a new PerformanceAssessment instance
+      description: Create a performance assessment of the customer campaign portfolio
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Portfolio Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQPerformanceAssessmentCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Customer Campaign Portfolio Management Plan instance
+          schema:
+            $ref: '#/definitions/BQPerformanceAssessmentCreateOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/performanceassessment/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerCampaignPortfolioManagementPlanPerformanceAssessment
+      summary: Update to any amendable fields of the PerformanceAssessment instance
+      description: Update details of a customer campaign portfolio assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PerformanceAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PerformanceAssessment Request Payload
+        schema:
+          $ref: '#/definitions/BQPerformanceAssessmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated PerformanceAssessment Instance
+          schema:
+            $ref: '#/definitions/BQPerformanceAssessmentUpdateOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/performanceassessment/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCustomerCampaignPortfolioManagementPlanPerformanceAssessmentUpdate
+      summary: Invoke an automated execute action against the PerformanceAssessment instance
+      description: Execute an automated action for a performance assessment (e.g. trigger assessment report)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PerformanceAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PerformanceAssessment request payload
+        schema:
+          $ref: '#/definitions/BQPerformanceAssessmentExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of PerformanceAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQPerformanceAssessmentExecuteOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/performanceassessment/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustomerCampaignPortfolioManagementPlanPerformanceAssessmentUpdate
+      summary: Invoke a service request action against the PerformanceAssessment instance
+      description: Request manual intervention to a performance assessment (e.g. request specific analysis)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PerformanceAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PerformanceAssessment request payload
+        schema:
+          $ref: '#/definitions/BQPerformanceAssessmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of PerformanceAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQPerformanceAssessmentRequestOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/performanceassessment/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerCampaignPortfolioManagementPlanPerformanceAssessment
+      summary: Invoke a reporting action to obtain a PerformanceAssessment instance related report.
+      description: Retrieve details about customer campaign performance assessment activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PerformanceAssessment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQPerformanceAssessmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved PerformanceAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQPerformanceAssessmentRetrieveOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/campaigndirection/creation:
+    post:
+      tags:
+      - create
+      operationId: createCustomerCampaignPortfolioManagementPlanCampaignDirection
+      summary: Details of a new CampaignDirection instance
+      description: Create customer campaign direction schedules (e.g. create the schedules for design or execution activity)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Portfolio Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQCampaignDirectionCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Customer Campaign Portfolio Management Plan instance
+          schema:
+            $ref: '#/definitions/BQCampaignDirectionCreateOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/campaigndirection/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerCampaignPortfolioManagementPlanCampaignDirection
+      summary: Update to any amendable fields of the CampaignDirection instance
+      description: Update the customer campaign design and execution schedules
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CampaignDirection Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CampaignDirection Request Payload
+        schema:
+          $ref: '#/definitions/BQCampaignDirectionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CampaignDirection Instance
+          schema:
+            $ref: '#/definitions/BQCampaignDirectionUpdateOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/campaigndirection/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustomerCampaignPortfolioManagementPlanCampaignDirectionUpdate
+      summary: Invoke a service request action against the CampaignDirection instance
+      description: Request manual intervention to the schedules (e.g. rework priorities)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CampaignDirection Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CampaignDirection request payload
+        schema:
+          $ref: '#/definitions/BQCampaignDirectionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of CampaignDirection Instance Record
+          schema:
+            $ref: '#/definitions/BQCampaignDirectionRequestOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/campaigndirection/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerCampaignPortfolioManagementPlanCampaignDirection
+      summary: Invoke a reporting action to obtain a CampaignDirection instance related report.
+      description: Retrieve details about the campaign design and execution direction and scheduling activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CampaignDirection Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCampaignDirectionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CampaignDirection Instance Record
+          schema:
+            $ref: '#/definitions/BQCampaignDirectionRetrieveOutputModel'
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustomerCampaignManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CustomerCampaignManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /customer-campaign-management/customer-campaign-portfolio-management-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustomerCampaignManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'MarketTracking',  'PerformanceAssessment',  'CampaignDirection', ]
+  /customer-campaign-management/{sd-reference-id}/customer-campaign-portfolio-management-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustomerCampaignManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Portfolio Management Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- CampaignDirection
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CampaignDirection Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [CampaignDirectionID1, CampaignDirectionID2]

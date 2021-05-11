@@ -1,0 +1,138 @@
+SD=Current Account
+CR= Current Account Fulfillment Arrangement
+BQs= Interest  Service Fees  Account Lien  Account Sweep  Deposits and Withdrawals  Payments  Issued Device
+Current Account||Referenced Information|Description||||||||CR- Current Account Fulfillment Arrangement|||||||||BQ 1 - Interest|||||||||BQ 2 - Service Fees|||||||||BQ 3 - Account Lien|||||||||BQ 4 - Account Sweep|||||||||BQ 5 - Deposits and Withdrawals|||||||||BQ 6 - Payments|||||||||BQ 7 - Issued Device||||||||||
+Name (#SD)|Current Account|Accounting Rules|Attributes for the corporate accounting rules and guidelines||||||||1|2|3||||||4|||||||||5|6|||||7|||8|9|10||11|||||12|13|14||||15|||16|17|18||||19|||20|21|22||23||24|||25|26|27|||||28||29|REF|Identified Semantic APIs
+Description|The Current Account or Demand Deposit Account as it can be called is a financial facility that represents the general checking account facility at the core of the consumer and small business banking activity. There is a range of supporting features that make up the standard facility (checks/cheques, standing orders, debit cards, phone and on-line banking services etc.). The fulfillment can include a range of optional services, fees and interest payments and penalties and will often be bundled and or underlie/support other financial facilities and financial transactions
+|Taxation Rules|Attributes for handling customer taxation and reporting||||||||E|E|E||||||E|I|||||I|||E|IE|||||IE|||E|E|E||E|||||E|E|E||||IE|||E|IE|E||||IE|||E|E|E||E||IE|||E|IE|E|||||E||E||Triggering
+Example of Use|Example of use:
+A customer processes a series of services (e.g., request printed statements, initiate a transfer, set up a standing order) through the call center by accessing their current account|Service Pricing|Details of fees and penalties applied to the bank's products and services|CR Current Account Fulfillment Arrangement Instance Record|Current Account Fulfillment Arrangement Instance Record|||||The control record maintains for a current account product instance|IO|IO|||||||IO|IO|||||||||IO|||||||||IO|||||||||IO|||||||||IO|||||||||IO|||||||||IO|||||||||#|Listed Semantic API Descriptions
+Executive Summary|This service domain orchestrates a consumer checking/demand deposit account. The typical range of services and fees covers payments and deposits, standing orders, sweeps, liens, check and debit card access.|Bank Rates|Bank internal currency and interest rates applied to production fulfillment|Properties||Product Instance Reference ||||Reference to the current account product instance|O|IO|||||||O|I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||1|InCR Initiate A new Current Account
+Key Features|Set-up current account facilities
+Issue cards, check-books for an account
+Process deposits and withdrawals
+Handle standing orders and direct debits
+Process fees and apply interest charges
+Provide balance/statements and reports|||||Current Account Number||||The associated account number in any suitable format (e.g. IBAN)|O|IO|||||||O|I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||2|UpCR Update properties of an active current account
+Functional Pattern|Fulfill|||||Customer Reference||||Reference to the account primary party/owner|I|IO|||||||O|||||||||||||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||3|CoCR Control the processing of an active current account (change processing status)
+Asset Type|Current Account|||||Bank Branch/Location Reference||||Bank branch associated with the account for booking purposes|I|IO|||||||O|||||||||||||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||4|ReCR Retrieve information about a current account - either standard canned reports or selected instance attribute values
+Generic Artifact|Fulfillment Arrangement|||||Account Type||||The type of current account (e.g. checking, student, small business)|I|IO|||||||O|I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||5|ReBQ Retrieve details of an interest transaction applied internally to the account
+Control Record (#CR)|Current Account Fulfillment Arrangement|||||Account Currency||||The primary account currency|IO|IO|||||||O|I|||||||||I||||||||||||||||||I|||||||||I|||||||||I|||||||||I|||||||||6|InBQ Initiate service fees against an account
+Behavior Qualifier Type|Features|||||Tax Reference ||||Reference identifier linking the account to appropriate tax handling|I|IO|||||||O|I|||||||||I||||||||||||||||||I||||||||||||||||||O||||||||||||||||||7|ExBQ Apply a service fee to the account
+||||Options||Entitlement Option Definition||||The definition of an applicable entitlement option|O|IO|||||||O|||||||||||||||||||O|||||||||||||||||||||||||||||||||||||||||||||8|ReBQ Retrieve information about a service fee applied to the account
+Service Domain Handling||Behavior Qualifiers (#BQ)|Description|||Entitlement Option Setting||||The setting for the entitlement option|IO|IO|||||||O|||||||||||||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||9|InBQ Set up an account lien
+VC Business Area|Products|Interest|Handles the array of interest rates applicable to the current account|||Restriction Option Definition||||The definition of an applicable restriction option|O|IO|||||||O|||||||||||||||||||O|||||||||||||||||||||||||||||||||||||||||||||10|UpBQ Update details of an existing account lien
+VC Business Domain|Consumer Banking|Service Fees|Handles the array of fees and penalties that are applied to the account|||Restriction Option Setting||||The setting for the restriction option|IO|IO|||||||O|I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||I|||||||||11|EcBQ Exchange (i.e. confirm, reject) details of an account lien
+M Business Area|Operations and Execution|Account Lien|Handles placing a lien or block on the account for a specified purpose, amount and period|Variables||Associations||||Definition of the associations to the account|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||12|ReBQ Retrieve details about an active account lien
+M Business Domain|Loans and Deposits|Account Sweep|Handles the set-up and execution of sweeps to and from the facility to a linked account||||Association Type|||The type of association (e.g. guarantor, co-signer)|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||O|||||||||O|||||||||13|InBQ Set up an account sweep
+Service Domain #|269|Deposits and Withdrawals|Handles the processing of deposits made to and withdrawals made from the account. Note the funds are assumed to be available or an error condition occurs||||Association Obligation/Entitlement|||Description of the role, obligations or entitlements of the associated party|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||O|||||||||O|||||||||14|UpBQ Update details of an existing account sweep
+API Type|Product Specific|Payments|Handles the set-up and execution of different types of payment from the account, including regular payments, standing orders, direct debits and bill pay||||Association Reference|||Reference to the associated party|I|IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||O|||||||||O|||||||||15|ExBQ Trigger an account sweep transaction
+Comment||Issued Device|Handles the issuance and tracking of issued devices/inventory such as check/cheque books, pay-in slips|||Linked Accounts||||Definition of the associations to the account|I|IO|||||||O|I|||||||||I|||||||||IO|||||||||I||||||||||||||||||||||||||||||||||||16|ReBQ Retrieve details about an active sweep facility or specific sweep transaction
+Wave 1|Y||||||Link Type|||The type and purpose for the link|I|IO|||||||O|I|||||||||I|||||||||I|||||||||I||||||||||||||||||||||||||||||||||||17|InBQ Initialize deposit or withdrawal transaction
+Wave 2|Y||||||Account Details|||Details of the linked account|I|IO|||||||O|I|||||||||I|||||||||I|||||||||I||||||||||||||||||||||||||||||||||||18|UpBQ Update/correct a deposit or withdrawal transaction
+Wave 3|Y|||||Position Limits||||Position limits that are maintained by the account||IO|||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||19|ExBQ Execute a deposit or withdrawal transaction
+Wave 4|||||||Position Limit Type|||The type of position maintained for the account (e.g. transaction credit/debit, netting, position)|O|IO|||||||O|I|||||||||I|||||||||I||||||||||||||||||I|||||||||||||||||||||||||||20|ReBQ Retrieve details about a deposit or withdrawal transaction
+|||||||Position Limit Settings|||The position definition, associated limit settings and rules|IO|IO|||||||O|I|||||||||I|||||||||IO|||||||||||||||||||||||||||O|||||||||O|||||||||21|InBQ Initialize a payment transaction (can be single or repeating)
+|||||||Position Limit Value|||The current calculated position|O|IO|||||||O|I|||||||||I|||||||||O||||||||||||||||||O|||||||||I|||||||||I|||||||||22|UpBQ Update a payment transaction configuration or specific transaction
+||||||Date Type||||Key dates associated with the account (e.g. opening date, closing date)|IO|IO|||||||O|IO|||||||||IO|||||||||IO|||||||||IO|||||||||IO|||||||||IO|||||||||IO|||||||||23|EcBQ Verify/approve a scheduled repeating payment
+|||||||Date|||Value of the date type|IO|IO|||||||O|IO|||||||||IO|||||||||IO|||||||||IO|||||||||IO|||||||||IO|||||||||IO|||||||||24|ExBQ Trigger a payment for a repeating payment set up
+||||BQ Interest Instance Record ||Interest Instance Record ||||Applies interest to the account||||||||||IO|||||IO|||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||25|ReBQ Retrieve details about a payment transaction or arrangement
+||||Properties|||Interest Rate Type|||The type of rate calculation that can be applied||||||||||I|||||I|||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||26|InBQ Initiate the provision of issued inventory for the account (include initial issuance)
+||||Options|||Interest Rate Application Schedule|||The processing schedule for applying interest rates to the account||||||||||I|||||I|||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||27|UpBQ Update the issued inventory details and provisioning configuration or status
+||||Variables|||Interest Rate Configuration|||The collection of applicable rates||||||||||I|||||I|||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||28|RqBQ Request changes or replacement device/inventory
+||||||||Interest Rate Type||Applicable rate type||||||||||I|||||I|||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||29|ReBQ Retrieve details about issued device/inventory
+||||||||Interest Rate||The rate value to be applied||||||||||I|||||I|||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||Interest Application Record|||The record of applied interest|||||||||||||||IO|||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Interest Transaction||A record of applied interest|||||||||||||||IO|||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Transaction Description|General description of the interest transaction|||||||||||||||I|||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Transaction Rate Type|Applicable rate type|||||||||||||||I|||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Transaction Interest Charge|The derived interest amount to be applied|||||||||||||||O|||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Interest Accrual Amount||Record of accrued interest||||||||||I|||||IO|||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Interest Accrual Type|The interest type being tracked||||||||||I|||||I|||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Interest Accrual Charge|The accrued amount of applied interest||||||||||I|||||O|||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||BQ Service Fees Instance Record||Service Fees Instance Record||||Applies service fees and penalties to the account|||||||||||||||||||IO|||||I|||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||Options|||Fee Configuration Profile|||The profile of applicable fees and penalties|||||||||||||||||||I|||||IO|||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Fee Definition ||Definition of the fee or penalty including when and how to apply|||||||||||||||||||O|||||O|||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Fee Type||The fee or penalty type applied|||||||||||||||||||I|||||I|||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||Variables|||Fee Application Record|||The record of applied fees and penalties including transactions and accrued amounts||||||||||||||||||||||||IO|||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Fee Transaction||A record of an applied fee or penalty||||||||||||||||||||||||IO|||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Transaction Description|General description of the fee or penalty transaction||||||||||||||||||||||||I|||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Transaction Fee Type|The fee or penalty type applied||||||||||||||||||||||||IO|||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Transaction Fee Charge|The derived fee or penalty amount applied||||||||||||||||||||||||O|||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Fee Projections and Commitments||A record of projected fees and penalties||||||||||||||||||||||||IO|||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Projected Transaction Description|General description of the projected fee or penalty||||||||||||||||||||||||I|||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Projected Transaction Fee Type|The fee or penalty type||||||||||||||||||||||||IO|||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Projected Transaction Fee Charge|The anticipated fee or penalty amount||||||||||||||||||||||||O|||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Fee Accrual Amount||Tracking of accumulated fees and penalties||||||||||||||||||||||||O|||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Accrual Fee Type|The fee or penalty type being tracked||||||||||||||||||||||||IO|||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||||Accrual Fee Charge|The accrued amount of fees and penalties||||||||||||||||||||||||O|||O|||||||||||||||||||||||||||||||||||||||||||||||
+||||BQ Account Lien Instance Record ||Account Lien Instance Record ||||Handles liens placed against the account||||||||||||||||||||||||||||IO|IO|||||||O||||||||||||||||||||||||||||||||||||||
+||||Properties|||Lien Type|||The type of lien (e.g. final, pending)||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||
+|||||||Lien Definition|||Definition of the type of lien including processing guidelines||||||||||||||||||||||||||||IO||||||||O||||||||||||||||||||||||||||||||||||||
+||||Options|||Lien Processing Option |||The processing option applied to the lien||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||
+||||Variables|||Lien Record|||The collection of applicable rates||||||||||||||||||||||||||||IO|IO|||||||O||||||||||||||||||||||||||||||||||||||
+||||||||Lien Originator||The party requesting the lien||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||
+||||||||Lien Purpose||The purpose or associated facility linked to the lien||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||
+||||||||Lien Amount||The amount being blocked||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||
+||||||||Lien Start Date||The date the lien is enforced||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||
+||||||||Lien Expiry Date||The date the lien is removed||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||
+||||||||Lien Status||The status on the lien||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||||||||||||||||||||
+||||BQ Account Sweep Instance Record ||Account Sweep Instance Record ||||Handles sweeping arrangements linked to the account|||||||||||||||||||||||||||||||||||||IO|IO||||I|||O|||||||||||||||||||||||||||||
+||||Properties|||Account Sweep Type|||The type of sweep (e.g. periodic, threshold)|||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||
+|||||||Account Sweep Definition|||Definition of the type of sweep|||||||||||||||||||||||||||||||||||||O|IO|||||||O|||||||||||||||||||||||||||||
+||||Options|||Account Sweep Application Schedule |||Sweep processing guidelines and scheduling rules|||||||||||||||||||||||||||||||||||||IO|IO|||||||O|||||||||||||||||||||||||||||
+||||Variables|||Account Sweep Configuration|||The set-up of the sweep facility|||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||
+||||||||Target Account||The facility that the sweep is made to/from|||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||
+||||||||Sweep Mandate||Confirmation that the sweep processing is sanctioned as necessary|||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||
+||||||||Sweep Processing Schedule||Timing and or triggers for initiating sweep transaction|||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||||||||||||||||||||
+|||||||Sweep Application Record|||The transaction record for an applied sweep||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||||||||||||||||||||
+||||||||Account Sweep Target Account||The facility that the sweep is made to/from||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||||||||||||||||||||
+||||||||Account Sweep Amount||The amount transferred to or from the account||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||||||||||||||||||||
+||||||||Account Sweep Execution Date||The date and time the sweep is initiated||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||||||||||||||||||||
+||||BQ Deposits & Withdrawals Instance Record ||Deposits & Withdrawals Instance Record ||||Processes deposits and withdrawals against the account||||||||||||||||||||||||||||||||||||||||||||||IO|IO||||I|||O||||||||||||||||||||
+||||Properties|||Deposit Type|||The type of deposit transaction that can be applied to the account (e.g. customer deposit, internal credit)||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||
+|||||||Withdrawal Type|||The type of withdrawal transaction that can be applied to the account (e.g. customer withdrawal, internal service charge, disbursement)||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||
+||||Options|||Account Limit Breach Response|||The handling options if a withdrawal results in a breach of an account limit||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O||||||||||||||||||||
+||||Variables|||Deposit Transaction|||The collection of applicable rates|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Deposit Transaction Source Reference||Identifies the source of the deposit|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Deposit Transaction Deposit Type||The type of deposit made with the transaction|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Deposit Transaction Description ||Any necessary details describing the purpose or reference properties of the deposit|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Deposit Transaction Amount||The deposited amount|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Deposit Transaction Date||The date and time the deposit was initiated|||||||||||||||||||||||||||||||||||||||||||||||IO||||IO|||O||||||||||||||||||||
+|||||||Withdrawal Transaction|||The record of applied interest|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Withdrawal Transaction Source Reference||Identifies the target for the withdrawal|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Withdrawal Transaction Withdrawal Type||The type of withdrawal made with the transaction|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Withdrawal Transaction Description ||Any necessary details describing the purpose or reference properties of the withdrawal|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Withdrawal Transaction Amount||The withdrawn amount|||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O||||||||||||||||||||
+||||||||Withdrawal Transaction Date||The date and time the withdrawal was initiated|||||||||||||||||||||||||||||||||||||||||||||||IO||||IO|||O||||||||||||||||||||
+||||BQ Payments Instance Record ||Payments Instance Record ||||Handles different payment handling requirements|||||||||||||||||||||||||||||||||||||||||||||||||||||||IO|IO||||I|||O|||||||||||
+||||Properties|||Payment Type|||The type of payment transaction (e.g. customer payment, standing order, direct debit, bill pay)|||||||||||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||
+|||||||Payment Definition|||Definition of the type of payment including processing rules and guidelines|||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||||||O|||||||||||
+||||Options|||Payment Processing Option Definition|||Definition of the processing option and impact (e.g. frequency and cumulative amount constraints)|||||||||||||||||||||||||||||||||||||||||||||||||||||||O|IO|||||||O|||||||||||
+|||||||Payment Processing Option Setting|||The option setting|||||||||||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||
+||||Variables|||Payment Configuration|||Configuration setting for various payment transaction types|||||||||||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||
+||||||||Payment Schedule ||Processing schedule for repeating payments for standing orders (e.g. start date, end, period, number/cycles). Note this triggers an internal execution call as necessary|||||||||||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||
+||||||||Direct Debit Mandate Reference||Reference to the applicable mandate for direct debits|||||||||||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||
+|||||||||Direct Debit Mandate Settings|Processing settings governing direct debits|||||||||||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||
+||||||||Bill Pay Mandate Reference||Reference to the applicable mandate for bill pay transactions|||||||||||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||
+|||||||||Bill Pay Mandate Settings|Processing settings governing bill pay transactions|||||||||||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||||O|||||||||||
+|||||||Payment Transaction|||The general payment transaction with all major attributes - some optional depending on type||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Type||The type of payment transaction (e.g. customer payment, standing order, direct debit, bill pay)||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Payee Reference||Reference to the party to whom the payment is made||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Payee Account Reference||Reference to the account to which the payment is made||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Payee Bank Reference||Reference to the bank where the payee account is held||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Amount||The amount (and currency if applicable) of the payment||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Fee Type||The fee type applied to the payment transaction||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Fee Charge ||The fee charge applied to the transaction||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Date||The various key dates and times associated with the payment transaction||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||IO|||O|||||||||||
+||||||||Payment Transaction Payment Mechanism||Requested payment mechanism (e.g. Wire, ACH)||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Payment Purpose||Description of the purpose including any external reference to the transaction||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Bank Branch/Location Reference||Reference to the location the payment transaction is initiated from ||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO||||I|||O|||||||||||
+||||||||Payment Transaction Status||The processing status of the transaction (e.g. captured, approved, initiated, confirmed, settled)||||||||||||||||||||||||||||||||||||||||||||||||||||||||O||||IO|||O|||||||||||
+||||BQ Issued Device Instance Record||Issued Device Instance Record||||Handles the administration of issued device/inventory (e.g. checkbooks, cards, fobs)||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO|IO|||||I||O||
+||||Properties|||Issued Device Type|||The type of issued device/inventory (e.g. checkbook, pay-in slip)||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||I|IO|||||I||O||
+|||||||Issued Device Description|||Definition of the inventory item, including processing and handling guidelines and rules||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO|IO|||||O||O||
+||||Options|||Issued Device Option Definition|||Definition of the processing option and impact (e.g. lost check handling)||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO|IO|||||O||O||
+|||||||Issued Device Option Setting|||The processing option setting ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO|IO|||||IO||O||
+||||Variables|||Issued Device Property|||A property of the issued device/inventory (e.g. card, checkbook, pay-in slip)||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO|IO|||||I||O||
+||||||||Issued Device Property Type||Tracked property of the issued device/inventory (e.g. issued check numbers)||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||IO|IO|||||O||O||

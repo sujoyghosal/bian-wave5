@@ -1,0 +1,662 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Corporate Tax Advisory'
+ description: >
+
+    ## Executive Summary:
+
+    A fee or commission based product providing tax specific assessments, advice and guidance for corporate customers
+
+    ## Example of Use:
+
+    A corporate customer obtains tax optimization advice from a financial advisor at a branch
+
+    ## Description:
+
+    Provide corporate customers with tax related advice to better understand tax obligations and to identify and implement tax optimization approaches. The service is fee based and may include the use of product specialist financial advisory resources when required
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-corporate-tax-advisory/1.0.0
+schemes:
+ - https
+paths:
+  /corporate-tax-advisory/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCorporateTaxAdvisory
+      summary: Activate  a SDCorporateTaxAdvisory servicing session
+      description: Activate  a  SDCorporateTaxAdvisory servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCorporateTaxAdvisory Request Payload
+        schema:
+          $ref: '#/definitions/SDCorporateTaxAdvisoryActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCorporateTaxAdvisoryActivateOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCorporateTaxAdvisory
+      summary: Update an active SDCorporateTaxAdvisory session configuration
+      description: Update an active SDCorporateTaxAdvisory session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCorporateTaxAdvisory Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCorporateTaxAdvisory Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCorporateTaxAdvisoryConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCorporateTaxAdvisoryConfigureOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCorporateTaxAdvisory
+      summary: "Capturing feedback against the SDCorporateTaxAdvisory service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCorporateTaxAdvisory service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCorporateTaxAdvisory Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCorporateTaxAdvisory Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCorporateTaxAdvisoryFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCorporateTaxAdvisoryFeedbackOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCorporateTaxAdvisory
+      summary: Analytical views maintained by the SDCorporateTaxAdvisory service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCorporateTaxAdvisory service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCorporateTaxAdvisory Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCorporateTaxAdvisoryRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCorporateTaxAdvisoryRetrieveOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCorporateTaxAdvisoryFulfillmentArrangement
+      summary: Details of a new CorporateTaxAdvisoryFulfillmentArrangement instance
+      description: Initiate a corporate tax advisory service
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CorporateTaxAdvisoryFulfillmentArrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new CorporateTaxAdvisoryFulfillmentArrangement instance
+          schema:
+            $ref: '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementInitiateOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCorporateTaxAdvisoryFulfillmentArrangement
+      summary: Update to any amendable fields of the CorporateTaxAdvisoryFulfillmentArrangement instance
+      description: Update details for a corporate tax advisory service
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Tax Advisory Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Corporate Tax Advisory Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementUpdateOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCorporateTaxAdvisoryFulfillmentArrangementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of the service (e.g. suspend)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Tax Advisory Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Corporate Tax Advisory Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementControlOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCorporateTaxAdvisoryFulfillmentArrangementUpdate
+      summary: Invoke a service request action against the CorporateTaxAdvisoryFulfillmentArrangement instance
+      description: Request manual intervention during the advisory service (e.g. expand coverage)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Tax Advisory Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Corporate Tax Advisory Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementRequestOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCorporateTaxAdvisory
+      summary: Invoke a reporting action to obtain a Corporate Tax Advisory Fulfillment Arrangement instance related report
+      description: Retrieve details about a corporate tax advisory service arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Corporate Tax Advisory Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateTaxAdvisoryFulfillmentArrangementRetrieveOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/taxoptimization/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization
+      summary: Details of a new TaxOptimization instance
+      description: Initiate a corporate tax optimization advisory session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Tax Advisory Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQTaxOptimizationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Corporate Tax Advisory Fulfillment Arrangement instance
+          schema:
+            $ref: '#/definitions/BQTaxOptimizationInitiateOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/taxoptimization/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization
+      summary: Update to any amendable fields of the TaxOptimization instance
+      description: Update details about a corporate tax optimization advisory session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TaxOptimization Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TaxOptimization Request Payload
+        schema:
+          $ref: '#/definitions/BQTaxOptimizationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TaxOptimization Instance
+          schema:
+            $ref: '#/definitions/BQTaxOptimizationUpdateOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/taxoptimization/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCorporateTaxAdvisoryFulfillmentArrangementTaxOptimizationUpdate
+      summary: Invoke a service request action against the TaxOptimization instance
+      description: Request manual intervention in a session (e.g. request specialist input)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TaxOptimization Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TaxOptimization request payload
+        schema:
+          $ref: '#/definitions/BQTaxOptimizationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of TaxOptimization Instance Record
+          schema:
+            $ref: '#/definitions/BQTaxOptimizationRequestOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/taxoptimization/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization
+      summary: Invoke a reporting action to obtain a TaxOptimization instance related report.
+      description: Retrieve details about a corporate tax optimization advisory session .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TaxOptimization Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTaxOptimizationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TaxOptimization Instance Record
+          schema:
+            $ref: '#/definitions/BQTaxOptimizationRetrieveOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/servicefees/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCorporateTaxAdvisoryFulfillmentArrangementServiceFees
+      summary: Details of a new ServiceFees instance
+      description: Initialize service fee processing for corporate tax advisory services (sets up ability to process fees)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Tax Advisory Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQServiceFeesInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Corporate Tax Advisory Fulfillment Arrangement instance
+          schema:
+            $ref: '#/definitions/BQServiceFeesInitiateOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/servicefees/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCorporateTaxAdvisoryFulfillmentArrangementServiceFees
+      summary: Update to any amendable fields of the ServiceFees instance
+      description: Update details of service fees for corporate tax advisory services
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ServiceFees Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ServiceFees Request Payload
+        schema:
+          $ref: '#/definitions/BQServiceFeesUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ServiceFees Instance
+          schema:
+            $ref: '#/definitions/BQServiceFeesUpdateOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/servicefees/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCorporateTaxAdvisoryFulfillmentArrangementServiceFeesUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept/reject/approve fees for an corporate tax advisory session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ServiceFees Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ServiceFees request payload
+        schema:
+          $ref: '#/definitions/BQServiceFeesExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ServiceFees Instance Record
+          schema:
+            $ref: '#/definitions/BQServiceFeesExchangeOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/servicefees/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCorporateTaxAdvisoryFulfillmentArrangementServiceFeesUpdate
+      summary: Invoke an automated execute action against the ServiceFees instance
+      description: Execute/apply a fee for a corporate tax advisory session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ServiceFees Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ServiceFees request payload
+        schema:
+          $ref: '#/definitions/BQServiceFeesExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of ServiceFees Instance Record
+          schema:
+            $ref: '#/definitions/BQServiceFeesExecuteOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/servicefees/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCorporateTaxAdvisoryFulfillmentArrangementServiceFees
+      summary: Invoke a reporting action to obtain a ServiceFees instance related report.
+      description: Retrieve details about service fees for a corporate tax advisory service .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ServiceFees Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQServiceFeesRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ServiceFees Instance Record
+          schema:
+            $ref: '#/definitions/BQServiceFeesRetrieveOutputModel'
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCorporateTaxAdvisoryReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CorporateTaxAdvisory Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /corporate-tax-advisory/corporate-tax-advisory-fulfillment-arrangement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCorporateTaxAdvisoryBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'TaxOptimization',  'ServiceFees', ]
+  /corporate-tax-advisory/{sd-reference-id}/corporate-tax-advisory-fulfillment-arrangement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCorporateTaxAdvisoryBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Tax Advisory Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Tax Advisory Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- ServiceFees
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ServiceFees Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ServiceFeesID1, ServiceFeesID2]

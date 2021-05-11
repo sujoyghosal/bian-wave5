@@ -1,0 +1,27 @@
+CR Financial Market Information Administrative Plan Instance Record	CR Financial Market Information Administrative Plan Instance Record	Financial Market Information Administrative Plan Instance Record	##			The Financial Market Information Management function consolidates information from multiple sources and uses various techniques to improve the integrity of key information views that are not available from external service providers for internal use (e.g. private company M&A activity)	IO							O			IO	IO		IO	IO	O
+			Financial Market Information Service	##		Reference to the external sources of financial market information. Can be an ongoing service or some form of report	IO							O			IO	IO		IO	IO	O
+				Financial Market Information Provider		The external agency/source of financial market information	IO							O			IO	IO		IO	IO	O
+				Financial Market information Description 		Defines the scope/content of the financial market information	IO							O			IO	IO		IO	IO	O
+				Financial Market Information Service Type		Defines the type of information service (e.g. a regular feed, periodic report)	IO							O			IO	IO		IO	IO	O
+				Financial Market Information Service Schedule		Sets out the delivery schedule for content	IO							O			IO	IO		IO	IO	O
+				Financial Market Information Service Agreement		Reference to any agreement covering access to the external service	IO							O			IO	IO		IO	IO	O
+			Financial Market Information Database	##		Refers to the consolidated financial market information that is enhanced/improved by the bank for internal reference. This is a collection of different subject areas for which a bank perspective is maintained	IO							O			IO	IO		IO	IO	O
+				Financial Market Information Subject Area	##	Refers to a maintained subject area	IO							O			IO	IO		IO	IO	O
+					Financial Market Information Subject Area Description	A description of the information content of the subject area	O							O			IO	IO		IO	IO	O
+					Financial Market Information Subject Area Update History	A record of the update history of the content	IO							O			IO	IO		IO	IO	O
+					Financial Market Information Subject Area Record	The consolidated improved information, includes current and past historical records as necessary	O							O			IO	IO		IO	IO	O
+BQ Consolidation Instance Record	BQ Consolidation Instance Record	Consolidation Instance Record	##			Covers the routines for accessing the external sources to consolidate the financial market information									O							
+			Financial Market Information Service Report			Refers to the content record provided by the external service provider in whatever form suitable 									O							
+			Financial Market Information Service Report Properties			Key properties of the report used in its improvement (e.g. date created, qualifications of integrity)									O							
+BQ Improvement Instance Record	BQ Improvement Instance Record	Improvement Instance Record	##			Covers the routines used to improve the quality of the information										O						
+			Financial Market Information Improvement Task Type			Defines the type of technique used to improve the content (e.g. cross verification, pattern/anomaly detection)										O						
+			Financial Market Information Improvement Task Sources			References to the different sources of financial market information used to improve the content (can be primary source and comparison data) 										O						
+			Financial Market Information Improvement Task Work Products			Work documentation, forms and schedules produced and referenced during the enquiry										O						
+			Financial Market Information Improvement Task Result			Output of the improvement task that is recorded back to the Financial Market Information Database										O						
+BQ Reporting Instance Record	BQ Reporting Instance Record	Reporting Instance Record	##			Covers the assembly and maintenance of managed report views of the bank managed financial market information that are accessed by users											IO	IO	IO	IO	IO	O
+			Financial Market Information Report	##		Refers to structured extracts of reports of the managed financial market information that can be referenced											IO	IO	IO	IO	IO	O
+				Financial Market Information Report Type		The report represents a specific managed information view of the scrubbed financial market information											IO	IO		IO	IO	O
+				Financial Market Information Report Description 		Is a detailed definition of the report contents, including properties that clarify the quality/integrity and timeliness of the content											O	IO		O	O	O
+				Financial Market Information Report Schedule		Is the schedule for maintaining the report content											IO	IO		IO	IO	O
+				Financial Market Information Report Access History		Is a log/record of access made to the report by bank users											IO	IO	IO	IO	IO	O
+				Financial Market Information Report		Is the report itself, including historical versions as appropriate											O	IO		O	O	O

@@ -1,0 +1,14 @@
+CR Fraud Evaluation Assessment Instance Record	CR Fraud Evaluation Assessment Instance Record	Fraud Evaluation Assessment Instance Record	##			A fraud evaluation assessment for a detected production issue - typically linked to a specific product fulfillment activity	IO		IO	IO		O	O	O
+			Product Production Session Reference			Reference to the product fulfillment production session for which on-line fraud evaluation is performed	IO		IO	IO		O	O	O
+			Fraud Evaluation Test Profile			Details the types of fraud evaluation tests applied	IO		IO	IO		O	O	O
+			Fraud Evaluation Ensemble Technique Type			The type of technique use to combine results of the different tests used to detect out of pattern behavior	IO		IO	IO		O	O	O
+			Fraud Evaluation Ensemble Technique Definition 			The definition of how the constituent rule set/decision tree and model test are combined to compete the assessment	IO		IO	IO		O	O	O
+			Fraud Evaluation Transaction Consolidation Record 			The production transaction details that are submitted for fraud evaluation - note this will typically be a real-time dataset	I		I	I		O	O	O
+			Fraud Evaluation Production Anomaly Record 			Details of detected out of pattern production activity that could be fraud	O		O	O		O	O	O
+			Fraud Evaluation Production Anomaly Production Transaction Reference 			Reference to the one or more production transactions isolated by the fraud evaluation tests	O		O	O		O	O	O
+BQ Rule Sets And Decision Trees Instance Record	BQ Rule Sets And Decision Trees Instance Record	BQ Rule Sets And Decision Trees Instance Record	##			The application of rule sets and decision trees based testing for out of pattern behavior for a collection of transactions							O	
+			Rule Sets And Decision Trees Test Result			The production transaction assessment test results, including reference to any potential fraud transactions - note this can be a real-time dataset							O	
+			Rule Sets And Decision Trees Test Work Product			Work documentation, forms and schedules produced and referenced during the assessment task							O	
+BQ Models Instance Record	BQ Models Instance Record	BQ Models Instance Record	##			The application of models based testing such as regression, classification and time sequence assessments to detect out of pattern behavior for a collection of transactions								O
+			Models Test Result			The production transaction assessment test results, including reference to any potential fraud transactions - note this can be a real-time dataset								O
+			Models Test Work Product			Work documentation, forms and schedules produced and referenced during the assessment task								O

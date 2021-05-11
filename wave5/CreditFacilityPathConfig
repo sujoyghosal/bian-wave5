@@ -1,0 +1,27 @@
+sd=Credit Facility	Maintain the availability and allocation of a negotiated credit line or facility for a corporate customer, including supporting subsidiary allocations where appropriate	Example of use:A corporate customer obtains a credit facility after an equity financing round in order to better structure its debt in its capital structure	The credit facility provides a corporate with a flexible umbrella loan arrangement that can be drawn on over the term of the facility. It can be set up as a term, revolving, committed, letters of credit or most retail credit types of loan. It is typically collateralized and the rates, repayment structure and fees are defined for the term of the facility depending on the customer's past repayment performance and other considerations
+sdpath=credit-facility
+crpath=credit-facility-fulfillment-arrangement
+crr=Credit Facility Fulfillment Arrangement Instance
+mcr=Credit Facility Fulfillment Arrangement
+bqs=Interest ServiceFees Maintenance Repayment Restructuring
+CONFIG
+CreditFacilityFulfillmentArrangement	initiate	Initiate a credit facility		initiateCreditFacilityFulfillmentArrangement		#desc
+CreditFacilityFulfillmentArrangement	update	Update details for an existing credit facility		updateCreditFacilityFulfillmentArrangement		#desc
+CreditFacilityFulfillmentArrangement	control	Control a credit facility arrangement (e.g. suspend, terminate)		controlCreditFacilityFulfillmentArrangement		#desc
+CreditFacilityFulfillmentArrangement	request	Request manual intervention - (e.g. process a drawdown against the facility)		requestCreditFacilityFulfillmentArrangement		#desc
+CreditFacilityFulfillmentArrangement	grant	Obtain a permission grant against the facility (e.g. obtain approval for a drawdown loan)		grantCreditFacilityFulfillmentArrangement		#desc
+CreditFacilityFulfillmentArrangement	retrieve	Retrieve details about a credit facility		retrieveCreditFacilityFulfillmentArrangement		#desc
+Interest	retrieve	Retrieve details about interest applied to a credit facility	retrieveCreditFacilityFulfillmentArrangementInterest	retrieveCreditFacilityFulfillmentArrangementInterest		Invoke a reporting action to obtain a Interest instance related report
+ServiceFees	execute	Execute a service fee charge against a credit facility	executeCreditFacilityFulfillmentArrangementServiceFees	executeCreditFacilityFulfillmentArrangementServiceFees		Invoke an automated execute action against the Service Fees instance
+ServiceFees	retrieve	Retrieve details about a credit facility's applied fees	retrieveCreditFacilityFulfillmentArrangementServiceFees	retrieveCreditFacilityFulfillmentArrangementServiceFees		Invoke a reporting action to obtain a Service Fees instance related report
+Maintenance	request	Request a maintenance activity for a credit facility (e.g. obtain a fee analysis)	requestCreditFacilityFulfillmentArrangementMaintenance	requestCreditFacilityFulfillmentArrangementMaintenance		Invoke a service request action against the Maintenance instance
+Maintenance	retrieve	Retrieve details about maintenance processing for a credit facility	retrieveCreditFacilityFulfillmentArrangementMaintenance	retrieveCreditFacilityFulfillmentArrangementMaintenance		Invoke a reporting action to obtain a Maintenance instance related report
+Repayment	update	Update a repayment transaction made to the credit facility	updateCreditFacilityFulfillmentArrangementRepayment	updateCreditFacilityFulfillmentArrangementRepayment		Update to any amendable fields of the Repayment instance
+Repayment	execute	Execute an automated repayment transaction	executeCreditFacilityFulfillmentArrangementRepayment	executeCreditFacilityFulfillmentArrangementRepayment		Invoke an automated execute action against the Repayment instance
+Repayment	request	Request handling of an exceptional repayment (e.g. a balloon repayment)	requestCreditFacilityFulfillmentArrangementRepayment	requestCreditFacilityFulfillmentArrangementRepayment		Invoke a service request action against the Repayment instance
+Repayment	retrieve	Retrieve details about a credit facility repayment	retrieveCreditFacilityFulfillmentArrangementRepayment	retrieveCreditFacilityFulfillmentArrangementRepayment		Invoke a reporting action to obtain a Repayment instance related report
+Restructuring	initiate	Initiate credit facility account restructuring	initiateCreditFacilityFulfillmentArrangementRestructuring	initiateCreditFacilityFulfillmentArrangementRestructuring		Details of a new Restructuring instance
+Restructuring	update	Update details of a credit facility's restructuring activities	updateCreditFacilityFulfillmentArrangementRestructuring	updateCreditFacilityFulfillmentArrangementRestructuring		Update to any amendable fields of the Restructuring instance
+Restructuring	exchange	Accept, reject etc a credit facility restructuring proposal	exchangeCreditFacilityFulfillmentArrangementRestructuring	exchangeCreditFacilityFulfillmentArrangementRestructuring		Handle an external exchange (e.g. accept, reject, verify)
+Restructuring	request	Request activity associated with a restructuring effort (e.g. negotiate)	requestCreditFacilityFulfillmentArrangementRestructuring	requestCreditFacilityFulfillmentArrangementRestructuring		Invoke a service request action against the Restructuring instance
+Restructuring	retrieve	Retrieve details about a credit facility restructuring task	retrieveCreditFacilityFulfillmentArrangementRestructuring	retrieveCreditFacilityFulfillmentArrangementRestructuring		Invoke a reporting action to obtain a Restructuring instance related report

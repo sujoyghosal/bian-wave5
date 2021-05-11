@@ -1,0 +1,34 @@
+CR - Market Trade Transaction Instance Record	CR - Market Trade Transaction Instance Record	Market Trade Transaction Instance Record	##				IO	IO	IO	O	IO	O	IO					O				
+			Market Order Transaction Instance Reference			Reference to the market order that is to be executed in the markets	IO	IO	IO	O	IO	O	IO					O				
+			Customer Reference			Reference to the account primary party/owner for the market order	I	IO	I	O	I	O	I					O				
+			Employee/Business Unit Reference			The employee/business unit placing the market order	I	IO	I	O	I	O	I					O				
+			Customer Market Order Processing Instruction			Any customer specific processing preferences or requirements	IO	IO	IO	O	IO	O	IO					O				
+			Market Order Transaction	##		The details of the market order transaction	IO	IO	IO	O	IO	O	IO					O				
+				Investment Account Fulfillment Arrangement Instance Reference		Reference to the underlying investment account supporting the transaction	IO	IO	IO	O	IO	O	IO					O				
+				Current Account Fulfillment Arrangement Instance Reference		Reference to the underlying cash account supporting the transaction	IO	IO	IO	O	IO	O	IO					O				
+				Market Order Type		The type of market order (e.g. Day Order. Order on Open/Close, Fill or Kill, Limit Order)	IO	IO	IO	O	IO	O	IO					O				
+				Security Type		The security to be traded	IO	IO	IO	O	IO	O	IO					O				
+				Amount		The volume of shares to be bought or sold. This can include different amount types - quoted/committed, traded etc.)	IO	IO	IO	O	IO	O	IO					O				
+				Date Type	##	Key dates associated with the transaction (e.g. order capture, trade execution, order completion)	IO	IO	IO	O	IO	O	IO					O				
+					Date	Value of the specific date type	IO	IO	IO	O	IO	O	IO					O				
+				Market Order Trade Initiation Instance Reference		Reference to the associated market trade if the order is executed in the market directly	IO	IO	IO	O	IO	O	IO					O				
+BQ Quote Instance Record	BQ Quote Instance Record	Quote Instance Record	##			Tasks to provide price quote for a prospective trade (this can include a time limited commitment when appropriate)					IO	O										
+			Quote Security Type			The security for which the quote is provided					IO	O										
+			Quote Type			The type of quote being provided (e.g. current market, bank committed)					IO	O										
+			Quote			The buy/sell quote by trade type and volume as appropriate					O	O										
+BQ Trade Initiation Instance Record	BQ Trade Initiation Instance Record	Trade Initiation Instance Record	##			Task to execute the market trade against the bank's position in the security (note this may be linked to a specific wholesale market trade or could simply be an internal trade against the bank's holdings)							IO					O				
+			Wholesale Trade Reference			If the market trade is not executed against the bank position, but directly in the wholesale market, this refers to the actual wholesale trading record							IO					O				
+			Market Trade Transaction Instance Processing Status			The tracked and returned processing status of the market trade (e.g. pending, partially complete, complete)							IO					O				
+			Market Trade Initiation Task Result This includes all details of the trade needed to clear and settle the market order including securities custody arrangements			Details of the market trade initiation task							O					O				
+BQ Position Instance Record	BQ Position Instance Record	Position Instance Record	##			Task to maintain the bank's position and cumulative P&L for the traded security for the current trading period. Position limits and or policies trigger market trading to manage the position															IO	O
+			Bank Security Position Security Type			The security that the bank position is traded for															IO	O
+			Position Market Order Trade Initiation Instance Reference			Reference to market trades impacting the position during the current trading period															IO	O
+			Bank Security Position Security PL Record			The consolidated record of trading activity against the position during the trading period, including the derived position P&L															O	O
+			Wholesale Trade 	##		The record of trades made in the wholesale markets by the bank to manage its net security position. Note for larger market orders/trades there may be a corresponding wholesale transaction as appropriate)															IO	O
+				Wholesale Trade Security Type		The traded security															O	O
+				Wholesale Trade Volume		The volume of share bought/sold															O	O
+				Wholesale Trade Price		The security and cash flow details of the trade															O	O
+				Wholesale Trade Clearing and Settlement Terms		The terms covering the clearing and settlement of the trade															IO	O
+				Document Directory Entry Instance Reference		The document reference for the trade confirmation notice															O	O
+				Correspondence Instance Reference		Reference to the correspondence generated for the trade confirmation															O	O
+				Wholesale Trade Status		Status tracking for the wholesale trade															IO	O

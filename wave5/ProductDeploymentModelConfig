@@ -1,0 +1,346 @@
+CR Product Or Service Deployment Project Instance Record|Product Or Service Deployment Project||||||CR Product Or Service Deployment Project Create|CR Product Or Service Deployment Project Update|CR Product Or Service Deployment Project Control|CR Product Or Service Deployment Project Exchange|CR Product Or Service Deployment Project Capture|CR Product Or Service Deployment Project Request|CR Product Or Service Deployment Project Grant|CR Product Or Service Deployment Project Retrieve|BQ Systems Update|BQ Systems Exchange|BQ Systems Request|BQ Systems Retrieve|BQ IT Operations Update|BQ IT Operations Exchange|BQ IT Operations Request|BQ IT Operations Retrieve|BQ HR Operations Update|BQ HR Operations Exchange|BQ HR Operations Request|BQ HR Operations Retrieve|BQ Sales and Marketing Update|BQ Sales and Marketing Exchange|BQ Sales and Marketing Request|BQ Sales and Marketing Retrieve|BQ Servicing Update|BQ Servicing Exchange|BQ Servicing Request|BQ Servicing Retrieve|BQ Production Update|BQ Production Exchange|BQ Production Request|BQ Production Retrieve|BQ Production Support Update|BQ Production Support Exchange|BQ Production Support Request|BQ Production Support Retrieve|
+Mandatory||Product Deployment Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Product Or Service Deployment Project Instance Reference||||Reference to the Product Or Service Deployment Project instance|O|I|I|I|I|I|I
+Create||Product Or Service Deployment Project Create Action Reference||||Reference to an Create service call|O
+Create||Product Or Service Deployment Project Create Action Record||||The Create service call input and output record|IO
+Create||Product Or Service Deployment Project Instance Status||||The status of the Product Or Service Deployment Project instance (e.g. initialised, pending, active)|IO
+||Product/Service Deployment Project Instance Record|##|||The overall deployment planning record|IO|IO|||IO|IO||O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO|||IO||O
+|||Product/Service Deployment Project Name|||The reference to and descriptive name of the deployment project|IO|IO||||IO||O||||||||||||||||||||||||||||||
+|||Product/Service Deployment Project Type|||The type of deployment project (e.g. service update, new product release)|IO|IO||||IO||O||||||||||||||||||||||||||||||
+|||Product/Service Deployment Project Description|||A description of the scope, goal and make-up of the product deployment project|IO|IO||||IO||O||||||||||||||||||||||||||||||
+|||Product/Service Deployment Implementation Plan|##||The derived deployment execution plan, covering tasks from the completion and acceptance of the deployment plan through to completion of the deployment including post deployment analysis tasks if required. Consolidates the different aspects of the plan. (Captures both planned and actual results)|IO|IO|||IO|IO||O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO|||IO||O
+||||Product/Service Deployment Budget||The financial considerations for the deployment (includes planning and execution)|IO|IO|||IO|IO||O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO|||IO||O
+||||Product/Service Deployment Organization||The organizational aspects of the deployment effort (includes planning and execution)|IO|IO|||IO|IO||O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO|||IO||O
+||||Product/Service Deployment Schedule||The deployment schedule of events, planned and actual (includes planning and execution tasks)|IO|IO|||IO|IO||O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO|||IO||O
+||||Date Type|##|Key dates associated with the development of the deployment plan (e.g. planning start date, deployment plan approval, deployment plan sign-off)|IO|IO|||IO|IO||O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO|||IO||O
+|||||Date|Value of the specific date type|IO|IO|||IO|IO||O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO||IO|O|IO|||IO||O
+Update||Product Or Service Deployment Project Update Action Task Reference||||Reference to an update service call||O
+Update||Product Or Service Deployment Project Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Product Or Service Deployment Project Control Action Task Reference||||Reference to a Product Or Service Deployment Project instance control processing service call|||O
+CONTROL||Product Or Service Deployment Project Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Product Or Service Deployment Project Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Product Or Service Deployment Project Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Product Or Service Deployment Project Exchange Action Task Reference||||Reference to a Product Or Service Deployment Project instance exchange service call||||O
+EXCHANGE||Product Or Service Deployment Project Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Product Or Service Deployment Project Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Product Or Service Deployment Project Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Product Or Service Deployment Project Capture Action Task Reference||||Reference to a Product Or Service Deployment Project instance capture service call|||||O
+CAPTURE||Product Or Service Deployment Project Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Product Or Service Deployment Project Request Action Task Reference||||Reference to a Product Or Service Deployment Project instance request service call||||||O
+REQUEST||Product Or Service Deployment Project Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+GRANT||Product Or Service Deployment Project Grant Action Task Reference||||Reference to a Product Or Service Deployment Project instance grant service call|||||||O
+GRANT||Product Or Service Deployment Project Grant Action Task Record||||The grant service call consolidated processing record|||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||||O
+RETRIEVE||Product Or Service Deployment Project Retrieve Action Task Reference||||Reference to a Product Or Service Deployment Project instance retrieve service call||||||||O
+RETRIEVE||Product Or Service Deployment Project Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||IO
+RETRIEVE||Product Or Service Deployment Project Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+RETRIEVE||Product Or Service Deployment Project Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+RETRIEVE||Product Or Service Deployment Project Instance Report Record|##|||A specific Product Or Service Deployment Project instance formatted report||||||||IO
+RETRIEVE|||Product Or Service Deployment Project Instance Report Reference|||Reference to the control record instance report||||||||I
+RETRIEVE|||Product Or Service Deployment Project Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Product Or Service Deployment Project Instance Report Type|||The type of external report available||||||||IO
+RETRIEVE|||Product Or Service Deployment Project Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||I
+RETRIEVE|||Product Or Service Deployment Project Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+RETRIEVE||Product Or Service Deployment Project Instance Analysis|##|||A specific Product Or Service Deployment Project instance analytical report||||||||IO
+RETRIEVE|||Product Or Service Deployment Project Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+RETRIEVE|||Product Or Service Deployment Project Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Product Or Service Deployment Project Instance Analysis Report Type|||The type of external performance analysis report available||||||||IO
+RETRIEVE|||Product Or Service Deployment Project Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||I
+RETRIEVE|||Product Or Service Deployment Project Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Systems Instance Record|Systems||||||
+Mandatory||Product Or Service Deployment Project Instance Reference||||Reference to the parent Product Or Service Deployment Project instance|||||||||I|I|I
+Mandatory||Systems Instance Reference||||Reference to the Systems instance|||||||||I|I|I
+||Systems Instance Record|##|||Covers aspects of the deployment related to systems tasks and deliverables|||||||||IO||IO|O||||||||||||||||||||||||||
+|||Product/Service Deployment Systems Requirements|##||The consolidated aspects of the systems deployment tasks|||||||||IO||IO|O||||||||||||||||||||||||||
+||||Product/Service Deployment Systems Requirements Work Products ||File of consolidated deployment planning and deliverable specifications for the task|||||||||IO||IO|O||||||||||||||||||||||||||
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||IO||IO|O||||||||||||||||||||||||||
+||||Product/Service Deployment Systems Requirements Task Specification||Details the tasks and deliverables needed to handle the systems needs of the deployment|||||||||IO||IO|O||||||||||||||||||||||||||
+Update||Systems Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Systems Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Systems Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Exchange||Systems Exchange Action Task Reference||||Reference to a Systems instance exchange service call||||||||||O
+Exchange||Systems Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||Systems Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||Systems Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||Systems Instance Status||||The status of the Systems instance (e.g. accepted, rejected, verified)||||||||||O
+Request||Systems Request Action Task Reference||||Reference to a Systems instance request service call|||||||||||O
+Request||Systems Request Action Task Record||||The request service call consolidated processing record|||||||||||I/O
+Request||Systems Request Record Reference||||Reference to the Systems service request record|||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||O
+Retrieve||Systems Retrieve Action Task Reference||||Reference to a Systems instance retrieve service call||||||||||||O
+Retrieve||Systems Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Systems Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Systems Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Systems Instance Report|##|||A specific Systems instance formatted report||||||||||||IO
+Retrieve|||Systems Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Systems Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Systems Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Systems Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Systems Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Systems Instance Analysis|##|||A specific Systems instance analytical report||||||||||||IO
+Retrieve|||Systems Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Systems Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Systems Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Systems Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Systems Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ IT Operations Instance Record|IT Operations||||||
+Mandatory||Product Or Service Deployment Project Instance Reference||||Reference to the parent Product Or Service Deployment Project instance|||||||||||||I|I|I
+Mandatory||IT Operations Instance Reference||||Reference to the IT Operations instance|||||||||||||I|I|I
+||IT Operations Instance Record|##|||Covers aspects of the deployment related to IT operations tasks and deliverables|||||||||||||IO||IO|O||||||||||||||||||||||
+|||Product/Service Deployment IT Operations Requirements|##||The consolidated aspects of the IT operations deployment tasks|||||||||||||IO||IO|O||||||||||||||||||||||
+||||Product/Service Deployment IT Operations Requirements Work Products ||File of consolidated deployment planning and deliverable specifications for the task|||||||||||||IO||IO|O||||||||||||||||||||||
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||||||IO||IO|O||||||||||||||||||||||
+||||Product/Service Deployment IT Operations Requirements Task Specification||Details the tasks and deliverables needed to handle the IT operations needs of the deployment|||||||||||||IO||IO|O||||||||||||||||||||||
+Update||IT Operations Update Action Task Reference||||Reference to an update service call|||||||||||||O
+Update||IT Operations Update Action Task Record||||The update service call consolidated processing record|||||||||||||I/O
+Update||IT Operations Update Action Request||||Details of the update action service request|||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||O
+Exchange||IT Operations Exchange Action Task Reference||||Reference to a IT Operations instance exchange service call||||||||||||||O
+Exchange||IT Operations Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||I/O
+Exchange||IT Operations Exchange Action Request|##|||Details of the exchange action service request||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||I
+Exchange||IT Operations Exchange Action Response||||Details of the exchange action service response||||||||||||||O
+Exchange||IT Operations Instance Status||||The status of the IT Operations instance (e.g. accepted, rejected, verified)||||||||||||||O
+Request||IT Operations Request Action Task Reference||||Reference to a IT Operations instance request service call|||||||||||||||O
+Request||IT Operations Request Action Task Record||||The request service call consolidated processing record|||||||||||||||I/O
+Request||IT Operations Request Record Reference||||Reference to the IT Operations service request record|||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||O
+Retrieve||IT Operations Retrieve Action Task Reference||||Reference to a IT Operations instance retrieve service call||||||||||||||||O
+Retrieve||IT Operations Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||IT Operations Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||IT Operations Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||IT Operations Instance Report|##|||A specific IT Operations instance formatted report||||||||||||||||IO
+Retrieve|||IT Operations Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||IT Operations Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||IT Operations Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||IT Operations Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||IT Operations Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||IT Operations Instance Analysis|##|||A specific IT Operations instance analytical report||||||||||||||||IO
+Retrieve|||IT Operations Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||IT Operations Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||IT Operations Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||IT Operations Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||IT Operations Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ HR Operations Instance Record|HR Operations||||||
+Mandatory||Product Or Service Deployment Project Instance Reference||||Reference to the parent Product Or Service Deployment Project instance|||||||||||||||||I|I|I
+Mandatory||HR Operations Instance Reference||||Reference to the HR Operations instance|||||||||||||||||I|I|I
+||HR Operations Instance Record|##|||Covers aspects of the deployment related to staff operations tasks and deliverables (e.g. resources, training and certification)|||||||||||||||||IO||IO|O||||||||||||||||||
+|||Product/Service Deployment HR Operations Requirements|##||The consolidated aspects of the staffing operations deployment tasks|||||||||||||||||IO||IO|O||||||||||||||||||
+||||Product/Service Deployment HR Operations Requirements Work Products ||File of consolidated deployment planning and deliverable specifications for the task|||||||||||||||||IO||IO|O||||||||||||||||||
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||||||||||IO||IO|O||||||||||||||||||
+||||Product/Service Deployment HR Operations Requirements Task Specification||Details the tasks and deliverables needed to handle the staffing operations needs of the deployment|||||||||||||||||IO||IO|O||||||||||||||||||
+Update||HR Operations Update Action Task Reference||||Reference to an update service call|||||||||||||||||O
+Update||HR Operations Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||I/O
+Update||HR Operations Update Action Request||||Details of the update action service request|||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||O
+Exchange||HR Operations Exchange Action Task Reference||||Reference to a HR Operations instance exchange service call||||||||||||||||||O
+Exchange||HR Operations Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||I/O
+Exchange||HR Operations Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||I
+Exchange||HR Operations Exchange Action Response||||Details of the exchange action service response||||||||||||||||||O
+Exchange||HR Operations Instance Status||||The status of the HR Operations instance (e.g. accepted, rejected, verified)||||||||||||||||||O
+Request||HR Operations Request Action Task Reference||||Reference to a HR Operations instance request service call|||||||||||||||||||O
+Request||HR Operations Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||I/O
+Request||HR Operations Request Record Reference||||Reference to the HR Operations service request record|||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||O
+Retrieve||HR Operations Retrieve Action Task Reference||||Reference to a HR Operations instance retrieve service call||||||||||||||||||||O
+Retrieve||HR Operations Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||I/O
+Retrieve||HR Operations Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||I
+Retrieve||HR Operations Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||O
+Retrieve||HR Operations Instance Report|##|||A specific HR Operations instance formatted report||||||||||||||||||||IO
+Retrieve|||HR Operations Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||I
+Retrieve|||HR Operations Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||HR Operations Instance Report Type|||The type of external report available||||||||||||||||||||O
+Retrieve|||HR Operations Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||O
+Retrieve|||HR Operations Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+Retrieve||HR Operations Instance Analysis|##|||A specific HR Operations instance analytical report||||||||||||||||||||IO
+Retrieve|||HR Operations Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||I
+Retrieve|||HR Operations Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||HR Operations Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||O
+Retrieve|||HR Operations Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||O
+Retrieve|||HR Operations Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+BQ Sales and Marketing Instance Record|Sales and Marketing||||||
+Mandatory||Product Or Service Deployment Project Instance Reference||||Reference to the parent Product Or Service Deployment Project instance|||||||||||||||||||||I|I|I
+Mandatory||Sales and Marketing Instance Reference||||Reference to the Sales and Marketing instance|||||||||||||||||||||I|I|I
+||Sales and Marketing Instance Record|##|||Covers aspects of the deployment related to sales and marketing tasks and deliverables|||||||||||||||||||||IO||IO|O||||||||||||||
+|||Product/Service Deployment Sales and Marketing Requirements|##||The consolidated aspects of the sales and marketing deployment tasks|||||||||||||||||||||IO||IO|O||||||||||||||
+||||Product/Service Deployment Sales and Marketing Requirements Work Products ||File of consolidated deployment planning and deliverable specifications for the task|||||||||||||||||||||IO||IO|O||||||||||||||
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||||||||||||||IO||IO|O||||||||||||||
+||||Product/Service Deployment Sales and Marketing Requirements Task Specification||Details the tasks and deliverables needed to handle the sales and marketing needs of the deployment|||||||||||||||||||||IO||IO|O||||||||||||||
+Update||Sales and Marketing Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||O
+Update||Sales and Marketing Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||I/O
+Update||Sales and Marketing Update Action Request||||Details of the update action service request|||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||O
+Exchange||Sales and Marketing Exchange Action Task Reference||||Reference to a Sales and Marketing instance exchange service call||||||||||||||||||||||O
+Exchange||Sales and Marketing Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||I/O
+Exchange||Sales and Marketing Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||I
+Exchange||Sales and Marketing Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||O
+Exchange||Sales and Marketing Instance Status||||The status of the Sales and Marketing instance (e.g. accepted, rejected, verified)||||||||||||||||||||||O
+Request||Sales and Marketing Request Action Task Reference||||Reference to a Sales and Marketing instance request service call|||||||||||||||||||||||O
+Request||Sales and Marketing Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||I/O
+Request||Sales and Marketing Request Record Reference||||Reference to the Sales and Marketing service request record|||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||O
+Retrieve||Sales and Marketing Retrieve Action Task Reference||||Reference to a Sales and Marketing instance retrieve service call||||||||||||||||||||||||O
+Retrieve||Sales and Marketing Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||I/O
+Retrieve||Sales and Marketing Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||I
+Retrieve||Sales and Marketing Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||O
+Retrieve||Sales and Marketing Instance Report|##|||A specific Sales and Marketing instance formatted report||||||||||||||||||||||||IO
+Retrieve|||Sales and Marketing Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||I
+Retrieve|||Sales and Marketing Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||O
+Retrieve|||Sales and Marketing Instance Report Type|||The type of external report available||||||||||||||||||||||||O
+Retrieve|||Sales and Marketing Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||O
+Retrieve|||Sales and Marketing Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||O
+Retrieve||Sales and Marketing Instance Analysis|##|||A specific Sales and Marketing instance analytical report||||||||||||||||||||||||IO
+Retrieve|||Sales and Marketing Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||I
+Retrieve|||Sales and Marketing Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||O
+Retrieve|||Sales and Marketing Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||O
+Retrieve|||Sales and Marketing Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||O
+Retrieve|||Sales and Marketing Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||O
+BQ Servicing Instance Record|Servicing||||||
+Mandatory||Product Or Service Deployment Project Instance Reference||||Reference to the parent Product Or Service Deployment Project instance|||||||||||||||||||||||||I|I|I
+Mandatory||Servicing Instance Reference||||Reference to the Servicing instance|||||||||||||||||||||||||I|I|I
+||Servicing Instance Record|##|||Covers aspects of the deployment related to servicing tasks and deliverables|||||||||||||||||||||||||IO||IO|O||||||||||
+|||Product/Service Deployment Servicing Requirements|##||The consolidated aspects of the servicing deployment tasks|||||||||||||||||||||||||IO||IO|O||||||||||
+||||Product/Service Deployment Servicing Requirements Work Products ||File of consolidated deployment planning and deliverable specifications for the task|||||||||||||||||||||||||IO||IO|O||||||||||
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||||||||||||||||||IO||IO|O||||||||||
+||||Product/Service Deployment Servicing Requirements Task Specification||Details the tasks and deliverables needed to handle the servicing needs of the deployment|||||||||||||||||||||||||IO||IO|O||||||||||
+Update||Servicing Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||O
+Update||Servicing Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||I/O
+Update||Servicing Update Action Request||||Details of the update action service request|||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||O
+Exchange||Servicing Exchange Action Task Reference||||Reference to a Servicing instance exchange service call||||||||||||||||||||||||||O
+Exchange||Servicing Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||||||I/O
+Exchange||Servicing Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||||||I
+Exchange||Servicing Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||||||O
+Exchange||Servicing Instance Status||||The status of the Servicing instance (e.g. accepted, rejected, verified)||||||||||||||||||||||||||O
+Request||Servicing Request Action Task Reference||||Reference to a Servicing instance request service call|||||||||||||||||||||||||||O
+Request||Servicing Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||||||I/O
+Request||Servicing Request Record Reference||||Reference to the Servicing service request record|||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||||||O
+Retrieve||Servicing Retrieve Action Task Reference||||Reference to a Servicing instance retrieve service call||||||||||||||||||||||||||||O
+Retrieve||Servicing Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||I/O
+Retrieve||Servicing Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||I
+Retrieve||Servicing Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||O
+Retrieve||Servicing Instance Report|##|||A specific Servicing instance formatted report||||||||||||||||||||||||||||IO
+Retrieve|||Servicing Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||I
+Retrieve|||Servicing Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||O
+Retrieve|||Servicing Instance Report Type|||The type of external report available||||||||||||||||||||||||||||O
+Retrieve|||Servicing Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||O
+Retrieve|||Servicing Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||O
+Retrieve||Servicing Instance Analysis|##|||A specific Servicing instance analytical report||||||||||||||||||||||||||||IO
+Retrieve|||Servicing Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||I
+Retrieve|||Servicing Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||O
+Retrieve|||Servicing Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||O
+Retrieve|||Servicing Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||O
+Retrieve|||Servicing Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||O
+BQ Production Instance Record|Production||||||
+Mandatory||Product Or Service Deployment Project Instance Reference||||Reference to the parent Product Or Service Deployment Project instance|||||||||||||||||||||||||||||I|I|I
+Mandatory||Production Instance Reference||||Reference to the Production instance|||||||||||||||||||||||||||||I|I|I
+||Production Instance Record|##|||Covers aspects of the deployment related to production tasks and deliverables (i.e. all non-systems and staff production resources: space, facilities, equipment, consumables)|||||||||||||||||||||||||||||IO||IO|O||||||
+|||Product/Service Deployment Production Requirements|##||The consolidated aspects of the production deployment tasks|||||||||||||||||||||||||||||IO||IO|O||||||
+||||Product/Service Deployment Production Requirements Work Products ||File of consolidated deployment planning and deliverable specifications for the task|||||||||||||||||||||||||||||IO||IO|O||||||
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||||||||||||||||||||||IO||IO|O||||||
+||||Product/Service Deployment Production Requirements Task Specification||Details the tasks and deliverables needed to handle the production needs of the deployment|||||||||||||||||||||||||||||IO||IO|O||||||
+Update||Production Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||||||O
+Update||Production Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||||||I/O
+Update||Production Update Action Request||||Details of the update action service request|||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||||||O
+Exchange||Production Exchange Action Task Reference||||Reference to a Production instance exchange service call||||||||||||||||||||||||||||||O
+Exchange||Production Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||||||||||I/O
+Exchange||Production Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||||||||||I
+Exchange||Production Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||||||||||O
+Exchange||Production Instance Status||||The status of the Production instance (e.g. accepted, rejected, verified)||||||||||||||||||||||||||||||O
+Request||Production Request Action Task Reference||||Reference to a Production instance request service call|||||||||||||||||||||||||||||||O
+Request||Production Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||||||||||I/O
+Request||Production Request Record Reference||||Reference to the Production service request record|||||||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||||||||||O
+Retrieve||Production Retrieve Action Task Reference||||Reference to a Production instance retrieve service call||||||||||||||||||||||||||||||||O
+Retrieve||Production Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||||||I/O
+Retrieve||Production Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||||||I
+Retrieve||Production Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||||||O
+Retrieve||Production Instance Report|##|||A specific Production instance formatted report||||||||||||||||||||||||||||||||IO
+Retrieve|||Production Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||||||I
+Retrieve|||Production Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||O
+Retrieve|||Production Instance Report Type|||The type of external report available||||||||||||||||||||||||||||||||O
+Retrieve|||Production Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||||||O
+Retrieve|||Production Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||O
+Retrieve||Production Instance Analysis|##|||A specific Production instance analytical report||||||||||||||||||||||||||||||||IO
+Retrieve|||Production Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||||||I
+Retrieve|||Production Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||O
+Retrieve|||Production Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||||||O
+Retrieve|||Production Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||||||O
+Retrieve|||Production Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||O
+BQ Production Support Instance Record|Production Support||||||
+Mandatory||Product Or Service Deployment Project Instance Reference||||Reference to the parent Product Or Service Deployment Project instance|||||||||||||||||||||||||||||||||I|I|I
+Mandatory||Production Support Instance Reference||||Reference to the Production Support instance|||||||||||||||||||||||||||||||||I|I|I
+||Production Support Instance Record|##|||Covers aspects of the deployment related to production support tasks and deliverables (i.e. help desk, problem resolution, maintenance and repair)|||||||||||||||||||||||||||||||||IO|||IO||O
+|||Product/Service Deployment Production Support Requirements|##||The consolidated aspects of the production support deployment tasks|||||||||||||||||||||||||||||||||IO|||IO||O
+||||Product/Service Deployment Production Support Requirements Work Products ||File of consolidated deployment planning and deliverable specifications for the task|||||||||||||||||||||||||||||||||IO|||IO||O
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||||||||||||||||||||||||||IO|||IO||O
+||||Product/Service Deployment Production Support Requirements Task Specification||Details the tasks and deliverables needed to handle the production support needs of the deployment|||||||||||||||||||||||||||||||||IO|||IO||O
+Update||Production Support Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||||||||||O
+Update||Production Support Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||||||||||I/O
+Update||Production Support Update Action Request||||Details of the update action service request|||||||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||||||||||O
+Exchange||Production Support Exchange Action Task Reference||||Reference to a Production Support instance exchange service call||||||||||||||||||||||||||||||||||O
+Exchange||Production Support Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||||||||||||||I/O
+Exchange||Production Support Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||||||||||||||I
+Exchange||Production Support Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||||||||||||||O
+Exchange||Production Support Instance Status||||The status of the Production Support instance (e.g. accepted, rejected, verified)||||||||||||||||||||||||||||||||||O
+Request||Production Support Request Action Task Reference||||Reference to a Production Support instance request service call|||||||||||||||||||||||||||||||||||O
+Request||Production Support Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||||||||||||||I/O
+Request||Production Support Request Record Reference||||Reference to the Production Support service request record|||||||||||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||||||||||||||O
+Retrieve||Production Support Retrieve Action Task Reference||||Reference to a Production Support instance retrieve service call||||||||||||||||||||||||||||||||||||O
+Retrieve||Production Support Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||||||||||I/O
+Retrieve||Production Support Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||||||||||I
+Retrieve||Production Support Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||||||||||O
+Retrieve||Production Support Instance Report|##|||A specific Production Support instance formatted report||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Production Support Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||||||||||I
+Retrieve|||Production Support Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Support Instance Report Type|||The type of external report available||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Support Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Support Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||||O
+Retrieve||Production Support Instance Analysis|##|||A specific Production Support instance analytical report||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Production Support Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||||||||||I
+Retrieve|||Production Support Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Support Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Support Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Support Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||||O

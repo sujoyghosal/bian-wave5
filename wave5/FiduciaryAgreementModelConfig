@@ -1,0 +1,229 @@
+CR Fiduciary Relationship Arrangement Instance Record|Fiduciary Relationship Arrangement||||||CR Fiduciary Relationship Arrangement Initiate|CR Fiduciary Relationship Arrangement Update|CR Fiduciary Relationship Arrangement Control|CR Fiduciary Relationship Arrangement Exchange|CR Fiduciary Relationship Arrangement Execute|CR Fiduciary Relationship Arrangement Request|CR Fiduciary Relationship Arrangement Retrieve|BQ Fees Exchange|BQ Fees Request|BQ Fees Retrieve|BQ Agreement Initiate|BQ Agreement Update|BQ Agreement Exchange|BQ Agreement Request|BQ Agreement Retrieve|BQ Assessment and Reporting Initiate|BQ Assessment and Reporting Retrieve|BQ Fulfillment Exchange|BQ Fulfillment Request|BQ Fulfillment Retrieve|
+Mandatory||Fiduciary Agreement Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Fiduciary Relationship Arrangement Instance Reference||||Reference to the Fiduciary Relationship Arrangement instance|O|I|I|I|I|I
+Initiate||Fiduciary Relationship Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Fiduciary Relationship Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Fiduciary Relationship Arrangement Instance Status||||The status of the Fiduciary Relationship Arrangement instance (e.g. initialised, pending, active)|IO
+||Fiduciary Relationship Arrangement Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Fiduciary Agreement.
+Example: Perform the scheduled (e.g. statements, standing orders) and ad-hoc/requested (e.g. balance inquiries, fund transfers) fulfillment tasks for a customer current account facility.||||||||||||||||||||
+||Fiduciary Relationship Arrangement Parameter Type||||A Classification value that distinguishes between arrangements according to the type of business services within Fiduciary Relationship Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||
+||Fiduciary Relationship Arrangement Selected Option||||A selected optional business service as subject matter of Fiduciary Relationship Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||
+||Fiduciary Relationship Arrangement Type||||The type of Fiduciary Relationship Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Fiduciary Relationship Arrangement Reference||||Reference to Fiduciary Relationship Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Fiduciary Relationship Arrangement Schedule||||Timetable to fulfill Fiduciary Relationship Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||
+||Fiduciary Relationship Arrangement Status||||The status of Fiduciary Relationship Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||
+||Fiduciary Relationship Arrangement Reference||||Reference to the party who is involved in Fiduciary Relationship Arrangement||||||||||||||||||||
+||Fiduciary Relationship Arrangement Currency||||The curreny which is arranged in Fiduciary Relationship Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Fiduciary Relationship Arrangement Regulation Reference||||Reference to the regulation which is defined in Fiduciary Relationship Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Fiduciary Relationship Arrangement Regulation Type||||A Classification that distinguishes between the regularity domains of Fiduciary Relationship Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Fiduciary Relationship Arrangement Jurisdiction||||Reference to the jurisdiction that is assigned to Fiduciary Relationship Arrangement in case of legal dispute.|I|I|I|I|I|I|O|||||||||||||
+||Fiduciary Relationship Arrangement Booking Location||||The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement in the context of Fiduciary Relationship Arrangement, are entered.|I|I|I|I|I|I|O|||||||||||||
+||Fiduciary Relationship Arrangement Account Type||||The type of account which is linked to Fiduciary Relationship Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Fiduciary Relationship Arrangement Account Reference||||Reference to the account which is linked to Fiduciary Relationship Arrangement|I|I|I|I|I|I|O|||||||||||||
+Update||Fiduciary Relationship Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||Fiduciary Relationship Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Fiduciary Relationship Arrangement Control Action Task Reference||||Reference to a Fiduciary Relationship Arrangement instance control processing service call|||O
+CONTROL||Fiduciary Relationship Arrangement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Fiduciary Relationship Arrangement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Fiduciary Relationship Arrangement Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Fiduciary Relationship Arrangement Exchange Action Task Reference||||Reference to a Fiduciary Relationship Arrangement instance exchange service call||||O
+EXCHANGE||Fiduciary Relationship Arrangement Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Fiduciary Relationship Arrangement Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Fiduciary Relationship Arrangement Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Fiduciary Relationship Arrangement Execute Action Task Reference||||Reference to a Fiduciary Relationship Arrangement instance execute service call|||||O
+EXECUTE||Fiduciary Relationship Arrangement Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Fiduciary Relationship Arrangement Request Action Task Reference||||Reference to a Fiduciary Relationship Arrangement instance request service call||||||O
+REQUEST||Fiduciary Relationship Arrangement Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Fiduciary Relationship Arrangement Retrieve Action Task Reference||||Reference to a Fiduciary Relationship Arrangement instance retrieve service call|||||||O
+RETRIEVE||Fiduciary Relationship Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Fiduciary Relationship Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Fiduciary Relationship Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Fiduciary Relationship Arrangement Instance Report Record|##|||A specific Fiduciary Relationship Arrangement instance formatted report|||||||IO
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Fiduciary Relationship Arrangement Instance Analysis|##|||A specific Fiduciary Relationship Arrangement instance analytical report|||||||IO
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Fiduciary Relationship Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Fees Instance Record|Fees||||||
+Mandatory||Fiduciary Relationship Arrangement Instance Reference||||Reference to the parent Fiduciary Relationship Arrangement instance||||||||I|I
+Mandatory||Fees Instance Reference||||Reference to the Fees instance||||||||I|I
+||Fees Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Fiduciary Agreement.
+||||||||||||||||||||
+||Fees Preconditions||||The required status/situation prior to the implementation of the feature||||||||IO|IO|O||||||||||
+||Fees Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||IO|IO|O||||||||||
+||Business Service||||The Fiduciary Relationship Arrangement specific Business Service||||||||IO|IO|O||||||||||
+||Fees Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||IO|IO|O||||||||||
+||Fees Service Type||||Reference to the specific business service type||||||||IO|IO|O||||||||||
+||Fees Service Description||||Description of the performed business service||||||||IO|IO|O||||||||||
+||Fees Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|O||||||||||
+||Fees Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|O||||||||||
+||Fees Service Name||||||||||||IO|IO|O||||||||||
+Exchange||Fees Exchange Action Task Reference||||Reference to a Fees instance exchange service call||||||||O
+Exchange||Fees Exchange Action Task Record||||The exchange service call consolidated processing record||||||||I/O
+Exchange||Fees Exchange Action Request|##|||Details of the exchange action service request||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||I
+Exchange||Fees Exchange Action Response||||Details of the exchange action service response||||||||O
+Exchange||Fees Instance Status||||The status of the Fees instance (e.g. accepted, rejected, verified)||||||||O
+Request||Fees Request Action Task Reference||||Reference to a Fees instance request service call|||||||||O
+Request||Fees Request Action Task Record||||The request service call consolidated processing record|||||||||I/O
+Request||Fees Request Record Reference||||Reference to the Fees service request record|||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||O
+Retrieve||Fees Retrieve Action Task Reference||||Reference to a Fees instance retrieve service call||||||||||O
+Retrieve||Fees Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Fees Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Fees Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Fees Instance Report|##|||A specific Fees instance formatted report||||||||||IO
+Retrieve|||Fees Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Fees Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Fees Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Fees Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Fees Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Fees Instance Analysis|##|||A specific Fees instance analytical report||||||||||IO
+Retrieve|||Fees Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Fees Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Fees Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Fees Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Fees Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Agreement Instance Record|Agreement||||||
+Mandatory||Fiduciary Relationship Arrangement Instance Reference||||Reference to the parent Fiduciary Relationship Arrangement instance|||||||||||I|I|I|I
+Mandatory||Agreement Instance Reference||||Reference to the Agreement instance|||||||||||O|I|I|I
+Initiate||Agreement Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Initiate||Agreement Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Initiate||Agreement Instance Status||||The status of the Agreement instance (e.g. initialised, pending, active)|||||||||||O
+||Agreement Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Fiduciary Agreement.
+||||||||||||||||||||
+||Agreement Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||IO|IO|IO|IO|O|||||
+||Agreement Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||IO|IO|IO|IO|O|||||
+||Business Service||||The Fiduciary Relationship Arrangement specific Business Service|||||||||||IO|IO|IO|IO|O|||||
+||Agreement Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||IO|IO|IO|IO|O|||||
+||Agreement Service Type||||Reference to the specific business service type|||||||||||IO|IO|IO|IO|O|||||
+||Agreement Service Description||||Description of the performed business service|||||||||||IO|IO|IO|IO|O|||||
+||Agreement Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|IO|IO|IO|O|||||
+||Agreement Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|IO|IO|IO|O|||||
+||Agreement Service Name|||||||||||||||IO|IO|IO|IO|O|||||
+Update||Agreement Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Agreement Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Agreement Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Exchange||Agreement Exchange Action Task Reference||||Reference to a Agreement instance exchange service call|||||||||||||O
+Exchange||Agreement Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||I/O
+Exchange||Agreement Exchange Action Request|##|||Details of the exchange action service request|||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||I
+Exchange||Agreement Exchange Action Response||||Details of the exchange action service response|||||||||||||O
+Exchange||Agreement Instance Status||||The status of the Agreement instance (e.g. accepted, rejected, verified)|||||||||||||O
+Request||Agreement Request Action Task Reference||||Reference to a Agreement instance request service call||||||||||||||O
+Request||Agreement Request Action Task Record||||The request service call consolidated processing record||||||||||||||I/O
+Request||Agreement Request Record Reference||||Reference to the Agreement service request record||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||O
+Retrieve||Agreement Retrieve Action Task Reference||||Reference to a Agreement instance retrieve service call|||||||||||||||O
+Retrieve||Agreement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||I/O
+Retrieve||Agreement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||I
+Retrieve||Agreement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||O
+Retrieve||Agreement Instance Report|##|||A specific Agreement instance formatted report|||||||||||||||IO
+Retrieve|||Agreement Instance Report Reference|||Reference to the control record instance report|||||||||||||||I
+Retrieve|||Agreement Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Agreement Instance Report Type|||The type of external report available|||||||||||||||O
+Retrieve|||Agreement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||O
+Retrieve|||Agreement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||O
+Retrieve||Agreement Instance Analysis|##|||A specific Agreement instance analytical report|||||||||||||||IO
+Retrieve|||Agreement Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||I
+Retrieve|||Agreement Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Agreement Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||O
+Retrieve|||Agreement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||O
+Retrieve|||Agreement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||O
+BQ Assessment and Reporting Instance Record|Assessment and Reporting||||||
+Mandatory||Fiduciary Relationship Arrangement Instance Reference||||Reference to the parent Fiduciary Relationship Arrangement instance||||||||||||||||I
+Mandatory||Assessment and Reporting Instance Reference||||Reference to the Assessment and Reporting instance||||||||||||||||O|
+Initiate||Assessment and Reporting Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||O
+Initiate||Assessment and Reporting Initiate Action Record||||The Initiate service call input and output record||||||||||||||||I/O
+Initiate||Assessment and Reporting Instance Status||||The status of the Assessment and Reporting instance (e.g. initialised, pending, active)||||||||||||||||O
+||Assessment and Reporting Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Fiduciary Agreement.
+||||||||||||||||||||
+||Assessment and Reporting Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||||IO|O|||
+||Assessment and Reporting Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||||IO|O|||
+||Analysis and Reporting||||The Fiduciary Relationship Arrangement specific Business Service||||||||||||||||IO|O|||
+||Assessment and Reporting Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||||IO|O|||
+||Assessment and Reporting Analysis and Reporting Service Type||||Reference to the specific business service type||||||||||||||||IO|O|||
+||Assessment and Reporting Analysis and Reporting Service Description||||Description of the performed business service||||||||||||||||IO|O|||
+||Assessment and Reporting Analysis and Reporting Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||IO|O|||
+||Assessment and Reporting Analysis and Reporting Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||IO|O|||
+||Assessment and Reporting Analysis and Reporting Service Name||||||||||||||||||||IO|O|||
+Retrieve||Assessment and Reporting Retrieve Action Task Reference||||Reference to a Assessment and Reporting instance retrieve service call|||||||||||||||||O
+Retrieve||Assessment and Reporting Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||I/O
+Retrieve||Assessment and Reporting Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||I
+Retrieve||Assessment and Reporting Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||O
+Retrieve||Assessment and Reporting Instance Report|##|||A specific Assessment and Reporting instance formatted report|||||||||||||||||IO
+Retrieve|||Assessment and Reporting Instance Report Reference|||Reference to the control record instance report|||||||||||||||||I
+Retrieve|||Assessment and Reporting Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Assessment and Reporting Instance Report Type|||The type of external report available|||||||||||||||||O
+Retrieve|||Assessment and Reporting Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||O
+Retrieve|||Assessment and Reporting Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||O
+Retrieve||Assessment and Reporting Instance Analysis|##|||A specific Assessment and Reporting instance analytical report|||||||||||||||||IO
+Retrieve|||Assessment and Reporting Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||I
+Retrieve|||Assessment and Reporting Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Assessment and Reporting Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||O
+Retrieve|||Assessment and Reporting Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||O
+Retrieve|||Assessment and Reporting Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||O
+BQ Fulfillment Instance Record|Fulfillment||||||
+Mandatory||Fiduciary Relationship Arrangement Instance Reference||||Reference to the parent Fiduciary Relationship Arrangement instance||||||||||||||||||I|I
+Mandatory||Fulfillment Instance Reference||||Reference to the Fulfillment instance||||||||||||||||||I|I
+||Fulfillment Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Fiduciary Agreement.
+||||||||||||||||||||
+||Fulfillment Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||||||IO|IO|O
+||Fulfillment Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||||||IO|IO|O
+||Fiduciary Arrangement Fulfillment||||The Fiduciary Relationship Arrangement specific Business Service||||||||||||||||||IO|IO|O
+||Fulfillment Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||||||IO|IO|O
+||Fulfillment Fiduciary Arrangement Fulfillment Service Type||||Reference to the specific business service type||||||||||||||||||IO|IO|O
+||Fulfillment Fiduciary Arrangement Fulfillment Service Description||||Description of the performed business service||||||||||||||||||IO|IO|O
+||Fulfillment Fiduciary Arrangement Fulfillment Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||IO|IO|O
+||Fulfillment Fiduciary Arrangement Fulfillment Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||IO|IO|O
+Exchange||Fulfillment Exchange Action Task Reference||||Reference to a Fulfillment instance exchange service call||||||||||||||||||O
+Exchange||Fulfillment Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||I/O
+Exchange||Fulfillment Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||I
+Exchange||Fulfillment Exchange Action Response||||Details of the exchange action service response||||||||||||||||||O
+Exchange||Fulfillment Instance Status||||The status of the Fulfillment instance (e.g. accepted, rejected, verified)||||||||||||||||||O
+Request||Fulfillment Request Action Task Reference||||Reference to a Fulfillment instance request service call|||||||||||||||||||O
+Request||Fulfillment Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||I/O
+Request||Fulfillment Request Record Reference||||Reference to the Fulfillment service request record|||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||O
+Retrieve||Fulfillment Retrieve Action Task Reference||||Reference to a Fulfillment instance retrieve service call||||||||||||||||||||O
+Retrieve||Fulfillment Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||I/O
+Retrieve||Fulfillment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||I
+Retrieve||Fulfillment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||O
+Retrieve||Fulfillment Instance Report|##|||A specific Fulfillment instance formatted report||||||||||||||||||||IO
+Retrieve|||Fulfillment Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||I
+Retrieve|||Fulfillment Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Fulfillment Instance Report Type|||The type of external report available||||||||||||||||||||O
+Retrieve|||Fulfillment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||O
+Retrieve|||Fulfillment Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+Retrieve||Fulfillment Instance Analysis|##|||A specific Fulfillment instance analytical report||||||||||||||||||||IO
+Retrieve|||Fulfillment Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||I
+Retrieve|||Fulfillment Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Fulfillment Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||O
+Retrieve|||Fulfillment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||O
+Retrieve|||Fulfillment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||O

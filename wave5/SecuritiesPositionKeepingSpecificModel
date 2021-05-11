@@ -1,0 +1,25 @@
+CR Securities Position Log Instance Record	CR Securities Position Log Instance Record	CR Securities Position Log Instance Record	##			Maintain a log of securities transactions for securities investment management information, position tracking and transaction reconciliation purposes	IO	IO		O			
+			Securities Transaction Log Type			The type of securities transaction log (e.g. equities, derivatives, all)	IO	IO		O			
+			Product Instance Reference 			The product/service investment account for which this is the securities transaction log	I	IO		O			
+			Customer Reference 			Reference to the product or service account holder/customer for the log if appropriate	I	IO		O			
+			Counterparty Reference 			Reference to a counterparty for the log if appropriate (e.g. merchant reference, corporate reference)	I	IO		O			
+			Securities Position Log Instrument Profile			Details the range of instruments that are tracked by the log (each instrument has its own transaction record/holding position	IO	IO		O			
+			Securities Position Log Instrument Record	##		Details for an individual tracked instrument type - (the log track transactions for multiple securities/instruments)	IO	IO		O			
+				Securities Instrument Type		Reference to the type of investment instrument being tracked (e.g. equity, commodity, FX/MM, derivative)	IO	IO		O			
+				Securities Instrument Reference		The specific instrument trading identifier (e.g. NASDAQ Id)	IO	IO		O			
+				Securities Position Limits 	##	Basic position limits that are maintained as an aspect of the log (these can include securities holdings and related instrument properties such as associated dividends entitlements)	IO	IO		O			
+					Securities Position Limit Type	The type of position maintained for the log (e.g. cumulative balance)	IO	IO		O			
+					Securities Position Limit Settings	The position definition, associated limit settings and rules	IO	IO		O			
+					Securities Position Limit Value	The current calculated position	O	IO		O			
+				Securities Amount Block	##	Support for recording blocks on the log position (handling is by the associated investment account fulfillment service domain)	IO	IO		O			
+					Securities Amount Block Type 	The type of block applied to the tracked securities position (e.g. pending, final)	IO	IO		O			
+					Priority	Priority classification for the block	IO	IO		O			
+					Amount	The amount of the block	IO	IO		O			
+				Date Type	##	The type of key dates associated with the block (e.g. start, expiry)	IO	IO		O			
+					Date	Value of the specific date type	IO	IO		O			
+			Initiation Date			The date and time the log was initiated. Note the log will have a complex internal calendar structure for extract and reporting	IO	IO		O			
+			Status			The status of the log entry (e.g. active, in-suspense etc.)	IO	IO		O			
+BQ Transaction Capture Instance Record	BQ Transaction Capture Instance Record	Transaction Capture Instance Record	##			The details of a securities transaction recorded in the log (note this can be for both bought/sold securities amounts and corporate actions applied to securities holdings such as dividend payments)					IO	IO	O
+			Securities Posting Type			The type of securities transaction (e.g. bought amount, sold amount, dividend payment)					IO	I	O
+			Securities Posting Transaction 			The logged securities transaction. Note the log can handle a range of transactions covering bought and sold amounts and securities instrument related transactions such as dividend payments					IO	I	O
+			Securities Posting Value Date			The date of the securities transaction 					IO	IO	O

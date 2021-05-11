@@ -1,0 +1,221 @@
+CR Credit Card Financial Capture Transaction Instance Record|Credit Card Financial Capture Transaction||||||CR Credit Card Financial Capture Transaction Initiate|CR Credit Card Financial Capture Transaction Update|CR Credit Card Financial Capture Transaction Control|CR Credit Card Financial Capture Transaction Exchange|CR Credit Card Financial Capture Transaction Execute|CR Credit Card Financial Capture Transaction Request|CR Credit Card Financial Capture Transaction Retrieve|BQ Transaction Capture Initiate|BQ Transaction Capture Update|BQ Transaction Capture Retrieve|BQ Transaction Authorization Initiate|BQ Transaction Authorization Update|BQ Transaction Authorization Retrieve|BQ Transaction Consolidation Initiate|BQ Transaction Consolidation Update|BQ Transaction Consolidation Control|BQ Transaction Consolidation Exchange|BQ Transaction Consolidation Execute|BQ Transaction Consolidation Retrieve|BQ Transaction Reversal Initiate|BQ Transaction Reversal Update|BQ Transaction Reversal Retrieve|
+Mandatory||Card Capture Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Credit Card Financial Capture Transaction Instance Reference||||Reference to the Credit Card Financial Capture Transaction instance|O|I|I|I|I|I
+Initiate||Credit Card Financial Capture Transaction Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Credit Card Financial Capture Transaction Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Credit Card Financial Capture Transaction Instance Status||||The status of the Credit Card Financial Capture Transaction instance (e.g. initialised, pending, active)|IO
+||Credit/Charge Card Financial Capture Transaction Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Card Capture.
+Example: Execute a payment transaction.||||||||||||||||||||||
+||Credit/Charge Card Financial Capture Transaction Parameter Type||||A Classification value that distinguishes between business sercice transaction within Credit/Charge Card Financial Capture Transaction|IO|IO|IO|IO|IO|IO|O|||||||||||||||
+||Credit/Charge Card Financial Capture Transaction Selected Option||||A selected optional business service as subject matter of Credit/Charge Card Financial Capture Transaction|IO|IO|IO|IO|IO|IO|O|||||||||||||||
+||Credit/Charge Card Financial Capture Transaction Status||||The status of Credit/Charge Card Financial Capture Transaction|IO|IO|IO|IO|IO|IO|O|||||||||||||||
+||Credit/Charge Card Financial Capture Transaction Type||||A Classification value that specifies type of business action for this Credit/Charge Card Financial Capture Transaction|I|I|I|I|I|I|O|||||||||||||||
+||Credit/Charge Card Financial Capture Transaction Transaction Type||||A Classification value that specifies type of transaction for this Credit/Charge Card Financial Capture Transaction|I|I|I|I|I|I|O|||||||||||||||
+||Credit/Charge Card Financial Capture Transaction Transaction||||Reference to Credit/Charge Card Financial Capture Transaction||||||||||||||||||||||
+Update||Credit Card Financial Capture Transaction Update Action Task Reference||||Reference to an update service call||O
+Update||Credit Card Financial Capture Transaction Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Credit Card Financial Capture Transaction Control Action Task Reference||||Reference to a Credit Card Financial Capture Transaction instance control processing service call|||O
+CONTROL||Credit Card Financial Capture Transaction Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Credit Card Financial Capture Transaction Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Credit Card Financial Capture Transaction Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Credit Card Financial Capture Transaction Exchange Action Task Reference||||Reference to a Credit Card Financial Capture Transaction instance exchange service call||||O
+EXCHANGE||Credit Card Financial Capture Transaction Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Credit Card Financial Capture Transaction Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Credit Card Financial Capture Transaction Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Credit Card Financial Capture Transaction Execute Action Task Reference||||Reference to a Credit Card Financial Capture Transaction instance execute service call|||||O
+EXECUTE||Credit Card Financial Capture Transaction Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Credit Card Financial Capture Transaction Request Action Task Reference||||Reference to a Credit Card Financial Capture Transaction instance request service call||||||O
+REQUEST||Credit Card Financial Capture Transaction Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Credit Card Financial Capture Transaction Retrieve Action Task Reference||||Reference to a Credit Card Financial Capture Transaction instance retrieve service call|||||||O
+RETRIEVE||Credit Card Financial Capture Transaction Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Credit Card Financial Capture Transaction Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Credit Card Financial Capture Transaction Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Credit Card Financial Capture Transaction Instance Report Record|##|||A specific Credit Card Financial Capture Transaction instance formatted report|||||||IO
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Credit Card Financial Capture Transaction Instance Analysis|##|||A specific Credit Card Financial Capture Transaction instance analytical report|||||||IO
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Credit Card Financial Capture Transaction Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Transaction Capture Instance Record|Transaction Capture||||||
+Mandatory||Credit Card Financial Capture Transaction Instance Reference||||Reference to the parent Credit Card Financial Capture Transaction instance||||||||I|I
+Mandatory||Transaction Capture Instance Reference||||Reference to the Transaction Capture instance||||||||O|I
+Initiate||Transaction Capture Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Transaction Capture Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Transaction Capture Instance Status||||The status of the Transaction Capture instance (e.g. initialised, pending, active)||||||||O
+||Transaction Capture Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Card Capture.
+||||||||||||||||||||||
+||Transaction Capture Preconditions||||The required status/situation prior to the execution of the task|||||||||||IO|IO|O|||||||||
+||Transaction Capture Task Schedule||||The timing and key actions/milestones involved in completing the transaction task|||||||||||IO|IO|O|||||||||
+||Business Service||||The Credit/Charge Card Financial Capture Transaction specific Business Service|||||||||||IO|IO|O|||||||||
+||Transaction Capture Postconditions||||The completion status and any triggered/dependent actions once the task has been completed|||||||||||IO|IO|O|||||||||
+||Transaction Capture Service Type||||Reference to the specific business service type|||||||||||IO|IO|O|||||||||
+||Transaction Capture Service Description||||Description of the performed business service|||||||||||IO|IO|O|||||||||
+||Transaction Capture Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|IO|O|||||||||
+||Transaction Capture Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|IO|O|||||||||
+||Transaction Capture Service Name|||||||||||||||IO|IO|O|||||||||
+Update||Transaction Capture Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Transaction Capture Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Transaction Capture Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Retrieve||Transaction Capture Retrieve Action Task Reference||||Reference to a Transaction Capture instance retrieve service call||||||||||O
+Retrieve||Transaction Capture Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Transaction Capture Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Transaction Capture Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Transaction Capture Instance Report|##|||A specific Transaction Capture instance formatted report||||||||||IO
+Retrieve|||Transaction Capture Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Transaction Capture Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Transaction Capture Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Transaction Capture Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Transaction Capture Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Transaction Capture Instance Analysis|##|||A specific Transaction Capture instance analytical report||||||||||IO
+Retrieve|||Transaction Capture Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Transaction Capture Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Transaction Capture Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Transaction Capture Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Transaction Capture Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Transaction Authorization Instance Record|Transaction Authorization||||||
+Mandatory||Credit Card Financial Capture Transaction Instance Reference||||Reference to the parent Credit Card Financial Capture Transaction instance|||||||||||I|I
+Mandatory||Transaction Authorization Instance Reference||||Reference to the Transaction Authorization instance|||||||||||O|I
+Initiate||Transaction Authorization Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Initiate||Transaction Authorization Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Initiate||Transaction Authorization Instance Status||||The status of the Transaction Authorization instance (e.g. initialised, pending, active)|||||||||||O
+||Transaction Authorization Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Card Capture.
+||||||||||||||||||||||
+||Transaction Authorization Preconditions||||The required status/situation prior to the execution of the task||||||||||||||||||||IO|IO|O
+||Transaction Authorization Task Schedule||||The timing and key actions/milestones involved in completing the transaction task||||||||||||||||||||IO|IO|O
+||Business Service||||The Credit/Charge Card Financial Capture Transaction specific Business Service||||||||||||||||||||IO|IO|O
+||Transaction Authorization Postconditions||||The completion status and any triggered/dependent actions once the task has been completed||||||||||||||||||||IO|IO|O
+||Transaction Authorization Service Type||||Reference to the specific business service type||||||||||||||||||||IO|IO|O
+||Transaction Authorization Service Description||||Description of the performed business service||||||||||||||||||||IO|IO|O
+||Transaction Authorization Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||IO|IO|O
+||Transaction Authorization Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||IO|IO|O
+Update||Transaction Authorization Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Transaction Authorization Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Transaction Authorization Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Retrieve||Transaction Authorization Retrieve Action Task Reference||||Reference to a Transaction Authorization instance retrieve service call|||||||||||||O
+Retrieve||Transaction Authorization Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||Transaction Authorization Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||Transaction Authorization Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||Transaction Authorization Instance Report|##|||A specific Transaction Authorization instance formatted report|||||||||||||IO
+Retrieve|||Transaction Authorization Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||Transaction Authorization Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Transaction Authorization Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||Transaction Authorization Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||Transaction Authorization Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||Transaction Authorization Instance Analysis|##|||A specific Transaction Authorization instance analytical report|||||||||||||IO
+Retrieve|||Transaction Authorization Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||Transaction Authorization Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Transaction Authorization Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||Transaction Authorization Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||Transaction Authorization Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O
+BQ Transaction Consolidation Instance Record|Transaction Consolidation||||||
+Mandatory||Credit Card Financial Capture Transaction Instance Reference||||Reference to the parent Credit Card Financial Capture Transaction instance||||||||||||||I|I|I|I|I
+Mandatory||Transaction Consolidation Instance Reference||||Reference to the Transaction Consolidation instance||||||||||||||O|I|I|I|I
+Initiate||Transaction Consolidation Initiate Action Reference||||Reference to an Initiate service call||||||||||||||O
+Initiate||Transaction Consolidation Initiate Action Record||||The Initiate service call input and output record||||||||||||||I/O
+Initiate||Transaction Consolidation Instance Status||||The status of the Transaction Consolidation instance (e.g. initialised, pending, active)||||||||||||||O
+||Transaction Consolidation Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Card Capture.
+||||||||||||||||||||||
+||Transaction Consolidation Preconditions||||The required status/situation prior to the execution of the task||||||||||||||IO|IO|IO|IO|IO|O|||
+||Transaction Consolidation Task Schedule||||The timing and key actions/milestones involved in completing the transaction task||||||||||||||IO|IO|IO|IO|IO|O|||
+||Card Transaction Consolidation||||The Credit/Charge Card Financial Capture Transaction specific Business Service||||||||||||||IO|IO|IO|IO|IO|O|||
+||Transaction Consolidation Postconditions||||The completion status and any triggered/dependent actions once the task has been completed||||||||||||||IO|IO|IO|IO|IO|O|||
+||Transaction Consolidation Card Transaction Consolidation Service Type||||Reference to the specific business service type||||||||||||||IO|IO|IO|IO|IO|O|||
+||Transaction Consolidation Card Transaction Consolidation Service Description||||Description of the performed business service||||||||||||||IO|IO|IO|IO|IO|O|||
+||Transaction Consolidation Card Transaction Consolidation Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|IO|IO|IO|IO|O|||
+||Transaction Consolidation Card Transaction Consolidation Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|IO|IO|IO|IO|O|||
+||Transaction Consolidation Card Transaction Consolidation Service Name||||||||||||||||||IO|IO|IO|IO|IO|O|||
+Update||Transaction Consolidation Update Action Task Reference||||Reference to an update service call|||||||||||||||O
+Update||Transaction Consolidation Update Action Task Record||||The update service call consolidated processing record|||||||||||||||I/O
+Update||Transaction Consolidation Update Action Request||||Details of the update action service request|||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||O
+Control||Transaction Consolidation Control Action Task Reference||||Reference to a Transaction Consolidation instance control processing service call||||||||||||||||O
+Control||Transaction Consolidation Control Action Task Record||||The processing control service call consolidated processing record||||||||||||||||I/O
+Control||Transaction Consolidation Control Action Request|##|||Details of the control action service request||||||||||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)||||||||||||||||I
+Control||Transaction Consolidation Control Action Response||||Details of the control action service response||||||||||||||||O
+Control||Transaction Consolidation Instance Status||||The status of the Transaction Consolidation instance (e.g. initialised, pending, active)||||||||||||||||O
+Exchange||Transaction Consolidation Exchange Action Task Reference||||Reference to a Transaction Consolidation instance exchange service call|||||||||||||||||O
+Exchange||Transaction Consolidation Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||I/O
+Exchange||Transaction Consolidation Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||I
+Exchange||Transaction Consolidation Exchange Action Response||||Details of the exchange action service response|||||||||||||||||O
+Exchange||Transaction Consolidation Instance Status||||The status of the Transaction Consolidation instance (e.g. accepted, rejected, verified)|||||||||||||||||O
+Execute||Transaction Consolidation Execute Action Task Reference||||Reference to a Transaction Consolidation instance execute service call||||||||||||||||||O
+Execute||Transaction Consolidation Execute Action Task Record||||The execute service call consolidated processing record||||||||||||||||||I/O
+Execute||Transaction Consolidation Execute Record Reference||||Reference to the Transaction Consolidation execute transaction/record||||||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||||||||||||O
+Retrieve||Transaction Consolidation Retrieve Action Task Reference||||Reference to a Transaction Consolidation instance retrieve service call|||||||||||||||||||O
+Retrieve||Transaction Consolidation Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Transaction Consolidation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Transaction Consolidation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Transaction Consolidation Instance Report|##|||A specific Transaction Consolidation instance formatted report|||||||||||||||||||IO
+Retrieve|||Transaction Consolidation Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Transaction Consolidation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Transaction Consolidation Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Transaction Consolidation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Transaction Consolidation Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Transaction Consolidation Instance Analysis|##|||A specific Transaction Consolidation instance analytical report|||||||||||||||||||IO
+Retrieve|||Transaction Consolidation Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Transaction Consolidation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Transaction Consolidation Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Transaction Consolidation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Transaction Consolidation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+BQ Transaction Reversal Instance Record|Transaction Reversal||||||
+Mandatory||Credit Card Financial Capture Transaction Instance Reference||||Reference to the parent Credit Card Financial Capture Transaction instance||||||||||||||||||||I|I
+Mandatory||Transaction Reversal Instance Reference||||Reference to the Transaction Reversal instance||||||||||||||||||||O|I
+Initiate||Transaction Reversal Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||O
+Initiate||Transaction Reversal Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||I/O
+Initiate||Transaction Reversal Instance Status||||The status of the Transaction Reversal instance (e.g. initialised, pending, active)||||||||||||||||||||O
+||Transaction Reversal Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Card Capture.
+||||||||||||||||||||||
+||Transaction Reversal Preconditions||||The required status/situation prior to the execution of the task||||||||IO|IO|O||||||||||||
+||Transaction Reversal Task Schedule||||The timing and key actions/milestones involved in completing the transaction task||||||||IO|IO|O||||||||||||
+||Card Transaction Reversal||||The Credit/Charge Card Financial Capture Transaction specific Business Service||||||||IO|IO|O||||||||||||
+||Transaction Reversal Postconditions||||The completion status and any triggered/dependent actions once the task has been completed||||||||IO|IO|O||||||||||||
+||Transaction Reversal Card Transaction Reversal Service Type||||Reference to the specific business service type||||||||IO|IO|O||||||||||||
+||Transaction Reversal Card Transaction Reversal Service Description||||Description of the performed business service||||||||IO|IO|O||||||||||||
+||Transaction Reversal Card Transaction Reversal Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|O||||||||||||
+||Transaction Reversal Card Transaction Reversal Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|O||||||||||||
+||Transaction Reversal Card Transaction Reversal Service Name||||||||||||IO|IO|O||||||||||||
+Update||Transaction Reversal Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||O
+Update||Transaction Reversal Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||I/O
+Update||Transaction Reversal Update Action Request||||Details of the update action service request|||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||O
+Retrieve||Transaction Reversal Retrieve Action Task Reference||||Reference to a Transaction Reversal instance retrieve service call||||||||||||||||||||||O
+Retrieve||Transaction Reversal Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||I/O
+Retrieve||Transaction Reversal Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||I
+Retrieve||Transaction Reversal Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||O
+Retrieve||Transaction Reversal Instance Report|##|||A specific Transaction Reversal instance formatted report||||||||||||||||||||||IO
+Retrieve|||Transaction Reversal Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||I
+Retrieve|||Transaction Reversal Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||O
+Retrieve|||Transaction Reversal Instance Report Type|||The type of external report available||||||||||||||||||||||O
+Retrieve|||Transaction Reversal Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||O
+Retrieve|||Transaction Reversal Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||O
+Retrieve||Transaction Reversal Instance Analysis|##|||A specific Transaction Reversal instance analytical report||||||||||||||||||||||IO
+Retrieve|||Transaction Reversal Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||I
+Retrieve|||Transaction Reversal Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||O
+Retrieve|||Transaction Reversal Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||O
+Retrieve|||Transaction Reversal Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||O
+Retrieve|||Transaction Reversal Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||O

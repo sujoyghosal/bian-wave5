@@ -1,0 +1,17 @@
+sd=Direct Debit Mandate	This service domains manages the customer mandates associated with direct debit processing for a corporate client	A customer completes a direct debit mandate for a corporate client that is registered	Customer mandates are administered/managed that are associated with a direct debit processing facility provided for a corporate client. The individual customer mandates are registered and may be updated/amended. The mandates are referenced to confirm coverage when direct debit processing is undertaken periodically
+sdpath=direct-debit-mandate
+crpath=direct-debit-mandate-directory-entry
+crr=Direct Debit Mandate Directory Entry Instance
+mcr=Direct Debit Mandate Directory Entry
+bqs=MandateRegistration
+CONFIG
+DirectDebitMandateDirectoryEntry	register	Register a new direct debit (DD) mandate collection for a corporate customer		registerDirectDebitMandateDirectoryEntry		#desc
+DirectDebitMandateDirectoryEntry	update	Update details of an existing collection of DD mandates maintained for a corporate customer		updateDirectDebitMandateDirectoryEntry		#desc
+DirectDebitMandateDirectoryEntry	control	Control a direct debit mandate collection (e.g. suspend)		controlDirectDebitMandateDirectoryEntry		#desc
+DirectDebitMandateDirectoryEntry	retrieve	Retrieve details about a collection of DD mandates		retrieveDirectDebitMandateDirectoryEntry		#desc
+MandateRegistration	register	Register a customer's DD mandate for a corporate customer	registerDirectDebitMandateDirectoryEntryMandateRegistration	registerDirectDebitMandateDirectoryEntryMandateRegistration		Details of a new Mandate Registration instance
+MandateRegistration	update	Update details of the customer's DD mandate	updateDirectDebitMandateDirectoryEntryMandateRegistration	updateDirectDebitMandateDirectoryEntryMandateRegistration		Update to any amendable fields of the Mandate Registration instance
+MandateRegistration	exchange	Accept, verify etc. a customer's DD mandate	exchangeDirectDebitMandateDirectoryEntryMandateRegistration	exchangeDirectDebitMandateDirectoryEntryMandateRegistration		Handle an external exchange (e.g. accept, reject, verify)
+MandateRegistration	execute	Execute an automated action against the DD Mandate (e.g. test proposed payment)	executeDirectDebitMandateDirectoryEntryMandateRegistration	executeDirectDebitMandateDirectoryEntryMandateRegistration		Invoke an automated execute action against the Mandate Registration instance
+MandateRegistration	request	Request intervention with a customer's DD Mandate (e.g. retrieve paperwork)	requestDirectDebitMandateDirectoryEntryMandateRegistration	requestDirectDebitMandateDirectoryEntryMandateRegistration		Invoke a service request action against the Mandate Registration instance
+MandateRegistration	retrieve	Retrieve details about a customer's DD mandate	retrieveDirectDebitMandateDirectoryEntryMandateRegistration	retrieveDirectDebitMandateDirectoryEntryMandateRegistration		Invoke a reporting action to obtain a Mandate Registration instance related report

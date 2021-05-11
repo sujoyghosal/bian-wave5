@@ -1,0 +1,92 @@
+CR Credit Facility Fulfillment Arrangement Instance Record	CR Credit Facility Fulfillment Arrangement Instance Record	Credit Facility Fulfillment Arrangement Instance Record	##			The control record maintains the fulfillment details for a credit facility product instance	IO	IO				O	O		O		O	IO			O	IO	IO			O
+			Product Instance Reference			Reference to the credit facility product instance	O	IO				O	O		O		O				O	I	IO			O
+			Credit Facility Number			The associated credit facility account number in any suitable format	I	IO				O	O		O		O				O	I	IO			O
+			Customer Reference			Reference to the account primary party/owner	I	IO				O			O		O				O	I	IO			O
+			Party Reference			The legal entity reference for the borrower, likely to be the same as the corporate customer	I	IO				O					O				O	I	IO			O
+			Customer Agreement Reference			Reference to the associated customer agreement	I	IO				O					O					I	IO			O
+			Customer Credit Assessment Reference			Reference to an associated credit assessment	I	IO				O					O					I	IO			O
+			Insurance Reference			Reference to applicable insurance arrangements	I	IO				O					O					I	IO			O
+			Delinquency/Collection Reference			Reference to collections/delinquency processing made against the credit facility	I	IO				O					O					I	IO			O
+			Bank Branch/Location Reference			Bank branch associated with the facility for booking purposes	I	IO				O					O					I	IO			O
+			Bank Accounting Unit Reference			Bank accounting unit associated with the facility for booking purposes	I	IO				O					O					I	IO			O
+			Credit Facility Type			The specific type of credit facility (e.g. term, revolving, letter of credit, retail)	I	IO				O	O				O					I	IO			O
+			Credit Facility Amount			The amount of the credit facility	I	IO				O	O				O					I	IO			O
+			Credit Facility Currency			The currency for the facility	I	IO				O	O				O					I	IO			O
+			Credit Facility Rate Type			The rate type to be applied to the credit facility	I	IO				O	O				O					I	IO			O
+			Credit Facility Applicable Rate			The applicable rate for the credit facility	I	IO				O	O				O					I	IO			O
+			Repayment Type			The type of repayment arrangement in place (e.g. structured, revolving)	I	IO				O					O				O	I	IO			O
+			Interest Type 			The type of interest to be applied (e.g. prime plus)	I	IO				O	O				O					I	IO			O
+			Interest Accrual Method			The accrual method applied to interest calculations	I	IO				O	O				O					I	IO			O
+			Credit Facility Origination Date			The origination date for the credit facility	I	IO				O	O				O					I	IO			O
+			Credit Facility Maturity Date 			The planned maturity date of the credit facility	I	IO				O	O				O					I	IO			O
+			Collateral Reference			Reference to allocated collateral	I	IO				O					O					I	IO			O
+			Collateral Allocation			The collateral value applied to the credit facility loan	I	IO				O					O					I	IO			O
+			Tax Reference 			Reference identifier linking the account to appropriate tax handling	I	IO				O					O					I	IO			O
+			Credit Facility Access Terms 			Access terms that apply (e.g. allowed drawdown terms, repayment)	I	IO				O			O		O				O	I	IO			O
+			Credit Facility Underlying Drawdown 	##		Details the one or more underlying loans made against the facility	I	IO				O			O		O				O	I	IO			O
+				Drawdown Reference		Reference to the underlying loan	I	IO				O			O		O				O	I	IO			O
+				Drawdown Record	##	Record of the underlying loan details	I	IO				O			O		O				O	I	IO			O
+					Drawdown Loan Transaction	The underlying loan transaction details	I	IO				O			O		O				O	I	IO			O
+			Entitlement Option Definition			The definition of an applicable entitlement option	I	IO				O			O		O				O	I	IO			O
+			Entitlement Option Setting			The setting for the entitlement option	I	IO				O			O		O				O	I	IO			O
+			Restriction Option Definition			The definition of an applicable restriction option	I	IO				O			O		O				O	I	IO			O
+			Restriction Option Setting			The setting for the restriction option	I	IO				O			O		O				O	I	IO			O
+			Associations	##		Definition of the involved parties or associations to the facility	I	IO				O			O		O					I	IO			O
+				Association Type		The type of association (e.g. guarantor, co-signer)	I	IO				O			O		O					I	IO			O
+				Association Obligation/Entitlement		Description of the role, obligations or entitlements of the associated party	I	IO				O			O		O					I	IO			O
+				Association Reference		Reference to the associated party	I	IO				O			O		O					I	IO			O
+			Credit Facility Repayment Schedule			The schedule for repayments	I	IO				O					O					I	IO			O
+			Staged Repayment Statement			A statement maintained tracking repayments	IO	IO				O					O					IO	IO			O
+			Customer Commentary 			A record of customer correspondence/feedback	IO	IO				O			O		O					IO	IO			O
+			Credit Facility Outstanding Balance			The outstanding balance available for the credit facility	O	IO				O	O		O		O	IO			O	IO	IO			O
+			Date Type	##		Key dates associated with the account (e.g. opening date, closing date)	IO	IO				O	O		O		O	IO			O	IO	IO			O
+				Date		Value of the date type	IO	IO				O	O		O		O	IO			O	IO	IO			O
+BQ Interest Instance Record 	BQ Interest Instance Record 	Interest Instance Record 	##			Applies interest to the credit facility account							O													
+			Interest Rate Type			The type of rate calculation that can be applied							O													
+			Interest Rate Application Schedule			The processing schedule for applying interest rates to the account							O													
+			Interest Rate Configuration	##		The collection of applicable rates							O													
+				Interest Rate Type		Applicable rate type							O													
+				Interest Rate		The interest rate value to be applied (note could be variable)							O													
+			Interest Application Record	##		The record of applied interest							O													
+				Interest Transaction	##	A record of applied interest							O													
+					Transaction Description	General description of the interest transaction							O													
+					Transaction Rate Type	Applicable rate type							O													
+					Transaction Interest Charge	The derived interest amount to be applied							O													
+				Interest Accrual Amount	##	Record of accrued interest							O													
+					Interest Accrual Type	The interest type being tracked							O													
+					Interest Accrual Charge	The accrued amount of applied interest							O													
+BQ Service Fees Instance Record	BQ Service Fees Instance Record	Service Fees Instance Record	##			Applies service fees and penalties to the credit facility account								IO	O											
+			Fee Configuration Profile	##		The profile of applicable fees and penalties								IO	O											
+				Fee Type		The fee or penalty type applied								I	O											
+				Fee Definition 		Definition of the fee or penalty including when and how to apply								O	O											
+			Fee Application Record	##		The record of applied fees and penalties including transactions and accrued amounts								IO	O											
+				Fee Transaction	##	A record of an applied fee or penalty								IO	O											
+					Transaction Description	General description of the fee or penalty transaction								I	O											
+					Transaction Fee Type	The fee or penalty type applied								IO	O											
+					Transaction Fee Charge	The derived fee or penalty amount applied								O	O											
+				Fee Projections and Commitments	##	A record of projected fees and penalties								IO	O											
+					Projected Transaction Description	General description of the projected fee or penalty								I	O											
+					Projected Transaction Fee Type	The fee or penalty type								IO	O											
+					Projected Transaction Fee Charge	The anticipated fee or penalty amount								O	O											
+				Fee Accrual Amount	##	Tracking of accumulated fees and penalties								IO	O											
+					Accrual Fee Type	The fee or penalty type being tracked								IO	O											
+					Accrual Fee Charge	The accrued amount of fees and penalties								O	O											
+BQ Maintenance Instance Record	BQ Maintenance Instance Record	Maintenance Instance Record	##			Handles key maintenance activities, mostly the assembly and delivery of credit facility status analyses in ad-hoc reports										IO	O									
+			Maintenance Report Type	##		The type of maintenance action and report processed (e.g. tax, regulatory, accounting)										IO	O									
+				Credit Facility Tax Report		A report summarizing tax considerations										IO	O									
+				Credit Facility Fee Type 	##	The type of fee applied										IO	O									
+					Credit Facility Fees	A report detailing fees applied to the loan account (range of fees possible for different actions)										IO	O									
+				Credit Facility Penalties		A report detailing penalties incurred as booked against loan account										IO	O									
+				Credit Facility Collateral Valuation		A report detailing the current applied collateral valuation (value confirmed as of date)										IO	O									
+BQ Repayment Instance Record	BQ Repayment Instance Record	Repayment Instance Record	##			Handles loan repayments (note scheduled and balloon repayments as might apply are combined under this category)												IO	IO	IO	O					
+			Repayment Transaction Type			The type of repayment (e.g. scheduled repayment, balloon/early termination)												IO	I	I	O					
+			Repayment Transaction Payer Reference			Reference to the payer												IO	I	I	O					
+			Repayment Transaction Payer Product Instance Reference			Reference to the account where the payment is made from												IO	I	I	O					
+			Repayment Transaction Payer Bank Reference			Reference to the payer's bank												IO	I	I	O					
+			Repayment Transaction Amount			The amount of the repayment												IO	i	i	O					
+			Repayment Transaction Currency			The currency used for the repayment												IO	I	I	O					
+			Repayment Transaction Value Date			The value date for the repayment transaction												IO	IO	IO	O					
+BQ Restructuring Instance Record	BQ Restructuring Instance Record	Restructuring Instance Record	##			Attributes associated with outlining credit facility account restructuring																IO	IO		IO	O
+			Restructuring Task			Description of the restructuring required																IO	IO		IO	O
+			Restructuring Evaluation 			Definition of issue to resolve and the restructuring solution with associated changes to the credit facility terms and the assessed impact																O	IO		O	O
+			Restructuring Write Down			Calculated loss/costs of restructuring the credit facility																O	IO		O	O

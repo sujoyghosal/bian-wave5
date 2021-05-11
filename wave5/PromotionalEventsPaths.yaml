@@ -1,0 +1,805 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Promotional Events'
+ description: >
+
+    ## Executive Summary:
+
+    Develop the plan for and oversee promotional event activity, including budget and resource management
+
+    ## Example of Use:
+
+    Business development reviews market research to select promotional events to sponsor to support the bank brand and enhance market awareness
+
+    ## Description:
+
+    Develop and execute promotional events covering brand development and advertizing. This can include participation in sporting/entertainment events or more general promotional activity
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-promotional-events/1.0.0
+schemes:
+ - https
+paths:
+  /promotional-events/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDPromotionalEvents
+      summary: Activate  a SDPromotionalEvents servicing session
+      description: Activate  a  SDPromotionalEvents servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDPromotionalEvents Request Payload
+        schema:
+          $ref: '#/definitions/SDPromotionalEventsActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDPromotionalEventsActivateOutputModel'
+  /promotional-events/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDPromotionalEvents
+      summary: Update an active SDPromotionalEvents session configuration
+      description: Update an active SDPromotionalEvents session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPromotionalEvents Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDPromotionalEvents Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDPromotionalEventsConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDPromotionalEventsConfigureOutputModel'
+  /promotional-events/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDPromotionalEvents
+      summary: "Capturing feedback against the SDPromotionalEvents service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDPromotionalEvents service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPromotionalEvents Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDPromotionalEvents Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDPromotionalEventsFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDPromotionalEventsFeedbackOutputModel'
+  /promotional-events/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDPromotionalEvents
+      summary: Analytical views maintained by the SDPromotionalEvents service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDPromotionalEvents service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPromotionalEvents Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDPromotionalEventsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDPromotionalEventsRetrieveOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/creation:
+    post:
+      tags:
+      - create
+      operationId: createPromotionalEventManagementPlan
+      summary: Details of a new PromotionalEventManagementPlan instance
+      description: Create and invoke the promotional event management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PromotionalEventManagementPlan Request Payload
+        schema:
+          $ref: '#/definitions/CRPromotionalEventManagementPlanCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new PromotionalEventManagementPlan instance
+          schema:
+            $ref: '#/definitions/CRPromotionalEventManagementPlanCreateOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updatePromotionalEventManagementPlan
+      summary: Update to any amendable fields of the PromotionalEventManagementPlan instance
+      description: Update details of the promotional event management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Promotional Event Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRPromotionalEventManagementPlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Promotional Event Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRPromotionalEventManagementPlanUpdateOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestPromotionalEventManagementPlanUpdate
+      summary: Invoke a service request action against the PromotionalEventManagementPlan instance
+      description: Request manual intervention in the event plan (e.g. rework participation priorities)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Promotional Event Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRPromotionalEventManagementPlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Promotional Event Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRPromotionalEventManagementPlanRequestOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantPromotionalEventManagementPlanUpdate
+      summary: Invoke a grant request action from the PromotionalEventManagementPlan instance to obtain access permission
+      description: Obtain a permission grant against the plan (e.g. obtain authority to sponsor an event)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Promotional Event Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRPromotionalEventManagementPlanGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Promotional Event Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRPromotionalEventManagementPlanGrantOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePromotionalEvents
+      summary: Invoke a reporting action to obtain a Promotional Event Management Plan instance related report
+      description: Retrieve details about the promotional event management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRPromotionalEventManagementPlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Promotional Event Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRPromotionalEventManagementPlanRetrieveOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/markettracking/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updatePromotionalEventManagementPlanMarketTracking
+      summary: Update to any amendable fields of the MarketTracking instance
+      description: Update details of the market tracking activity (e.g. change source)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MarketTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MarketTracking Request Payload
+        schema:
+          $ref: '#/definitions/BQMarketTrackingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated MarketTracking Instance
+          schema:
+            $ref: '#/definitions/BQMarketTrackingUpdateOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/markettracking/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executePromotionalEventManagementPlanMarketTrackingUpdate
+      summary: Invoke an automated execute action against the MarketTracking instance
+      description: Execute an automated task for the tracking activity (e.g. upload new data)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MarketTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MarketTracking request payload
+        schema:
+          $ref: '#/definitions/BQMarketTrackingExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of MarketTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQMarketTrackingExecuteOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/markettracking/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestPromotionalEventManagementPlanMarketTrackingUpdate
+      summary: Invoke a service request action against the MarketTracking instance
+      description: Request manual intervention in the market tracking (e.g. request reworking of the analysis)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MarketTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MarketTracking request payload
+        schema:
+          $ref: '#/definitions/BQMarketTrackingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of MarketTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQMarketTrackingRequestOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/markettracking/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePromotionalEventManagementPlanMarketTracking
+      summary: Invoke a reporting action to obtain a MarketTracking instance related report.
+      description: Retrieve details about the market tracking activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MarketTracking Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQMarketTrackingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved MarketTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQMarketTrackingRetrieveOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/impactassessment/creation:
+    post:
+      tags:
+      - create
+      operationId: createPromotionalEventManagementPlanImpactAssessment
+      summary: Details of a new ImpactAssessment instance
+      description: Create an impact assessment of the promotional event activity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Promotional Event Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQImpactAssessmentCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Promotional Event Management Plan instance
+          schema:
+            $ref: '#/definitions/BQImpactAssessmentCreateOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/impactassessment/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updatePromotionalEventManagementPlanImpactAssessment
+      summary: Update to any amendable fields of the ImpactAssessment instance
+      description: Update details of promotional event impact assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ImpactAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ImpactAssessment Request Payload
+        schema:
+          $ref: '#/definitions/BQImpactAssessmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ImpactAssessment Instance
+          schema:
+            $ref: '#/definitions/BQImpactAssessmentUpdateOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/impactassessment/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executePromotionalEventManagementPlanImpactAssessmentUpdate
+      summary: Invoke an automated execute action against the ImpactAssessment instance
+      description: Execute an automated action for an impact assessment (e.g. trigger an assessment report)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ImpactAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ImpactAssessment request payload
+        schema:
+          $ref: '#/definitions/BQImpactAssessmentExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of ImpactAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQImpactAssessmentExecuteOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/impactassessment/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestPromotionalEventManagementPlanImpactAssessmentUpdate
+      summary: Invoke a service request action against the ImpactAssessment instance
+      description: Request manual intervention to an impact assessment (e.g. request specific analysis)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ImpactAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ImpactAssessment request payload
+        schema:
+          $ref: '#/definitions/BQImpactAssessmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ImpactAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQImpactAssessmentRequestOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/impactassessment/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePromotionalEventManagementPlanImpactAssessment
+      summary: Invoke a reporting action to obtain a ImpactAssessment instance related report.
+      description: Retrieve details about promotional event impact assessment activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ImpactAssessment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQImpactAssessmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ImpactAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQImpactAssessmentRetrieveOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/participation/creation:
+    post:
+      tags:
+      - create
+      operationId: createPromotionalEventManagementPlanParticipation
+      summary: Details of a new Participation instance
+      description: Create promotional event participation plan (e.g. create the schedules for involvement and sponsorship)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Promotional Event Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQParticipationCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Promotional Event Management Plan instance
+          schema:
+            $ref: '#/definitions/BQParticipationCreateOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/participation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updatePromotionalEventManagementPlanParticipation
+      summary: Update to any amendable fields of the Participation instance
+      description: Update the event participation schedule
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Participation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Participation Request Payload
+        schema:
+          $ref: '#/definitions/BQParticipationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Participation Instance
+          schema:
+            $ref: '#/definitions/BQParticipationUpdateOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/participation/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestPromotionalEventManagementPlanParticipationUpdate
+      summary: Invoke a service request action against the Participation instance
+      description: Request manual intervention to the schedules (e.g. rework priorities)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Participation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Participation request payload
+        schema:
+          $ref: '#/definitions/BQParticipationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Participation Instance Record
+          schema:
+            $ref: '#/definitions/BQParticipationRequestOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/participation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePromotionalEventManagementPlanParticipation
+      summary: Invoke a reporting action to obtain a Participation instance related report.
+      description: Retrieve details about promotional event participation activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Participation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQParticipationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Participation Instance Record
+          schema:
+            $ref: '#/definitions/BQParticipationRetrieveOutputModel'
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePromotionalEventsReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- PromotionalEvents Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /promotional-events/promotional-event-management-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePromotionalEventsBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'MarketTracking',  'ImpactAssessment',  'Participation', ]
+  /promotional-events/{sd-reference-id}/promotional-event-management-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePromotionalEventsBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Promotional Events Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Promotional Event Management Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Participation
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Participation Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ParticipationID1, ParticipationID2]

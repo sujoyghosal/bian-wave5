@@ -1,0 +1,44 @@
+SD=Market Analysis
+CR= General Market Research Analysis
+BQs= Analysis Algorithm      
+Market Analysis||Referenced Information|Description||||||||CR - General Market Research Analysis|||||||||BQ 1 - Analysis Algorithm||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Name (#SD)|Market Analysis|Market Research|Market research that is accessed by the service center||||||||1|||||2|3||4||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||REF|Identified Semantic APIs
+Description|This service domain supports the broad range of market analysis needed to support business management decisions across the bank. It draws on external market research and internally generated business information as necessary. It is used to develop insights into market trends and potential opportunities/threats. It may also be used to evaluate key events that might impact the bank's business directly or that of important customers and customer segments. A standard set of analytical views can be defined that are maintained. Furthermore the service domain may provide ad-hoc/customized analysis services
+|Production History|Internally maintained customer history, product and service activity records referenced by the service center for management and analysis||||||||IE|||||IE|IE||E|I||||||I||||||||||||||||||||||||||||||||||||||||||||||||||||||||||Triggering
+Example of Use|Example of use:
+External market research is used to develop competitor analysis for bank products as input to a prospect campaign development|||CR General Market Research Analysis Instance Record|General Market Research Analysis Instance Record|||||An analysis that applies a form of algorithm to a market research viewpoint|IO||||||||O|IO||||||||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||#|Listed Semantic API Descriptions
+Executive Summary|This service domain analyzes internal and external market information sources as necessary to develop specific market insights. It may maintain a collection of predefined market analyses and may also offer specific ad-hoc analysis on request|||||General Market Research Analysis Type||||The type of research view provided by the research (e.g. competitor analysis)|IO||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||1|EvCR Initialize a market research analysis
+Key Features|Determine the range of standard market analyses reports to support
+Support ad-hoc market analysis request
+Consolidate market research and internal information sources
+Develop market analysis reports
+Provide access to market analysis reports
+|||||General Market Research Analysis Specification ||||The definition of the analysis|O||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||2|ExCR Obtain an automated refresh of market research analysis
+Functional Pattern|Analyze|||||General Market Research Analysis Guidance ||||Guidance on usage and interpretation of the analysis|O||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||3|RqCR Request a manual refresh of market research analysis
+Asset Type|General Market Research|||||General Market Research Analysis Algorithm Reference||||Reference to the algorithm used to generate the analysis|IO||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||4|ReCR Retrieve details about market research analysis, including recent results
+Generic Artifact|Analysis|||||General Market Research Analysis Request Record||||Request record of the general market analysis|IO|||||IO|IO||O|I||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Control Record|General Market Research Analysis||||||General Market Research Analysis Request|||The specific details of the request|I|||||I|I||O|I||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Behavior Qualifier Type|Algorithms||||||Employee/Business Unit Reference|||The employee/business unit requesting the analysis|I|||||I|I||O|I||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||Market Analysis Request Work Products|||Work documentation, forms and schedules produced and referenced during the analysis|O|||||O|O||O|IO||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Service Domain Handling||Behavior Qualifiers (#BQ)|Description||||General Market Research Analysis Request Result|||The output from performing the analysis|O|||||O|O||O|O||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+VC Business Area|Business Development|Analysis Algorithm|A market analysis algorithm used to generate a market analysis|||General Market Research Analysis Usage Record||||Usage record of the general market analysis|IO|||||I|I||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+VC Business Domain|Marketing & Development||||||General Market Research Analysis Usage |||A record of the usage of the analysis|IO|||||I|I||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+M Business Area|Risk and Compliance||||||General Market Research Analysis Impact |||A record of reported impact/accuracy of the analysis|IO|||||I|I||O|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+M Business Domain|Business Analysis|||BQ Analysis Algorithm Instance Record||Analysis Algorithm Instance Record||||The record of the general market analysis algorithm used to develop insights||||||||||IO||||||IO||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Service Domain #|129||||||Analysis Algorithm Type |||Defines the type of algorithm (e.g. regression)||||||||||I||||||I||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+API Type|Utility||||||Analysis Algorithm Specification |||The definition of the algorithm, in particular required inputs, the internal data, calculations and outputs||||||||||O||||||O||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Comment|||||||Analysis Algorithm Guidance |||Guidance on usage of the algorithm||||||||||O||||||O||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Wave 1|||||||Analysis Algorithm Referenced Market Research Record|||The externally sourced general market research and bank maintained research viewpoints used in the analysis||||||||||IO||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Wave 2|Y|||||||Market Research Report Type Reference||Reference to a specific type of predefined market research report or database||||||||||IO||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Wave 3||||||||Market Research Report Type Definition ||Describes the available market research report content (e.g. customer social network usage analysis)||||||||||IO||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Wave 4|Y|||||||Market Research Report Version/Period ||Defines the version and period covered by the research||||||||||IO||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Market Research Report ||Is the content of the report or database in any suitable form||||||||||I||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||General Market Research Directory Entry Instance Reference||Reference to an internally maintained market research viewpoint||||||||||IO||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||General Market Research Directory Entry Instance Record||The market research viewpoint definition and content||||||||||I||||||||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||Analysis Algorithm Request Record|||Request record of the analysis algorithm execution||||||||||IO||||||IO||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Analysis Algorithm Request||The specific details of the request||||||||||I||||||I||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Analysis Algorithm Work Products||Work documentation, forms and schedules produced and referenced during the analysis||||||||||O||||||O||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Analysis Algorithm Request Result||The output from executing the algorithm||||||||||O||||||O||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+|||||||Analysis Algorithm Usage Record|||The record of the use of general market research analysis algorithm||||||||||IO||||||I||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Analysis Algorithm Usage ||A record of the usage of the algorithm||||||||||IO||||||I||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||Analysis Algorithm Impact ||A record of reported impact/accuracy of the algorithm||||||||||IO||||||I||O||||||||||||||||||||||||||||||||||||||||||||||||||||||||

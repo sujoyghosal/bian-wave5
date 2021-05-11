@@ -1,0 +1,91 @@
+CR Special Pricing Conditions Directory Entry Instance Record|Special Pricing Conditions Directory Entry||||||CR Special Pricing Conditions Directory Entry Initiate|CR Special Pricing Conditions Directory Entry Update|CR Special Pricing Conditions Directory Entry Control|CR Special Pricing Conditions Directory Entry Exchange|CR Special Pricing Conditions Directory Entry Execute|CR Special Pricing Conditions Directory Entry Request|CR Special Pricing Conditions Directory Entry Retrieve|BQ Pricing Terms Initiate|BQ Pricing Terms Update|BQ Pricing Terms Retrieve|
+Mandatory||Special Pricing Conditions Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Special Pricing Conditions Directory Entry Instance Reference||||Reference to the Special Pricing Conditions Directory Entry instance|O|I|I|I|I|I
+Initiate||Special Pricing Conditions Directory Entry Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Special Pricing Conditions Directory Entry Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Special Pricing Conditions Directory Entry Instance Status||||The status of the Special Pricing Conditions Directory Entry instance (e.g. initialised, pending, active)|IO
+||Special Pricing Conditions Directory Entry Instance Record||||Capture and maintain reference information about some type of entitity within Special Pricing Conditions.||||||||||
+||Special Pricing Conditions Directory Entry Description||||Documentation of Special Pricing Conditions Directory Entry|I|I|I|I|I|I|O|||
+||Special Pricing Conditions Directory Entry Schedule||||The timetable of Special Pricing Conditions Directory Entry|IO|IO|IO|IO|IO|IO|O|||
+||Special Pricing Conditions Directory Entry Version||||The version of Special Pricing Conditions Directory Entry|IO|IO|IO|IO|IO|IO|O|||
+||Special Pricing Conditions Directory Entry Status||||The status of Special Pricing Conditions Directory Entry|IO|IO|IO|IO|IO|IO|O|||
+||Special Pricing Conditions Directory Entry Usage Log||||Reference to the log of (usage) ativities/events of Special Pricing Conditions Directory Entry|IO|IO|IO|IO|IO|IO|O|||
+||Special Pricing Conditions Directory Entry Update Log||||Reference to the log of (update) ativities/events of Special Pricing Conditions Directory Entry|IO|IO|IO|IO|IO|IO|O|||
+||Special Pricing Conditions Directory Entry Service Configuration||||The configuration of Special Pricing Conditions Directory Entry|IO|IO|IO|IO|IO|IO|O|||
+Update||Special Pricing Conditions Directory Entry Update Action Task Reference||||Reference to an update service call||O
+Update||Special Pricing Conditions Directory Entry Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Special Pricing Conditions Directory Entry Control Action Task Reference||||Reference to a Special Pricing Conditions Directory Entry instance control processing service call|||O
+CONTROL||Special Pricing Conditions Directory Entry Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Special Pricing Conditions Directory Entry Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Special Pricing Conditions Directory Entry Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Special Pricing Conditions Directory Entry Exchange Action Task Reference||||Reference to a Special Pricing Conditions Directory Entry instance exchange service call||||O
+EXCHANGE||Special Pricing Conditions Directory Entry Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Special Pricing Conditions Directory Entry Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Special Pricing Conditions Directory Entry Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Special Pricing Conditions Directory Entry Execute Action Task Reference||||Reference to a Special Pricing Conditions Directory Entry instance execute service call|||||O
+EXECUTE||Special Pricing Conditions Directory Entry Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Special Pricing Conditions Directory Entry Request Action Task Reference||||Reference to a Special Pricing Conditions Directory Entry instance request service call||||||O
+REQUEST||Special Pricing Conditions Directory Entry Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Special Pricing Conditions Directory Entry Retrieve Action Task Reference||||Reference to a Special Pricing Conditions Directory Entry instance retrieve service call|||||||O
+RETRIEVE||Special Pricing Conditions Directory Entry Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Special Pricing Conditions Directory Entry Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Special Pricing Conditions Directory Entry Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Special Pricing Conditions Directory Entry Instance Report Record|##|||A specific Special Pricing Conditions Directory Entry instance formatted report|||||||IO
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Special Pricing Conditions Directory Entry Instance Analysis|##|||A specific Special Pricing Conditions Directory Entry instance analytical report|||||||IO
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Special Pricing Conditions Directory Entry Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Pricing Terms Instance Record|Pricing Terms||||||
+Mandatory||Special Pricing Conditions Directory Entry Instance Reference||||Reference to the parent Special Pricing Conditions Directory Entry instance||||||||I|I
+Mandatory||Pricing Terms Instance Reference||||Reference to the Pricing Terms instance||||||||O|I
+Initiate||Pricing Terms Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Pricing Terms Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Pricing Terms Instance Status||||The status of the Pricing Terms instance (e.g. initialised, pending, active)||||||||O
+||Pricing Terms Instance Record||||Capture and maintain reference information about some type of entitity within Special Pricing Conditions.||||||||||
+||Pricing Terms Preconditions||||The required status/situation before the property is valid/meaningful||||||||IO|IO|O
+||Pricing Terms Property Schedule||||The schedule and timing for which the property value is valid||||||||IO|IO|O
+||Pricing Terms Version Number||||The version reference for the property value||||||||IO|IO|O
+||Special Pricing terms||||The Special Pricing Conditions Directory Entry specific Business Service||||||||IO|IO|O
+||Special Pricing terms Service Type||||Reference to the specific business service type||||||||IO|IO|O
+||Special Pricing terms Service Description||||Description of the performed business service||||||||IO|IO|O
+||Special Pricing terms Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|O
+||Special Pricing terms Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|O
+Update||Pricing Terms Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Pricing Terms Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Pricing Terms Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Retrieve||Pricing Terms Retrieve Action Task Reference||||Reference to a Pricing Terms instance retrieve service call||||||||||O
+Retrieve||Pricing Terms Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Pricing Terms Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Pricing Terms Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Pricing Terms Instance Report|##|||A specific Pricing Terms instance formatted report||||||||||IO
+Retrieve|||Pricing Terms Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Pricing Terms Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Pricing Terms Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Pricing Terms Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Pricing Terms Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Pricing Terms Instance Analysis|##|||A specific Pricing Terms instance analytical report||||||||||IO
+Retrieve|||Pricing Terms Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Pricing Terms Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Pricing Terms Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Pricing Terms Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Pricing Terms Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O

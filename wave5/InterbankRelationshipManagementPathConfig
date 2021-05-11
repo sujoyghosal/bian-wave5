@@ -1,0 +1,18 @@
+sd=Interbank Relationship Management	Manage the bank's relationship with other banks, covering any specific agreements that may be in place and overseeing operational issues.	The interbank relationship management function is used to coordinate contacts for a joint venture marketing opportunity between the banks	This function handles managed interbank relationships. The are a range of relationship considerations that may apply between banks covering trading arrangements, joint ventures, clearing and settlement arrangements etc. The Interbank Relationship Management function acts as a relationship planning and coordination point to facilitate interbank interactions
+sdpath=interbank-relationship-management
+crpath=bank-relationship-management-plan
+crr=Bank Relationship Management Plan Instance
+mcr=Bank Relationship Management Plan
+bqs=Contact
+CONFIG
+BankRelationshipManagementPlan	create	Create an initial bank relationship management plan		createBankRelationshipManagementPlan		#desc
+BankRelationshipManagementPlan	update	Update details of an active bank relationship plan		updateBankRelationshipManagementPlan		#desc
+BankRelationshipManagementPlan	control	Control the processing of a bank relationship plan (e.g. suspend)		controlBankRelationshipManagementPlan		#desc
+BankRelationshipManagementPlan	exchange	Accept, verify, reject aspects of the bank relationship plan		exchangeBankRelationshipManagementPlan		#desc
+BankRelationshipManagementPlan	request	Request intervention with a bank relationship plan (e.g. arrange a meeting)		requestBankRelationshipManagementPlan		#desc
+BankRelationshipManagementPlan	grant	Grant authorization for actions that impact the bank plan (e.g. approve a product specialist meeting to discuss joint venture opportunity)		grantBankRelationshipManagementPlan		#desc
+BankRelationshipManagementPlan	retrieve	Retrieve details about a bank relationship plan and associated activity		retrieveBankRelationshipManagementPlan		#desc
+Contact	create	Create a bank contact	createBankRelationshipManagementPlanContact	createBankRelationshipManagementPlanContact		Details of a new Contact instance
+Contact	update	Update details about the bank contact schedule or a contact record	updateBankRelationshipManagementPlanContact	updateBankRelationshipManagementPlanContact		Update to any amendable fields of the Contact instance
+Contact	request	Request manual intervention with the bank relationship (e.g. set-up a meeting)	requestBankRelationshipManagementPlanContact	requestBankRelationshipManagementPlanContact		Invoke a service request action against the Contact instance
+Contact	retrieve	Retrieve details about the contact schedule or specific contacts	retrieveBankRelationshipManagementPlanContact	retrieveBankRelationshipManagementPlanContact		Invoke a reporting action to obtain a Contact instance related report

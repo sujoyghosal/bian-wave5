@@ -1,0 +1,28 @@
+sd=Product Combination	Product Combination supports bundled products applying necessary constraints on embedded product fulfillment and ensuring product performance analysis takes correct account of embedded products' contribution	A current account product instance is bundled with an investment portfolio product instance to create a combined margin trading product. The performance evaluation of the embedded current account that has constrained capabilities is amended to reflect its contribution to the combined product performance	The Product Combination service domain allows a bank to assemble a composite product from two or more existing products. The combination framework implements necessary functional constraints on the 'contained products' and handles considerations such as transfer pricing where the profitability of embedded products may be compromised to ensure management analysis is not distorted
+sdpath=product-combination
+crpath=product-combination-arrangement
+crr=Product Combination Arrangement Instance
+mcr=Product Combination Arrangement
+bqs=Fulfillment TransferPricing EmbeddedProductControl
+CONFIG
+ProductCombinationArrangement	initiate	Instantiate a new Product Combination Arrangement		initiateProductCombinationArrangement		#desc
+ProductCombinationArrangement	update	Update details relating to Product Combination Arrangement		updateProductCombinationArrangement		#desc
+ProductCombinationArrangement	control	Control the processing of Product Combination Arrangement		controlProductCombinationArrangement		#desc
+ProductCombinationArrangement	exchange	Accept, verify, etc. aspects of Product Combination Arrangement processing		exchangeProductCombinationArrangement		#desc
+ProductCombinationArrangement	execute	Execute an available automated action for Product Combination Arrangement		executeProductCombinationArrangement		#desc
+ProductCombinationArrangement	request	Request manual intervention or a decision with respect to Product Combination Arrangement		requestProductCombinationArrangement		#desc
+ProductCombinationArrangement	retrieve	Retrieve details about any aspect of Product Combination Arrangement		retrieveProductCombinationArrangement		#desc
+TransferPricing	update	Update details relating to Transfer Pricing	updateProductCombinationArrangementTransferPricing	updateProductCombinationArrangementTransferPricing		Update to any amendable fields of the Transfer Pricing instance
+TransferPricing	exchange	Accept, verify, etc. aspects of Transfer Pricing processing	exchangeProductCombinationArrangementTransferPricing	exchangeProductCombinationArrangementTransferPricing		Handle an external exchange (e.g. accept, reject, verify)
+TransferPricing	request	Request manual intervention or a decision with respect to Transfer Pricing	requestProductCombinationArrangementTransferPricing	requestProductCombinationArrangementTransferPricing		Invoke a service request action against the Transfer Pricing instance
+TransferPricing	retrieve	Retrieve details about any aspect of Transfer Pricing	retrieveProductCombinationArrangementTransferPricing	retrieveProductCombinationArrangementTransferPricing		Invoke a reporting action to obtain a Transfer Pricing instance related report
+Fulfillment	initiate	Instantiate a new Fulfillment	initiateProductCombinationArrangementFulfillment	initiateProductCombinationArrangementFulfillment		Details of a new Fulfillment instance
+Fulfillment	update	Update details relating to Fulfillment	updateProductCombinationArrangementFulfillment	updateProductCombinationArrangementFulfillment		Update to any amendable fields of the Fulfillment instance
+Fulfillment	control	Control the processing of Fulfillment	controlProductCombinationArrangementFulfillment	controlProductCombinationArrangementFulfillment		Request specific processing (e.g. suspend, skip, terminate)
+Fulfillment	exchange	Accept, verify, etc. aspects of Fulfillment processing	exchangeProductCombinationArrangementFulfillment	exchangeProductCombinationArrangementFulfillment		Handle an external exchange (e.g. accept, reject, verify)
+Fulfillment	execute	Execute an available automated action for Fulfillment	executeProductCombinationArrangementFulfillment	executeProductCombinationArrangementFulfillment		Invoke an automated execute action against the Fulfillment instance
+Fulfillment	request	Request manual intervention or a decision with respect to Fulfillment	requestProductCombinationArrangementFulfillment	requestProductCombinationArrangementFulfillment		Invoke a service request action against the Fulfillment instance
+Fulfillment	retrieve	Retrieve details about any aspect of Fulfillment	retrieveProductCombinationArrangementFulfillment	retrieveProductCombinationArrangementFulfillment		Invoke a reporting action to obtain a Fulfillment instance related report
+EmbeddedProductControl	initiate	Instantiate a new Embedded Product Control	initiateProductCombinationArrangementEmbeddedProductControl	initiateProductCombinationArrangementEmbeddedProductControl		Details of a new Embedded Product Control instance
+EmbeddedProductControl	update	Update details relating to Embedded Product Control	updateProductCombinationArrangementEmbeddedProductControl	updateProductCombinationArrangementEmbeddedProductControl		Update to any amendable fields of the Embedded Product Control instance
+EmbeddedProductControl	retrieve		retrieveProductCombinationArrangementEmbeddedProductControl	retrieveProductCombinationArrangementEmbeddedProductControl		Invoke a reporting action to obtain a Embedded Product Control instance related report

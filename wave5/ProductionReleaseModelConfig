@@ -1,0 +1,176 @@
+CR IT System Assessment Instance Record|IT System Assessment||||||CR IT System Assessment Initiate|CR IT System Assessment Update|CR IT System Assessment Exchange|CR IT System Assessment Request|CR IT System Assessment Grant|CR IT System Assessment Retrieve|BQ Functional Risk Exchange|BQ Functional Risk Retrieve|BQ Production Risk Exchange|BQ Production Risk Retrieve|BQ Business Risk Exchange|BQ Business Risk Retrieve|BQ Operational Risk Exchange|BQ Operational Risk Retrieve|
+Mandatory||Production Release Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||IT System Assessment Instance Reference||||Reference to the IT System Assessment instance|O|I|I|I|I
+Initiate||IT System Assessment Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||IT System Assessment Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||IT System Assessment Instance Status||||The status of the IT System Assessment instance (e.g. initialised, pending, active)|IO
+||IT System Assessment Instance Record|##||||IO|IO||IO|O||O||O||O||O
+|||Production Release Name|||The reference to and descriptive name of the production release system|IO|IO||IO|O||O||O||O||O
+|||Employee/Business Unit Reference |||Reference to the business units responsible for the testing and deployment|I|IO||I|O||O||O||O||O
+|||Production Release Type|||The type of production release (e.g. production service update, new production system)|IO|IO||IO|O||O||O||O||O
+|||Production Release Description|||A description of the scope, goal and make-up of the production release|IO|IO||IO|O||O||O||O||O
+|||Production Release Test Profile|||Details the types of production release tests to be and actually applied|IO|IO||IO|O||O||O||O||O
+|||Production Release Test Schedule|||The schedule for performing the range of release tests (planned and actual)|IO|IO||IO|O||O||O||O||O
+|||Production Release Consolidation Record |||The consolidated release evaluation combining the results of all underlying tests|O|IO||O|O||O||O||O||O
+|||Document Directory Entry Instance Reference|||Reference to associated documents|O|IO||O|O||O||O||O||O
+|||Date Type|##||Key dates associated with the assessment (e.g. notification date, commencement date, completion date)|IO|IO||IO|O||O||O||O||O
+||||Date||Value of the specific date type|IO|IO||IO|O||O||O||O||O
+Update||IT System Assessment Update Action Task Reference||||Reference to an update service call||O
+Update||IT System Assessment Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+EXCHANGE||IT System Assessment Exchange Action Task Reference||||Reference to a IT System Assessment instance exchange service call|||O
+EXCHANGE||IT System Assessment Exchange Action Task Record||||The exchange service call consolidated processing record|||I/O
+EXCHANGE||IT System Assessment Exchange Action Request|##|||Details of the exchange action service request|||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||I
+EXCHANGE||IT System Assessment Exchange Action Response||||Details of the exchange action service response|||O
+REQUEST||IT System Assessment Request Action Task Reference||||Reference to a IT System Assessment instance request service call||||O
+REQUEST||IT System Assessment Request Action Task Record||||The request service call consolidated processing record||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||I
+REQUEST||Request Response Record||||Details of the request action service response||||O
+GRANT||IT System Assessment Grant Action Task Reference||||Reference to a IT System Assessment instance grant service call|||||O
+GRANT||IT System Assessment Grant Action Task Record||||The grant service call consolidated processing record|||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||O
+RETRIEVE||IT System Assessment Retrieve Action Task Reference||||Reference to a IT System Assessment instance retrieve service call||||||O
+RETRIEVE||IT System Assessment Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||IO
+RETRIEVE||IT System Assessment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||I
+RETRIEVE||IT System Assessment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||O
+RETRIEVE||IT System Assessment Instance Report Record|##|||A specific IT System Assessment instance formatted report||||||IO
+RETRIEVE|||IT System Assessment Instance Report Reference|||Reference to the control record instance report||||||I
+RETRIEVE|||IT System Assessment Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||IT System Assessment Instance Report Type|||The type of external report available||||||IO
+RETRIEVE|||IT System Assessment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||I
+RETRIEVE|||IT System Assessment Instance Report|||The external report in any suitable form including selection filters where appropriate||||||O
+RETRIEVE||IT System Assessment Instance Analysis|##|||A specific IT System Assessment instance analytical report||||||IO
+RETRIEVE|||IT System Assessment Instance Analysis Reference|||Reference to the control record instance analysis view||||||I
+RETRIEVE|||IT System Assessment Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||IT System Assessment Instance Analysis Report Type|||The type of external performance analysis report available||||||IO
+RETRIEVE|||IT System Assessment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||I
+RETRIEVE|||IT System Assessment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||O
+BQ Functional Risk Instance Record|Functional Risk||||||
+Mandatory||IT System Assessment Instance Reference||||Reference to the parent IT System Assessment instance|||||||I
+Mandatory||Functional Risk Instance Reference||||Reference to the Functional Risk instance|||||||I
+||Functional Risk Instance Record|##|||Tests to ensure the system meets functional requirements (including compliance and usability)|||||||O||||||
+|||Functional Risk System Test Type|||The type of functional test being performed (e.g. functional coverage/integrity, usability, application integration)|||||||O||||||
+|||Functional Risk System Test Description|||Detailed description of the test, including expected results|||||||O||||||
+|||Functional Risk System Test Work Product|||Reference to testing materials, results, assessments and other documents|||||||O||||||
+|||Functional Risk System Test Result|||The result of the functional risk test (including required remedial actions/fixes where appropriate)|||||||O||||||
+Exchange||Functional Risk Exchange Action Task Reference||||Reference to a Functional Risk instance exchange service call|||||||O
+Exchange||Functional Risk Exchange Action Task Record||||The exchange service call consolidated processing record|||||||I/O
+Exchange||Functional Risk Exchange Action Request|##|||Details of the exchange action service request|||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||I
+Exchange||Functional Risk Exchange Action Response||||Details of the exchange action service response|||||||O
+Exchange||Functional Risk Instance Status||||The status of the Functional Risk instance (e.g. accepted, rejected, verified)|||||||O
+Retrieve||Functional Risk Retrieve Action Task Reference||||Reference to a Functional Risk instance retrieve service call||||||||O
+Retrieve||Functional Risk Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||I/O
+Retrieve||Functional Risk Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+Retrieve||Functional Risk Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+Retrieve||Functional Risk Instance Report|##|||A specific Functional Risk instance formatted report||||||||IO
+Retrieve|||Functional Risk Instance Report Reference|||Reference to the control record instance report||||||||I
+Retrieve|||Functional Risk Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Functional Risk Instance Report Type|||The type of external report available||||||||O
+Retrieve|||Functional Risk Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||O
+Retrieve|||Functional Risk Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+Retrieve||Functional Risk Instance Analysis|##|||A specific Functional Risk instance analytical report||||||||IO
+Retrieve|||Functional Risk Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+Retrieve|||Functional Risk Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Functional Risk Instance Analysis Report Type|||The type of external performance analysis report available||||||||O
+Retrieve|||Functional Risk Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||O
+Retrieve|||Functional Risk Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Production Risk Instance Record|Production Risk||||||
+Mandatory||IT System Assessment Instance Reference||||Reference to the parent IT System Assessment instance|||||||||I
+Mandatory||Production Risk Instance Reference||||Reference to the Production Risk instance|||||||||I
+||Production Risk Instance Record|##|||Tests to ensure the system meets production risk requirements - managing exposure to procedural failures|||||||||O||||
+|||Production Risk System Test Type|||The type of production test being performed (e.g. division of responsibilities, access control, audit trail, back-up and recovery)|||||||||O||||
+|||Production Risk System Test Description|||Detailed description of the test, including expected results|||||||||O||||
+|||Production Risk System Test Work Product|||Reference to testing materials, results, assessments and other documents|||||||||O||||
+|||Production Risk System Test Result|||The result of the production risk test (including required remedial actions/fixes where appropriate)|||||||||O||||
+Exchange||Production Risk Exchange Action Task Reference||||Reference to a Production Risk instance exchange service call|||||||||O
+Exchange||Production Risk Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||I/O
+Exchange||Production Risk Exchange Action Request|##|||Details of the exchange action service request|||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||I
+Exchange||Production Risk Exchange Action Response||||Details of the exchange action service response|||||||||O
+Exchange||Production Risk Instance Status||||The status of the Production Risk instance (e.g. accepted, rejected, verified)|||||||||O
+Retrieve||Production Risk Retrieve Action Task Reference||||Reference to a Production Risk instance retrieve service call||||||||||O
+Retrieve||Production Risk Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Production Risk Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Production Risk Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Production Risk Instance Report|##|||A specific Production Risk instance formatted report||||||||||IO
+Retrieve|||Production Risk Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Production Risk Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Production Risk Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Production Risk Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Production Risk Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Production Risk Instance Analysis|##|||A specific Production Risk instance analytical report||||||||||IO
+Retrieve|||Production Risk Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Production Risk Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Production Risk Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Production Risk Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Production Risk Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Business Risk Instance Record|Business Risk||||||
+Mandatory||IT System Assessment Instance Reference||||Reference to the parent IT System Assessment instance|||||||||||I
+Mandatory||Business Risk Instance Reference||||Reference to the Business Risk instance|||||||||||I
+||Business Risk Instance Record|##|||Tests to ensure the system meets business risk requirements - managing exposure to commercial/business misuse |||||||||||O||
+|||Business Risk System Test Type|||The type of business risk test being performed (e.g. compliance, pricing, exposure)|||||||||||O||
+|||Business Risk System Test Description|||Detailed description of the test, including expected results|||||||||||O||
+|||Business Risk Test Work Product|||Reference to testing materials, results, assessments and other documents|||||||||||O||
+|||Business Risk Test Result|||The result of the business risk test (including required remedial actions/fixes where appropriate)|||||||||||O||
+Exchange||Business Risk Exchange Action Task Reference||||Reference to a Business Risk instance exchange service call|||||||||||O
+Exchange||Business Risk Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||I/O
+Exchange||Business Risk Exchange Action Request|##|||Details of the exchange action service request|||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||I
+Exchange||Business Risk Exchange Action Response||||Details of the exchange action service response|||||||||||O
+Exchange||Business Risk Instance Status||||The status of the Business Risk instance (e.g. accepted, rejected, verified)|||||||||||O
+Retrieve||Business Risk Retrieve Action Task Reference||||Reference to a Business Risk instance retrieve service call||||||||||||O
+Retrieve||Business Risk Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Business Risk Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Business Risk Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Business Risk Instance Report|##|||A specific Business Risk instance formatted report||||||||||||IO
+Retrieve|||Business Risk Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Business Risk Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Business Risk Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Business Risk Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Business Risk Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Business Risk Instance Analysis|##|||A specific Business Risk instance analytical report||||||||||||IO
+Retrieve|||Business Risk Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Business Risk Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Business Risk Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Business Risk Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Business Risk Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ Operational Risk Instance Record|Operational Risk||||||
+Mandatory||IT System Assessment Instance Reference||||Reference to the parent IT System Assessment instance|||||||||||||I
+Mandatory||Operational Risk Instance Reference||||Reference to the Operational Risk instance|||||||||||||I
+||Operational Risk Instance Record|##|||Tests to ensure the system meets operational risk requirements - managing exposure to operational and platform/systems failures|||||||||||||O
+|||Operational Risk System Test Type|||The type of operational risk test being performed (e.g. operator error recovery, major IT component failure recovery/continuity)|||||||||||||O
+|||Operational Risk System Test Description|||Detailed description of the test, including expected results|||||||||||||O
+|||Operational Risk System Test Work Product|||Reference to testing materials, results, assessments and other documents|||||||||||||O
+|||Operational Risk System Test Result|||The result of the operational risk test (including required remedial actions/fixes where appropriate)|||||||||||||O
+Exchange||Operational Risk Exchange Action Task Reference||||Reference to a Operational Risk instance exchange service call|||||||||||||O
+Exchange||Operational Risk Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||I/O
+Exchange||Operational Risk Exchange Action Request|##|||Details of the exchange action service request|||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||I
+Exchange||Operational Risk Exchange Action Response||||Details of the exchange action service response|||||||||||||O
+Exchange||Operational Risk Instance Status||||The status of the Operational Risk instance (e.g. accepted, rejected, verified)|||||||||||||O
+Retrieve||Operational Risk Retrieve Action Task Reference||||Reference to a Operational Risk instance retrieve service call||||||||||||||O
+Retrieve||Operational Risk Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Operational Risk Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Operational Risk Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Operational Risk Instance Report|##|||A specific Operational Risk instance formatted report||||||||||||||IO
+Retrieve|||Operational Risk Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Operational Risk Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Operational Risk Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Operational Risk Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Operational Risk Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Operational Risk Instance Analysis|##|||A specific Operational Risk instance analytical report||||||||||||||IO
+Retrieve|||Operational Risk Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Operational Risk Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Operational Risk Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Operational Risk Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Operational Risk Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O

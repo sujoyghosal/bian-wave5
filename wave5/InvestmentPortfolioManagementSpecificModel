@@ -1,0 +1,21 @@
+CR Managed Investment Portfolio Fulfillment Arrangement Instance Record	CR Managed Investment Portfolio Fulfillment Arrangement Instance Record	Managed Investment Portfolio Fulfillment Arrangement Instance Record	##			Handles the day to day oversight of the investment portfolio, monitoring market threats and opportunities and initiating trading to remain within policy and optimize performance	IO	IO			IO	IO	O	O	O	IO	IO	IO	IO	O
+			Investment Portfolio Trading Policies	##		Interpretation of the investment portfolio policies as they impact securities selection and investment decisioning	IO	IO			IO	IO	O	O	O	IO	IO	IO	IO	O
+				Investment Portfolio Policy Type		The type of policy applied to the portfolio (e.g. risk appetite, allowed sectors/instrument types, timeframes)	I	IO			IO	IO	O	O	O	I	IO	IO	IO	O
+				Investment Portfolio Policy Description		A narrative explaining the interpretation of the portfolio policies as they govern trading decisions	I	IO			IO	IO	O	O	O	I	IO	IO	IO	O
+				Investment Portfolio Policy Limits and Constraints		Specific trading constraints (e.g. stocks or sectors that are out of bounds and acceptable risk levels)	IO	IO			IO	IO	O	O	O	IO	IO	IO	IO	O
+			Investment Portfolio Instance Reference			Reference to the investment portfolio record of all holdings 	I	IO			I	I	O	O	O	I	IO	IO	IO	O
+			Investment Portfolio Instance Record			The record of the investment portfolio with the history and projected view of holdings (which may also include a history of valuation)	I	IO			I	I	O	O	O	I	IO	IO	IO	O
+			Investment Portfolio Holdings	##		Maintains the current security holdings	IO	IO			IO	IO	O	O	O	IO	IO	IO	IO	O
+				Investment Portfolio Security Type 		The type of security held in the portfolio	IO	IO			IO	IO	O	O	O	IO	IO	IO	IO	O
+				Investment Portfolio Security Holding		Record of past and projected and current holding for the security	IO	IO			IO	IO	O	O	O	IO	IO	IO	IO	O
+BQ Track Instance Record	BQ Track Instance Record	Track Instance Record	##			Captures the on-going tracking/monitoring of the investment portfolio by evaluation of its sensitivity to market prices and trends								O						
+			Investment Portfolio Security Sensitivity	##		The sensitivity viewpoint for a held security position								O						
+				Projected Valuation		The expected value movement								O						
+				Projected Portfolio Impact		An impact assessment of the projected movement on the investment portfolio - includes possible policy limit breaches								O						
+BQ Market Opportunities Instance Record	BQ Market Opportunities Instance Record	Market Opportunities Instance Record	##			Captures the on-going tracking/monitoring of the market as it relates to the investment portfolio by evaluation of identified opportunities for eligible securities not held in the portfolio									O					
+			Market Opportunity Description			Description of the detected market opportunity (e.g. projected movement of an eligible security that is not currently held)									O					
+			Securities Comparison 			Evaluation of the comparative performance of identified security and that in the investment portfolio that would be replaced/adjusted									O					
+BQ Trade Initiation Instance Record	BQ Trade Initiation Instance Record	Trade Initiation Instance Record	##			Handles the initiation of market trading to adjust the investment portfolio holding - this includes tracking and confirming the trade has been executed and updating the portfolio record accordingly to reflect trade terms										IO	IO	IO	IO	O
+			Investment Portfolio Trade Request	##		The trading request record used to initiate and track the trade										IO	IO	IO	IO	O
+				Investment Portfolio Trade Security Type		The type of security being traded										I	IO	IO	IO	O
+				Investment Portfolio Trade Security Trade Description		A description of the trade, including all key trading details (e.g. amount/volume, pricing/terms, clearing and settlement dates)										IO	IO	IO	IO	O

@@ -1,0 +1,381 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Suitability Checking'
+ description: >
+
+    ## Executive Summary:
+
+    Confirm that all involved counterparties are suitable for a proposed market trade.
+
+    ## Example of Use:
+
+    An investment manager confirms that a proposed investment meets suitability requirements for the customer
+
+    ## Description:
+
+    Confirm that all involved counterparties are suitable for a proposed market trade. The checks address regulatory requirements to ensure involved parties are suitably qualified/knowledgeable to participate in the type of trading activity (e.g. in the US suitability is defined by FINRA Rule 2111)
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-suitability-checking/1.0.0
+schemes:
+ - https
+paths:
+  /suitability-checking/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDSuitabilityChecking
+      summary: Activate  a SDSuitabilityChecking servicing session
+      description: Activate  a  SDSuitabilityChecking servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDSuitabilityChecking Request Payload
+        schema:
+          $ref: '#/definitions/SDSuitabilityCheckingActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDSuitabilityCheckingActivateOutputModel'
+  /suitability-checking/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDSuitabilityChecking
+      summary: Update an active SDSuitabilityChecking session configuration
+      description: Update an active SDSuitabilityChecking session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDSuitabilityChecking Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDSuitabilityChecking Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDSuitabilityCheckingConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDSuitabilityCheckingConfigureOutputModel'
+  /suitability-checking/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDSuitabilityChecking
+      summary: "Capturing feedback against the SDSuitabilityChecking service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDSuitabilityChecking service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDSuitabilityChecking Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDSuitabilityChecking Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDSuitabilityCheckingFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDSuitabilityCheckingFeedbackOutputModel'
+  /suitability-checking/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDSuitabilityChecking
+      summary: Analytical views maintained by the SDSuitabilityChecking service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDSuitabilityChecking service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDSuitabilityChecking Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDSuitabilityCheckingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDSuitabilityCheckingRetrieveOutputModel'
+  /suitability-checking/{sd-reference-id}/suitability-assessment/evaluation:
+    post:
+      tags:
+      - evaluate
+      operationId: evaluateSuitabilityAssessment
+      summary: Details of a new SuitabilityAssessment instance
+      description: Evaluate the suitability of a proposed transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Suitability Checking Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SuitabilityAssessment Request Payload
+        schema:
+          $ref: '#/definitions/CRSuitabilityAssessmentEvaluateInputModel'
+      responses:
+        201:
+          description: Successful evaluation of new SuitabilityAssessment instance
+          schema:
+            $ref: '#/definitions/CRSuitabilityAssessmentEvaluateOutputModel'
+  /suitability-checking/{sd-reference-id}/suitability-assessment/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateSuitabilityAssessment
+      summary: Update to any amendable fields of the SuitabilityAssessment instance
+      description: Update details of a suitability evaluation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Suitability Checking Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Suitability Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Suitability Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRSuitabilityAssessmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Suitability Assessment Instance
+          schema:
+            $ref: '#/definitions/CRSuitabilityAssessmentUpdateOutputModel'
+  /suitability-checking/{sd-reference-id}/suitability-assessment/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeSuitabilityAssessmentUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, etc. aspects of a suitability evaluation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Suitability Checking Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Suitability Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Suitability Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRSuitabilityAssessmentExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Suitability Assessment Instance
+          schema:
+            $ref: '#/definitions/CRSuitabilityAssessmentExchangeOutputModel'
+  /suitability-checking/{sd-reference-id}/suitability-assessment/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestSuitabilityAssessmentUpdate
+      summary: Invoke a service request action against the SuitabilityAssessment instance
+      description: Request manual intervention into an active evaluation (e.g. consider additional input)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Suitability Checking Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Suitability Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Suitability Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRSuitabilityAssessmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Suitability Assessment Instance
+          schema:
+            $ref: '#/definitions/CRSuitabilityAssessmentRequestOutputModel'
+  /suitability-checking/{sd-reference-id}/suitability-assessment/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantSuitabilityAssessmentUpdate
+      summary: Invoke a grant request action from the SuitabilityAssessment instance to obtain access permission
+      description: Obtain a permission grant associated with the evaluation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Suitability Checking Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Suitability Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Suitability Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRSuitabilityAssessmentGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Suitability Assessment Instance
+          schema:
+            $ref: '#/definitions/CRSuitabilityAssessmentGrantOutputModel'
+  /suitability-checking/{sd-reference-id}/suitability-assessment/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSuitabilityChecking
+      summary: Invoke a reporting action to obtain a Suitability Assessment instance related report
+      description: Retrieve details about a suitability evaluation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Suitability Checking Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Suitability Assessment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRSuitabilityAssessmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Suitability Assessment Instance
+          schema:
+            $ref: '#/definitions/CRSuitabilityAssessmentRetrieveOutputModel'
+  /suitability-checking/{sd-reference-id}/suitability-assessment:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveSuitabilityCheckingReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Suitability Checking Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- SuitabilityChecking Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /suitability-checking/suitability-assessment/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveSuitabilityCheckingBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: []
+  /suitability-checking/{sd-reference-id}/suitability-assessment/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveSuitabilityCheckingBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Suitability Checking Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Suitability Assessment Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- 
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex-  Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ID1, ID2]

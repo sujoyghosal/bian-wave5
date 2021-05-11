@@ -1,0 +1,865 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Direct Debit'
+ description: >
+
+    ## Executive Summary:
+
+    Fulfils a direct debit agreement. Handles the creditor side of direct debits.
+
+    ## Example of Use:
+
+    A corporate customer submits a batch of direct debit instructions for customers with accounts held at the bank
+
+    ## Description:
+
+    This service domain processes the creditor side of direct debit processing. Typically a creditor will submit a batch of direct debit requests. The process checks the required service mandates are in place and initiates the payment processing. It tracks payment and reports on completion or other processing issues that might arise (such as insufficient funds available).
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-direct-debit/1.0.0
+schemes:
+ - https
+paths:
+  /direct-debit/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDDirectDebit
+      summary: Activate  a SDDirectDebit servicing session
+      description: Activate  a  SDDirectDebit servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDDirectDebit Request Payload
+        schema:
+          $ref: '#/definitions/SDDirectDebitActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDDirectDebitActivateOutputModel'
+  /direct-debit/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDDirectDebit
+      summary: Update an active SDDirectDebit session configuration
+      description: Update an active SDDirectDebit session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDDirectDebit Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDDirectDebit Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDDirectDebitConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDDirectDebitConfigureOutputModel'
+  /direct-debit/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDDirectDebit
+      summary: "Capturing feedback against the SDDirectDebit service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDDirectDebit service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDDirectDebit Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDDirectDebit Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDDirectDebitFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDDirectDebitFeedbackOutputModel'
+  /direct-debit/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDDirectDebit
+      summary: Analytical views maintained by the SDDirectDebit service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDDirectDebit service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDDirectDebit Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDDirectDebitRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDDirectDebitRetrieveOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateDirectDebitArrangement
+      summary: Details of a new DirectDebitArrangement instance
+      description: Instantiate a new Direct Debit Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DirectDebitArrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRDirectDebitArrangementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new DirectDebitArrangement instance
+          schema:
+            $ref: '#/definitions/CRDirectDebitArrangementInitiateOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateDirectDebitArrangement
+      summary: Update to any amendable fields of the DirectDebitArrangement instance
+      description: Update details relating to Direct Debit Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Direct Debit Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRDirectDebitArrangementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Direct Debit Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRDirectDebitArrangementUpdateOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlDirectDebitArrangementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Direct Debit Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Direct Debit Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRDirectDebitArrangementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Direct Debit Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRDirectDebitArrangementControlOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeDirectDebitArrangementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Direct Debit Arrangement processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Direct Debit Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRDirectDebitArrangementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Direct Debit Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRDirectDebitArrangementExchangeOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeDirectDebitArrangementUpdate
+      summary: Invoke an automated execute action against the DirectDebitArrangement instance
+      description: Execute an available automated action for Direct Debit Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Direct Debit Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRDirectDebitArrangementExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Direct Debit Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRDirectDebitArrangementExecuteOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestDirectDebitArrangementUpdate
+      summary: Invoke a service request action against the DirectDebitArrangement instance
+      description: Request manual intervention or a decision with respect to Direct Debit Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Direct Debit Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRDirectDebitArrangementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Direct Debit Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRDirectDebitArrangementRequestOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebit
+      summary: Invoke a reporting action to obtain a Direct Debit Arrangement instance related report
+      description: Retrieve details about any aspect of Direct Debit Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRDirectDebitArrangementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Direct Debit Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRDirectDebitArrangementRetrieveOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/reporting/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateDirectDebitArrangementReporting
+      summary: Details of a new Reporting instance
+      description: Instantiate a new Reporting
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Direct Debit Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQReportingInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Direct Debit Arrangement instance
+          schema:
+            $ref: '#/definitions/BQReportingInitiateOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/reporting/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebitArrangementReporting
+      summary: Invoke a reporting action to obtain a Reporting instance related report.
+      description: Retrieve details about any aspect of Reporting .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reporting Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQReportingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Reporting Instance Record
+          schema:
+            $ref: '#/definitions/BQReportingRetrieveOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/paymenttracking/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateDirectDebitArrangementPaymentTracking
+      summary: Details of a new PaymentTracking instance
+      description: Instantiate a new Payment Tracking
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Direct Debit Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQPaymentTrackingInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Direct Debit Arrangement instance
+          schema:
+            $ref: '#/definitions/BQPaymentTrackingInitiateOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/paymenttracking/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlDirectDebitArrangementPaymentTrackingUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Payment Tracking
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PaymentTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PaymentTracking request payload
+        schema:
+          $ref: '#/definitions/BQPaymentTrackingControlInputModel'
+      responses:
+        200:
+          description: Successful control of PaymentTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQPaymentTrackingControlOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/paymenttracking/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeDirectDebitArrangementPaymentTrackingUpdate
+      summary: Invoke an automated execute action against the PaymentTracking instance
+      description: Execute an available automated action for Payment Tracking
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PaymentTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PaymentTracking request payload
+        schema:
+          $ref: '#/definitions/BQPaymentTrackingExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of PaymentTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQPaymentTrackingExecuteOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/paymenttracking/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebitArrangementPaymentTracking
+      summary: Invoke a reporting action to obtain a PaymentTracking instance related report.
+      description: Retrieve details about any aspect of Payment Tracking .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PaymentTracking Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQPaymentTrackingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved PaymentTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQPaymentTrackingRetrieveOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/paymentinitiation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeDirectDebitArrangementPaymentInitiationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Payment Initiation processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PaymentInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PaymentInitiation request payload
+        schema:
+          $ref: '#/definitions/BQPaymentInitiationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of PaymentInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQPaymentInitiationExchangeOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/paymentinitiation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebitArrangementPaymentInitiation
+      summary: Invoke a reporting action to obtain a PaymentInitiation instance related report.
+      description: Retrieve details about any aspect of Payment Initiation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PaymentInitiation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQPaymentInitiationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved PaymentInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQPaymentInitiationRetrieveOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/verifymandate/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeDirectDebitArrangementVerifyMandateUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Verify Mandate processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: VerifyMandate Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: VerifyMandate request payload
+        schema:
+          $ref: '#/definitions/BQVerifyMandateExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of VerifyMandate Instance Record
+          schema:
+            $ref: '#/definitions/BQVerifyMandateExchangeOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/verifymandate/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebitArrangementVerifyMandate
+      summary: Invoke a reporting action to obtain a VerifyMandate instance related report.
+      description: Retrieve details about any aspect of Verify Mandate .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: VerifyMandate Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQVerifyMandateRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved VerifyMandate Instance Record
+          schema:
+            $ref: '#/definitions/BQVerifyMandateRetrieveOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/fundsavailablecheck/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeDirectDebitArrangementFundsAvailableCheckUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Funds Available Check processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FundsAvailableCheck Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FundsAvailableCheck request payload
+        schema:
+          $ref: '#/definitions/BQFundsAvailableCheckExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of FundsAvailableCheck Instance Record
+          schema:
+            $ref: '#/definitions/BQFundsAvailableCheckExchangeOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/fundsavailablecheck/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestDirectDebitArrangementFundsAvailableCheckUpdate
+      summary: Invoke a service request action against the FundsAvailableCheck instance
+      description: Request manual intervention or a decision with respect to Funds Available Check
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FundsAvailableCheck Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FundsAvailableCheck request payload
+        schema:
+          $ref: '#/definitions/BQFundsAvailableCheckRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of FundsAvailableCheck Instance Record
+          schema:
+            $ref: '#/definitions/BQFundsAvailableCheckRequestOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/fundsavailablecheck/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveDirectDebitArrangementFundsAvailableCheck
+      summary: Invoke a reporting action to obtain a FundsAvailableCheck instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FundsAvailableCheck Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFundsAvailableCheckRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved FundsAvailableCheck Instance Record
+          schema:
+            $ref: '#/definitions/BQFundsAvailableCheckRetrieveOutputModel'
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveDirectDebitReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- DirectDebit Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /direct-debit/direct-debit-arrangement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveDirectDebitBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Reporting',  'PaymentTracking',  'PaymentInitiation',  'FundsAvailableCheck',  'VerifyMandate', ]
+  /direct-debit/{sd-reference-id}/direct-debit-arrangement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveDirectDebitBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Direct Debit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Direct Debit Arrangement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- VerifyMandate
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- VerifyMandate Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [VerifyMandateID1, VerifyMandateID2]

@@ -1,0 +1,246 @@
+CR Regulatory And Legal Authority Relationship ManagementPlan Instance Record|Regulatory And Legal Authority Relationship ManagementPlan||||||CR Regulatory And Legal Authority Relationship ManagementPlan Initiate|CR Regulatory And Legal Authority Relationship ManagementPlan Update|CR Regulatory And Legal Authority Relationship ManagementPlan Control|CR Regulatory And Legal Authority Relationship ManagementPlan Exchange|CR Regulatory And Legal Authority Relationship ManagementPlan Capture|CR Regulatory And Legal Authority Relationship ManagementPlan Request|CR Regulatory And Legal Authority Relationship ManagementPlan Grant|CR Regulatory And Legal Authority Relationship ManagementPlan Retrieve|BQ Troubleshooting Initiate|BQ Troubleshooting Update|BQ Troubleshooting Capture|BQ Troubleshooting Request|BQ Troubleshooting Retrieve|BQ Maintain Relations Initiate|BQ Maintain Relations Update|BQ Maintain Relations Request|BQ Maintain Relations Retrieve|BQ Establish Relations Initiate|BQ Establish Relations Update|BQ Establish Relations Request|BQ Establish Relations Retrieve|BQ Represent Bank Interests Initiate|BQ Represent Bank Interests Update|BQ Represent Bank Interests Request|BQ Represent Bank Interests Retrieve|
+Mandatory||Regulatory And Legal Authority Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Regulatory And Legal Authority Relationship ManagementPlan Instance Reference||||Reference to the Regulatory And Legal Authority Relationship ManagementPlan instance|O|I|I|I|I|I|I
+Initiate||Regulatory And Legal Authority Relationship ManagementPlan Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Regulatory And Legal Authority Relationship ManagementPlan Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Regulatory And Legal Authority Relationship ManagementPlan Instance Status||||The status of the Regulatory And Legal Authority Relationship ManagementPlan instance (e.g. initialised, pending, active)|IO
+||Regulatory And Legal Authority Relationship ManagementPlan Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Regulatory And Legal Authority.
+Example: Manage the day to day activities at a bank branch location.|||||||||||||||||||||||||
+||Regulatory And Legal Authority Relationship ManagementPlan Type||||The type of Regulatory And Legal Authority Relationship ManagementPlan|I|I|I|I|I|I|I|O|||||||||||||||||
+||Regulatory And Legal Authority Relationship ManagementPlan Reference||||Reference to Regulatory And Legal Authority Relationship ManagementPlan|I|I|I|I|I|I|I|O|||||||||||||||||
+||Regulatory And Legal Authority Relationship ManagementPlan Budget Type||||A Classification value that distinguishes between Budgets within Regulatory And Legal Authority Relationship ManagementPlan according to the type of resource and/or activity that is budgetted|IO|IO|IO|IO|IO|IO|IO|O|||||||||||||||||
+||Regulatory And Legal Authority Relationship ManagementPlan Budget||||An estimate of costs, revenues, and resources over a specified period which is defined for Regulatory And Legal Authority Relationship ManagementPlan|||||||||||||||||||||||||
+||Regulatory And Legal Authority Relationship ManagementPlan Assignment||||The allocation of someone or something which is specified for Regulatory And Legal Authority Relationship ManagementPlan|IO|IO|IO|IO|IO|IO|IO|O|||||||||||||||||
+||Regulatory And Legal Authority Relationship ManagementPlan Plan||||Reference to Regulatory And Legal Authority Relationship ManagementPlan |IO|IO|IO|IO|IO|IO|IO|O|||||||||||||||||
+||Regulatory And Legal Authority Relationship ManagementPlan Description||||Documentation of Regulatory And Legal Authority Relationship ManagementPlan|I|I|I|I|I|I|I|O|||||||||||||||||
+Update||Regulatory And Legal Authority Relationship ManagementPlan Update Action Task Reference||||Reference to an update service call||O
+Update||Regulatory And Legal Authority Relationship ManagementPlan Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Regulatory And Legal Authority Relationship ManagementPlan Control Action Task Reference||||Reference to a Regulatory And Legal Authority Relationship ManagementPlan instance control processing service call|||O
+CONTROL||Regulatory And Legal Authority Relationship ManagementPlan Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Regulatory And Legal Authority Relationship ManagementPlan Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Regulatory And Legal Authority Relationship ManagementPlan Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Regulatory And Legal Authority Relationship ManagementPlan Exchange Action Task Reference||||Reference to a Regulatory And Legal Authority Relationship ManagementPlan instance exchange service call||||O
+EXCHANGE||Regulatory And Legal Authority Relationship ManagementPlan Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Regulatory And Legal Authority Relationship ManagementPlan Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Regulatory And Legal Authority Relationship ManagementPlan Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Regulatory And Legal Authority Relationship ManagementPlan Capture Action Task Reference||||Reference to a Regulatory And Legal Authority Relationship ManagementPlan instance capture service call|||||O
+CAPTURE||Regulatory And Legal Authority Relationship ManagementPlan Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Regulatory And Legal Authority Relationship ManagementPlan Request Action Task Reference||||Reference to a Regulatory And Legal Authority Relationship ManagementPlan instance request service call||||||O
+REQUEST||Regulatory And Legal Authority Relationship ManagementPlan Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+GRANT||Regulatory And Legal Authority Relationship ManagementPlan Grant Action Task Reference||||Reference to a Regulatory And Legal Authority Relationship ManagementPlan instance grant service call|||||||O
+GRANT||Regulatory And Legal Authority Relationship ManagementPlan Grant Action Task Record||||The grant service call consolidated processing record|||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||||O
+RETRIEVE||Regulatory And Legal Authority Relationship ManagementPlan Retrieve Action Task Reference||||Reference to a Regulatory And Legal Authority Relationship ManagementPlan instance retrieve service call||||||||O
+RETRIEVE||Regulatory And Legal Authority Relationship ManagementPlan Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||IO
+RETRIEVE||Regulatory And Legal Authority Relationship ManagementPlan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+RETRIEVE||Regulatory And Legal Authority Relationship ManagementPlan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+RETRIEVE||Regulatory And Legal Authority Relationship ManagementPlan Instance Report Record|##|||A specific Regulatory And Legal Authority Relationship ManagementPlan instance formatted report||||||||IO
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Report Reference|||Reference to the control record instance report||||||||I
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Report Type|||The type of external report available||||||||IO
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||I
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+RETRIEVE||Regulatory And Legal Authority Relationship ManagementPlan Instance Analysis|##|||A specific Regulatory And Legal Authority Relationship ManagementPlan instance analytical report||||||||IO
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Analysis Report Type|||The type of external performance analysis report available||||||||IO
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||I
+RETRIEVE|||Regulatory And Legal Authority Relationship ManagementPlan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Troubleshooting Instance Record|Troubleshooting||||||
+Mandatory||Regulatory And Legal Authority Relationship ManagementPlan Instance Reference||||Reference to the parent Regulatory And Legal Authority Relationship ManagementPlan instance|||||||||I|I|I|I
+Mandatory||Troubleshooting Instance Reference||||Reference to the Troubleshooting instance|||||||||O|I|I|I
+Initiate||Troubleshooting Initiate Action Reference||||Reference to an Initiate service call|||||||||O
+Initiate||Troubleshooting Initiate Action Record||||The Initiate service call input and output record|||||||||I/O
+Initiate||Troubleshooting Instance Status||||The status of the Troubleshooting instance (e.g. initialised, pending, active)|||||||||O
+||Troubleshooting Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Regulatory And Legal Authority.
+|||||||||||||||||||||||||
+||Troubleshooting Preconditions||||The required status/situation before the duty/obligation can be met|||||||||IO|IO|IO|IO|O||||||||||||
+||Troubleshooting Business Unit/Employee Reference||||The operating unit/employee responsible for undertaking the duty|||||||||IO|IO|IO|IO|O||||||||||||
+||Troubleshooting Work Schedule||||The timing and key actions/milestones involved in fulfilling the duty|||||||||IO|IO|IO|IO|O||||||||||||
+||Business Service||||The Regulatory And Legal Authority Relationship ManagementPlan specific Business Service|||||||||IO|IO|IO|IO|O||||||||||||
+||Troubleshooting Postconditions||||The completion status once the duty has been complied with (note the need to fulfill a duty may recur frequently)|||||||||IO|IO|IO|IO|O||||||||||||
+||Troubleshooting Service Type||||Reference to the specific business service type|||||||||IO|IO|IO|IO|O||||||||||||
+||Troubleshooting Service Description||||Description of the performed business service|||||||||IO|IO|IO|IO|O||||||||||||
+||Troubleshooting Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||IO|IO|IO|IO|O||||||||||||
+||Troubleshooting Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||IO|IO|IO|IO|O||||||||||||
+||Troubleshooting Service Name|||||||||||||IO|IO|IO|IO|O||||||||||||
+Update||Troubleshooting Update Action Task Reference||||Reference to an update service call||||||||||O
+Update||Troubleshooting Update Action Task Record||||The update service call consolidated processing record||||||||||I/O
+Update||Troubleshooting Update Action Request||||Details of the update action service request||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||O
+Capture||Troubleshooting Capture Action Task Reference||||Reference to a Troubleshooting instance capture service call|||||||||||O
+Capture||Troubleshooting Capture Action Task Record||||The capture service call consolidated processing record|||||||||||I/O
+Capture||Troubleshooting Capture Record Reference||||Reference to the Troubleshooting structured input transaction/record|||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||O
+Request||Troubleshooting Request Action Task Reference||||Reference to a Troubleshooting instance request service call||||||||||||O
+Request||Troubleshooting Request Action Task Record||||The request service call consolidated processing record||||||||||||I/O
+Request||Troubleshooting Request Record Reference||||Reference to the Troubleshooting service request record||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||O
+Retrieve||Troubleshooting Retrieve Action Task Reference||||Reference to a Troubleshooting instance retrieve service call|||||||||||||O
+Retrieve||Troubleshooting Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||Troubleshooting Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||Troubleshooting Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||Troubleshooting Instance Report|##|||A specific Troubleshooting instance formatted report|||||||||||||IO
+Retrieve|||Troubleshooting Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||Troubleshooting Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Troubleshooting Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||Troubleshooting Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||Troubleshooting Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||Troubleshooting Instance Analysis|##|||A specific Troubleshooting instance analytical report|||||||||||||IO
+Retrieve|||Troubleshooting Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||Troubleshooting Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Troubleshooting Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||Troubleshooting Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||Troubleshooting Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O
+BQ Maintain Relations Instance Record|Maintain Relations||||||
+Mandatory||Regulatory And Legal Authority Relationship ManagementPlan Instance Reference||||Reference to the parent Regulatory And Legal Authority Relationship ManagementPlan instance||||||||||||||I|I|I
+Mandatory||Maintain Relations Instance Reference||||Reference to the Maintain Relations instance||||||||||||||O|I|I
+Initiate||Maintain Relations Initiate Action Reference||||Reference to an Initiate service call||||||||||||||O
+Initiate||Maintain Relations Initiate Action Record||||The Initiate service call input and output record||||||||||||||I/O
+Initiate||Maintain Relations Instance Status||||The status of the Maintain Relations instance (e.g. initialised, pending, active)||||||||||||||O
+||Maintain Relations Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Regulatory And Legal Authority.
+|||||||||||||||||||||||||
+||Maintain Relations Preconditions||||The required status/situation before the duty/obligation can be met||||||||||||||IO|IO|IO|O||||||||
+||Maintain Relations Business Unit/Employee Reference||||The operating unit/employee responsible for undertaking the duty||||||||||||||IO|IO|IO|O||||||||
+||Maintain Relations Work Schedule||||The timing and key actions/milestones involved in fulfilling the duty||||||||||||||IO|IO|IO|O||||||||
+||Maintain Relations||||The Regulatory And Legal Authority Relationship ManagementPlan specific Business Service|||||||||||||||||||||||||
+||Maintain Relations Postconditions||||The completion status once the duty has been complied with (note the need to fulfill a duty may recur frequently)||||||||||||||IO|IO|IO|O||||||||
+||Maintain Relations Maintain Relations Service Type||||Reference to the specific business service type||||||||||||||IO|IO|IO|O||||||||
+||Maintain Relations Maintain Relations Service Description||||Description of the performed business service||||||||||||||IO|IO|IO|O||||||||
+||Maintain Relations Maintain Relations Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|IO|IO|O||||||||
+||Maintain Relations Maintain Relations Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|IO|IO|O||||||||
+||Maintain Relations Maintain Relations Service Name||||||||||||||||||IO|IO|IO|O||||||||
+Update||Maintain Relations Update Action Task Reference||||Reference to an update service call|||||||||||||||O
+Update||Maintain Relations Update Action Task Record||||The update service call consolidated processing record|||||||||||||||I/O
+Update||Maintain Relations Update Action Request||||Details of the update action service request|||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||O
+Request||Maintain Relations Request Action Task Reference||||Reference to a Maintain Relations instance request service call||||||||||||||||O
+Request||Maintain Relations Request Action Task Record||||The request service call consolidated processing record||||||||||||||||I/O
+Request||Maintain Relations Request Record Reference||||Reference to the Maintain Relations service request record||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||O
+Retrieve||Maintain Relations Retrieve Action Task Reference||||Reference to a Maintain Relations instance retrieve service call|||||||||||||||||O
+Retrieve||Maintain Relations Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||I/O
+Retrieve||Maintain Relations Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||I
+Retrieve||Maintain Relations Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||O
+Retrieve||Maintain Relations Instance Report|##|||A specific Maintain Relations instance formatted report|||||||||||||||||IO
+Retrieve|||Maintain Relations Instance Report Reference|||Reference to the control record instance report|||||||||||||||||I
+Retrieve|||Maintain Relations Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Maintain Relations Instance Report Type|||The type of external report available|||||||||||||||||O
+Retrieve|||Maintain Relations Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||O
+Retrieve|||Maintain Relations Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||O
+Retrieve||Maintain Relations Instance Analysis|##|||A specific Maintain Relations instance analytical report|||||||||||||||||IO
+Retrieve|||Maintain Relations Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||I
+Retrieve|||Maintain Relations Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Maintain Relations Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||O
+Retrieve|||Maintain Relations Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||O
+Retrieve|||Maintain Relations Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||O
+BQ Establish Relations Instance Record|Establish Relations||||||
+Mandatory||Regulatory And Legal Authority Relationship ManagementPlan Instance Reference||||Reference to the parent Regulatory And Legal Authority Relationship ManagementPlan instance||||||||||||||||||I|I|I
+Mandatory||Establish Relations Instance Reference||||Reference to the Establish Relations instance||||||||||||||||||O|I|I
+Initiate||Establish Relations Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||O
+Initiate||Establish Relations Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||I/O
+Initiate||Establish Relations Instance Status||||The status of the Establish Relations instance (e.g. initialised, pending, active)||||||||||||||||||O
+||Establish Relations Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Regulatory And Legal Authority.
+|||||||||||||||||||||||||
+||Establish Relations Preconditions||||The required status/situation before the duty/obligation can be met||||||||||||||||||IO|IO|IO|O||||
+||Establish Relations Business Unit/Employee Reference||||The operating unit/employee responsible for undertaking the duty||||||||||||||||||IO|IO|IO|O||||
+||Establish Relations Work Schedule||||The timing and key actions/milestones involved in fulfilling the duty||||||||||||||||||IO|IO|IO|O||||
+||Establish Relations||||The Regulatory And Legal Authority Relationship ManagementPlan specific Business Service|||||||||||||||||||||||||
+||Establish Relations Postconditions||||The completion status once the duty has been complied with (note the need to fulfill a duty may recur frequently)||||||||||||||||||IO|IO|IO|O||||
+||Establish Relations Establish Relations Service Type||||Reference to the specific business service type||||||||||||||||||IO|IO|IO|O||||
+||Establish Relations Establish Relations Service Description||||Description of the performed business service||||||||||||||||||IO|IO|IO|O||||
+||Establish Relations Establish Relations Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||IO|IO|IO|O||||
+||Establish Relations Establish Relations Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||IO|IO|IO|O||||
+||Establish Relations Establish Relations Service Name||||||||||||||||||||||IO|IO|IO|O||||
+Update||Establish Relations Update Action Task Reference||||Reference to an update service call|||||||||||||||||||O
+Update||Establish Relations Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||I/O
+Update||Establish Relations Update Action Request||||Details of the update action service request|||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||O
+Request||Establish Relations Request Action Task Reference||||Reference to a Establish Relations instance request service call||||||||||||||||||||O
+Request||Establish Relations Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||I/O
+Request||Establish Relations Request Record Reference||||Reference to the Establish Relations service request record||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||O
+Retrieve||Establish Relations Retrieve Action Task Reference||||Reference to a Establish Relations instance retrieve service call|||||||||||||||||||||O
+Retrieve||Establish Relations Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||I/O
+Retrieve||Establish Relations Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||I
+Retrieve||Establish Relations Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||O
+Retrieve||Establish Relations Instance Report|##|||A specific Establish Relations instance formatted report|||||||||||||||||||||IO
+Retrieve|||Establish Relations Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||I
+Retrieve|||Establish Relations Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||O
+Retrieve|||Establish Relations Instance Report Type|||The type of external report available|||||||||||||||||||||O
+Retrieve|||Establish Relations Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||O
+Retrieve|||Establish Relations Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||O
+Retrieve||Establish Relations Instance Analysis|##|||A specific Establish Relations instance analytical report|||||||||||||||||||||IO
+Retrieve|||Establish Relations Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||I
+Retrieve|||Establish Relations Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||O
+Retrieve|||Establish Relations Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||O
+Retrieve|||Establish Relations Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||O
+Retrieve|||Establish Relations Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||O
+BQ Represent Bank Interests Instance Record|Represent Bank Interests||||||
+Mandatory||Regulatory And Legal Authority Relationship ManagementPlan Instance Reference||||Reference to the parent Regulatory And Legal Authority Relationship ManagementPlan instance||||||||||||||||||||||I|I|I
+Mandatory||Represent Bank Interests Instance Reference||||Reference to the Represent Bank Interests instance||||||||||||||||||||||O|I|I
+Initiate||Represent Bank Interests Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||||O
+Initiate||Represent Bank Interests Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||||I/O
+Initiate||Represent Bank Interests Instance Status||||The status of the Represent Bank Interests instance (e.g. initialised, pending, active)||||||||||||||||||||||O
+||Represent Bank Interests Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Regulatory And Legal Authority.
+|||||||||||||||||||||||||
+||Represent Bank Interests Preconditions||||The required status/situation before the duty/obligation can be met||||||||||||||||||||||IO|IO|IO|O
+||Represent Bank Interests Business Unit/Employee Reference||||The operating unit/employee responsible for undertaking the duty||||||||||||||||||||||IO|IO|IO|O
+||Represent Bank Interests Work Schedule||||The timing and key actions/milestones involved in fulfilling the duty||||||||||||||||||||||IO|IO|IO|O
+||Business Service||||The Regulatory And Legal Authority Relationship ManagementPlan specific Business Service||||||||||||||||||||||IO|IO|IO|O
+||Represent Bank Interests Postconditions||||The completion status once the duty has been complied with (note the need to fulfill a duty may recur frequently)||||||||||||||||||||||IO|IO|IO|O
+||Represent Bank Interests Service Type||||Reference to the specific business service type||||||||||||||||||||||IO|IO|IO|O
+||Represent Bank Interests Service Description||||Description of the performed business service||||||||||||||||||||||IO|IO|IO|O
+||Represent Bank Interests Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||||IO|IO|IO|O
+||Represent Bank Interests Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||||IO|IO|IO|O
+Update||Represent Bank Interests Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||O
+Update||Represent Bank Interests Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||I/O
+Update||Represent Bank Interests Update Action Request||||Details of the update action service request|||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||O
+Request||Represent Bank Interests Request Action Task Reference||||Reference to a Represent Bank Interests instance request service call||||||||||||||||||||||||O
+Request||Represent Bank Interests Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||||I/O
+Request||Represent Bank Interests Request Record Reference||||Reference to the Represent Bank Interests service request record||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||||O
+Retrieve||Represent Bank Interests Retrieve Action Task Reference||||Reference to a Represent Bank Interests instance retrieve service call|||||||||||||||||||||||||O
+Retrieve||Represent Bank Interests Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||I/O
+Retrieve||Represent Bank Interests Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||I
+Retrieve||Represent Bank Interests Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||O
+Retrieve||Represent Bank Interests Instance Report|##|||A specific Represent Bank Interests instance formatted report|||||||||||||||||||||||||IO
+Retrieve|||Represent Bank Interests Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||I
+Retrieve|||Represent Bank Interests Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||O
+Retrieve|||Represent Bank Interests Instance Report Type|||The type of external report available|||||||||||||||||||||||||O
+Retrieve|||Represent Bank Interests Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||O
+Retrieve|||Represent Bank Interests Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||O
+Retrieve||Represent Bank Interests Instance Analysis|##|||A specific Represent Bank Interests instance analytical report|||||||||||||||||||||||||IO
+Retrieve|||Represent Bank Interests Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||I
+Retrieve|||Represent Bank Interests Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||O
+Retrieve|||Represent Bank Interests Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||O
+Retrieve|||Represent Bank Interests Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||O
+Retrieve|||Represent Bank Interests Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||O

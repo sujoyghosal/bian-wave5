@@ -1,0 +1,99 @@
+CR Fraud Evaluation Assessment Instance Record|Fraud Evaluation Assessment||||||CR Fraud Evaluation Assessment Evaluate|CR Fraud Evaluation Assessment Exchange|CR Fraud Evaluation Assessment Execute|CR Fraud Evaluation Assessment Request|CR Fraud Evaluation Assessment Grant|CR Fraud Evaluation Assessment Retrieve|BQ Rule Sets and Decision Trees Retrieve|BQ Models Retrieve|
+Mandatory||Fraud Evaluation Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Fraud Evaluation Assessment Instance Reference||||Reference to the Fraud Evaluation Assessment instance|O|I|I|I|I
+Evaluate||Fraud Evaluation Assessment Evaluate Action Reference||||Reference to an Evaluate service call|O
+Evaluate||Fraud Evaluation Assessment Evaluate Action Record||||The Evaluate service call input and output record|IO
+Evaluate||Fraud Evaluation Assessment Instance Status||||The status of the Fraud Evaluation Assessment instance (e.g. initialised, pending, active)|IO
+||Fraud Evaluation Assessment Instance Record|##|||A fraud evaluation assessment for a detected production issue - typically linked to a specific product fulfillment activity|IO||IO|IO||O|O|O
+|||Product Production Session Reference|||Reference to the product fulfillment production session for which on-line fraud evaluation is performed|IO||IO|IO||O|O|O
+|||Fraud Evaluation Test Profile|||Details the types of fraud evaluation tests applied|IO||IO|IO||O|O|O
+|||Fraud Evaluation Ensemble Technique Type|||The type of technique use to combine results of the different tests used to detect out of pattern behavior|IO||IO|IO||O|O|O
+|||Fraud Evaluation Ensemble Technique Definition |||The definition of how the constituent rule set/decision tree and model test are combined to compete the assessment|IO||IO|IO||O|O|O
+|||Fraud Evaluation Transaction Consolidation Record |||The production transaction details that are submitted for fraud evaluation - note this will typically be a real-time dataset|I||I|I||O|O|O
+|||Fraud Evaluation Production Anomaly Record |||Details of detected out of pattern production activity that could be fraud|O||O|O||O|O|O
+|||Fraud Evaluation Production Anomaly Production Transaction Reference |||Reference to the one or more production transactions isolated by the fraud evaluation tests|O||O|O||O|O|O
+EXCHANGE||Fraud Evaluation Assessment Exchange Action Task Reference||||Reference to a Fraud Evaluation Assessment instance exchange service call||O
+EXCHANGE||Fraud Evaluation Assessment Exchange Action Task Record||||The exchange service call consolidated processing record||I/O
+EXCHANGE||Fraud Evaluation Assessment Exchange Action Request|##|||Details of the exchange action service request||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||I
+EXCHANGE||Fraud Evaluation Assessment Exchange Action Response||||Details of the exchange action service response||O
+EXECUTE||Fraud Evaluation Assessment Execute Action Task Reference||||Reference to a Fraud Evaluation Assessment instance execute service call|||O
+EXECUTE||Fraud Evaluation Assessment Execute Action Task Record||||The execute service call consolidated processing record|||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||O
+REQUEST||Fraud Evaluation Assessment Request Action Task Reference||||Reference to a Fraud Evaluation Assessment instance request service call||||O
+REQUEST||Fraud Evaluation Assessment Request Action Task Record||||The request service call consolidated processing record||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||I
+REQUEST||Request Response Record||||Details of the request action service response||||O
+GRANT||Fraud Evaluation Assessment Grant Action Task Reference||||Reference to a Fraud Evaluation Assessment instance grant service call|||||O
+GRANT||Fraud Evaluation Assessment Grant Action Task Record||||The grant service call consolidated processing record|||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||O
+RETRIEVE||Fraud Evaluation Assessment Retrieve Action Task Reference||||Reference to a Fraud Evaluation Assessment instance retrieve service call||||||O
+RETRIEVE||Fraud Evaluation Assessment Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||IO
+RETRIEVE||Fraud Evaluation Assessment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||I
+RETRIEVE||Fraud Evaluation Assessment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||O
+RETRIEVE||Fraud Evaluation Assessment Instance Report Record|##|||A specific Fraud Evaluation Assessment instance formatted report||||||IO
+RETRIEVE|||Fraud Evaluation Assessment Instance Report Reference|||Reference to the control record instance report||||||I
+RETRIEVE|||Fraud Evaluation Assessment Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Fraud Evaluation Assessment Instance Report Type|||The type of external report available||||||IO
+RETRIEVE|||Fraud Evaluation Assessment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||I
+RETRIEVE|||Fraud Evaluation Assessment Instance Report|||The external report in any suitable form including selection filters where appropriate||||||O
+RETRIEVE||Fraud Evaluation Assessment Instance Analysis|##|||A specific Fraud Evaluation Assessment instance analytical report||||||IO
+RETRIEVE|||Fraud Evaluation Assessment Instance Analysis Reference|||Reference to the control record instance analysis view||||||I
+RETRIEVE|||Fraud Evaluation Assessment Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Fraud Evaluation Assessment Instance Analysis Report Type|||The type of external performance analysis report available||||||IO
+RETRIEVE|||Fraud Evaluation Assessment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||I
+RETRIEVE|||Fraud Evaluation Assessment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||O
+BQ Rule Sets and Decision Trees Instance Record|Rule Sets and Decision Trees||||||
+Mandatory||Fraud Evaluation Assessment Instance Reference||||Reference to the parent Fraud Evaluation Assessment instance||||||
+Mandatory||Rule Sets and Decision Trees Instance Reference||||Reference to the Rule Sets and Decision Trees instance||||||
+||BQ Rule Sets And Decision Trees Instance Record|##|||The application of rule sets and decision trees based testing for out of pattern behavior for a collection of transactions|||||||O|
+|||Rule Sets And Decision Trees Test Result|||The production transaction assessment test results, including reference to any potential fraud transactions - note this can be a real-time dataset|||||||O|
+|||Rule Sets And Decision Trees Test Work Product|||Work documentation, forms and schedules produced and referenced during the assessment task|||||||O|
+Retrieve||Rule Sets and Decision Trees Retrieve Action Task Reference||||Reference to a Rule Sets and Decision Trees instance retrieve service call|||||||O
+Retrieve||Rule Sets and Decision Trees Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||I/O
+Retrieve||Rule Sets and Decision Trees Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+Retrieve||Rule Sets and Decision Trees Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+Retrieve||Rule Sets and Decision Trees Instance Report|##|||A specific Rule Sets and Decision Trees instance formatted report|||||||IO
+Retrieve|||Rule Sets and Decision Trees Instance Report Reference|||Reference to the control record instance report|||||||I
+Retrieve|||Rule Sets and Decision Trees Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+Retrieve|||Rule Sets and Decision Trees Instance Report Type|||The type of external report available|||||||O
+Retrieve|||Rule Sets and Decision Trees Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||O
+Retrieve|||Rule Sets and Decision Trees Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+Retrieve||Rule Sets and Decision Trees Instance Analysis|##|||A specific Rule Sets and Decision Trees instance analytical report|||||||IO
+Retrieve|||Rule Sets and Decision Trees Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+Retrieve|||Rule Sets and Decision Trees Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+Retrieve|||Rule Sets and Decision Trees Instance Analysis Report Type|||The type of external performance analysis report available|||||||O
+Retrieve|||Rule Sets and Decision Trees Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||O
+Retrieve|||Rule Sets and Decision Trees Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Models Instance Record|Models||||||
+Mandatory||Fraud Evaluation Assessment Instance Reference||||Reference to the parent Fraud Evaluation Assessment instance|||||||
+Mandatory||Models Instance Reference||||Reference to the Models instance|||||||
+||BQ Models Instance Record|##|||The application of models based testing such as regression, classification and time sequence assessments to detect out of pattern behavior for a collection of transactions||||||||O
+|||Models Test Result|||The production transaction assessment test results, including reference to any potential fraud transactions - note this can be a real-time dataset||||||||O
+|||Models Test Work Product|||Work documentation, forms and schedules produced and referenced during the assessment task||||||||O
+Retrieve||Models Retrieve Action Task Reference||||Reference to a Models instance retrieve service call||||||||O
+Retrieve||Models Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||I/O
+Retrieve||Models Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+Retrieve||Models Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+Retrieve||Models Instance Report|##|||A specific Models instance formatted report||||||||IO
+Retrieve|||Models Instance Report Reference|||Reference to the control record instance report||||||||I
+Retrieve|||Models Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Models Instance Report Type|||The type of external report available||||||||O
+Retrieve|||Models Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||O
+Retrieve|||Models Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+Retrieve||Models Instance Analysis|##|||A specific Models instance analytical report||||||||IO
+Retrieve|||Models Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+Retrieve|||Models Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Models Instance Analysis Report Type|||The type of external performance analysis report available||||||||O
+Retrieve|||Models Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||O
+Retrieve|||Models Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O

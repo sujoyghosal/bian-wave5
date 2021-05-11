@@ -1,0 +1,255 @@
+CR Direct Debit Arrangement Instance Record|Direct Debit Arrangement||||||CR Direct Debit Arrangement Initiate|CR Direct Debit Arrangement Update|CR Direct Debit Arrangement Control|CR Direct Debit Arrangement Exchange|CR Direct Debit Arrangement Execute|CR Direct Debit Arrangement Request|CR Direct Debit Arrangement Retrieve|BQ Reporting Initiate|BQ Reporting Retrieve|BQ Payment Tracking Initiate|BQ Payment Tracking Control|BQ Payment Tracking Execute|BQ Payment Tracking Retrieve|BQ Payment Initiation Exchange|BQ Payment Initiation Retrieve|BQ Verify Mandate Exchange|BQ Verify Mandate Retrieve|BQ Funds Available Check Exchange|BQ Funds Available Check Request|BQ Funds Available Check Retrieve|
+Mandatory||Direct Debit Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Direct Debit Arrangement Instance Reference||||Reference to the Direct Debit Arrangement instance|O|I|I|I|I|I
+Initiate||Direct Debit Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Direct Debit Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Direct Debit Arrangement Instance Status||||The status of the Direct Debit Arrangement instance (e.g. initialised, pending, active)|IO
+||Direct Debit Arrangement Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Direct Debit.
+Example: Perform the scheduled (e.g. statements, standing orders) and ad-hoc/requested (e.g. balance inquiries, fund transfers) fulfillment tasks for a customer current account facility.||||||||||||||||||||
+||Direct Debit Arrangement Parameter Type||||A Classification value that distinguishes between arrangements according to the type of business services within Direct Debit Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||
+||Direct Debit Arrangement Selected Option||||A selected optional business service as subject matter of Direct Debit Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||
+||Direct Debit Arrangement Type||||The type of Direct Debit Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Direct Debit Arrangement Reference||||Reference to Direct Debit Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Direct Debit Arrangement Schedule||||Timetable to fulfill Direct Debit Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||
+||Direct Debit Arrangement Status||||The status of Direct Debit Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||
+||Direct Debit Arrangement Reference||||Reference to the party who is involved in Direct Debit Arrangement||||||||||||||||||||
+||Direct Debit Arrangement Currency||||The curreny which is arranged in Direct Debit Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Direct Debit Arrangement Regulation Reference||||Reference to the regulation which is defined in Direct Debit Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Direct Debit Arrangement Regulation Type||||A Classification that distinguishes between the regularity domains of Direct Debit Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Direct Debit Arrangement Jurisdiction||||Reference to the jurisdiction that is assigned to Direct Debit Arrangement in case of legal dispute.|I|I|I|I|I|I|O|||||||||||||
+||Direct Debit Arrangement Booking Location||||The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement in the context of Direct Debit Arrangement, are entered.|I|I|I|I|I|I|O|||||||||||||
+||Direct Debit Arrangement Account Type||||The type of account which is linked to Direct Debit Arrangement|I|I|I|I|I|I|O|||||||||||||
+||Direct Debit Arrangement Account Reference||||Reference to the account which is linked to Direct Debit Arrangement|I|I|I|I|I|I|O|||||||||||||
+Update||Direct Debit Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||Direct Debit Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Direct Debit Arrangement Control Action Task Reference||||Reference to a Direct Debit Arrangement instance control processing service call|||O
+CONTROL||Direct Debit Arrangement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Direct Debit Arrangement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Direct Debit Arrangement Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Direct Debit Arrangement Exchange Action Task Reference||||Reference to a Direct Debit Arrangement instance exchange service call||||O
+EXCHANGE||Direct Debit Arrangement Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Direct Debit Arrangement Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Direct Debit Arrangement Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Direct Debit Arrangement Execute Action Task Reference||||Reference to a Direct Debit Arrangement instance execute service call|||||O
+EXECUTE||Direct Debit Arrangement Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Direct Debit Arrangement Request Action Task Reference||||Reference to a Direct Debit Arrangement instance request service call||||||O
+REQUEST||Direct Debit Arrangement Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Direct Debit Arrangement Retrieve Action Task Reference||||Reference to a Direct Debit Arrangement instance retrieve service call|||||||O
+RETRIEVE||Direct Debit Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Direct Debit Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Direct Debit Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Direct Debit Arrangement Instance Report Record|##|||A specific Direct Debit Arrangement instance formatted report|||||||IO
+RETRIEVE|||Direct Debit Arrangement Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Direct Debit Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Direct Debit Arrangement Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Direct Debit Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Direct Debit Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Direct Debit Arrangement Instance Analysis|##|||A specific Direct Debit Arrangement instance analytical report|||||||IO
+RETRIEVE|||Direct Debit Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Direct Debit Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Direct Debit Arrangement Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Direct Debit Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Direct Debit Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Reporting Instance Record|Reporting||||||
+Mandatory||Direct Debit Arrangement Instance Reference||||Reference to the parent Direct Debit Arrangement instance||||||||I
+Mandatory||Reporting Instance Reference||||Reference to the Reporting instance||||||||O|
+Initiate||Reporting Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Reporting Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Reporting Instance Status||||The status of the Reporting instance (e.g. initialised, pending, active)||||||||O
+||Reporting Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Direct Debit.
+||||||||||||||||||||
+||Reporting Preconditions||||The required status/situation prior to the implementation of the feature||||||||IO|O|||||||||||
+||Reporting Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||IO|O|||||||||||
+||Business Service||||The Direct Debit Arrangement specific Business Service||||||||IO|O|||||||||||
+||Reporting Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||IO|O|||||||||||
+||Reporting Service Type||||Reference to the specific business service type||||||||IO|O|||||||||||
+||Reporting Service Description||||Description of the performed business service||||||||IO|O|||||||||||
+||Reporting Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|O|||||||||||
+||Reporting Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|O|||||||||||
+||Reporting Service Name||||||||||||IO|O|||||||||||
+Retrieve||Reporting Retrieve Action Task Reference||||Reference to a Reporting instance retrieve service call|||||||||O
+Retrieve||Reporting Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||I/O
+Retrieve||Reporting Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||I
+Retrieve||Reporting Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||O
+Retrieve||Reporting Instance Report|##|||A specific Reporting instance formatted report|||||||||IO
+Retrieve|||Reporting Instance Report Reference|||Reference to the control record instance report|||||||||I
+Retrieve|||Reporting Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Reporting Instance Report Type|||The type of external report available|||||||||O
+Retrieve|||Reporting Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||O
+Retrieve|||Reporting Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||O
+Retrieve||Reporting Instance Analysis|##|||A specific Reporting instance analytical report|||||||||IO
+Retrieve|||Reporting Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||I
+Retrieve|||Reporting Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Reporting Instance Analysis Report Type|||The type of external performance analysis report available|||||||||O
+Retrieve|||Reporting Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||O
+Retrieve|||Reporting Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||O
+BQ Payment Tracking Instance Record|Payment Tracking||||||
+Mandatory||Direct Debit Arrangement Instance Reference||||Reference to the parent Direct Debit Arrangement instance||||||||||I|I|I
+Mandatory||Payment Tracking Instance Reference||||Reference to the Payment Tracking instance||||||||||O|I|I
+Initiate||Payment Tracking Initiate Action Reference||||Reference to an Initiate service call||||||||||O
+Initiate||Payment Tracking Initiate Action Record||||The Initiate service call input and output record||||||||||I/O
+Initiate||Payment Tracking Instance Status||||The status of the Payment Tracking instance (e.g. initialised, pending, active)||||||||||O
+||Payment Tracking Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Direct Debit.
+||||||||||||||||||||
+||Payment Tracking Preconditions||||The required status/situation prior to the implementation of the feature||||||||||IO|IO|IO|O|||||||
+||Payment Tracking Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||IO|IO|IO|O|||||||
+||Direct Debit Payment Tracking||||The Direct Debit Arrangement specific Business Service||||||||||IO|IO|IO|O|||||||
+||Payment Tracking Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||IO|IO|IO|O|||||||
+||Payment Tracking Direct Debit Payment Tracking Service Type||||Reference to the specific business service type||||||||||IO|IO|IO|O|||||||
+||Payment Tracking Direct Debit Payment Tracking Service Description||||Description of the performed business service||||||||||IO|IO|IO|O|||||||
+||Payment Tracking Direct Debit Payment Tracking Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||IO|IO|IO|O|||||||
+||Payment Tracking Direct Debit Payment Tracking Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||IO|IO|IO|O|||||||
+||Payment Tracking Direct Debit Payment Tracking Service Name||||||||||||||IO|IO|IO|O|||||||
+Control||Payment Tracking Control Action Task Reference||||Reference to a Payment Tracking instance control processing service call|||||||||||O
+Control||Payment Tracking Control Action Task Record||||The processing control service call consolidated processing record|||||||||||I/O
+Control||Payment Tracking Control Action Request|##|||Details of the control action service request|||||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||||||||||I
+Control||Payment Tracking Control Action Response||||Details of the control action service response|||||||||||O
+Control||Payment Tracking Instance Status||||The status of the Payment Tracking instance (e.g. initialised, pending, active)|||||||||||O
+Execute||Payment Tracking Execute Action Task Reference||||Reference to a Payment Tracking instance execute service call||||||||||||O
+Execute||Payment Tracking Execute Action Task Record||||The execute service call consolidated processing record||||||||||||I/O
+Execute||Payment Tracking Execute Record Reference||||Reference to the Payment Tracking execute transaction/record||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||||||O
+Retrieve||Payment Tracking Retrieve Action Task Reference||||Reference to a Payment Tracking instance retrieve service call|||||||||||||O
+Retrieve||Payment Tracking Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||Payment Tracking Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||Payment Tracking Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||Payment Tracking Instance Report|##|||A specific Payment Tracking instance formatted report|||||||||||||IO
+Retrieve|||Payment Tracking Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||Payment Tracking Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Payment Tracking Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||Payment Tracking Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||Payment Tracking Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||Payment Tracking Instance Analysis|##|||A specific Payment Tracking instance analytical report|||||||||||||IO
+Retrieve|||Payment Tracking Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||Payment Tracking Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Payment Tracking Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||Payment Tracking Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||Payment Tracking Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O
+BQ Payment Initiation Instance Record|Payment Initiation||||||
+Mandatory||Direct Debit Arrangement Instance Reference||||Reference to the parent Direct Debit Arrangement instance||||||||||||||I
+Mandatory||Payment Initiation Instance Reference||||Reference to the Payment Initiation instance||||||||||||||I
+||Payment Initiation Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Direct Debit.
+||||||||||||||||||||
+||Payment Initiation Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||IO|O|||||
+||Payment Initiation Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||IO|O|||||
+||Direct Debit Payment Initiation||||The Direct Debit Arrangement specific Business Service||||||||||||||IO|O|||||
+||Payment Initiation Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||IO|O|||||
+||Payment Initiation Direct Debit Payment Initiation Service Type||||Reference to the specific business service type||||||||||||||IO|O|||||
+||Payment Initiation Direct Debit Payment Initiation Service Description||||Description of the performed business service||||||||||||||IO|O|||||
+||Payment Initiation Direct Debit Payment Initiation Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|O|||||
+||Payment Initiation Direct Debit Payment Initiation Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|O|||||
+||Payment Initiation Direct Debit Payment Initiation Service Name||||||||||||||||||IO|O|||||
+Exchange||Payment Initiation Exchange Action Task Reference||||Reference to a Payment Initiation instance exchange service call||||||||||||||O
+Exchange||Payment Initiation Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||I/O
+Exchange||Payment Initiation Exchange Action Request|##|||Details of the exchange action service request||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||I
+Exchange||Payment Initiation Exchange Action Response||||Details of the exchange action service response||||||||||||||O
+Exchange||Payment Initiation Instance Status||||The status of the Payment Initiation instance (e.g. accepted, rejected, verified)||||||||||||||O
+Retrieve||Payment Initiation Retrieve Action Task Reference||||Reference to a Payment Initiation instance retrieve service call|||||||||||||||O
+Retrieve||Payment Initiation Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||I/O
+Retrieve||Payment Initiation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||I
+Retrieve||Payment Initiation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||O
+Retrieve||Payment Initiation Instance Report|##|||A specific Payment Initiation instance formatted report|||||||||||||||IO
+Retrieve|||Payment Initiation Instance Report Reference|||Reference to the control record instance report|||||||||||||||I
+Retrieve|||Payment Initiation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Payment Initiation Instance Report Type|||The type of external report available|||||||||||||||O
+Retrieve|||Payment Initiation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||O
+Retrieve|||Payment Initiation Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||O
+Retrieve||Payment Initiation Instance Analysis|##|||A specific Payment Initiation instance analytical report|||||||||||||||IO
+Retrieve|||Payment Initiation Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||I
+Retrieve|||Payment Initiation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Payment Initiation Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||O
+Retrieve|||Payment Initiation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||O
+Retrieve|||Payment Initiation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||O
+BQ Verify Mandate Instance Record|Verify Mandate||||||
+Mandatory||Direct Debit Arrangement Instance Reference||||Reference to the parent Direct Debit Arrangement instance||||||||||||||||I
+Mandatory||Verify Mandate Instance Reference||||Reference to the Verify Mandate instance||||||||||||||||I
+||Verify Mandate Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Direct Debit.
+||||||||||||||||||||
+||Verify Mandate Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||||IO|O|||
+||Verify Mandate Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||||IO|O|||
+||Direct Debit Mandate Check||||The Direct Debit Arrangement specific Business Service||||||||||||||||IO|O|||
+||Verify Mandate Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||||IO|O|||
+||Verify Mandate Direct Debit Mandate Check Service Type||||Reference to the specific business service type||||||||||||||||IO|O|||
+||Verify Mandate Direct Debit Mandate Check Service Description||||Description of the performed business service||||||||||||||||IO|O|||
+||Verify Mandate Direct Debit Mandate Check Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||IO|O|||
+||Verify Mandate Direct Debit Mandate Check Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||IO|O|||
+||Verify Mandate Direct Debit Mandate Check Service Name||||||||||||||||||||IO|O|||
+Exchange||Verify Mandate Exchange Action Task Reference||||Reference to a Verify Mandate instance exchange service call||||||||||||||||O
+Exchange||Verify Mandate Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||I/O
+Exchange||Verify Mandate Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||I
+Exchange||Verify Mandate Exchange Action Response||||Details of the exchange action service response||||||||||||||||O
+Exchange||Verify Mandate Instance Status||||The status of the Verify Mandate instance (e.g. accepted, rejected, verified)||||||||||||||||O
+Retrieve||Verify Mandate Retrieve Action Task Reference||||Reference to a Verify Mandate instance retrieve service call|||||||||||||||||O
+Retrieve||Verify Mandate Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||I/O
+Retrieve||Verify Mandate Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||I
+Retrieve||Verify Mandate Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||O
+Retrieve||Verify Mandate Instance Report|##|||A specific Verify Mandate instance formatted report|||||||||||||||||IO
+Retrieve|||Verify Mandate Instance Report Reference|||Reference to the control record instance report|||||||||||||||||I
+Retrieve|||Verify Mandate Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Verify Mandate Instance Report Type|||The type of external report available|||||||||||||||||O
+Retrieve|||Verify Mandate Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||O
+Retrieve|||Verify Mandate Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||O
+Retrieve||Verify Mandate Instance Analysis|##|||A specific Verify Mandate instance analytical report|||||||||||||||||IO
+Retrieve|||Verify Mandate Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||I
+Retrieve|||Verify Mandate Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Verify Mandate Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||O
+Retrieve|||Verify Mandate Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||O
+Retrieve|||Verify Mandate Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||O
+BQ Funds Available Check Instance Record|Funds Available Check||||||
+Mandatory||Direct Debit Arrangement Instance Reference||||Reference to the parent Direct Debit Arrangement instance||||||||||||||||||I|I
+Mandatory||Funds Available Check Instance Reference||||Reference to the Funds Available Check instance||||||||||||||||||I|I
+||Funds Available Check Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Direct Debit.
+||||||||||||||||||||
+||Funds Available Check Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||||||IO|IO|O
+||Funds Available Check Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||||||IO|IO|O
+||Funds Available Check||||The Direct Debit Arrangement specific Business Service||||||||||||||||||||
+||Funds Available Check Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||||||IO|IO|O
+||Funds Available Check Funds Available Check Service Type||||Reference to the specific business service type||||||||||||||||||IO|IO|O
+||Funds Available Check Funds Available Check Service Description||||Description of the performed business service||||||||||||||||||IO|IO|O
+||Funds Available Check Funds Available Check Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||IO|IO|O
+||Funds Available Check Funds Available Check Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||IO|IO|O
+Exchange||Funds Available Check Exchange Action Task Reference||||Reference to a Funds Available Check instance exchange service call||||||||||||||||||O
+Exchange||Funds Available Check Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||I/O
+Exchange||Funds Available Check Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||I
+Exchange||Funds Available Check Exchange Action Response||||Details of the exchange action service response||||||||||||||||||O
+Exchange||Funds Available Check Instance Status||||The status of the Funds Available Check instance (e.g. accepted, rejected, verified)||||||||||||||||||O
+Request||Funds Available Check Request Action Task Reference||||Reference to a Funds Available Check instance request service call|||||||||||||||||||O
+Request||Funds Available Check Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||I/O
+Request||Funds Available Check Request Record Reference||||Reference to the Funds Available Check service request record|||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||O
+Retrieve||Funds Available Check Retrieve Action Task Reference||||Reference to a Funds Available Check instance retrieve service call||||||||||||||||||||O
+Retrieve||Funds Available Check Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||I/O
+Retrieve||Funds Available Check Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||I
+Retrieve||Funds Available Check Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||O
+Retrieve||Funds Available Check Instance Report|##|||A specific Funds Available Check instance formatted report||||||||||||||||||||IO
+Retrieve|||Funds Available Check Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||I
+Retrieve|||Funds Available Check Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Funds Available Check Instance Report Type|||The type of external report available||||||||||||||||||||O
+Retrieve|||Funds Available Check Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||O
+Retrieve|||Funds Available Check Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+Retrieve||Funds Available Check Instance Analysis|##|||A specific Funds Available Check instance analytical report||||||||||||||||||||IO
+Retrieve|||Funds Available Check Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||I
+Retrieve|||Funds Available Check Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Funds Available Check Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||O
+Retrieve|||Funds Available Check Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||O
+Retrieve|||Funds Available Check Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||O

@@ -1,0 +1,800 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Contact Center Operations'
+ description: >
+
+    ## Executive Summary:
+
+    Administer the day to day activity in the contact center - allocate positions and track staff availability and performance
+
+    ## Example of Use:
+
+    Contact center operations re-assigns staff to servicing positions to deal with peak loading for a specific product or service type
+
+    ## Description:
+
+    Oversee and administer the day to day activity in the contact center. This includes the assignment of individuals to servicing positions in compliance with the service configuration determined by Contact Center Management. Also tracking staff availability and utilization during the servicing session and making necessary assignment adjustments to deal with servicing load. (Note servicing resources interact directly with the Contact Routing service domain to indicate when they are open to receive customer contacts)
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-contact-center-operations/1.0.0
+schemes:
+ - https
+paths:
+  /contact-center-operations/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDContactCenterOperations
+      summary: Activate  a SDContactCenterOperations servicing session
+      description: Activate  a  SDContactCenterOperations servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDContactCenterOperations Request Payload
+        schema:
+          $ref: '#/definitions/SDContactCenterOperationsActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDContactCenterOperationsActivateOutputModel'
+  /contact-center-operations/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDContactCenterOperations
+      summary: Update an active SDContactCenterOperations session configuration
+      description: Update an active SDContactCenterOperations session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDContactCenterOperations Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDContactCenterOperations Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDContactCenterOperationsConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDContactCenterOperationsConfigureOutputModel'
+  /contact-center-operations/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDContactCenterOperations
+      summary: "Capturing feedback against the SDContactCenterOperations service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDContactCenterOperations service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDContactCenterOperations Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDContactCenterOperations Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDContactCenterOperationsFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDContactCenterOperationsFeedbackOutputModel'
+  /contact-center-operations/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDContactCenterOperations
+      summary: Analytical views maintained by the SDContactCenterOperations service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDContactCenterOperations service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDContactCenterOperations Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDContactCenterOperationsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDContactCenterOperationsRetrieveOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/creation:
+    post:
+      tags:
+      - create
+      operationId: createContactCenterAdministrativePlan
+      summary: Details of a new ContactCenterAdministrativePlan instance
+      description: Control the execution of the contact center administrative plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ContactCenterAdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRContactCenterAdministrativePlanCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new ContactCenterAdministrativePlan instance
+          schema:
+            $ref: '#/definitions/CRContactCenterAdministrativePlanCreateOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeContactCenterAdministrativePlanUpdate
+      summary: Invoke an automated execute action against the ContactCenterAdministrativePlan instance
+      description: Create the administrative plan for the contact center
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Contact Center Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRContactCenterAdministrativePlanExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Contact Center Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRContactCenterAdministrativePlanExecuteOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveContactCenterOperations
+      summary: Invoke a reporting action to obtain a Contact Center Administrative Plan instance related report
+      description: Execute an automated action against the plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRContactCenterAdministrativePlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Contact Center Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRContactCenterAdministrativePlanRetrieveOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestContactCenterAdministrativePlanUpdate
+      summary: Invoke a service request action against the ContactCenterAdministrativePlan instance
+      description: Retrieve details about the execution of the administrative plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Contact Center Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRContactCenterAdministrativePlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Contact Center Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRContactCenterAdministrativePlanRequestOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateContactCenterAdministrativePlan
+      summary: Update to any amendable fields of the ContactCenterAdministrativePlan instance
+      description: Request manual intervention to the plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Contact Center Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRContactCenterAdministrativePlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Contact Center Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRContactCenterAdministrativePlanUpdateOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlContactCenterAdministrativePlanUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Update aspects of the administrative plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Contact Center Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRContactCenterAdministrativePlanControlInputModel'
+      responses:
+        200:
+          description: Successful control of Contact Center Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRContactCenterAdministrativePlanControlOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/peakload/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveContactCenterAdministrativePlanPeakLoad
+      summary: Invoke a reporting action to obtain a PeakLoad instance related report.
+      description: Control the servicing representatives assignment .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PeakLoad Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQPeakLoadRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved PeakLoad Instance Record
+          schema:
+            $ref: '#/definitions/BQPeakLoadRetrieveOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/peakload/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestContactCenterAdministrativePlanPeakLoadUpdate
+      summary: Invoke a service request action against the PeakLoad instance
+      description: Create an assignment request
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PeakLoad Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PeakLoad request payload
+        schema:
+          $ref: '#/definitions/BQPeakLoadRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of PeakLoad Instance Record
+          schema:
+            $ref: '#/definitions/BQPeakLoadRequestOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/peakload/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateContactCenterAdministrativePlanPeakLoad
+      summary: Update to any amendable fields of the PeakLoad instance
+      description: Retrieve details about a contact center assignment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: PeakLoad Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: PeakLoad Request Payload
+        schema:
+          $ref: '#/definitions/BQPeakLoadUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated PeakLoad Instance
+          schema:
+            $ref: '#/definitions/BQPeakLoadUpdateOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/troubleshooting/creation:
+    post:
+      tags:
+      - create
+      operationId: createContactCenterAdministrativePlanTroubleshooting
+      summary: Details of a new Troubleshooting instance
+      description: Request changes to the servicing representative's assignment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Contact Center Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Contact Center Administrative Plan instance
+          schema:
+            $ref: '#/definitions/BQTroubleshootingCreateOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveContactCenterAdministrativePlanTroubleshooting
+      summary: Invoke a reporting action to obtain a Troubleshooting instance related report.
+      description: Update details of a servicing representatives assignment .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTroubleshootingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Troubleshooting Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootingRetrieveOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestContactCenterAdministrativePlanTroubleshootingUpdate
+      summary: Invoke a service request action against the Troubleshooting instance
+      description: Retrieve details about peak load response activity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshooting request payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Troubleshooting Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootingRequestOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateContactCenterAdministrativePlanTroubleshooting
+      summary: Update to any amendable fields of the Troubleshooting instance
+      description: Request manual intervention due to peak loading
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshooting Request Payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Troubleshooting Instance
+          schema:
+            $ref: '#/definitions/BQTroubleshootingUpdateOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/assignment/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlContactCenterAdministrativePlanAssignmentUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Update details or the response to a peak load situation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Assignment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Assignment request payload
+        schema:
+          $ref: '#/definitions/BQAssignmentControlInputModel'
+      responses:
+        200:
+          description: Successful control of Assignment Instance Record
+          schema:
+            $ref: '#/definitions/BQAssignmentControlOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/assignment/creation:
+    post:
+      tags:
+      - create
+      operationId: createContactCenterAdministrativePlanAssignment
+      summary: Details of a new Assignment instance
+      description: Create a troubleshooting response task
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Contact Center Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQAssignmentCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Contact Center Administrative Plan instance
+          schema:
+            $ref: '#/definitions/BQAssignmentCreateOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/assignment/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveContactCenterAdministrativePlanAssignment
+      summary: Invoke a reporting action to obtain a Assignment instance related report.
+      description: Retrieve details about troubleshooting activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Assignment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQAssignmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Assignment Instance Record
+          schema:
+            $ref: '#/definitions/BQAssignmentRetrieveOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/assignment/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestContactCenterAdministrativePlanAssignmentUpdate
+      summary: Invoke a service request action against the Assignment instance
+      description: request manual intervention in troubleshooting activity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Assignment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Assignment request payload
+        schema:
+          $ref: '#/definitions/BQAssignmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Assignment Instance Record
+          schema:
+            $ref: '#/definitions/BQAssignmentRequestOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/assignment/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateContactCenterAdministrativePlanAssignment
+      summary: Update to any amendable fields of the Assignment instance
+      description: Update aspects of a troubleshooting task
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Assignment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Assignment Request Payload
+        schema:
+          $ref: '#/definitions/BQAssignmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Assignment Instance
+          schema:
+            $ref: '#/definitions/BQAssignmentUpdateOutputModel'
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveContactCenterOperationsReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ContactCenterOperations Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /contact-center-operations/contact-center-administrative-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveContactCenterOperationsBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'PeakLoad',  'Assignment',  'Troubleshooting', ]
+  /contact-center-operations/{sd-reference-id}/contact-center-administrative-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveContactCenterOperationsBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Contact Center Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Contact Center Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Troubleshooting
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Troubleshooting Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [TroubleshootingID1, TroubleshootingID2]

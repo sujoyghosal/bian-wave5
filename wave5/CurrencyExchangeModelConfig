@@ -1,0 +1,178 @@
+CR Currency Exchange Transaction Instance Record|Currency Exchange Transaction||||||CR Currency Exchange Transaction Initiate|CR Currency Exchange Transaction Update|CR Currency Exchange Transaction Control|CR Currency Exchange Transaction Exchange|CR Currency Exchange Transaction Execute|CR Currency Exchange Transaction Request|CR Currency Exchange Transaction Retrieve|BQ FXTransaction Pricing Initiate|BQ FXTransaction Pricing Update|BQ FXTransaction Pricing Retrieve|BQ Document Handling Initiate|BQ Document Handling Update|BQ Document Handling Execute|BQ Document Handling Retrieve|BQ FXTransaction Capture Initiate|BQ FXTransaction Capture Update|BQ FXTransaction Capture Exchange|BQ FXTransaction Capture Retrieve|
+Mandatory||Currency Exchange Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Currency Exchange Transaction Instance Reference||||Reference to the Currency Exchange Transaction instance|O|I|I|I|I|I
+Initiate||Currency Exchange Transaction Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Currency Exchange Transaction Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Currency Exchange Transaction Instance Status||||The status of the Currency Exchange Transaction instance (e.g. initialised, pending, active)|IO
+||Currency Exchange Transaction Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Currency Exchange.
+Example: Execute a payment transaction.||||||||||||||||||
+||Currency Exchange Transaction Parameter Type||||A Classification value that distinguishes between business sercice transaction within Currency Exchange Transaction|IO|IO|IO|IO|IO|IO|O|||||||||||
+||Currency Exchange Transaction Selected Option||||A selected optional business service as subject matter of Currency Exchange Transaction|IO|IO|IO|IO|IO|IO|O|||||||||||
+||Currency Exchange Transaction Status||||The status of Currency Exchange Transaction|IO|IO|IO|IO|IO|IO|O|||||||||||
+||Currency Exchange Transaction Type||||A Classification value that specifies type of business action for this Currency Exchange Transaction|I|I|I|I|I|I|O|||||||||||
+||Currency Exchange Transaction Transaction Type||||A Classification value that specifies type of transaction for this Currency Exchange Transaction|I|I|I|I|I|I|O|||||||||||
+||Currency Exchange Transaction Transaction||||Reference to Currency Exchange Transaction||||||||||||||||||
+Update||Currency Exchange Transaction Update Action Task Reference||||Reference to an update service call||O
+Update||Currency Exchange Transaction Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Currency Exchange Transaction Control Action Task Reference||||Reference to a Currency Exchange Transaction instance control processing service call|||O
+CONTROL||Currency Exchange Transaction Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Currency Exchange Transaction Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Currency Exchange Transaction Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Currency Exchange Transaction Exchange Action Task Reference||||Reference to a Currency Exchange Transaction instance exchange service call||||O
+EXCHANGE||Currency Exchange Transaction Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Currency Exchange Transaction Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Currency Exchange Transaction Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Currency Exchange Transaction Execute Action Task Reference||||Reference to a Currency Exchange Transaction instance execute service call|||||O
+EXECUTE||Currency Exchange Transaction Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Currency Exchange Transaction Request Action Task Reference||||Reference to a Currency Exchange Transaction instance request service call||||||O
+REQUEST||Currency Exchange Transaction Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Currency Exchange Transaction Retrieve Action Task Reference||||Reference to a Currency Exchange Transaction instance retrieve service call|||||||O
+RETRIEVE||Currency Exchange Transaction Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Currency Exchange Transaction Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Currency Exchange Transaction Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Currency Exchange Transaction Instance Report Record|##|||A specific Currency Exchange Transaction instance formatted report|||||||IO
+RETRIEVE|||Currency Exchange Transaction Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Currency Exchange Transaction Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Currency Exchange Transaction Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Currency Exchange Transaction Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Currency Exchange Transaction Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Currency Exchange Transaction Instance Analysis|##|||A specific Currency Exchange Transaction instance analytical report|||||||IO
+RETRIEVE|||Currency Exchange Transaction Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Currency Exchange Transaction Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Currency Exchange Transaction Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Currency Exchange Transaction Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Currency Exchange Transaction Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ FXTransaction Pricing Instance Record|FXTransaction Pricing||||||
+Mandatory||Currency Exchange Transaction Instance Reference||||Reference to the parent Currency Exchange Transaction instance||||||||I|I
+Mandatory||FXTransaction Pricing Instance Reference||||Reference to the FXTransaction Pricing instance||||||||O|I
+Initiate||FXTransaction Pricing Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||FXTransaction Pricing Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||FXTransaction Pricing Instance Status||||The status of the FXTransaction Pricing instance (e.g. initialised, pending, active)||||||||O
+||FXTransaction Pricing Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Currency Exchange.
+||||||||||||||||||
+||FXTransaction Pricing Preconditions||||The required status/situation prior to the execution of the task||||||||IO|IO|O||||||||
+||FXTransaction Pricing Task Schedule||||The timing and key actions/milestones involved in completing the transaction task||||||||IO|IO|O||||||||
+||OTC FX Transaction Pricing||||The Currency Exchange Transaction specific Business Service||||||||IO|IO|O||||||||
+||FXTransaction Pricing Postconditions||||The completion status and any triggered/dependent actions once the task has been completed||||||||IO|IO|O||||||||
+||FXTransaction Pricing OTC FX Transaction Pricing Service Type||||Reference to the specific business service type||||||||IO|IO|O||||||||
+||FXTransaction Pricing OTC FX Transaction Pricing Service Description||||Description of the performed business service||||||||IO|IO|O||||||||
+||FXTransaction Pricing OTC FX Transaction Pricing Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|O||||||||
+||FXTransaction Pricing OTC FX Transaction Pricing Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|O||||||||
+||FXTransaction Pricing OTC FX Transaction Pricing Service Name||||||||||||IO|IO|O||||||||
+Update||FXTransaction Pricing Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||FXTransaction Pricing Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||FXTransaction Pricing Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Retrieve||FXTransaction Pricing Retrieve Action Task Reference||||Reference to a FXTransaction Pricing instance retrieve service call||||||||||O
+Retrieve||FXTransaction Pricing Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||FXTransaction Pricing Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||FXTransaction Pricing Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||FXTransaction Pricing Instance Report|##|||A specific FXTransaction Pricing instance formatted report||||||||||IO
+Retrieve|||FXTransaction Pricing Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||FXTransaction Pricing Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||FXTransaction Pricing Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||FXTransaction Pricing Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||FXTransaction Pricing Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||FXTransaction Pricing Instance Analysis|##|||A specific FXTransaction Pricing instance analytical report||||||||||IO
+Retrieve|||FXTransaction Pricing Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||FXTransaction Pricing Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||FXTransaction Pricing Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||FXTransaction Pricing Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||FXTransaction Pricing Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Document Handling Instance Record|Document Handling||||||
+Mandatory||Currency Exchange Transaction Instance Reference||||Reference to the parent Currency Exchange Transaction instance|||||||||||I|I|I
+Mandatory||Document Handling Instance Reference||||Reference to the Document Handling instance|||||||||||O|I|I
+Initiate||Document Handling Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Initiate||Document Handling Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Initiate||Document Handling Instance Status||||The status of the Document Handling instance (e.g. initialised, pending, active)|||||||||||O
+||Document Handling Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Currency Exchange.
+||||||||||||||||||
+||Document Handling Preconditions||||The required status/situation prior to the execution of the task|||||||||||IO|IO|IO|O||||
+||Document Handling Task Schedule||||The timing and key actions/milestones involved in completing the transaction task|||||||||||IO|IO|IO|O||||
+||Document Services||||The Currency Exchange Transaction specific Business Service|||||||||||IO|IO|IO|O||||
+||Document Handling Postconditions||||The completion status and any triggered/dependent actions once the task has been completed|||||||||||IO|IO|IO|O||||
+||Document Handling Document Services Service Type||||Reference to the specific business service type|||||||||||IO|IO|IO|O||||
+||Document Handling Document Services Service Description||||Description of the performed business service|||||||||||IO|IO|IO|O||||
+||Document Handling Document Services Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|IO|IO|O||||
+||Document Handling Document Services Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|IO|IO|O||||
+||Document Handling Document Services Service Name|||||||||||||||IO|IO|IO|O||||
+Update||Document Handling Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Document Handling Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Document Handling Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Execute||Document Handling Execute Action Task Reference||||Reference to a Document Handling instance execute service call|||||||||||||O
+Execute||Document Handling Execute Action Task Record||||The execute service call consolidated processing record|||||||||||||I/O
+Execute||Document Handling Execute Record Reference||||Reference to the Document Handling execute transaction/record|||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response|||||||||||||O
+Retrieve||Document Handling Retrieve Action Task Reference||||Reference to a Document Handling instance retrieve service call||||||||||||||O
+Retrieve||Document Handling Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Document Handling Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Document Handling Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Document Handling Instance Report|##|||A specific Document Handling instance formatted report||||||||||||||IO
+Retrieve|||Document Handling Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Document Handling Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Document Handling Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Document Handling Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Document Handling Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Document Handling Instance Analysis|##|||A specific Document Handling instance analytical report||||||||||||||IO
+Retrieve|||Document Handling Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Document Handling Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Document Handling Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Document Handling Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Document Handling Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O
+BQ FXTransaction Capture Instance Record|FXTransaction Capture||||||
+Mandatory||Currency Exchange Transaction Instance Reference||||Reference to the parent Currency Exchange Transaction instance|||||||||||||||I|I|I
+Mandatory||FXTransaction Capture Instance Reference||||Reference to the FXTransaction Capture instance|||||||||||||||O|I|I
+Initiate||FXTransaction Capture Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||O
+Initiate||FXTransaction Capture Initiate Action Record||||The Initiate service call input and output record|||||||||||||||I/O
+Initiate||FXTransaction Capture Instance Status||||The status of the FXTransaction Capture instance (e.g. initialised, pending, active)|||||||||||||||O
+||FXTransaction Capture Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Currency Exchange.
+||||||||||||||||||
+||FXTransaction Capture Preconditions||||The required status/situation prior to the execution of the task|||||||||||||||IO|IO|IO|O
+||FXTransaction Capture Task Schedule||||The timing and key actions/milestones involved in completing the transaction task|||||||||||||||IO|IO|IO|O
+||FX Transaction Capture||||The Currency Exchange Transaction specific Business Service|||||||||||||||IO|IO|IO|O
+||FXTransaction Capture Postconditions||||The completion status and any triggered/dependent actions once the task has been completed|||||||||||||||IO|IO|IO|O
+||FXTransaction Capture FX Transaction Capture Service Type||||Reference to the specific business service type|||||||||||||||IO|IO|IO|O
+||FXTransaction Capture FX Transaction Capture Service Description||||Description of the performed business service|||||||||||||||IO|IO|IO|O
+||FXTransaction Capture FX Transaction Capture Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||IO|IO|IO|O
+||FXTransaction Capture FX Transaction Capture Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||IO|IO|IO|O
+Update||FXTransaction Capture Update Action Task Reference||||Reference to an update service call||||||||||||||||O
+Update||FXTransaction Capture Update Action Task Record||||The update service call consolidated processing record||||||||||||||||I/O
+Update||FXTransaction Capture Update Action Request||||Details of the update action service request||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||O
+Exchange||FXTransaction Capture Exchange Action Task Reference||||Reference to a FXTransaction Capture instance exchange service call|||||||||||||||||O
+Exchange||FXTransaction Capture Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||I/O
+Exchange||FXTransaction Capture Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||I
+Exchange||FXTransaction Capture Exchange Action Response||||Details of the exchange action service response|||||||||||||||||O
+Exchange||FXTransaction Capture Instance Status||||The status of the FXTransaction Capture instance (e.g. accepted, rejected, verified)|||||||||||||||||O
+Retrieve||FXTransaction Capture Retrieve Action Task Reference||||Reference to a FXTransaction Capture instance retrieve service call||||||||||||||||||O
+Retrieve||FXTransaction Capture Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||I/O
+Retrieve||FXTransaction Capture Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||I
+Retrieve||FXTransaction Capture Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||O
+Retrieve||FXTransaction Capture Instance Report|##|||A specific FXTransaction Capture instance formatted report||||||||||||||||||IO
+Retrieve|||FXTransaction Capture Instance Report Reference|||Reference to the control record instance report||||||||||||||||||I
+Retrieve|||FXTransaction Capture Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||FXTransaction Capture Instance Report Type|||The type of external report available||||||||||||||||||O
+Retrieve|||FXTransaction Capture Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||O
+Retrieve|||FXTransaction Capture Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||O
+Retrieve||FXTransaction Capture Instance Analysis|##|||A specific FXTransaction Capture instance analytical report||||||||||||||||||IO
+Retrieve|||FXTransaction Capture Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||I
+Retrieve|||FXTransaction Capture Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||FXTransaction Capture Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||O
+Retrieve|||FXTransaction Capture Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||O
+Retrieve|||FXTransaction Capture Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||O

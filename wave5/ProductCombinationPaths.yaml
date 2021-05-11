@@ -1,0 +1,903 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Product Combination'
+ description: >
+
+    ## Executive Summary:
+
+    Product Combination supports bundled products applying necessary constraints on embedded product fulfillment and ensuring product performance analysis takes correct account of embedded products' contribution
+
+    ## Example of Use:
+
+    A current account product instance is bundled with an investment portfolio product instance to create a combined margin trading product. The performance evaluation of the embedded current account that has constrained capabilities is amended to reflect its contribution to the combined product performance
+
+    ## Description:
+
+    The Product Combination service domain allows a bank to assemble a composite product from two or more existing products. The combination framework implements necessary functional constraints on the 'contained products' and handles considerations such as transfer pricing where the profitability of embedded products may be compromised to ensure management analysis is not distorted
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-product-combination/1.0.0
+schemes:
+ - https
+paths:
+  /product-combination/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDProductCombination
+      summary: Activate  a SDProductCombination servicing session
+      description: Activate  a  SDProductCombination servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDProductCombination Request Payload
+        schema:
+          $ref: '#/definitions/SDProductCombinationActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDProductCombinationActivateOutputModel'
+  /product-combination/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDProductCombination
+      summary: Update an active SDProductCombination session configuration
+      description: Update an active SDProductCombination session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProductCombination Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDProductCombination Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDProductCombinationConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDProductCombinationConfigureOutputModel'
+  /product-combination/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDProductCombination
+      summary: "Capturing feedback against the SDProductCombination service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDProductCombination service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProductCombination Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDProductCombination Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDProductCombinationFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDProductCombinationFeedbackOutputModel'
+  /product-combination/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDProductCombination
+      summary: Analytical views maintained by the SDProductCombination service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDProductCombination service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProductCombination Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDProductCombinationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDProductCombinationRetrieveOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductCombinationArrangement
+      summary: Details of a new ProductCombinationArrangement instance
+      description: Instantiate a new Product Combination Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductCombinationArrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRProductCombinationArrangementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new ProductCombinationArrangement instance
+          schema:
+            $ref: '#/definitions/CRProductCombinationArrangementInitiateOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductCombinationArrangement
+      summary: Update to any amendable fields of the ProductCombinationArrangement instance
+      description: Update details relating to Product Combination Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Combination Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRProductCombinationArrangementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Product Combination Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRProductCombinationArrangementUpdateOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlProductCombinationArrangementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Product Combination Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Combination Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRProductCombinationArrangementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Product Combination Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRProductCombinationArrangementControlOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeProductCombinationArrangementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Product Combination Arrangement processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Combination Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRProductCombinationArrangementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Product Combination Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRProductCombinationArrangementExchangeOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeProductCombinationArrangementUpdate
+      summary: Invoke an automated execute action against the ProductCombinationArrangement instance
+      description: Execute an available automated action for Product Combination Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Combination Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRProductCombinationArrangementExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Product Combination Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRProductCombinationArrangementExecuteOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestProductCombinationArrangementUpdate
+      summary: Invoke a service request action against the ProductCombinationArrangement instance
+      description: Request manual intervention or a decision with respect to Product Combination Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Combination Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRProductCombinationArrangementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Product Combination Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRProductCombinationArrangementRequestOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductCombination
+      summary: Invoke a reporting action to obtain a Product Combination Arrangement instance related report
+      description: Retrieve details about any aspect of Product Combination Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRProductCombinationArrangementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Product Combination Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRProductCombinationArrangementRetrieveOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/transferpricing/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductCombinationArrangementTransferPricing
+      summary: Update to any amendable fields of the TransferPricing instance
+      description: Update details relating to Transfer Pricing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransferPricing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransferPricing Request Payload
+        schema:
+          $ref: '#/definitions/BQTransferPricingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TransferPricing Instance
+          schema:
+            $ref: '#/definitions/BQTransferPricingUpdateOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/transferpricing/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeProductCombinationArrangementTransferPricingUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Transfer Pricing processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransferPricing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransferPricing request payload
+        schema:
+          $ref: '#/definitions/BQTransferPricingExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of TransferPricing Instance Record
+          schema:
+            $ref: '#/definitions/BQTransferPricingExchangeOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/transferpricing/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestProductCombinationArrangementTransferPricingUpdate
+      summary: Invoke a service request action against the TransferPricing instance
+      description: Request manual intervention or a decision with respect to Transfer Pricing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransferPricing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransferPricing request payload
+        schema:
+          $ref: '#/definitions/BQTransferPricingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of TransferPricing Instance Record
+          schema:
+            $ref: '#/definitions/BQTransferPricingRequestOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/transferpricing/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductCombinationArrangementTransferPricing
+      summary: Invoke a reporting action to obtain a TransferPricing instance related report.
+      description: Retrieve details about any aspect of Transfer Pricing .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransferPricing Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTransferPricingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TransferPricing Instance Record
+          schema:
+            $ref: '#/definitions/BQTransferPricingRetrieveOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/fulfillment/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductCombinationArrangementFulfillment
+      summary: Details of a new Fulfillment instance
+      description: Instantiate a new Fulfillment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Combination Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQFulfillmentInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product Combination Arrangement instance
+          schema:
+            $ref: '#/definitions/BQFulfillmentInitiateOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/fulfillment/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductCombinationArrangementFulfillment
+      summary: Update to any amendable fields of the Fulfillment instance
+      description: Update details relating to Fulfillment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfillment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfillment Request Payload
+        schema:
+          $ref: '#/definitions/BQFulfillmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Fulfillment Instance
+          schema:
+            $ref: '#/definitions/BQFulfillmentUpdateOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/fulfillment/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlProductCombinationArrangementFulfillmentUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Fulfillment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfillment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfillment request payload
+        schema:
+          $ref: '#/definitions/BQFulfillmentControlInputModel'
+      responses:
+        200:
+          description: Successful control of Fulfillment Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillmentControlOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/fulfillment/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeProductCombinationArrangementFulfillmentUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Fulfillment processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfillment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfillment request payload
+        schema:
+          $ref: '#/definitions/BQFulfillmentExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Fulfillment Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillmentExchangeOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/fulfillment/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeProductCombinationArrangementFulfillmentUpdate
+      summary: Invoke an automated execute action against the Fulfillment instance
+      description: Execute an available automated action for Fulfillment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfillment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfillment request payload
+        schema:
+          $ref: '#/definitions/BQFulfillmentExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Fulfillment Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillmentExecuteOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/fulfillment/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestProductCombinationArrangementFulfillmentUpdate
+      summary: Invoke a service request action against the Fulfillment instance
+      description: Request manual intervention or a decision with respect to Fulfillment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfillment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfillment request payload
+        schema:
+          $ref: '#/definitions/BQFulfillmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Fulfillment Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillmentRequestOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/fulfillment/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductCombinationArrangementFulfillment
+      summary: Invoke a reporting action to obtain a Fulfillment instance related report.
+      description: Retrieve details about any aspect of Fulfillment .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfillment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFulfillmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Fulfillment Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillmentRetrieveOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/embeddedproductcontrol/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductCombinationArrangementEmbeddedProductControl
+      summary: Details of a new EmbeddedProductControl instance
+      description: Instantiate a new Embedded Product Control
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Combination Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQEmbeddedProductControlInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product Combination Arrangement instance
+          schema:
+            $ref: '#/definitions/BQEmbeddedProductControlInitiateOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/embeddedproductcontrol/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductCombinationArrangementEmbeddedProductControl
+      summary: Update to any amendable fields of the EmbeddedProductControl instance
+      description: Update details relating to Embedded Product Control
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: EmbeddedProductControl Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: EmbeddedProductControl Request Payload
+        schema:
+          $ref: '#/definitions/BQEmbeddedProductControlUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated EmbeddedProductControl Instance
+          schema:
+            $ref: '#/definitions/BQEmbeddedProductControlUpdateOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/embeddedproductcontrol/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductCombinationArrangementEmbeddedProductControl
+      summary: Invoke a reporting action to obtain a EmbeddedProductControl instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: EmbeddedProductControl Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQEmbeddedProductControlRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved EmbeddedProductControl Instance Record
+          schema:
+            $ref: '#/definitions/BQEmbeddedProductControlRetrieveOutputModel'
+  /product-combination/{sd-reference-id}/product-combination-arrangement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProductCombinationReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ProductCombination Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /product-combination/product-combination-arrangement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProductCombinationBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Fulfillment',  'TransferPricing',  'EmbeddedProductControl', ]
+  /product-combination/{sd-reference-id}/product-combination-arrangement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProductCombinationBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Combination Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Combination Arrangement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- EmbeddedProductControl
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- EmbeddedProductControl Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [EmbeddedProductControlID1, EmbeddedProductControlID2]

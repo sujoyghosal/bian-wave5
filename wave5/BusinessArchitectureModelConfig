@@ -1,0 +1,287 @@
+CR Business Architecture Specification Instance Record|Business Architecture Specification||||||CR Business Architecture Specification Initiate|CR Business Architecture Specification Update|CR Business Architecture Specification Control|CR Business Architecture Specification Exchange|CR Business Architecture Specification Capture|CR Business Architecture Specification Request|CR Business Architecture Specification Retrieve|BQ Organization Update|BQ Organization Capture|BQ Organization Request|BQ Organization Retrieve|BQ Business Architecture Update|BQ Business Architecture Capture|BQ Business Architecture Request|BQ Business Architecture Retrieve|BQ Application Architecture Update|BQ Application Architecture Capture|BQ Application Architecture Request|BQ Application Architecture Retrieve|BQ Information Architecture Update|BQ Information Architecture Capture|BQ Information Architecture Request|BQ Information Architecture Retrieve|BQ Technology Infrastructure Update|BQ Technology Infrastructure Capture|BQ Technology Infrastructure Request|BQ Technology Infrastructure Retrieve|
+Mandatory||Business Architecture Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Business Architecture Specification Instance Reference||||Reference to the Business Architecture Specification instance|O|I|I|I|I|I
+Initiate||Business Architecture Specification Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Business Architecture Specification Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Business Architecture Specification Instance Status||||The status of the Business Architecture Specification instance (e.g. initialised, pending, active)|IO
+||Business Architecture Specification Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Business Architecture.
+Example: Create and maintain product designs and analytical models.|||||||||||||||||||||||||||
+||Business Architecture Specification Parameter Type||||A Classification value that distinguishes between designs according to the type of business services and/or aspect within Business Architecture Specification . Eg Product Design, Campaign Design, Risk Model Design etc. |IO|IO|IO|IO|IO|IO|O||||||||||||||||||||
+||Business Architecture Specification Selected Option||||A selected optional business service as subject matter of design|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||
+||Business Architecture Specification Description||||Documentation of Business Architecture Specification|I|I|I|I|I|I|O||||||||||||||||||||
+||Business Architecture Specification Version||||The version of Business Architecture Specification|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||
+||Business Architecture Specification Status||||The status of Business Architecture Specification|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||
+||Business Architecture Specification Usage Log||||Reference to the log of (usage) ativities/events of Business Architecture Specification|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||
+||Business Architecture Specification Feedback||||Information about reactions to a design which is used as a basis for improvement for the Business Architecture Specification.|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||
+||Business Architecture Specification ServiceProvider Reference||||Reference to the party who has provided Business Architecture Specification|I|I|I|I|I|I|O||||||||||||||||||||
+Update||Business Architecture Specification Update Action Task Reference||||Reference to an update service call||O
+Update||Business Architecture Specification Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Business Architecture Specification Control Action Task Reference||||Reference to a Business Architecture Specification instance control processing service call|||O
+CONTROL||Business Architecture Specification Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Business Architecture Specification Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Business Architecture Specification Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Business Architecture Specification Exchange Action Task Reference||||Reference to a Business Architecture Specification instance exchange service call||||O
+EXCHANGE||Business Architecture Specification Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Business Architecture Specification Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Business Architecture Specification Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Business Architecture Specification Capture Action Task Reference||||Reference to a Business Architecture Specification instance capture service call|||||O
+CAPTURE||Business Architecture Specification Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Business Architecture Specification Request Action Task Reference||||Reference to a Business Architecture Specification instance request service call||||||O
+REQUEST||Business Architecture Specification Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Business Architecture Specification Retrieve Action Task Reference||||Reference to a Business Architecture Specification instance retrieve service call|||||||O
+RETRIEVE||Business Architecture Specification Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Business Architecture Specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Business Architecture Specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Business Architecture Specification Instance Report Record|##|||A specific Business Architecture Specification instance formatted report|||||||IO
+RETRIEVE|||Business Architecture Specification Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Business Architecture Specification Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Business Architecture Specification Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Business Architecture Specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Business Architecture Specification Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Business Architecture Specification Instance Analysis|##|||A specific Business Architecture Specification instance analytical report|||||||IO
+RETRIEVE|||Business Architecture Specification Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Business Architecture Specification Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Business Architecture Specification Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Business Architecture Specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Business Architecture Specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Organization Instance Record|Organization||||||
+Mandatory||Business Architecture Specification Instance Reference||||Reference to the parent Business Architecture Specification instance||||||||I|I|I
+Mandatory||Organization Instance Reference||||Reference to the Organization instance||||||||I|I|I
+||Organization Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Business Architecture.
+|||||||||||||||||||||||||||
+||Organization Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||IO|IO|IO|O||||||||
+||Organization Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||IO|IO|IO|O||||||||
+||Organization Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||IO|IO|IO|O||||||||
+||Organizational Model||||The Business Architecture Specification specific Business Service||||||||||||||||IO|IO|IO|O||||||||
+||Organizational Model Service Type||||Reference to the specific business service type||||||||||||||||IO|IO|IO|O||||||||
+||Organizational Model Service Description||||Description of the performed business service||||||||||||||||IO|IO|IO|O||||||||
+||Organizational Model Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||IO|IO|IO|O||||||||
+||Organizational Model Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||IO|IO|IO|O||||||||
+||Organizational Model Service Name||||||||||||||||||||IO|IO|IO|O||||||||
+Update||Organization Update Action Task Reference||||Reference to an update service call||||||||O
+Update||Organization Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||Organization Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Capture||Organization Capture Action Task Reference||||Reference to a Organization instance capture service call|||||||||O
+Capture||Organization Capture Action Task Record||||The capture service call consolidated processing record|||||||||I/O
+Capture||Organization Capture Record Reference||||Reference to the Organization structured input transaction/record|||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||O
+Request||Organization Request Action Task Reference||||Reference to a Organization instance request service call||||||||||O
+Request||Organization Request Action Task Record||||The request service call consolidated processing record||||||||||I/O
+Request||Organization Request Record Reference||||Reference to the Organization service request record||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||O
+Retrieve||Organization Retrieve Action Task Reference||||Reference to a Organization instance retrieve service call|||||||||||O
+Retrieve||Organization Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||Organization Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||Organization Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||Organization Instance Report|##|||A specific Organization instance formatted report|||||||||||IO
+Retrieve|||Organization Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||Organization Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Organization Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||Organization Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||Organization Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||Organization Instance Analysis|##|||A specific Organization instance analytical report|||||||||||IO
+Retrieve|||Organization Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||Organization Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Organization Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||Organization Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||Organization Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O
+BQ Business Architecture Instance Record|Business Architecture||||||
+Mandatory||Business Architecture Specification Instance Reference||||Reference to the parent Business Architecture Specification instance||||||||||||I|I|I
+Mandatory||Business Architecture Instance Reference||||Reference to the Business Architecture instance||||||||||||I|I|I
+||Business Architecture Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Business Architecture.
+|||||||||||||||||||||||||||
+||Business Architecture Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||IO|IO|IO|O||||||||||||
+||Business Architecture Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||IO|IO|IO|O||||||||||||
+||Business Architecture Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||IO|IO|IO|O||||||||||||
+||Business Architecture||||The Business Architecture Specification specific Business Service|||||||||||||||||||||||||||
+||Business Architecture Service Type||||Reference to the specific business service type||||||||||||IO|IO|IO|O||||||||||||
+||Business Architecture Service Description||||Description of the performed business service||||||||||||IO|IO|IO|O||||||||||||
+||Business Architecture Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||IO|IO|IO|O||||||||||||
+||Business Architecture Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||IO|IO|IO|O||||||||||||
+||Business Architecture Service Name||||||||||||||||IO|IO|IO|O||||||||||||
+Update||Business Architecture Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Business Architecture Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Business Architecture Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Capture||Business Architecture Capture Action Task Reference||||Reference to a Business Architecture instance capture service call|||||||||||||O
+Capture||Business Architecture Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||I/O
+Capture||Business Architecture Capture Record Reference||||Reference to the Business Architecture structured input transaction/record|||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||O
+Request||Business Architecture Request Action Task Reference||||Reference to a Business Architecture instance request service call||||||||||||||O
+Request||Business Architecture Request Action Task Record||||The request service call consolidated processing record||||||||||||||I/O
+Request||Business Architecture Request Record Reference||||Reference to the Business Architecture service request record||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||O
+Retrieve||Business Architecture Retrieve Action Task Reference||||Reference to a Business Architecture instance retrieve service call|||||||||||||||O
+Retrieve||Business Architecture Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||I/O
+Retrieve||Business Architecture Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||I
+Retrieve||Business Architecture Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||O
+Retrieve||Business Architecture Instance Report|##|||A specific Business Architecture instance formatted report|||||||||||||||IO
+Retrieve|||Business Architecture Instance Report Reference|||Reference to the control record instance report|||||||||||||||I
+Retrieve|||Business Architecture Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Business Architecture Instance Report Type|||The type of external report available|||||||||||||||O
+Retrieve|||Business Architecture Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||O
+Retrieve|||Business Architecture Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||O
+Retrieve||Business Architecture Instance Analysis|##|||A specific Business Architecture instance analytical report|||||||||||||||IO
+Retrieve|||Business Architecture Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||I
+Retrieve|||Business Architecture Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Business Architecture Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||O
+Retrieve|||Business Architecture Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||O
+Retrieve|||Business Architecture Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||O
+BQ Application Architecture Instance Record|Application Architecture||||||
+Mandatory||Business Architecture Specification Instance Reference||||Reference to the parent Business Architecture Specification instance||||||||||||||||I|I|I
+Mandatory||Application Architecture Instance Reference||||Reference to the Application Architecture instance||||||||||||||||I|I|I
+||Application Architecture Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Business Architecture.
+|||||||||||||||||||||||||||
+||Application Architecture Preconditions||||The required status/situation before the specification aspect can be defined||||||||IO|IO|IO|O||||||||||||||||
+||Application Architecture Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||IO|IO|IO|O||||||||||||||||
+||Application Architecture Version Number||||The current version, and version history as appropriate for the specification aspect||||||||IO|IO|IO|O||||||||||||||||
+||Application Architecture||||The Business Architecture Specification specific Business Service|||||||||||||||||||||||||||
+||Application Architecture Service Type||||Reference to the specific business service type||||||||IO|IO|IO|O||||||||||||||||
+||Application Architecture Service Description||||Description of the performed business service||||||||IO|IO|IO|O||||||||||||||||
+||Application Architecture Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|O||||||||||||||||
+||Application Architecture Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|O||||||||||||||||
+||Application Architecture Service Name||||||||||||IO|IO|IO|O||||||||||||||||
+Update||Application Architecture Update Action Task Reference||||Reference to an update service call||||||||||||||||O
+Update||Application Architecture Update Action Task Record||||The update service call consolidated processing record||||||||||||||||I/O
+Update||Application Architecture Update Action Request||||Details of the update action service request||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||O
+Capture||Application Architecture Capture Action Task Reference||||Reference to a Application Architecture instance capture service call|||||||||||||||||O
+Capture||Application Architecture Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||I/O
+Capture||Application Architecture Capture Record Reference||||Reference to the Application Architecture structured input transaction/record|||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||O
+Request||Application Architecture Request Action Task Reference||||Reference to a Application Architecture instance request service call||||||||||||||||||O
+Request||Application Architecture Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||I/O
+Request||Application Architecture Request Record Reference||||Reference to the Application Architecture service request record||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||O
+Retrieve||Application Architecture Retrieve Action Task Reference||||Reference to a Application Architecture instance retrieve service call|||||||||||||||||||O
+Retrieve||Application Architecture Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Application Architecture Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Application Architecture Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Application Architecture Instance Report|##|||A specific Application Architecture instance formatted report|||||||||||||||||||IO
+Retrieve|||Application Architecture Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Application Architecture Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Application Architecture Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Application Architecture Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Application Architecture Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Application Architecture Instance Analysis|##|||A specific Application Architecture instance analytical report|||||||||||||||||||IO
+Retrieve|||Application Architecture Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Application Architecture Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Application Architecture Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Application Architecture Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Application Architecture Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+BQ Information Architecture Instance Record|Information Architecture||||||
+Mandatory||Business Architecture Specification Instance Reference||||Reference to the parent Business Architecture Specification instance||||||||||||||||||||I|I|I
+Mandatory||Information Architecture Instance Reference||||Reference to the Information Architecture instance||||||||||||||||||||I|I|I
+||Information Architecture Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Business Architecture.
+|||||||||||||||||||||||||||
+||Information Architecture Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||||||IO|IO|IO|O||||
+||Information Architecture Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||||||IO|IO|IO|O||||
+||Information Architecture Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||||||IO|IO|IO|O||||
+||Information Architecture||||The Business Architecture Specification specific Business Service|||||||||||||||||||||||||||
+||Information Architecture Service Type||||Reference to the specific business service type||||||||||||||||||||IO|IO|IO|O||||
+||Information Architecture Service Description||||Description of the performed business service||||||||||||||||||||IO|IO|IO|O||||
+||Information Architecture Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||IO|IO|IO|O||||
+||Information Architecture Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||IO|IO|IO|O||||
+||Information Architecture Service Name||||||||||||||||||||||||IO|IO|IO|O||||
+Update||Information Architecture Update Action Task Reference||||Reference to an update service call||||||||||||||||||||O
+Update||Information Architecture Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||I/O
+Update||Information Architecture Update Action Request||||Details of the update action service request||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||O
+Capture||Information Architecture Capture Action Task Reference||||Reference to a Information Architecture instance capture service call|||||||||||||||||||||O
+Capture||Information Architecture Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||||I/O
+Capture||Information Architecture Capture Record Reference||||Reference to the Information Architecture structured input transaction/record|||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||||O
+Request||Information Architecture Request Action Task Reference||||Reference to a Information Architecture instance request service call||||||||||||||||||||||O
+Request||Information Architecture Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||I/O
+Request||Information Architecture Request Record Reference||||Reference to the Information Architecture service request record||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||O
+Retrieve||Information Architecture Retrieve Action Task Reference||||Reference to a Information Architecture instance retrieve service call|||||||||||||||||||||||O
+Retrieve||Information Architecture Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||I/O
+Retrieve||Information Architecture Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||I
+Retrieve||Information Architecture Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||O
+Retrieve||Information Architecture Instance Report|##|||A specific Information Architecture instance formatted report|||||||||||||||||||||||IO
+Retrieve|||Information Architecture Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||I
+Retrieve|||Information Architecture Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Information Architecture Instance Report Type|||The type of external report available|||||||||||||||||||||||O
+Retrieve|||Information Architecture Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||O
+Retrieve|||Information Architecture Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O
+Retrieve||Information Architecture Instance Analysis|##|||A specific Information Architecture instance analytical report|||||||||||||||||||||||IO
+Retrieve|||Information Architecture Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||I
+Retrieve|||Information Architecture Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Information Architecture Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||O
+Retrieve|||Information Architecture Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||O
+Retrieve|||Information Architecture Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O
+BQ Technology Infrastructure Instance Record|Technology Infrastructure||||||
+Mandatory||Business Architecture Specification Instance Reference||||Reference to the parent Business Architecture Specification instance||||||||||||||||||||||||I|I|I
+Mandatory||Technology Infrastructure Instance Reference||||Reference to the Technology Infrastructure instance||||||||||||||||||||||||I|I|I
+||Technology Infrastructure Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Business Architecture.
+|||||||||||||||||||||||||||
+||Technology Infrastructure Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||||||||||IO|IO|IO|O
+||Technology Infrastructure Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||||||||||IO|IO|IO|O
+||Technology Infrastructure Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||||||||||IO|IO|IO|O
+||Technology Infrastructure||||The Business Architecture Specification specific Business Service|||||||||||||||||||||||||||
+||Technology Infrastructure Service Type||||Reference to the specific business service type||||||||||||||||||||||||IO|IO|IO|O
+||Technology Infrastructure Service Description||||Description of the performed business service||||||||||||||||||||||||IO|IO|IO|O
+||Technology Infrastructure Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||||||IO|IO|IO|O
+||Technology Infrastructure Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||||||IO|IO|IO|O
+Update||Technology Infrastructure Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||||O
+Update||Technology Infrastructure Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||||I/O
+Update||Technology Infrastructure Update Action Request||||Details of the update action service request||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||||O
+Capture||Technology Infrastructure Capture Action Task Reference||||Reference to a Technology Infrastructure instance capture service call|||||||||||||||||||||||||O
+Capture||Technology Infrastructure Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||||||||I/O
+Capture||Technology Infrastructure Capture Record Reference||||Reference to the Technology Infrastructure structured input transaction/record|||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||||||||O
+Request||Technology Infrastructure Request Action Task Reference||||Reference to a Technology Infrastructure instance request service call||||||||||||||||||||||||||O
+Request||Technology Infrastructure Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||||||I/O
+Request||Technology Infrastructure Request Record Reference||||Reference to the Technology Infrastructure service request record||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||||||O
+Retrieve||Technology Infrastructure Retrieve Action Task Reference||||Reference to a Technology Infrastructure instance retrieve service call|||||||||||||||||||||||||||O
+Retrieve||Technology Infrastructure Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||I/O
+Retrieve||Technology Infrastructure Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||I
+Retrieve||Technology Infrastructure Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||O
+Retrieve||Technology Infrastructure Instance Report|##|||A specific Technology Infrastructure instance formatted report|||||||||||||||||||||||||||IO
+Retrieve|||Technology Infrastructure Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||I
+Retrieve|||Technology Infrastructure Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||O
+Retrieve|||Technology Infrastructure Instance Report Type|||The type of external report available|||||||||||||||||||||||||||O
+Retrieve|||Technology Infrastructure Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||O
+Retrieve|||Technology Infrastructure Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||O
+Retrieve||Technology Infrastructure Instance Analysis|##|||A specific Technology Infrastructure instance analytical report|||||||||||||||||||||||||||IO
+Retrieve|||Technology Infrastructure Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||I
+Retrieve|||Technology Infrastructure Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||O
+Retrieve|||Technology Infrastructure Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||O
+Retrieve|||Technology Infrastructure Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||O
+Retrieve|||Technology Infrastructure Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||O

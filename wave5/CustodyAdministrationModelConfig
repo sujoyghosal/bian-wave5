@@ -1,0 +1,279 @@
+CR Custody Arrangement Instance Record|Custody Arrangement||||||CR Custody Arrangement Initiate|CR Custody Arrangement Update|CR Custody Arrangement Control|CR Custody Arrangement Exchange|CR Custody Arrangement Execute|CR Custody Arrangement Request|CR Custody Arrangement Retrieve|BQ Safe Keeping Update|BQ Safe Keeping Control|BQ Safe Keeping Request|BQ Safe Keeping Retrieve|BQ Dividends and Interest Initiate|BQ Dividends and Interest Retrieve|BQ Securities Reporting Initiate|BQ Securities Reporting Execute|BQ Securities Reporting Request|BQ Securities Reporting Retrieve|BQ Fees Initiate|BQ Fees Update|BQ Fees Exchange|BQ Fees Retrieve|BQ Settlement Initiate|BQ Settlement Update|BQ Settlement Execute|BQ Settlement Request|BQ Settlement Retrieve|
+Mandatory||Custody Administration Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Custody Arrangement Instance Reference||||Reference to the Custody Arrangement instance|O|I|I|I|I|I
+Initiate||Custody Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Custody Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Custody Arrangement Instance Status||||The status of the Custody Arrangement instance (e.g. initialised, pending, active)|IO
+||Custody Arrangement Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Custody Administration.
+Example: Perform the scheduled (e.g. statements, standing orders) and ad-hoc/requested (e.g. balance inquiries, fund transfers) fulfillment tasks for a customer current account facility.||||||||||||||||||||||||||
+||Custody Arrangement Parameter Type||||A Classification value that distinguishes between arrangements according to the type of business services within Custody Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||
+||Custody Arrangement Selected Option||||A selected optional business service as subject matter of Custody Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||
+||Custody Arrangement Type||||The type of Custody Arrangement|I|I|I|I|I|I|O|||||||||||||||||||
+||Custody Arrangement Reference||||Reference to Custody Arrangement|I|I|I|I|I|I|O|||||||||||||||||||
+||Custody Arrangement Schedule||||Timetable to fulfill Custody Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||
+||Custody Arrangement Status||||The status of Custody Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||
+||Custody Arrangement Reference||||Reference to the party who is involved in Custody Arrangement||||||||||||||||||||||||||
+||Custody Arrangement Currency||||The curreny which is arranged in Custody Arrangement|I|I|I|I|I|I|O|||||||||||||||||||
+||Custody Arrangement Regulation Reference||||Reference to the regulation which is defined in Custody Arrangement|I|I|I|I|I|I|O|||||||||||||||||||
+||Custody Arrangement Regulation Type||||A Classification that distinguishes between the regularity domains of Custody Arrangement|I|I|I|I|I|I|O|||||||||||||||||||
+||Custody Arrangement Jurisdiction||||Reference to the jurisdiction that is assigned to Custody Arrangement in case of legal dispute.|I|I|I|I|I|I|O|||||||||||||||||||
+||Custody Arrangement Booking Location||||The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement in the context of Custody Arrangement, are entered.|I|I|I|I|I|I|O|||||||||||||||||||
+||Custody Arrangement Account Type||||The type of account which is linked to Custody Arrangement|I|I|I|I|I|I|O|||||||||||||||||||
+||Custody Arrangement Account Reference||||Reference to the account which is linked to Custody Arrangement|I|I|I|I|I|I|O|||||||||||||||||||
+Update||Custody Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||Custody Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Custody Arrangement Control Action Task Reference||||Reference to a Custody Arrangement instance control processing service call|||O
+CONTROL||Custody Arrangement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Custody Arrangement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Custody Arrangement Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Custody Arrangement Exchange Action Task Reference||||Reference to a Custody Arrangement instance exchange service call||||O
+EXCHANGE||Custody Arrangement Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Custody Arrangement Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Custody Arrangement Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Custody Arrangement Execute Action Task Reference||||Reference to a Custody Arrangement instance execute service call|||||O
+EXECUTE||Custody Arrangement Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Custody Arrangement Request Action Task Reference||||Reference to a Custody Arrangement instance request service call||||||O
+REQUEST||Custody Arrangement Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Custody Arrangement Retrieve Action Task Reference||||Reference to a Custody Arrangement instance retrieve service call|||||||O
+RETRIEVE||Custody Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Custody Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Custody Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Custody Arrangement Instance Report Record|##|||A specific Custody Arrangement instance formatted report|||||||IO
+RETRIEVE|||Custody Arrangement Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Custody Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Custody Arrangement Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Custody Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Custody Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Custody Arrangement Instance Analysis|##|||A specific Custody Arrangement instance analytical report|||||||IO
+RETRIEVE|||Custody Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Custody Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Custody Arrangement Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Custody Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Custody Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Safe Keeping Instance Record|Safe Keeping||||||
+Mandatory||Custody Arrangement Instance Reference||||Reference to the parent Custody Arrangement instance||||||||I|I|I
+Mandatory||Safe Keeping Instance Reference||||Reference to the Safe Keeping instance||||||||I|I|I
+||Safe Keeping Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Custody Administration.
+||||||||||||||||||||||||||
+||Safe Keeping Preconditions||||The required status/situation prior to the implementation of the feature||||||||IO|IO|IO|O|||||||||||||||
+||Safe Keeping Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||IO|IO|IO|O|||||||||||||||
+||Securities Safe Keeping||||The Custody Arrangement specific Business Service||||||||IO|IO|IO|O|||||||||||||||
+||Safe Keeping Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||IO|IO|IO|O|||||||||||||||
+||Safe Keeping Securities Safe Keeping Service Type||||Reference to the specific business service type||||||||IO|IO|IO|O|||||||||||||||
+||Safe Keeping Securities Safe Keeping Service Description||||Description of the performed business service||||||||IO|IO|IO|O|||||||||||||||
+||Safe Keeping Securities Safe Keeping Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|O|||||||||||||||
+||Safe Keeping Securities Safe Keeping Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|O|||||||||||||||
+||Safe Keeping Securities Safe Keeping Service Name||||||||||||IO|IO|IO|O|||||||||||||||
+Update||Safe Keeping Update Action Task Reference||||Reference to an update service call||||||||O
+Update||Safe Keeping Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||Safe Keeping Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Control||Safe Keeping Control Action Task Reference||||Reference to a Safe Keeping instance control processing service call|||||||||O
+Control||Safe Keeping Control Action Task Record||||The processing control service call consolidated processing record|||||||||I/O
+Control||Safe Keeping Control Action Request|##|||Details of the control action service request|||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||||||||I
+Control||Safe Keeping Control Action Response||||Details of the control action service response|||||||||O
+Control||Safe Keeping Instance Status||||The status of the Safe Keeping instance (e.g. initialised, pending, active)|||||||||O
+Request||Safe Keeping Request Action Task Reference||||Reference to a Safe Keeping instance request service call||||||||||O
+Request||Safe Keeping Request Action Task Record||||The request service call consolidated processing record||||||||||I/O
+Request||Safe Keeping Request Record Reference||||Reference to the Safe Keeping service request record||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||O
+Retrieve||Safe Keeping Retrieve Action Task Reference||||Reference to a Safe Keeping instance retrieve service call|||||||||||O
+Retrieve||Safe Keeping Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||Safe Keeping Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||Safe Keeping Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||Safe Keeping Instance Report|##|||A specific Safe Keeping instance formatted report|||||||||||IO
+Retrieve|||Safe Keeping Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||Safe Keeping Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Safe Keeping Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||Safe Keeping Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||Safe Keeping Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||Safe Keeping Instance Analysis|##|||A specific Safe Keeping instance analytical report|||||||||||IO
+Retrieve|||Safe Keeping Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||Safe Keeping Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Safe Keeping Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||Safe Keeping Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||Safe Keeping Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O
+BQ Dividends and Interest Instance Record|Dividends and Interest||||||
+Mandatory||Custody Arrangement Instance Reference||||Reference to the parent Custody Arrangement instance||||||||||||I
+Mandatory||Dividends and Interest Instance Reference||||Reference to the Dividends and Interest instance||||||||||||O|
+Initiate||Dividends and Interest Initiate Action Reference||||Reference to an Initiate service call||||||||||||O
+Initiate||Dividends and Interest Initiate Action Record||||The Initiate service call input and output record||||||||||||I/O
+Initiate||Dividends and Interest Instance Status||||The status of the Dividends and Interest instance (e.g. initialised, pending, active)||||||||||||O
+||Dividends and Interest Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Custody Administration.
+||||||||||||||||||||||||||
+||Dividends and Interest Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||IO|O|||||||||||||
+||Dividends and Interest Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||IO|O|||||||||||||
+||Custody Dividends and Interest||||The Custody Arrangement specific Business Service||||||||||||IO|O|||||||||||||
+||Dividends and Interest Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||IO|O|||||||||||||
+||Dividends and Interest Custody Dividends and Interest Service Type||||Reference to the specific business service type||||||||||||IO|O|||||||||||||
+||Dividends and Interest Custody Dividends and Interest Service Description||||Description of the performed business service||||||||||||IO|O|||||||||||||
+||Dividends and Interest Custody Dividends and Interest Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||IO|O|||||||||||||
+||Dividends and Interest Custody Dividends and Interest Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||IO|O|||||||||||||
+||Dividends and Interest Custody Dividends and Interest Service Name||||||||||||||||IO|O|||||||||||||
+Retrieve||Dividends and Interest Retrieve Action Task Reference||||Reference to a Dividends and Interest instance retrieve service call|||||||||||||O
+Retrieve||Dividends and Interest Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||Dividends and Interest Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||Dividends and Interest Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||Dividends and Interest Instance Report|##|||A specific Dividends and Interest instance formatted report|||||||||||||IO
+Retrieve|||Dividends and Interest Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||Dividends and Interest Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Dividends and Interest Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||Dividends and Interest Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||Dividends and Interest Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||Dividends and Interest Instance Analysis|##|||A specific Dividends and Interest instance analytical report|||||||||||||IO
+Retrieve|||Dividends and Interest Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||Dividends and Interest Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Dividends and Interest Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||Dividends and Interest Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||Dividends and Interest Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O
+BQ Securities Reporting Instance Record|Securities Reporting||||||
+Mandatory||Custody Arrangement Instance Reference||||Reference to the parent Custody Arrangement instance||||||||||||||I|I|I
+Mandatory||Securities Reporting Instance Reference||||Reference to the Securities Reporting instance||||||||||||||O|I|I
+Initiate||Securities Reporting Initiate Action Reference||||Reference to an Initiate service call||||||||||||||O
+Initiate||Securities Reporting Initiate Action Record||||The Initiate service call input and output record||||||||||||||I/O
+Initiate||Securities Reporting Instance Status||||The status of the Securities Reporting instance (e.g. initialised, pending, active)||||||||||||||O
+||Securities Reporting Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Custody Administration.
+||||||||||||||||||||||||||
+||Securities Reporting Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||IO|IO|IO|O|||||||||
+||Securities Reporting Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||IO|IO|IO|O|||||||||
+||Custody Securities Reporting||||The Custody Arrangement specific Business Service||||||||||||||IO|IO|IO|O|||||||||
+||Securities Reporting Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||IO|IO|IO|O|||||||||
+||Securities Reporting Custody Securities Reporting Service Type||||Reference to the specific business service type||||||||||||||IO|IO|IO|O|||||||||
+||Securities Reporting Custody Securities Reporting Service Description||||Description of the performed business service||||||||||||||IO|IO|IO|O|||||||||
+||Securities Reporting Custody Securities Reporting Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|IO|IO|O|||||||||
+||Securities Reporting Custody Securities Reporting Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|IO|IO|O|||||||||
+||Securities Reporting Custody Securities Reporting Service Name||||||||||||||||||IO|IO|IO|O|||||||||
+Execute||Securities Reporting Execute Action Task Reference||||Reference to a Securities Reporting instance execute service call|||||||||||||||O
+Execute||Securities Reporting Execute Action Task Record||||The execute service call consolidated processing record|||||||||||||||I/O
+Execute||Securities Reporting Execute Record Reference||||Reference to the Securities Reporting execute transaction/record|||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response|||||||||||||||O
+Request||Securities Reporting Request Action Task Reference||||Reference to a Securities Reporting instance request service call||||||||||||||||O
+Request||Securities Reporting Request Action Task Record||||The request service call consolidated processing record||||||||||||||||I/O
+Request||Securities Reporting Request Record Reference||||Reference to the Securities Reporting service request record||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||O
+Retrieve||Securities Reporting Retrieve Action Task Reference||||Reference to a Securities Reporting instance retrieve service call|||||||||||||||||O
+Retrieve||Securities Reporting Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||I/O
+Retrieve||Securities Reporting Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||I
+Retrieve||Securities Reporting Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||O
+Retrieve||Securities Reporting Instance Report|##|||A specific Securities Reporting instance formatted report|||||||||||||||||IO
+Retrieve|||Securities Reporting Instance Report Reference|||Reference to the control record instance report|||||||||||||||||I
+Retrieve|||Securities Reporting Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Securities Reporting Instance Report Type|||The type of external report available|||||||||||||||||O
+Retrieve|||Securities Reporting Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||O
+Retrieve|||Securities Reporting Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||O
+Retrieve||Securities Reporting Instance Analysis|##|||A specific Securities Reporting instance analytical report|||||||||||||||||IO
+Retrieve|||Securities Reporting Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||I
+Retrieve|||Securities Reporting Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Securities Reporting Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||O
+Retrieve|||Securities Reporting Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||O
+Retrieve|||Securities Reporting Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||O
+BQ Fees Instance Record|Fees||||||
+Mandatory||Custody Arrangement Instance Reference||||Reference to the parent Custody Arrangement instance||||||||||||||||||I|I|I
+Mandatory||Fees Instance Reference||||Reference to the Fees instance||||||||||||||||||O|I|I
+Initiate||Fees Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||O
+Initiate||Fees Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||I/O
+Initiate||Fees Instance Status||||The status of the Fees instance (e.g. initialised, pending, active)||||||||||||||||||O
+||Fees Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Custody Administration.
+||||||||||||||||||||||||||
+||Fees Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||||||IO|IO|IO|O|||||
+||Fees Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||||||IO|IO|IO|O|||||
+||Business Service||||The Custody Arrangement specific Business Service||||||||||||||||||IO|IO|IO|O|||||
+||Fees Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||||||IO|IO|IO|O|||||
+||Fees Service Type||||Reference to the specific business service type||||||||||||||||||IO|IO|IO|O|||||
+||Fees Service Description||||Description of the performed business service||||||||||||||||||IO|IO|IO|O|||||
+||Fees Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||IO|IO|IO|O|||||
+||Fees Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||IO|IO|IO|O|||||
+||Fees Service Name||||||||||||||||||||||IO|IO|IO|O|||||
+Update||Fees Update Action Task Reference||||Reference to an update service call|||||||||||||||||||O
+Update||Fees Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||I/O
+Update||Fees Update Action Request||||Details of the update action service request|||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||O
+Exchange||Fees Exchange Action Task Reference||||Reference to a Fees instance exchange service call||||||||||||||||||||O
+Exchange||Fees Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||I/O
+Exchange||Fees Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||I
+Exchange||Fees Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||O
+Exchange||Fees Instance Status||||The status of the Fees instance (e.g. accepted, rejected, verified)||||||||||||||||||||O
+Retrieve||Fees Retrieve Action Task Reference||||Reference to a Fees instance retrieve service call|||||||||||||||||||||O
+Retrieve||Fees Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||I/O
+Retrieve||Fees Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||I
+Retrieve||Fees Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||O
+Retrieve||Fees Instance Report|##|||A specific Fees instance formatted report|||||||||||||||||||||IO
+Retrieve|||Fees Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||I
+Retrieve|||Fees Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||O
+Retrieve|||Fees Instance Report Type|||The type of external report available|||||||||||||||||||||O
+Retrieve|||Fees Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||O
+Retrieve|||Fees Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||O
+Retrieve||Fees Instance Analysis|##|||A specific Fees instance analytical report|||||||||||||||||||||IO
+Retrieve|||Fees Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||I
+Retrieve|||Fees Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||O
+Retrieve|||Fees Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||O
+Retrieve|||Fees Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||O
+Retrieve|||Fees Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||O
+BQ Settlement Instance Record|Settlement||||||
+Mandatory||Custody Arrangement Instance Reference||||Reference to the parent Custody Arrangement instance||||||||||||||||||||||I|I|I|I
+Mandatory||Settlement Instance Reference||||Reference to the Settlement instance||||||||||||||||||||||O|I|I|I
+Initiate||Settlement Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||||O
+Initiate||Settlement Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||||I/O
+Initiate||Settlement Instance Status||||The status of the Settlement instance (e.g. initialised, pending, active)||||||||||||||||||||||O
+||Settlement Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Custody Administration.
+||||||||||||||||||||||||||
+||Settlement Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||||||||||IO|IO|IO|IO|O
+||Settlement Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||||||||||IO|IO|IO|IO|O
+||Business Service||||The Custody Arrangement specific Business Service||||||||||||||||||||||IO|IO|IO|IO|O
+||Settlement Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||||||||||IO|IO|IO|IO|O
+||Settlement Service Type||||Reference to the specific business service type||||||||||||||||||||||IO|IO|IO|IO|O
+||Settlement Service Description||||Description of the performed business service||||||||||||||||||||||IO|IO|IO|IO|O
+||Settlement Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||||IO|IO|IO|IO|O
+||Settlement Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||||IO|IO|IO|IO|O
+Update||Settlement Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||O
+Update||Settlement Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||I/O
+Update||Settlement Update Action Request||||Details of the update action service request|||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||O
+Execute||Settlement Execute Action Task Reference||||Reference to a Settlement instance execute service call||||||||||||||||||||||||O
+Execute||Settlement Execute Action Task Record||||The execute service call consolidated processing record||||||||||||||||||||||||I/O
+Execute||Settlement Execute Record Reference||||Reference to the Settlement execute transaction/record||||||||||||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||||||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||||||||||||||||||O
+Request||Settlement Request Action Task Reference||||Reference to a Settlement instance request service call|||||||||||||||||||||||||O
+Request||Settlement Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||||I/O
+Request||Settlement Request Record Reference||||Reference to the Settlement service request record|||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||||O
+Retrieve||Settlement Retrieve Action Task Reference||||Reference to a Settlement instance retrieve service call||||||||||||||||||||||||||O
+Retrieve||Settlement Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||I/O
+Retrieve||Settlement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||I
+Retrieve||Settlement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||O
+Retrieve||Settlement Instance Report|##|||A specific Settlement instance formatted report||||||||||||||||||||||||||IO
+Retrieve|||Settlement Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||I
+Retrieve|||Settlement Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||O
+Retrieve|||Settlement Instance Report Type|||The type of external report available||||||||||||||||||||||||||O
+Retrieve|||Settlement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||O
+Retrieve|||Settlement Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||O
+Retrieve||Settlement Instance Analysis|##|||A specific Settlement instance analytical report||||||||||||||||||||||||||IO
+Retrieve|||Settlement Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||I
+Retrieve|||Settlement Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||O
+Retrieve|||Settlement Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||O
+Retrieve|||Settlement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||O
+Retrieve|||Settlement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||O

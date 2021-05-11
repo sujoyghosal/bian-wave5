@@ -1,0 +1,13 @@
+sd=Transaction Engine	Orchestrate a schedule of payment transaction and reporting activities for the fulfillment of certain long term instruments or structured facilities	Example of use:The mortgage fulfillment Service Domain delegates repayment processing to the Transaction Engine for its active mortgage product instances	The Service Domain provides a utility/background operational support service to orchestrate a schedule of payment transaction and reporting activities for the fulfillment of certain long term instruments or structured facilities. The Service Domain maintains a link to the associated fulfillment Service Domain and the applicable product instance for reporting and processing issues that may arise.
+sdpath=transaction-engine
+crpath=transaction-schedule-fulfillment-arrangement
+crr=Transaction Schedule Fulfillment Arrangement Instance
+mcr=Transaction Schedule Fulfillment Arrangement
+bqs=
+CONFIG
+TransactionScheduleFulfillmentArrangement	initiate	Initiate delegated transaction processing for a product instance		initiateTransactionScheduleFulfillmentArrangement		#desc
+TransactionScheduleFulfillmentArrangement	update	Update details for an active transaction processing arrangement		updateTransactionScheduleFulfillmentArrangement		#desc
+TransactionScheduleFulfillmentArrangement	control	Control an active transaction processing arrangement (e.g. suspend)		controlTransactionScheduleFulfillmentArrangement		#desc
+TransactionScheduleFulfillmentArrangement	exchange	Accept, reject a proposed action		exchangeTransactionScheduleFulfillmentArrangement		#desc
+TransactionScheduleFulfillmentArrangement	execute	Execute an automated function for a transaction processing arrangement (e.g. trigger some service option)		executeTransactionScheduleFulfillmentArrangement		#desc
+TransactionScheduleFulfillmentArrangement	retrieve	Retrieve details about delegated transaction processing for a product instance		retrieveTransactionScheduleFulfillmentArrangement		#desc

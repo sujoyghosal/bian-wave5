@@ -1,0 +1,927 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Card Capture'
+ description: >
+
+    ## Executive Summary:
+
+    A distributed facility to capture card transactions at the point of sale
+
+    ## Example of Use:
+
+    A card user uses their card to pay for a meal at a restaurant
+
+    ## Description:
+
+    Capture the card payment transaction at the merchant/point of sale. This includes obtaining the authorization for the transaction by accessing the issuer's account through the card network. The authorized transactions are collected for subsequent batch reporting and settlement processing through the network
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-card-capture/1.0.0
+schemes:
+ - https
+paths:
+  /card-capture/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCardCapture
+      summary: Activate  a SDCardCapture servicing session
+      description: Activate  a  SDCardCapture servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCardCapture Request Payload
+        schema:
+          $ref: '#/definitions/SDCardCaptureActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCardCaptureActivateOutputModel'
+  /card-capture/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCardCapture
+      summary: Update an active SDCardCapture session configuration
+      description: Update an active SDCardCapture session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCardCapture Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCardCapture Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCardCaptureConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCardCaptureConfigureOutputModel'
+  /card-capture/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCardCapture
+      summary: "Capturing feedback against the SDCardCapture service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCardCapture service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCardCapture Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCardCapture Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCardCaptureFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCardCaptureFeedbackOutputModel'
+  /card-capture/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCardCapture
+      summary: Analytical views maintained by the SDCardCapture service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCardCapture service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCardCapture Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCardCaptureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCardCaptureRetrieveOutputModel'  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCreditCardFinancialCaptureTransaction
+      summary: Details of a new CreditCardFinancialCaptureTransaction instance
+      description: Instantiate a new Credit Card Financial Capture Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CreditCardFinancialCaptureTransaction Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new CreditCardFinancialCaptureTransaction instance
+          schema:
+            $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionInitiateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCreditCardFinancialCaptureTransaction
+      summary: Update to any amendable fields of the CreditCardFinancialCaptureTransaction instance
+      description: Update details relating to Credit Card Financial Capture Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Card Financial Capture Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Credit Card Financial Capture Transaction Instance
+          schema:
+            $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionUpdateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCreditCardFinancialCaptureTransactionUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Credit Card Financial Capture Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Card Financial Capture Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionControlInputModel'
+      responses:
+        200:
+          description: Successful control of Credit Card Financial Capture Transaction Instance
+          schema:
+            $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionControlOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCreditCardFinancialCaptureTransactionUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Credit Card Financial Capture Transaction processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Card Financial Capture Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Credit Card Financial Capture Transaction Instance
+          schema:
+            $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionExchangeOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCreditCardFinancialCaptureTransactionUpdate
+      summary: Invoke an automated execute action against the CreditCardFinancialCaptureTransaction instance
+      description: Execute an available automated action for Credit Card Financial Capture Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Card Financial Capture Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Credit Card Financial Capture Transaction Instance
+          schema:
+            $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionExecuteOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCreditCardFinancialCaptureTransactionUpdate
+      summary: Invoke a service request action against the CreditCardFinancialCaptureTransaction instance
+      description: Request manual intervention or a decision with respect to Credit Card Financial Capture Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Card Financial Capture Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Credit Card Financial Capture Transaction Instance
+          schema:
+            $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionRequestOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCardCapture
+      summary: Invoke a reporting action to obtain a Credit Card Financial Capture Transaction instance related report
+      description: Retrieve details about any aspect of Credit Card Financial Capture Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCreditCardFinancialCaptureTransactionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Credit Card Financial Capture Transaction Instance
+          schema:
+            $ref: '#/definitions/CRCreditCardFinancialCaptureTransactionRetrieveOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactioncapture/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCreditCardFinancialCaptureTransactionTransactionCapture
+      summary: Details of a new TransactionCapture instance
+      description: Instantiate a new Transaction Capture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Card Financial Capture Transaction Request Payload
+        schema:
+          $ref: '#/definitions/BQTransactionCaptureInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Credit Card Financial Capture Transaction instance
+          schema:
+            $ref: '#/definitions/BQTransactionCaptureInitiateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactioncapture/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCreditCardFinancialCaptureTransactionTransactionCapture
+      summary: Update to any amendable fields of the TransactionCapture instance
+      description: Update details relating to Transaction Capture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionCapture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransactionCapture Request Payload
+        schema:
+          $ref: '#/definitions/BQTransactionCaptureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TransactionCapture Instance
+          schema:
+            $ref: '#/definitions/BQTransactionCaptureUpdateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactioncapture/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCreditCardFinancialCaptureTransactionTransactionCapture
+      summary: Invoke a reporting action to obtain a TransactionCapture instance related report.
+      description: Retrieve details about any aspect of Transaction Capture .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionCapture Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTransactionCaptureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TransactionCapture Instance Record
+          schema:
+            $ref: '#/definitions/BQTransactionCaptureRetrieveOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionauthorization/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCreditCardFinancialCaptureTransactionTransactionAuthorization
+      summary: Details of a new TransactionAuthorization instance
+      description: Instantiate a new Transaction Authorization
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Card Financial Capture Transaction Request Payload
+        schema:
+          $ref: '#/definitions/BQTransactionAuthorizationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Credit Card Financial Capture Transaction instance
+          schema:
+            $ref: '#/definitions/BQTransactionAuthorizationInitiateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionauthorization/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCreditCardFinancialCaptureTransactionTransactionAuthorization
+      summary: Update to any amendable fields of the TransactionAuthorization instance
+      description: Update details relating to Transaction Authorization
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionAuthorization Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransactionAuthorization Request Payload
+        schema:
+          $ref: '#/definitions/BQTransactionAuthorizationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TransactionAuthorization Instance
+          schema:
+            $ref: '#/definitions/BQTransactionAuthorizationUpdateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionauthorization/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCreditCardFinancialCaptureTransactionTransactionAuthorization
+      summary: Invoke a reporting action to obtain a TransactionAuthorization instance related report.
+      description: Retrieve details about any aspect of Transaction Authorization .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionAuthorization Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTransactionAuthorizationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TransactionAuthorization Instance Record
+          schema:
+            $ref: '#/definitions/BQTransactionAuthorizationRetrieveOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionconsolidation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCreditCardFinancialCaptureTransactionTransactionConsolidation
+      summary: Details of a new TransactionConsolidation instance
+      description: Instantiate a new Transaction Consolidation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Card Financial Capture Transaction Request Payload
+        schema:
+          $ref: '#/definitions/BQTransactionConsolidationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Credit Card Financial Capture Transaction instance
+          schema:
+            $ref: '#/definitions/BQTransactionConsolidationInitiateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionconsolidation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCreditCardFinancialCaptureTransactionTransactionConsolidation
+      summary: Update to any amendable fields of the TransactionConsolidation instance
+      description: Update details relating to Transaction Consolidation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionConsolidation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransactionConsolidation Request Payload
+        schema:
+          $ref: '#/definitions/BQTransactionConsolidationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TransactionConsolidation Instance
+          schema:
+            $ref: '#/definitions/BQTransactionConsolidationUpdateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionconsolidation/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCreditCardFinancialCaptureTransactionTransactionConsolidationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Transaction Consolidation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionConsolidation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransactionConsolidation request payload
+        schema:
+          $ref: '#/definitions/BQTransactionConsolidationControlInputModel'
+      responses:
+        200:
+          description: Successful control of TransactionConsolidation Instance Record
+          schema:
+            $ref: '#/definitions/BQTransactionConsolidationControlOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionconsolidation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCreditCardFinancialCaptureTransactionTransactionConsolidationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Transaction Consolidation processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionConsolidation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransactionConsolidation request payload
+        schema:
+          $ref: '#/definitions/BQTransactionConsolidationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of TransactionConsolidation Instance Record
+          schema:
+            $ref: '#/definitions/BQTransactionConsolidationExchangeOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionconsolidation/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCreditCardFinancialCaptureTransactionTransactionConsolidationUpdate
+      summary: Invoke an automated execute action against the TransactionConsolidation instance
+      description: Execute an available automated action for Transaction Consolidation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionConsolidation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransactionConsolidation request payload
+        schema:
+          $ref: '#/definitions/BQTransactionConsolidationExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of TransactionConsolidation Instance Record
+          schema:
+            $ref: '#/definitions/BQTransactionConsolidationExecuteOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionconsolidation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCreditCardFinancialCaptureTransactionTransactionConsolidation
+      summary: Invoke a reporting action to obtain a TransactionConsolidation instance related report.
+      description: Retrieve details about any aspect of Transaction Consolidation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionConsolidation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTransactionConsolidationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TransactionConsolidation Instance Record
+          schema:
+            $ref: '#/definitions/BQTransactionConsolidationRetrieveOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionreversal/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCreditCardFinancialCaptureTransactionTransactionReversal
+      summary: Details of a new TransactionReversal instance
+      description: Instantiate a new Transaction Reversal
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Card Financial Capture Transaction Request Payload
+        schema:
+          $ref: '#/definitions/BQTransactionReversalInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Credit Card Financial Capture Transaction instance
+          schema:
+            $ref: '#/definitions/BQTransactionReversalInitiateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionreversal/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCreditCardFinancialCaptureTransactionTransactionReversal
+      summary: Update to any amendable fields of the TransactionReversal instance
+      description: Update details relating to Transaction Reversal
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionReversal Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransactionReversal Request Payload
+        schema:
+          $ref: '#/definitions/BQTransactionReversalUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TransactionReversal Instance
+          schema:
+            $ref: '#/definitions/BQTransactionReversalUpdateOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/transactionreversal/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCreditCardFinancialCaptureTransactionTransactionReversal
+      summary: Invoke a reporting action to obtain a TransactionReversal instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TransactionReversal Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTransactionReversalRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TransactionReversal Instance Record
+          schema:
+            $ref: '#/definitions/BQTransactionReversalRetrieveOutputModel'
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCardCaptureReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CardCapture Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /card-capture/credit-card-financial-capture-transaction/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCardCaptureBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'TransactionConsolidation',  'TransactionReversal',  'TransactionAuthorization',  'TransactionCapture', ]
+  /card-capture/{sd-reference-id}/credit-card-financial-capture-transaction/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCardCaptureBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Card Capture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Card Financial Capture Transaction Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- TransactionCapture
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- TransactionCapture Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [TransactionCaptureID1, TransactionCaptureID2]

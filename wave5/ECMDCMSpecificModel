@@ -1,0 +1,40 @@
+CR ECM-DCM Fulfillment Arrangement Instance Record	CR ECM-DCM Fulfillment Arrangement Instance Record	CR ECM-DCM Fulfillment Arrangement Instance Record	##				IO	IO		IO	O									
+			Product Instance Reference 			Reference to the advisory service session	O	IO		IO	O									
+			Customer Reference			Reference to the customer receiving the financial advice	I	IO		IO	O									
+			Bank Branch/Location Reference			Bank branch associated with the customer account/relationship for booking purposes	I	IO		IO	O									
+			Business Unit Reference 			Business unit and or employee reference to the source of the financial advice	I	IO		IO	O									
+			Document Directory Entry Instance Reference			The document reference for associated documents such as disclosures and acceptance records	IO	IO		IO	O									
+			Associations	##		Definition of the involved parties or associations to the issuance project	IO	IO		IO	O									
+				Association Type		The type of association (e.g. co-investor, legal)	IO	IO		IO	O									
+				Association Obligation/Entitlement		Description of the role, obligations or entitlements of the associated party	IO	IO		IO	O									
+				Association Reference		Reference to the associated party	IO	IO		IO	O									
+			ECM-DCM Fulfillment Schedule 			The schedule for work tasks performed and to be performed through the issuing process	IO	IO		IO	O									
+			Date Type	##		Key dates associated with the issuance process (e.g. engagement date, prospectus date, offering date)	IO	IO		IO	O									
+				Date		Value of the date type	IO	IO		IO	O									
+			ECM-DCM Instrument Record			The consolidated record of the developed investment vehicle. Combines the output of the development and issuance activities, participant details, investment transaction records as appropriate (details not included at this time)	IO	IO		IO	O									
+BQ Instrument Definition Instance Record	BQ Instrument Definition Instance Record	Instrument Definition Instance Record	##			Tasks to determine the correct structure for the equity/debt instrument						IO	IO	O						
+			Employee/Business Unit Reference 			Business unit and or employee responsible for the financial instrument specification - (includes financial engineers, legal/regulatory and tax specialists as appropriate)						IO	IO	O						
+			Instrument Definition Work Task Record	##		A record of the work done to define and agree the structure of the equity or debt instrument						IO	IO	O						
+				Instrument Definition Work Task Type		The type of work task (e.g. financial engineering, tax optimization, regulatory compliance checks)						IO	IO	O						
+				Instrument Definition Work Task Description		Description of the task performed						IO	O	O						
+				Instrument Definition Work Task Work Products 		File of consolidated notes, algorithms, financial market research, forms and documents for the work task						IO	IO	O						
+				Document Directory Entry Instance Reference		Reference to associated documents						IO	IO	O						
+				Instrument Definition Specification		The specification of the developed ECM-DCM instrument						IO	O	O						
+BQ Prospectus Instance Record	BQ Prospectus Instance Record	Prospectus Instance Record	##			Tasks to develop the prospectus and determine target pricing for the ECM-DCM instrument									IO	IO	O			
+			Employee/Business Unit Reference 			Business unit and or employee responsible for the prospectus development									IO	IO	O			
+			Prospectus Work Task Record	##		A record of the work done to develop the prospectus for the issuance (covers both private and public placements)									IO	IO	O			
+				Prospectus Work Task Type		The type of work task (e.g. financial analysis/comparison development, pricing negotiation, presentation development, legal/tax/compliance assurance)									IO	IO	O			
+				Prospectus Work Task Description		Description of the task performed									IO	O	O			
+				Prospectus Work Task Work Products 		File of consolidated notes, algorithms, financial market research, forms and documents for the work task									IO	IO	O			
+				Document Directory Entry Instance Reference		Reference to associated documents									IO	IO	O			
+				Prospectus		The developed prospectus for the ECM-DCM instrument, including agreed pricing strategy									IO	O	O			
+BQ Placement Instance Record	BQ Placement Instance Record	Placement Instance Record	##			Tasks to present the prospectus to primary market prospects or public investors for a public offering - including road shows and support for the market IPO as appropriate												IO	IO	O
+			Employee/Business Unit Reference 			Business unit and or employee responsible for the placement road show and issuance transaction												IO	IO	O
+			Prospect List			List of target investors for private placement												IO	IO	O
+			Placement Road show Schedule			The schedule and details of investor presentations												IO	IO	O
+			Placement Work Task Record	##		A record of the work done to place the instrument in the private or public markets as appropriate												IO	IO	O
+				Placement Work Task Type		The type of work task (e.g. prospect scheduling, presentation, negotiation)												IO	IO	O
+				Placement Work Task Description		Description of the task performed												IO	O	O
+				Placement Work Task Work Products 		File of consolidated notes, forms and documents used and generated through the work task												IO	IO	O
+				Document Directory Entry Instance Reference		Reference to associated documents												IO	IO	O
+			Placement Transaction			The consolidated details of the investments obtained for the issuance - details investor participation for private placement and primary market transaction references for public offerings												IO	O	O

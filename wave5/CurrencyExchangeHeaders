@@ -1,0 +1,26 @@
+SD=Currency Exchange
+CR=Currency Exchange Transaction
+BQs= DocumentHandling FXTransactionCapture FXTransactionPricing
+This is an over the counter service where currency is exchanged and the transaction uses preferential rates and can include transaction fees. Note in some cases travelers checks can be handled as a pseudo currency within this capability. Note that Branch and teller currency inventory tracking and distribution is administered by Branch Currency Management and Branch Currency Distribution service domains
+A non-bank customer obtains a currency exchange at the teller, buying foreign currency for local currency in cash
+Service Domain supports over the counter currency exchange
+CR - Currency Exchange Transaction							BQ - FXTransaction Pricing			BQ - Document Handling				BQ - FXTransaction Capture			
+In	Up	Co	Ec	Ex	Rq	Re	In	Up	Re	In	Up	Ex	Re	In	Up	Ec	Re
+InCR Instantiate a new Currency Exchange Transaction
+UpCR Update details relating to Currency Exchange Transaction
+CoCR Control the processing of Currency Exchange Transaction
+EcCR Accept, verify, etc. aspects of Currency Exchange Transaction processing
+ExCR Execute an available automated action for Currency Exchange Transaction
+RqCR Request manual intervention or a decision with respect to Currency Exchange Transaction
+ReCR Retrieve details about any aspect of Currency Exchange Transaction
+InBQ Instantiate a new FX Transaction Pricing
+UpBQ Update details relating to FX Transaction Pricing
+ReBQ Retrieve details about any aspect of FX Transaction Pricing
+InBQ Instantiate a new Document Handling
+UpBQ Update details relating to Document Handling
+ExBQ Execute an available automated action for Document Handling
+ReBQ Retrieve details about any aspect of Document Handling
+InBQ Instantiate a new FX Transaction Capture
+UpBQ Update details relating to FX Transaction Capture
+EcBQ Accept, verify, etc. aspects of FX Transaction Capture processing
+ReBQ Retrieve details about any aspect of FX Transaction Capture

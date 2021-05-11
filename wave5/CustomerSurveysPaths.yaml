@@ -1,0 +1,912 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Customer Surveys'
+ description: >
+
+    ## Executive Summary:
+
+    Define and execute and analyze customer surveys
+
+    ## Example of Use:
+
+    A bank develops a customer questionnaire to obtain feedback from customers that make frequent use of the self-service contact center facility for service improvement suggestions
+
+    ## Description:
+
+    Handle the deployment, execution and on-going refinement of customer surveys. This includes many types of survey including traditional mailshot questionnaires, in production review/feedback solicitation, review panels/focus groups. The survey execution process performs the survey definitions, selection of reviewers, surveying and post survey analysis
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-customer-surveys/1.0.0
+schemes:
+ - https
+paths:
+  /customer-surveys/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCustomerSurveys
+      summary: Activate  a SDCustomerSurveys servicing session
+      description: Activate  a  SDCustomerSurveys servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCustomerSurveys Request Payload
+        schema:
+          $ref: '#/definitions/SDCustomerSurveysActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCustomerSurveysActivateOutputModel'
+  /customer-surveys/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCustomerSurveys
+      summary: Update an active SDCustomerSurveys session configuration
+      description: Update an active SDCustomerSurveys session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustomerSurveys Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCustomerSurveys Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCustomerSurveysConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCustomerSurveysConfigureOutputModel'
+  /customer-surveys/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCustomerSurveys
+      summary: "Capturing feedback against the SDCustomerSurveys service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCustomerSurveys service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustomerSurveys Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCustomerSurveys Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCustomerSurveysFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCustomerSurveysFeedbackOutputModel'
+  /customer-surveys/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCustomerSurveys
+      summary: Analytical views maintained by the SDCustomerSurveys service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCustomerSurveys service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustomerSurveys Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCustomerSurveysRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCustomerSurveysRetrieveOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCustomerSurveyProcedure
+      summary: Details of a new CustomerSurveyProcedure instance
+      description: Initiate customer survey processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CustomerSurveyProcedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerSurveyProcedureInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new CustomerSurveyProcedure instance
+          schema:
+            $ref: '#/definitions/CRCustomerSurveyProcedureInitiateOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerSurveyProcedure
+      summary: Update to any amendable fields of the CustomerSurveyProcedure instance
+      description: Update details of an active customer survey process
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Survey Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerSurveyProcedureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Customer Survey Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCustomerSurveyProcedureUpdateOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCustomerSurveyProcedureUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the execution of a customer survey (e.g. suspend processing)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Survey Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerSurveyProcedureControlInputModel'
+      responses:
+        200:
+          description: Successful control of Customer Survey Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCustomerSurveyProcedureControlOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustomerSurveyProcedureUpdate
+      summary: Invoke a service request action against the CustomerSurveyProcedure instance
+      description: Request manual intervention to the survey process (e.g. revise customer targeting criteria)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Survey Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerSurveyProcedureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Customer Survey Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCustomerSurveyProcedureRequestOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerSurveys
+      summary: Invoke a reporting action to obtain a Customer Survey Procedure instance related report
+      description: Retrieve details about a customer survey process
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCustomerSurveyProcedureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Customer Survey Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCustomerSurveyProcedureRetrieveOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/definition/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerSurveyProcedureDefinition
+      summary: Update to any amendable fields of the Definition instance
+      description: Update aspects of a customer survey definition/specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Definition Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Definition Request Payload
+        schema:
+          $ref: '#/definitions/BQDefinitionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Definition Instance
+          schema:
+            $ref: '#/definitions/BQDefinitionUpdateOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/definition/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCustomerSurveyProcedureDefinitionUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, verify, etc. aspects of a customer survey definition
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Definition Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Definition request payload
+        schema:
+          $ref: '#/definitions/BQDefinitionExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Definition Instance Record
+          schema:
+            $ref: '#/definitions/BQDefinitionExchangeOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/definition/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerSurveyProcedureDefinition
+      summary: Invoke a reporting action to obtain a Definition instance related report.
+      description: Retrieve details about customer survey related activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Definition Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQDefinitionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Definition Instance Record
+          schema:
+            $ref: '#/definitions/BQDefinitionRetrieveOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/reviewerselection/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerSurveyProcedureReviewerSelection
+      summary: Update to any amendable fields of the ReviewerSelection instance
+      description: Update reviewer selection details
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ReviewerSelection Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ReviewerSelection Request Payload
+        schema:
+          $ref: '#/definitions/BQReviewerSelectionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ReviewerSelection Instance
+          schema:
+            $ref: '#/definitions/BQReviewerSelectionUpdateOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/reviewerselection/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustomerSurveyProcedureReviewerSelectionUpdate
+      summary: Invoke a service request action against the ReviewerSelection instance
+      description: Request manual intervention in survey reviewer selection (e.g. handle subject availability)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ReviewerSelection Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ReviewerSelection request payload
+        schema:
+          $ref: '#/definitions/BQReviewerSelectionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ReviewerSelection Instance Record
+          schema:
+            $ref: '#/definitions/BQReviewerSelectionRequestOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/reviewerselection/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerSurveyProcedureReviewerSelection
+      summary: Invoke a reporting action to obtain a ReviewerSelection instance related report.
+      description: Retrieve details about survey reviewer selection activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ReviewerSelection Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQReviewerSelectionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ReviewerSelection Instance Record
+          schema:
+            $ref: '#/definitions/BQReviewerSelectionRetrieveOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/execution/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCustomerSurveyProcedureExecution
+      summary: Details of a new Execution instance
+      description: Initiate customer survey execution task (e.g. run survey with a customer)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Survey Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQExecutionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Customer Survey Procedure instance
+          schema:
+            $ref: '#/definitions/BQExecutionInitiateOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/execution/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerSurveyProcedureExecution
+      summary: Update to any amendable fields of the Execution instance
+      description: Update details of a survey execution task
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Execution Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Execution Request Payload
+        schema:
+          $ref: '#/definitions/BQExecutionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Execution Instance
+          schema:
+            $ref: '#/definitions/BQExecutionUpdateOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/execution/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureCustomerSurveyProcedureExecutionUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture input from a survey execution task (e.g. automated capture of customer feedback)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Execution Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Execution request payload
+        schema:
+          $ref: '#/definitions/BQExecutionCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Execution Instance Record
+          schema:
+            $ref: '#/definitions/BQExecutionCaptureOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/execution/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCustomerSurveyProcedureExecutionUpdate
+      summary: Invoke an automated execute action against the Execution instance
+      description: Execute an automated action for survey execution (e.g. present survey in context to a matched customer)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Execution Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Execution request payload
+        schema:
+          $ref: '#/definitions/BQExecutionExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Execution Instance Record
+          schema:
+            $ref: '#/definitions/BQExecutionExecuteOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/execution/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustomerSurveyProcedureExecutionUpdate
+      summary: Invoke a service request action against the Execution instance
+      description: Request manual intervention in survey execution (e.g. host a focus group event)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Execution Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Execution request payload
+        schema:
+          $ref: '#/definitions/BQExecutionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Execution Instance Record
+          schema:
+            $ref: '#/definitions/BQExecutionRequestOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/execution/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerSurveyProcedureExecution
+      summary: Invoke a reporting action to obtain a Execution instance related report.
+      description: Retrieve details about customer survey execution activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Execution Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQExecutionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Execution Instance Record
+          schema:
+            $ref: '#/definitions/BQExecutionRetrieveOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/surveyanalysis/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCustomerSurveyProcedureSurveyAnalysis
+      summary: Details of a new SurveyAnalysis instance
+      description: Initiate survey result consolidation and analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Survey Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQSurveyAnalysisInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Customer Survey Procedure instance
+          schema:
+            $ref: '#/definitions/BQSurveyAnalysisInitiateOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/surveyanalysis/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerSurveyProcedureSurveyAnalysis
+      summary: Update to any amendable fields of the SurveyAnalysis instance
+      description: Update details about customer survey analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SurveyAnalysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SurveyAnalysis Request Payload
+        schema:
+          $ref: '#/definitions/BQSurveyAnalysisUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated SurveyAnalysis Instance
+          schema:
+            $ref: '#/definitions/BQSurveyAnalysisUpdateOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/surveyanalysis/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustomerSurveyProcedureSurveyAnalysisUpdate
+      summary: Invoke a service request action against the SurveyAnalysis instance
+      description: Request manual intervention in survey analysis (e.g. perform specific analysis)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SurveyAnalysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SurveyAnalysis request payload
+        schema:
+          $ref: '#/definitions/BQSurveyAnalysisRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of SurveyAnalysis Instance Record
+          schema:
+            $ref: '#/definitions/BQSurveyAnalysisRequestOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/surveyanalysis/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerSurveyProcedureSurveyAnalysis
+      summary: Invoke a reporting action to obtain a SurveyAnalysis instance related report.
+      description: Retrieve details about a customer survey analysis .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SurveyAnalysis Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQSurveyAnalysisRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved SurveyAnalysis Instance Record
+          schema:
+            $ref: '#/definitions/BQSurveyAnalysisRetrieveOutputModel'
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustomerSurveysReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CustomerSurveys Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /customer-surveys/customer-survey-procedure/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustomerSurveysBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Definition',  'ReviewerSelection',  'Execution',  'SurveyAnalysis', ]
+  /customer-surveys/{sd-reference-id}/customer-survey-procedure/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustomerSurveysBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Surveys Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Survey Procedure Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- SurveyAnalysis
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- SurveyAnalysis Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [SurveyAnalysisID1, SurveyAnalysisID2]

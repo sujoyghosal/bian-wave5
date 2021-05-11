@@ -1,0 +1,55 @@
+sd=Merchandising Loan	Fulfillment of loan product used in the purchase of a larger merchandise item such as a car or boat. The purchased item is typically treated as collateral for the loan	A boat retailer coordinates with a bank to offer merchandising loans to bank customers wanting to buy a boat	The service domain handles loan fulfillment intended for the purchase of a larger merchandise item such as a car or boat. The item is usually administered as collateral for the loan and the origination and subsequent processing of the loan can include coordination with the merchant for some elements of fulfillment.
+sdpath=merchandising-loan
+crpath=merchandising-loan-arrangement
+crr=Merchandising Loan Arrangement Instance
+mcr=Merchandising Loan Arrangement
+bqs=FinancialInstrument IssuedDevice Collateral FinancialAccounting Billing Payments Withdrawals Deposits Sweep Lien Fees Interest
+CONFIG
+MerchandisingLoanArrangement	initiate	Instantiate a new Merchandising Loan Arrangement		initiateMerchandisingLoanArrangement		#desc
+MerchandisingLoanArrangement	update	Update details relating to Merchandising Loan Arrangement		updateMerchandisingLoanArrangement		#desc
+MerchandisingLoanArrangement	control	Control the processing of Merchandising Loan Arrangement		controlMerchandisingLoanArrangement		#desc
+MerchandisingLoanArrangement	exchange	Accept, verify, etc. aspects of Merchandising Loan Arrangement processing		exchangeMerchandisingLoanArrangement		#desc
+MerchandisingLoanArrangement	execute	Execute an available automated action for Merchandising Loan Arrangement		executeMerchandisingLoanArrangement		#desc
+MerchandisingLoanArrangement	request	Request manual intervention or a decision with respect to Merchandising Loan Arrangement		requestMerchandisingLoanArrangement		#desc
+MerchandisingLoanArrangement	retrieve	Retrieve details about any aspect of Merchandising Loan Arrangement		retrieveMerchandisingLoanArrangement		#desc
+FinancialInstrument	initiate	Instantiate a new Financial Instrument	initiateMerchandisingLoanArrangementFinancialInstrument	initiateMerchandisingLoanArrangementFinancialInstrument		Details of a new Financial Instrument instance
+FinancialInstrument	update	Update details relating to Financial Instrument	updateMerchandisingLoanArrangementFinancialInstrument	updateMerchandisingLoanArrangementFinancialInstrument		Update to any amendable fields of the Financial Instrument instance
+FinancialInstrument	retrieve	Retrieve details about any aspect of Financial Instrument	retrieveMerchandisingLoanArrangementFinancialInstrument	retrieveMerchandisingLoanArrangementFinancialInstrument		Invoke a reporting action to obtain a Financial Instrument instance related report
+Sweep	initiate	Instantiate a new Sweep	initiateMerchandisingLoanArrangementSweep	initiateMerchandisingLoanArrangementSweep		Details of a new Sweep instance
+Sweep	update	Update details relating to Sweep	updateMerchandisingLoanArrangementSweep	updateMerchandisingLoanArrangementSweep		Update to any amendable fields of the Sweep instance
+Sweep	exchange	Accept, verify, etc. aspects of Sweep processing	exchangeMerchandisingLoanArrangementSweep	exchangeMerchandisingLoanArrangementSweep		Handle an external exchange (e.g. accept, reject, verify)
+Sweep	retrieve	Retrieve details about any aspect of Sweep	retrieveMerchandisingLoanArrangementSweep	retrieveMerchandisingLoanArrangementSweep		Invoke a reporting action to obtain a Sweep instance related report
+FinancialAccounting	update	Update details relating to Financial Accounting	updateMerchandisingLoanArrangementFinancialAccounting	updateMerchandisingLoanArrangementFinancialAccounting		Update to any amendable fields of the Financial Accounting instance
+FinancialAccounting	retrieve	Retrieve details about any aspect of Financial Accounting	retrieveMerchandisingLoanArrangementFinancialAccounting	retrieveMerchandisingLoanArrangementFinancialAccounting		Invoke a reporting action to obtain a Financial Accounting instance related report
+Deposits	initiate	Instantiate a new Deposits	initiateMerchandisingLoanArrangementDeposits	initiateMerchandisingLoanArrangementDeposits		Details of a new Deposits instance
+Deposits	update	Update details relating to Deposits	updateMerchandisingLoanArrangementDeposits	updateMerchandisingLoanArrangementDeposits		Update to any amendable fields of the Deposits instance
+Deposits	retrieve	Retrieve details about any aspect of Deposits	retrieveMerchandisingLoanArrangementDeposits	retrieveMerchandisingLoanArrangementDeposits		Invoke a reporting action to obtain a Deposits instance related report
+Withdrawals	initiate	Instantiate a new Withdrawals	initiateMerchandisingLoanArrangementWithdrawals	initiateMerchandisingLoanArrangementWithdrawals		Details of a new Withdrawals instance
+Withdrawals	update	Update details relating to Withdrawals	updateMerchandisingLoanArrangementWithdrawals	updateMerchandisingLoanArrangementWithdrawals		Update to any amendable fields of the Withdrawals instance
+Withdrawals	retrieve	Retrieve details about any aspect of Withdrawals	retrieveMerchandisingLoanArrangementWithdrawals	retrieveMerchandisingLoanArrangementWithdrawals		Invoke a reporting action to obtain a Withdrawals instance related report
+Collateral	initiate	Instantiate a new Collateral	initiateMerchandisingLoanArrangementCollateral	initiateMerchandisingLoanArrangementCollateral		Details of a new Collateral instance
+Collateral	update	Update details relating to Collateral	updateMerchandisingLoanArrangementCollateral	updateMerchandisingLoanArrangementCollateral		Update to any amendable fields of the Collateral instance
+Collateral	request	Request manual intervention or a decision with respect to Collateral	requestMerchandisingLoanArrangementCollateral	requestMerchandisingLoanArrangementCollateral		Invoke a service request action against the Collateral instance
+Collateral	retrieve	Retrieve details about any aspect of Collateral	retrieveMerchandisingLoanArrangementCollateral	retrieveMerchandisingLoanArrangementCollateral		Invoke a reporting action to obtain a Collateral instance related report
+Payments	initiate	Instantiate a new Payments	initiateMerchandisingLoanArrangementPayments	initiateMerchandisingLoanArrangementPayments		Details of a new Payments instance
+Payments	update	Update details relating to Payments	updateMerchandisingLoanArrangementPayments	updateMerchandisingLoanArrangementPayments		Update to any amendable fields of the Payments instance
+Payments	exchange	Accept, verify, etc. aspects of Payments processing	exchangeMerchandisingLoanArrangementPayments	exchangeMerchandisingLoanArrangementPayments		Handle an external exchange (e.g. accept, reject, verify)
+Payments	retrieve	Retrieve details about any aspect of Payments	retrieveMerchandisingLoanArrangementPayments	retrieveMerchandisingLoanArrangementPayments		Invoke a reporting action to obtain a Payments instance related report
+Lien	initiate	Instantiate a new Lien	initiateMerchandisingLoanArrangementLien	initiateMerchandisingLoanArrangementLien		Details of a new Lien instance
+Lien	update	Update details relating to Lien	updateMerchandisingLoanArrangementLien	updateMerchandisingLoanArrangementLien		Update to any amendable fields of the Lien instance
+Lien	exchange	Accept, verify, etc. aspects of Lien processing	exchangeMerchandisingLoanArrangementLien	exchangeMerchandisingLoanArrangementLien		Handle an external exchange (e.g. accept, reject, verify)
+Lien	retrieve	Retrieve details about any aspect of Lien	retrieveMerchandisingLoanArrangementLien	retrieveMerchandisingLoanArrangementLien		Invoke a reporting action to obtain a Lien instance related report
+Interest	update	Update details relating to Interest	updateMerchandisingLoanArrangementInterest	updateMerchandisingLoanArrangementInterest		Update to any amendable fields of the Interest instance
+Interest	retrieve	Retrieve details about any aspect of Interest	retrieveMerchandisingLoanArrangementInterest	retrieveMerchandisingLoanArrangementInterest		Invoke a reporting action to obtain a Interest instance related report
+Billing	initiate	Instantiate a new Billing	initiateMerchandisingLoanArrangementBilling	initiateMerchandisingLoanArrangementBilling		Details of a new Billing instance
+Billing	update	Update details relating to Billing	updateMerchandisingLoanArrangementBilling	updateMerchandisingLoanArrangementBilling		Update to any amendable fields of the Billing instance
+Billing	exchange	Accept, verify, etc. aspects of Billing processing	exchangeMerchandisingLoanArrangementBilling	exchangeMerchandisingLoanArrangementBilling		Handle an external exchange (e.g. accept, reject, verify)
+Billing	retrieve	Retrieve details about any aspect of Billing	retrieveMerchandisingLoanArrangementBilling	retrieveMerchandisingLoanArrangementBilling		Invoke a reporting action to obtain a Billing instance related report
+IssuedDevice	initiate	Instantiate a new Issued Device	initiateMerchandisingLoanArrangementIssuedDevice	initiateMerchandisingLoanArrangementIssuedDevice		Details of a new Issued Device instance
+IssuedDevice	update	Update details relating to Issued Device	updateMerchandisingLoanArrangementIssuedDevice	updateMerchandisingLoanArrangementIssuedDevice		Update to any amendable fields of the Issued Device instance
+IssuedDevice	retrieve	Retrieve details about any aspect of Issued Device	retrieveMerchandisingLoanArrangementIssuedDevice	retrieveMerchandisingLoanArrangementIssuedDevice		Invoke a reporting action to obtain a Issued Device instance related report
+Fees	initiate	Instantiate a new Fees	initiateMerchandisingLoanArrangementFees	initiateMerchandisingLoanArrangementFees		Details of a new Fees instance
+Fees	update	Update details relating to Fees	updateMerchandisingLoanArrangementFees	updateMerchandisingLoanArrangementFees		Update to any amendable fields of the Fees instance
+Fees	exchange	Accept, verify, etc. aspects of Fees processing	exchangeMerchandisingLoanArrangementFees	exchangeMerchandisingLoanArrangementFees		Handle an external exchange (e.g. accept, reject, verify)
+Fees	request	Request manual intervention or a decision with respect to Fees	requestMerchandisingLoanArrangementFees	requestMerchandisingLoanArrangementFees		Invoke a service request action against the Fees instance
+Fees	retrieve		retrieveMerchandisingLoanArrangementFees	retrieveMerchandisingLoanArrangementFees		Invoke a reporting action to obtain a Fees instance related report

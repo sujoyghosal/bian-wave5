@@ -1,0 +1,22 @@
+CR Managed Investment Portfolio Analysis Instance Record	CR Managed Investment Portfolio Analysis Instance Record	CR Managed Investment Portfolio Analysis Instance Record	##				IO		IO	IO	O				O
+			Product Instance Reference 			Reference to the investment portfolio product instance	I		I	I	O				O
+			Customer Reference			Reference to the account primary party/owner	I		I	I	O				O
+			Employee/Business Unit Reference			The employee/business unit with the relationship management responsibilities for the customer	I		I	I	O				O
+			Investment Portfolio Instance Reference			Reference to the investment portfolio record of all holdings 	IO		IO	IO	O				O
+			Investment Portfolio Instance Record			The record of the investment portfolio with the history and projected view of holdings (which may also include a history of valuation)	IO		IO	IO	O				O
+			Investment Portfolio Analysis Schedule			The schedule for performing investment portfolio analysis for the account	IO		IO	IO	O				O
+			Investment Account Fulfillment Arrangement Instance Reference			Reference to the underlying investment account	I		I	I	O				O
+			Investment Portfolio Analysis Report	##		A consolidated report containing the results of performance analyses applied to the investment portfolio	IO		IO	IO	O				O
+				Investment Portfolio Analysis Type 		Defines a type of performance analysis performed (e.g. standard regular scheduled review, specialist review, customer requested review)	I		I	I	O				O
+				Investment Portfolio Analysis Result		The consolidated report of the performance evaluation and comparisons from the analysis	O		O	O	O				O
+				Investment Portfolio Analysis Reporting Date 		The date/time the performance report was completed	IO		IO	IO	O				O
+				Document Directory Entry Instance Reference		Reference to associated performance analysis reporting documents	IO		IO	IO	O				O
+BQ Performance Analysis Instance Record	BQ Performance Analysis Instance Record	Performance Analysis Instance Record	##			The record of the performance analysis task - note a complete Investment Portfolio Analysis Report may combine one or more performance analyses							IO	IO	O
+			Investment Portfolio Performance Analysis Type 			Defines the type of analysis/algorithm used to evaluate and compare the investment portfolio performance to prevailing market measures							I		O
+			Investment Portfolio Performance Analysis Task 	##		Record of a task to perform a selected type of performance analysis on an investment portfolio							IO	IO	O
+				Investment Performance Request Specification		The specific details of the performance analysis (can be a default/standard analysis or a specialist/ad-hoc request)							I	I	O
+				Investment Performance Model Reference		Reference to the performance analysis model used							IO	IO	O
+				Investment Performance Product/Service Activity Report 		The data file, report of investment transaction details used in the analysis							IO	IO	O
+				Investment Performance Financial Market Research Report 		The content of selected financial market research report or market transaction database in any suitable form used for comparisons							IO	IO	O
+				Investment Performance Work Products		Work documentation, forms and schedules produced and referenced during the analysis							O	O	O
+				Investment Performance Request Result		The output from executing the selected performance analysis 							O	O	O

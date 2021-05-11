@@ -1,0 +1,24 @@
+SD=Reward Points Account															
+CR=Reward Points Log															
+BQs= Expiration Capture															
+Track/log the allocation and remittance of rewards points. The service domain acts as a transaction log similar where the instrument is not subject to interest considerations (as with cash) but may have a finite life-time with expiry dates on reward points															
+"Example of use: A customer transaction that generates reward points is captured on the log, resulting in an increase in their available point balance"															
+Administer the booking and remittance of rewards points															
+CR Reward Points Log								BQ Expiration				BQ Capture			
+In	Up	Co	Ec	Ca	Rq	Gr	Re	In	Up	Ca	Re	In	Up	Ca	Re
+InCR Instantiate a new Reward Points Log															
+UpCR Update details relating to Reward Points Log															
+CoCR Control the processing of Reward Points Log															
+EcCR Accept, verify, etc. aspects of Reward Points Log processing															
+CaCR Capture Reward Points Log activity or event related information															
+RqCR Request manual intervention or a decision with respect to Reward Points Log															
+GrCR Obtain permission to act in relation to Reward Points Log															
+ReCR Retrieve details about any aspect of Reward Points Log															
+InBQ Instantiate a new Expiration															
+UpBQ Update details relating to Expiration															
+CaBQ Capture Expiration activity or event related information															
+ReBQ Retrieve details about any aspect of Expiration															
+InBQ Instantiate a new Capture															
+UpBQ Update details relating to Capture															
+CaBQ Capture Capture activity or event related information															
+ReBQ Retrieve details about any aspect of Capture															

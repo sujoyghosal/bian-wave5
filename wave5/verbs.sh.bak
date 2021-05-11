@@ -1,0 +1,103 @@
+rm -rf Verbs
+cat $1"Headers".txt|sed -e $'s/\t/|/g'>p
+line1=`cat p |head -1`
+line2=`cat p |tail -1`
+count=`echo $line1|tr '|' '\n'|wc -l`
+echo "Count of Verbs is $count"
+echo "Enter SD"
+read sd
+echo $sd>Verbs
+echo "Enter CR"
+read cr
+echo $cr>>Verbs
+#echo "$line1"
+#echo "$line2"
+icol=1
+
+while [ $count -gt 0 ]
+do
+    count=`expr $count - 1`
+    verb=`echo $line2|cut -f$icol -d"|"|sed 's/[ (/-]//g'`
+    crbq=`echo $line1|cut -f$icol -d"|"`
+    if [[ ! -z "$crbq" ]]
+    then
+        if [[ $crbq == CR* ]]
+        then
+            echo "New CR $crbq"
+            crbq=`echo $crbq|cut -f2 -d"-"`
+#            echo $crbq>>CRverbs
+        fi
+        if [[ $crbq == BQ* ]]
+        then
+            echo "New BQ $crbq"
+            crbq=`echo $crbq|cut -f2 -d"-"`
+            echo done>>Verbs
+            echo $crbq>>Verbs
+        fi
+    fi
+    case $verb in
+        In)
+            verb="Initiate"
+            ;;
+        Ev)
+            verb="Evaluate"
+            ;;
+        Cr)
+            verb="Create"
+            ;;
+        Rg)
+            verb="Register"
+            ;;
+        Pr)
+            verb="Provide"
+            ;;
+        Up)
+            verb="Update"
+            ;;
+        Co)
+            verb="Control"
+            ;;
+        Ec)
+            verb="Exchange"
+            ;;
+        Ca)
+            verb="Capture"
+            ;;
+        Ex)
+            verb="Execute"
+            ;;
+        Rq)
+            verb="Request"
+            ;;
+        Gr)
+            verb="Grant"
+            ;;
+        Re)
+            verb="Retrieve"
+            ;;
+        *)
+            echo "****************Unknown Verb $verb***********"
+            ;;
+    esac
+    echo $verb >>Verbs
+    icol=`expr $icol + 1`
+done
+echo "done">>Verbs
+echo "done">>Verbs
+cat Verbs
+echo "Proceed with genConfigs.sh? Y or N"
+read answer
+if [ "$answer" == "y" ] || [ "$answer" == "Y" ];
+then
+    sd=`echo $sd|sed 's/[ (/-]//g'`
+    echo "Running genConfigs $sd"
+    genConfigs.sh $sd<Verbs
+fi
+echo "Create Blank Model and Path Configs?"
+read answer
+if [ "$answer" == "y" ] || [ "$answer" == "Y" ];
+then
+    touch `echo $sd|sed 's/[ (/-]//g'`"ModelConfig"
+    touch `echo $sd|sed 's/[ (/-]//g'`"PathConfig"
+fi
+echo "Done"

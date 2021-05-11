@@ -1,0 +1,17 @@
+SD=Advanced Voice Services Operations
+CR=Voice Channel Operating Session
+BQs= Inbound Outbound
+This service domain handles the operation of the PBX/telephony infrastructure which can include embedded IVR capabilities. The PBX system will have close integration with the call center and E-Branch capabilities depending on the degree of computer telephony integration (CTI) and cross channel support
+"Example of use: The numeric menu is adjusted to increase self-serve activity during a period of peak loading (this could be implemented in the IVR in a more sophisticated set-up)"
+This service domain operates the telephone channel infrastructure, including the IVR and any other automated devices as appropriate. This includes handling default routing rules and intra-day/session adjustments to deal with peak load or other operational variations
+CR - Voice Channel Operating Session					BQ - Outbound		BQ - Inbound	
+In	Re	Rq	Up	Co	In	Re	In	Re
+InCR Initiate the voice channel service
+ReCR Retrieve details and statistics relating to a session
+RqCR Report an issue with the production service
+UpCR Update the voice access service menu during the session
+CoCR Control the service session
+InBQ Execute an outbound voice connection
+ReBQ Retrieve details about an outbound voice connection
+InBQ Execute an inbound voice connection
+ReBQ Retrieve details about an inbound voice connection

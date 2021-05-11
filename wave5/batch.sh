@@ -1,0 +1,110 @@
+generateNewSwagger.sh PointOfService 23
+generateNewSwagger.sh FinancialGateway 9
+generateNewSwagger.sh CardTerminalOperation 15
+generateNewSwagger.sh CardTerminalAdministration 11
+generateNewSwagger.sh ServicingEventHistory 16
+generateNewSwagger.sh Correspondence 18
+generateNewSwagger.sh ProductDirectory 20
+generateNewSwagger.sh CollateralAssetAdministration 12
+generateNewSwagger.sh CollateralAllocationManagement 10
+generateNewSwagger.sh TransactionAuthorization 7
+generateNewSwagger.sh CustomerAccessEntitlement 13
+generateNewSwagger.sh ChannelActivityHistory 7
+generateNewSwagger.sh EBranchOperations 9
+generateNewSwagger.sh CustomerProfile 16
+generateNewSwagger.sh PartyAuthentication 19
+generateNewSwagger.sh CustomerAccessEntitlement 13
+generateNewSwagger.sh AccountRecovery 18
+generateNewSwagger.sh Disbursement 7
+generateNewSwagger.sh ACHFulfillment 19
+generateNewSwagger.sh PartyLifeCycleManagement 15
+generateNewSwagger.sh PositionKeeping 7
+generateNewSwagger.sh DocumentServices 6
+generateNewSwagger.sh CardClearing 12
+generateNewSwagger.sh PaymentOrder 6
+generateNewSwagger.sh PaymentInitiation 7
+generateNewSwagger.sh PaymentExecution 6
+generateNewSwagger.sh SavingsAccount 29
+generateNewSwagger.sh CorporateTreasury 12
+generateNewSwagger.sh PartyAuthentication 19
+generateNewSwagger.sh AdvancedVoiceServicesOperations 9
+generateNewSwagger.sh CardAuthorization 14
+generateNewSwagger.sh CardCase 17
+generateNewSwagger.sh CardCollections 15
+generateNewSwagger.sh CardFinancialSettlement 11
+generateNewSwagger.sh CardNetworkParticipantFacility 11
+generateNewSwagger.sh CardTransactionSwitch 9
+generateNewSwagger.sh ChannelActivityAnalysis 16
+generateNewSwagger.sh ConsumerLoan 23
+generateNewSwagger.sh ContactDialogue 32
+generateNewSwagger.sh CorrespondentBankDataManagement 4
+generateNewSwagger.sh CorrespondentBank 18
+generateNewSwagger.sh ContactHandler 16
+generateNewSwagger.sh CreditChargeCard 27
+generateNewSwagger.sh ContactRouting 11
+generateNewSwagger.sh CreditManagement 5
+generateNewSwagger.sh CustomerAgreement 19
+generateNewSwagger.sh CurrentAccount 29
+generateNewSwagger.sh CustomerBehavioralInsights 9
+generateNewSwagger.sh CustomerBehaviorModels 15
+generateNewSwagger.sh CustomerCase 14
+generateNewSwagger.sh CustomerBilling 15
+generateNewSwagger.sh CustomerEventHistory 22
+generateNewSwagger.sh CustomerCreditRating 12
+generateNewSwagger.sh CustomerOffer 34
+generateNewSwagger.sh CustomerPosition 15
+generateNewSwagger.sh CustomerReferenceDataManagement 22
+generateNewSwagger.sh CustomerProductServiceEligibility 10
+
+Done So far
+ACHFulfillment.yaml
+AccountRecovery.yaml
+AdvancedVoiceServicesOperations.yaml
+CardAuthorization.yaml
+CardCase.yaml
+CardClearing.yaml
+CardCollections.yaml
+CardECommerceGateway.yaml
+CardFinancialSettlement.yaml
+CardNetworkParticipantFacility.yaml
+CardTerminalAdministration.yaml
+CardTerminalOperation.yaml
+CardTransactionSwitch.yaml
+ChannelActivityAnalysis.yaml
+ChannelActivityHistory.yaml
+CollateralAllocationManagement.yaml
+CollateralAssetAdministration.yaml
+ConsumerLoan.yaml
+ContactDialogue.yaml
+ContactHandler.yaml
+ContactRouting.yaml
+CorporateTreasury.yaml
+Correspondence.yaml
+CorrespondentBank.yaml
+CorrespondentBankDataManagement.yaml
+CreditChargeCard.yaml
+CreditManagement.yaml
+CurrentAccount.yaml
+CustomerAccessEntitlement.yaml
+CustomerAgreement.yaml
+CustomerBehaviorModels.yaml
+CustomerBehavioralInsights.yaml
+CustomerBilling.yaml
+CustomerCase.yaml
+CustomerCreditRating.yaml
+CustomerProfile.yaml
+Disbursement.yaml
+DocumentServices.yaml
+EBranchOperations.yaml
+FinancialGateway.yaml
+PartyAuthentication.yaml
+PartyLifeCycleManagement.yaml
+PaymentExecution.yaml
+PaymentInitiation.yaml
+PaymentOrder.yaml
+PointOfService.yaml
+PositionKeeping.yaml
+ProductDirectory.yaml
+SavingsAccount.yaml
+ServicingEventHistory.yaml
+TransactionAuthorization.yaml

@@ -1,0 +1,20 @@
+SD=Branch Currency Management
+CR=Branch Cash Allocation
+BQs= InventoryAllocation
+This service domain is responsible for tracking the available cash (currency) inventory held and distributed within the Branch location to teller and ATM positions, to ensure adequate float is always available at all positions. Also to check balances and see that excess cash is transferred to secure central storage as appropriate. If necessary specific criteria can be selected to refine the allocation
+The branch management reviews the available float and confirms end of day balances at the teller positions
+Track cash inventory, project demand and ensure all cash is accounted for within the branch
+CR - Branch Cash Allocation						BQ - Inventory Allocation					
+In	Up	Co	Ec	Ca	Re	In	Up	Co	Ec	Ca	Re
+InCR Instantiate a new Branch Cash Allocation
+UpCR Update details relating to Branch Cash Allocation
+CoCR Control the processing of Branch Cash Allocation
+EcCR Accept, verify, etc. aspects of Branch Cash Allocation processing
+CaCR Capture Branch Cash Allocation activity or event related information
+ReCR Retrieve details about any aspect of Branch Cash Allocation
+InBQ Instantiate a new Inventory Allocation
+UpBQ Update details relating to Inventory Allocation
+CoBQ Control the processing of Inventory Allocation
+EcBQ Accept, verify, etc. aspects of Inventory Allocation processing
+CaBQ Capture Inventory Allocation activity or event related information
+ReBQ Retrieve details about any aspect of Inventory Allocation

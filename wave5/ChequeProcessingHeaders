@@ -1,0 +1,20 @@
+SD=Cheque Processing
+CR=Chequeprocessing Operating Session
+BQs= FinancialTransactionInitiation CancelledChequeHandling ChequeExtraction FinancialTransactionInitiation CancelledChequeHandling ChequeExtraction
+This service domains handles the processing of paper checks, performing the necessary checks and extracting the transaction details required to create a payment transaction record stream. This includes MICR number processing and character recognition facilities
+A batch of paper cheques captured at a merchant location is processed to initiate settlement processing
+Handle the processing of paper cheques, generating financial transactions for processing
+CR - Cheque Processing Operating Session							BQ - Cheque Extraction	BQ - Financial Transaction Initiation		BQ - Cancelled Cheque Handling	
+In	Up	Co	Ec	Ex	Rq	Re	Re	Ec	Re	Up	Re
+InCR Instantiate a new Cheque Processing Operating Session
+UpCR Update details relating to Cheque Processing Operating Session
+CoCR Control the processing of Cheque Processing Operating Session
+EcCR Accept, verify, etc. aspects of Cheque Processing Operating Session processing
+ExCR Execute an available automated action for Cheque Processing Operating Session
+RqCR Request manual intervention or a decision with respect to Cheque Processing Operating Session
+ReCR Retrieve details about any aspect of Cheque Processing Operating Session
+ReBQ Retrieve details about any aspect of Cheque Extraction
+EcBQ Accept, verify, etc. aspects of Financial Transaction Initiation processing
+ReBQ Retrieve details about any aspect of Financial Transaction Initiation
+UpBQ Update details relating to Cancelled Cheque Handling
+ReBQ Retrieve details about any aspect of Cancelled Cheque Handling

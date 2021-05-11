@@ -1,0 +1,622 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Business Development'
+ description: >
+
+    ## Executive Summary:
+
+    Define, implement, track and assess the new business development plans
+
+    ## Example of Use:
+
+    Corporate strategy develops targets for new business acquisition in selected market segments
+
+    ## Description:
+
+    Define, implement, track and assess the new business development plans for the enterprise or specific business divisions. This can cover business activities such as new market segment entry, product coverage and product specification development, brand development, new customer acquisition and existing customer, cross-sell/up-sell and retention.
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-business-development/1.0.0
+schemes:
+ - https
+paths:
+  /business-development/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDBusinessDevelopment
+      summary: Activate  a SDBusinessDevelopment servicing session
+      description: Activate  a  SDBusinessDevelopment servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDBusinessDevelopment Request Payload
+        schema:
+          $ref: '#/definitions/SDBusinessDevelopmentActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDBusinessDevelopmentActivateOutputModel'
+  /business-development/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDBusinessDevelopment
+      summary: Update an active SDBusinessDevelopment session configuration
+      description: Update an active SDBusinessDevelopment session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBusinessDevelopment Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBusinessDevelopment Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDBusinessDevelopmentConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDBusinessDevelopmentConfigureOutputModel'
+  /business-development/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDBusinessDevelopment
+      summary: "Capturing feedback against the SDBusinessDevelopment service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDBusinessDevelopment service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBusinessDevelopment Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBusinessDevelopment Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDBusinessDevelopmentFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDBusinessDevelopmentFeedbackOutputModel'
+  /business-development/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDBusinessDevelopment
+      summary: Analytical views maintained by the SDBusinessDevelopment service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDBusinessDevelopment service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBusinessDevelopment Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDBusinessDevelopmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDBusinessDevelopmentRetrieveOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/creation:
+    post:
+      tags:
+      - create
+      operationId: createBusinessDevelopmentStrategy
+      summary: Details of a new BusinessDevelopmentStrategy instance
+      description: Create a business development strategy for the enterprise or division
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BusinessDevelopmentStrategy Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessDevelopmentStrategyCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new BusinessDevelopmentStrategy instance
+          schema:
+            $ref: '#/definitions/CRBusinessDevelopmentStrategyCreateOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessDevelopmentStrategy
+      summary: Update to any amendable fields of the BusinessDevelopmentStrategy instance
+      description: Update details of the business development strategy
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Development Strategy Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessDevelopmentStrategyUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Business Development Strategy Instance
+          schema:
+            $ref: '#/definitions/CRBusinessDevelopmentStrategyUpdateOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeBusinessDevelopmentStrategyUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, etc. aspects or actions associated with the strategy
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Development Strategy Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessDevelopmentStrategyExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Business Development Strategy Instance
+          schema:
+            $ref: '#/definitions/CRBusinessDevelopmentStrategyExchangeOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureBusinessDevelopmentStrategyUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture activity details related to implementation of the strategy
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Development Strategy Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessDevelopmentStrategyCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Business Development Strategy Instance
+          schema:
+            $ref: '#/definitions/CRBusinessDevelopmentStrategyCaptureOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessDevelopmentStrategyUpdate
+      summary: Invoke a service request action against the BusinessDevelopmentStrategy instance
+      description: Request manual intervention (e.g. evaluate outcome of an initiative)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Development Strategy Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessDevelopmentStrategyRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Business Development Strategy Instance
+          schema:
+            $ref: '#/definitions/CRBusinessDevelopmentStrategyRequestOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantBusinessDevelopmentStrategyUpdate
+      summary: Invoke a grant request action from the BusinessDevelopmentStrategy instance to obtain access permission
+      description: Grant permission for some action under the authority of the strategy (e.g. approve investment)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Development Strategy Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessDevelopmentStrategyGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Business Development Strategy Instance
+          schema:
+            $ref: '#/definitions/CRBusinessDevelopmentStrategyGrantOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessDevelopment
+      summary: Invoke a reporting action to obtain a Business Development Strategy instance related report
+      description: Retrieve details relating to the strategy and any supporting activities
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRBusinessDevelopmentStrategyRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Business Development Strategy Instance
+          schema:
+            $ref: '#/definitions/CRBusinessDevelopmentStrategyRetrieveOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/initiative/creation:
+    post:
+      tags:
+      - create
+      operationId: createBusinessDevelopmentStrategyInitiative
+      summary: Details of a new Initiative instance
+      description: Create/instigate a supporting business development initiative
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Development Strategy Request Payload
+        schema:
+          $ref: '#/definitions/BQInitiativeCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Business Development Strategy instance
+          schema:
+            $ref: '#/definitions/BQInitiativeCreateOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/initiative/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessDevelopmentStrategyInitiative
+      summary: Update to any amendable fields of the Initiative instance
+      description: Update details for a business development initiative
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Initiative Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Initiative Request Payload
+        schema:
+          $ref: '#/definitions/BQInitiativeUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Initiative Instance
+          schema:
+            $ref: '#/definitions/BQInitiativeUpdateOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/initiative/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeBusinessDevelopmentStrategyInitiativeUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, reject, etc. aspects of an initiative
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Initiative Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Initiative request payload
+        schema:
+          $ref: '#/definitions/BQInitiativeExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Initiative Instance Record
+          schema:
+            $ref: '#/definitions/BQInitiativeExchangeOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/initiative/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureBusinessDevelopmentStrategyInitiativeUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture activity details for a business development initiative (e.g. record time/effort)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Initiative Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Initiative request payload
+        schema:
+          $ref: '#/definitions/BQInitiativeCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Initiative Instance Record
+          schema:
+            $ref: '#/definitions/BQInitiativeCaptureOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/initiative/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessDevelopmentStrategyInitiativeUpdate
+      summary: Invoke a service request action against the Initiative instance
+      description: Request manual intervention into a business development initiative (e.g. rework the action plan)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Initiative Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Initiative request payload
+        schema:
+          $ref: '#/definitions/BQInitiativeRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Initiative Instance Record
+          schema:
+            $ref: '#/definitions/BQInitiativeRequestOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/initiative/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessDevelopmentStrategyInitiative
+      summary: Invoke a reporting action to obtain a Initiative instance related report.
+      description: Retrieve details about a business development initiative .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Initiative Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQInitiativeRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Initiative Instance Record
+          schema:
+            $ref: '#/definitions/BQInitiativeRetrieveOutputModel'
+  /business-development/{sd-reference-id}/business-development-strategy:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBusinessDevelopmentReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- BusinessDevelopment Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /business-development/business-development-strategy/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBusinessDevelopmentBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Initiative', ]
+  /business-development/{sd-reference-id}/business-development-strategy/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBusinessDevelopmentBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Development Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Development Strategy Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Initiative
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Initiative Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [InitiativeID1, InitiativeID2]

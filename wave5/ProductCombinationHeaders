@@ -1,0 +1,29 @@
+SD=Product Combination
+CR=Product Combination Arrangement
+BQs= Fulfillment TransferPricing EmbeddedProductControl
+The Product Combination service domain allows a bank to assemble a composite product from two or more existing products. The combination framework implements necessary functional constraints on the 'contained products' and handles considerations such as transfer pricing where the profitability of embedded products may be compromised to ensure management analysis is not distorted
+A current account product instance is bundled with an investment portfolio product instance to create a combined ""margin trading"" product. The performance evaluation of the embedded current account that has constrained capabilities is amended to reflect its contribution to the combined product performance
+Product Combination supports bundled products applying necessary constraints on embedded product fulfillment and ensuring product performance analysis takes correct account of embedded products' contribution
+CR - Product Combination Arrangement							BQ - Transfer Pricing				BQ - Fulfillment							BQ - Embedded Product Control		
+In	Up	Co	Ec	Ex	Rq	Re	Up	Ec	Rq	Re	In	Up	Co	Ec	Ex	Rq	Re	In	Up	Re
+InCR Instantiate a new Product Combination Arrangement
+UpCR Update details relating to Product Combination Arrangement
+CoCR Control the processing of Product Combination Arrangement
+EcCR Accept, verify, etc. aspects of Product Combination Arrangement processing
+ExCR Execute an available automated action for Product Combination Arrangement
+RqCR Request manual intervention or a decision with respect to Product Combination Arrangement
+ReCR Retrieve details about any aspect of Product Combination Arrangement
+UpBQ Update details relating to Transfer Pricing
+EcBQ Accept, verify, etc. aspects of Transfer Pricing processing
+RqBQ Request manual intervention or a decision with respect to Transfer Pricing
+ReBQ Retrieve details about any aspect of Transfer Pricing
+InBQ Instantiate a new Fulfillment
+UpBQ Update details relating to Fulfillment
+CoBQ Control the processing of Fulfillment
+EcBQ Accept, verify, etc. aspects of Fulfillment processing
+ExBQ Execute an available automated action for Fulfillment
+RqBQ Request manual intervention or a decision with respect to Fulfillment
+ReBQ Retrieve details about any aspect of Fulfillment
+InBQ Instantiate a new Embedded Product Control
+UpBQ Update details relating to Embedded Product Control
+ReBQ Retrieve details about any aspect of Embedded Product Control

@@ -1,0 +1,15 @@
+sd=Asset And Liability Management	The unit overseeing the banks asset And liability policies and position	The bank's senior policy makers review that bank's book performance and amend guidelines to remain within policy directives	A central policy and direction capability that reviews consolidated bank PAndL profile and performance and defines and directs asset and liability policies. Also sanctions and/or influences large transactions
+sdpath=asset-and-liability-management
+crpath=asset-and-liability-portfolio-strategy
+crr=Asset And Liability Portfolio Strategy Instance
+mcr=Asset And Liability Portfolio Strategy
+bqs=TransactionAlignment
+CONFIG
+AssetAndLiabilityPortfolioStrategy	update	Update aspects of the bank's asset and liability policies		updateAssetAndLiabilityPortfolioStrategy		#desc
+AssetAndLiabilityPortfolioStrategy	request	Request manual intervention in the policies (e.g. request revision based on regulatory changes)		requestAssetAndLiabilityPortfolioStrategy		#desc
+AssetAndLiabilityPortfolioStrategy	grant	Obtain a permission grant in line with asset and liability policy (e.g. clearance for some related financial action)		grantAssetAndLiabilityPortfolioStrategy		#desc
+AssetAndLiabilityPortfolioStrategy	retrieve	Retrieve details about the bank's asset and liability policies		retrieveAssetAndLiabilityPortfolioStrategy		#desc
+TransactionAlignment	create	Create a proposed transaction submission under the policy	createAssetAndLiabilityPortfolioStrategyTransactionAlignment	createAssetAndLiabilityPortfolioStrategyTransactionAlignment		Details of a new Transaction Alignment instance
+TransactionAlignment	exchange	Verify, accept, etc. aspects of a transaction alignment assessment	exchangeAssetAndLiabilityPortfolioStrategyTransactionAlignment	exchangeAssetAndLiabilityPortfolioStrategyTransactionAlignment		Handle an external exchange (e.g. accept, reject, verify)
+TransactionAlignment	request	Request manual intervention during an assessment (e.g. negotiate terms)	requestAssetAndLiabilityPortfolioStrategyTransactionAlignment	requestAssetAndLiabilityPortfolioStrategyTransactionAlignment		Invoke a service request action against the Transaction Alignment instance
+TransactionAlignment	retrieve	Retrieve details about a transaction alignment assessment	retrieveAssetAndLiabilityPortfolioStrategyTransactionAlignment	retrieveAssetAndLiabilityPortfolioStrategyTransactionAlignment		Invoke a reporting action to obtain a Transaction Alignment instance related report

@@ -1,0 +1,18 @@
+sd=Investment Portfolio Planning	Agree the policies and required make-up of an investment portfolio and ensure all required bank and regulatory terms and conditions are addressed	A relationship manager established the investment agreement for a customer that is setting up a managed investment portfolio	Agree the customer investment portfolio governing principles, risk appetite, management/trading guidelines and target portfolio profile. Identify any desired/target and 'out of bounds' securities/sectors. Ensure disclosures and related eligibility, suitability and other regulatory obligations are addressed and reflected in the agreement
+sdpath=investment-portfolio-planning
+crpath=managed-investment-portfolio-agreement
+crr=Managed Investment Portfolio Agreement Instance
+mcr=Managed Investment Portfolio Agreement
+bqs=InvestmentTerms
+CONFIG
+ManagedInvestmentPortfolioAgreement	evaluate	Establish a managed investment portfolio agreement		evaluateManagedInvestmentPortfolioAgreement		#desc
+ManagedInvestmentPortfolioAgreement	update	Update details of an active managed investment portfolio agreement		updateManagedInvestmentPortfolioAgreement		#desc
+ManagedInvestmentPortfolioAgreement	control	Control the processing of an investment agreement (e.g. suspend terminate)		controlManagedInvestmentPortfolioAgreement		#desc
+ManagedInvestmentPortfolioAgreement	exchange	Accept, reject etc an investment portfolio agreement		exchangeManagedInvestmentPortfolioAgreement		#desc
+ManagedInvestmentPortfolioAgreement	request	Request review that proposed activity is compatible with the agreement		requestManagedInvestmentPortfolioAgreement		#desc
+ManagedInvestmentPortfolioAgreement	grant	Obtain grant authority to act under the terms of the investment agreement		grantManagedInvestmentPortfolioAgreement		#desc
+ManagedInvestmentPortfolioAgreement	retrieve	Retrieve details about a managed investment portfolio agreement		retrieveManagedInvestmentPortfolioAgreement		#desc
+InvestmentTerms	evaluate	Establish the specific terms/conditions making up the investment agreement	evaluateManagedInvestmentPortfolioAgreementInvestmentTerms	evaluateManagedInvestmentPortfolioAgreementInvestmentTerms		Details of a new Investment Terms instance
+InvestmentTerms	update	Update the terms/conditions for an investment agreement	updateManagedInvestmentPortfolioAgreementInvestmentTerms	updateManagedInvestmentPortfolioAgreementInvestmentTerms		Update to any amendable fields of the Investment Terms instance
+InvestmentTerms	request	Request check of a proposed activity is compatible with a specific term of the agreement	requestManagedInvestmentPortfolioAgreementInvestmentTerms	requestManagedInvestmentPortfolioAgreementInvestmentTerms		Invoke a service request action against the Investment Terms instance
+InvestmentTerms	retrieve	Retrieve details about the specific terms of an agreement	retrieveManagedInvestmentPortfolioAgreementInvestmentTerms	retrieveManagedInvestmentPortfolioAgreementInvestmentTerms		Invoke a reporting action to obtain a Investment Terms instance related report

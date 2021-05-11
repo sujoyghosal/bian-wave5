@@ -1,0 +1,478 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Public Reference Data Management'
+ description: >
+
+    ## Executive Summary:
+
+    Provide structured access to standard 'global' reference data and definitions associated with market activity such as currency, country and segment identifiers.
+
+    ## Example of Use:
+
+    The international ISO standard definitions are maintained and applied across production systems of the bank
+
+    ## Description:
+
+    This service domain maintains and provides structured access to standard 'global' reference data and definitions associated with market activity such as currency, country and segment identifiers. These values will typically be externally sourced using market information feeds and distributed using whatever is the appropriate mechanism within the bank
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-public-reference-data-management/1.0.0
+schemes:
+ - https
+paths:
+  /public-reference-data-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDPublicReferenceDataManagement
+      summary: Activate  a SDPublicReferenceDataManagement servicing session
+      description: Activate  a  SDPublicReferenceDataManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDPublicReferenceDataManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDPublicReferenceDataManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDPublicReferenceDataManagementActivateOutputModel'
+  /public-reference-data-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDPublicReferenceDataManagement
+      summary: Update an active SDPublicReferenceDataManagement session configuration
+      description: Update an active SDPublicReferenceDataManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPublicReferenceDataManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDPublicReferenceDataManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDPublicReferenceDataManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDPublicReferenceDataManagementConfigureOutputModel'
+  /public-reference-data-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDPublicReferenceDataManagement
+      summary: "Capturing feedback against the SDPublicReferenceDataManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDPublicReferenceDataManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPublicReferenceDataManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDPublicReferenceDataManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDPublicReferenceDataManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDPublicReferenceDataManagementFeedbackOutputModel'
+  /public-reference-data-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDPublicReferenceDataManagement
+      summary: Analytical views maintained by the SDPublicReferenceDataManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDPublicReferenceDataManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDPublicReferenceDataManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDPublicReferenceDataManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDPublicReferenceDataManagementRetrieveOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateGlobalStandardSpecification
+      summary: Details of a new GlobalStandardSpecification instance
+      description: Instantiate a new Global Standard Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: GlobalStandardSpecification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new GlobalStandardSpecification instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationInitiateOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateGlobalStandardSpecification
+      summary: Update to any amendable fields of the GlobalStandardSpecification instance
+      description: Update details relating to Global Standard Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationUpdateOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlGlobalStandardSpecificationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Global Standard Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationControlInputModel'
+      responses:
+        200:
+          description: Successful control of Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationControlOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeGlobalStandardSpecificationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Global Standard Specification processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationExchangeOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureGlobalStandardSpecificationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Global Standard Specification activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationCaptureOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestGlobalStandardSpecificationUpdate
+      summary: Invoke a service request action against the GlobalStandardSpecification instance
+      description: Request manual intervention or a decision with respect to Global Standard Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRGlobalStandardSpecificationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationRequestOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrievePublicReferenceDataManagement
+      summary: Invoke a reporting action to obtain a Global Standard Specification instance related report
+      description: Retrieve details about any aspect of Global Standard Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRGlobalStandardSpecificationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Global Standard Specification Instance
+          schema:
+            $ref: '#/definitions/CRGlobalStandardSpecificationRetrieveOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/globalreferencedata/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateGlobalStandardSpecificationGlobalReferenceData
+      summary: Details of a new GlobalReferenceData instance
+      description: Instantiate a new Global Reference Data
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Global Standard Specification Request Payload
+        schema:
+          $ref: '#/definitions/BQGlobalReferenceDataInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Global Standard Specification instance
+          schema:
+            $ref: '#/definitions/BQGlobalReferenceDataInitiateOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/globalreferencedata/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveGlobalStandardSpecificationGlobalReferenceData
+      summary: Invoke a reporting action to obtain a GlobalReferenceData instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: GlobalReferenceData Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQGlobalReferenceDataRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved GlobalReferenceData Instance Record
+          schema:
+            $ref: '#/definitions/BQGlobalReferenceDataRetrieveOutputModel'
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePublicReferenceDataManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- PublicReferenceDataManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /public-reference-data-management/global-standard-specification/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePublicReferenceDataManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'GlobalReferenceData', ]
+  /public-reference-data-management/{sd-reference-id}/global-standard-specification/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrievePublicReferenceDataManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Public Reference Data Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Global Standard Specification Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- GlobalReferenceData
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- GlobalReferenceData Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [GlobalReferenceDataID1, GlobalReferenceDataID2]

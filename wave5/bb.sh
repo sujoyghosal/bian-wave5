@@ -1,0 +1,9 @@
+verbs.sh InterbankRelationshipManagement
+verbs.sh InvestmentAccount
+verbs.sh InvestmentPortfolioManagement
+verbs.sh InvestmentPortfolioPlanning
+verbs.sh InvestmentPortoflioAnalysis
+verbs.sh MarketInformationManagement
+verbs.sh MarketOrder
+verbs.sh MarketOrder
+verbs.sh MarketOrderExecution

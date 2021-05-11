@@ -1,0 +1,52 @@
+sd=Leasing	The leasing products enables customers to finance equipment purchases using the leased item as collateral when necessary	A customer requests a leasing arrangement to support the acquisition of equipment	The Service Domain fulfills a general leasing arrangement for a single leased product or facility. The bank will take a collateral interest in the leased item to underwrite the associated loan/lease arrangement
+sdpath=leasing
+crpath=leasing-arrangement
+crr=Leasing Arrangement Instance
+mcr=Leasing Arrangement
+bqs=FinancialInstrument IssuedDevice Collateral CorporateAction FinancialAccounting Payments Withdrawals Deposits Sweep Lien Fees Interest
+CONFIG
+LeasingArrangement	initiate	Instantiate a new Leasing Arrangement		initiateLeasingArrangement		#desc
+LeasingArrangement	update	Update details relating to Leasing Arrangement		updateLeasingArrangement		#desc
+LeasingArrangement	control	Control the processing of Leasing Arrangement		controlLeasingArrangement		#desc
+LeasingArrangement	exchange	Accept, verify, etc. aspects of Leasing Arrangement processing		exchangeLeasingArrangement		#desc
+LeasingArrangement	execute	Execute an available automated action for Leasing Arrangement		executeLeasingArrangement		#desc
+LeasingArrangement	request	Request manual intervention or a decision with respect to Leasing Arrangement		requestLeasingArrangement		#desc
+LeasingArrangement	retrieve	Retrieve details about any aspect of Leasing Arrangement		retrieveLeasingArrangement		#desc
+Interest	update	Update details relating to Interest	updateLeasingArrangementInterest	updateLeasingArrangementInterest		Update to any amendable fields of the Interest instance
+Interest	retrieve	Retrieve details about any aspect of Interest	retrieveLeasingArrangementInterest	retrieveLeasingArrangementInterest		Invoke a reporting action to obtain a Interest instance related report
+IssuedDevice	initiate	Instantiate a new Issued Device	initiateLeasingArrangementIssuedDevice	initiateLeasingArrangementIssuedDevice		Details of a new Issued Device instance
+IssuedDevice	update	Update details relating to Issued Device	updateLeasingArrangementIssuedDevice	updateLeasingArrangementIssuedDevice		Update to any amendable fields of the Issued Device instance
+IssuedDevice	retrieve	Retrieve details about any aspect of Issued Device	retrieveLeasingArrangementIssuedDevice	retrieveLeasingArrangementIssuedDevice		Invoke a reporting action to obtain a Issued Device instance related report
+Fees	initiate	Instantiate a new Fees	initiateLeasingArrangementFees	initiateLeasingArrangementFees		Details of a new Fees instance
+Fees	update	Update details relating to Fees	updateLeasingArrangementFees	updateLeasingArrangementFees		Update to any amendable fields of the Fees instance
+Fees	exchange	Accept, verify, etc. aspects of Fees processing	exchangeLeasingArrangementFees	exchangeLeasingArrangementFees		Handle an external exchange (e.g. accept, reject, verify)
+Fees	request	Request manual intervention or a decision with respect to Fees	requestLeasingArrangementFees	requestLeasingArrangementFees		Invoke a service request action against the Fees instance
+Fees	retrieve	Retrieve details about any aspect of Fees	retrieveLeasingArrangementFees	retrieveLeasingArrangementFees		Invoke a reporting action to obtain a Fees instance related report
+Payments	initiate	Instantiate a new Payments	initiateLeasingArrangementPayments	initiateLeasingArrangementPayments		Details of a new Payments instance
+Payments	update	Update details relating to Payments	updateLeasingArrangementPayments	updateLeasingArrangementPayments		Update to any amendable fields of the Payments instance
+Payments	exchange	Accept, verify, etc. aspects of Payments processing	exchangeLeasingArrangementPayments	exchangeLeasingArrangementPayments		Handle an external exchange (e.g. accept, reject, verify)
+Payments	retrieve	Retrieve details about any aspect of Payments	retrieveLeasingArrangementPayments	retrieveLeasingArrangementPayments		Invoke a reporting action to obtain a Payments instance related report
+Collateral	initiate	Instantiate a new Collateral	initiateLeasingArrangementCollateral	initiateLeasingArrangementCollateral		Details of a new Collateral instance
+Collateral	update	Update details relating to Collateral	updateLeasingArrangementCollateral	updateLeasingArrangementCollateral		Update to any amendable fields of the Collateral instance
+Collateral	request	Request manual intervention or a decision with respect to Collateral	requestLeasingArrangementCollateral	requestLeasingArrangementCollateral		Invoke a service request action against the Collateral instance
+Collateral	retrieve	Retrieve details about any aspect of Collateral	retrieveLeasingArrangementCollateral	retrieveLeasingArrangementCollateral		Invoke a reporting action to obtain a Collateral instance related report
+Lien	initiate	Instantiate a new Lien	initiateLeasingArrangementLien	initiateLeasingArrangementLien		Details of a new Lien instance
+Lien	update	Update details relating to Lien	updateLeasingArrangementLien	updateLeasingArrangementLien		Update to any amendable fields of the Lien instance
+Lien	exchange	Accept, verify, etc. aspects of Lien processing	exchangeLeasingArrangementLien	exchangeLeasingArrangementLien		Handle an external exchange (e.g. accept, reject, verify)
+Lien	retrieve	Retrieve details about any aspect of Lien	retrieveLeasingArrangementLien	retrieveLeasingArrangementLien		Invoke a reporting action to obtain a Lien instance related report
+Sweep	initiate	Instantiate a new Sweep	initiateLeasingArrangementSweep	initiateLeasingArrangementSweep		Details of a new Sweep instance
+Sweep	update	Update details relating to Sweep	updateLeasingArrangementSweep	updateLeasingArrangementSweep		Update to any amendable fields of the Sweep instance
+Sweep	exchange	Accept, verify, etc. aspects of Sweep processing	exchangeLeasingArrangementSweep	exchangeLeasingArrangementSweep		Handle an external exchange (e.g. accept, reject, verify)
+Sweep	retrieve	Retrieve details about any aspect of Sweep	retrieveLeasingArrangementSweep	retrieveLeasingArrangementSweep		Invoke a reporting action to obtain a Sweep instance related report
+Deposits	initiate	Instantiate a new Deposits	initiateLeasingArrangementDeposits	initiateLeasingArrangementDeposits		Details of a new Deposits instance
+Deposits	update	Update details relating to Deposits	updateLeasingArrangementDeposits	updateLeasingArrangementDeposits		Update to any amendable fields of the Deposits instance
+Deposits	retrieve	Retrieve details about any aspect of Deposits	retrieveLeasingArrangementDeposits	retrieveLeasingArrangementDeposits		Invoke a reporting action to obtain a Deposits instance related report
+Withdrawals	initiate	Instantiate a new Withdrawals	initiateLeasingArrangementWithdrawals	initiateLeasingArrangementWithdrawals		Details of a new Withdrawals instance
+Withdrawals	update	Update details relating to Withdrawals	updateLeasingArrangementWithdrawals	updateLeasingArrangementWithdrawals		Update to any amendable fields of the Withdrawals instance
+Withdrawals	retrieve	Retrieve details about any aspect of Withdrawals	retrieveLeasingArrangementWithdrawals	retrieveLeasingArrangementWithdrawals		Invoke a reporting action to obtain a Withdrawals instance related report
+CorporateAction	initiate	Instantiate a new Corporate Action	initiateLeasingArrangementCorporateAction	initiateLeasingArrangementCorporateAction		Details of a new Corporate Action instance
+CorporateAction	update	Update details relating to Corporate Action	updateLeasingArrangementCorporateAction	updateLeasingArrangementCorporateAction		Update to any amendable fields of the Corporate Action instance
+CorporateAction	retrieve	Retrieve details about any aspect of Corporate Action	retrieveLeasingArrangementCorporateAction	retrieveLeasingArrangementCorporateAction		Invoke a reporting action to obtain a Corporate Action instance related report
+FinancialInstrument	initiate	Instantiate a new Financial Instrument	initiateLeasingArrangementFinancialInstrument	initiateLeasingArrangementFinancialInstrument		Details of a new Financial Instrument instance
+FinancialInstrument	update	Update details relating to Financial Instrument	updateLeasingArrangementFinancialInstrument	updateLeasingArrangementFinancialInstrument		Update to any amendable fields of the Financial Instrument instance
+FinancialInstrument	retrieve		retrieveLeasingArrangementFinancialInstrument	retrieveLeasingArrangementFinancialInstrument		Invoke a reporting action to obtain a Financial Instrument instance related report

@@ -1,0 +1,25 @@
+sd=Currency Exchange	Service Domain supports over the counter currency exchange	A non-bank customer obtains a currency exchange at the teller, buying foreign currency for local currency in cash	This is an over the counter service where currency is exchanged and the transaction uses preferential rates and can include transaction fees. Note in some cases travelers checks can be handled as a pseudo currency within this capability. Note that Branch and teller currency inventory tracking and distribution is administered by Branch Currency Management and Branch Currency Distribution service domains
+sdpath=currency-exchange
+crpath=currency-exchange-transaction
+crr=Currency Exchange Transaction Instance
+mcr=Currency Exchange Transaction
+bqs=DocumentHandling FXTransactionCapture FXTransactionPricing
+CONFIG
+CurrencyExchangeTransaction	initiate	Instantiate a new Currency Exchange Transaction		initiateCurrencyExchangeTransaction		#desc
+CurrencyExchangeTransaction	update	Update details relating to Currency Exchange Transaction		updateCurrencyExchangeTransaction		#desc
+CurrencyExchangeTransaction	control	Control the processing of Currency Exchange Transaction		controlCurrencyExchangeTransaction		#desc
+CurrencyExchangeTransaction	exchange	Accept, verify, etc. aspects of Currency Exchange Transaction processing		exchangeCurrencyExchangeTransaction		#desc
+CurrencyExchangeTransaction	execute	Execute an available automated action for Currency Exchange Transaction		executeCurrencyExchangeTransaction		#desc
+CurrencyExchangeTransaction	request	Request manual intervention or a decision with respect to Currency Exchange Transaction		requestCurrencyExchangeTransaction		#desc
+CurrencyExchangeTransaction	retrieve	Retrieve details about any aspect of Currency Exchange Transaction		retrieveCurrencyExchangeTransaction		#desc
+FXTransactionPricing	initiate	Instantiate a new FX Transaction Pricing	initiateCurrencyExchangeTransactionFXTransactionPricing	initiateCurrencyExchangeTransactionFXTransactionPricing		Details of a new FXTransaction Pricing instance
+FXTransactionPricing	update	Update details relating to FX Transaction Pricing	updateCurrencyExchangeTransactionFXTransactionPricing	updateCurrencyExchangeTransactionFXTransactionPricing		Update to any amendable fields of the FXTransaction Pricing instance
+FXTransactionPricing	retrieve	Retrieve details about any aspect of FX Transaction Pricing	retrieveCurrencyExchangeTransactionFXTransactionPricing	retrieveCurrencyExchangeTransactionFXTransactionPricing		Invoke a reporting action to obtain a FXTransaction Pricing instance related report
+DocumentHandling	initiate	Instantiate a new Document Handling	initiateCurrencyExchangeTransactionDocumentHandling	initiateCurrencyExchangeTransactionDocumentHandling		Details of a new Document Handling instance
+DocumentHandling	update	Update details relating to Document Handling	updateCurrencyExchangeTransactionDocumentHandling	updateCurrencyExchangeTransactionDocumentHandling		Update to any amendable fields of the Document Handling instance
+DocumentHandling	execute	Execute an available automated action for Document Handling	executeCurrencyExchangeTransactionDocumentHandling	executeCurrencyExchangeTransactionDocumentHandling		Invoke an automated execute action against the Document Handling instance
+DocumentHandling	retrieve	Retrieve details about any aspect of Document Handling	retrieveCurrencyExchangeTransactionDocumentHandling	retrieveCurrencyExchangeTransactionDocumentHandling		Invoke a reporting action to obtain a Document Handling instance related report
+FXTransactionCapture	initiate	Instantiate a new FX Transaction Capture	initiateCurrencyExchangeTransactionFXTransactionCapture	initiateCurrencyExchangeTransactionFXTransactionCapture		Details of a new FXTransaction Capture instance
+FXTransactionCapture	update	Update details relating to FX Transaction Capture	updateCurrencyExchangeTransactionFXTransactionCapture	updateCurrencyExchangeTransactionFXTransactionCapture		Update to any amendable fields of the FXTransaction Capture instance
+FXTransactionCapture	exchange	Accept, verify, etc. aspects of FX Transaction Capture processing	exchangeCurrencyExchangeTransactionFXTransactionCapture	exchangeCurrencyExchangeTransactionFXTransactionCapture		Handle an external exchange (e.g. accept, reject, verify)
+FXTransactionCapture	retrieve		retrieveCurrencyExchangeTransactionFXTransactionCapture	retrieveCurrencyExchangeTransactionFXTransactionCapture		Invoke a reporting action to obtain a FXTransaction Capture instance related report

@@ -1,0 +1,21 @@
+sd=Commission Agreement	Maintain and administer the terms and transactions for employee and broker commissions	An employee's commission agreement is established once they have qualified to undertake sales activity in the contact center	This service domain sets up and maintains the terms for applying commissions to transactions assigned to employees and representative service brokers or intermediaries
+sdpath=commission-agreement
+crpath=employee-commission-agreement
+crr=Employee Commission Agreement Instance
+mcr=Employee Commission Agreement
+bqs=CommissionTerms
+CONFIG
+EmployeeCommissionAgreement	initiate	Instantiate a new Employee Commission Agreement		initiateEmployeeCommissionAgreement		#desc
+EmployeeCommissionAgreement	update	Update details relating to Employee Commission Agreement		updateEmployeeCommissionAgreement		#desc
+EmployeeCommissionAgreement	control	Control the processing of Employee Commission Agreement		controlEmployeeCommissionAgreement		#desc
+EmployeeCommissionAgreement	exchange	Accept, verify, etc. aspects of Employee Commission Agreement processing		exchangeEmployeeCommissionAgreement		#desc
+EmployeeCommissionAgreement	request	Request manual intervention or a decision with respect to Employee Commission Agreement		requestEmployeeCommissionAgreement		#desc
+EmployeeCommissionAgreement	grant	Obtain permission to act in relation to Employee Commission Agreement		grantEmployeeCommissionAgreement		#desc
+EmployeeCommissionAgreement	retrieve	Retrieve details about any aspect of Employee Commission Agreement		retrieveEmployeeCommissionAgreement		#desc
+CommissionTerms	initiate	Instantiate a new Commission Terms	initiateEmployeeCommissionAgreementCommissionTerms	initiateEmployeeCommissionAgreementCommissionTerms		Details of a new Commission Terms instance
+CommissionTerms	update	Update details relating to Commission Terms	updateEmployeeCommissionAgreementCommissionTerms	updateEmployeeCommissionAgreementCommissionTerms		Update to any amendable fields of the Commission Terms instance
+CommissionTerms	control	Control the processing of Commission Terms	controlEmployeeCommissionAgreementCommissionTerms	controlEmployeeCommissionAgreementCommissionTerms		Request specific processing (e.g. suspend, skip, terminate)
+CommissionTerms	exchange	Accept, verify, etc. aspects of Commission Terms processing	exchangeEmployeeCommissionAgreementCommissionTerms	exchangeEmployeeCommissionAgreementCommissionTerms		Handle an external exchange (e.g. accept, reject, verify)
+CommissionTerms	request	Request manual intervention or a decision with respect to Commission Terms	requestEmployeeCommissionAgreementCommissionTerms	requestEmployeeCommissionAgreementCommissionTerms		Invoke a service request action against the Commission Terms instance
+CommissionTerms	grant	Obtain permission to act in relation to Commission Terms	grantEmployeeCommissionAgreementCommissionTerms	grantEmployeeCommissionAgreementCommissionTerms		Invoke a grant request action from the Commission Terms instance to obtain access permission
+CommissionTerms	retrieve		retrieveEmployeeCommissionAgreementCommissionTerms	retrieveEmployeeCommissionAgreementCommissionTerms		Invoke a reporting action to obtain a Commission Terms instance related report

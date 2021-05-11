@@ -1,0 +1,25 @@
+sd=Contact Center Operations	Administer the day to day activity in the contact center - allocate positions and track staff availability and performance	Contact center operations re-assigns staff to servicing positions to deal with peak loading for a specific product or service type	Oversee and administer the day to day activity in the contact center. This includes the assignment of individuals to servicing positions in compliance with the service configuration determined by Contact Center Management. Also tracking staff availability and utilization during the servicing session and making necessary assignment adjustments to deal with servicing load. (Note servicing resources interact directly with the Contact Routing service domain to indicate when they are open to receive customer contacts)
+sdpath=contact-center-operations
+crpath=contact-center-administrative-plan
+crr=Contact Center Administrative Plan Instance
+mcr=Contact Center Administrative Plan
+bqs=PeakLoad Assignment Troubleshooting
+CONFIG
+ContactCenterAdministrativePlan	create	Control the execution of the contact center administrative plan		createContactCenterAdministrativePlan		#desc
+ContactCenterAdministrativePlan	execute	Create the administrative plan for the contact center		executeContactCenterAdministrativePlan		#desc
+ContactCenterAdministrativePlan	retrieve	Execute an automated action against the plan		retrieveContactCenterAdministrativePlan		#desc
+ContactCenterAdministrativePlan	request	Retrieve details about the execution of the administrative plan		requestContactCenterAdministrativePlan		#desc
+ContactCenterAdministrativePlan	update	Request manual intervention to the plan		updateContactCenterAdministrativePlan		#desc
+ContactCenterAdministrativePlan	control	Update aspects of the administrative plan		controlContactCenterAdministrativePlan		#desc
+PeakLoad	retrieve	Control the servicing representatives assignment	retrieveContactCenterAdministrativePlanPeakLoad	retrieveContactCenterAdministrativePlanPeakLoad		Invoke a reporting action to obtain a Peak Load instance related report
+PeakLoad	request	Create an assignment request	requestContactCenterAdministrativePlanPeakLoad	requestContactCenterAdministrativePlanPeakLoad		Invoke a service request action against the Peak Load instance
+PeakLoad	update	Retrieve details about a contact center assignment	updateContactCenterAdministrativePlanPeakLoad	updateContactCenterAdministrativePlanPeakLoad		Update to any amendable fields of the Peak Load instance
+Troubleshooting	create	Request changes to the servicing representative's assignment	createContactCenterAdministrativePlanTroubleshooting	createContactCenterAdministrativePlanTroubleshooting		Details of a new Troubleshooting instance
+Troubleshooting	retrieve	Update details of a servicing representatives assignment	retrieveContactCenterAdministrativePlanTroubleshooting	retrieveContactCenterAdministrativePlanTroubleshooting		Invoke a reporting action to obtain a Troubleshooting instance related report
+Troubleshooting	request	Retrieve details about peak load response activity	requestContactCenterAdministrativePlanTroubleshooting	requestContactCenterAdministrativePlanTroubleshooting		Invoke a service request action against the Troubleshooting instance
+Troubleshooting	update	Request manual intervention due to peak loading	updateContactCenterAdministrativePlanTroubleshooting	updateContactCenterAdministrativePlanTroubleshooting		Update to any amendable fields of the Troubleshooting instance
+Assignment	control	Update details or the response to a peak load situation	controlContactCenterAdministrativePlanAssignment	controlContactCenterAdministrativePlanAssignment		Request specific processing (e.g. suspend, skip, terminate)
+Assignment	create	Create a troubleshooting response task	createContactCenterAdministrativePlanAssignment	createContactCenterAdministrativePlanAssignment		Details of a new Assignment instance
+Assignment	retrieve	Retrieve details about troubleshooting activity	retrieveContactCenterAdministrativePlanAssignment	retrieveContactCenterAdministrativePlanAssignment		Invoke a reporting action to obtain a Assignment instance related report
+Assignment	request	request manual intervention in troubleshooting activity	requestContactCenterAdministrativePlanAssignment	requestContactCenterAdministrativePlanAssignment		Invoke a service request action against the Assignment instance
+Assignment	update	Update aspects of a troubleshooting task	updateContactCenterAdministrativePlanAssignment	updateContactCenterAdministrativePlanAssignment		Update to any amendable fields of the Assignment instance

@@ -1,0 +1,999 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Collections'
+ description: >
+
+    ## Executive Summary:
+
+    Handles the liquidation of assets to offset the losses for problem accounts
+
+    ## Example of Use:
+
+    Collateral held against a failed account is valued and submitted for liquidation to recover losses
+
+    ## Description:
+
+    Administer the recovery and/or liquidation of collateral against problem accounts
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-collections/1.0.0
+schemes:
+ - https
+paths:
+  /collections/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCollections
+      summary: Activate  a SDCollections servicing session
+      description: Activate  a  SDCollections servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCollections Request Payload
+        schema:
+          $ref: '#/definitions/SDCollectionsActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCollectionsActivateOutputModel'
+  /collections/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCollections
+      summary: Update an active SDCollections session configuration
+      description: Update an active SDCollections session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCollections Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCollections Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCollectionsConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCollectionsConfigureOutputModel'
+  /collections/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCollections
+      summary: "Capturing feedback against the SDCollections service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCollections service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCollections Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCollections Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCollectionsFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCollectionsFeedbackOutputModel'
+  /collections/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCollections
+      summary: Analytical views maintained by the SDCollections service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCollections service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCollections Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCollectionsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCollectionsRetrieveOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCollateralAssetLiquidationProcedure
+      summary: Details of a new CollateralAssetLiquidationProcedure instance
+      description: Instantiate a new Collateral Asset Liquidation Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CollateralAssetLiquidationProcedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCollateralAssetLiquidationProcedureInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new CollateralAssetLiquidationProcedure instance
+          schema:
+            $ref: '#/definitions/CRCollateralAssetLiquidationProcedureInitiateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCollateralAssetLiquidationProcedure
+      summary: Update to any amendable fields of the CollateralAssetLiquidationProcedure instance
+      description: Update details relating to Collateral Asset Liquidation Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Collateral Asset Liquidation Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCollateralAssetLiquidationProcedureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Collateral Asset Liquidation Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCollateralAssetLiquidationProcedureUpdateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCollateralAssetLiquidationProcedureUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Collateral Asset Liquidation Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Collateral Asset Liquidation Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCollateralAssetLiquidationProcedureControlInputModel'
+      responses:
+        200:
+          description: Successful control of Collateral Asset Liquidation Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCollateralAssetLiquidationProcedureControlOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCollateralAssetLiquidationProcedureUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Collateral Asset Liquidation Procedure processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Collateral Asset Liquidation Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCollateralAssetLiquidationProcedureExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Collateral Asset Liquidation Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCollateralAssetLiquidationProcedureExchangeOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCollateralAssetLiquidationProcedureUpdate
+      summary: Invoke an automated execute action against the CollateralAssetLiquidationProcedure instance
+      description: Execute an available automated action for Collateral Asset Liquidation Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Collateral Asset Liquidation Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCollateralAssetLiquidationProcedureExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Collateral Asset Liquidation Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCollateralAssetLiquidationProcedureExecuteOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCollateralAssetLiquidationProcedureUpdate
+      summary: Invoke a service request action against the CollateralAssetLiquidationProcedure instance
+      description: Request manual intervention or a decision with respect to Collateral Asset Liquidation Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Collateral Asset Liquidation Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCollateralAssetLiquidationProcedureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Collateral Asset Liquidation Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCollateralAssetLiquidationProcedureRequestOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCollections
+      summary: Invoke a reporting action to obtain a Collateral Asset Liquidation Procedure instance related report
+      description: Retrieve details about any aspect of Collateral Asset Liquidation Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCollateralAssetLiquidationProcedureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Collateral Asset Liquidation Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCollateralAssetLiquidationProcedureRetrieveOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collateralliquidation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCollateralAssetLiquidationProcedureCollateralLiquidation
+      summary: Details of a new CollateralLiquidation instance
+      description: Instantiate a new Collateral Liquidation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Collateral Asset Liquidation Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQCollateralLiquidationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Collateral Asset Liquidation Procedure instance
+          schema:
+            $ref: '#/definitions/BQCollateralLiquidationInitiateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collateralliquidation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCollateralAssetLiquidationProcedureCollateralLiquidation
+      summary: Update to any amendable fields of the CollateralLiquidation instance
+      description: Update details relating to Collateral Liquidation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollateralLiquidation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CollateralLiquidation Request Payload
+        schema:
+          $ref: '#/definitions/BQCollateralLiquidationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CollateralLiquidation Instance
+          schema:
+            $ref: '#/definitions/BQCollateralLiquidationUpdateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collateralliquidation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCollateralAssetLiquidationProcedureCollateralLiquidationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Collateral Liquidation processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollateralLiquidation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CollateralLiquidation request payload
+        schema:
+          $ref: '#/definitions/BQCollateralLiquidationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of CollateralLiquidation Instance Record
+          schema:
+            $ref: '#/definitions/BQCollateralLiquidationExchangeOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collateralliquidation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCollateralAssetLiquidationProcedureCollateralLiquidation
+      summary: Invoke a reporting action to obtain a CollateralLiquidation instance related report.
+      description: Retrieve details about any aspect of Collateral Liquidation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollateralLiquidation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCollateralLiquidationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CollateralLiquidation Instance Record
+          schema:
+            $ref: '#/definitions/BQCollateralLiquidationRetrieveOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collectionsaccountupdate/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCollateralAssetLiquidationProcedureCollectionsAccountUpdate
+      summary: Update to any amendable fields of the CollectionsAccountUpdate instance
+      description: Update details relating to Collections Account Update
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollectionsAccountUpdate Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CollectionsAccountUpdate Request Payload
+        schema:
+          $ref: '#/definitions/BQCollectionsAccountUpdateUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CollectionsAccountUpdate Instance
+          schema:
+            $ref: '#/definitions/BQCollectionsAccountUpdateUpdateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collectionsaccountupdate/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCollateralAssetLiquidationProcedureCollectionsAccountUpdate
+      summary: Invoke a reporting action to obtain a CollectionsAccountUpdate instance related report.
+      description: Retrieve details about any aspect of Collections Account Update .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollectionsAccountUpdate Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCollectionsAccountUpdateRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CollectionsAccountUpdate Instance Record
+          schema:
+            $ref: '#/definitions/BQCollectionsAccountUpdateRetrieveOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collectionsassessment/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCollateralAssetLiquidationProcedureCollectionsAssessment
+      summary: Details of a new CollectionsAssessment instance
+      description: Instantiate a new Collections Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Collateral Asset Liquidation Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQCollectionsAssessmentInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Collateral Asset Liquidation Procedure instance
+          schema:
+            $ref: '#/definitions/BQCollectionsAssessmentInitiateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collectionsassessment/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCollateralAssetLiquidationProcedureCollectionsAssessment
+      summary: Update to any amendable fields of the CollectionsAssessment instance
+      description: Update details relating to Collections Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollectionsAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CollectionsAssessment Request Payload
+        schema:
+          $ref: '#/definitions/BQCollectionsAssessmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CollectionsAssessment Instance
+          schema:
+            $ref: '#/definitions/BQCollectionsAssessmentUpdateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collectionsassessment/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCollateralAssetLiquidationProcedureCollectionsAssessment
+      summary: Invoke a reporting action to obtain a CollectionsAssessment instance related report.
+      description: Retrieve details about any aspect of Collections Assessment .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollectionsAssessment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCollectionsAssessmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CollectionsAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQCollectionsAssessmentRetrieveOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collateralvaluation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCollateralAssetLiquidationProcedureCollateralValuation
+      summary: Details of a new CollateralValuation instance
+      description: Instantiate a new Collateral Valuation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Collateral Asset Liquidation Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQCollateralValuationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Collateral Asset Liquidation Procedure instance
+          schema:
+            $ref: '#/definitions/BQCollateralValuationInitiateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collateralvaluation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCollateralAssetLiquidationProcedureCollateralValuation
+      summary: Update to any amendable fields of the CollateralValuation instance
+      description: Update details relating to Collateral Valuation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollateralValuation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CollateralValuation Request Payload
+        schema:
+          $ref: '#/definitions/BQCollateralValuationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CollateralValuation Instance
+          schema:
+            $ref: '#/definitions/BQCollateralValuationUpdateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collateralvaluation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCollateralAssetLiquidationProcedureCollateralValuationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Collateral Valuation processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollateralValuation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CollateralValuation request payload
+        schema:
+          $ref: '#/definitions/BQCollateralValuationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of CollateralValuation Instance Record
+          schema:
+            $ref: '#/definitions/BQCollateralValuationExchangeOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/collateralvaluation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCollateralAssetLiquidationProcedureCollateralValuation
+      summary: Invoke a reporting action to obtain a CollateralValuation instance related report.
+      description: Retrieve details about any aspect of Collateral Valuation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CollateralValuation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCollateralValuationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CollateralValuation Instance Record
+          schema:
+            $ref: '#/definitions/BQCollateralValuationRetrieveOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/debtfactoring/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCollateralAssetLiquidationProcedureDebtFactoring
+      summary: Details of a new DebtFactoring instance
+      description: Instantiate a new Debt Factoring
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Collateral Asset Liquidation Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQDebtFactoringInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Collateral Asset Liquidation Procedure instance
+          schema:
+            $ref: '#/definitions/BQDebtFactoringInitiateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/debtfactoring/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCollateralAssetLiquidationProcedureDebtFactoring
+      summary: Update to any amendable fields of the DebtFactoring instance
+      description: Update details relating to Debt Factoring
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DebtFactoring Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DebtFactoring Request Payload
+        schema:
+          $ref: '#/definitions/BQDebtFactoringUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated DebtFactoring Instance
+          schema:
+            $ref: '#/definitions/BQDebtFactoringUpdateOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/debtfactoring/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCollateralAssetLiquidationProcedureDebtFactoringUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Debt Factoring processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DebtFactoring Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DebtFactoring request payload
+        schema:
+          $ref: '#/definitions/BQDebtFactoringExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of DebtFactoring Instance Record
+          schema:
+            $ref: '#/definitions/BQDebtFactoringExchangeOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/debtfactoring/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCollateralAssetLiquidationProcedureDebtFactoring
+      summary: Invoke a reporting action to obtain a DebtFactoring instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DebtFactoring Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQDebtFactoringRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved DebtFactoring Instance Record
+          schema:
+            $ref: '#/definitions/BQDebtFactoringRetrieveOutputModel'
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCollectionsReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Collections Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /collections/collateral-asset-liquidation-procedure/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCollectionsBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'DebtFactoring',  'CollectionsAccountUpdate',  'CollateralLiquidation',  'CollateralValuation',  'CollectionsAssessment', ]
+  /collections/{sd-reference-id}/collateral-asset-liquidation-procedure/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCollectionsBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Collections Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Collateral Asset Liquidation Procedure Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- CollectionsAssessment
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CollectionsAssessment Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [CollectionsAssessmentID1, CollectionsAssessmentID2]

@@ -1,0 +1,550 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Investment Portfolio Planning'
+ description: >
+
+    ## Executive Summary:
+
+    Agree the policies and required make-up of an investment portfolio and ensure all required bank and regulatory terms and conditions are addressed
+
+    ## Example of Use:
+
+    A relationship manager established the investment agreement for a customer that is setting up a managed investment portfolio
+
+    ## Description:
+
+    Agree the customer investment portfolio governing principles, risk appetite, management/trading guidelines and target portfolio profile. Identify any desired/target and 'out of bounds' securities/sectors. Ensure disclosures and related eligibility, suitability and other regulatory obligations are addressed and reflected in the agreement
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-investment-portfolio-planning/1.0.0
+schemes:
+ - https
+paths:
+  /investment-portfolio-planning/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDInvestmentPortfolioPlanning
+      summary: Activate  a SDInvestmentPortfolioPlanning servicing session
+      description: Activate  a  SDInvestmentPortfolioPlanning servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDInvestmentPortfolioPlanning Request Payload
+        schema:
+          $ref: '#/definitions/SDInvestmentPortfolioPlanningActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDInvestmentPortfolioPlanningActivateOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDInvestmentPortfolioPlanning
+      summary: Update an active SDInvestmentPortfolioPlanning session configuration
+      description: Update an active SDInvestmentPortfolioPlanning session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInvestmentPortfolioPlanning Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInvestmentPortfolioPlanning Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDInvestmentPortfolioPlanningConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDInvestmentPortfolioPlanningConfigureOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDInvestmentPortfolioPlanning
+      summary: "Capturing feedback against the SDInvestmentPortfolioPlanning service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDInvestmentPortfolioPlanning service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInvestmentPortfolioPlanning Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInvestmentPortfolioPlanning Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDInvestmentPortfolioPlanningFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDInvestmentPortfolioPlanningFeedbackOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDInvestmentPortfolioPlanning
+      summary: Analytical views maintained by the SDInvestmentPortfolioPlanning service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDInvestmentPortfolioPlanning service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInvestmentPortfolioPlanning Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDInvestmentPortfolioPlanningRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDInvestmentPortfolioPlanningRetrieveOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/evaluation:
+    post:
+      tags:
+      - evaluate
+      operationId: evaluateManagedInvestmentPortfolioAgreement
+      summary: Details of a new ManagedInvestmentPortfolioAgreement instance
+      description: Establish a managed investment portfolio agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ManagedInvestmentPortfolioAgreement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementEvaluateInputModel'
+      responses:
+        201:
+          description: Successful evaluation of new ManagedInvestmentPortfolioAgreement instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementEvaluateOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateManagedInvestmentPortfolioAgreement
+      summary: Update to any amendable fields of the ManagedInvestmentPortfolioAgreement instance
+      description: Update details of an active managed investment portfolio agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Managed Investment Portfolio Agreement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementUpdateOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlManagedInvestmentPortfolioAgreementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of an investment agreement (e.g. suspend terminate)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Managed Investment Portfolio Agreement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementControlOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeManagedInvestmentPortfolioAgreementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject etc an investment portfolio agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Managed Investment Portfolio Agreement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementExchangeOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestManagedInvestmentPortfolioAgreementUpdate
+      summary: Invoke a service request action against the ManagedInvestmentPortfolioAgreement instance
+      description: Request review that proposed activity is compatible with the agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Managed Investment Portfolio Agreement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementRequestOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantManagedInvestmentPortfolioAgreementUpdate
+      summary: Invoke a grant request action from the ManagedInvestmentPortfolioAgreement instance to obtain access permission
+      description: Obtain grant authority to act under the terms of the investment agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Managed Investment Portfolio Agreement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementGrantOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveInvestmentPortfolioPlanning
+      summary: Invoke a reporting action to obtain a Managed Investment Portfolio Agreement instance related report
+      description: Retrieve details about a managed investment portfolio agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRManagedInvestmentPortfolioAgreementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Managed Investment Portfolio Agreement Instance
+          schema:
+            $ref: '#/definitions/CRManagedInvestmentPortfolioAgreementRetrieveOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/investmentterms/evaluation:
+    post:
+      tags:
+      - evaluate
+      operationId: evaluateManagedInvestmentPortfolioAgreementInvestmentTerms
+      summary: Details of a new InvestmentTerms instance
+      description: Establish the specific terms/conditions making up the investment agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Managed Investment Portfolio Agreement Request Payload
+        schema:
+          $ref: '#/definitions/BQInvestmentTermsEvaluateInputModel'
+      responses:
+        201:
+          description: Successful evaluation of Managed Investment Portfolio Agreement instance
+          schema:
+            $ref: '#/definitions/BQInvestmentTermsEvaluateOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/investmentterms/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateManagedInvestmentPortfolioAgreementInvestmentTerms
+      summary: Update to any amendable fields of the InvestmentTerms instance
+      description: Update the terms/conditions for an investment agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InvestmentTerms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InvestmentTerms Request Payload
+        schema:
+          $ref: '#/definitions/BQInvestmentTermsUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated InvestmentTerms Instance
+          schema:
+            $ref: '#/definitions/BQInvestmentTermsUpdateOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/investmentterms/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestManagedInvestmentPortfolioAgreementInvestmentTermsUpdate
+      summary: Invoke a service request action against the InvestmentTerms instance
+      description: Request check of a proposed activity is compatible with a specific term of the agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InvestmentTerms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InvestmentTerms request payload
+        schema:
+          $ref: '#/definitions/BQInvestmentTermsRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of InvestmentTerms Instance Record
+          schema:
+            $ref: '#/definitions/BQInvestmentTermsRequestOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/investmentterms/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveManagedInvestmentPortfolioAgreementInvestmentTerms
+      summary: Invoke a reporting action to obtain a InvestmentTerms instance related report.
+      description: Retrieve details about the specific terms of an agreement .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InvestmentTerms Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQInvestmentTermsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved InvestmentTerms Instance Record
+          schema:
+            $ref: '#/definitions/BQInvestmentTermsRetrieveOutputModel'
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInvestmentPortfolioPlanningReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- InvestmentPortfolioPlanning Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /investment-portfolio-planning/managed-investment-portfolio-agreement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInvestmentPortfolioPlanningBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'InvestmentTerms', ]
+  /investment-portfolio-planning/{sd-reference-id}/managed-investment-portfolio-agreement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInvestmentPortfolioPlanningBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Investment Portfolio Planning Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Managed Investment Portfolio Agreement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- InvestmentTerms
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- InvestmentTerms Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [InvestmentTermsID1, InvestmentTermsID2]

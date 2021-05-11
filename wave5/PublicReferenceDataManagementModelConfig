@@ -1,0 +1,90 @@
+CR Global Standard Specification Instance Record|Global Standard Specification||||||CR Global Standard Specification Initiate|CR Global Standard Specification Update|CR Global Standard Specification Control|CR Global Standard Specification Exchange|CR Global Standard Specification Capture|CR Global Standard Specification Request|CR Global Standard Specification Retrieve|BQ Global Reference Data Initiate|BQ Global Reference Data Retrieve|
+Mandatory||Public Reference Data Management Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Global Standard Specification Instance Reference||||Reference to the Global Standard Specification instance|O|I|I|I|I|I
+Initiate||Global Standard Specification Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Global Standard Specification Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Global Standard Specification Instance Status||||The status of the Global Standard Specification instance (e.g. initialised, pending, active)|IO
+||Global Standard Specification Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Public Reference Data Management.
+Example: Create and maintain product designs and analytical models.|||||||||
+||Global Standard Specification Parameter Type||||A Classification value that distinguishes between designs according to the type of business services and/or aspect within Global Standard Specification . Eg Product Design, Campaign Design, Risk Model Design etc. |IO|IO|IO|IO|IO|IO|O||
+||Global Standard Specification Selected Option||||A selected optional business service as subject matter of design|IO|IO|IO|IO|IO|IO|O||
+||Global Standard Specification Description||||Documentation of Global Standard Specification|I|I|I|I|I|I|O||
+||Global Standard Specification Version||||The version of Global Standard Specification|IO|IO|IO|IO|IO|IO|O||
+||Global Standard Specification Status||||The status of Global Standard Specification|IO|IO|IO|IO|IO|IO|O||
+||Global Standard Specification Usage Log||||Reference to the log of (usage) ativities/events of Global Standard Specification|IO|IO|IO|IO|IO|IO|O||
+||Global Standard Specification Feedback||||Information about reactions to a design which is used as a basis for improvement for the Global Standard Specification.|IO|IO|IO|IO|IO|IO|O||
+||Global Standard Specification ServiceProvider Reference||||Reference to the party who has provided Global Standard Specification|I|I|I|I|I|I|O||
+Update||Global Standard Specification Update Action Task Reference||||Reference to an update service call||O
+Update||Global Standard Specification Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Global Standard Specification Control Action Task Reference||||Reference to a Global Standard Specification instance control processing service call|||O
+CONTROL||Global Standard Specification Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Global Standard Specification Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Global Standard Specification Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Global Standard Specification Exchange Action Task Reference||||Reference to a Global Standard Specification instance exchange service call||||O
+EXCHANGE||Global Standard Specification Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Global Standard Specification Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Global Standard Specification Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Global Standard Specification Capture Action Task Reference||||Reference to a Global Standard Specification instance capture service call|||||O
+CAPTURE||Global Standard Specification Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Global Standard Specification Request Action Task Reference||||Reference to a Global Standard Specification instance request service call||||||O
+REQUEST||Global Standard Specification Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Global Standard Specification Retrieve Action Task Reference||||Reference to a Global Standard Specification instance retrieve service call|||||||O
+RETRIEVE||Global Standard Specification Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Global Standard Specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Global Standard Specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Global Standard Specification Instance Report Record|##|||A specific Global Standard Specification instance formatted report|||||||IO
+RETRIEVE|||Global Standard Specification Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Global Standard Specification Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Global Standard Specification Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Global Standard Specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Global Standard Specification Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Global Standard Specification Instance Analysis|##|||A specific Global Standard Specification instance analytical report|||||||IO
+RETRIEVE|||Global Standard Specification Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Global Standard Specification Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Global Standard Specification Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Global Standard Specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Global Standard Specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Global Reference Data Instance Record|Global Reference Data||||||
+Mandatory||Global Standard Specification Instance Reference||||Reference to the parent Global Standard Specification instance||||||||I
+Mandatory||Global Reference Data Instance Reference||||Reference to the Global Reference Data instance||||||||O|
+Initiate||Global Reference Data Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Global Reference Data Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Global Reference Data Instance Status||||The status of the Global Reference Data instance (e.g. initialised, pending, active)||||||||O
+||Global Reference Data Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Public Reference Data Management.
+|||||||||
+||Global Reference Data Preconditions||||The required status/situation before the specification aspect can be defined||||||||IO|O
+||Global Reference Data Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||IO|O
+||Global Reference Data Version Number||||The current version, and version history as appropriate for the specification aspect||||||||IO|O
+||External Reference Data||||The Global Standard Specification specific Business Service||||||||IO|O
+||External Reference Data Service Type||||Reference to the specific business service type||||||||IO|O
+||External Reference Data Service Description||||Description of the performed business service||||||||IO|O
+||External Reference Data Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|O
+||External Reference Data Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|O
+Retrieve||Global Reference Data Retrieve Action Task Reference||||Reference to a Global Reference Data instance retrieve service call|||||||||O
+Retrieve||Global Reference Data Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||I/O
+Retrieve||Global Reference Data Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||I
+Retrieve||Global Reference Data Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||O
+Retrieve||Global Reference Data Instance Report|##|||A specific Global Reference Data instance formatted report|||||||||IO
+Retrieve|||Global Reference Data Instance Report Reference|||Reference to the control record instance report|||||||||I
+Retrieve|||Global Reference Data Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Global Reference Data Instance Report Type|||The type of external report available|||||||||O
+Retrieve|||Global Reference Data Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||O
+Retrieve|||Global Reference Data Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||O
+Retrieve||Global Reference Data Instance Analysis|##|||A specific Global Reference Data instance analytical report|||||||||IO
+Retrieve|||Global Reference Data Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||I
+Retrieve|||Global Reference Data Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Global Reference Data Instance Analysis Report Type|||The type of external performance analysis report available|||||||||O
+Retrieve|||Global Reference Data Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||O
+Retrieve|||Global Reference Data Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||O

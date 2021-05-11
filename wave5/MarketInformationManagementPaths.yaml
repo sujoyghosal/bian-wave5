@@ -1,0 +1,723 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Market Information Management'
+ description: >
+
+    ## Executive Summary:
+
+    Market information management consolidates and improves market information from multiple sources in order to build up a bank knowledge base in targeted areas
+
+    ## Example of Use:
+
+    The bank consolidates multiple sources of private company merger and acquisition activity in order to maintain a view of private company players in a target sector
+
+    ## Description:
+
+    Consolidate market information from multiple sources and in any suitable media/format in order to build a bank financial market knowledge-base. The service domain activities include maintaining, refining, qualifying/verifying and presenting information in order to improve the quality of the available market intelligence within the bank
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-market-information-management/1.0.0
+schemes:
+ - https
+paths:
+  /market-information-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDMarketInformationManagement
+      summary: Activate  a SDMarketInformationManagement servicing session
+      description: Activate  a  SDMarketInformationManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDMarketInformationManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDMarketInformationManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDMarketInformationManagementActivateOutputModel'
+  /market-information-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDMarketInformationManagement
+      summary: Update an active SDMarketInformationManagement session configuration
+      description: Update an active SDMarketInformationManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDMarketInformationManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDMarketInformationManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDMarketInformationManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDMarketInformationManagementConfigureOutputModel'
+  /market-information-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDMarketInformationManagement
+      summary: "Capturing feedback against the SDMarketInformationManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDMarketInformationManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDMarketInformationManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDMarketInformationManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDMarketInformationManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDMarketInformationManagementFeedbackOutputModel'
+  /market-information-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDMarketInformationManagement
+      summary: Analytical views maintained by the SDMarketInformationManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDMarketInformationManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDMarketInformationManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDMarketInformationManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDMarketInformationManagementRetrieveOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/creation:
+    post:
+      tags:
+      - create
+      operationId: createFinancialMarketInformationAdministrativePlan
+      summary: Details of a new FinancialMarketInformationAdministrativePlan instance
+      description: Create an administrative plan for market information management
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialMarketInformationAdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new FinancialMarketInformationAdministrativePlan instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanCreateOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateFinancialMarketInformationAdministrativePlan
+      summary: Update to any amendable fields of the FinancialMarketInformationAdministrativePlan instance
+      description: Update details of the administrative plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Information Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Financial Market Information Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanUpdateOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlFinancialMarketInformationAdministrativePlanUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the execution of the administrative plan (e.g. suspend activity)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Information Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanControlInputModel'
+      responses:
+        200:
+          description: Successful control of Financial Market Information Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanControlOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeFinancialMarketInformationAdministrativePlanUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept/reject etc. aspects of the administrative plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Information Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Financial Market Information Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanExchangeOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeFinancialMarketInformationAdministrativePlanUpdate
+      summary: Invoke an automated execute action against the FinancialMarketInformationAdministrativePlan instance
+      description: Execute an automated action of the plan (e.g. refresh a data source)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Information Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Financial Market Information Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanExecuteOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestFinancialMarketInformationAdministrativePlanUpdate
+      summary: Invoke a service request action against the FinancialMarketInformationAdministrativePlan instance
+      description: Request manual intervention to activities covered by the plan (e.g. review data quality for a report)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Information Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Financial Market Information Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanRequestOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantFinancialMarketInformationAdministrativePlanUpdate
+      summary: Invoke a grant request action from the FinancialMarketInformationAdministrativePlan instance to obtain access permission
+      description: Grant specific use of bank managed market information (e.g. allow publication outside the bank)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Information Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Financial Market Information Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanGrantOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketInformationManagement
+      summary: Invoke a reporting action to obtain a Financial Market Information Administrative Plan instance related report
+      description: Retrieve details about the financial market information management activity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRFinancialMarketInformationAdministrativePlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Financial Market Information Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketInformationAdministrativePlanRetrieveOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/consolidation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFinancialMarketInformationAdministrativePlanConsolidation
+      summary: Invoke a reporting action to obtain a Consolidation instance related report.
+      description: Retrieve details about the consolidation of source data .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Consolidation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQConsolidationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Consolidation Instance Record
+          schema:
+            $ref: '#/definitions/BQConsolidationRetrieveOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/improvement/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFinancialMarketInformationAdministrativePlanImprovement
+      summary: Invoke a reporting action to obtain a Improvement instance related report.
+      description: Retrieve details about the data improvement activities .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Improvement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQImprovementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Improvement Instance Record
+          schema:
+            $ref: '#/definitions/BQImprovementRetrieveOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/reporting/creation:
+    post:
+      tags:
+      - create
+      operationId: createFinancialMarketInformationAdministrativePlanReporting
+      summary: Details of a new Reporting instance
+      description: Create a specific report view of the financial market information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Information Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQReportingCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Financial Market Information Administrative Plan instance
+          schema:
+            $ref: '#/definitions/BQReportingCreateOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/reporting/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateFinancialMarketInformationAdministrativePlanReporting
+      summary: Update to any amendable fields of the Reporting instance
+      description: Update properties of a structured view/report
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reporting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reporting Request Payload
+        schema:
+          $ref: '#/definitions/BQReportingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Reporting Instance
+          schema:
+            $ref: '#/definitions/BQReportingUpdateOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/reporting/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureFinancialMarketInformationAdministrativePlanReportingUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture usage details for the managed financial information/reports
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reporting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reporting request payload
+        schema:
+          $ref: '#/definitions/BQReportingCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Reporting Instance Record
+          schema:
+            $ref: '#/definitions/BQReportingCaptureOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/reporting/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeFinancialMarketInformationAdministrativePlanReportingUpdate
+      summary: Invoke an automated execute action against the Reporting instance
+      description: Execute an automated action for a report (e.g. access)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reporting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reporting request payload
+        schema:
+          $ref: '#/definitions/BQReportingExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Reporting Instance Record
+          schema:
+            $ref: '#/definitions/BQReportingExecuteOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/reporting/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestFinancialMarketInformationAdministrativePlanReportingUpdate
+      summary: Invoke a service request action against the Reporting instance
+      description: Request manual intervention (e.g. customize some aspect of a viewpoint/report)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reporting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reporting request payload
+        schema:
+          $ref: '#/definitions/BQReportingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Reporting Instance Record
+          schema:
+            $ref: '#/definitions/BQReportingRequestOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/reporting/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFinancialMarketInformationAdministrativePlanReporting
+      summary: Invoke a reporting action to obtain a Reporting instance related report.
+      description: Retrieve details about managed financial market reporting activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Reporting Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQReportingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Reporting Instance Record
+          schema:
+            $ref: '#/definitions/BQReportingRetrieveOutputModel'
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveMarketInformationManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- MarketInformationManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /market-information-management/financial-market-information-administrative-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveMarketInformationManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Consolidation',  'Improvement',  'Reporting', ]
+  /market-information-management/{sd-reference-id}/financial-market-information-administrative-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveMarketInformationManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Information Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Information Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Reporting
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Reporting Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ReportingID1, ReportingID2]

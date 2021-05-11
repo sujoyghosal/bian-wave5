@@ -1,0 +1,195 @@
+CR Credit Risk Model Specification Instance Record|Credit Risk Model Specification||||||CR Credit Risk Model Specification Initiate|CR Credit Risk Model Specification Update|CR Credit Risk Model Specification Control|CR Credit Risk Model Specification Exchange|CR Credit Risk Model Specification Capture|CR Credit Risk Model Specification Request|CR Credit Risk Model Specification Retrieve|BQ Testing Update|BQ Testing Capture|BQ Testing Request|BQ Testing Retrieve|BQ Production Update|BQ Production Capture|BQ Production Request|BQ Production Retrieve|BQ Functional Requirements Update|BQ Functional Requirements Capture|BQ Functional Requirements Request|BQ Functional Requirements Retrieve|
+Mandatory||Credit Risk Models Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Credit Risk Model Specification Instance Reference||||Reference to the Credit Risk Model Specification instance|O|I|I|I|I|I
+Initiate||Credit Risk Model Specification Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Credit Risk Model Specification Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Credit Risk Model Specification Instance Status||||The status of the Credit Risk Model Specification instance (e.g. initialised, pending, active)|IO
+||Credit Risk Model Specification Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Credit Risk Models.
+Example: Create and maintain product designs and analytical models.|||||||||||||||||||
+||Credit Risk Model Specification Parameter Type||||A Classification value that distinguishes between designs according to the type of business services and/or aspect within Credit Risk Model Specification . Eg Product Design, Campaign Design, Risk Model Design etc. |IO|IO|IO|IO|IO|IO|O||||||||||||
+||Credit Risk Model Specification Selected Option||||A selected optional business service as subject matter of design|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Credit Risk Model Specification Description||||Documentation of Credit Risk Model Specification|I|I|I|I|I|I|O||||||||||||
+||Credit Risk Model Specification Version||||The version of Credit Risk Model Specification|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Credit Risk Model Specification Status||||The status of Credit Risk Model Specification|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Credit Risk Model Specification Usage Log||||Reference to the log of (usage) ativities/events of Credit Risk Model Specification|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Credit Risk Model Specification Feedback||||Information about reactions to a design which is used as a basis for improvement for the Credit Risk Model Specification.|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Credit Risk Model Specification ServiceProvider Reference||||Reference to the party who has provided Credit Risk Model Specification|I|I|I|I|I|I|O||||||||||||
+Update||Credit Risk Model Specification Update Action Task Reference||||Reference to an update service call||O
+Update||Credit Risk Model Specification Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Credit Risk Model Specification Control Action Task Reference||||Reference to a Credit Risk Model Specification instance control processing service call|||O
+CONTROL||Credit Risk Model Specification Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Credit Risk Model Specification Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Credit Risk Model Specification Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Credit Risk Model Specification Exchange Action Task Reference||||Reference to a Credit Risk Model Specification instance exchange service call||||O
+EXCHANGE||Credit Risk Model Specification Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Credit Risk Model Specification Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Credit Risk Model Specification Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Credit Risk Model Specification Capture Action Task Reference||||Reference to a Credit Risk Model Specification instance capture service call|||||O
+CAPTURE||Credit Risk Model Specification Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Credit Risk Model Specification Request Action Task Reference||||Reference to a Credit Risk Model Specification instance request service call||||||O
+REQUEST||Credit Risk Model Specification Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Credit Risk Model Specification Retrieve Action Task Reference||||Reference to a Credit Risk Model Specification instance retrieve service call|||||||O
+RETRIEVE||Credit Risk Model Specification Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Credit Risk Model Specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Credit Risk Model Specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Credit Risk Model Specification Instance Report Record|##|||A specific Credit Risk Model Specification instance formatted report|||||||IO
+RETRIEVE|||Credit Risk Model Specification Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Credit Risk Model Specification Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Credit Risk Model Specification Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Credit Risk Model Specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Credit Risk Model Specification Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Credit Risk Model Specification Instance Analysis|##|||A specific Credit Risk Model Specification instance analytical report|||||||IO
+RETRIEVE|||Credit Risk Model Specification Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Credit Risk Model Specification Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Credit Risk Model Specification Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Credit Risk Model Specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Credit Risk Model Specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Testing Instance Record|Testing||||||
+Mandatory||Credit Risk Model Specification Instance Reference||||Reference to the parent Credit Risk Model Specification instance||||||||I|I|I
+Mandatory||Testing Instance Reference||||Reference to the Testing instance||||||||I|I|I
+||Testing Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Credit Risk Models.
+|||||||||||||||||||
+||Testing Preconditions||||The required status/situation before the specification aspect can be defined||||||||IO|IO|IO|O||||||||
+||Testing Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||IO|IO|IO|O||||||||
+||Testing Version Number||||The current version, and version history as appropriate for the specification aspect||||||||IO|IO|IO|O||||||||
+||Business Service||||The Credit Risk Model Specification specific Business Service||||||||IO|IO|IO|O||||||||
+||Service Type||||Reference to the specific business service type||||||||IO|IO|IO|O||||||||
+||Service Description||||Description of the performed business service||||||||IO|IO|IO|O||||||||
+||Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|O||||||||
+||Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|O||||||||
+||Service Name||||||||||||IO|IO|IO|O||||||||
+Update||Testing Update Action Task Reference||||Reference to an update service call||||||||O
+Update||Testing Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||Testing Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Capture||Testing Capture Action Task Reference||||Reference to a Testing instance capture service call|||||||||O
+Capture||Testing Capture Action Task Record||||The capture service call consolidated processing record|||||||||I/O
+Capture||Testing Capture Record Reference||||Reference to the Testing structured input transaction/record|||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||O
+Request||Testing Request Action Task Reference||||Reference to a Testing instance request service call||||||||||O
+Request||Testing Request Action Task Record||||The request service call consolidated processing record||||||||||I/O
+Request||Testing Request Record Reference||||Reference to the Testing service request record||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||O
+Retrieve||Testing Retrieve Action Task Reference||||Reference to a Testing instance retrieve service call|||||||||||O
+Retrieve||Testing Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||Testing Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||Testing Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||Testing Instance Report|##|||A specific Testing instance formatted report|||||||||||IO
+Retrieve|||Testing Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||Testing Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Testing Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||Testing Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||Testing Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||Testing Instance Analysis|##|||A specific Testing instance analytical report|||||||||||IO
+Retrieve|||Testing Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||Testing Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Testing Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||Testing Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||Testing Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O
+BQ Production Instance Record|Production||||||
+Mandatory||Credit Risk Model Specification Instance Reference||||Reference to the parent Credit Risk Model Specification instance||||||||||||I|I|I
+Mandatory||Production Instance Reference||||Reference to the Production instance||||||||||||I|I|I
+||Production Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Credit Risk Models.
+|||||||||||||||||||
+||Production Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||IO|IO|IO|O||||
+||Production Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||IO|IO|IO|O||||
+||Production Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||IO|IO|IO|O||||
+||Business Service||||The Credit Risk Model Specification specific Business Service||||||||||||IO|IO|IO|O||||
+||Service Type||||Reference to the specific business service type||||||||||||IO|IO|IO|O||||
+||Service Description||||Description of the performed business service||||||||||||IO|IO|IO|O||||
+||Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||IO|IO|IO|O||||
+||Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||IO|IO|IO|O||||
+||Service Name||||||||||||||||IO|IO|IO|O||||
+Update||Production Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Production Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Production Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Capture||Production Capture Action Task Reference||||Reference to a Production instance capture service call|||||||||||||O
+Capture||Production Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||I/O
+Capture||Production Capture Record Reference||||Reference to the Production structured input transaction/record|||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||O
+Request||Production Request Action Task Reference||||Reference to a Production instance request service call||||||||||||||O
+Request||Production Request Action Task Record||||The request service call consolidated processing record||||||||||||||I/O
+Request||Production Request Record Reference||||Reference to the Production service request record||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||O
+Retrieve||Production Retrieve Action Task Reference||||Reference to a Production instance retrieve service call|||||||||||||||O
+Retrieve||Production Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||I/O
+Retrieve||Production Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||I
+Retrieve||Production Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||O
+Retrieve||Production Instance Report|##|||A specific Production instance formatted report|||||||||||||||IO
+Retrieve|||Production Instance Report Reference|||Reference to the control record instance report|||||||||||||||I
+Retrieve|||Production Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Production Instance Report Type|||The type of external report available|||||||||||||||O
+Retrieve|||Production Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||O
+Retrieve|||Production Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||O
+Retrieve||Production Instance Analysis|##|||A specific Production instance analytical report|||||||||||||||IO
+Retrieve|||Production Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||I
+Retrieve|||Production Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||O
+Retrieve|||Production Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||O
+Retrieve|||Production Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||O
+Retrieve|||Production Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||O
+BQ Functional Requirements Instance Record|Functional Requirements||||||
+Mandatory||Credit Risk Model Specification Instance Reference||||Reference to the parent Credit Risk Model Specification instance||||||||||||||||I|I|I
+Mandatory||Functional Requirements Instance Reference||||Reference to the Functional Requirements instance||||||||||||||||I|I|I
+||Functional Requirements Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within Credit Risk Models.
+|||||||||||||||||||
+||Functional Requirements Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||IO|IO|IO|O
+||Functional Requirements Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||IO|IO|IO|O
+||Functional Requirements Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||IO|IO|IO|O
+||Business Service||||The Credit Risk Model Specification specific Business Service||||||||||||||||IO|IO|IO|O
+||Service Type||||Reference to the specific business service type||||||||||||||||IO|IO|IO|O
+||Service Description||||Description of the performed business service||||||||||||||||IO|IO|IO|O
+||Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||IO|IO|IO|O
+||Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||IO|IO|IO|O
+Update||Functional Requirements Update Action Task Reference||||Reference to an update service call||||||||||||||||O
+Update||Functional Requirements Update Action Task Record||||The update service call consolidated processing record||||||||||||||||I/O
+Update||Functional Requirements Update Action Request||||Details of the update action service request||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||O
+Capture||Functional Requirements Capture Action Task Reference||||Reference to a Functional Requirements instance capture service call|||||||||||||||||O
+Capture||Functional Requirements Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||I/O
+Capture||Functional Requirements Capture Record Reference||||Reference to the Functional Requirements structured input transaction/record|||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||O
+Request||Functional Requirements Request Action Task Reference||||Reference to a Functional Requirements instance request service call||||||||||||||||||O
+Request||Functional Requirements Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||I/O
+Request||Functional Requirements Request Record Reference||||Reference to the Functional Requirements service request record||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||O
+Retrieve||Functional Requirements Retrieve Action Task Reference||||Reference to a Functional Requirements instance retrieve service call|||||||||||||||||||O
+Retrieve||Functional Requirements Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Functional Requirements Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Functional Requirements Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Functional Requirements Instance Report|##|||A specific Functional Requirements instance formatted report|||||||||||||||||||IO
+Retrieve|||Functional Requirements Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Functional Requirements Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Functional Requirements Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Functional Requirements Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Functional Requirements Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Functional Requirements Instance Analysis|##|||A specific Functional Requirements instance analytical report|||||||||||||||||||IO
+Retrieve|||Functional Requirements Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Functional Requirements Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Functional Requirements Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Functional Requirements Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Functional Requirements Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O

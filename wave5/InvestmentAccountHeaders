@@ -1,0 +1,28 @@
+SD=Investment Account
+CR= Investment Account Fulfillment Arrangement
+BQs=DepositsandWithdrawals CorporateActions ServiceFees    
+The Investment Account is a facility used to maintain the non-cash holdings for a customer. It handles the deposit and withdrawal of securities and can maintain records for multiple securities/instruments. It also reflects the results of corporate actions as handled/orchestrated by the Corporate Events Service Domain (such as dividend payments, splits, etc.)
+An investment customer maintains an investment portfolio and the holdings are maintained in the Investment Account
+This service domain handles the non-cash holdings positions for a customer, covering multiple instruments as necessary
+CR - Investment Account Fulfillment Arrangement				BQ 1 - Deposits and Withdrawals					BQ 2 - Corporate Actions					BQ 3 - Service Fees					
+In	Up	Co	Re	In	Up	Ec	Ex	Re	In	Up	Ec	Ex	Re	In	Up	Ec	Ex	Rq	Re
+InCR Initiate a new securities investment account
+UpCR Update properties of an active investment account
+CoCR Control the processing of an active investment account (change processing status)
+ReCR Retrieve information about a current account - either standard canned reports or selected instance attribute values
+InBQ Initiate/set-up securities deposit and withdrawal processing for the account
+UpBQ Update securities deposit and withdrawal settings or transactions
+EcBQ Accept, reject, etc a securities deposit or withdrawal action
+ExBQ Execute a securities deposit or withdrawal transaction
+ReBQ Retrieve details about a securities deposit or withdrawal action
+InBQ Initiate/set-up corporate action processing for the account
+UpBQ Update the settings or transaction details for a corporate action
+EcBQ Confirm, accept, reject etc. a corporate action
+ExBQ Execute the processing of a corporate action
+ReBQ Retrieve details about corporate action processing
+InBQ Initiate, set-up service fee processing for the account
+UpBQ Update service fee setting or service transaction details
+EcBQ Accept, reject, etc a service fee transaction
+ExBQ Execute a service fee transaction 
+RqBQ Request manual intervention for a service fee transaction (e.g. request reduction) 
+ReBQ Retrieve details about service fees for the investment account

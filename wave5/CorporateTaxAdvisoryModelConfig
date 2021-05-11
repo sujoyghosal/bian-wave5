@@ -1,0 +1,132 @@
+CR Corporate Tax Advisory Fulfillment Arrangement Instance Record|Corporate Tax Advisory Fulfillment Arrangement||||||CR Corporate Tax Advisory Fulfillment Arrangement Initiate|CR Corporate Tax Advisory Fulfillment Arrangement Update|CR Corporate Tax Advisory Fulfillment Arrangement Control|CR Corporate Tax Advisory Fulfillment Arrangement Request|CR Corporate Tax Advisory Fulfillment Arrangement Retrieve|BQ Tax Optimization Initiate|BQ Tax Optimization Update|BQ Tax Optimization Request|BQ Tax Optimization Retrieve|BQ Service Fees Initiate|BQ Service Fees Update|BQ Service Fees Exchange|BQ Service Fees Execute|BQ Service Fees Retrieve|
+Mandatory||Corporate Tax Advisory Servicing Session Reference||||Reference to the active servicing session|I|I|I|I
+Mandatory||Corporate Tax Advisory Fulfillment Arrangement Instance Reference||||Reference to the Corporate Tax Advisory Fulfillment Arrangement instance|O|I|I|I
+Initiate||Corporate Tax Advisory Fulfillment Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Corporate Tax Advisory Fulfillment Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Corporate Tax Advisory Fulfillment Arrangement Instance Status||||The status of the Corporate Tax Advisory Fulfillment Arrangement instance (e.g. initialised, pending, active)|IO
+||Corporate Tax Advisory Fulfillment Arrangement Instance Record|##|||The control record maintains the details for providing financial advice to a customer as a structured service offering (in contrast to general relationship management support)|IO|IO||IO|O|IO|||||IO||IO|
+|||Product Instance Reference |||Reference to the collection of advisory service sessions underlying the service|O|IO||I|O|I|||||IO||IO|
+|||Customer Reference|||Reference to the customer receiving the financial advice|I|IO||I|O|I|||||IO||IO|
+|||Customer Position State Instance Record|||The overall customer position state tracking and analysis, combining different analytical measures including credit, collateral and product/service cash flows|I|IO||IO|O|IO|||||IO||IO|
+|||Bank Branch/Location Reference|||Bank branch associated with the customer account/relationship for booking purposes|I|IO||IO|O|IO|||||IO||IO|
+|||Employee/Business Unit Reference |||Business unit and or employee reference to the source of the financial advice|I|IO||IO|O|IO|||||IO||IO|
+|||Corporate Tax Advisory Work Products |||File of consolidated notes, forms and documents for the advisory sessions|O|IO||IO|O|IO|||||IO||IO|
+|||Document Directory Entry Instance Reference|||The document reference for associated documents such as disclosures and acceptance records|IO|IO||IO|O|IO|||||IO||IO|
+|||Corporate Tax Advice Session Schedule|||Target and actual dates for tasks performed (includes any specialist sessions)|O|IO||IO|O|IO|||||IO||IO|
+|||Corporate Tax Advice Consolidation Record |||The combination of the different tax advisory sessions and assessments provided to the customer|O|IO||O|O|O|||||IO||IO|
+|||Date Type|##||Key dates and times associated with the advisory sessions (e.g. booking date, start date/time)|IO|IO||IO|O|IO|||||IO||IO|
+||||Date||Value of the date type|IO|IO||IO|O|IO|||||IO||IO|
+Update||Corporate Tax Advisory Fulfillment Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||Corporate Tax Advisory Fulfillment Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Corporate Tax Advisory Fulfillment Arrangement Control Action Task Reference||||Reference to a Corporate Tax Advisory Fulfillment Arrangement instance control processing service call|||O
+CONTROL||Corporate Tax Advisory Fulfillment Arrangement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Corporate Tax Advisory Fulfillment Arrangement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Corporate Tax Advisory Fulfillment Arrangement Control Action Response||||Details of the control action service response|||O
+REQUEST||Corporate Tax Advisory Fulfillment Arrangement Request Action Task Reference||||Reference to a Corporate Tax Advisory Fulfillment Arrangement instance request service call||||O
+REQUEST||Corporate Tax Advisory Fulfillment Arrangement Request Action Task Record||||The request service call consolidated processing record||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||I
+REQUEST||Request Response Record||||Details of the request action service response||||O
+RETRIEVE||Corporate Tax Advisory Fulfillment Arrangement Retrieve Action Task Reference||||Reference to a Corporate Tax Advisory Fulfillment Arrangement instance retrieve service call|||||O
+RETRIEVE||Corporate Tax Advisory Fulfillment Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||IO
+RETRIEVE||Corporate Tax Advisory Fulfillment Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||I
+RETRIEVE||Corporate Tax Advisory Fulfillment Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||O
+RETRIEVE||Corporate Tax Advisory Fulfillment Arrangement Instance Report Record|##|||A specific Corporate Tax Advisory Fulfillment Arrangement instance formatted report|||||IO
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Report Reference|||Reference to the control record instance report|||||I
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Report Type|||The type of external report available|||||IO
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||I
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||O
+RETRIEVE||Corporate Tax Advisory Fulfillment Arrangement Instance Analysis|##|||A specific Corporate Tax Advisory Fulfillment Arrangement instance analytical report|||||IO
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view|||||I
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Analysis Report Type|||The type of external performance analysis report available|||||IO
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||I
+RETRIEVE|||Corporate Tax Advisory Fulfillment Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||O
+BQ Tax Optimization Instance Record|Tax Optimization||||||
+Mandatory||Corporate Tax Advisory Fulfillment Arrangement Instance Reference||||Reference to the parent Corporate Tax Advisory Fulfillment Arrangement instance||||||I|I|I
+Mandatory||Tax Optimization Instance Reference||||Reference to the Tax Optimization instance||||||O|I|I
+Initiate||Tax Optimization Initiate Action Reference||||Reference to an Initiate service call||||||O
+Initiate||Tax Optimization Initiate Action Record||||The Initiate service call input and output record||||||I/O
+Initiate||Tax Optimization Instance Status||||The status of the Tax Optimization instance (e.g. initialised, pending, active)||||||O
+||Tax Optimization Instance Record|##|||Provide tax (and compliance) related advice for product and service optimization||||||IO|IO|IO|O|||||
+|||Product/Service Reference |||Reference to the corporate tax advisory service (used to access guidance materials)||||||I|IO|IO|O|||||
+|||Specialist Support Task|##||A record of engaging a product tax specialist to liaise with the customer||||||IO|IO|IO|O|||||
+||||Specialist Employee/Business Unit Reference ||Business unit and or employee reference for the product specialist engaged||||||IO|IO|IO|O|||||
+||||Specialist Advice Description||General description of the product specialist advice provided||||||O|IO|IO|O|||||
+||||Specialist Advice Charge||The service charge to be made to the customer for the specialist support||||||O|IO|IO|O|||||
+|||Tax Optimization Guidance Advice Result|||Summary recommendations arising from the advice that is added to the consolidated tax advice record||||||O|IO|IO|O|||||
+Update||Tax Optimization Update Action Task Reference||||Reference to an update service call|||||||O
+Update||Tax Optimization Update Action Task Record||||The update service call consolidated processing record|||||||I/O
+Update||Tax Optimization Update Action Request||||Details of the update action service request|||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||O
+Request||Tax Optimization Request Action Task Reference||||Reference to a Tax Optimization instance request service call||||||||O
+Request||Tax Optimization Request Action Task Record||||The request service call consolidated processing record||||||||I/O
+Request||Tax Optimization Request Record Reference||||Reference to the Tax Optimization service request record||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||O
+Retrieve||Tax Optimization Retrieve Action Task Reference||||Reference to a Tax Optimization instance retrieve service call|||||||||O
+Retrieve||Tax Optimization Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||I/O
+Retrieve||Tax Optimization Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||I
+Retrieve||Tax Optimization Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||O
+Retrieve||Tax Optimization Instance Report|##|||A specific Tax Optimization instance formatted report|||||||||IO
+Retrieve|||Tax Optimization Instance Report Reference|||Reference to the control record instance report|||||||||I
+Retrieve|||Tax Optimization Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Tax Optimization Instance Report Type|||The type of external report available|||||||||O
+Retrieve|||Tax Optimization Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||O
+Retrieve|||Tax Optimization Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||O
+Retrieve||Tax Optimization Instance Analysis|##|||A specific Tax Optimization instance analytical report|||||||||IO
+Retrieve|||Tax Optimization Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||I
+Retrieve|||Tax Optimization Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Tax Optimization Instance Analysis Report Type|||The type of external performance analysis report available|||||||||O
+Retrieve|||Tax Optimization Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||O
+Retrieve|||Tax Optimization Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||O
+BQ Service Fees Instance Record|Service Fees||||||
+Mandatory||Corporate Tax Advisory Fulfillment Arrangement Instance Reference||||Reference to the parent Corporate Tax Advisory Fulfillment Arrangement instance||||||||||I|I|I|I
+Mandatory||Service Fees Instance Reference||||Reference to the Service Fees instance||||||||||O|I|I|I
+Initiate||Service Fees Initiate Action Reference||||Reference to an Initiate service call||||||||||O
+Initiate||Service Fees Initiate Action Record||||The Initiate service call input and output record||||||||||I/O
+Initiate||Service Fees Instance Status||||The status of the Service Fees instance (e.g. initialised, pending, active)||||||||||O
+||Service Fees Instance Record|##|||Applies service fees to the account||||||||||IO|IO||IO|O
+|||Fee Application Record|##||The record of applied fees for the specialist advice||||||||||IO|IO||IO|O
+||||Fee Transaction|##|A record of an applied fee||||||||||IO|IO||IO|O
+|||||Fee Transaction Description|General description of the fee||||||||||IO|IO||I|O
+|||||Fee Transaction Type|The fee type applied||||||||||IO|IO||IO|O
+|||||Fee Transaction Charge|The derived fee amount to be charged||||||||||IO|IO||I|O
+Update||Service Fees Update Action Task Reference||||Reference to an update service call|||||||||||O
+Update||Service Fees Update Action Task Record||||The update service call consolidated processing record|||||||||||I/O
+Update||Service Fees Update Action Request||||Details of the update action service request|||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||O
+Exchange||Service Fees Exchange Action Task Reference||||Reference to a Service Fees instance exchange service call||||||||||||O
+Exchange||Service Fees Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||I/O
+Exchange||Service Fees Exchange Action Request|##|||Details of the exchange action service request||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||I
+Exchange||Service Fees Exchange Action Response||||Details of the exchange action service response||||||||||||O
+Exchange||Service Fees Instance Status||||The status of the Service Fees instance (e.g. accepted, rejected, verified)||||||||||||O
+Execute||Service Fees Execute Action Task Reference||||Reference to a Service Fees instance execute service call|||||||||||||O
+Execute||Service Fees Execute Action Task Record||||The execute service call consolidated processing record|||||||||||||I/O
+Execute||Service Fees Execute Record Reference||||Reference to the Service Fees execute transaction/record|||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response|||||||||||||O
+Retrieve||Service Fees Retrieve Action Task Reference||||Reference to a Service Fees instance retrieve service call||||||||||||||O
+Retrieve||Service Fees Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Service Fees Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Service Fees Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Service Fees Instance Report|##|||A specific Service Fees instance formatted report||||||||||||||IO
+Retrieve|||Service Fees Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Service Fees Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Service Fees Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Service Fees Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Service Fees Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Service Fees Instance Analysis|##|||A specific Service Fees instance analytical report||||||||||||||IO
+Retrieve|||Service Fees Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Service Fees Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Service Fees Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Service Fees Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Service Fees Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O

@@ -1,0 +1,17 @@
+sd=Product Expert Sales Support	Administer the availability and allocation of product specialists to support sales activity	A relationship manager requests specialist support for a customer seeking investment product selection advice	Track availability and utilization and assign product specialists to support sales activity (for both internal customer up-sell and external prospect acquisition activity). This can include the administration of customer fees/charges if applicable
+sdpath=product-expert-sales-support
+crpath=sales-specialist-support-administrative-plan
+crr=Sales Specialist Support Administrative Plan Instance
+mcr=Sales Specialist Support Administrative Plan
+bqs=Assignment
+CONFIG
+SalesSpecialistSupportAdministrativePlan	create	Create or set-up the administrative plan for sales specialist assignments		createSalesSpecialistSupportAdministrativePlan		#desc
+SalesSpecialistSupportAdministrativePlan	update	Update details of the overall sale specialist support administrative plan		updateSalesSpecialistSupportAdministrativePlan		#desc
+SalesSpecialistSupportAdministrativePlan	request	Request manual intervention with the administrative plan (e.g. amend plan based on resource changes)		requestSalesSpecialistSupportAdministrativePlan		#desc
+SalesSpecialistSupportAdministrativePlan	retrieve	Retrieve details about the administrative plan (e.g. a resource utilization report)		retrieveSalesSpecialistSupportAdministrativePlan		#desc
+Assignment	create	Create a sales specialist support assignment	createSalesSpecialistSupportAdministrativePlanAssignment	createSalesSpecialistSupportAdministrativePlanAssignment		Details of a new Assignment instance
+Assignment	update	Update details of a support assignment task	updateSalesSpecialistSupportAdministrativePlanAssignment	updateSalesSpecialistSupportAdministrativePlanAssignment		Update to any amendable fields of the Assignment instance
+Assignment	exchange	Accept, approve a sale specialist support assignment	exchangeSalesSpecialistSupportAdministrativePlanAssignment	exchangeSalesSpecialistSupportAdministrativePlanAssignment		Handle an external exchange (e.g. accept, reject, verify)
+Assignment	capture	Provide feedback relating to a sales support assignment	captureSalesSpecialistSupportAdministrativePlanAssignment	captureSalesSpecialistSupportAdministrativePlanAssignment		Provide a structured input transaction/record (e.g. timesheet, event)
+Assignment	request	Request manual intervention in an assignment (e.g. engage additional specialist resources)	requestSalesSpecialistSupportAdministrativePlanAssignment	requestSalesSpecialistSupportAdministrativePlanAssignment		Invoke a service request action against the Assignment instance
+Assignment	retrieve	Retrieve details about a sales specialist support assignment	retrieveSalesSpecialistSupportAdministrativePlanAssignment	retrieveSalesSpecialistSupportAdministrativePlanAssignment		Invoke a reporting action to obtain a Assignment instance related report

@@ -1,0 +1,31 @@
+SD=Corporate Loan
+CR= Corporate Loan Fulfillment Arrangement
+BQs=Interest ServiceFees Disbursement Maintenance Withdrawal Repayment Restructuring
+The corporate loan product may include different properties/features depending on a bank's preferences and policies. The loan is targeted at corporate customers and may be associated with a type of product and may or may not be secured by collateral.
+A corporate customer applies for and gets a loan to purchase new equipment.
+This service domain handles the fulfillment of a corporate loan product. This includes the initial set-up of the loan facility and the completion of scheduled and ad-hoc product processing tasks
+CR - Corporate Loan Fulfillment Arrangement				BQ 1 - Interest	BQ 2 - Service Fees		BQ 3 - Disbursement	BQ 4 - Maintenance		BQ 5 - Withdrawal				BQ 6 - Repayment				BQ 7 - Restructuring				
+In	Up	Co	Re	Re	Ex	Re	Re	Rq	Re	Up	Ex	Rq	Re	Up	Ex	Rq	Re	In	Up	Ec	Rq	Re
+InCR Initiate a corporate loan
+UpCR Update details for an existing corporate loan
+CoCR Control a corporate loan (e.g. suspend, terminate)
+ReCR Retrieve details about a corporate loan
+ReBQ Retrieve details about interest applied to a corporate loan
+ExBQ Execute a fee charge against a corporate loan
+ReBQ Retrieve details about a corporate loan fees
+ReBQ Retrieve details about a disbursement paid against a corporate loan
+RqBQ Request a maintenance activity for a consumer load (e.g. obtain a fee statement)
+ReBQ Retrieve details about maintenance processing for a corporate loan
+UpBQ Update details of a withdrawal from a corporate loan
+ExBQ Execute an automated withdrawal against a corporate loan
+RqBQ Request handling of a withdrawal (e.g. negotiate an exception)
+ReBQ Retrieve details about a corporate loan withdrawal
+UpBQ Update a repayment transaction made to the corporate loan
+ExBQ Execute an automated repayment transaction
+RqBQ Request handling of an exceptional repayment (e.g. a balloon repayment)
+ReBQ Retrieve details about a corporate loan repayment
+InBQ Initiate corporate loan account restructuring
+UpBQ Update details of a corporate loan or restructuring activities
+EcBQ Accept, reject etc a corporate loan restructuring proposal
+RqBQ Request activity associated with a restructuring effort (e.g. negotiate)
+ReBQ Retrieve details about a corporate loan restructuring task

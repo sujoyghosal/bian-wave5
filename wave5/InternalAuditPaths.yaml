@@ -1,0 +1,658 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Internal Audit'
+ description: >
+
+    ## Executive Summary:
+
+    Maintain and portfolio of internal audit checks. Select and execute a meaningful sample of checks and identify and resolve non-compliance
+
+    ## Example of Use:
+
+    A periodic audit of a processing unit is undertaken and remedial corrections to procedures recommended to improve compliance
+
+    ## Description:
+
+    This service domain administers the scheduled and ad-hoc application of internal audit and compliance reviews. This includes interpreting the banks policies and procedures that guide all aspects the bank's operations and determining which guidelines apply in specific circumstances across the enterprise. Support for interpreting guidelines are provided to activities in the bank that are subject to audit and scheduled and ad-hoc checks performed to confirm compliance
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-internal-audit/1.0.0
+schemes:
+ - https
+paths:
+  /internal-audit/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDInternalAudit
+      summary: Activate  a SDInternalAudit servicing session
+      description: Activate  a  SDInternalAudit servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDInternalAudit Request Payload
+        schema:
+          $ref: '#/definitions/SDInternalAuditActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDInternalAuditActivateOutputModel'
+  /internal-audit/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDInternalAudit
+      summary: Update an active SDInternalAudit session configuration
+      description: Update an active SDInternalAudit session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInternalAudit Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInternalAudit Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDInternalAuditConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDInternalAuditConfigureOutputModel'
+  /internal-audit/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDInternalAudit
+      summary: "Capturing feedback against the SDInternalAudit service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDInternalAudit service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInternalAudit Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInternalAudit Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDInternalAuditFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDInternalAuditFeedbackOutputModel'
+  /internal-audit/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDInternalAudit
+      summary: Analytical views maintained by the SDInternalAudit service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDInternalAudit service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInternalAudit Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDInternalAuditRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDInternalAuditRetrieveOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateInternalAuditAssessment
+      summary: Details of a new InternalAuditAssessment instance
+      description: Instantiate a new Internal Audit Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InternalAuditAssessment Request Payload
+        schema:
+          $ref: '#/definitions/CRInternalAuditAssessmentInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new InternalAuditAssessment instance
+          schema:
+            $ref: '#/definitions/CRInternalAuditAssessmentInitiateOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateInternalAuditAssessment
+      summary: Update to any amendable fields of the InternalAuditAssessment instance
+      description: Update details relating to Internal Audit Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Internal Audit Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRInternalAuditAssessmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Internal Audit Assessment Instance
+          schema:
+            $ref: '#/definitions/CRInternalAuditAssessmentUpdateOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeInternalAuditAssessmentUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Internal Audit Assessment processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Internal Audit Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRInternalAuditAssessmentExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Internal Audit Assessment Instance
+          schema:
+            $ref: '#/definitions/CRInternalAuditAssessmentExchangeOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeInternalAuditAssessmentUpdate
+      summary: Invoke an automated execute action against the InternalAuditAssessment instance
+      description: Execute an available automated action for Internal Audit Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Internal Audit Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRInternalAuditAssessmentExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Internal Audit Assessment Instance
+          schema:
+            $ref: '#/definitions/CRInternalAuditAssessmentExecuteOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestInternalAuditAssessmentUpdate
+      summary: Invoke a service request action against the InternalAuditAssessment instance
+      description: Request manual intervention or a decision with respect to Internal Audit Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Internal Audit Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRInternalAuditAssessmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Internal Audit Assessment Instance
+          schema:
+            $ref: '#/definitions/CRInternalAuditAssessmentRequestOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantInternalAuditAssessmentUpdate
+      summary: Invoke a grant request action from the InternalAuditAssessment instance to obtain access permission
+      description: Obtain permission to act in relation to Internal Audit Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Internal Audit Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRInternalAuditAssessmentGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Internal Audit Assessment Instance
+          schema:
+            $ref: '#/definitions/CRInternalAuditAssessmentGrantOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveInternalAudit
+      summary: Invoke a reporting action to obtain a Internal Audit Assessment instance related report
+      description: Retrieve details about any aspect of Internal Audit Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRInternalAuditAssessmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Internal Audit Assessment Instance
+          schema:
+            $ref: '#/definitions/CRInternalAuditAssessmentRetrieveOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/audit/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateInternalAuditAssessmentAudit
+      summary: Details of a new Audit instance
+      description: Instantiate a new Audit
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Internal Audit Assessment Request Payload
+        schema:
+          $ref: '#/definitions/BQAuditInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Internal Audit Assessment instance
+          schema:
+            $ref: '#/definitions/BQAuditInitiateOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/audit/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateInternalAuditAssessmentAudit
+      summary: Update to any amendable fields of the Audit instance
+      description: Update details relating to Audit
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Audit Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Audit Request Payload
+        schema:
+          $ref: '#/definitions/BQAuditUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Audit Instance
+          schema:
+            $ref: '#/definitions/BQAuditUpdateOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/audit/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeInternalAuditAssessmentAuditUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Audit processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Audit Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Audit request payload
+        schema:
+          $ref: '#/definitions/BQAuditExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Audit Instance Record
+          schema:
+            $ref: '#/definitions/BQAuditExchangeOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/audit/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeInternalAuditAssessmentAuditUpdate
+      summary: Invoke an automated execute action against the Audit instance
+      description: Execute an available automated action for Audit
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Audit Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Audit request payload
+        schema:
+          $ref: '#/definitions/BQAuditExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Audit Instance Record
+          schema:
+            $ref: '#/definitions/BQAuditExecuteOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/audit/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestInternalAuditAssessmentAuditUpdate
+      summary: Invoke a service request action against the Audit instance
+      description: Request manual intervention or a decision with respect to Audit
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Audit Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Audit request payload
+        schema:
+          $ref: '#/definitions/BQAuditRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Audit Instance Record
+          schema:
+            $ref: '#/definitions/BQAuditRequestOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/audit/{bq-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantInternalAuditAssessmentAuditUpdate
+      summary: Invoke a grant request action from the Audit instance to obtain access permission
+      description: Obtain permission to act in relation to Audit
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Audit Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Audit request payload
+        schema:
+          $ref: '#/definitions/BQAuditGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Audit Instance Record
+          schema:
+            $ref: '#/definitions/BQAuditGrantOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/audit/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveInternalAuditAssessmentAudit
+      summary: Invoke a reporting action to obtain a Audit instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Audit Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQAuditRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Audit Instance Record
+          schema:
+            $ref: '#/definitions/BQAuditRetrieveOutputModel'
+  /internal-audit/{sd-reference-id}/internal-audit-assessment:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInternalAuditReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- InternalAudit Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /internal-audit/internal-audit-assessment/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInternalAuditBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Audit', ]
+  /internal-audit/{sd-reference-id}/internal-audit-assessment/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInternalAuditBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Internal Audit Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Internal Audit Assessment Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Audit
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Audit Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [AuditID1, AuditID2]

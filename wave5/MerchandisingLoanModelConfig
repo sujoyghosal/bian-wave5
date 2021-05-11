@@ -1,0 +1,543 @@
+CR Merchandising Loan Arrangement Instance Record|Merchandising Loan Arrangement||||||CR Merchandising Loan Arrangement Initiate|CR Merchandising Loan Arrangement Update|CR Merchandising Loan Arrangement Control|CR Merchandising Loan Arrangement Exchange|CR Merchandising Loan Arrangement Execute|CR Merchandising Loan Arrangement Request|CR Merchandising Loan Arrangement Retrieve|BQ Financial Instrument Initiate|BQ Financial Instrument Update|BQ Financial Instrument Retrieve|BQ Sweep Initiate|BQ Sweep Update|BQ Sweep Exchange|BQ Sweep Retrieve|BQ Financial Accounting Update|BQ Financial Accounting Retrieve|BQ Deposits Initiate|BQ Deposits Update|BQ Deposits Retrieve|BQ Withdrawals Initiate|BQ Withdrawals Update|BQ Withdrawals Retrieve|BQ Collateral Initiate|BQ Collateral Update|BQ Collateral Request|BQ Collateral Retrieve|BQ Payments Initiate|BQ Payments Update|BQ Payments Exchange|BQ Payments Retrieve|BQ Lien Initiate|BQ Lien Update|BQ Lien Exchange|BQ Lien Retrieve|BQ Interest Update|BQ Interest Retrieve|BQ Billing Initiate|BQ Billing Update|BQ Billing Exchange|BQ Billing Retrieve|BQ Issued Device Initiate|BQ Issued Device Update|BQ Issued Device Retrieve|BQ Fees Initiate|BQ Fees Update|BQ Fees Exchange|BQ Fees Request|BQ Fees Retrieve|
+Mandatory||Merchandising Loan Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the Merchandising Loan Arrangement instance|O|I|I|I|I|I
+Initiate||Merchandising Loan Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Merchandising Loan Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Merchandising Loan Arrangement Instance Status||||The status of the Merchandising Loan Arrangement instance (e.g. initialised, pending, active)|IO
+||Merchandising Loan Arrangement Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+Example: Perform the scheduled (e.g. statements, standing orders) and ad-hoc/requested (e.g. balance inquiries, fund transfers) fulfillment tasks for a customer current account facility.||||||||||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Parameter Type||||A Classification value that distinguishes between arrangements according to the type of business services within Merchandising Loan Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Selected Option||||A selected optional business service as subject matter of Merchandising Loan Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Type||||The type of Merchandising Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Reference||||Reference to Merchandising Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Schedule||||Timetable to fulfill Merchandising Loan Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Status||||The status of Merchandising Loan Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Reference||||Reference to the party who is involved in Merchandising Loan Arrangement||||||||||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Currency||||The curreny which is arranged in Merchandising Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Regulation Reference||||Reference to the regulation which is defined in Merchandising Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Regulation Type||||A Classification that distinguishes between the regularity domains of Merchandising Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Jurisdiction||||Reference to the jurisdiction that is assigned to Merchandising Loan Arrangement in case of legal dispute.|I|I|I|I|I|I|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Booking Location||||The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement in the context of Merchandising Loan Arrangement, are entered.|I|I|I|I|I|I|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Account Type||||The type of account which is linked to Merchandising Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||||||||||||||||||||||||||
+||Merchandising Loan Arrangement Account Reference||||Reference to the account which is linked to Merchandising Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||||||||||||||||||||||||||
+Update||Merchandising Loan Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||Merchandising Loan Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Merchandising Loan Arrangement Control Action Task Reference||||Reference to a Merchandising Loan Arrangement instance control processing service call|||O
+CONTROL||Merchandising Loan Arrangement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Merchandising Loan Arrangement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Merchandising Loan Arrangement Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Merchandising Loan Arrangement Exchange Action Task Reference||||Reference to a Merchandising Loan Arrangement instance exchange service call||||O
+EXCHANGE||Merchandising Loan Arrangement Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Merchandising Loan Arrangement Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Merchandising Loan Arrangement Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Merchandising Loan Arrangement Execute Action Task Reference||||Reference to a Merchandising Loan Arrangement instance execute service call|||||O
+EXECUTE||Merchandising Loan Arrangement Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Merchandising Loan Arrangement Request Action Task Reference||||Reference to a Merchandising Loan Arrangement instance request service call||||||O
+REQUEST||Merchandising Loan Arrangement Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Merchandising Loan Arrangement Retrieve Action Task Reference||||Reference to a Merchandising Loan Arrangement instance retrieve service call|||||||O
+RETRIEVE||Merchandising Loan Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Merchandising Loan Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Merchandising Loan Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Merchandising Loan Arrangement Instance Report Record|##|||A specific Merchandising Loan Arrangement instance formatted report|||||||IO
+RETRIEVE|||Merchandising Loan Arrangement Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Merchandising Loan Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Merchandising Loan Arrangement Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Merchandising Loan Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Merchandising Loan Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Merchandising Loan Arrangement Instance Analysis|##|||A specific Merchandising Loan Arrangement instance analytical report|||||||IO
+RETRIEVE|||Merchandising Loan Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Merchandising Loan Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Merchandising Loan Arrangement Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Merchandising Loan Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Merchandising Loan Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Financial Instrument Instance Record|Financial Instrument||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance||||||||I|I
+Mandatory||Financial Instrument Instance Reference||||Reference to the Financial Instrument instance||||||||O|I
+Initiate||Financial Instrument Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Financial Instrument Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Financial Instrument Instance Status||||The status of the Financial Instrument instance (e.g. initialised, pending, active)||||||||O
+||Financial Instrument Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Financial Instrument Preconditions||||The required status/situation prior to the implementation of the feature||||||||IO|IO|O||||||||||||||||||||||||||||||||||||||
+||Financial Instrument Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||IO|IO|O||||||||||||||||||||||||||||||||||||||
+||Financial Instrument||||The Merchandising Loan Arrangement specific Business Service||||||||||||||||||||||||||||||||||||||||||||||||
+||Financial Instrument Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||IO|IO|O||||||||||||||||||||||||||||||||||||||
+||Financial Instrument Financial Instrument Service Type||||Reference to the specific business service type||||||||IO|IO|O||||||||||||||||||||||||||||||||||||||
+||Financial Instrument Financial Instrument Service Description||||Description of the performed business service||||||||IO|IO|O||||||||||||||||||||||||||||||||||||||
+||Financial Instrument Financial Instrument Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|O||||||||||||||||||||||||||||||||||||||
+||Financial Instrument Financial Instrument Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|O||||||||||||||||||||||||||||||||||||||
+||Financial Instrument Financial Instrument Service Name||||||||||||IO|IO|O||||||||||||||||||||||||||||||||||||||
+Update||Financial Instrument Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Financial Instrument Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Financial Instrument Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Retrieve||Financial Instrument Retrieve Action Task Reference||||Reference to a Financial Instrument instance retrieve service call||||||||||O
+Retrieve||Financial Instrument Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Financial Instrument Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Financial Instrument Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Financial Instrument Instance Report|##|||A specific Financial Instrument instance formatted report||||||||||IO
+Retrieve|||Financial Instrument Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Financial Instrument Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Financial Instrument Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Financial Instrument Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Financial Instrument Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Financial Instrument Instance Analysis|##|||A specific Financial Instrument instance analytical report||||||||||IO
+Retrieve|||Financial Instrument Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Financial Instrument Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Financial Instrument Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Financial Instrument Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Financial Instrument Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Sweep Instance Record|Sweep||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance|||||||||||I|I|I
+Mandatory||Sweep Instance Reference||||Reference to the Sweep instance|||||||||||O|I|I
+Initiate||Sweep Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Initiate||Sweep Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Initiate||Sweep Instance Status||||The status of the Sweep instance (e.g. initialised, pending, active)|||||||||||O
+||Sweep Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Sweep Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||IO|IO|IO|O||||||||||||||||||||||||||||||||||
+||Sweep Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||IO|IO|IO|O||||||||||||||||||||||||||||||||||
+||Business Service||||The Merchandising Loan Arrangement specific Business Service|||||||||||IO|IO|IO|O||||||||||||||||||||||||||||||||||
+||Sweep Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||IO|IO|IO|O||||||||||||||||||||||||||||||||||
+||Sweep Service Type||||Reference to the specific business service type|||||||||||IO|IO|IO|O||||||||||||||||||||||||||||||||||
+||Sweep Service Description||||Description of the performed business service|||||||||||IO|IO|IO|O||||||||||||||||||||||||||||||||||
+||Sweep Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|IO|IO|O||||||||||||||||||||||||||||||||||
+||Sweep Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|IO|IO|O||||||||||||||||||||||||||||||||||
+||Sweep Service Name|||||||||||||||IO|IO|IO|O||||||||||||||||||||||||||||||||||
+Update||Sweep Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Sweep Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Sweep Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Exchange||Sweep Exchange Action Task Reference||||Reference to a Sweep instance exchange service call|||||||||||||O
+Exchange||Sweep Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||I/O
+Exchange||Sweep Exchange Action Request|##|||Details of the exchange action service request|||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||I
+Exchange||Sweep Exchange Action Response||||Details of the exchange action service response|||||||||||||O
+Exchange||Sweep Instance Status||||The status of the Sweep instance (e.g. accepted, rejected, verified)|||||||||||||O
+Retrieve||Sweep Retrieve Action Task Reference||||Reference to a Sweep instance retrieve service call||||||||||||||O
+Retrieve||Sweep Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Sweep Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Sweep Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Sweep Instance Report|##|||A specific Sweep instance formatted report||||||||||||||IO
+Retrieve|||Sweep Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Sweep Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Sweep Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Sweep Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Sweep Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Sweep Instance Analysis|##|||A specific Sweep instance analytical report||||||||||||||IO
+Retrieve|||Sweep Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Sweep Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Sweep Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Sweep Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Sweep Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O
+BQ Financial Accounting Instance Record|Financial Accounting||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance|||||||||||||||I
+Mandatory||Financial Accounting Instance Reference||||Reference to the Financial Accounting instance|||||||||||||||I
+||Financial Accounting Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Financial Accounting Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||IO|O||||||||||||||||||||||||||||||||
+||Financial Accounting Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||IO|O||||||||||||||||||||||||||||||||
+||Financial Accounting||||The Merchandising Loan Arrangement specific Business Service||||||||||||||||||||||||||||||||||||||||||||||||
+||Financial Accounting Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||IO|O||||||||||||||||||||||||||||||||
+||Financial Accounting Financial Accounting Service Type||||Reference to the specific business service type|||||||||||||||IO|O||||||||||||||||||||||||||||||||
+||Financial Accounting Financial Accounting Service Description||||Description of the performed business service|||||||||||||||IO|O||||||||||||||||||||||||||||||||
+||Financial Accounting Financial Accounting Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||IO|O||||||||||||||||||||||||||||||||
+||Financial Accounting Financial Accounting Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||IO|O||||||||||||||||||||||||||||||||
+||Financial Accounting Financial Accounting Service Name|||||||||||||||||||IO|O||||||||||||||||||||||||||||||||
+Update||Financial Accounting Update Action Task Reference||||Reference to an update service call|||||||||||||||O
+Update||Financial Accounting Update Action Task Record||||The update service call consolidated processing record|||||||||||||||I/O
+Update||Financial Accounting Update Action Request||||Details of the update action service request|||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||O
+Retrieve||Financial Accounting Retrieve Action Task Reference||||Reference to a Financial Accounting instance retrieve service call||||||||||||||||O
+Retrieve||Financial Accounting Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Financial Accounting Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Financial Accounting Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Financial Accounting Instance Report|##|||A specific Financial Accounting instance formatted report||||||||||||||||IO
+Retrieve|||Financial Accounting Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Financial Accounting Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Financial Accounting Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Financial Accounting Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Financial Accounting Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Financial Accounting Instance Analysis|##|||A specific Financial Accounting instance analytical report||||||||||||||||IO
+Retrieve|||Financial Accounting Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Financial Accounting Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Financial Accounting Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Financial Accounting Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Financial Accounting Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ Deposits Instance Record|Deposits||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance|||||||||||||||||I|I
+Mandatory||Deposits Instance Reference||||Reference to the Deposits instance|||||||||||||||||O|I
+Initiate||Deposits Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||O
+Initiate||Deposits Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||I/O
+Initiate||Deposits Instance Status||||The status of the Deposits instance (e.g. initialised, pending, active)|||||||||||||||||O
+||Deposits Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Deposits Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||||IO|IO|O|||||||||||||||||||||||||||||
+||Deposits Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||||IO|IO|O|||||||||||||||||||||||||||||
+||Deposit Processing||||The Merchandising Loan Arrangement specific Business Service|||||||||||||||||IO|IO|O|||||||||||||||||||||||||||||
+||Deposits Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||||IO|IO|O|||||||||||||||||||||||||||||
+||Deposits Deposit Processing Service Type||||Reference to the specific business service type|||||||||||||||||IO|IO|O|||||||||||||||||||||||||||||
+||Deposits Deposit Processing Service Description||||Description of the performed business service|||||||||||||||||IO|IO|O|||||||||||||||||||||||||||||
+||Deposits Deposit Processing Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||IO|IO|O|||||||||||||||||||||||||||||
+||Deposits Deposit Processing Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||IO|IO|O|||||||||||||||||||||||||||||
+||Deposits Deposit Processing Service Name|||||||||||||||||||||IO|IO|O|||||||||||||||||||||||||||||
+Update||Deposits Update Action Task Reference||||Reference to an update service call||||||||||||||||||O
+Update||Deposits Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||I/O
+Update||Deposits Update Action Request||||Details of the update action service request||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||O
+Retrieve||Deposits Retrieve Action Task Reference||||Reference to a Deposits instance retrieve service call|||||||||||||||||||O
+Retrieve||Deposits Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Deposits Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Deposits Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Deposits Instance Report|##|||A specific Deposits instance formatted report|||||||||||||||||||IO
+Retrieve|||Deposits Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Deposits Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Deposits Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Deposits Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Deposits Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Deposits Instance Analysis|##|||A specific Deposits instance analytical report|||||||||||||||||||IO
+Retrieve|||Deposits Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Deposits Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Deposits Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Deposits Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Deposits Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+BQ Withdrawals Instance Record|Withdrawals||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance||||||||||||||||||||I|I
+Mandatory||Withdrawals Instance Reference||||Reference to the Withdrawals instance||||||||||||||||||||O|I
+Initiate||Withdrawals Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||O
+Initiate||Withdrawals Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||I/O
+Initiate||Withdrawals Instance Status||||The status of the Withdrawals instance (e.g. initialised, pending, active)||||||||||||||||||||O
+||Withdrawals Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Withdrawals Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||||||||IO|IO|O||||||||||||||||||||||||||
+||Withdrawals Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||||||||IO|IO|O||||||||||||||||||||||||||
+||Withdrawal Processing||||The Merchandising Loan Arrangement specific Business Service||||||||||||||||||||IO|IO|O||||||||||||||||||||||||||
+||Withdrawals Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||||||||IO|IO|O||||||||||||||||||||||||||
+||Withdrawals Withdrawal Processing Service Type||||Reference to the specific business service type||||||||||||||||||||IO|IO|O||||||||||||||||||||||||||
+||Withdrawals Withdrawal Processing Service Description||||Description of the performed business service||||||||||||||||||||IO|IO|O||||||||||||||||||||||||||
+||Withdrawals Withdrawal Processing Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||IO|IO|O||||||||||||||||||||||||||
+||Withdrawals Withdrawal Processing Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||IO|IO|O||||||||||||||||||||||||||
+||Withdrawals Withdrawal Processing Service Name||||||||||||||||||||||||IO|IO|O||||||||||||||||||||||||||
+Update||Withdrawals Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||O
+Update||Withdrawals Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||I/O
+Update||Withdrawals Update Action Request||||Details of the update action service request|||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||O
+Retrieve||Withdrawals Retrieve Action Task Reference||||Reference to a Withdrawals instance retrieve service call||||||||||||||||||||||O
+Retrieve||Withdrawals Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||I/O
+Retrieve||Withdrawals Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||I
+Retrieve||Withdrawals Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||O
+Retrieve||Withdrawals Instance Report|##|||A specific Withdrawals instance formatted report||||||||||||||||||||||IO
+Retrieve|||Withdrawals Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||I
+Retrieve|||Withdrawals Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||O
+Retrieve|||Withdrawals Instance Report Type|||The type of external report available||||||||||||||||||||||O
+Retrieve|||Withdrawals Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||O
+Retrieve|||Withdrawals Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||O
+Retrieve||Withdrawals Instance Analysis|##|||A specific Withdrawals instance analytical report||||||||||||||||||||||IO
+Retrieve|||Withdrawals Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||I
+Retrieve|||Withdrawals Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||O
+Retrieve|||Withdrawals Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||O
+Retrieve|||Withdrawals Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||O
+Retrieve|||Withdrawals Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||O
+BQ Collateral Instance Record|Collateral||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance|||||||||||||||||||||||I|I|I
+Mandatory||Collateral Instance Reference||||Reference to the Collateral instance|||||||||||||||||||||||O|I|I
+Initiate||Collateral Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||||||||O
+Initiate||Collateral Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||||||||I/O
+Initiate||Collateral Instance Status||||The status of the Collateral instance (e.g. initialised, pending, active)|||||||||||||||||||||||O
+||Collateral Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Collateral Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||||||
+||Collateral Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||||||
+||Business Service||||The Merchandising Loan Arrangement specific Business Service|||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||||||
+||Collateral Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||||||
+||Collateral Service Type||||Reference to the specific business service type|||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||||||
+||Collateral Service Description||||Description of the performed business service|||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||||||
+||Collateral Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||||||
+||Collateral Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||||||
+||Collateral Service Name|||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||||||
+Update||Collateral Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||||O
+Update||Collateral Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||||I/O
+Update||Collateral Update Action Request||||Details of the update action service request||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||||O
+Request||Collateral Request Action Task Reference||||Reference to a Collateral instance request service call|||||||||||||||||||||||||O
+Request||Collateral Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||||I/O
+Request||Collateral Request Record Reference||||Reference to the Collateral service request record|||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||||O
+Retrieve||Collateral Retrieve Action Task Reference||||Reference to a Collateral instance retrieve service call||||||||||||||||||||||||||O
+Retrieve||Collateral Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||I/O
+Retrieve||Collateral Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||I
+Retrieve||Collateral Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||O
+Retrieve||Collateral Instance Report|##|||A specific Collateral instance formatted report||||||||||||||||||||||||||IO
+Retrieve|||Collateral Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||I
+Retrieve|||Collateral Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||O
+Retrieve|||Collateral Instance Report Type|||The type of external report available||||||||||||||||||||||||||O
+Retrieve|||Collateral Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||O
+Retrieve|||Collateral Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||O
+Retrieve||Collateral Instance Analysis|##|||A specific Collateral instance analytical report||||||||||||||||||||||||||IO
+Retrieve|||Collateral Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||I
+Retrieve|||Collateral Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||O
+Retrieve|||Collateral Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||O
+Retrieve|||Collateral Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||O
+Retrieve|||Collateral Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||O
+BQ Payments Instance Record|Payments||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance|||||||||||||||||||||||||||I|I|I
+Mandatory||Payments Instance Reference||||Reference to the Payments instance|||||||||||||||||||||||||||O|I|I
+Initiate||Payments Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||||||||||||O
+Initiate||Payments Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||||||||||||I/O
+Initiate||Payments Instance Status||||The status of the Payments instance (e.g. initialised, pending, active)|||||||||||||||||||||||||||O
+||Payments Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Payments Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||
+||Payments Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||
+||Business Service||||The Merchandising Loan Arrangement specific Business Service|||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||
+||Payments Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||
+||Payments Service Type||||Reference to the specific business service type|||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||
+||Payments Service Description||||Description of the performed business service|||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||
+||Payments Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||
+||Payments Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||
+||Payments Service Name|||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||||||
+Update||Payments Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||||||||O
+Update||Payments Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||||||||I/O
+Update||Payments Update Action Request||||Details of the update action service request||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||||||||O
+Exchange||Payments Exchange Action Task Reference||||Reference to a Payments instance exchange service call|||||||||||||||||||||||||||||O
+Exchange||Payments Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||||||||||||||I/O
+Exchange||Payments Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||||||||||||||I
+Exchange||Payments Exchange Action Response||||Details of the exchange action service response|||||||||||||||||||||||||||||O
+Exchange||Payments Instance Status||||The status of the Payments instance (e.g. accepted, rejected, verified)|||||||||||||||||||||||||||||O
+Retrieve||Payments Retrieve Action Task Reference||||Reference to a Payments instance retrieve service call||||||||||||||||||||||||||||||O
+Retrieve||Payments Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||||I/O
+Retrieve||Payments Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||||I
+Retrieve||Payments Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||||O
+Retrieve||Payments Instance Report|##|||A specific Payments instance formatted report||||||||||||||||||||||||||||||IO
+Retrieve|||Payments Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||||I
+Retrieve|||Payments Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||O
+Retrieve|||Payments Instance Report Type|||The type of external report available||||||||||||||||||||||||||||||O
+Retrieve|||Payments Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||||O
+Retrieve|||Payments Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||O
+Retrieve||Payments Instance Analysis|##|||A specific Payments instance analytical report||||||||||||||||||||||||||||||IO
+Retrieve|||Payments Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||||I
+Retrieve|||Payments Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||O
+Retrieve|||Payments Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||||O
+Retrieve|||Payments Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||||O
+Retrieve|||Payments Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||O
+BQ Lien Instance Record|Lien||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance|||||||||||||||||||||||||||||||I|I|I
+Mandatory||Lien Instance Reference||||Reference to the Lien instance|||||||||||||||||||||||||||||||O|I|I
+Initiate||Lien Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||||||||||||||||O
+Initiate||Lien Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||||||||||||||||I/O
+Initiate||Lien Instance Status||||The status of the Lien instance (e.g. initialised, pending, active)|||||||||||||||||||||||||||||||O
+||Lien Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Lien Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||
+||Lien Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||
+||Business Service||||The Merchandising Loan Arrangement specific Business Service|||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||
+||Lien Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||
+||Lien Service Type||||Reference to the specific business service type|||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||
+||Lien Service Description||||Description of the performed business service|||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||
+||Lien Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||
+||Lien Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||
+||Lien Service Name|||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||||||||
+Update||Lien Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||||||||||||O
+Update||Lien Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||||||||||||I/O
+Update||Lien Update Action Request||||Details of the update action service request||||||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||||||||||||O
+Exchange||Lien Exchange Action Task Reference||||Reference to a Lien instance exchange service call|||||||||||||||||||||||||||||||||O
+Exchange||Lien Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||||||||||||||||||I/O
+Exchange||Lien Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||||||||||||||||||I
+Exchange||Lien Exchange Action Response||||Details of the exchange action service response|||||||||||||||||||||||||||||||||O
+Exchange||Lien Instance Status||||The status of the Lien instance (e.g. accepted, rejected, verified)|||||||||||||||||||||||||||||||||O
+Retrieve||Lien Retrieve Action Task Reference||||Reference to a Lien instance retrieve service call||||||||||||||||||||||||||||||||||O
+Retrieve||Lien Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||||||||I/O
+Retrieve||Lien Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||||||||I
+Retrieve||Lien Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||||||||O
+Retrieve||Lien Instance Report|##|||A specific Lien instance formatted report||||||||||||||||||||||||||||||||||IO
+Retrieve|||Lien Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||||||||I
+Retrieve|||Lien Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||O
+Retrieve|||Lien Instance Report Type|||The type of external report available||||||||||||||||||||||||||||||||||O
+Retrieve|||Lien Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||||||||O
+Retrieve|||Lien Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||O
+Retrieve||Lien Instance Analysis|##|||A specific Lien instance analytical report||||||||||||||||||||||||||||||||||IO
+Retrieve|||Lien Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||||||||I
+Retrieve|||Lien Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||O
+Retrieve|||Lien Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||||||||O
+Retrieve|||Lien Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||||||||O
+Retrieve|||Lien Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||O
+BQ Interest Instance Record|Interest||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance|||||||||||||||||||||||||||||||||||I
+Mandatory||Interest Instance Reference||||Reference to the Interest instance|||||||||||||||||||||||||||||||||||I
+||Interest Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Interest Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||||||||||||||||||||||IO|O||||||||||||
+||Interest Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||||||||||||||||||||||IO|O||||||||||||
+||Business Service||||The Merchandising Loan Arrangement specific Business Service|||||||||||||||||||||||||||||||||||IO|O||||||||||||
+||Interest Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||||||||||||||||||||||IO|O||||||||||||
+||Interest Service Type||||Reference to the specific business service type|||||||||||||||||||||||||||||||||||IO|O||||||||||||
+||Interest Service Description||||Description of the performed business service|||||||||||||||||||||||||||||||||||IO|O||||||||||||
+||Interest Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||||||||||||||IO|O||||||||||||
+||Interest Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||||||||||||||IO|O||||||||||||
+||Interest Service Name|||||||||||||||||||||||||||||||||||||||IO|O||||||||||||
+Update||Interest Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||||||||||||O
+Update||Interest Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||||||||||||I/O
+Update||Interest Update Action Request||||Details of the update action service request|||||||||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||||||||||||O
+Retrieve||Interest Retrieve Action Task Reference||||Reference to a Interest instance retrieve service call||||||||||||||||||||||||||||||||||||O
+Retrieve||Interest Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||||||||||I/O
+Retrieve||Interest Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||||||||||I
+Retrieve||Interest Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||||||||||O
+Retrieve||Interest Instance Report|##|||A specific Interest instance formatted report||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Interest Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||||||||||I
+Retrieve|||Interest Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||||O
+Retrieve|||Interest Instance Report Type|||The type of external report available||||||||||||||||||||||||||||||||||||O
+Retrieve|||Interest Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||||||||||O
+Retrieve|||Interest Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||||O
+Retrieve||Interest Instance Analysis|##|||A specific Interest instance analytical report||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Interest Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||||||||||I
+Retrieve|||Interest Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||||O
+Retrieve|||Interest Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||||||||||O
+Retrieve|||Interest Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||||||||||O
+Retrieve|||Interest Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||||O
+BQ Billing Instance Record|Billing||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance|||||||||||||||||||||||||||||||||||||I|I|I
+Mandatory||Billing Instance Reference||||Reference to the Billing instance|||||||||||||||||||||||||||||||||||||O|I|I
+Initiate||Billing Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||||||||||||||||||||||O
+Initiate||Billing Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||||||||||||||||||||||I/O
+Initiate||Billing Instance Status||||The status of the Billing instance (e.g. initialised, pending, active)|||||||||||||||||||||||||||||||||||||O
+||Billing Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Billing Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||
+||Billing Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||
+||Business Service||||The Merchandising Loan Arrangement specific Business Service|||||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||
+||Billing Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||
+||Billing Service Type||||Reference to the specific business service type|||||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||
+||Billing Service Description||||Description of the performed business service|||||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||
+||Billing Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||
+||Billing Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||
+||Billing Service Name|||||||||||||||||||||||||||||||||||||||||IO|IO|IO|O||||||||
+Update||Billing Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||||||||||||||||||O
+Update||Billing Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||||||||||||||||||I/O
+Update||Billing Update Action Request||||Details of the update action service request||||||||||||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||||||||||||||||||O
+Exchange||Billing Exchange Action Task Reference||||Reference to a Billing instance exchange service call|||||||||||||||||||||||||||||||||||||||O
+Exchange||Billing Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||||||||||||||||||||||||I/O
+Exchange||Billing Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||||||||||||||||||||||||I
+Exchange||Billing Exchange Action Response||||Details of the exchange action service response|||||||||||||||||||||||||||||||||||||||O
+Exchange||Billing Instance Status||||The status of the Billing instance (e.g. accepted, rejected, verified)|||||||||||||||||||||||||||||||||||||||O
+Retrieve||Billing Retrieve Action Task Reference||||Reference to a Billing instance retrieve service call||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Billing Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||||||||||||||I/O
+Retrieve||Billing Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||||||||||||||I
+Retrieve||Billing Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Billing Instance Report|##|||A specific Billing instance formatted report||||||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Billing Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||||||||||||||I
+Retrieve|||Billing Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Billing Instance Report Type|||The type of external report available||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Billing Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Billing Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Billing Instance Analysis|##|||A specific Billing instance analytical report||||||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Billing Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||||||||||||||I
+Retrieve|||Billing Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Billing Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Billing Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Billing Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||||||||O
+BQ Issued Device Instance Record|Issued Device||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance|||||||||||||||||||||||||||||||||||||||||I|I
+Mandatory||Issued Device Instance Reference||||Reference to the Issued Device instance|||||||||||||||||||||||||||||||||||||||||O|I
+Initiate||Issued Device Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||||||||||||||||||||||||||O
+Initiate||Issued Device Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||||||||||||||||||||||||||I/O
+Initiate||Issued Device Instance Status||||The status of the Issued Device instance (e.g. initialised, pending, active)|||||||||||||||||||||||||||||||||||||||||O
+||Issued Device Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Issued Device Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||||||||||||||||||||||||||||IO|IO|O|||||
+||Issued Device Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||||||||||||||||||||||||||||IO|IO|O|||||
+||Business Service||||The Merchandising Loan Arrangement specific Business Service|||||||||||||||||||||||||||||||||||||||||IO|IO|O|||||
+||Issued Device Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||||||||||||||||||||||||||||IO|IO|O|||||
+||Issued Device Service Type||||Reference to the specific business service type|||||||||||||||||||||||||||||||||||||||||IO|IO|O|||||
+||Issued Device Service Description||||Description of the performed business service|||||||||||||||||||||||||||||||||||||||||IO|IO|O|||||
+||Issued Device Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||||||||||||||||||||IO|IO|O|||||
+||Issued Device Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||||||||||||||||||||IO|IO|O|||||
+||Issued Device Service Name|||||||||||||||||||||||||||||||||||||||||||||IO|IO|O|||||
+Update||Issued Device Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||||||||||||||||||||||O
+Update||Issued Device Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||||||||||||||||||||||I/O
+Update||Issued Device Update Action Request||||Details of the update action service request||||||||||||||||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Issued Device Retrieve Action Task Reference||||Reference to a Issued Device instance retrieve service call|||||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Issued Device Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||||||||||||||||||I/O
+Retrieve||Issued Device Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||||||||||||||||||I
+Retrieve||Issued Device Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Issued Device Instance Report|##|||A specific Issued Device instance formatted report|||||||||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Issued Device Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||||||||||||||||||I
+Retrieve|||Issued Device Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Issued Device Instance Report Type|||The type of external report available|||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Issued Device Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Issued Device Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Issued Device Instance Analysis|##|||A specific Issued Device instance analytical report|||||||||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Issued Device Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||||||||||||||||||I
+Retrieve|||Issued Device Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Issued Device Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Issued Device Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Issued Device Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||||||||||||||O
+BQ Fees Instance Record|Fees||||||
+Mandatory||Merchandising Loan Arrangement Instance Reference||||Reference to the parent Merchandising Loan Arrangement instance||||||||||||||||||||||||||||||||||||||||||||I|I|I|I
+Mandatory||Fees Instance Reference||||Reference to the Fees instance||||||||||||||||||||||||||||||||||||||||||||O|I|I|I
+Initiate||Fees Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||||||||||||||||||||||||||O
+Initiate||Fees Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||||||||||||||||||||||||||I/O
+Initiate||Fees Instance Status||||The status of the Fees instance (e.g. initialised, pending, active)||||||||||||||||||||||||||||||||||||||||||||O
+||Fees Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Merchandising Loan.
+||||||||||||||||||||||||||||||||||||||||||||||||
+||Fees Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Fees Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Business Service||||The Merchandising Loan Arrangement specific Business Service||||||||||||||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Fees Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Fees Service Type||||Reference to the specific business service type||||||||||||||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Fees Service Description||||Description of the performed business service||||||||||||||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Fees Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Fees Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+Update||Fees Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||||||||||||||||||||||O
+Update||Fees Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||||||||||||||||||||||I/O
+Update||Fees Update Action Request||||Details of the update action service request|||||||||||||||||||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||||||||||||||||||||||O
+Exchange||Fees Exchange Action Task Reference||||Reference to a Fees instance exchange service call||||||||||||||||||||||||||||||||||||||||||||||O
+Exchange||Fees Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||||||||||||||||||||||||||I/O
+Exchange||Fees Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||||||||||||||||||||||||||I
+Exchange||Fees Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||||||||||||||||||||||||||O
+Exchange||Fees Instance Status||||The status of the Fees instance (e.g. accepted, rejected, verified)||||||||||||||||||||||||||||||||||||||||||||||O
+Request||Fees Request Action Task Reference||||Reference to a Fees instance request service call|||||||||||||||||||||||||||||||||||||||||||||||O
+Request||Fees Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||||||||||||||||||||||||||I/O
+Request||Fees Request Record Reference||||Reference to the Fees service request record|||||||||||||||||||||||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Fees Retrieve Action Task Reference||||Reference to a Fees instance retrieve service call||||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Fees Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||||||||||||||||||||||I/O
+Retrieve||Fees Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||||||||||||||||||||||I
+Retrieve||Fees Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Fees Instance Report|##|||A specific Fees instance formatted report||||||||||||||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Fees Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||||||||||||||||||||||I
+Retrieve|||Fees Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Fees Instance Report Type|||The type of external report available||||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Fees Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Fees Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve||Fees Instance Analysis|##|||A specific Fees instance analytical report||||||||||||||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Fees Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||||||||||||||||||||||I
+Retrieve|||Fees Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Fees Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Fees Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||||||||||||||||||||||O
+Retrieve|||Fees Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||||||||||||||||||||||O

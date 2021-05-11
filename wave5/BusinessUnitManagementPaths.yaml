@@ -1,0 +1,595 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Business Unit Management'
+ description: >
+
+    ## Executive Summary:
+
+    Track and report on business unit activity and financial performance
+
+    ## Example of Use:
+
+    A business unit consolidates activity and performance details for periodic internal management reporting
+
+    ## Description:
+
+    Handles the oversight and management of a general organizational business unit. This includes the definition and implementation of the management plan, overseeing ongoing activity and performance assessments and troubleshooting issues that might arise
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-business-unit-management/1.0.0
+schemes:
+ - https
+paths:
+  /business-unit-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDBusinessUnitManagement
+      summary: Activate  a SDBusinessUnitManagement servicing session
+      description: Activate  a  SDBusinessUnitManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDBusinessUnitManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDBusinessUnitManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDBusinessUnitManagementActivateOutputModel'
+  /business-unit-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDBusinessUnitManagement
+      summary: Update an active SDBusinessUnitManagement session configuration
+      description: Update an active SDBusinessUnitManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBusinessUnitManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBusinessUnitManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDBusinessUnitManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDBusinessUnitManagementConfigureOutputModel'
+  /business-unit-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDBusinessUnitManagement
+      summary: "Capturing feedback against the SDBusinessUnitManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDBusinessUnitManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBusinessUnitManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBusinessUnitManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDBusinessUnitManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDBusinessUnitManagementFeedbackOutputModel'
+  /business-unit-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDBusinessUnitManagement
+      summary: Analytical views maintained by the SDBusinessUnitManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDBusinessUnitManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBusinessUnitManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDBusinessUnitManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDBusinessUnitManagementRetrieveOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/creation:
+    post:
+      tags:
+      - create
+      operationId: createBusinessUnitManagementPlan
+      summary: Details of a new BusinessUnitManagementPlan instance
+      description: Create the management plan for the business unit
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BusinessUnitManagementPlan Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessUnitManagementPlanCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new BusinessUnitManagementPlan instance
+          schema:
+            $ref: '#/definitions/CRBusinessUnitManagementPlanCreateOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessUnitManagementPlan
+      summary: Update to any amendable fields of the BusinessUnitManagementPlan instance
+      description: Update aspects of the business unit management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Unit Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessUnitManagementPlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Business Unit Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBusinessUnitManagementPlanUpdateOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeBusinessUnitManagementPlanUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, etc. aspects of the business unit management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Unit Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessUnitManagementPlanExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Business Unit Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBusinessUnitManagementPlanExchangeOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessUnitManagementPlanUpdate
+      summary: Invoke a service request action against the BusinessUnitManagementPlan instance
+      description: Request manual intervention with the plan (e.g. reprioritize activities)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Unit Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessUnitManagementPlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Business Unit Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBusinessUnitManagementPlanRequestOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessUnitManagement
+      summary: Invoke a reporting action to obtain a Business Unit Management Plan instance related report
+      description: Retrieve details about the business unit management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRBusinessUnitManagementPlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Business Unit Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBusinessUnitManagementPlanRetrieveOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/performance/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessUnitManagementPlanPerformance
+      summary: Update to any amendable fields of the Performance instance
+      description: Update details of the activity analysis for the business unit
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Performance Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Performance Request Payload
+        schema:
+          $ref: '#/definitions/BQPerformanceUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Performance Instance
+          schema:
+            $ref: '#/definitions/BQPerformanceUpdateOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/performance/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessUnitManagementPlanPerformanceUpdate
+      summary: Invoke a service request action against the Performance instance
+      description: Request manual intervention in the business unit performance analysis (e.g. revise projections)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Performance Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Performance request payload
+        schema:
+          $ref: '#/definitions/BQPerformanceRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Performance Instance Record
+          schema:
+            $ref: '#/definitions/BQPerformanceRequestOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/performance/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessUnitManagementPlanPerformance
+      summary: Invoke a reporting action to obtain a Performance instance related report.
+      description: Retrieve details about the business unit activity analysis .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Performance Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQPerformanceRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Performance Instance Record
+          schema:
+            $ref: '#/definitions/BQPerformanceRetrieveOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/troubleshooting/creation:
+    post:
+      tags:
+      - create
+      operationId: createBusinessUnitManagementPlanTroubleshooting
+      summary: Details of a new Troubleshooting instance
+      description: Create a service troubleshooting activity (to address major production issue)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Unit Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Business Unit Management Plan instance
+          schema:
+            $ref: '#/definitions/BQTroubleshootingCreateOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessUnitManagementPlanTroubleshooting
+      summary: Update to any amendable fields of the Troubleshooting instance
+      description: Update details of a troubleshooting plan item
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshooting Request Payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Troubleshooting Instance
+          schema:
+            $ref: '#/definitions/BQTroubleshootingUpdateOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessUnitManagementPlanTroubleshootingUpdate
+      summary: Invoke a service request action against the Troubleshooting instance
+      description: Request manual intervention to a troubleshooting action
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshooting request payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Troubleshooting Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootingRequestOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessUnitManagementPlanTroubleshooting
+      summary: Invoke a reporting action to obtain a Troubleshooting instance related report.
+      description: Retrieve details about troubleshooting activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTroubleshootingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Troubleshooting Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootingRetrieveOutputModel'
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBusinessUnitManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- BusinessUnitManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /business-unit-management/business-unit-management-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBusinessUnitManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Performance',  'Troubleshooting', ]
+  /business-unit-management/{sd-reference-id}/business-unit-management-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBusinessUnitManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Unit Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Unit Management Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Troubleshooting
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Troubleshooting Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [TroubleshootingID1, TroubleshootingID2]

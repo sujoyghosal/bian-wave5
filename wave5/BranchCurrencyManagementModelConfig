@@ -1,0 +1,114 @@
+CR Branch Cash Allocation Instance Record|Branch Cash Allocation||||||CR Branch Cash Allocation Initiate|CR Branch Cash Allocation Update|CR Branch Cash Allocation Control|CR Branch Cash Allocation Exchange|CR Branch Cash Allocation Capture|CR Branch Cash Allocation Retrieve|BQ Inventory Allocation Initiate|BQ Inventory Allocation Update|BQ Inventory Allocation Control|BQ Inventory Allocation Exchange|BQ Inventory Allocation Capture|BQ Inventory Allocation Retrieve|
+Mandatory||Branch Currency Management Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Branch Cash Allocation Instance Reference||||Reference to the Branch Cash Allocation instance|O|I|I|I|I
+Initiate||Branch Cash Allocation Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Branch Cash Allocation Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Branch Cash Allocation Instance Status||||The status of the Branch Cash Allocation instance (e.g. initialised, pending, active)|IO
+||Branch Cash Allocation Instance Record||||Maintain an inventory or holding of some resource and make assignments/allocations as requested within Branch Currency Management.
+Example: Track the inventory and administer the distribution of central cash holdings throughout the branch & ATM network.||||||||||||
+||Branch Cash Allocation Parameter Type||||A Classification value that distinguishes between allocation Options according to the optional business services defined within Branch Cash Allocation|IO|IO|IO|IO|IO|O||||||
+||Branch Cash Allocation Selected Option||||A selected optional business service for which resources are allocated|IO|IO|IO|IO|IO|O||||||
+||Branch Cash Allocation Type||||A Classification value, that distinguishes between the the type of resource allocated withing the Branch Cash Allocation|I|I|I|I|I|O||||||
+||Branch Cash Allocation Description||||Documentation of Branch Cash Allocation|I|I|I|I|I|O||||||
+||Branch Cash Allocation Request||||Request to allocate BranchCash|IO|IO|IO|IO|IO|O||||||
+||Branch Cash Allocation Schedule||||Timetable to allocate BranchCash|IO|IO|IO|IO|IO|O||||||
+||Branch Cash Allocation Status||||The status of Branch Cash Allocation|IO|IO|IO|IO|IO|O||||||
+||Branch Cash Allocation Reference||||Reference to the party who is involved in Branch Cash Allocation|I|I|I|I|I|O||||||
+||Branch Cash Allocation Customer Reference||||Reference to the customer who is involved in Branch Cash Allocation|IO|IO|IO|IO|IO|O||||||
+||Branch Cash Allocation Currency||||The curreny which is arranged/used for Branch Cash Allocation|I|I|I|I|I|O||||||
+||Branch Cash Allocation Regulation Reference||||Reference to the regulation which is defined for Branch Cash Allocation|I|I|I|I|I|O||||||
+||Branch Cash Allocation Regulation Type||||A Classification that distinguishes between the regularity domains of Branch Cash Allocation|I|I|I|I|I|O||||||
+||Branch Cash Allocation Jurisdiction||||Reference to the jurisdiction that is assigned to Branch Cash Allocation in case of legal dispute.|I|I|I|I|I|O||||||
+||Branch Cash Allocation Booking Location||||The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement, are entered.|I|I|I|I|I|O||||||
+||Branch Cash Allocation Account Type||||The type of account which is linked to Branch Cash Allocation|I|I|I|I|I|O||||||
+||Branch Cash Allocation Account Reference||||Reference to the account which is linked to Branch Cash Allocation|I|I|I|I|I|O||||||
+||Branch Cash Allocation Instance||||Reference to Branch Cash Allocation Instance||||||||||||
+Update||Branch Cash Allocation Update Action Task Reference||||Reference to an update service call||O
+Update||Branch Cash Allocation Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Branch Cash Allocation Control Action Task Reference||||Reference to a Branch Cash Allocation instance control processing service call|||O
+CONTROL||Branch Cash Allocation Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Branch Cash Allocation Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Branch Cash Allocation Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Branch Cash Allocation Exchange Action Task Reference||||Reference to a Branch Cash Allocation instance exchange service call||||O
+EXCHANGE||Branch Cash Allocation Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Branch Cash Allocation Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Branch Cash Allocation Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Branch Cash Allocation Capture Action Task Reference||||Reference to a Branch Cash Allocation instance capture service call|||||O
+CAPTURE||Branch Cash Allocation Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+RETRIEVE||Branch Cash Allocation Retrieve Action Task Reference||||Reference to a Branch Cash Allocation instance retrieve service call||||||O
+RETRIEVE||Branch Cash Allocation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||IO
+RETRIEVE||Branch Cash Allocation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||I
+RETRIEVE||Branch Cash Allocation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||O
+RETRIEVE||Branch Cash Allocation Instance Report Record|##|||A specific Branch Cash Allocation instance formatted report||||||IO
+RETRIEVE|||Branch Cash Allocation Instance Report Reference|||Reference to the control record instance report||||||I
+RETRIEVE|||Branch Cash Allocation Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Branch Cash Allocation Instance Report Type|||The type of external report available||||||IO
+RETRIEVE|||Branch Cash Allocation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||I
+RETRIEVE|||Branch Cash Allocation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||O
+RETRIEVE||Branch Cash Allocation Instance Analysis|##|||A specific Branch Cash Allocation instance analytical report||||||IO
+RETRIEVE|||Branch Cash Allocation Instance Analysis Reference|||Reference to the control record instance analysis view||||||I
+RETRIEVE|||Branch Cash Allocation Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Branch Cash Allocation Instance Analysis Report Type|||The type of external performance analysis report available||||||IO
+RETRIEVE|||Branch Cash Allocation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||I
+RETRIEVE|||Branch Cash Allocation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||O
+BQ Inventory Allocation Instance Record|Inventory Allocation||||||
+Mandatory||Branch Cash Allocation Instance Reference||||Reference to the parent Branch Cash Allocation instance|||||||I|I|I|I|I
+Mandatory||Inventory Allocation Instance Reference||||Reference to the Inventory Allocation instance|||||||O|I|I|I|I
+Initiate||Inventory Allocation Initiate Action Reference||||Reference to an Initiate service call|||||||O
+Initiate||Inventory Allocation Initiate Action Record||||The Initiate service call input and output record|||||||I/O
+Initiate||Inventory Allocation Instance Status||||The status of the Inventory Allocation instance (e.g. initialised, pending, active)|||||||O
+||Inventory Allocation Instance Record||||Maintain an inventory or holding of some resource and make assignments/allocations as requested within Branch Currency Management.
+||||||||||||
+||Inventory Allocation Preconditions||||The required status/situation before the allocation can be made|||||||IO|IO|IO|IO|IO|O
+||Inventory Allocation Allocation Schedule||||The schedule and timing of allocation decisions|||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Allocation||||The Branch Cash Allocation specific Business Service|||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Allocation Service Type||||Reference to the specific business service type|||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Allocation Service Description||||Description of the performed business service|||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Allocation Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Allocation Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||IO|IO|IO|IO|IO|O
+Update||Inventory Allocation Update Action Task Reference||||Reference to an update service call||||||||O
+Update||Inventory Allocation Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||Inventory Allocation Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Control||Inventory Allocation Control Action Task Reference||||Reference to a Inventory Allocation instance control processing service call|||||||||O
+Control||Inventory Allocation Control Action Task Record||||The processing control service call consolidated processing record|||||||||I/O
+Control||Inventory Allocation Control Action Request|##|||Details of the control action service request|||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||||||||I
+Control||Inventory Allocation Control Action Response||||Details of the control action service response|||||||||O
+Control||Inventory Allocation Instance Status||||The status of the Inventory Allocation instance (e.g. initialised, pending, active)|||||||||O
+Exchange||Inventory Allocation Exchange Action Task Reference||||Reference to a Inventory Allocation instance exchange service call||||||||||O
+Exchange||Inventory Allocation Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||Inventory Allocation Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||Inventory Allocation Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||Inventory Allocation Instance Status||||The status of the Inventory Allocation instance (e.g. accepted, rejected, verified)||||||||||O
+Capture||Inventory Allocation Capture Action Task Reference||||Reference to a Inventory Allocation instance capture service call|||||||||||O
+Capture||Inventory Allocation Capture Action Task Record||||The capture service call consolidated processing record|||||||||||I/O
+Capture||Inventory Allocation Capture Record Reference||||Reference to the Inventory Allocation structured input transaction/record|||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||O
+Retrieve||Inventory Allocation Retrieve Action Task Reference||||Reference to a Inventory Allocation instance retrieve service call||||||||||||O
+Retrieve||Inventory Allocation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Inventory Allocation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Inventory Allocation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Inventory Allocation Instance Report|##|||A specific Inventory Allocation instance formatted report||||||||||||IO
+Retrieve|||Inventory Allocation Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Inventory Allocation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Inventory Allocation Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Inventory Allocation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Inventory Allocation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Inventory Allocation Instance Analysis|##|||A specific Inventory Allocation instance analytical report||||||||||||IO
+Retrieve|||Inventory Allocation Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Inventory Allocation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Inventory Allocation Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Inventory Allocation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Inventory Allocation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O

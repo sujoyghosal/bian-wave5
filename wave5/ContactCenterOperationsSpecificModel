@@ -1,0 +1,25 @@
+CR Contact Center Administrative Plan Instance Record	CR Contact Center Administrative Plan Instance Record	Contact Center Administrative Plan Instance Record				The administrative plan covering the day to day operational administration of the contact center		IO	IO	O	IO	IO													
+		Contact Center Service Operating Configuration				The default contact center operational configuration as defined by Contact Center Management (Note this can include some latitude for position assignment changes to be made during day to day operations by this service domain)		IO	IO	O	IO	IO													
+		Customer Servicing Representative Allocation Schedule				Maintains the allocation records of available customer service representatives to the servicing positions defined in the contact center configuration. This includes past and future booking arrangements		IO	IO	O	IO	IO													
+		Customer Servicing Representative Reference				Reference to a customer servicing representative		IO	IO	O	IO	IO													
+		Customer Servicing Representative Record				Details about a registered customer servicing representative		IO	IO	O	IO	IO													
+		Customer Servicing Representative Qualification Profile				Details the qualification, expertise and level of experience of the servicing representative		IO	IO	O	IO	IO													
+		Customer Servicing Representative Location				Reference to the locations the customer servicing representative can work from (can include remote working arrangements and time zone availability)		IO	IO	O	IO	IO													
+		Customer Servicing Representative Availability Schedule				Details the time the customer servicing representative plans to be and is actually available for assignments which covers times for shift working and temporary/overtime assignments as may be necessary		IO	IO	O	IO	IO													
+		Customer Servicing Representative Status				Tracks the current status indicating availability for assignment to a servicing position (where  the representative will coordinate with contact routing for customer contacts)		IO	IO	O	IO	IO													
+		Customer Servicing Representative Assignment Record				Reference to a consolidated record of assignments. This is used to track utilization and performance		IO	IO	O	IO	IO													
+BQ Peak Load Instance Record	BQ Peak Load Instance Record	Peak Load Instance Record				The routine for detecting and responding to periods of peak loading - typically resulting in changes to the self-service menus and re-assignment of available customer servicing representatives								O	IO	IO									
+		Contact Center Service Statistics				Tracked activity and performance statistics used to manage the contact center resource assignments and menu configuration								O	IO	IO									
+		Contact Center Service Statistic Type				The type of activity that is tracked and analyze (e.g. wait time, average handle time, dropped call ratio, resolution rate)								O	IO	IO									
+		Peak Load Response Task				The task undertaken to address a detected peak load condition								O	IO	IO									
+		Peak Load Response Task Type				The type of response (e.g. staff reassignment)								O	IO	IO									
+		Peak Load Response Description				Description of the action taken and impact to service performance								O	IO	IO									
+BQ Troubleshooting Instance Record	BQ Troubleshooting Instance Record	Troubleshooting Instance Record				Overseeing the resolution of major production issues and initiating procedural changes as needed to reduce exposure to repeating occurrences											IO	O	IO	IO					
+		Contact Center Production Issue Record				A record of any production issues arising during the session (see Advanced Voice Channel Operations for detailed content)											IO	O	IO	IO					
+		Contact Center Issue Analysis & Recommended Response				A record of the root cause analysis for recurring issues and suggested remedial action											IO	O	IO	IO					
+BQ Assignment Instance Record	BQ Assignment Instance Record	Assignment Instance Record				The assignment of a customer servicing representative to an active customer servicing position																IO	O	IO	IO
+		Assignment Customer Servicing Representative				Reference to the servicing representative																IO	O	IO	IO
+		Assignment Customer Servicing Position Reference				Reference to the assigned servicing position/desk within the contact center																IO	O		IO
+		Assignment Customer Servicing Position Profile				Details any specific properties for the assigned servicing position (e.g. type of product/service covered, required qualifications/certifications/experience)																IO	O		IO
+		Assignment Customer Servicing Position Schedule				Planned and actual servicing activity at the position during the session (records inbound contact details and allows for pre-assigned servicing actions e.g. outbound customer contacts for issue resolution/sales)																IO	O		IO
+		Customer Contact Session Procedure Instance Reference				Reference to the customer contact record for customer interactions during the servicing session																IO	O	IO	IO

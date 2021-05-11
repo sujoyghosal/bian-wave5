@@ -1,0 +1,927 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Accounts Receivable'
+ description: >
+
+    ## Executive Summary:
+
+    This service domain handles accounts receivable for invoices issue by the bank to customers and partners. It includes follow-up and resolution activity for delayed/missed payments
+
+    ## Example of Use:
+
+    A product business unit submits an invoice to a customer for services rendered that requires customer payment from an account not managed by the bank.
+
+    ## Description:
+
+    Manage the tracking, chasing and receipt of scheduled payments against issued invoices. For the significant majority accounts are likely to be settled in compliance with established arrangements. For late payment the Service Domain includes actions to negotiate with the customer and handle defaulted payments
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-accounts-receivable/1.0.0
+schemes:
+ - https
+paths:
+  /accounts-receivable/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDAccountsReceivable
+      summary: Activate  a SDAccountsReceivable servicing session
+      description: Activate  a  SDAccountsReceivable servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDAccountsReceivable Request Payload
+        schema:
+          $ref: '#/definitions/SDAccountsReceivableActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDAccountsReceivableActivateOutputModel'
+  /accounts-receivable/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDAccountsReceivable
+      summary: Update an active SDAccountsReceivable session configuration
+      description: Update an active SDAccountsReceivable session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDAccountsReceivable Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDAccountsReceivable Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDAccountsReceivableConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDAccountsReceivableConfigureOutputModel'
+  /accounts-receivable/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDAccountsReceivable
+      summary: "Capturing feedback against the SDAccountsReceivable service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDAccountsReceivable service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDAccountsReceivable Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDAccountsReceivable Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDAccountsReceivableFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDAccountsReceivableFeedbackOutputModel'
+  /accounts-receivable/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDAccountsReceivable
+      summary: Analytical views maintained by the SDAccountsReceivable service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDAccountsReceivable service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDAccountsReceivable Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDAccountsReceivableRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDAccountsReceivableRetrieveOutputModel'  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateAccountsReceivableProcedure
+      summary: Details of a new AccountsReceivableProcedure instance
+      description: Instantiate a new Accounts Receivable Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: AccountsReceivableProcedure Request Payload
+        schema:
+          $ref: '#/definitions/CRAccountsReceivableProcedureInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new AccountsReceivableProcedure instance
+          schema:
+            $ref: '#/definitions/CRAccountsReceivableProcedureInitiateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateAccountsReceivableProcedure
+      summary: Update to any amendable fields of the AccountsReceivableProcedure instance
+      description: Update details relating to Accounts Receivable Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Accounts Receivable Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRAccountsReceivableProcedureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Accounts Receivable Procedure Instance
+          schema:
+            $ref: '#/definitions/CRAccountsReceivableProcedureUpdateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlAccountsReceivableProcedureUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Accounts Receivable Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Accounts Receivable Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRAccountsReceivableProcedureControlInputModel'
+      responses:
+        200:
+          description: Successful control of Accounts Receivable Procedure Instance
+          schema:
+            $ref: '#/definitions/CRAccountsReceivableProcedureControlOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeAccountsReceivableProcedureUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Accounts Receivable Procedure processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Accounts Receivable Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRAccountsReceivableProcedureExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Accounts Receivable Procedure Instance
+          schema:
+            $ref: '#/definitions/CRAccountsReceivableProcedureExchangeOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeAccountsReceivableProcedureUpdate
+      summary: Invoke an automated execute action against the AccountsReceivableProcedure instance
+      description: Execute an available automated action for Accounts Receivable Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Accounts Receivable Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRAccountsReceivableProcedureExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Accounts Receivable Procedure Instance
+          schema:
+            $ref: '#/definitions/CRAccountsReceivableProcedureExecuteOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestAccountsReceivableProcedureUpdate
+      summary: Invoke a service request action against the AccountsReceivableProcedure instance
+      description: Request manual intervention or a decision with respect to Accounts Receivable Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Accounts Receivable Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRAccountsReceivableProcedureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Accounts Receivable Procedure Instance
+          schema:
+            $ref: '#/definitions/CRAccountsReceivableProcedureRequestOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveAccountsReceivable
+      summary: Invoke a reporting action to obtain a Accounts Receivable Procedure instance related report
+      description: Retrieve details about any aspect of Accounts Receivable Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRAccountsReceivableProcedureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Accounts Receivable Procedure Instance
+          schema:
+            $ref: '#/definitions/CRAccountsReceivableProcedureRetrieveOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/customernegotiation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateAccountsReceivableProcedureCustomerNegotiation
+      summary: Details of a new CustomerNegotiation instance
+      description: Instantiate a new Customer Negotiation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Accounts Receivable Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQCustomerNegotiationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Accounts Receivable Procedure instance
+          schema:
+            $ref: '#/definitions/BQCustomerNegotiationInitiateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/bqcustomernegotiation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateAccountsReceivableProcedureBQCustomerNegotiation
+      summary: Update to any amendable fields of the BQCustomerNegotiation instance
+      description: Update details relating to Customer Negotiation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BQCustomerNegotiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BQCustomerNegotiation Request Payload
+        schema:
+          $ref: '#/definitions/BQBQCustomerNegotiationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated BQCustomerNegotiation Instance
+          schema:
+            $ref: '#/definitions/BQBQCustomerNegotiationUpdateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/bqcustomernegotiation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeAccountsReceivableProcedureBQCustomerNegotiationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Customer Negotiation processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BQCustomerNegotiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BQCustomerNegotiation request payload
+        schema:
+          $ref: '#/definitions/BQBQCustomerNegotiationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of BQCustomerNegotiation Instance Record
+          schema:
+            $ref: '#/definitions/BQBQCustomerNegotiationExchangeOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/bqcustomernegotiation/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestAccountsReceivableProcedureBQCustomerNegotiationUpdate
+      summary: Invoke a service request action against the BQCustomerNegotiation instance
+      description: Request manual intervention or a decision with respect to Customer Negotiation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BQCustomerNegotiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BQCustomerNegotiation request payload
+        schema:
+          $ref: '#/definitions/BQBQCustomerNegotiationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of BQCustomerNegotiation Instance Record
+          schema:
+            $ref: '#/definitions/BQBQCustomerNegotiationRequestOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/bqcustomernegotiation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveAccountsReceivableProcedureBQCustomerNegotiation
+      summary: Invoke a reporting action to obtain a BQCustomerNegotiation instance related report.
+      description: Retrieve details about any aspect of Customer Negotiation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BQCustomerNegotiation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQBQCustomerNegotiationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved BQCustomerNegotiation Instance Record
+          schema:
+            $ref: '#/definitions/BQBQCustomerNegotiationRetrieveOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/resolution/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateAccountsReceivableProcedureResolution
+      summary: Details of a new Resolution instance
+      description: Instantiate a new Resolution
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Accounts Receivable Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQResolutionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Accounts Receivable Procedure instance
+          schema:
+            $ref: '#/definitions/BQResolutionInitiateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/resolution/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateAccountsReceivableProcedureResolution
+      summary: Update to any amendable fields of the Resolution instance
+      description: Update details relating to Resolution
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Resolution Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Resolution Request Payload
+        schema:
+          $ref: '#/definitions/BQResolutionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Resolution Instance
+          schema:
+            $ref: '#/definitions/BQResolutionUpdateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/resolution/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveAccountsReceivableProcedureResolution
+      summary: Invoke a reporting action to obtain a Resolution instance related report.
+      description: Retrieve details about any aspect of Resolution .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Resolution Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQResolutionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Resolution Instance Record
+          schema:
+            $ref: '#/definitions/BQResolutionRetrieveOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/payment/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateAccountsReceivableProcedurePayment
+      summary: Details of a new Payment instance
+      description: Instantiate a new Payment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Accounts Receivable Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQPaymentInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Accounts Receivable Procedure instance
+          schema:
+            $ref: '#/definitions/BQPaymentInitiateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/payment/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateAccountsReceivableProcedurePayment
+      summary: Update to any amendable fields of the Payment instance
+      description: Update details relating to Payment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Payment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Payment Request Payload
+        schema:
+          $ref: '#/definitions/BQPaymentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Payment Instance
+          schema:
+            $ref: '#/definitions/BQPaymentUpdateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/payment/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveAccountsReceivableProcedurePayment
+      summary: Invoke a reporting action to obtain a Payment instance related report.
+      description: Retrieve details about any aspect of Payment .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Payment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQPaymentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Payment Instance Record
+          schema:
+            $ref: '#/definitions/BQPaymentRetrieveOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/receivablesevaluation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateAccountsReceivableProcedureReceivablesEvaluation
+      summary: Details of a new ReceivablesEvaluation instance
+      description: Instantiate a new Receivables Evaluation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Accounts Receivable Procedure Request Payload
+        schema:
+          $ref: '#/definitions/BQReceivablesEvaluationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Accounts Receivable Procedure instance
+          schema:
+            $ref: '#/definitions/BQReceivablesEvaluationInitiateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/receivablesevaluation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateAccountsReceivableProcedureReceivablesEvaluation
+      summary: Update to any amendable fields of the ReceivablesEvaluation instance
+      description: Update details relating to Receivables Evaluation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ReceivablesEvaluation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ReceivablesEvaluation Request Payload
+        schema:
+          $ref: '#/definitions/BQReceivablesEvaluationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ReceivablesEvaluation Instance
+          schema:
+            $ref: '#/definitions/BQReceivablesEvaluationUpdateOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/receivablesevaluation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeAccountsReceivableProcedureReceivablesEvaluationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Receivables Evaluation processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ReceivablesEvaluation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ReceivablesEvaluation request payload
+        schema:
+          $ref: '#/definitions/BQReceivablesEvaluationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ReceivablesEvaluation Instance Record
+          schema:
+            $ref: '#/definitions/BQReceivablesEvaluationExchangeOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/receivablesevaluation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveAccountsReceivableProcedureReceivablesEvaluation
+      summary: Invoke a reporting action to obtain a ReceivablesEvaluation instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ReceivablesEvaluation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQReceivablesEvaluationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ReceivablesEvaluation Instance Record
+          schema:
+            $ref: '#/definitions/BQReceivablesEvaluationRetrieveOutputModel'
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveAccountsReceivableReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- AccountsReceivable Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /accounts-receivable/accounts-receivable-procedure/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveAccountsReceivableBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Payment',  'CustomerNegotiation',  'Resolution',  'ReceivablesEvaluation', ]
+  /accounts-receivable/{sd-reference-id}/accounts-receivable-procedure/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveAccountsReceivableBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Accounts Receivable Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Accounts Receivable Procedure Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- ReceivablesEvaluation
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ReceivablesEvaluation Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ReceivablesEvaluationID1, ReceivablesEvaluationID2]

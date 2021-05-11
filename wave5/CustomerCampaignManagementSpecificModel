@@ -1,0 +1,33 @@
+CR Customer Campaign Portfolio Management Plan Instance Record	Customer Campaign Portfolio Management Plan Instance Record	Customer Campaign Portfolio	##			The collection/portfolio of available customer campaigns. The details are used to assess performance and coverage and direct development and execution activity	IO	IO	IO		O													
+			Customer Campaign Type			The type or category of customer campaign (e.g. cross-sell, up-sell, retention)	IO	IO	IO		O													
+			Customer Campaign Description			A description of the campaign that clarifies the intended context/use of the campaign, the mechanisms employed and the intended/anticipated response/impact	IO	IO	IO		O													
+			Customer Campaign Metrics	##		Metrics that are defined to assess the target and actual impact of the campaign	IO	IO	IO		O													
+				Customer Campaign Metric Definition		A description of the metric, defining how it is to be measured in deployment	IO	IO	IO		O													
+				Customer Campaign Metric Goal		A description of the target performance for the metric that can be defined for different usage scenarios as appropriate	iO	IO	iO		O													
+			Customer Campaign Performance Record 	##		Maintains a record of the use and impact of customer campaign versions over the life of the campaign	IO	IO			O													
+				Customer Campaign Procedure Instance Reference	##	Reference to the customer campaign execution event	IO	IO			O													
+					Employee/Business Unit Reference 	Reference to the business unit responsible for the campaign execution	IO	IO			O													
+					Customer Campaign Procedure Set-up	Details of the deployment set-up/configuration of the campaign for reference	IO	IO			O													
+					Customer Campaign Procedure Version Number	The customer campaign version number used in the event	IO	IO			O													
+					Customer Campaign Procedure Result	The result/impact of the overall customer campaign event (that can include multiple identified leads/opportunities)	I	IO			O													
+BQ Market Tracking Instance Record		Market Tracking Instance Record	##			Tracking multiple sources of intelligence that is used to assess the competitive coverage and performance of the customer campaign portfolio						IO	IO	IO	O									
+			Market Tracking Work Task Type			The type of work task (e.g. track competitor activity, track customer behaviors)						IO	IO	IO	O									
+			Market Tracking Work Task	##		The make-up of the market tracking task performed, includes consolidation and analysis of market research to reach specific insights						IO	IO	IO	O									
+				General Market Research Directory Entry Instance Reference		Reference to an internally maintained market research viewpoint						IO	IO	IO	O									
+				General Market Research Directory Entry Instance Record		The market research viewpoint definition and content						IO	I	I	O									
+				Competitor Analysis Instance Reference		Reference to an internally maintained competitor analysis viewpoint						IO	IO	IO	O									
+				Competitor Analysis Instance Record		The competitor analysis viewpoint definition and content						IO	I	I	O									
+				Customer Survey Procedure Instance Reference		Reference to internally maintained customer survey materials						IO	IO	IO	O									
+				Customer Survey Procedure Instance Record		The customer survey materials description and content						IO	I	I	O									
+			Market Tracking Work Task Work Products 			File of consolidated notes, evaluations and findings for the market tracking work task						IO	IO	IO	O									
+			Market Tracking Work Task Result			Details of the outcome or result of the work task - typically points of view drawn from the market research, competitor research and customer surveys						IO	O	O	O									
+			Market Tracking Work Task Date-Time			The date-time the market tracking task is performed						IO	IO	IO	O									
+BQ Performance Assessment Instance Record		Performance Assessment Instance Record	##			Performance assessment of the customer campaigns making up the portfolio										IO	IO	IO	IO	O				
+			Performance Assessment Work Task Type			The type of work task (e.g. track competitor activity, track customer behaviors)										IO	IO	IO	IO	O				
+			Performance Assessment Work Task			The make-up of the market tracking task performed, includes consolidation and analysis of market research to reach specific insights										IO	IO	IO	IO	O				
+			Performance Assessment Work Task Work Products 			File of consolidated notes, evaluations and findings for the work task										IO	IO	IO	IO	O				
+			Performance Assessment Work Task Result			Details of the outcome or result of the work task - indication of the need to amend, redirect and/or expand customer campaign activity										O	IO	O	O	O				
+			Performance Assessment Work Task Date-Time			The date-time the performance assessment task is performed										IO	IO	IO	IO	O				
+BQ Campaign Direction Instance Record		Campaign Direction Instance Record	##			Direct customer campaign design and execution activity (based on market insights and assessed performance)															IO	IO	IO	O
+			Customer Campaign Development Schedule			Schedule of planned and actual customer campaign design development and refinement activity															IO	IO	IO	O
+			Customer Campaign Execution Schedule			Schedule of planned and actual customer campaign execution activities															IO	IO	IO	O

@@ -1,0 +1,31 @@
+sd=Syndicated Loan	Handle the processing of syndicated loans with the bank playing the lead coordination role with other syndicate bank members. Note some initial preparation may have been made through prior customer offer processing.	A major corporate customer obtains a syndicated loan to finance a major project and the bank arranges to distribute the loan with several other interested banks to share the loan exposure	This service domain fulfills a syndicated loan, including the coordination with syndicate members and clarification/administration of their obligations under the arrangement. It is assumed the bank is acting as the syndicate lead in this arrangement, coordinating with other lending banks in the syndicate in order to manage the transfer of funds. The syndicated loan can be for a single amount or be implemented as a more general loan facility that the customer can draw upon over its term. Note that initial customer offer processing may have covered many of these tasks informally, but once the syndicated loan initiation is made more formal syndicate arrangements must be established as an aspect of fulfillment handled here
+sdpath=syndicated-loan
+crpath=syndicated-loan-arrangement
+crr=Syndicated Loan Arrangement Instance
+mcr=Syndicated Loan Arrangement
+bqs=Fulfillment Origination SyndicateAssembly Structuring
+CONFIG
+SyndicatedLoanArrangement	initiate	Instantiate a new Syndicated Loan Arrangement		initiateSyndicatedLoanArrangement		#desc
+SyndicatedLoanArrangement	update	Update details relating to Syndicated Loan Arrangement		updateSyndicatedLoanArrangement		#desc
+SyndicatedLoanArrangement	control	Control the processing of Syndicated Loan Arrangement		controlSyndicatedLoanArrangement		#desc
+SyndicatedLoanArrangement	exchange	Accept, verify, etc. aspects of Syndicated Loan Arrangement processing		exchangeSyndicatedLoanArrangement		#desc
+SyndicatedLoanArrangement	execute	Execute an available automated action for Syndicated Loan Arrangement		executeSyndicatedLoanArrangement		#desc
+SyndicatedLoanArrangement	request	Request manual intervention or a decision with respect to Syndicated Loan Arrangement		requestSyndicatedLoanArrangement		#desc
+SyndicatedLoanArrangement	retrieve	Retrieve details about any aspect of Syndicated Loan Arrangement		retrieveSyndicatedLoanArrangement		#desc
+Fulfillment	update	Update details relating to Fulfillment	updateSyndicatedLoanArrangementFulfillment	updateSyndicatedLoanArrangementFulfillment		Update to any amendable fields of the Fulfillment instance
+Fulfillment	exchange	Accept, verify, etc. aspects of Fulfillment processing	exchangeSyndicatedLoanArrangementFulfillment	exchangeSyndicatedLoanArrangementFulfillment		Handle an external exchange (e.g. accept, reject, verify)
+Fulfillment	request	Request manual intervention or a decision with respect to Fulfillment	requestSyndicatedLoanArrangementFulfillment	requestSyndicatedLoanArrangementFulfillment		Invoke a service request action against the Fulfillment instance
+Fulfillment	retrieve	Retrieve details about any aspect of Fulfillment	retrieveSyndicatedLoanArrangementFulfillment	retrieveSyndicatedLoanArrangementFulfillment		Invoke a reporting action to obtain a Fulfillment instance related report
+Structuring	initiate	Instantiate a new Structuring	initiateSyndicatedLoanArrangementStructuring	initiateSyndicatedLoanArrangementStructuring		Details of a new Structuring instance
+Structuring	update	Update details relating to Structuring	updateSyndicatedLoanArrangementStructuring	updateSyndicatedLoanArrangementStructuring		Update to any amendable fields of the Structuring instance
+Structuring	exchange	Accept, verify, etc. aspects of Structuring processing	exchangeSyndicatedLoanArrangementStructuring	exchangeSyndicatedLoanArrangementStructuring		Handle an external exchange (e.g. accept, reject, verify)
+Structuring	request	Request manual intervention or a decision with respect to Structuring	requestSyndicatedLoanArrangementStructuring	requestSyndicatedLoanArrangementStructuring		Invoke a service request action against the Structuring instance
+Structuring	retrieve	Retrieve details about any aspect of Structuring	retrieveSyndicatedLoanArrangementStructuring	retrieveSyndicatedLoanArrangementStructuring		Invoke a reporting action to obtain a Structuring instance related report
+Origination	update	Update details relating to Origination	updateSyndicatedLoanArrangementOrigination	updateSyndicatedLoanArrangementOrigination		Update to any amendable fields of the Origination instance
+Origination	exchange	Accept, verify, etc. aspects of Origination processing	exchangeSyndicatedLoanArrangementOrigination	exchangeSyndicatedLoanArrangementOrigination		Handle an external exchange (e.g. accept, reject, verify)
+Origination	request	Request manual intervention or a decision with respect to Origination	requestSyndicatedLoanArrangementOrigination	requestSyndicatedLoanArrangementOrigination		Invoke a service request action against the Origination instance
+Origination	retrieve	Retrieve details about any aspect of Origination	retrieveSyndicatedLoanArrangementOrigination	retrieveSyndicatedLoanArrangementOrigination		Invoke a reporting action to obtain a Origination instance related report
+SyndicateAssembly	update	Update details relating to Syndicate Assembly	updateSyndicatedLoanArrangementSyndicateAssembly	updateSyndicatedLoanArrangementSyndicateAssembly		Update to any amendable fields of the Syndicate Assembly instance
+SyndicateAssembly	exchange	Accept, verify, etc. aspects of Syndicate Assembly processing	exchangeSyndicatedLoanArrangementSyndicateAssembly	exchangeSyndicatedLoanArrangementSyndicateAssembly		Handle an external exchange (e.g. accept, reject, verify)
+SyndicateAssembly	request	Request manual intervention or a decision with respect to Syndicate Assembly	requestSyndicatedLoanArrangementSyndicateAssembly	requestSyndicatedLoanArrangementSyndicateAssembly		Invoke a service request action against the Syndicate Assembly instance
+SyndicateAssembly	retrieve		retrieveSyndicatedLoanArrangementSyndicateAssembly	retrieveSyndicatedLoanArrangementSyndicateAssembly		Invoke a reporting action to obtain a Syndicate Assembly instance related report

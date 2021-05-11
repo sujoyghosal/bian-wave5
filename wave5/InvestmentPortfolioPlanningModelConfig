@@ -1,0 +1,98 @@
+CR Managed Investment Portfolio Agreement Instance Record|Managed Investment Portfolio Agreement||||||CR Managed Investment Portfolio Agreement Evaluate|CR Managed Investment Portfolio Agreement Update|CR Managed Investment Portfolio Agreement Control|CR Managed Investment Portfolio Agreement Exchange|CR Managed Investment Portfolio Agreement Request|CR Managed Investment Portfolio Agreement Grant|CR Managed Investment Portfolio Agreement Retrieve|BQ Investment Terms Evaluate|BQ Investment Terms Update|BQ Investment Terms Request|BQ Investment Terms Retrieve|
+Mandatory||Investment Portfolio Planning Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Managed Investment Portfolio Agreement Instance Reference||||Reference to the Managed Investment Portfolio Agreement instance|O|I|I|I|I|I
+Evaluate||Managed Investment Portfolio Agreement Evaluate Action Reference||||Reference to an Evaluate service call|O
+Evaluate||Managed Investment Portfolio Agreement Evaluate Action Record||||The Evaluate service call input and output record|IO
+Evaluate||Managed Investment Portfolio Agreement Instance Status||||The status of the Managed Investment Portfolio Agreement instance (e.g. initialised, pending, active)|IO
+||Managed Investment Portfolio Agreement Instance Record|##||||IO|IO|||IO||O|IO|IO|IO|O
+|||Customer Reference|||Reference to the associated customer for the investment portfolio|I|IO|||I||O|IO|IO|IO|O
+|||Legal Entity Reference|||Reference to the legal entity that is the subject of the agreement|I|IO|||I||O|IO|IO|IO|O
+|||Investment Portfolio Instance Reference|||Reference to the investment portfolio record of all holdings governed by this agreement|I|IO|||I||O|IO|IO|IO|O
+|||Investment Portfolio Agreement Type|||The type of investment portfolio agreement (e.g. discretionary, trust )|IO|IO|||IO||O|IO|IO|IO|O
+|||Investment Portfolio Agreement Jurisdiction|||The contractual jurisdiction or coverage of the investment portfolio agreement (e.g. governed by State)|IO|IO|||IO||O|IO|IO|IO|O
+|||Investment Portfolio Agreement Valid From/To Date|||The term of the agreement|IO|IO|||IO||O|IO|IO|IO|O
+|||Investment Portfolio Agreement Signatories/Responsible Parties|||Reference to signatories|IO|IO|||IO||O|IO|IO|IO|O
+|||Document Directory Entry Instance Reference|||Reference to any associated documents, (e.g. signed agreement document, disclosures)|IO|IO|||IO||O|IO|IO|IO|O
+|||Customer Agreement Instance Reference|||Reference to the customer master agreement that governs the product agreement|I|IO|||I||O|IO|IO|IO|O
+|||Party Relationship Procedure Instance Reference|||Reference to KYC/Regulatory assessments maintained by the Party Life-Cycle Management Service Domain|I|IO|||I||O|IO|IO|IO|O
+|||Managed Investment Portfolio Agreement|||The consolidated view of all of the constituent investment policy terms and conditions in any suitable format|IO|IO|||IO||O|IO|IO|IO|O
+Update||Managed Investment Portfolio Agreement Update Action Task Reference||||Reference to an update service call||O
+Update||Managed Investment Portfolio Agreement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Managed Investment Portfolio Agreement Control Action Task Reference||||Reference to a Managed Investment Portfolio Agreement instance control processing service call|||O
+CONTROL||Managed Investment Portfolio Agreement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Managed Investment Portfolio Agreement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Managed Investment Portfolio Agreement Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Managed Investment Portfolio Agreement Exchange Action Task Reference||||Reference to a Managed Investment Portfolio Agreement instance exchange service call||||O
+EXCHANGE||Managed Investment Portfolio Agreement Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Managed Investment Portfolio Agreement Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Managed Investment Portfolio Agreement Exchange Action Response||||Details of the exchange action service response||||O
+REQUEST||Managed Investment Portfolio Agreement Request Action Task Reference||||Reference to a Managed Investment Portfolio Agreement instance request service call|||||O
+REQUEST||Managed Investment Portfolio Agreement Request Action Task Record||||The request service call consolidated processing record|||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record|||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||I
+REQUEST||Request Response Record||||Details of the request action service response|||||O
+GRANT||Managed Investment Portfolio Agreement Grant Action Task Reference||||Reference to a Managed Investment Portfolio Agreement instance grant service call||||||O
+GRANT||Managed Investment Portfolio Agreement Grant Action Task Record||||The grant service call consolidated processing record||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted||||||O
+RETRIEVE||Managed Investment Portfolio Agreement Retrieve Action Task Reference||||Reference to a Managed Investment Portfolio Agreement instance retrieve service call|||||||O
+RETRIEVE||Managed Investment Portfolio Agreement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Managed Investment Portfolio Agreement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Managed Investment Portfolio Agreement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Managed Investment Portfolio Agreement Instance Report Record|##|||A specific Managed Investment Portfolio Agreement instance formatted report|||||||IO
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Managed Investment Portfolio Agreement Instance Analysis|##|||A specific Managed Investment Portfolio Agreement instance analytical report|||||||IO
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Managed Investment Portfolio Agreement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Investment Terms Instance Record|Investment Terms||||||
+Mandatory||Managed Investment Portfolio Agreement Instance Reference||||Reference to the parent Managed Investment Portfolio Agreement instance||||||||I|I|I
+Mandatory||Investment Terms Instance Reference||||Reference to the Investment Terms instance||||||||O|I|I
+Evaluate||Investment Terms Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Evaluate||Investment Terms Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Evaluate||Investment Terms Instance Status||||The status of the Investment Terms instance (e.g. initialised, pending, active)||||||||O
+||Investment Terms Instance Record|##|||An instance is created for each major term governing the overall managed investment portfolio||||||||IO|IO|IO|O
+|||Investment Portfolio Agreement Term Type|||The type of term (e.g. risk appetite, forbidden securities/sectors)||||||||IO|IO|IO|O
+|||Investment Portfolio Agreement Term Description|||Description of the term defining how it is to be interpreted, applicable for behavioral controls (e.g. limit of exposure to a segment property or level of risk)||||||||IO|IO|IO|O
+|||Investment Portfolio Agreement Term Constraints|||One or more specific constraint parameters that calibrate the term, applicable for position constraints (e.g. the specific percentage limit of holdings by value that can be applied to a type of security)||||||||IO|IO|IO|O
+Update||Investment Terms Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Investment Terms Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Investment Terms Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Request||Investment Terms Request Action Task Reference||||Reference to a Investment Terms instance request service call||||||||||O
+Request||Investment Terms Request Action Task Record||||The request service call consolidated processing record||||||||||I/O
+Request||Investment Terms Request Record Reference||||Reference to the Investment Terms service request record||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||O
+Retrieve||Investment Terms Retrieve Action Task Reference||||Reference to a Investment Terms instance retrieve service call|||||||||||O
+Retrieve||Investment Terms Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||Investment Terms Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||Investment Terms Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||Investment Terms Instance Report|##|||A specific Investment Terms instance formatted report|||||||||||IO
+Retrieve|||Investment Terms Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||Investment Terms Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Investment Terms Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||Investment Terms Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||Investment Terms Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||Investment Terms Instance Analysis|##|||A specific Investment Terms instance analytical report|||||||||||IO
+Retrieve|||Investment Terms Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||Investment Terms Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Investment Terms Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||Investment Terms Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||Investment Terms Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O

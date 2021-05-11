@@ -1,0 +1,1462 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - IT Standards And Guidelines'
+ description: >
+
+    ## Executive Summary:
+
+    Define and apply comprehensive IT architectures, policies and standards as appropriate. Also define the IT usage guidelines and procedures governing systems use across the enterprise
+
+    ## Example of Use:
+
+    A review of available IT tooling is performed to identify recommended tooling for application development
+
+    ## Description:
+
+    Develop, maintain and enforce IT architectures, systems related policies and standards as appropriate. Select from industry standards, commercially available development and production environments, infrastructure platforms, systems development and deployment tooling and IT utilities/libraries. Define the IT acquisition, development, maintenance and usage guidelines and policies governing systems development and production use across the enterprise
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-it-standards-and-guidelines/1.0.0
+schemes:
+ - https
+paths:
+  /it-standards-and-guidelines/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDITStandardsAndGuidelines
+      summary: Activate  a SDITStandardsAndGuidelines servicing session
+      description: Activate  a  SDITStandardsAndGuidelines servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDITStandardsAndGuidelines Request Payload
+        schema:
+          $ref: '#/definitions/SDITStandardsAndGuidelinesActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDITStandardsAndGuidelinesActivateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDITStandardsAndGuidelines
+      summary: Update an active SDITStandardsAndGuidelines session configuration
+      description: Update an active SDITStandardsAndGuidelines session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDITStandardsAndGuidelines Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDITStandardsAndGuidelines Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDITStandardsAndGuidelinesConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDITStandardsAndGuidelinesConfigureOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDITStandardsAndGuidelines
+      summary: "Capturing feedback against the SDITStandardsAndGuidelines service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDITStandardsAndGuidelines service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDITStandardsAndGuidelines Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDITStandardsAndGuidelines Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDITStandardsAndGuidelinesFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDITStandardsAndGuidelinesFeedbackOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDITStandardsAndGuidelines
+      summary: Analytical views maintained by the SDITStandardsAndGuidelines service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDITStandardsAndGuidelines service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDITStandardsAndGuidelines Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDITStandardsAndGuidelinesRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDITStandardsAndGuidelinesRetrieveOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateTechnologyStandardsSpecification
+      summary: Details of a new TechnologyStandardsSpecification instance
+      description: Instantiate a new Technology Standards Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TechnologyStandardsSpecification Request Payload
+        schema:
+          $ref: '#/definitions/CRTechnologyStandardsSpecificationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new TechnologyStandardsSpecification instance
+          schema:
+            $ref: '#/definitions/CRTechnologyStandardsSpecificationInitiateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateTechnologyStandardsSpecification
+      summary: Update to any amendable fields of the TechnologyStandardsSpecification instance
+      description: Update details relating to Technology Standards Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRTechnologyStandardsSpecificationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Technology Standards Specification Instance
+          schema:
+            $ref: '#/definitions/CRTechnologyStandardsSpecificationUpdateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlTechnologyStandardsSpecificationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Technology Standards Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRTechnologyStandardsSpecificationControlInputModel'
+      responses:
+        200:
+          description: Successful control of Technology Standards Specification Instance
+          schema:
+            $ref: '#/definitions/CRTechnologyStandardsSpecificationControlOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeTechnologyStandardsSpecificationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Technology Standards Specification processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRTechnologyStandardsSpecificationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Technology Standards Specification Instance
+          schema:
+            $ref: '#/definitions/CRTechnologyStandardsSpecificationExchangeOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureTechnologyStandardsSpecificationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Technology Standards Specification activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRTechnologyStandardsSpecificationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Technology Standards Specification Instance
+          schema:
+            $ref: '#/definitions/CRTechnologyStandardsSpecificationCaptureOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestTechnologyStandardsSpecificationUpdate
+      summary: Invoke a service request action against the TechnologyStandardsSpecification instance
+      description: Request manual intervention or a decision with respect to Technology Standards Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRTechnologyStandardsSpecificationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Technology Standards Specification Instance
+          schema:
+            $ref: '#/definitions/CRTechnologyStandardsSpecificationRequestOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveITStandardsAndGuidelines
+      summary: Invoke a reporting action to obtain a Technology Standards Specification instance related report
+      description: Retrieve details about any aspect of Technology Standards Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRTechnologyStandardsSpecificationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Technology Standards Specification Instance
+          schema:
+            $ref: '#/definitions/CRTechnologyStandardsSpecificationRetrieveOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/itpoliciesandguidelines/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateTechnologyStandardsSpecificationITPoliciesandGuidelines
+      summary: Details of a new ITPoliciesandGuidelines instance
+      description: Instantiate a new IT Policies and Guidelines
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/BQITPoliciesandGuidelinesInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Technology Standards Specification instance
+          schema:
+            $ref: '#/definitions/BQITPoliciesandGuidelinesInitiateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/itpoliciesandguidelines/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateTechnologyStandardsSpecificationITPoliciesandGuidelines
+      summary: Update to any amendable fields of the ITPoliciesandGuidelines instance
+      description: Update details relating to IT Policies and Guidelines
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ITPoliciesandGuidelines Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITPoliciesandGuidelines Request Payload
+        schema:
+          $ref: '#/definitions/BQITPoliciesandGuidelinesUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ITPoliciesandGuidelines Instance
+          schema:
+            $ref: '#/definitions/BQITPoliciesandGuidelinesUpdateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/itpoliciesandguidelines/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeTechnologyStandardsSpecificationITPoliciesandGuidelinesUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of IT Policies and Guidelines processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ITPoliciesandGuidelines Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITPoliciesandGuidelines request payload
+        schema:
+          $ref: '#/definitions/BQITPoliciesandGuidelinesExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ITPoliciesandGuidelines Instance Record
+          schema:
+            $ref: '#/definitions/BQITPoliciesandGuidelinesExchangeOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/itpoliciesandguidelines/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureTechnologyStandardsSpecificationITPoliciesandGuidelinesUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture IT Policies and Guidelines activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ITPoliciesandGuidelines Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITPoliciesandGuidelines request payload
+        schema:
+          $ref: '#/definitions/BQITPoliciesandGuidelinesCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of ITPoliciesandGuidelines Instance Record
+          schema:
+            $ref: '#/definitions/BQITPoliciesandGuidelinesCaptureOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/itpoliciesandguidelines/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestTechnologyStandardsSpecificationITPoliciesandGuidelinesUpdate
+      summary: Invoke a service request action against the ITPoliciesandGuidelines instance
+      description: Request manual intervention or a decision with respect to IT Policies and Guidelines
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ITPoliciesandGuidelines Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITPoliciesandGuidelines request payload
+        schema:
+          $ref: '#/definitions/BQITPoliciesandGuidelinesRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ITPoliciesandGuidelines Instance Record
+          schema:
+            $ref: '#/definitions/BQITPoliciesandGuidelinesRequestOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/itpoliciesandguidelines/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveTechnologyStandardsSpecificationITPoliciesandGuidelines
+      summary: Invoke a reporting action to obtain a ITPoliciesandGuidelines instance related report.
+      description: Retrieve details about any aspect of IT Policies and Guidelines .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ITPoliciesandGuidelines Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQITPoliciesandGuidelinesRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ITPoliciesandGuidelines Instance Record
+          schema:
+            $ref: '#/definitions/BQITPoliciesandGuidelinesRetrieveOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/developmenttoolingandenvironment/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateTechnologyStandardsSpecificationDevelopmentToolingandEnvironment
+      summary: Details of a new DevelopmentToolingandEnvironment instance
+      description: Instantiate a new Development Tooling and Environment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/BQDevelopmentToolingandEnvironmentInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Technology Standards Specification instance
+          schema:
+            $ref: '#/definitions/BQDevelopmentToolingandEnvironmentInitiateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/developmenttoolingandenvironment/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateTechnologyStandardsSpecificationDevelopmentToolingandEnvironment
+      summary: Update to any amendable fields of the DevelopmentToolingandEnvironment instance
+      description: Update details relating to Development Tooling and Environment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DevelopmentToolingandEnvironment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DevelopmentToolingandEnvironment Request Payload
+        schema:
+          $ref: '#/definitions/BQDevelopmentToolingandEnvironmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated DevelopmentToolingandEnvironment Instance
+          schema:
+            $ref: '#/definitions/BQDevelopmentToolingandEnvironmentUpdateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/developmenttoolingandenvironment/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeTechnologyStandardsSpecificationDevelopmentToolingandEnvironmentUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Development Tooling and Environment processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DevelopmentToolingandEnvironment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DevelopmentToolingandEnvironment request payload
+        schema:
+          $ref: '#/definitions/BQDevelopmentToolingandEnvironmentExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of DevelopmentToolingandEnvironment Instance Record
+          schema:
+            $ref: '#/definitions/BQDevelopmentToolingandEnvironmentExchangeOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/developmenttoolingandenvironment/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureTechnologyStandardsSpecificationDevelopmentToolingandEnvironmentUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Development Tooling and Environment activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DevelopmentToolingandEnvironment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DevelopmentToolingandEnvironment request payload
+        schema:
+          $ref: '#/definitions/BQDevelopmentToolingandEnvironmentCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of DevelopmentToolingandEnvironment Instance Record
+          schema:
+            $ref: '#/definitions/BQDevelopmentToolingandEnvironmentCaptureOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/developmenttoolingandenvironment/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestTechnologyStandardsSpecificationDevelopmentToolingandEnvironmentUpdate
+      summary: Invoke a service request action against the DevelopmentToolingandEnvironment instance
+      description: Request manual intervention or a decision with respect to Development Tooling and Environment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DevelopmentToolingandEnvironment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DevelopmentToolingandEnvironment request payload
+        schema:
+          $ref: '#/definitions/BQDevelopmentToolingandEnvironmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of DevelopmentToolingandEnvironment Instance Record
+          schema:
+            $ref: '#/definitions/BQDevelopmentToolingandEnvironmentRequestOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/developmenttoolingandenvironment/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveTechnologyStandardsSpecificationDevelopmentToolingandEnvironment
+      summary: Invoke a reporting action to obtain a DevelopmentToolingandEnvironment instance related report.
+      description: Retrieve details about any aspect of Development Tooling and Environment .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DevelopmentToolingandEnvironment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQDevelopmentToolingandEnvironmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved DevelopmentToolingandEnvironment Instance Record
+          schema:
+            $ref: '#/definitions/BQDevelopmentToolingandEnvironmentRetrieveOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionplatformsandinfrastructure/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateTechnologyStandardsSpecificationProductionPlatformsandInfrastructure
+      summary: Details of a new ProductionPlatformsandInfrastructure instance
+      description: Instantiate a new Production Platforms and Infrastructure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/BQProductionPlatformsandInfrastructureInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Technology Standards Specification instance
+          schema:
+            $ref: '#/definitions/BQProductionPlatformsandInfrastructureInitiateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionplatformsandinfrastructure/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateTechnologyStandardsSpecificationProductionPlatformsandInfrastructure
+      summary: Update to any amendable fields of the ProductionPlatformsandInfrastructure instance
+      description: Update details relating to Production Platforms and Infrastructure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionPlatformsandInfrastructure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductionPlatformsandInfrastructure Request Payload
+        schema:
+          $ref: '#/definitions/BQProductionPlatformsandInfrastructureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ProductionPlatformsandInfrastructure Instance
+          schema:
+            $ref: '#/definitions/BQProductionPlatformsandInfrastructureUpdateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionplatformsandinfrastructure/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeTechnologyStandardsSpecificationProductionPlatformsandInfrastructureUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Production Platforms and Infrastructure processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionPlatformsandInfrastructure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductionPlatformsandInfrastructure request payload
+        schema:
+          $ref: '#/definitions/BQProductionPlatformsandInfrastructureExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ProductionPlatformsandInfrastructure Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionPlatformsandInfrastructureExchangeOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionplatformsandinfrastructure/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureTechnologyStandardsSpecificationProductionPlatformsandInfrastructureUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Production Platforms and Infrastructure activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionPlatformsandInfrastructure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductionPlatformsandInfrastructure request payload
+        schema:
+          $ref: '#/definitions/BQProductionPlatformsandInfrastructureCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of ProductionPlatformsandInfrastructure Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionPlatformsandInfrastructureCaptureOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionplatformsandinfrastructure/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestTechnologyStandardsSpecificationProductionPlatformsandInfrastructureUpdate
+      summary: Invoke a service request action against the ProductionPlatformsandInfrastructure instance
+      description: Request manual intervention or a decision with respect to Production Platforms and Infrastructure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionPlatformsandInfrastructure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductionPlatformsandInfrastructure request payload
+        schema:
+          $ref: '#/definitions/BQProductionPlatformsandInfrastructureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ProductionPlatformsandInfrastructure Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionPlatformsandInfrastructureRequestOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionplatformsandinfrastructure/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveTechnologyStandardsSpecificationProductionPlatformsandInfrastructure
+      summary: Invoke a reporting action to obtain a ProductionPlatformsandInfrastructure instance related report.
+      description: Retrieve details about any aspect of Production Platforms and Infrastructure .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionPlatformsandInfrastructure Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQProductionPlatformsandInfrastructureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ProductionPlatformsandInfrastructure Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionPlatformsandInfrastructureRetrieveOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/producttestinganddeploymentmechanisms/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateTechnologyStandardsSpecificationProductTestingandDeploymentMechanisms
+      summary: Details of a new ProductTestingandDeploymentMechanisms instance
+      description: Instantiate a new Product Testing and Deployment Mechanisms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/BQProductTestingandDeploymentMechanismsInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Technology Standards Specification instance
+          schema:
+            $ref: '#/definitions/BQProductTestingandDeploymentMechanismsInitiateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/producttestinganddeploymentmechanisms/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateTechnologyStandardsSpecificationProductTestingandDeploymentMechanisms
+      summary: Update to any amendable fields of the ProductTestingandDeploymentMechanisms instance
+      description: Update details relating to Product Testing and Deployment Mechanisms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductTestingandDeploymentMechanisms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductTestingandDeploymentMechanisms Request Payload
+        schema:
+          $ref: '#/definitions/BQProductTestingandDeploymentMechanismsUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ProductTestingandDeploymentMechanisms Instance
+          schema:
+            $ref: '#/definitions/BQProductTestingandDeploymentMechanismsUpdateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/producttestinganddeploymentmechanisms/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeTechnologyStandardsSpecificationProductTestingandDeploymentMechanismsUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Product Testing and Deployment Mechanisms processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductTestingandDeploymentMechanisms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductTestingandDeploymentMechanisms request payload
+        schema:
+          $ref: '#/definitions/BQProductTestingandDeploymentMechanismsExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ProductTestingandDeploymentMechanisms Instance Record
+          schema:
+            $ref: '#/definitions/BQProductTestingandDeploymentMechanismsExchangeOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/producttestinganddeploymentmechanisms/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureTechnologyStandardsSpecificationProductTestingandDeploymentMechanismsUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Product Testing and Deployment Mechanisms activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductTestingandDeploymentMechanisms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductTestingandDeploymentMechanisms request payload
+        schema:
+          $ref: '#/definitions/BQProductTestingandDeploymentMechanismsCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of ProductTestingandDeploymentMechanisms Instance Record
+          schema:
+            $ref: '#/definitions/BQProductTestingandDeploymentMechanismsCaptureOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/producttestinganddeploymentmechanisms/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestTechnologyStandardsSpecificationProductTestingandDeploymentMechanismsUpdate
+      summary: Invoke a service request action against the ProductTestingandDeploymentMechanisms instance
+      description: Request manual intervention or a decision with respect to Product Testing and Deployment Mechanisms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductTestingandDeploymentMechanisms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductTestingandDeploymentMechanisms request payload
+        schema:
+          $ref: '#/definitions/BQProductTestingandDeploymentMechanismsRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ProductTestingandDeploymentMechanisms Instance Record
+          schema:
+            $ref: '#/definitions/BQProductTestingandDeploymentMechanismsRequestOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/producttestinganddeploymentmechanisms/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveTechnologyStandardsSpecificationProductTestingandDeploymentMechanisms
+      summary: Invoke a reporting action to obtain a ProductTestingandDeploymentMechanisms instance related report.
+      description: Retrieve details about any aspect of Product Testing and Deployment Mechanisms .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductTestingandDeploymentMechanisms Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQProductTestingandDeploymentMechanismsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ProductTestingandDeploymentMechanisms Instance Record
+          schema:
+            $ref: '#/definitions/BQProductTestingandDeploymentMechanismsRetrieveOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionenvironmentandsupportservices/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateTechnologyStandardsSpecificationProductionEnvironmentandSupportServices
+      summary: Details of a new ProductionEnvironmentandSupportServices instance
+      description: Instantiate a new Production Environment and Support Services
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Technology Standards Specification Request Payload
+        schema:
+          $ref: '#/definitions/BQProductionEnvironmentandSupportServicesInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Technology Standards Specification instance
+          schema:
+            $ref: '#/definitions/BQProductionEnvironmentandSupportServicesInitiateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionenvironmentandsupportservices/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateTechnologyStandardsSpecificationProductionEnvironmentandSupportServices
+      summary: Update to any amendable fields of the ProductionEnvironmentandSupportServices instance
+      description: Update details relating to Production Environment and Support Services
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionEnvironmentandSupportServices Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductionEnvironmentandSupportServices Request Payload
+        schema:
+          $ref: '#/definitions/BQProductionEnvironmentandSupportServicesUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ProductionEnvironmentandSupportServices Instance
+          schema:
+            $ref: '#/definitions/BQProductionEnvironmentandSupportServicesUpdateOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionenvironmentandsupportservices/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeTechnologyStandardsSpecificationProductionEnvironmentandSupportServicesUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Production Environment and Support Services processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionEnvironmentandSupportServices Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductionEnvironmentandSupportServices request payload
+        schema:
+          $ref: '#/definitions/BQProductionEnvironmentandSupportServicesExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ProductionEnvironmentandSupportServices Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionEnvironmentandSupportServicesExchangeOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionenvironmentandsupportservices/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureTechnologyStandardsSpecificationProductionEnvironmentandSupportServicesUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Production Environment and Support Services activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionEnvironmentandSupportServices Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductionEnvironmentandSupportServices request payload
+        schema:
+          $ref: '#/definitions/BQProductionEnvironmentandSupportServicesCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of ProductionEnvironmentandSupportServices Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionEnvironmentandSupportServicesCaptureOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionenvironmentandsupportservices/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestTechnologyStandardsSpecificationProductionEnvironmentandSupportServicesUpdate
+      summary: Invoke a service request action against the ProductionEnvironmentandSupportServices instance
+      description: Request manual intervention or a decision with respect to Production Environment and Support Services
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionEnvironmentandSupportServices Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductionEnvironmentandSupportServices request payload
+        schema:
+          $ref: '#/definitions/BQProductionEnvironmentandSupportServicesRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ProductionEnvironmentandSupportServices Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionEnvironmentandSupportServicesRequestOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/productionenvironmentandsupportservices/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveTechnologyStandardsSpecificationProductionEnvironmentandSupportServices
+      summary: Invoke a reporting action to obtain a ProductionEnvironmentandSupportServices instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProductionEnvironmentandSupportServices Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQProductionEnvironmentandSupportServicesRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ProductionEnvironmentandSupportServices Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionEnvironmentandSupportServicesRetrieveOutputModel'
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveITStandardsAndGuidelinesReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ITStandardsAndGuidelines Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /it-standards-and-guidelines/technology-standards-specification/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveITStandardsAndGuidelinesBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'ProductionEnvironmentandSupportServices',  'ProductionPlatformsandInfrastructure',  'ProductTestingandDeploymentMechanisms',  'DevelopmentToolingandEnvironment',  'ITPoliciesandGuidelines', ]
+  /it-standards-and-guidelines/{sd-reference-id}/technology-standards-specification/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveITStandardsAndGuidelinesBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: IT Standards And Guidelines Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Technology Standards Specification Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- ITPoliciesandGuidelines
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ITPoliciesandGuidelines Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ITPoliciesandGuidelinesID1, ITPoliciesandGuidelinesID2]

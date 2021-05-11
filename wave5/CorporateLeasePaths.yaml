@@ -1,0 +1,801 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Corporate Lease'
+ description: >
+
+    ## Executive Summary:
+
+    The Corporate Lease product provides corporate customers with loans to support leasing activity for property and equipment under an umbrella leasing arrangement
+
+    ## Example of Use:
+
+    A corporate customer establishes a corporate leasing facility with the bank to acquire critical production equipment and facilities under lease
+
+    ## Description:
+
+    The Service Domain provides the financing support to support corporate customers with leasing arrangements for property and equipment. The bank will take a collateral interest in the leased items to underwrite the associated loan(s)
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-corporate-lease/1.0.0
+schemes:
+ - https
+paths:
+  /corporate-lease/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCorporateLease
+      summary: Activate  a SDCorporateLease servicing session
+      description: Activate  a  SDCorporateLease servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCorporateLease Request Payload
+        schema:
+          $ref: '#/definitions/SDCorporateLeaseActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCorporateLeaseActivateOutputModel'
+  /corporate-lease/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCorporateLease
+      summary: Update an active SDCorporateLease session configuration
+      description: Update an active SDCorporateLease session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCorporateLease Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCorporateLease Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCorporateLeaseConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCorporateLeaseConfigureOutputModel'
+  /corporate-lease/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCorporateLease
+      summary: "Capturing feedback against the SDCorporateLease service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCorporateLease service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCorporateLease Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCorporateLease Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCorporateLeaseFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCorporateLeaseFeedbackOutputModel'
+  /corporate-lease/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCorporateLease
+      summary: Analytical views maintained by the SDCorporateLease service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCorporateLease service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCorporateLease Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCorporateLeaseRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCorporateLeaseRetrieveOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCorporateLeaseArrangement
+      summary: Details of a new CorporateLeaseArrangement instance
+      description: Instantiate a new Corporate Lease Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CorporateLeaseArrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateLeaseArrangementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new CorporateLeaseArrangement instance
+          schema:
+            $ref: '#/definitions/CRCorporateLeaseArrangementInitiateOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCorporateLeaseArrangement
+      summary: Update to any amendable fields of the CorporateLeaseArrangement instance
+      description: Update details relating to Corporate Lease Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Lease Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateLeaseArrangementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Corporate Lease Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateLeaseArrangementUpdateOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCorporateLeaseArrangementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Corporate Lease Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Lease Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateLeaseArrangementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Corporate Lease Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateLeaseArrangementControlOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCorporateLeaseArrangementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Corporate Lease Arrangement processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Lease Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateLeaseArrangementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Corporate Lease Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateLeaseArrangementExchangeOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCorporateLeaseArrangementUpdate
+      summary: Invoke an automated execute action against the CorporateLeaseArrangement instance
+      description: Execute an available automated action for Corporate Lease Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Lease Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateLeaseArrangementExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Corporate Lease Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateLeaseArrangementExecuteOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCorporateLeaseArrangementUpdate
+      summary: Invoke a service request action against the CorporateLeaseArrangement instance
+      description: Request manual intervention or a decision with respect to Corporate Lease Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Lease Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCorporateLeaseArrangementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Corporate Lease Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateLeaseArrangementRequestOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCorporateLease
+      summary: Invoke a reporting action to obtain a Corporate Lease Arrangement instance related report
+      description: Retrieve details about any aspect of Corporate Lease Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCorporateLeaseArrangementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Corporate Lease Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCorporateLeaseArrangementRetrieveOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/administer/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCorporateLeaseArrangementAdminister
+      summary: Update to any amendable fields of the Administer instance
+      description: Update details relating to Administer
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Administer Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Administer Request Payload
+        schema:
+          $ref: '#/definitions/BQAdministerUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Administer Instance
+          schema:
+            $ref: '#/definitions/BQAdministerUpdateOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/administer/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCorporateLeaseArrangementAdministerUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Administer
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Administer Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Administer request payload
+        schema:
+          $ref: '#/definitions/BQAdministerControlInputModel'
+      responses:
+        200:
+          description: Successful control of Administer Instance Record
+          schema:
+            $ref: '#/definitions/BQAdministerControlOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/administer/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCorporateLeaseArrangementAdministerUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Administer processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Administer Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Administer request payload
+        schema:
+          $ref: '#/definitions/BQAdministerExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Administer Instance Record
+          schema:
+            $ref: '#/definitions/BQAdministerExchangeOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/administer/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCorporateLeaseArrangementAdministerUpdate
+      summary: Invoke a service request action against the Administer instance
+      description: Request manual intervention or a decision with respect to Administer
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Administer Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Administer request payload
+        schema:
+          $ref: '#/definitions/BQAdministerRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Administer Instance Record
+          schema:
+            $ref: '#/definitions/BQAdministerRequestOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/administer/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCorporateLeaseArrangementAdminister
+      summary: Invoke a reporting action to obtain a Administer instance related report.
+      description: Retrieve details about any aspect of Administer .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Administer Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQAdministerRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Administer Instance Record
+          schema:
+            $ref: '#/definitions/BQAdministerRetrieveOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/fulfill/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCorporateLeaseArrangementFulfill
+      summary: Details of a new Fulfill instance
+      description: Instantiate a new Fulfill
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Corporate Lease Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQFulfillInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Corporate Lease Arrangement instance
+          schema:
+            $ref: '#/definitions/BQFulfillInitiateOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/fulfill/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCorporateLeaseArrangementFulfill
+      summary: Update to any amendable fields of the Fulfill instance
+      description: Update details relating to Fulfill
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfill Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfill Request Payload
+        schema:
+          $ref: '#/definitions/BQFulfillUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Fulfill Instance
+          schema:
+            $ref: '#/definitions/BQFulfillUpdateOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/fulfill/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCorporateLeaseArrangementFulfillUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Fulfill processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfill Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfill request payload
+        schema:
+          $ref: '#/definitions/BQFulfillExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Fulfill Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillExchangeOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/fulfill/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCorporateLeaseArrangementFulfillUpdate
+      summary: Invoke an automated execute action against the Fulfill instance
+      description: Execute an available automated action for Fulfill
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfill Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfill request payload
+        schema:
+          $ref: '#/definitions/BQFulfillExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Fulfill Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillExecuteOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/fulfill/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCorporateLeaseArrangementFulfillUpdate
+      summary: Invoke a service request action against the Fulfill instance
+      description: Request manual intervention or a decision with respect to Fulfill
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfill Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfill request payload
+        schema:
+          $ref: '#/definitions/BQFulfillRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Fulfill Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillRequestOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/fulfill/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCorporateLeaseArrangementFulfill
+      summary: Invoke a reporting action to obtain a Fulfill instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfill Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFulfillRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Fulfill Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillRetrieveOutputModel'
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCorporateLeaseReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CorporateLease Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /corporate-lease/corporate-lease-arrangement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCorporateLeaseBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Administer',  'Fulfill', ]
+  /corporate-lease/{sd-reference-id}/corporate-lease-arrangement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCorporateLeaseBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Corporate Lease Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Corporate Lease Arrangement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Fulfill
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Fulfill Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [FulfillID1, FulfillID2]

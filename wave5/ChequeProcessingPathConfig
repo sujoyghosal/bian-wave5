@@ -1,0 +1,19 @@
+sd=Cheque Processing	Handle the processing of paper cheques, generating financial transactions for processing	A batch of paper cheques captured at a merchant location is processed to initiate settlement processing	This service domains handles the processing of paper checks, performing the necessary checks and extracting the transaction details required to create a payment transaction record stream. This includes MICR number processing and character recognition facilities
+sdpath=cheque-processing
+crpath=chequeprocessing-operating-session
+crr=Chequeprocessing Operating Session Instance
+mcr=Chequeprocessing Operating Session
+bqs=FinancialTransactionInitiation CancelledChequeHandling ChequeExtraction FinancialTransactionInitiation CancelledChequeHandling ChequeExtraction
+CONFIG
+ChequeprocessingOperatingSession	initiate	Instantiate a new Cheque Processing Operating Session		initiateChequeprocessingOperatingSession		#desc
+ChequeprocessingOperatingSession	update	Update details relating to Cheque Processing Operating Session		updateChequeprocessingOperatingSession		#desc
+ChequeprocessingOperatingSession	control	Control the processing of Cheque Processing Operating Session		controlChequeprocessingOperatingSession		#desc
+ChequeprocessingOperatingSession	exchange	Accept, verify, etc. aspects of Cheque Processing Operating Session processing		exchangeChequeprocessingOperatingSession		#desc
+ChequeprocessingOperatingSession	execute	Execute an available automated action for Cheque Processing Operating Session		executeChequeprocessingOperatingSession		#desc
+ChequeprocessingOperatingSession	request	Request manual intervention or a decision with respect to Cheque Processing Operating Session		requestChequeprocessingOperatingSession		#desc
+ChequeprocessingOperatingSession	retrieve	Retrieve details about any aspect of Cheque Processing Operating Session		retrieveChequeprocessingOperatingSession		#desc
+ChequeExtraction	retrieve	Retrieve details about any aspect of Cheque Extraction	retrieveChequeprocessingOperatingSessionChequeExtraction	retrieveChequeprocessingOperatingSessionChequeExtraction		Invoke a reporting action to obtain a Cheque Extraction instance related report
+FinancialTransactionInitiation	exchange	Accept, verify, etc. aspects of Financial Transaction Initiation processing	exchangeChequeprocessingOperatingSessionFinancialTransactionInitiation	exchangeChequeprocessingOperatingSessionFinancialTransactionInitiation		Handle an external exchange (e.g. accept, reject, verify)
+FinancialTransactionInitiation	retrieve	Retrieve details about any aspect of Financial Transaction Initiation	retrieveChequeprocessingOperatingSessionFinancialTransactionInitiation	retrieveChequeprocessingOperatingSessionFinancialTransactionInitiation		Invoke a reporting action to obtain a Financial Transaction Initiation instance related report
+CancelledChequeHandling	update	Update details relating to Cancelled Cheque Handling	updateChequeprocessingOperatingSessionCancelledChequeHandling	updateChequeprocessingOperatingSessionCancelledChequeHandling		Update to any amendable fields of the Cancelled Cheque Handling instance
+CancelledChequeHandling	retrieve		retrieveChequeprocessingOperatingSessionCancelledChequeHandling	retrieveChequeprocessingOperatingSessionCancelledChequeHandling		Invoke a reporting action to obtain a Cancelled Cheque Handling instance related report

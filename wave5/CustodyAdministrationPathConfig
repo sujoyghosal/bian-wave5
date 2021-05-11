@@ -1,0 +1,33 @@
+sd=Custody Administration	A service to provide safe custody services for marketable securities for bank customers	A customer uses the banks custodial services to handle their investment portfolio holdings	Administer the securities scrip (paper and electronic) holdings for a custodial arrangement. This includes administering the physical movements of securities, safe storage, the processing of associated dividends and interest and securities reporting
+sdpath=custody-administration
+crpath=custody-arrangement
+crr=Custody Arrangement Instance
+mcr=Custody Arrangement
+bqs=Fees SecuritiesReporting DividendsandInterest SafeKeeping Settlement
+CONFIG
+CustodyArrangement	initiate	Instantiate a new Custody Arrangement		initiateCustodyArrangement		#desc
+CustodyArrangement	update	Update details relating to Custody Arrangement		updateCustodyArrangement		#desc
+CustodyArrangement	control	Control the processing of Custody Arrangement		controlCustodyArrangement		#desc
+CustodyArrangement	exchange	Accept, verify, etc. aspects of Custody Arrangement processing		exchangeCustodyArrangement		#desc
+CustodyArrangement	execute	Execute an available automated action for Custody Arrangement		executeCustodyArrangement		#desc
+CustodyArrangement	request	Request manual intervention or a decision with respect to Custody Arrangement		requestCustodyArrangement		#desc
+CustodyArrangement	retrieve	Retrieve details about any aspect of Custody Arrangement		retrieveCustodyArrangement		#desc
+SafeKeeping	update	Update details relating to Safe Keeping	updateCustodyArrangementSafeKeeping	updateCustodyArrangementSafeKeeping		Update to any amendable fields of the Safe Keeping instance
+SafeKeeping	control	Control the processing of Safe Keeping	controlCustodyArrangementSafeKeeping	controlCustodyArrangementSafeKeeping		Request specific processing (e.g. suspend, skip, terminate)
+SafeKeeping	request	Request manual intervention or a decision with respect to Safe Keeping	requestCustodyArrangementSafeKeeping	requestCustodyArrangementSafeKeeping		Invoke a service request action against the Safe Keeping instance
+SafeKeeping	retrieve	Retrieve details about any aspect of Safe Keeping	retrieveCustodyArrangementSafeKeeping	retrieveCustodyArrangementSafeKeeping		Invoke a reporting action to obtain a Safe Keeping instance related report
+DividendsandInterest	initiate	Instantiate a new Dividends and Interest	initiateCustodyArrangementDividendsandInterest	initiateCustodyArrangementDividendsandInterest		Details of a new Dividends and Interest instance
+DividendsandInterest	retrieve	Retrieve details about any aspect of Dividends and Interest	retrieveCustodyArrangementDividendsandInterest	retrieveCustodyArrangementDividendsandInterest		Invoke a reporting action to obtain a Dividends and Interest instance related report
+SecuritiesReporting	initiate	Instantiate a new Securities Reporting	initiateCustodyArrangementSecuritiesReporting	initiateCustodyArrangementSecuritiesReporting		Details of a new Securities Reporting instance
+SecuritiesReporting	execute	Execute an available automated action for Securities Reporting	executeCustodyArrangementSecuritiesReporting	executeCustodyArrangementSecuritiesReporting		Invoke an automated execute action against the Securities Reporting instance
+SecuritiesReporting	request	Request manual intervention or a decision with respect to Securities Reporting	requestCustodyArrangementSecuritiesReporting	requestCustodyArrangementSecuritiesReporting		Invoke a service request action against the Securities Reporting instance
+SecuritiesReporting	retrieve	Retrieve details about any aspect of Securities Reporting	retrieveCustodyArrangementSecuritiesReporting	retrieveCustodyArrangementSecuritiesReporting		Invoke a reporting action to obtain a Securities Reporting instance related report
+Fees	initiate	Instantiate a new Fees	initiateCustodyArrangementFees	initiateCustodyArrangementFees		Details of a new Fees instance
+Fees	update	Update details relating to Fees	updateCustodyArrangementFees	updateCustodyArrangementFees		Update to any amendable fields of the Fees instance
+Fees	exchange	Accept, verify, etc. aspects of Fees processing	exchangeCustodyArrangementFees	exchangeCustodyArrangementFees		Handle an external exchange (e.g. accept, reject, verify)
+Fees	retrieve	Retrieve details about any aspect of Fees	retrieveCustodyArrangementFees	retrieveCustodyArrangementFees		Invoke a reporting action to obtain a Fees instance related report
+Settlement	initiate	Instantiate a new Settlement	initiateCustodyArrangementSettlement	initiateCustodyArrangementSettlement		Details of a new Settlement instance
+Settlement	update	Update details relating to Settlement	updateCustodyArrangementSettlement	updateCustodyArrangementSettlement		Update to any amendable fields of the Settlement instance
+Settlement	execute	Execute an available automated action for Settlement	executeCustodyArrangementSettlement	executeCustodyArrangementSettlement		Invoke an automated execute action against the Settlement instance
+Settlement	request	Request manual intervention or a decision with respect to Settlement	requestCustodyArrangementSettlement	requestCustodyArrangementSettlement		Invoke a service request action against the Settlement instance
+Settlement	retrieve		retrieveCustodyArrangementSettlement	retrieveCustodyArrangementSettlement		Invoke a reporting action to obtain a Settlement instance related report

@@ -1,0 +1,94 @@
+CR Sales Specialist Support Administrative Plan Instance Record|Sales Specialist Support Administrative Plan||||||CR Sales Specialist Support Administrative Plan Create|CR Sales Specialist Support Administrative Plan Update|CR Sales Specialist Support Administrative Plan Request|CR Sales Specialist Support Administrative Plan Retrieve|BQ Assignment Create|BQ Assignment Update|BQ Assignment Exchange|BQ Assignment Capture|BQ Assignment Request|BQ Assignment Retrieve|
+Mandatory||Product Expert Sales Support Servicing Session Reference||||Reference to the active servicing session|I|I|I
+Mandatory||Sales Specialist Support Administrative Plan Instance Reference||||Reference to the Sales Specialist Support Administrative Plan instance|O|I|I
+Create||Sales Specialist Support Administrative Plan Create Action Reference||||Reference to an Create service call|O
+Create||Sales Specialist Support Administrative Plan Create Action Record||||The Create service call input and output record|IO
+Create||Sales Specialist Support Administrative Plan Instance Status||||The status of the Sales Specialist Support Administrative Plan instance (e.g. initialised, pending, active)|IO
+||Sales Specialist Support Administrative Plan Instance Record|##|||The administration of providing access to sales specialists to support business development activity. This includes keeping track of available specialists and assigning them to meet requests. |IO|IO|IO|O|IO|||||O
+|||Sales Specialist Support Resource Allocation Service Schedule|||Maintains the allocation records of available sales specialist service resources. This includes all past and future booking commitments|IO|IO|IO|O|IO|||||O
+|||Sales Specialist Support Resource Reference |||Reference to a sales specialist support resource|IO|IO|IO|O|IO|||||O
+|||Sales Specialist Support Resource Record |##||Details about a registered sales specialist support resource|IO|IO|IO|O|IO|||||O
+||||Sales Specialist Support Resource Qualification Profile||Details the qualification, expertise and level of experience of a servicing specialist|O|IO|O|O|O|||||O
+||||Sales Specialist Support Location Reference||Reference to the locations service by the resource where face to face meetings are required|O|IO|O|O|O|||||O
+||||Sales Specialist Support Resource Availability Schedule ||Details the time the resource plans to be and is actually available for assignments|IO|IO|IO|O|IO|||||O
+||||Sales Specialist Support Resource Status||Tracks the current status indicating availability for assignment|IO|IO|IO|O|IO|||||O
+||||Sales Specialist Support Assignment Record||Reference to a consolidated record of assignment instances handled by the support resource. This is used to track utilization and performance|IO|IO|IO|O|IO|||||O
+Update||Sales Specialist Support Administrative Plan Update Action Task Reference||||Reference to an update service call||O
+Update||Sales Specialist Support Administrative Plan Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+REQUEST||Sales Specialist Support Administrative Plan Request Action Task Reference||||Reference to a Sales Specialist Support Administrative Plan instance request service call|||O
+REQUEST||Sales Specialist Support Administrative Plan Request Action Task Record||||The request service call consolidated processing record|||I/O
+REQUEST||Request Record Reference||||Reference to the service request record|||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||I
+REQUEST||Request Response Record||||Details of the request action service response|||O
+RETRIEVE||Sales Specialist Support Administrative Plan Retrieve Action Task Reference||||Reference to a Sales Specialist Support Administrative Plan instance retrieve service call||||O
+RETRIEVE||Sales Specialist Support Administrative Plan Retrieve Action Task Record||||The retrieve service call consolidated processing record||||IO
+RETRIEVE||Sales Specialist Support Administrative Plan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||I
+RETRIEVE||Sales Specialist Support Administrative Plan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||O
+RETRIEVE||Sales Specialist Support Administrative Plan Instance Report Record|##|||A specific Sales Specialist Support Administrative Plan instance formatted report||||IO
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Report Reference|||Reference to the control record instance report||||I
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||O
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Report Type|||The type of external report available||||IO
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||I
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Report|||The external report in any suitable form including selection filters where appropriate||||O
+RETRIEVE||Sales Specialist Support Administrative Plan Instance Analysis|##|||A specific Sales Specialist Support Administrative Plan instance analytical report||||IO
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Analysis Reference|||Reference to the control record instance analysis view||||I
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||O
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Analysis Report Type|||The type of external performance analysis report available||||IO
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||I
+RETRIEVE|||Sales Specialist Support Administrative Plan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||O
+BQ Assignment Instance Record|Assignment||||||
+Mandatory||Sales Specialist Support Administrative Plan Instance Reference||||Reference to the parent Sales Specialist Support Administrative Plan instance|||||I|I|I|I|I
+Mandatory||Assignment Instance Reference||||Reference to the Assignment instance|||||O|I|I|I|I
+Create||Assignment Initiate Action Reference||||Reference to an Initiate service call|||||O
+Create||Assignment Initiate Action Record||||The Initiate service call input and output record|||||I/O
+Create||Assignment Instance Status||||The status of the Assignment instance (e.g. initialised, pending, active)|||||O
+||Assignment Instance Record|##|||The allocation captures a single assignment instance. Note these records are captured in the Assignment Record for the support resource|||||IO|IO||IO|IO|O
+|||Sales Specialist Support Assignment Request Type|||Defines the type of assignment (e.g. in person, phone conference)|||||IO|IO|||IO|O
+|||Sales Specialist Support Assignment Request Record|||Contains details of the product specialist support request, in particular the product or service of interest and the specific topics to be covered|||||I|IO|||IO|O
+|||Sales Specialist Support Session Work Products |||File of any meeting notes, work products and administrative documentation generated during the assignment|||||O|IO|||O|O
+|||Sales Specialist Support Assignment Location|||The location of the customer interaction (e.g. branch, phone, customer site)|||||O|IO||IO|IO|O
+|||Sales Specialist Support Assignment Fee|||Details of time and expenses booked and fees associated with the assignment and if appropriate reference to charges made to the customer|||||IO|IO||IO|IO|O
+|||Sales Specialist Support Assignment Result|||The result of the customer interaction, including any suggested follow-up tasks|||||O|IO||IO|O|O
+|||Date Type|##||Key dates associated with the assignment (e.g. booking date, confirmation date, execution date, follow-up/evaluation date)|||||IO|IO||IO|IO|O
+||||Date||Value of the specific date type|||||IO|IO||IO|IO|O
+Update||Assignment Update Action Task Reference||||Reference to an update service call||||||O
+Update||Assignment Update Action Task Record||||The update service call consolidated processing record||||||I/O
+Update||Assignment Update Action Request||||Details of the update action service request||||||I
+Update||Update Response Record||||Details of the Update action service response||||||O
+Exchange||Assignment Exchange Action Task Reference||||Reference to a Assignment instance exchange service call|||||||O
+Exchange||Assignment Exchange Action Task Record||||The exchange service call consolidated processing record|||||||I/O
+Exchange||Assignment Exchange Action Request|##|||Details of the exchange action service request|||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||I
+Exchange||Assignment Exchange Action Response||||Details of the exchange action service response|||||||O
+Exchange||Assignment Instance Status||||The status of the Assignment instance (e.g. accepted, rejected, verified)|||||||O
+Capture||Assignment Capture Action Task Reference||||Reference to a Assignment instance capture service call||||||||O
+Capture||Assignment Capture Action Task Record||||The capture service call consolidated processing record||||||||I/O
+Capture||Assignment Capture Record Reference||||Reference to the Assignment structured input transaction/record||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||O
+Request||Assignment Request Action Task Reference||||Reference to a Assignment instance request service call|||||||||O
+Request||Assignment Request Action Task Record||||The request service call consolidated processing record|||||||||I/O
+Request||Assignment Request Record Reference||||Reference to the Assignment service request record|||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||O
+Retrieve||Assignment Retrieve Action Task Reference||||Reference to a Assignment instance retrieve service call||||||||||O
+Retrieve||Assignment Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Assignment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Assignment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Assignment Instance Report|##|||A specific Assignment instance formatted report||||||||||IO
+Retrieve|||Assignment Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Assignment Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Assignment Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Assignment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Assignment Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Assignment Instance Analysis|##|||A specific Assignment instance analytical report||||||||||IO
+Retrieve|||Assignment Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Assignment Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Assignment Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Assignment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Assignment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O

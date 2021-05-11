@@ -1,0 +1,841 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Credit Risk Models'
+ description: >
+
+    ## Executive Summary:
+
+    This service domain handles the design and maintenance of a portfolio of credit models that are used in all aspects of customer credit assessments
+
+    ## Example of Use:
+
+    A credit model is used to analyze product activity in order to refine then banks credit assessment of a customer
+
+    ## Description:
+
+    This service domain handles the development, maintenance and continual assessment and refinement of the collection of credit models that are deployed across the bank. This includes individual credit assessments and more complex analyses for merchants and companies/corporations. The models are used to derive credit scoring and support more involved credit analysis/insight development
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-credit-risk-models/1.0.0
+schemes:
+ - https
+paths:
+  /credit-risk-models/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCreditRiskModels
+      summary: Activate  a SDCreditRiskModels servicing session
+      description: Activate  a  SDCreditRiskModels servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCreditRiskModels Request Payload
+        schema:
+          $ref: '#/definitions/SDCreditRiskModelsActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCreditRiskModelsActivateOutputModel'
+  /credit-risk-models/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCreditRiskModels
+      summary: Update an active SDCreditRiskModels session configuration
+      description: Update an active SDCreditRiskModels session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCreditRiskModels Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCreditRiskModels Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCreditRiskModelsConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCreditRiskModelsConfigureOutputModel'
+  /credit-risk-models/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCreditRiskModels
+      summary: "Capturing feedback against the SDCreditRiskModels service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCreditRiskModels service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCreditRiskModels Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCreditRiskModels Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCreditRiskModelsFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCreditRiskModelsFeedbackOutputModel'
+  /credit-risk-models/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCreditRiskModels
+      summary: Analytical views maintained by the SDCreditRiskModels service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCreditRiskModels service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCreditRiskModels Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCreditRiskModelsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCreditRiskModelsRetrieveOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCreditRiskModelSpecification
+      summary: Details of a new CreditRiskModelSpecification instance
+      description: Instantiate a new Credit Risk Model Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CreditRiskModelSpecification Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditRiskModelSpecificationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new CreditRiskModelSpecification instance
+          schema:
+            $ref: '#/definitions/CRCreditRiskModelSpecificationInitiateOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCreditRiskModelSpecification
+      summary: Update to any amendable fields of the CreditRiskModelSpecification instance
+      description: Update details relating to Credit Risk Model Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Risk Model Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditRiskModelSpecificationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Credit Risk Model Specification Instance
+          schema:
+            $ref: '#/definitions/CRCreditRiskModelSpecificationUpdateOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCreditRiskModelSpecificationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Credit Risk Model Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Risk Model Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditRiskModelSpecificationControlInputModel'
+      responses:
+        200:
+          description: Successful control of Credit Risk Model Specification Instance
+          schema:
+            $ref: '#/definitions/CRCreditRiskModelSpecificationControlOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCreditRiskModelSpecificationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Credit Risk Model Specification processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Risk Model Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditRiskModelSpecificationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Credit Risk Model Specification Instance
+          schema:
+            $ref: '#/definitions/CRCreditRiskModelSpecificationExchangeOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureCreditRiskModelSpecificationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Credit Risk Model Specification activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Risk Model Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditRiskModelSpecificationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Credit Risk Model Specification Instance
+          schema:
+            $ref: '#/definitions/CRCreditRiskModelSpecificationCaptureOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCreditRiskModelSpecificationUpdate
+      summary: Invoke a service request action against the CreditRiskModelSpecification instance
+      description: Request manual intervention or a decision with respect to Credit Risk Model Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Credit Risk Model Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCreditRiskModelSpecificationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Credit Risk Model Specification Instance
+          schema:
+            $ref: '#/definitions/CRCreditRiskModelSpecificationRequestOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCreditRiskModels
+      summary: Invoke a reporting action to obtain a Credit Risk Model Specification instance related report
+      description: Retrieve details about any aspect of Credit Risk Model Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCreditRiskModelSpecificationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Credit Risk Model Specification Instance
+          schema:
+            $ref: '#/definitions/CRCreditRiskModelSpecificationRetrieveOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/testing/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCreditRiskModelSpecificationTesting
+      summary: Update to any amendable fields of the Testing instance
+      description: Update details relating to Testing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Testing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Testing Request Payload
+        schema:
+          $ref: '#/definitions/BQTestingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Testing Instance
+          schema:
+            $ref: '#/definitions/BQTestingUpdateOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/testing/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureCreditRiskModelSpecificationTestingUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Testing activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Testing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Testing request payload
+        schema:
+          $ref: '#/definitions/BQTestingCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Testing Instance Record
+          schema:
+            $ref: '#/definitions/BQTestingCaptureOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/testing/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCreditRiskModelSpecificationTestingUpdate
+      summary: Invoke a service request action against the Testing instance
+      description: Request manual intervention or a decision with respect to Testing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Testing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Testing request payload
+        schema:
+          $ref: '#/definitions/BQTestingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Testing Instance Record
+          schema:
+            $ref: '#/definitions/BQTestingRequestOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/testing/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCreditRiskModelSpecificationTesting
+      summary: Invoke a reporting action to obtain a Testing instance related report.
+      description: Retrieve details about any aspect of Testing .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Testing Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTestingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Testing Instance Record
+          schema:
+            $ref: '#/definitions/BQTestingRetrieveOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/production/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCreditRiskModelSpecificationProduction
+      summary: Update to any amendable fields of the Production instance
+      description: Update details relating to Production
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Production Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Production Request Payload
+        schema:
+          $ref: '#/definitions/BQProductionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Production Instance
+          schema:
+            $ref: '#/definitions/BQProductionUpdateOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/production/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureCreditRiskModelSpecificationProductionUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Production activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Production Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Production request payload
+        schema:
+          $ref: '#/definitions/BQProductionCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Production Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionCaptureOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/production/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCreditRiskModelSpecificationProductionUpdate
+      summary: Invoke a service request action against the Production instance
+      description: Request manual intervention or a decision with respect to Production
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Production Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Production request payload
+        schema:
+          $ref: '#/definitions/BQProductionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Production Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionRequestOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/production/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCreditRiskModelSpecificationProduction
+      summary: Invoke a reporting action to obtain a Production instance related report.
+      description: Retrieve details about any aspect of Production .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Production Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQProductionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Production Instance Record
+          schema:
+            $ref: '#/definitions/BQProductionRetrieveOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/functionalrequirements/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCreditRiskModelSpecificationFunctionalRequirements
+      summary: Update to any amendable fields of the FunctionalRequirements instance
+      description: Update details relating to Functional Requirements
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FunctionalRequirements Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FunctionalRequirements Request Payload
+        schema:
+          $ref: '#/definitions/BQFunctionalRequirementsUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated FunctionalRequirements Instance
+          schema:
+            $ref: '#/definitions/BQFunctionalRequirementsUpdateOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/functionalrequirements/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureCreditRiskModelSpecificationFunctionalRequirementsUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Functional Requirements activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FunctionalRequirements Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FunctionalRequirements request payload
+        schema:
+          $ref: '#/definitions/BQFunctionalRequirementsCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of FunctionalRequirements Instance Record
+          schema:
+            $ref: '#/definitions/BQFunctionalRequirementsCaptureOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/functionalrequirements/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCreditRiskModelSpecificationFunctionalRequirementsUpdate
+      summary: Invoke a service request action against the FunctionalRequirements instance
+      description: Request manual intervention or a decision with respect to Functional Requirements
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FunctionalRequirements Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FunctionalRequirements request payload
+        schema:
+          $ref: '#/definitions/BQFunctionalRequirementsRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of FunctionalRequirements Instance Record
+          schema:
+            $ref: '#/definitions/BQFunctionalRequirementsRequestOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/functionalrequirements/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCreditRiskModelSpecificationFunctionalRequirements
+      summary: Invoke a reporting action to obtain a FunctionalRequirements instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FunctionalRequirements Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFunctionalRequirementsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved FunctionalRequirements Instance Record
+          schema:
+            $ref: '#/definitions/BQFunctionalRequirementsRetrieveOutputModel'
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCreditRiskModelsReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CreditRiskModels Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /credit-risk-models/credit-risk-model-specification/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCreditRiskModelsBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Production',  'Testing',  'FunctionalRequirements', ]
+  /credit-risk-models/{sd-reference-id}/credit-risk-model-specification/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCreditRiskModelsBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Credit Risk Models Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Credit Risk Model Specification Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- FunctionalRequirements
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- FunctionalRequirements Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [FunctionalRequirementsID1, FunctionalRequirementsID2]

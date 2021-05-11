@@ -1,0 +1,139 @@
+CR Intellectual Property Asset Administrative Plan Instance Record|Intellectual Property Asset Administrative Plan||||||CR Intellectual Property Asset Administrative Plan Initiate|CR Intellectual Property Asset Administrative Plan Update|CR Intellectual Property Asset Administrative Plan Retrieve|BQ Maintenance Initiate|BQ Maintenance Update|BQ Maintenance Exchange|BQ Maintenance Request|BQ Maintenance Retrieve|BQ Assignment Initiate|BQ Assignment Update|BQ Assignment Exchange|BQ Assignment Request|BQ Assignment Grant|BQ Assignment Retrieve|
+Mandatory||Intellectual Property Portfolio Servicing Session Reference||||Reference to the active servicing session|I|I
+Mandatory||Intellectual Property Asset Administrative Plan Instance Reference||||Reference to the Intellectual Property Asset Administrative Plan instance|O|I
+Initiate||Intellectual Property Asset Administrative Plan Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Intellectual Property Asset Administrative Plan Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Intellectual Property Asset Administrative Plan Instance Status||||The status of the Intellectual Property Asset Administrative Plan instance (e.g. initialised, pending, active)|IO
+||Intellectual Property Asset Administrative Plan Instance Record|##|||The record of scheduled and ad-hoc administrative tasks for capturing and maintaining the intellectual property asset|IO|IO|O|IO|IO|||O|IO|||IO||O
+|||Intellectual Property Asset Reference|||Reference to the intellectual property asset item|I|IO|O|I||||O|I|||I||O
+|||Intellectual Property Asset Record|##||The details maintained for the intellectual property asset|IO|IO|O|IO||||O|IO|||IO||O
+||||Intellectual Property Asset Type||The type of asset (i.e. trade secrets, trademarks, copyrights, and patents.)|IO|IO|O|I||||O|I|||I||O
+||||Intellectual Property Asset Description||Description of significant details and properties of the intellectual property asset|I|IO|O|I||||O|I|||I||O
+||||Intellectual Property Asset Title||Details of title ownership, including assigned usage rights|IO|IO|O|I||||O|I|||I||O
+||||Intellectual Property Asset Jurisdiction||Details of scope of coverage of the intellectual property asset (e.g. geographic coverage, allowed usage type coverage)|IO|IO|O|I||||O|I|||I||O
+||||Intellectual Property Asset Creator||Reference to the original source of the intellectual property|I|IO|O|I||||O|I|||I||O
+||||Intellectual Property Asset Valuation||An indication or description of the commercial value of the intellectual property asset. This can combine a 'replacement' valuation and an licensing/assignment income assessment. The value can be an estimate and include actual realized income|IO|IO|O|I||||O|I|||I||O
+||||Document Directory Entry Instance Reference||Reference to associated specification documents|IO|IO|O|I||||O|I|||I||O
+||||Date Type|##|Key dates and times associated with the intellectual property asset (e.g. creation date, assignment date, valid until/expiry date)|IO|IO|O|IO|IO|||O|IO|||IO||O
+|||||Date|Value of the date type|IO|IO|O|IO|IO|||O|IO|||IO||O
+Update||Intellectual Property Asset Administrative Plan Update Action Task Reference||||Reference to an update service call||O
+Update||Intellectual Property Asset Administrative Plan Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+RETRIEVE||Intellectual Property Asset Administrative Plan Retrieve Action Task Reference||||Reference to a Intellectual Property Asset Administrative Plan instance retrieve service call|||O
+RETRIEVE||Intellectual Property Asset Administrative Plan Retrieve Action Task Record||||The retrieve service call consolidated processing record|||IO
+RETRIEVE||Intellectual Property Asset Administrative Plan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||I
+RETRIEVE||Intellectual Property Asset Administrative Plan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||O
+RETRIEVE||Intellectual Property Asset Administrative Plan Instance Report Record|##|||A specific Intellectual Property Asset Administrative Plan instance formatted report|||IO
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Report Reference|||Reference to the control record instance report|||I
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||O
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Report Type|||The type of external report available|||IO
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||I
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Report|||The external report in any suitable form including selection filters where appropriate|||O
+RETRIEVE||Intellectual Property Asset Administrative Plan Instance Analysis|##|||A specific Intellectual Property Asset Administrative Plan instance analytical report|||IO
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Analysis Reference|||Reference to the control record instance analysis view|||I
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||O
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Analysis Report Type|||The type of external performance analysis report available|||IO
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||I
+RETRIEVE|||Intellectual Property Asset Administrative Plan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||O
+BQ Maintenance Instance Record|Maintenance||||||
+Mandatory||Intellectual Property Asset Administrative Plan Instance Reference||||Reference to the parent Intellectual Property Asset Administrative Plan instance||||I|I|I|I
+Mandatory||Maintenance Instance Reference||||Reference to the Maintenance instance||||O|I|I|I
+Initiate||Maintenance Initiate Action Reference||||Reference to an Initiate service call||||O
+Initiate||Maintenance Initiate Action Record||||The Initiate service call input and output record||||I/O
+Initiate||Maintenance Instance Status||||The status of the Maintenance instance (e.g. initialised, pending, active)||||O
+||Maintenance Instance Record|##|||The routine to ensure and confirm all necessary intellectual property filings and maintenance tasks are performed for the intellectual property asset (e.g. patent fees)||||IO|IO||IO|O||||||
+|||Intellectual Property Asset Maintenance Schedule|||The schedule for maintenance tasks performed and to be performed (e.g. patent renewals)||||IO|IO||IO|O||||||
+|||Intellectual Property Asset Protection Reference |||Reference to the intellectual property protection mechanism employed (e.g. copyright, trademark or patent reference number)||||IO|IO||IO|O||||||
+|||Intellectual Property Asset Registration Reference |||Reference to the registration entity for the intellectual property protection mechanism (e.g. U.S. Patent Office)||||IO|IO||IO|O||||||
+|||Intellectual Property Asset Maintenance Task Record|##||A record of payments and other actions taken to maintain the asset||||IO|IO||IO|O||||||
+||||Intellectual Property Asset Maintenance Task Type||The type of maintenance task (e.g. annual renewal)||||IO|IO||IO|O||||||
+||||Intellectual Property Asset Maintenance Task Description||Description of the task performed||||O|IO||O|O||||||
+||||Intellectual Property Asset Maintenance Task Work Products ||File of consolidated notes, forms and documents for the maintenance task||||O|IO||O|O||||||
+||||Document Directory Entry Instance Reference||Reference to associated documents||||IO|IO||IO|O||||||
+||||Intellectual Property Asset Maintenance Transaction||Details of any payments made as part of maintenance||||IO|IO||IO|O||||||
+Update||Maintenance Update Action Task Reference||||Reference to an update service call|||||O
+Update||Maintenance Update Action Task Record||||The update service call consolidated processing record|||||I/O
+Update||Maintenance Update Action Request||||Details of the update action service request|||||I
+Update||Update Response Record||||Details of the Update action service response|||||O
+Exchange||Maintenance Exchange Action Task Reference||||Reference to a Maintenance instance exchange service call||||||O
+Exchange||Maintenance Exchange Action Task Record||||The exchange service call consolidated processing record||||||I/O
+Exchange||Maintenance Exchange Action Request|##|||Details of the exchange action service request||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||I
+Exchange||Maintenance Exchange Action Response||||Details of the exchange action service response||||||O
+Exchange||Maintenance Instance Status||||The status of the Maintenance instance (e.g. accepted, rejected, verified)||||||O
+Request||Maintenance Request Action Task Reference||||Reference to a Maintenance instance request service call|||||||O
+Request||Maintenance Request Action Task Record||||The request service call consolidated processing record|||||||I/O
+Request||Maintenance Request Record Reference||||Reference to the Maintenance service request record|||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||I
+Request||Request Response Record||||Details of the request action service response|||||||O
+Retrieve||Maintenance Retrieve Action Task Reference||||Reference to a Maintenance instance retrieve service call||||||||O
+Retrieve||Maintenance Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||I/O
+Retrieve||Maintenance Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+Retrieve||Maintenance Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+Retrieve||Maintenance Instance Report|##|||A specific Maintenance instance formatted report||||||||IO
+Retrieve|||Maintenance Instance Report Reference|||Reference to the control record instance report||||||||I
+Retrieve|||Maintenance Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Maintenance Instance Report Type|||The type of external report available||||||||O
+Retrieve|||Maintenance Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||O
+Retrieve|||Maintenance Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+Retrieve||Maintenance Instance Analysis|##|||A specific Maintenance instance analytical report||||||||IO
+Retrieve|||Maintenance Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+Retrieve|||Maintenance Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Maintenance Instance Analysis Report Type|||The type of external performance analysis report available||||||||O
+Retrieve|||Maintenance Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||O
+Retrieve|||Maintenance Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Assignment Instance Record|Assignment||||||
+Mandatory||Intellectual Property Asset Administrative Plan Instance Reference||||Reference to the parent Intellectual Property Asset Administrative Plan instance|||||||||I|I|I|I|I
+Mandatory||Assignment Instance Reference||||Reference to the Assignment instance|||||||||O|I|I|I|I
+Initiate||Assignment Initiate Action Reference||||Reference to an Initiate service call|||||||||O
+Initiate||Assignment Initiate Action Record||||The Initiate service call input and output record|||||||||I/O
+Initiate||Assignment Instance Status||||The status of the Assignment instance (e.g. initialised, pending, active)|||||||||O
+||Assignment Instance Record |##||||||||||||IO|IO||IO||O
+|||Intellectual Property Asset Assignment Schedule|||The schedule capturing assignments for use/deployment of the intellectual property asset. This can include internal use and external licensed agreements|||||||||IO|IO||IO||O
+|||Intellectual Property Asset Assignment Record|##||A record of assignments of the intellectual property both for internal use and for 3rd party licensing|||||||||IO|IO||IO||O
+||||Intellectual Property Asset Assignment Type||The type of assignment (e.g. internal, external license)|||||||||IO|IO||IO||O
+||||Intellectual Property Asset Assignment Description||Description of the assignment (e.g. allowed use, terms)|||||||||IO|IO||IO||O
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||IO|IO||IO||O
+||||Intellectual Property Asset Assignment Transaction||Details of any charges levied and payments received made from licensing|||||||||IO|IO||IO||O
+Update||Assignment Update Action Task Reference||||Reference to an update service call||||||||||O
+Update||Assignment Update Action Task Record||||The update service call consolidated processing record||||||||||I/O
+Update||Assignment Update Action Request||||Details of the update action service request||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||O
+Exchange||Assignment Exchange Action Task Reference||||Reference to a Assignment instance exchange service call|||||||||||O
+Exchange||Assignment Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||I/O
+Exchange||Assignment Exchange Action Request|##|||Details of the exchange action service request|||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||I
+Exchange||Assignment Exchange Action Response||||Details of the exchange action service response|||||||||||O
+Exchange||Assignment Instance Status||||The status of the Assignment instance (e.g. accepted, rejected, verified)|||||||||||O
+Request||Assignment Request Action Task Reference||||Reference to a Assignment instance request service call||||||||||||O
+Request||Assignment Request Action Task Record||||The request service call consolidated processing record||||||||||||I/O
+Request||Assignment Request Record Reference||||Reference to the Assignment service request record||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||O
+Grant||Assignment Grant Action Task Reference||||Reference to a Assignment instance grant service call|||||||||||||O
+Grant||Assignment Grant Action Task Record||||The grant service call consolidated processing record|||||||||||||I/O
+Grant||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||||||||I
+Grant||Grant Request Record Reference||||Reference to the grant request record|||||||||||||O
+Grant||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||||||||I
+Grant|||Grant Request Details|||Details of the permissions requested|||||||||||||I
+Grant||Grant Request Response Record |##|||Details of the grant request action service response|||||||||||||O
+Grant|||Grant Permission Details|||Details of the permissions granted|||||||||||||O
+Retrieve||Assignment Retrieve Action Task Reference||||Reference to a Assignment instance retrieve service call||||||||||||||O
+Retrieve||Assignment Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Assignment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Assignment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Assignment Instance Report|##|||A specific Assignment instance formatted report||||||||||||||IO
+Retrieve|||Assignment Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Assignment Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Assignment Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Assignment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Assignment Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Assignment Instance Analysis|##|||A specific Assignment instance analytical report||||||||||||||IO
+Retrieve|||Assignment Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Assignment Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Assignment Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Assignment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Assignment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O

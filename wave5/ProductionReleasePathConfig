@@ -1,0 +1,21 @@
+sd=Production Release	Maintain and apply production release tests for new and updated systems	A major product or service upgrade is tested prior to deployment	Maintain and apply a comprehensive portfolio of functional and non-functional test evaluation criteria and test utilities for pre-release and in-flight solution quality assurance of production IT systems
+sdpath=production-release
+crpath=it-system-assessment
+crr=IT System Assessment Instance
+mcr=IT System Assessment
+bqs=FunctionalRisk ProductionRisk BusinessRisk OperationalRisk
+CONFIG
+ITSystemAssessment	initiate	Evaluate various risk exposures for a production release		initiateITSystemAssessment		#desc
+ITSystemAssessment	update	Update aspects of an active production release evaluation		updateITSystemAssessment		#desc
+ITSystemAssessment	exchange	Accept, reject, etc aspects of an evaluation		exchangeITSystemAssessment		#desc
+ITSystemAssessment	request	Request manual intervention in an evaluation (e.g. re-work an evaluation)		requestITSystemAssessment		#desc
+ITSystemAssessment	grant	Obtain a permission grant under the production release evaluation		grantITSystemAssessment		#desc
+ITSystemAssessment	retrieve	Retrieve details about a production release evaluation		retrieveITSystemAssessment		#desc
+FunctionalRisk	exchange	Accept, reject, confirm a functional risk assessment	exchangeITSystemAssessmentFunctionalRisk	exchangeITSystemAssessmentFunctionalRisk		Handle an external exchange (e.g. accept, reject, verify)
+FunctionalRisk	retrieve	Retrieve details about a functional risk assessment	retrieveITSystemAssessmentFunctionalRisk	retrieveITSystemAssessmentFunctionalRisk		Invoke a reporting action to obtain a Functional Risk instance related report
+ProductionRisk	exchange	Accept, reject, confirm a production risk assessment	exchangeITSystemAssessmentProductionRisk	exchangeITSystemAssessmentProductionRisk		Handle an external exchange (e.g. accept, reject, verify)
+ProductionRisk	retrieve	Retrieve details about a production risk assessment	retrieveITSystemAssessmentProductionRisk	retrieveITSystemAssessmentProductionRisk		Invoke a reporting action to obtain a Production Risk instance related report
+BusinessRisk	exchange	Accept, reject, confirm a business risk assessment	exchangeITSystemAssessmentBusinessRisk	exchangeITSystemAssessmentBusinessRisk		Handle an external exchange (e.g. accept, reject, verify)
+BusinessRisk	retrieve	Retrieve details about a business risk assessment	retrieveITSystemAssessmentBusinessRisk	retrieveITSystemAssessmentBusinessRisk		Invoke a reporting action to obtain a Business Risk instance related report
+OperationalRisk	exchange	Accept, reject, confirm a operational risk assessment	exchangeITSystemAssessmentOperationalRisk	exchangeITSystemAssessmentOperationalRisk		Handle an external exchange (e.g. accept, reject, verify)
+OperationalRisk	retrieve	Retrieve details about a operational risk assessment	retrieveITSystemAssessmentOperationalRisk	retrieveITSystemAssessmentOperationalRisk		Invoke a reporting action to obtain a Operational Risk instance related report

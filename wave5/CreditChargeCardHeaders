@@ -1,0 +1,35 @@
+SD=Credit Charge Card
+CR= Credit Charge Card Fulfilment Arrangement
+BQs=Interest ServiceFees Billing Repayment CardTransaction IssuedDevice CreditPlan
+"This service domain handles both credit and charge card fulfillment. The main functional difference being the different re-payment and credit handling structures of the two types of card product. Note that unlike a current account, card products are typically fulfilled through a specialist card network that links issuing banks and merchant acquiring banks for authorization, clearing and settlement activities."
+"An established card customer uses their card for a purchase and settles the balance at the monthly payment cycle"
+This service domain orchestrate the scheduled maintenance and transactional activities associated with credit/charge card product fulfillment
+CR - Credit/Charge Card Fulfilment Arrangement				BQ 1 - Interest	BQ 2 - Service Fees			BQ 3 - Billing			BQ 4 - Repayment			BQ 5 - Card Transaction				BQ 6 - Issued Device					BQ 7 - Credit Plan			
+In	Up	Co	Re	Re	Up	Ex	Re	Up	Ex	Re	Up	Ex	Re	Up	Ec	Ex	Re	In	Up	Ec	Rq	Re	In	Up	Rq	Re
+Initiate a new card account 
+Update details about a card account
+Control the processing of a card account (e.g. suspend)
+Retrieve details about a card account
+Retrieve details about interest accrued to an account
+Update a fee transaction applied to a card account
+Apply fees to a card account
+Retrieve details about fees applied to an account
+Update details of a billing transaction (invoice)
+Execute the billing process for a card account
+Retrieve details about a billing process for a card account
+Update a repayment transaction (bill payment)
+Execute a repayment transaction against the card account
+Retrieve detail about a repayment transaction
+Update a card transaction
+Verify, accept etc. a card account transaction
+Execute a card account transaction
+Retrieve details about a card account transaction
+Initiate/enable a type of device for the card account
+Update details about an issued device
+Accept, reject, verify etc. an issued device
+Request the issuance of a device (e.g. a new card) 
+Retrieve details about an issued device
+Initiate a credit plan linked to the card account
+Update details of the credit plan
+Request manual intervention with a credit plan
+Retrieve details about a linked credit plan

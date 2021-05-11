@@ -1,0 +1,39 @@
+SD=Fraud Resolution
+CR= Fraud Resolution
+BQs= Case Analysis  Case Determination  Case Resolution    
+Fraud Resolution||Referenced Information|Description||||||||CR - Fraud Resolution|||||||||BQ 1 - Case Analysis|||||||||BQ 2 - Case Determination|||||||||BQ 3 - Case Resolution||||||||||||||||||||||||||||||||||||||||||||||
+Name (#SD)|Fraud Resolution|NA|NA||||||||1|2||3|||||4|||||||||5||||6|||||7|||||||8||9|||||||||||||||||||||||||||||||||||||REF|Identified Semantic APIs
+Description|Setup and update Fraud Case and handle investigation and resolution steps, which may involve initiating containment actions, obtaining documentation, performing forensic investigation and actions, determining liability, initiating resolution actions such as reversals and financial adjustments, subscribing and publishing to Consortia, determining root cause and initiating corrective/preventive actions. The Fraud Case may be opened by Product/Channel Facility, Fraud Diagnosis or by Customer Case. ||||||||||E|E||E|||||E|I||||||||E|I|||E|||||E|I||||||E||E||||||||||||||||||||||||||||||||||||||Triggering
+Example of Use|Example of use:
+A pattern of possible fraud is highlighted in transaction records that is researched and evidence of fraud discovered. Prosecution/resolution activity is initiated
+|||CR Fraud Resolution Instance Record|Fraud Resolution Instance Record|||||Handles a fraud case from capture through determination and final resolution|IO|I|||||||O|I||||||||O|I||||||||O|I||||||I||O|||||||||||||||||||||||||||||||||||||#|Listed Semantic API Descriptions
+Executive Summary|This service domain sets up and processes a fraud case resulting from fraud behavior that has been detected during production processing|||||Fraud Case Type||||Type of case (e.g. disputed charge, merchant fraud, stolen/fake device)|IO|IO|||||||O|I||||||||O|I||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||1|InCR Initiate a fraud case
+Key Features|Setup fraud resolution case
+Obtain documentation and evaluate
+Determine and assign liability
+Define and initiate resolution activities|||||Product Instance Reference||||Reference to the product/service associated with case|I|IO|||||||O|I||||||||O|I||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||2|UpCR Update details of an active fraud case
+Functional Pattern|Process|||||Customer Reference||||Reference to the customer associated with case if applicable|I|IO|||||||O|I||||||||O|I||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||3|EcCR Accept or reject recommendations coming from fraud resolution
+Asset Type|Fraud Resolution|||||Merchant Reference||||Reference to the merchant associated with case if applicable|I|IO|||||||O|I||||||||O|I||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||4|ReCR Retrieve information about an active fraud case
+Generic Artifact|Procedure|||||Contact Reference||||Customer contact reference if the case was raised during a customer contact|I|IO|||||||O|I||||||||O|I||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||5|ReCR Retrieve information about an active fraud case analysis
+Control Record|Fraud Resolution Procedure|||||Transaction Reference ||||Reference to one or more product transactions associated with the case|I|IO|||||||O|I||||||||O|I||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||6|EcBQ Accept or reject proposed determination
+Behavior Qualifier Type|Workstep|||||Transaction Record||||Record contains all details of the transaction (not itemized)|I|IO|||||||O|I||||||||O|I||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||7|ReCR Retrieve information about an active fraud case determination
+||||||Case Location||||Record of a physical address or electronic venue the fraud was detected|I|IO|||||||O|I||||||||O|I||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||8|RqBQ Request reworking of resolution to a case
+Service Domain Handling||Behavior Qualifiers (#BQ)|Description|||Date||||Specific dates and ties of significance to the case|I|IO|||||||O|I||||||||O|I||||||||O|I||||||||O|||||||||||||||||||||||||||||||||||||9|ReCR Retrieve information about an active fraud case resolution
+VC Business Area|Finance & Risk Management|Case Analysis|Select case type and approach, consolidate and review documentation|||Employee/Business Unit Reference ||||Business unit and or employee reference where the case was raised|I|IO|||||||O|I||||||||O|I||||||||O|I||||||||O||||||||||||||||||||||||||||||||||||||
+VC Business Domain|Credit Risk|Case Determination|Determine and agree/authorize resolution approach,|||Fraud Case Work Products ||||File of consolidated notes, forms and documents for the case|IO|IO|||||||O|I||||||||O|I||||||||O|I||||||||O||||||||||||||||||||||||||||||||||||||
+M Business Area|Regulations and Compliance|Case Resolution|Initiate and track resolution tasks|||Fraud Case Resolution Schedule||||Target and actual dates for case processing/resolution|IO|IO|||||||O|I||||||||O|I||||||||O|I||||||||O||||||||||||||||||||||||||||||||||||||
+M Business Domain|Risk and Compliance|||||Fraud Case Status||||The processing status for the case|IO|IO|||||||O|I||||||||O|I||||||||O|I||||||||O||||||||||||||||||||||||||||||||||||||
+Service Domain #|48|||BQ Case Analysis Instance Record||Case Analysis Instance Record||||Handles the analysis of all collected information and captures the root cause||||||||||IO||||||||O|IO||||||||O|IO||||||||O||||||||||||||||||||||||||||||||||||||
+API Type|Internal||||||Fraud Case Root Cause|||The result of the case analysis||||||||||O||||||||O|I||||||||O|I||||||||O||||||||||||||||||||||||||||||||||||||
+Comment||||BQ Case Determination Instance Record||Case Determination Instance Record||||The determination of the appropriate response to the case|||||||||||||||||||IO||||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+Wave 1|Y||||||Customer Agreement Reference|||Reference to the involved customer's agreement|||||||||||||||||||I||||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+Wave 2|||||||Customer Agreement|||Customer agreement accessed to determine constraints on resolution approach|||||||||||||||||||I||||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+Wave 3|||||||Merchant Agreement Reference|||Reference to the involved merchant's agreement|||||||||||||||||||I||||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+Wave 4|||||||Merchant Agreement|||Merchant agreement accessed to determine constraints on resolution approach|||||||||||||||||||I||||||||O|||||||||||||||||||||||||||||||||||||||||||||||
+|||||||Fraud Case Determination Record|||Record of rules and guidelines applied to determine fraud case resolution|||||||||||||||||||O||||||||O|I||||||||O||||||||||||||||||||||||||||||||||||||
+||||BQ Case Resolution Instance Record||Case Resolution Instance Record||||The tasks required to resolve the case||||||||||||||||||||||||||||IO||||||I||O||||||||||||||||||||||||||||||||||||||
+|||||||Fraud Case Resolution Record |||Record sets out, defines and assigns resolution tasks||||||||||||||||||||||||||||O||||||I||O||||||||||||||||||||||||||||||||||||||
+|||||||Employee/Business Unit Reference |||Employee and or business unit responsible for the resolution||||||||||||||||||||||||||||O||||||I||O||||||||||||||||||||||||||||||||||||||
+|||||||Correspondence Reference|||Reference to all correspondence (e.g. confirmation messages sent to involved parties, includes internal and external legal/law enforcement authorities)||||||||||||||||||||||||||||O||||||I||O||||||||||||||||||||||||||||||||||||||
+|||||||Document Reference |||Reference to legal documents catalogued during the case||||||||||||||||||||||||||||O||||||I||O||||||||||||||||||||||||||||||||||||||
+|||||||Payment Order Reference|||Reference to any financial adjustments that are made during the case||||||||||||||||||||||||||||O||||||I||O||||||||||||||||||||||||||||||||||||||

@@ -1,0 +1,332 @@
+CR Technology Standards Specification Instance Record|Technology Standards Specification||||||CR Technology Standards Specification Initiate|CR Technology Standards Specification Update|CR Technology Standards Specification Control|CR Technology Standards Specification Exchange|CR Technology Standards Specification Capture|CR Technology Standards Specification Request|CR Technology Standards Specification Retrieve|BQ ITPolicies and Guidelines Initiate|BQ ITPolicies and Guidelines Update|BQ ITPolicies and Guidelines Exchange|BQ ITPolicies and Guidelines Capture|BQ ITPolicies and Guidelines Request|BQ ITPolicies and Guidelines Retrieve|BQ Development Tooling and Environment Initiate|BQ Development Tooling and Environment Update|BQ Development Tooling and Environment Exchange|BQ Development Tooling and Environment Capture|BQ Development Tooling and Environment Request|BQ Development Tooling and Environment Retrieve|BQ Production Platforms and Infrastructure Initiate|BQ Production Platforms and Infrastructure Update|BQ Production Platforms and Infrastructure Exchange|BQ Production Platforms and Infrastructure Capture|BQ Production Platforms and Infrastructure Request|BQ Production Platforms and Infrastructure Retrieve|BQ Product Testing and Deployment Mechanisms Initiate|BQ Product Testing and Deployment Mechanisms Update|BQ Product Testing and Deployment Mechanisms Exchange|BQ Product Testing and Deployment Mechanisms Capture|BQ Product Testing and Deployment Mechanisms Request|BQ Product Testing and Deployment Mechanisms Retrieve|BQ Production Environment and Support Services Initiate|BQ Production Environment and Support Services Update|BQ Production Environment and Support Services Exchange|BQ Production Environment and Support Services Capture|BQ Production Environment and Support Services Request|BQ Production Environment and Support Services Retrieve|
+Mandatory||IT Standards And Guidelines Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Technology Standards Specification Instance Reference||||Reference to the Technology Standards Specification instance|O|I|I|I|I|I
+Initiate||Technology Standards Specification Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Technology Standards Specification Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Technology Standards Specification Instance Status||||The status of the Technology Standards Specification instance (e.g. initialised, pending, active)|IO
+||Technology Standards Specification Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within IT Standards and Guidelines.
+Example: Create and maintain product designs and analytical models.|||||||||||||||||||||||||||||||||||||
+||Technology Standards Specification Parameter Type||||A Classification value that distinguishes between designs according to the type of business services and/or aspect within Technology Standards Specification . Eg Product Design, Campaign Design, Risk Model Design etc. |IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||||||||
+||Technology Standards Specification Selected Option||||A selected optional business service as subject matter of design|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||||||||
+||Technology Standards Specification Description||||Documentation of Technology Standards Specification|I|I|I|I|I|I|O||||||||||||||||||||||||||||||
+||Technology Standards Specification Version||||The version of Technology Standards Specification|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||||||||
+||Technology Standards Specification Status||||The status of Technology Standards Specification|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||||||||
+||Technology Standards Specification Usage Log||||Reference to the log of (usage) ativities/events of Technology Standards Specification|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||||||||
+||Technology Standards Specification Feedback||||Information about reactions to a design which is used as a basis for improvement for the Technology Standards Specification.|IO|IO|IO|IO|IO|IO|O||||||||||||||||||||||||||||||
+||Technology Standards Specification ServiceProvider Reference||||Reference to the party who has provided Technology Standards Specification|I|I|I|I|I|I|O||||||||||||||||||||||||||||||
+Update||Technology Standards Specification Update Action Task Reference||||Reference to an update service call||O
+Update||Technology Standards Specification Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Technology Standards Specification Control Action Task Reference||||Reference to a Technology Standards Specification instance control processing service call|||O
+CONTROL||Technology Standards Specification Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Technology Standards Specification Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Technology Standards Specification Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Technology Standards Specification Exchange Action Task Reference||||Reference to a Technology Standards Specification instance exchange service call||||O
+EXCHANGE||Technology Standards Specification Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Technology Standards Specification Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Technology Standards Specification Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Technology Standards Specification Capture Action Task Reference||||Reference to a Technology Standards Specification instance capture service call|||||O
+CAPTURE||Technology Standards Specification Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Technology Standards Specification Request Action Task Reference||||Reference to a Technology Standards Specification instance request service call||||||O
+REQUEST||Technology Standards Specification Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Technology Standards Specification Retrieve Action Task Reference||||Reference to a Technology Standards Specification instance retrieve service call|||||||O
+RETRIEVE||Technology Standards Specification Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Technology Standards Specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Technology Standards Specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Technology Standards Specification Instance Report Record|##|||A specific Technology Standards Specification instance formatted report|||||||IO
+RETRIEVE|||Technology Standards Specification Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Technology Standards Specification Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Technology Standards Specification Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Technology Standards Specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Technology Standards Specification Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Technology Standards Specification Instance Analysis|##|||A specific Technology Standards Specification instance analytical report|||||||IO
+RETRIEVE|||Technology Standards Specification Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Technology Standards Specification Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Technology Standards Specification Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Technology Standards Specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Technology Standards Specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ ITPolicies and Guidelines Instance Record|ITPolicies and Guidelines||||||
+Mandatory||Technology Standards Specification Instance Reference||||Reference to the parent Technology Standards Specification instance||||||||I|I|I|I|I
+Mandatory||ITPolicies and Guidelines Instance Reference||||Reference to the ITPolicies and Guidelines instance||||||||O|I|I|I|I
+Initiate||ITPolicies and Guidelines Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||ITPolicies and Guidelines Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||ITPolicies and Guidelines Instance Status||||The status of the ITPolicies and Guidelines instance (e.g. initialised, pending, active)||||||||O
+||ITPolicies and Guidelines Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within IT Standards and Guidelines.
+|||||||||||||||||||||||||||||||||||||
+||ITPolicies and Guidelines Preconditions||||The required status/situation before the specification aspect can be defined||||||||IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||ITPolicies and Guidelines Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||ITPolicies and Guidelines Version Number||||The current version, and version history as appropriate for the specification aspect||||||||IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||IT Policies and Guidelines||||The Technology Standards Specification specific Business Service||||||||IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||IT Policies and Guidelines Service Type||||Reference to the specific business service type||||||||IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||IT Policies and Guidelines Service Description||||Description of the performed business service||||||||IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||IT Policies and Guidelines Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||IT Policies and Guidelines Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+||IT Policies and Guidelines Service Name||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||||||||
+Update||ITPolicies and Guidelines Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||ITPolicies and Guidelines Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||ITPolicies and Guidelines Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Exchange||ITPolicies and Guidelines Exchange Action Task Reference||||Reference to a ITPolicies and Guidelines instance exchange service call||||||||||O
+Exchange||ITPolicies and Guidelines Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||ITPolicies and Guidelines Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||ITPolicies and Guidelines Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||ITPolicies and Guidelines Instance Status||||The status of the ITPolicies and Guidelines instance (e.g. accepted, rejected, verified)||||||||||O
+Capture||ITPolicies and Guidelines Capture Action Task Reference||||Reference to a ITPolicies and Guidelines instance capture service call|||||||||||O
+Capture||ITPolicies and Guidelines Capture Action Task Record||||The capture service call consolidated processing record|||||||||||I/O
+Capture||ITPolicies and Guidelines Capture Record Reference||||Reference to the ITPolicies and Guidelines structured input transaction/record|||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||O
+Request||ITPolicies and Guidelines Request Action Task Reference||||Reference to a ITPolicies and Guidelines instance request service call||||||||||||O
+Request||ITPolicies and Guidelines Request Action Task Record||||The request service call consolidated processing record||||||||||||I/O
+Request||ITPolicies and Guidelines Request Record Reference||||Reference to the ITPolicies and Guidelines service request record||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||O
+Retrieve||ITPolicies and Guidelines Retrieve Action Task Reference||||Reference to a ITPolicies and Guidelines instance retrieve service call|||||||||||||O
+Retrieve||ITPolicies and Guidelines Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||ITPolicies and Guidelines Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||ITPolicies and Guidelines Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||ITPolicies and Guidelines Instance Report|##|||A specific ITPolicies and Guidelines instance formatted report|||||||||||||IO
+Retrieve|||ITPolicies and Guidelines Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||ITPolicies and Guidelines Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||ITPolicies and Guidelines Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||ITPolicies and Guidelines Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||ITPolicies and Guidelines Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||ITPolicies and Guidelines Instance Analysis|##|||A specific ITPolicies and Guidelines instance analytical report|||||||||||||IO
+Retrieve|||ITPolicies and Guidelines Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||ITPolicies and Guidelines Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||ITPolicies and Guidelines Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||ITPolicies and Guidelines Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||ITPolicies and Guidelines Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O
+BQ Development Tooling and Environment Instance Record|Development Tooling and Environment||||||
+Mandatory||Technology Standards Specification Instance Reference||||Reference to the parent Technology Standards Specification instance||||||||||||||I|I|I|I|I
+Mandatory||Development Tooling and Environment Instance Reference||||Reference to the Development Tooling and Environment instance||||||||||||||O|I|I|I|I
+Initiate||Development Tooling and Environment Initiate Action Reference||||Reference to an Initiate service call||||||||||||||O
+Initiate||Development Tooling and Environment Initiate Action Record||||The Initiate service call input and output record||||||||||||||I/O
+Initiate||Development Tooling and Environment Instance Status||||The status of the Development Tooling and Environment instance (e.g. initialised, pending, active)||||||||||||||O
+||Development Tooling and Environment Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within IT Standards and Guidelines.
+|||||||||||||||||||||||||||||||||||||
+||Development Tooling and Environment Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||
+||Development Tooling and Environment Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||
+||Development Tooling and Environment Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||
+||Development Tooling and Environment||||The Technology Standards Specification specific Business Service||||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||
+||Development Tooling and Environment Service Type||||Reference to the specific business service type||||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||
+||Development Tooling and Environment Service Description||||Description of the performed business service||||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||
+||Development Tooling and Environment Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||
+||Development Tooling and Environment Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||
+||Development Tooling and Environment Service Name||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||||||||
+Update||Development Tooling and Environment Update Action Task Reference||||Reference to an update service call|||||||||||||||O
+Update||Development Tooling and Environment Update Action Task Record||||The update service call consolidated processing record|||||||||||||||I/O
+Update||Development Tooling and Environment Update Action Request||||Details of the update action service request|||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||O
+Exchange||Development Tooling and Environment Exchange Action Task Reference||||Reference to a Development Tooling and Environment instance exchange service call||||||||||||||||O
+Exchange||Development Tooling and Environment Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||I/O
+Exchange||Development Tooling and Environment Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||I
+Exchange||Development Tooling and Environment Exchange Action Response||||Details of the exchange action service response||||||||||||||||O
+Exchange||Development Tooling and Environment Instance Status||||The status of the Development Tooling and Environment instance (e.g. accepted, rejected, verified)||||||||||||||||O
+Capture||Development Tooling and Environment Capture Action Task Reference||||Reference to a Development Tooling and Environment instance capture service call|||||||||||||||||O
+Capture||Development Tooling and Environment Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||I/O
+Capture||Development Tooling and Environment Capture Record Reference||||Reference to the Development Tooling and Environment structured input transaction/record|||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||O
+Request||Development Tooling and Environment Request Action Task Reference||||Reference to a Development Tooling and Environment instance request service call||||||||||||||||||O
+Request||Development Tooling and Environment Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||I/O
+Request||Development Tooling and Environment Request Record Reference||||Reference to the Development Tooling and Environment service request record||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||O
+Retrieve||Development Tooling and Environment Retrieve Action Task Reference||||Reference to a Development Tooling and Environment instance retrieve service call|||||||||||||||||||O
+Retrieve||Development Tooling and Environment Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Development Tooling and Environment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Development Tooling and Environment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Development Tooling and Environment Instance Report|##|||A specific Development Tooling and Environment instance formatted report|||||||||||||||||||IO
+Retrieve|||Development Tooling and Environment Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Development Tooling and Environment Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Development Tooling and Environment Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Development Tooling and Environment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Development Tooling and Environment Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Development Tooling and Environment Instance Analysis|##|||A specific Development Tooling and Environment instance analytical report|||||||||||||||||||IO
+Retrieve|||Development Tooling and Environment Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Development Tooling and Environment Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Development Tooling and Environment Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Development Tooling and Environment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Development Tooling and Environment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+BQ Production Platforms and Infrastructure Instance Record|Production Platforms and Infrastructure||||||
+Mandatory||Technology Standards Specification Instance Reference||||Reference to the parent Technology Standards Specification instance||||||||||||||||||||I|I|I|I|I
+Mandatory||Production Platforms and Infrastructure Instance Reference||||Reference to the Production Platforms and Infrastructure instance||||||||||||||||||||O|I|I|I|I
+Initiate||Production Platforms and Infrastructure Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||O
+Initiate||Production Platforms and Infrastructure Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||I/O
+Initiate||Production Platforms and Infrastructure Instance Status||||The status of the Production Platforms and Infrastructure instance (e.g. initialised, pending, active)||||||||||||||||||||O
+||Production Platforms and Infrastructure Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within IT Standards and Guidelines.
+|||||||||||||||||||||||||||||||||||||
+||Production Platforms and Infrastructure Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||
+||Production Platforms and Infrastructure Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||
+||Production Platforms and Infrastructure Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||
+||Production Platforms and Infrastructure||||The Technology Standards Specification specific Business Service||||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||
+||Production Platforms and Infrastructure Service Type||||Reference to the specific business service type||||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||
+||Production Platforms and Infrastructure Service Description||||Description of the performed business service||||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||
+||Production Platforms and Infrastructure Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||
+||Production Platforms and Infrastructure Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||
+||Production Platforms and Infrastructure Service Name||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||||||||
+Update||Production Platforms and Infrastructure Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||O
+Update||Production Platforms and Infrastructure Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||I/O
+Update||Production Platforms and Infrastructure Update Action Request||||Details of the update action service request|||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||O
+Exchange||Production Platforms and Infrastructure Exchange Action Task Reference||||Reference to a Production Platforms and Infrastructure instance exchange service call||||||||||||||||||||||O
+Exchange||Production Platforms and Infrastructure Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||I/O
+Exchange||Production Platforms and Infrastructure Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||I
+Exchange||Production Platforms and Infrastructure Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||O
+Exchange||Production Platforms and Infrastructure Instance Status||||The status of the Production Platforms and Infrastructure instance (e.g. accepted, rejected, verified)||||||||||||||||||||||O
+Capture||Production Platforms and Infrastructure Capture Action Task Reference||||Reference to a Production Platforms and Infrastructure instance capture service call|||||||||||||||||||||||O
+Capture||Production Platforms and Infrastructure Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||||||I/O
+Capture||Production Platforms and Infrastructure Capture Record Reference||||Reference to the Production Platforms and Infrastructure structured input transaction/record|||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||||||O
+Request||Production Platforms and Infrastructure Request Action Task Reference||||Reference to a Production Platforms and Infrastructure instance request service call||||||||||||||||||||||||O
+Request||Production Platforms and Infrastructure Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||||I/O
+Request||Production Platforms and Infrastructure Request Record Reference||||Reference to the Production Platforms and Infrastructure service request record||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||||O
+Retrieve||Production Platforms and Infrastructure Retrieve Action Task Reference||||Reference to a Production Platforms and Infrastructure instance retrieve service call|||||||||||||||||||||||||O
+Retrieve||Production Platforms and Infrastructure Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||I/O
+Retrieve||Production Platforms and Infrastructure Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||I
+Retrieve||Production Platforms and Infrastructure Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||O
+Retrieve||Production Platforms and Infrastructure Instance Report|##|||A specific Production Platforms and Infrastructure instance formatted report|||||||||||||||||||||||||IO
+Retrieve|||Production Platforms and Infrastructure Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||I
+Retrieve|||Production Platforms and Infrastructure Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||O
+Retrieve|||Production Platforms and Infrastructure Instance Report Type|||The type of external report available|||||||||||||||||||||||||O
+Retrieve|||Production Platforms and Infrastructure Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||O
+Retrieve|||Production Platforms and Infrastructure Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||O
+Retrieve||Production Platforms and Infrastructure Instance Analysis|##|||A specific Production Platforms and Infrastructure instance analytical report|||||||||||||||||||||||||IO
+Retrieve|||Production Platforms and Infrastructure Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||I
+Retrieve|||Production Platforms and Infrastructure Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||O
+Retrieve|||Production Platforms and Infrastructure Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||O
+Retrieve|||Production Platforms and Infrastructure Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||O
+Retrieve|||Production Platforms and Infrastructure Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||O
+BQ Product Testing and Deployment Mechanisms Instance Record|Product Testing and Deployment Mechanisms||||||
+Mandatory||Technology Standards Specification Instance Reference||||Reference to the parent Technology Standards Specification instance||||||||||||||||||||||||||I|I|I|I|I
+Mandatory||Product Testing and Deployment Mechanisms Instance Reference||||Reference to the Product Testing and Deployment Mechanisms instance||||||||||||||||||||||||||O|I|I|I|I
+Initiate||Product Testing and Deployment Mechanisms Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||||||||O
+Initiate||Product Testing and Deployment Mechanisms Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||||||||I/O
+Initiate||Product Testing and Deployment Mechanisms Instance Status||||The status of the Product Testing and Deployment Mechanisms instance (e.g. initialised, pending, active)||||||||||||||||||||||||||O
+||Product Testing and Deployment Mechanisms Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within IT Standards and Guidelines.
+|||||||||||||||||||||||||||||||||||||
+||Product Testing and Deployment Mechanisms Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||
+||Product Testing and Deployment Mechanisms Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||
+||Product Testing and Deployment Mechanisms Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||
+||Product Testing and Deployment Mechanisms||||The Technology Standards Specification specific Business Service||||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||
+||Product Testing and Deployment Mechanisms Service Type||||Reference to the specific business service type||||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||
+||Product Testing and Deployment Mechanisms Service Description||||Description of the performed business service||||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||
+||Product Testing and Deployment Mechanisms Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||
+||Product Testing and Deployment Mechanisms Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||
+||Product Testing and Deployment Mechanisms Service Name||||||||||||||||||||||||||||||IO|IO|IO|IO|IO|O||||||
+Update||Product Testing and Deployment Mechanisms Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||||O
+Update||Product Testing and Deployment Mechanisms Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||||I/O
+Update||Product Testing and Deployment Mechanisms Update Action Request||||Details of the update action service request|||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||||O
+Exchange||Product Testing and Deployment Mechanisms Exchange Action Task Reference||||Reference to a Product Testing and Deployment Mechanisms instance exchange service call||||||||||||||||||||||||||||O
+Exchange||Product Testing and Deployment Mechanisms Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||||||||I/O
+Exchange||Product Testing and Deployment Mechanisms Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||||||||I
+Exchange||Product Testing and Deployment Mechanisms Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||||||||O
+Exchange||Product Testing and Deployment Mechanisms Instance Status||||The status of the Product Testing and Deployment Mechanisms instance (e.g. accepted, rejected, verified)||||||||||||||||||||||||||||O
+Capture||Product Testing and Deployment Mechanisms Capture Action Task Reference||||Reference to a Product Testing and Deployment Mechanisms instance capture service call|||||||||||||||||||||||||||||O
+Capture||Product Testing and Deployment Mechanisms Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||||||||||||I/O
+Capture||Product Testing and Deployment Mechanisms Capture Record Reference||||Reference to the Product Testing and Deployment Mechanisms structured input transaction/record|||||||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||||||||||||O
+Request||Product Testing and Deployment Mechanisms Request Action Task Reference||||Reference to a Product Testing and Deployment Mechanisms instance request service call||||||||||||||||||||||||||||||O
+Request||Product Testing and Deployment Mechanisms Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||||||||||I/O
+Request||Product Testing and Deployment Mechanisms Request Record Reference||||Reference to the Product Testing and Deployment Mechanisms service request record||||||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||||||||||O
+Retrieve||Product Testing and Deployment Mechanisms Retrieve Action Task Reference||||Reference to a Product Testing and Deployment Mechanisms instance retrieve service call|||||||||||||||||||||||||||||||O
+Retrieve||Product Testing and Deployment Mechanisms Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||||||I/O
+Retrieve||Product Testing and Deployment Mechanisms Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||||||I
+Retrieve||Product Testing and Deployment Mechanisms Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||||||O
+Retrieve||Product Testing and Deployment Mechanisms Instance Report|##|||A specific Product Testing and Deployment Mechanisms instance formatted report|||||||||||||||||||||||||||||||IO
+Retrieve|||Product Testing and Deployment Mechanisms Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||||||I
+Retrieve|||Product Testing and Deployment Mechanisms Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||O
+Retrieve|||Product Testing and Deployment Mechanisms Instance Report Type|||The type of external report available|||||||||||||||||||||||||||||||O
+Retrieve|||Product Testing and Deployment Mechanisms Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||||||O
+Retrieve|||Product Testing and Deployment Mechanisms Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||O
+Retrieve||Product Testing and Deployment Mechanisms Instance Analysis|##|||A specific Product Testing and Deployment Mechanisms instance analytical report|||||||||||||||||||||||||||||||IO
+Retrieve|||Product Testing and Deployment Mechanisms Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||||||I
+Retrieve|||Product Testing and Deployment Mechanisms Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||O
+Retrieve|||Product Testing and Deployment Mechanisms Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||||||O
+Retrieve|||Product Testing and Deployment Mechanisms Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||||||O
+Retrieve|||Product Testing and Deployment Mechanisms Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||O
+BQ Production Environment and Support Services Instance Record|Production Environment and Support Services||||||
+Mandatory||Technology Standards Specification Instance Reference||||Reference to the parent Technology Standards Specification instance||||||||||||||||||||||||||||||||I|I|I|I|I
+Mandatory||Production Environment and Support Services Instance Reference||||Reference to the Production Environment and Support Services instance||||||||||||||||||||||||||||||||O|I|I|I|I
+Initiate||Production Environment and Support Services Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||||||||||||||O
+Initiate||Production Environment and Support Services Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||||||||||||||I/O
+Initiate||Production Environment and Support Services Instance Status||||The status of the Production Environment and Support Services instance (e.g. initialised, pending, active)||||||||||||||||||||||||||||||||O
+||Production Environment and Support Services Instance Record||||Create and maintain a design for a procedure, product/service model or other such entity within IT Standards and Guidelines.
+|||||||||||||||||||||||||||||||||||||
+||Production Environment and Support Services Preconditions||||The required status/situation before the specification aspect can be defined||||||||||||||||||||||||||||||||IO|IO|IO|IO|IO|O
+||Production Environment and Support Services Specification Schedule||||The schedule and timing of the definition and update/revisions of the specification aspect||||||||||||||||||||||||||||||||IO|IO|IO|IO|IO|O
+||Production Environment and Support Services Version Number||||The current version, and version history as appropriate for the specification aspect||||||||||||||||||||||||||||||||IO|IO|IO|IO|IO|O
+||Production Environment and Support Services||||The Technology Standards Specification specific Business Service||||||||||||||||||||||||||||||||IO|IO|IO|IO|IO|O
+||Production Environment and Support Services Service Type||||Reference to the specific business service type||||||||||||||||||||||||||||||||IO|IO|IO|IO|IO|O
+||Production Environment and Support Services Service Description||||Description of the performed business service||||||||||||||||||||||||||||||||IO|IO|IO|IO|IO|O
+||Production Environment and Support Services Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||||||||||||||IO|IO|IO|IO|IO|O
+||Production Environment and Support Services Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||||||||||||||IO|IO|IO|IO|IO|O
+Update||Production Environment and Support Services Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||||||||||O
+Update||Production Environment and Support Services Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||||||||||I/O
+Update||Production Environment and Support Services Update Action Request||||Details of the update action service request|||||||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||||||||||O
+Exchange||Production Environment and Support Services Exchange Action Task Reference||||Reference to a Production Environment and Support Services instance exchange service call||||||||||||||||||||||||||||||||||O
+Exchange||Production Environment and Support Services Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||||||||||||||I/O
+Exchange||Production Environment and Support Services Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||||||||||||||I
+Exchange||Production Environment and Support Services Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||||||||||||||O
+Exchange||Production Environment and Support Services Instance Status||||The status of the Production Environment and Support Services instance (e.g. accepted, rejected, verified)||||||||||||||||||||||||||||||||||O
+Capture||Production Environment and Support Services Capture Action Task Reference||||Reference to a Production Environment and Support Services instance capture service call|||||||||||||||||||||||||||||||||||O
+Capture||Production Environment and Support Services Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||||||||||||||||||I/O
+Capture||Production Environment and Support Services Capture Record Reference||||Reference to the Production Environment and Support Services structured input transaction/record|||||||||||||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||||||||||||||||||O
+Request||Production Environment and Support Services Request Action Task Reference||||Reference to a Production Environment and Support Services instance request service call||||||||||||||||||||||||||||||||||||O
+Request||Production Environment and Support Services Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||||||||||||||||I/O
+Request||Production Environment and Support Services Request Record Reference||||Reference to the Production Environment and Support Services service request record||||||||||||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||||||||||||||||O
+Retrieve||Production Environment and Support Services Retrieve Action Task Reference||||Reference to a Production Environment and Support Services instance retrieve service call|||||||||||||||||||||||||||||||||||||O
+Retrieve||Production Environment and Support Services Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||||||||||||I/O
+Retrieve||Production Environment and Support Services Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||||||||||||I
+Retrieve||Production Environment and Support Services Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||||||||||||O
+Retrieve||Production Environment and Support Services Instance Report|##|||A specific Production Environment and Support Services instance formatted report|||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Production Environment and Support Services Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||||||||||||I
+Retrieve|||Production Environment and Support Services Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Environment and Support Services Instance Report Type|||The type of external report available|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Environment and Support Services Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Environment and Support Services Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||||||||O
+Retrieve||Production Environment and Support Services Instance Analysis|##|||A specific Production Environment and Support Services instance analytical report|||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Production Environment and Support Services Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||||||||||||I
+Retrieve|||Production Environment and Support Services Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Environment and Support Services Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Environment and Support Services Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Production Environment and Support Services Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||||||||O

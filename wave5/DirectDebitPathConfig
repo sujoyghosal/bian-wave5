@@ -1,0 +1,27 @@
+sd=Direct Debit	Fulfils a direct debit agreement. Handles the creditor side of direct debits.	A corporate customer submits a batch of direct debit instructions for customers with accounts held at the bank	This service domain processes the creditor side of direct debit processing. Typically a creditor will submit a batch of direct debit requests. The process checks the required service mandates are in place and initiates the payment processing. It tracks payment and reports on completion or other processing issues that might arise (such as insufficient funds available).
+sdpath=direct-debit
+crpath=direct-debit-arrangement
+crr=Direct Debit Arrangement Instance
+mcr=Direct Debit Arrangement
+bqs=Reporting PaymentTracking PaymentInitiation FundsAvailableCheck VerifyMandate
+CONFIG
+DirectDebitArrangement	initiate	Instantiate a new Direct Debit Arrangement		initiateDirectDebitArrangement		#desc
+DirectDebitArrangement	update	Update details relating to Direct Debit Arrangement		updateDirectDebitArrangement		#desc
+DirectDebitArrangement	control	Control the processing of Direct Debit Arrangement		controlDirectDebitArrangement		#desc
+DirectDebitArrangement	exchange	Accept, verify, etc. aspects of Direct Debit Arrangement processing		exchangeDirectDebitArrangement		#desc
+DirectDebitArrangement	execute	Execute an available automated action for Direct Debit Arrangement		executeDirectDebitArrangement		#desc
+DirectDebitArrangement	request	Request manual intervention or a decision with respect to Direct Debit Arrangement		requestDirectDebitArrangement		#desc
+DirectDebitArrangement	retrieve	Retrieve details about any aspect of Direct Debit Arrangement		retrieveDirectDebitArrangement		#desc
+Reporting	initiate	Instantiate a new Reporting	initiateDirectDebitArrangementReporting	initiateDirectDebitArrangementReporting		Details of a new Reporting instance
+Reporting	retrieve	Retrieve details about any aspect of Reporting	retrieveDirectDebitArrangementReporting	retrieveDirectDebitArrangementReporting		Invoke a reporting action to obtain a Reporting instance related report
+PaymentTracking	initiate	Instantiate a new Payment Tracking	initiateDirectDebitArrangementPaymentTracking	initiateDirectDebitArrangementPaymentTracking		Details of a new Payment Tracking instance
+PaymentTracking	control	Control the processing of Payment Tracking	controlDirectDebitArrangementPaymentTracking	controlDirectDebitArrangementPaymentTracking		Request specific processing (e.g. suspend, skip, terminate)
+PaymentTracking	execute	Execute an available automated action for Payment Tracking	executeDirectDebitArrangementPaymentTracking	executeDirectDebitArrangementPaymentTracking		Invoke an automated execute action against the Payment Tracking instance
+PaymentTracking	retrieve	Retrieve details about any aspect of Payment Tracking	retrieveDirectDebitArrangementPaymentTracking	retrieveDirectDebitArrangementPaymentTracking		Invoke a reporting action to obtain a Payment Tracking instance related report
+PaymentInitiation	exchange	Accept, verify, etc. aspects of Payment Initiation processing	exchangeDirectDebitArrangementPaymentInitiation	exchangeDirectDebitArrangementPaymentInitiation		Handle an external exchange (e.g. accept, reject, verify)
+PaymentInitiation	retrieve	Retrieve details about any aspect of Payment Initiation	retrieveDirectDebitArrangementPaymentInitiation	retrieveDirectDebitArrangementPaymentInitiation		Invoke a reporting action to obtain a Payment Initiation instance related report
+VerifyMandate	exchange	Accept, verify, etc. aspects of Verify Mandate processing	exchangeDirectDebitArrangementVerifyMandate	exchangeDirectDebitArrangementVerifyMandate		Handle an external exchange (e.g. accept, reject, verify)
+VerifyMandate	retrieve	Retrieve details about any aspect of Verify Mandate	retrieveDirectDebitArrangementVerifyMandate	retrieveDirectDebitArrangementVerifyMandate		Invoke a reporting action to obtain a Verify Mandate instance related report
+FundsAvailableCheck	exchange	Accept, verify, etc. aspects of Funds Available Check processing	exchangeDirectDebitArrangementFundsAvailableCheck	exchangeDirectDebitArrangementFundsAvailableCheck		Handle an external exchange (e.g. accept, reject, verify)
+FundsAvailableCheck	request	Request manual intervention or a decision with respect to Funds Available Check	requestDirectDebitArrangementFundsAvailableCheck	requestDirectDebitArrangementFundsAvailableCheck		Invoke a service request action against the Funds Available Check instance
+FundsAvailableCheck	retrieve		retrieveDirectDebitArrangementFundsAvailableCheck	retrieveDirectDebitArrangementFundsAvailableCheck		Invoke a reporting action to obtain a Funds Available Check instance related report

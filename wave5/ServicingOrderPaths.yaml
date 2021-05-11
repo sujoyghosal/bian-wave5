@@ -1,0 +1,412 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Servicing Order'
+ description: >
+
+    ## Executive Summary:
+
+    This service domain handles the processing of a customer servicing request as a predefined procedure. A range of standard servicing requests can be supported. The process can include a check of permissions when the request is made by a third party/service provider
+
+    ## Example of Use:
+
+    A customer changes address and requests that all of their product and service arrangements are updated
+
+    ## Description:
+
+    The Servicing Order service domain handles the processing of a request that may impact multiple products and services and may involve processing cycles/steps and possibly have associated fees/charges. There can be several types of standard 'servicing order' defined for selection as appropriate. A servicing order can be initiated by a customer directly or may be requested on their behalf by an authorized third party service provider. If the request is made by a third party service provider on behalf of a customer the process can include a check that the associated permissions/mandates are in place
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-servicing-order/1.0.0
+schemes:
+ - https
+paths:
+  /servicing-order/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDServicingOrder
+      summary: Activate  a SDServicingOrder servicing session
+      description: Activate  a  SDServicingOrder servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDServicingOrder Request Payload
+        schema:
+          $ref: '#/definitions/SDServicingOrderActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDServicingOrderActivateOutputModel'
+  /servicing-order/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDServicingOrder
+      summary: Update an active SDServicingOrder session configuration
+      description: Update an active SDServicingOrder session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDServicingOrder Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDServicingOrder Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDServicingOrderConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDServicingOrderConfigureOutputModel'
+  /servicing-order/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDServicingOrder
+      summary: "Capturing feedback against the SDServicingOrder service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDServicingOrder service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDServicingOrder Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDServicingOrder Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDServicingOrderFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDServicingOrderFeedbackOutputModel'
+  /servicing-order/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDServicingOrder
+      summary: Analytical views maintained by the SDServicingOrder service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDServicingOrder service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDServicingOrder Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDServicingOrderRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDServicingOrderRetrieveOutputModel'
+  /servicing-order/{sd-reference-id}/servicing-order-procedure/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateServicingOrderProcedure
+      summary: Details of a new ServicingOrderProcedure instance
+      description: Initiate a servicing order (within a contact session)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Order Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ServicingOrderProcedure Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingOrderProcedureInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new ServicingOrderProcedure instance
+          schema:
+            $ref: '#/definitions/CRServicingOrderProcedureInitiateOutputModel'
+  /servicing-order/{sd-reference-id}/servicing-order-procedure/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateServicingOrderProcedure
+      summary: Update to any amendable fields of the ServicingOrderProcedure instance
+      description: Update details of a servicing order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Order Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Servicing Order Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingOrderProcedureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Servicing Order Procedure Instance
+          schema:
+            $ref: '#/definitions/CRServicingOrderProcedureUpdateOutputModel'
+  /servicing-order/{sd-reference-id}/servicing-order-procedure/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlServicingOrderProcedureUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the execution of the order (e.g. suspend)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Order Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Servicing Order Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingOrderProcedureControlInputModel'
+      responses:
+        200:
+          description: Successful control of Servicing Order Procedure Instance
+          schema:
+            $ref: '#/definitions/CRServicingOrderProcedureControlOutputModel'
+  /servicing-order/{sd-reference-id}/servicing-order-procedure/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeServicingOrderProcedureUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. a servicing order action
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Order Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Servicing Order Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingOrderProcedureExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Servicing Order Procedure Instance
+          schema:
+            $ref: '#/definitions/CRServicingOrderProcedureExchangeOutputModel'
+  /servicing-order/{sd-reference-id}/servicing-order-procedure/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeServicingOrderProcedureUpdate
+      summary: Invoke an automated execute action against the ServicingOrderProcedure instance
+      description: Execute an automated task in a servicing order (e.g. upload data)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Order Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Servicing Order Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingOrderProcedureExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Servicing Order Procedure Instance
+          schema:
+            $ref: '#/definitions/CRServicingOrderProcedureExecuteOutputModel'
+  /servicing-order/{sd-reference-id}/servicing-order-procedure/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestServicingOrderProcedureUpdate
+      summary: Invoke a service request action against the ServicingOrderProcedure instance
+      description: Request manual intervention in a servicing order (e.g. engage a servicing agent)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Order Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Servicing Order Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingOrderProcedureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Servicing Order Procedure Instance
+          schema:
+            $ref: '#/definitions/CRServicingOrderProcedureRequestOutputModel'
+  /servicing-order/{sd-reference-id}/servicing-order-procedure/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveServicingOrder
+      summary: Invoke a reporting action to obtain a Servicing Order Procedure instance related report
+      description: Retrieve details about a servicing order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Order Procedure Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRServicingOrderProcedureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Servicing Order Procedure Instance
+          schema:
+            $ref: '#/definitions/CRServicingOrderProcedureRetrieveOutputModel'
+  /servicing-order/{sd-reference-id}/servicing-order-procedure:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveServicingOrderReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Order Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ServicingOrder Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /servicing-order/servicing-order-procedure/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveServicingOrderBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: []
+  /servicing-order/{sd-reference-id}/servicing-order-procedure/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveServicingOrderBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Order Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Order Procedure Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- 
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex-  Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ID1, ID2]

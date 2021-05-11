@@ -1,0 +1,21 @@
+sd=Internal Audit	Maintain and portfolio of internal audit checks. Select and execute a meaningful sample of checks and identify and resolve non-compliance	A periodic audit of a processing unit is undertaken and remedial corrections to procedures recommended to improve compliance	This service domain administers the scheduled and ad-hoc application of internal audit and compliance reviews. This includes interpreting the banks policies and procedures that guide all aspects the bank's operations and determining which guidelines apply in specific circumstances across the enterprise. Support for interpreting guidelines are provided to activities in the bank that are subject to audit and scheduled and ad-hoc checks performed to confirm compliance
+sdpath=internal-audit
+crpath=internal-audit-assessment
+crr=Internal Audit Assessment Instance
+mcr=Internal Audit Assessment
+bqs=Audit
+CONFIG
+InternalAuditAssessment	initiate	Instantiate a new Internal Audit Assessment		initiateInternalAuditAssessment		#desc
+InternalAuditAssessment	update	Update details relating to Internal Audit Assessment		updateInternalAuditAssessment		#desc
+InternalAuditAssessment	exchange	Accept, verify, etc. aspects of Internal Audit Assessment processing		exchangeInternalAuditAssessment		#desc
+InternalAuditAssessment	execute	Execute an available automated action for Internal Audit Assessment		executeInternalAuditAssessment		#desc
+InternalAuditAssessment	request	Request manual intervention or a decision with respect to Internal Audit Assessment		requestInternalAuditAssessment		#desc
+InternalAuditAssessment	grant	Obtain permission to act in relation to Internal Audit Assessment		grantInternalAuditAssessment		#desc
+InternalAuditAssessment	retrieve	Retrieve details about any aspect of Internal Audit Assessment		retrieveInternalAuditAssessment		#desc
+Audit	initiate	Instantiate a new Audit	initiateInternalAuditAssessmentAudit	initiateInternalAuditAssessmentAudit		Details of a new Audit instance
+Audit	update	Update details relating to Audit	updateInternalAuditAssessmentAudit	updateInternalAuditAssessmentAudit		Update to any amendable fields of the Audit instance
+Audit	exchange	Accept, verify, etc. aspects of Audit processing	exchangeInternalAuditAssessmentAudit	exchangeInternalAuditAssessmentAudit		Handle an external exchange (e.g. accept, reject, verify)
+Audit	execute	Execute an available automated action for Audit	executeInternalAuditAssessmentAudit	executeInternalAuditAssessmentAudit		Invoke an automated execute action against the Audit instance
+Audit	request	Request manual intervention or a decision with respect to Audit	requestInternalAuditAssessmentAudit	requestInternalAuditAssessmentAudit		Invoke a service request action against the Audit instance
+Audit	grant	Obtain permission to act in relation to Audit	grantInternalAuditAssessmentAudit	grantInternalAuditAssessmentAudit		Invoke a grant request action from the Audit instance to obtain access permission
+Audit	retrieve		retrieveInternalAuditAssessmentAudit	retrieveInternalAuditAssessmentAudit		Invoke a reporting action to obtain a Audit instance related report

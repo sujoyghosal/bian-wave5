@@ -1,0 +1,23 @@
+sd=Market Information Management	Market information management consolidates and improves market information from multiple sources in order to build up a bank knowledge base in targeted areas	The bank consolidates multiple sources of private company merger and acquisition activity in order to maintain a view of private company players in a target sector	Consolidate market information from multiple sources and in any suitable media/format in order to build a bank financial market knowledge-base. The service domain activities include maintaining, refining, qualifying/verifying and presenting information in order to improve the quality of the available market intelligence within the bank
+sdpath=market-information-management
+crpath=financial-market-information-administrative-plan
+crr=Financial Market Information Administrative Plan Instance
+mcr=Financial Market Information Administrative Plan
+bqs=Consolidation Improvement Reporting
+CONFIG
+FinancialMarketInformationAdministrativePlan	create	Create an administrative plan for market information management		createFinancialMarketInformationAdministrativePlan		#desc
+FinancialMarketInformationAdministrativePlan	update	Update details of the administrative plan		updateFinancialMarketInformationAdministrativePlan		#desc
+FinancialMarketInformationAdministrativePlan	control	Control the execution of the administrative plan (e.g. suspend activity)		controlFinancialMarketInformationAdministrativePlan		#desc
+FinancialMarketInformationAdministrativePlan	exchange	Accept/reject etc. aspects of the administrative plan		exchangeFinancialMarketInformationAdministrativePlan		#desc
+FinancialMarketInformationAdministrativePlan	execute	Execute an automated action of the plan (e.g. refresh a data source)		executeFinancialMarketInformationAdministrativePlan		#desc
+FinancialMarketInformationAdministrativePlan	request	Request manual intervention to activities covered by the plan (e.g. review data quality for a report)		requestFinancialMarketInformationAdministrativePlan		#desc
+FinancialMarketInformationAdministrativePlan	grant	Grant specific use of bank managed market information (e.g. allow publication outside the bank)		grantFinancialMarketInformationAdministrativePlan		#desc
+FinancialMarketInformationAdministrativePlan	retrieve	Retrieve details about the financial market information management activity		retrieveFinancialMarketInformationAdministrativePlan		#desc
+Consolidation	retrieve	Retrieve details about the consolidation of source data	retrieveFinancialMarketInformationAdministrativePlanConsolidation	retrieveFinancialMarketInformationAdministrativePlanConsolidation		Invoke a reporting action to obtain a Consolidation instance related report
+Improvement	retrieve	Retrieve details about the data improvement activities	retrieveFinancialMarketInformationAdministrativePlanImprovement	retrieveFinancialMarketInformationAdministrativePlanImprovement		Invoke a reporting action to obtain a Improvement instance related report
+Reporting	create	Create a specific report view of the financial market information	createFinancialMarketInformationAdministrativePlanReporting	createFinancialMarketInformationAdministrativePlanReporting		Details of a new Reporting instance
+Reporting	update	Update properties of a structured view/report	updateFinancialMarketInformationAdministrativePlanReporting	updateFinancialMarketInformationAdministrativePlanReporting		Update to any amendable fields of the Reporting instance
+Reporting	capture	Capture usage details for the managed financial information/reports	captureFinancialMarketInformationAdministrativePlanReporting	captureFinancialMarketInformationAdministrativePlanReporting		Provide a structured input transaction/record (e.g. timesheet, event)
+Reporting	execute	Execute an automated action for a report (e.g. access)	executeFinancialMarketInformationAdministrativePlanReporting	executeFinancialMarketInformationAdministrativePlanReporting		Invoke an automated execute action against the Reporting instance
+Reporting	request	Request manual intervention (e.g. customize some aspect of a viewpoint/report)	requestFinancialMarketInformationAdministrativePlanReporting	requestFinancialMarketInformationAdministrativePlanReporting		Invoke a service request action against the Reporting instance
+Reporting	retrieve	Retrieve details about managed financial market reporting activity	retrieveFinancialMarketInformationAdministrativePlanReporting	retrieveFinancialMarketInformationAdministrativePlanReporting		Invoke a reporting action to obtain a Reporting instance related report

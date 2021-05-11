@@ -1,0 +1,283 @@
+CR ATM Network Operating Session Instance Record|ATM Network Operating Session||||||CR ATM Network Operating Session Initiate|CR ATM Network Operating Session Update|CR ATM Network Operating Session Control|CR ATM Network Operating Session Exchange|CR ATM Network Operating Session Execute|CR ATM Network Operating Session Request|CR ATM Network Operating Session Retrieve|BQ Financial Document Handling Initiate|BQ Financial Document Handling Update|BQ Financial Document Handling Exchange|BQ Financial Document Handling Execute|BQ Financial Document Handling Retrieve|BQ Network Operation Initiate|BQ Network Operation Update|BQ Network Operation Control|BQ Network Operation Retrieve|BQ Cash Distribution Exchange|BQ Cash Distribution Request|BQ Cash Distribution Retrieve|BQ Device Tracking Update|BQ Device Tracking Exchange|BQ Device Tracking Execute|BQ Device Tracking Retrieve|BQ Financial Transaction Capture Initiate|BQ Financial Transaction Capture Update|BQ Financial Transaction Capture Exchange|BQ Financial Transaction Capture Execute|BQ Financial Transaction Capture Retrieve|
+Mandatory||ATM Network Operations Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||ATM Network Operating Session Instance Reference||||Reference to the ATM Network Operating Session instance|O|I|I|I|I|I
+Initiate||ATM Network Operating Session Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||ATM Network Operating Session Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||ATM Network Operating Session Instance Status||||The status of the ATM Network Operating Session instance (e.g. initialised, pending, active)|IO
+||ATMNetwork Operating Session Instance Record||||Operate equipment and/or a largely automated facility within ATM Network Operations.
+Example: Operate the bank's internal intranet facility.||||||||||||||||||||||||||||
+||ATMNetwork Operating Session Schedule||||The timetable of ATMNetwork Operating Session|I|I|I|I|I|I|O|||||||||||||||||||||
+||ATMNetwork Operating Session Status||||The status of ATMNetwork Operating Session|I|I|I|I|I|I|O|||||||||||||||||||||
+||ATMNetwork Operating Session Usage Log||||Reference to the log of (usage) ativities/events of ATMNetwork Operating Session|I|I|I|I|I|I|O|||||||||||||||||||||
+||ATMNetwork Operating Session Reference||||Reference to the party who is involved in ATMNetwork Operating Session|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||ATMNetwork Operating Session ServiceProvider Reference||||Reference to the party who provides the services of ATMNetwork Operating Session |IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||ATMNetwork Operating Session Type||||A Classification value that distinguishes between the type of operations within ATMNetwork Operating Session |IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||ATMNetwork Operating Session Service Provider Schedule||||The schedule according to which the service provider will operate the ATMNetwork Operating Session|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||ATMNetwork Operating Session Service Type||||A Classification value that distinguishes between the type of services within ATMNetwork Operating Session |IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||ATMNetwork Operating Session Service Configuration||||The configuration of ATMNetwork Operating Session|I|I|I|I|I|I|O|||||||||||||||||||||
+Update||ATM Network Operating Session Update Action Task Reference||||Reference to an update service call||O
+Update||ATM Network Operating Session Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||ATM Network Operating Session Control Action Task Reference||||Reference to a ATM Network Operating Session instance control processing service call|||O
+CONTROL||ATM Network Operating Session Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||ATM Network Operating Session Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||ATM Network Operating Session Control Action Response||||Details of the control action service response|||O
+EXCHANGE||ATM Network Operating Session Exchange Action Task Reference||||Reference to a ATM Network Operating Session instance exchange service call||||O
+EXCHANGE||ATM Network Operating Session Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||ATM Network Operating Session Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||ATM Network Operating Session Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||ATM Network Operating Session Execute Action Task Reference||||Reference to a ATM Network Operating Session instance execute service call|||||O
+EXECUTE||ATM Network Operating Session Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||ATM Network Operating Session Request Action Task Reference||||Reference to a ATM Network Operating Session instance request service call||||||O
+REQUEST||ATM Network Operating Session Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||ATM Network Operating Session Retrieve Action Task Reference||||Reference to a ATM Network Operating Session instance retrieve service call|||||||O
+RETRIEVE||ATM Network Operating Session Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||ATM Network Operating Session Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||ATM Network Operating Session Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||ATM Network Operating Session Instance Report Record|##|||A specific ATM Network Operating Session instance formatted report|||||||IO
+RETRIEVE|||ATM Network Operating Session Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||ATM Network Operating Session Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||ATM Network Operating Session Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||ATM Network Operating Session Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||ATM Network Operating Session Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||ATM Network Operating Session Instance Analysis|##|||A specific ATM Network Operating Session instance analytical report|||||||IO
+RETRIEVE|||ATM Network Operating Session Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||ATM Network Operating Session Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||ATM Network Operating Session Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||ATM Network Operating Session Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||ATM Network Operating Session Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Financial Document Handling Instance Record|Financial Document Handling||||||
+Mandatory||ATM Network Operating Session Instance Reference||||Reference to the parent ATM Network Operating Session instance||||||||I|I|I|I
+Mandatory||Financial Document Handling Instance Reference||||Reference to the Financial Document Handling instance||||||||O|I|I|I
+Initiate||Financial Document Handling Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Financial Document Handling Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Financial Document Handling Instance Status||||The status of the Financial Document Handling instance (e.g. initialised, pending, active)||||||||O
+||Financial Document Handling Instance Record||||Operate equipment and/or a largely automated facility within ATM Network Operations.
+||||||||||||||||||||||||||||
+||Financial Document Handling Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature||||||||IO|IO|IO|IO|O||||||||||||||||
+||Financial Document Handling Function Schedule||||The schedule and timing of the function||||||||IO|IO|IO|IO|O||||||||||||||||
+||Document Generation and Handling||||The ATMNetwork Operating Session specific Business Service||||||||IO|IO|IO|IO|O||||||||||||||||
+||Document Generation and Handling Service Type||||Reference to the specific business service type||||||||IO|IO|IO|IO|O||||||||||||||||
+||Document Generation and Handling Service Description||||Description of the performed business service||||||||IO|IO|IO|IO|O||||||||||||||||
+||Document Generation and Handling Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|IO|O||||||||||||||||
+||Document Generation and Handling Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|IO|O||||||||||||||||
+||Document Generation and Handling Service Name||||||||||||IO|IO|IO|IO|O||||||||||||||||
+Update||Financial Document Handling Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Financial Document Handling Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Financial Document Handling Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Exchange||Financial Document Handling Exchange Action Task Reference||||Reference to a Financial Document Handling instance exchange service call||||||||||O
+Exchange||Financial Document Handling Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||Financial Document Handling Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||Financial Document Handling Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||Financial Document Handling Instance Status||||The status of the Financial Document Handling instance (e.g. accepted, rejected, verified)||||||||||O
+Execute||Financial Document Handling Execute Action Task Reference||||Reference to a Financial Document Handling instance execute service call|||||||||||O
+Execute||Financial Document Handling Execute Action Task Record||||The execute service call consolidated processing record|||||||||||I/O
+Execute||Financial Document Handling Execute Record Reference||||Reference to the Financial Document Handling execute transaction/record|||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response|||||||||||O
+Retrieve||Financial Document Handling Retrieve Action Task Reference||||Reference to a Financial Document Handling instance retrieve service call||||||||||||O
+Retrieve||Financial Document Handling Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Financial Document Handling Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Financial Document Handling Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Financial Document Handling Instance Report|##|||A specific Financial Document Handling instance formatted report||||||||||||IO
+Retrieve|||Financial Document Handling Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Financial Document Handling Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Financial Document Handling Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Financial Document Handling Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Financial Document Handling Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Financial Document Handling Instance Analysis|##|||A specific Financial Document Handling instance analytical report||||||||||||IO
+Retrieve|||Financial Document Handling Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Financial Document Handling Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Financial Document Handling Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Financial Document Handling Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Financial Document Handling Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ Network Operation Instance Record|Network Operation||||||
+Mandatory||ATM Network Operating Session Instance Reference||||Reference to the parent ATM Network Operating Session instance|||||||||||||I|I|I
+Mandatory||Network Operation Instance Reference||||Reference to the Network Operation instance|||||||||||||O|I|I
+Initiate||Network Operation Initiate Action Reference||||Reference to an Initiate service call|||||||||||||O
+Initiate||Network Operation Initiate Action Record||||The Initiate service call input and output record|||||||||||||I/O
+Initiate||Network Operation Instance Status||||The status of the Network Operation instance (e.g. initialised, pending, active)|||||||||||||O
+||Network Operation Instance Record||||Operate equipment and/or a largely automated facility within ATM Network Operations.
+||||||||||||||||||||||||||||
+||Network Operation Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature|||||||||||||||||||||||||IO|IO|IO|O
+||Network Operation Function Schedule||||The schedule and timing of the function|||||||||||||||||||||||||IO|IO|IO|O
+||Network Operation||||The ATMNetwork Operating Session specific Business Service||||||||||||||||||||||||||||
+||Network Operation Service Type||||Reference to the specific business service type|||||||||||||||||||||||||IO|IO|IO|O
+||Network Operation Service Description||||Description of the performed business service|||||||||||||||||||||||||IO|IO|IO|O
+||Network Operation Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||||IO|IO|IO|O
+||Network Operation Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||||IO|IO|IO|O
+||Network Operation Service Name|||||||||||||||||||||||||||||IO|IO|IO|O
+Update||Network Operation Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||Network Operation Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||Network Operation Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Control||Network Operation Control Action Task Reference||||Reference to a Network Operation instance control processing service call|||||||||||||||O
+Control||Network Operation Control Action Task Record||||The processing control service call consolidated processing record|||||||||||||||I/O
+Control||Network Operation Control Action Request|##|||Details of the control action service request|||||||||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||||||||||||||I
+Control||Network Operation Control Action Response||||Details of the control action service response|||||||||||||||O
+Control||Network Operation Instance Status||||The status of the Network Operation instance (e.g. initialised, pending, active)|||||||||||||||O
+Retrieve||Network Operation Retrieve Action Task Reference||||Reference to a Network Operation instance retrieve service call||||||||||||||||O
+Retrieve||Network Operation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Network Operation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Network Operation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Network Operation Instance Report|##|||A specific Network Operation instance formatted report||||||||||||||||IO
+Retrieve|||Network Operation Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Network Operation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Network Operation Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Network Operation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Network Operation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Network Operation Instance Analysis|##|||A specific Network Operation instance analytical report||||||||||||||||IO
+Retrieve|||Network Operation Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Network Operation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Network Operation Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Network Operation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Network Operation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ Cash Distribution Instance Record|Cash Distribution||||||
+Mandatory||ATM Network Operating Session Instance Reference||||Reference to the parent ATM Network Operating Session instance|||||||||||||||||I|I
+Mandatory||Cash Distribution Instance Reference||||Reference to the Cash Distribution instance|||||||||||||||||I|I
+||Cash Distribution Instance Record||||Operate equipment and/or a largely automated facility within ATM Network Operations.
+||||||||||||||||||||||||||||
+||Cash Distribution Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature|||||||||||||IO|IO|O|||||||||||||
+||Cash Distribution Function Schedule||||The schedule and timing of the function|||||||||||||IO|IO|O|||||||||||||
+||Cash Distribution||||The ATMNetwork Operating Session specific Business Service||||||||||||||||||||||||||||
+||Cash Distribution Service Type||||Reference to the specific business service type|||||||||||||IO|IO|O|||||||||||||
+||Cash Distribution Service Description||||Description of the performed business service|||||||||||||IO|IO|O|||||||||||||
+||Cash Distribution Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||IO|IO|O|||||||||||||
+||Cash Distribution Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||IO|IO|O|||||||||||||
+||Cash Distribution Service Name|||||||||||||||||IO|IO|O|||||||||||||
+Exchange||Cash Distribution Exchange Action Task Reference||||Reference to a Cash Distribution instance exchange service call|||||||||||||||||O
+Exchange||Cash Distribution Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||I/O
+Exchange||Cash Distribution Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||I
+Exchange||Cash Distribution Exchange Action Response||||Details of the exchange action service response|||||||||||||||||O
+Exchange||Cash Distribution Instance Status||||The status of the Cash Distribution instance (e.g. accepted, rejected, verified)|||||||||||||||||O
+Request||Cash Distribution Request Action Task Reference||||Reference to a Cash Distribution instance request service call||||||||||||||||||O
+Request||Cash Distribution Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||I/O
+Request||Cash Distribution Request Record Reference||||Reference to the Cash Distribution service request record||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||O
+Retrieve||Cash Distribution Retrieve Action Task Reference||||Reference to a Cash Distribution instance retrieve service call|||||||||||||||||||O
+Retrieve||Cash Distribution Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Cash Distribution Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Cash Distribution Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Cash Distribution Instance Report|##|||A specific Cash Distribution instance formatted report|||||||||||||||||||IO
+Retrieve|||Cash Distribution Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Cash Distribution Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Cash Distribution Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Cash Distribution Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Cash Distribution Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Cash Distribution Instance Analysis|##|||A specific Cash Distribution instance analytical report|||||||||||||||||||IO
+Retrieve|||Cash Distribution Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Cash Distribution Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Cash Distribution Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Cash Distribution Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Cash Distribution Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+BQ Device Tracking Instance Record|Device Tracking||||||
+Mandatory||ATM Network Operating Session Instance Reference||||Reference to the parent ATM Network Operating Session instance||||||||||||||||||||I|I|I
+Mandatory||Device Tracking Instance Reference||||Reference to the Device Tracking instance||||||||||||||||||||I|I|I
+||Device Tracking Instance Record||||Operate equipment and/or a largely automated facility within ATM Network Operations.
+||||||||||||||||||||||||||||
+||Device Tracking Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature|||||||||||||||||||||IO|IO|IO|O||||
+||Device Tracking Function Schedule||||The schedule and timing of the function|||||||||||||||||||||IO|IO|IO|O||||
+||Device Tracking||||The ATMNetwork Operating Session specific Business Service||||||||||||||||||||||||||||
+||Device Tracking Service Type||||Reference to the specific business service type|||||||||||||||||||||IO|IO|IO|O||||
+||Device Tracking Service Description||||Description of the performed business service|||||||||||||||||||||IO|IO|IO|O||||
+||Device Tracking Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||IO|IO|IO|O||||
+||Device Tracking Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||IO|IO|IO|O||||
+||Device Tracking Service Name|||||||||||||||||||||||||IO|IO|IO|O||||
+Update||Device Tracking Update Action Task Reference||||Reference to an update service call||||||||||||||||||||O
+Update||Device Tracking Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||I/O
+Update||Device Tracking Update Action Request||||Details of the update action service request||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||O
+Exchange||Device Tracking Exchange Action Task Reference||||Reference to a Device Tracking instance exchange service call|||||||||||||||||||||O
+Exchange||Device Tracking Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||||||I/O
+Exchange||Device Tracking Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||||||I
+Exchange||Device Tracking Exchange Action Response||||Details of the exchange action service response|||||||||||||||||||||O
+Exchange||Device Tracking Instance Status||||The status of the Device Tracking instance (e.g. accepted, rejected, verified)|||||||||||||||||||||O
+Execute||Device Tracking Execute Action Task Reference||||Reference to a Device Tracking instance execute service call||||||||||||||||||||||O
+Execute||Device Tracking Execute Action Task Record||||The execute service call consolidated processing record||||||||||||||||||||||I/O
+Execute||Device Tracking Execute Record Reference||||Reference to the Device Tracking execute transaction/record||||||||||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||||||||||||||||O
+Retrieve||Device Tracking Retrieve Action Task Reference||||Reference to a Device Tracking instance retrieve service call|||||||||||||||||||||||O
+Retrieve||Device Tracking Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||I/O
+Retrieve||Device Tracking Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||I
+Retrieve||Device Tracking Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||O
+Retrieve||Device Tracking Instance Report|##|||A specific Device Tracking instance formatted report|||||||||||||||||||||||IO
+Retrieve|||Device Tracking Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||I
+Retrieve|||Device Tracking Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Device Tracking Instance Report Type|||The type of external report available|||||||||||||||||||||||O
+Retrieve|||Device Tracking Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||O
+Retrieve|||Device Tracking Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O
+Retrieve||Device Tracking Instance Analysis|##|||A specific Device Tracking instance analytical report|||||||||||||||||||||||IO
+Retrieve|||Device Tracking Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||I
+Retrieve|||Device Tracking Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Device Tracking Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||O
+Retrieve|||Device Tracking Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||O
+Retrieve|||Device Tracking Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O
+BQ Financial Transaction Capture Instance Record|Financial Transaction Capture||||||
+Mandatory||ATM Network Operating Session Instance Reference||||Reference to the parent ATM Network Operating Session instance||||||||||||||||||||||||I|I|I|I
+Mandatory||Financial Transaction Capture Instance Reference||||Reference to the Financial Transaction Capture instance||||||||||||||||||||||||O|I|I|I
+Initiate||Financial Transaction Capture Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||||||||O
+Initiate||Financial Transaction Capture Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||||||||I/O
+Initiate||Financial Transaction Capture Instance Status||||The status of the Financial Transaction Capture instance (e.g. initialised, pending, active)||||||||||||||||||||||||O
+||Financial Transaction Capture Instance Record||||Operate equipment and/or a largely automated facility within ATM Network Operations.
+||||||||||||||||||||||||||||
+||Financial Transaction Capture Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature||||||||||||||||IO|IO|IO|IO|O||||||||
+||Financial Transaction Capture Function Schedule||||The schedule and timing of the function||||||||||||||||IO|IO|IO|IO|O||||||||
+||Business Service||||The ATMNetwork Operating Session specific Business Service||||||||||||||||IO|IO|IO|IO|O||||||||
+||Service Type||||Reference to the specific business service type||||||||||||||||IO|IO|IO|IO|O||||||||
+||Service Description||||Description of the performed business service||||||||||||||||IO|IO|IO|IO|O||||||||
+||Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||IO|IO|IO|IO|O||||||||
+||Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||IO|IO|IO|IO|O||||||||
+||Service Name||||||||||||||||||||IO|IO|IO|IO|O||||||||
+Update||Financial Transaction Capture Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||O
+Update||Financial Transaction Capture Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||I/O
+Update||Financial Transaction Capture Update Action Request||||Details of the update action service request|||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||O
+Exchange||Financial Transaction Capture Exchange Action Task Reference||||Reference to a Financial Transaction Capture instance exchange service call||||||||||||||||||||||||||O
+Exchange||Financial Transaction Capture Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||||||I/O
+Exchange||Financial Transaction Capture Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||||||I
+Exchange||Financial Transaction Capture Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||||||O
+Exchange||Financial Transaction Capture Instance Status||||The status of the Financial Transaction Capture instance (e.g. accepted, rejected, verified)||||||||||||||||||||||||||O
+Execute||Financial Transaction Capture Execute Action Task Reference||||Reference to a Financial Transaction Capture instance execute service call|||||||||||||||||||||||||||O
+Execute||Financial Transaction Capture Execute Action Task Record||||The execute service call consolidated processing record|||||||||||||||||||||||||||I/O
+Execute||Financial Transaction Capture Execute Record Reference||||Reference to the Financial Transaction Capture execute transaction/record|||||||||||||||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||||||||||||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response|||||||||||||||||||||||||||O
+Retrieve||Financial Transaction Capture Retrieve Action Task Reference||||Reference to a Financial Transaction Capture instance retrieve service call||||||||||||||||||||||||||||O
+Retrieve||Financial Transaction Capture Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||I/O
+Retrieve||Financial Transaction Capture Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||I
+Retrieve||Financial Transaction Capture Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||O
+Retrieve||Financial Transaction Capture Instance Report|##|||A specific Financial Transaction Capture instance formatted report||||||||||||||||||||||||||||IO
+Retrieve|||Financial Transaction Capture Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||I
+Retrieve|||Financial Transaction Capture Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||O
+Retrieve|||Financial Transaction Capture Instance Report Type|||The type of external report available||||||||||||||||||||||||||||O
+Retrieve|||Financial Transaction Capture Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||O
+Retrieve|||Financial Transaction Capture Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||O
+Retrieve||Financial Transaction Capture Instance Analysis|##|||A specific Financial Transaction Capture instance analytical report||||||||||||||||||||||||||||IO
+Retrieve|||Financial Transaction Capture Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||I
+Retrieve|||Financial Transaction Capture Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||O
+Retrieve|||Financial Transaction Capture Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||O
+Retrieve|||Financial Transaction Capture Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||O
+Retrieve|||Financial Transaction Capture Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||O

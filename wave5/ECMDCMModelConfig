@@ -1,0 +1,164 @@
+CR ECM-DCM Fulfillment Arrangement Instance Record|ECM-DCM Fulfillment Arrangement||||||CR ECM-DCM Fulfillment Arrangement Initiate|CR ECM-DCM Fulfillment Arrangement Update|CR ECM-DCM Fulfillment Arrangement Exchange|CR ECM-DCM Fulfillment Arrangement Request|CR ECM-DCM Fulfillment Arrangement Retrieve|BQ Instrument Definition Update|BQ Instrument Definition Request|BQ Instrument Definition Retrieve|BQ Prospectus Update|BQ Prospectus Request|BQ Prospectus Retrieve|BQ Placement Update|BQ Placement Request|BQ Placement Retrieve|
+Mandatory||ECM-DCM Servicing Session Reference||||Reference to the active servicing session|I|I|I|I
+Mandatory||ECM-DCM Fulfillment Arrangement Instance Reference||||Reference to the ECM-DCM Fulfillment Arrangement instance|O|I|I|I
+Initiate||ECM-DCM Fulfillment Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||ECM-DCM Fulfillment Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||ECM-DCM Fulfillment Arrangement Instance Status||||The status of the ECM-DCM Fulfillment Arrangement instance (e.g. initialised, pending, active)|IO
+||CR ECM-DCM Fulfillment Arrangement Instance Record|##||||IO|IO||IO|O|||||||||
+|||Product Instance Reference |||Reference to the advisory service session|O|IO||IO|O|||||||||
+|||Customer Reference|||Reference to the customer receiving the financial advice|I|IO||IO|O|||||||||
+|||Bank Branch/Location Reference|||Bank branch associated with the customer account/relationship for booking purposes|I|IO||IO|O|||||||||
+|||Business Unit Reference |||Business unit and or employee reference to the source of the financial advice|I|IO||IO|O|||||||||
+|||Document Directory Entry Instance Reference|||The document reference for associated documents such as disclosures and acceptance records|IO|IO||IO|O|||||||||
+|||Associations|##||Definition of the involved parties or associations to the issuance project|IO|IO||IO|O|||||||||
+||||Association Type||The type of association (e.g. co-investor, legal)|IO|IO||IO|O|||||||||
+||||Association Obligation/Entitlement||Description of the role, obligations or entitlements of the associated party|IO|IO||IO|O|||||||||
+||||Association Reference||Reference to the associated party|IO|IO||IO|O|||||||||
+|||ECM-DCM Fulfillment Schedule |||The schedule for work tasks performed and to be performed through the issuing process|IO|IO||IO|O|||||||||
+|||Date Type|##||Key dates associated with the issuance process (e.g. engagement date, prospectus date, offering date)|IO|IO||IO|O|||||||||
+||||Date||Value of the date type|IO|IO||IO|O|||||||||
+|||ECM-DCM Instrument Record|||The consolidated record of the developed investment vehicle. Combines the output of the development and issuance activities, participant details, investment transaction records as appropriate (details not included at this time)|IO|IO||IO|O|||||||||
+Update||ECM-DCM Fulfillment Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||ECM-DCM Fulfillment Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+EXCHANGE||ECM-DCM Fulfillment Arrangement Exchange Action Task Reference||||Reference to a ECM-DCM Fulfillment Arrangement instance exchange service call|||O
+EXCHANGE||ECM-DCM Fulfillment Arrangement Exchange Action Task Record||||The exchange service call consolidated processing record|||I/O
+EXCHANGE||ECM-DCM Fulfillment Arrangement Exchange Action Request|##|||Details of the exchange action service request|||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||I
+EXCHANGE||ECM-DCM Fulfillment Arrangement Exchange Action Response||||Details of the exchange action service response|||O
+REQUEST||ECM-DCM Fulfillment Arrangement Request Action Task Reference||||Reference to a ECM-DCM Fulfillment Arrangement instance request service call||||O
+REQUEST||ECM-DCM Fulfillment Arrangement Request Action Task Record||||The request service call consolidated processing record||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||I
+REQUEST||Request Response Record||||Details of the request action service response||||O
+RETRIEVE||ECM-DCM Fulfillment Arrangement Retrieve Action Task Reference||||Reference to a ECM-DCM Fulfillment Arrangement instance retrieve service call|||||O
+RETRIEVE||ECM-DCM Fulfillment Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||IO
+RETRIEVE||ECM-DCM Fulfillment Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||I
+RETRIEVE||ECM-DCM Fulfillment Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||O
+RETRIEVE||ECM-DCM Fulfillment Arrangement Instance Report Record|##|||A specific ECM-DCM Fulfillment Arrangement instance formatted report|||||IO
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Report Reference|||Reference to the control record instance report|||||I
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Report Type|||The type of external report available|||||IO
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||I
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||O
+RETRIEVE||ECM-DCM Fulfillment Arrangement Instance Analysis|##|||A specific ECM-DCM Fulfillment Arrangement instance analytical report|||||IO
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view|||||I
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Analysis Report Type|||The type of external performance analysis report available|||||IO
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||I
+RETRIEVE|||ECM-DCM Fulfillment Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||O
+BQ Instrument Definition Instance Record|Instrument Definition||||||
+Mandatory||ECM-DCM Fulfillment Arrangement Instance Reference||||Reference to the parent ECM-DCM Fulfillment Arrangement instance||||||I|I
+Mandatory||Instrument Definition Instance Reference||||Reference to the Instrument Definition instance||||||I|I
+||Instrument Definition Instance Record|##|||Tasks to determine the correct structure for the equity/debt instrument||||||IO|IO|O||||||
+|||Employee/Business Unit Reference |||Business unit and or employee responsible for the financial instrument specification - (includes financial engineers, legal/regulatory and tax specialists as appropriate)||||||IO|IO|O||||||
+|||Instrument Definition Work Task Record|##||A record of the work done to define and agree the structure of the equity or debt instrument||||||IO|IO|O||||||
+||||Instrument Definition Work Task Type||The type of work task (e.g. financial engineering, tax optimization, regulatory compliance checks)||||||IO|IO|O||||||
+||||Instrument Definition Work Task Description||Description of the task performed||||||IO|O|O||||||
+||||Instrument Definition Work Task Work Products ||File of consolidated notes, algorithms, financial market research, forms and documents for the work task||||||IO|IO|O||||||
+||||Document Directory Entry Instance Reference||Reference to associated documents||||||IO|IO|O||||||
+||||Instrument Definition Specification||The specification of the developed ECM-DCM instrument||||||IO|O|O||||||
+Update||Instrument Definition Update Action Task Reference||||Reference to an update service call||||||O
+Update||Instrument Definition Update Action Task Record||||The update service call consolidated processing record||||||I/O
+Update||Instrument Definition Update Action Request||||Details of the update action service request||||||I
+Update||Update Response Record||||Details of the Update action service response||||||O
+Request||Instrument Definition Request Action Task Reference||||Reference to a Instrument Definition instance request service call|||||||O
+Request||Instrument Definition Request Action Task Record||||The request service call consolidated processing record|||||||I/O
+Request||Instrument Definition Request Record Reference||||Reference to the Instrument Definition service request record|||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||I
+Request||Request Response Record||||Details of the request action service response|||||||O
+Retrieve||Instrument Definition Retrieve Action Task Reference||||Reference to a Instrument Definition instance retrieve service call||||||||O
+Retrieve||Instrument Definition Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||I/O
+Retrieve||Instrument Definition Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+Retrieve||Instrument Definition Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+Retrieve||Instrument Definition Instance Report|##|||A specific Instrument Definition instance formatted report||||||||IO
+Retrieve|||Instrument Definition Instance Report Reference|||Reference to the control record instance report||||||||I
+Retrieve|||Instrument Definition Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Instrument Definition Instance Report Type|||The type of external report available||||||||O
+Retrieve|||Instrument Definition Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||O
+Retrieve|||Instrument Definition Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+Retrieve||Instrument Definition Instance Analysis|##|||A specific Instrument Definition instance analytical report||||||||IO
+Retrieve|||Instrument Definition Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+Retrieve|||Instrument Definition Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Instrument Definition Instance Analysis Report Type|||The type of external performance analysis report available||||||||O
+Retrieve|||Instrument Definition Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||O
+Retrieve|||Instrument Definition Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Prospectus Instance Record|Prospectus||||||
+Mandatory||ECM-DCM Fulfillment Arrangement Instance Reference||||Reference to the parent ECM-DCM Fulfillment Arrangement instance|||||||||I|I
+Mandatory||Prospectus Instance Reference||||Reference to the Prospectus instance|||||||||I|I
+||Prospectus Instance Record|##|||Tasks to develop the prospectus and determine target pricing for the ECM-DCM instrument|||||||||IO|IO|O|||
+|||Employee/Business Unit Reference |||Business unit and or employee responsible for the prospectus development|||||||||IO|IO|O|||
+|||Prospectus Work Task Record|##||A record of the work done to develop the prospectus for the issuance (covers both private and public placements)|||||||||IO|IO|O|||
+||||Prospectus Work Task Type||The type of work task (e.g. financial analysis/comparison development, pricing negotiation, presentation development, legal/tax/compliance assurance)|||||||||IO|IO|O|||
+||||Prospectus Work Task Description||Description of the task performed|||||||||IO|O|O|||
+||||Prospectus Work Task Work Products ||File of consolidated notes, algorithms, financial market research, forms and documents for the work task|||||||||IO|IO|O|||
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||IO|IO|O|||
+||||Prospectus||The developed prospectus for the ECM-DCM instrument, including agreed pricing strategy|||||||||IO|O|O|||
+Update||Prospectus Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Prospectus Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Prospectus Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Request||Prospectus Request Action Task Reference||||Reference to a Prospectus instance request service call||||||||||O
+Request||Prospectus Request Action Task Record||||The request service call consolidated processing record||||||||||I/O
+Request||Prospectus Request Record Reference||||Reference to the Prospectus service request record||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||O
+Retrieve||Prospectus Retrieve Action Task Reference||||Reference to a Prospectus instance retrieve service call|||||||||||O
+Retrieve||Prospectus Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||Prospectus Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||Prospectus Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||Prospectus Instance Report|##|||A specific Prospectus instance formatted report|||||||||||IO
+Retrieve|||Prospectus Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||Prospectus Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Prospectus Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||Prospectus Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||Prospectus Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||Prospectus Instance Analysis|##|||A specific Prospectus instance analytical report|||||||||||IO
+Retrieve|||Prospectus Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||Prospectus Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Prospectus Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||Prospectus Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||Prospectus Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O
+BQ Placement Instance Record|Placement||||||
+Mandatory||ECM-DCM Fulfillment Arrangement Instance Reference||||Reference to the parent ECM-DCM Fulfillment Arrangement instance||||||||||||I|I
+Mandatory||Placement Instance Reference||||Reference to the Placement instance||||||||||||I|I
+||Placement Instance Record|##|||Tasks to present the prospectus to primary market prospects or public investors for a public offering - including road shows and support for the market IPO as appropriate||||||||||||IO|IO|O
+|||Employee/Business Unit Reference |||Business unit and or employee responsible for the placement road show and issuance transaction||||||||||||IO|IO|O
+|||Prospect List|||List of target investors for private placement||||||||||||IO|IO|O
+|||Placement Road show Schedule|||The schedule and details of investor presentations||||||||||||IO|IO|O
+|||Placement Work Task Record|##||A record of the work done to place the instrument in the private or public markets as appropriate||||||||||||IO|IO|O
+||||Placement Work Task Type||The type of work task (e.g. prospect scheduling, presentation, negotiation)||||||||||||IO|IO|O
+||||Placement Work Task Description||Description of the task performed||||||||||||IO|O|O
+||||Placement Work Task Work Products ||File of consolidated notes, forms and documents used and generated through the work task||||||||||||IO|IO|O
+||||Document Directory Entry Instance Reference||Reference to associated documents||||||||||||IO|IO|O
+|||Placement Transaction|||The consolidated details of the investments obtained for the issuance - details investor participation for private placement and primary market transaction references for public offerings||||||||||||IO|O|O
+Update||Placement Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Placement Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Placement Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Request||Placement Request Action Task Reference||||Reference to a Placement instance request service call|||||||||||||O
+Request||Placement Request Action Task Record||||The request service call consolidated processing record|||||||||||||I/O
+Request||Placement Request Record Reference||||Reference to the Placement service request record|||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||O
+Retrieve||Placement Retrieve Action Task Reference||||Reference to a Placement instance retrieve service call||||||||||||||O
+Retrieve||Placement Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Placement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Placement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Placement Instance Report|##|||A specific Placement instance formatted report||||||||||||||IO
+Retrieve|||Placement Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Placement Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Placement Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Placement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Placement Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Placement Instance Analysis|##|||A specific Placement instance analytical report||||||||||||||IO
+Retrieve|||Placement Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Placement Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Placement Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Placement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Placement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O

@@ -1,0 +1,636 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Brand Management'
+ description: >
+
+    ## Executive Summary:
+
+    Respond to events that potentially damage the brand or provide an opportunity to strengthen/leverage brand awareness
+
+    ## Example of Use:
+
+    Product design seeks input from the brand management unit to factor the brand into the product marketing materials and ensure alignment
+
+    ## Description:
+
+    Define and develop the enterprise brand, including providing advice and guidance to marketing and product/service development activities that leverage the brand. Respond to events that potentially damage the brand or provide an opportunity to strengthen/leverage brand awareness
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-brand-management/1.0.0
+schemes:
+ - https
+paths:
+  /brand-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDBrandManagement
+      summary: Activate  a SDBrandManagement servicing session
+      description: Activate  a  SDBrandManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDBrandManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDBrandManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDBrandManagementActivateOutputModel'
+  /brand-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDBrandManagement
+      summary: Update an active SDBrandManagement session configuration
+      description: Update an active SDBrandManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBrandManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBrandManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDBrandManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDBrandManagementConfigureOutputModel'
+  /brand-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDBrandManagement
+      summary: "Capturing feedback against the SDBrandManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDBrandManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBrandManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBrandManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDBrandManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDBrandManagementFeedbackOutputModel'
+  /brand-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDBrandManagement
+      summary: Analytical views maintained by the SDBrandManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDBrandManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBrandManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDBrandManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDBrandManagementRetrieveOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBrandManagementPlan
+      summary: Update to any amendable fields of the BrandManagementPlan instance
+      description: Update aspects of eth brand management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Brand Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBrandManagementPlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Brand Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBrandManagementPlanUpdateOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBrandManagementPlanUpdate
+      summary: Invoke a service request action against the BrandManagementPlan instance
+      description: Request manual intervention with the brand management plan (e.g. reassess brand value/significance)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Brand Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBrandManagementPlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Brand Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBrandManagementPlanRequestOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantBrandManagementPlanUpdate
+      summary: Invoke a grant request action from the BrandManagementPlan instance to obtain access permission
+      description: Provide a permission grant to reference the brand (e.g. authorize logo use in marketing)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Brand Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBrandManagementPlanGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Brand Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBrandManagementPlanGrantOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBrandManagement
+      summary: Invoke a reporting action to obtain a Brand Management Plan instance related report
+      description: Retrieve details about brand management activity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRBrandManagementPlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Brand Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBrandManagementPlanRetrieveOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/brandadvice/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateBrandManagementPlanBrandAdvice
+      summary: Details of a new BrandAdvice instance
+      description: Create a brand advice task
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Brand Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQBrandAdviceInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Brand Management Plan instance
+          schema:
+            $ref: '#/definitions/BQBrandAdviceInitiateOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/brandadvice/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBrandManagementPlanBrandAdvice
+      summary: Update to any amendable fields of the BrandAdvice instance
+      description: Update details of provided brand related advice
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BrandAdvice Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BrandAdvice Request Payload
+        schema:
+          $ref: '#/definitions/BQBrandAdviceUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated BrandAdvice Instance
+          schema:
+            $ref: '#/definitions/BQBrandAdviceUpdateOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/brandadvice/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeBrandManagementPlanBrandAdviceUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject proposed brand usage in an initiative
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BrandAdvice Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BrandAdvice request payload
+        schema:
+          $ref: '#/definitions/BQBrandAdviceExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of BrandAdvice Instance Record
+          schema:
+            $ref: '#/definitions/BQBrandAdviceExchangeOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/brandadvice/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBrandManagementPlanBrandAdviceUpdate
+      summary: Invoke a service request action against the BrandAdvice instance
+      description: Request manual intervention for brand advice (e.g. request specialist support)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BrandAdvice Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BrandAdvice request payload
+        schema:
+          $ref: '#/definitions/BQBrandAdviceRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of BrandAdvice Instance Record
+          schema:
+            $ref: '#/definitions/BQBrandAdviceRequestOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/brandadvice/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBrandManagementPlanBrandAdvice
+      summary: Invoke a reporting action to obtain a BrandAdvice instance related report.
+      description: Retrieve details about brand advice activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BrandAdvice Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQBrandAdviceRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved BrandAdvice Instance Record
+          schema:
+            $ref: '#/definitions/BQBrandAdviceRetrieveOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/troubleshoot/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateBrandManagementPlanTroubleshoot
+      summary: Details of a new Troubleshoot instance
+      description: Create a brand troubleshooting action
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Brand Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Brand Management Plan instance
+          schema:
+            $ref: '#/definitions/BQTroubleshootInitiateOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/troubleshoot/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBrandManagementPlanTroubleshoot
+      summary: Update to any amendable fields of the Troubleshoot instance
+      description: Update details relating to brand troubleshooting activity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshoot Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshoot Request Payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Troubleshoot Instance
+          schema:
+            $ref: '#/definitions/BQTroubleshootUpdateOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/troubleshoot/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBrandManagementPlanTroubleshootUpdate
+      summary: Invoke a service request action against the Troubleshoot instance
+      description: Request manual intervention in a troubleshooting action
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshoot Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshoot request payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Troubleshoot Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootRequestOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/troubleshoot/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBrandManagementPlanTroubleshoot
+      summary: Invoke a reporting action to obtain a Troubleshoot instance related report.
+      description: Retrieve details about brand troubleshooting activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshoot Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTroubleshootRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Troubleshoot Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootRetrieveOutputModel'
+  /brand-management/{sd-reference-id}/brand-management-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBrandManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- BrandManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /brand-management/brand-management-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBrandManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'BrandAdvice',  'Troubleshoot', ]
+  /brand-management/{sd-reference-id}/brand-management-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBrandManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Brand Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Brand Management Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Troubleshoot
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Troubleshoot Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [TroubleshootID1, TroubleshootID2]

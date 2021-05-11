@@ -1,0 +1,94 @@
+CR #CR Instance Record|#CR||||||CR #CR initiate|CR #CR control|CR #CR request|CR #CR execute|CR #CR retrieve|CR #CR done|BQ Inbound initiate|BQ Inbound update|BQ Inbound exchange|BQ Inbound grant|BQ Inbound retrieve|
+Initiate||#CR Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||#CR Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||#SD Servicing Session Reference||||Reference to the active servicing session|I
+Initiate||#CR Instance Reference||||Reference to the #CR instance|O
+Initiate||#CR Instance Status||||The status of the #CR instance (e.g. initialised, pending, active)|IO
+Initiate||#CR Instance Record||||Consolidated record of the #CR instance including any input and output record values|I/O
+Initiate|||#CR Properties|||Properties and reference details of the instance|I/O
+Initiate||||#CR Property Setting||The initiated property setting (can override default) |I/O
+Initiate|||#CR Options|||The processing options for the #CR|I/O
+Initiate||||#CR Option Setting||The initiated option setting (can override default) |I/O
+Initiate|||#CR Variables|||The type of #CR variables|I/O
+Initiate||||#CR Variable Setting||The initiated variable setting (can override default) |I/O
+CONTROL||#CR Control Action Task Reference||||Reference to a #CR instance control processing service call||O
+CONTROL||#CR Control Action Task Record||||The processing control service call consolidated processing record||I/O
+CONTROL||#CR Control Action Request|##|||Details of the control action service request||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)||I
+CONTROL||#CR Control Action Response||||Details of the control action service response||O
+REQUEST||#CR Request Action Task Reference||||Reference to a #CR instance request service call|||O
+REQUEST||#CR Request Action Task Record||||The request service call consolidated processing record|||I/O
+REQUEST||Request Record Reference||||Reference to the service request record|||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||I
+REQUEST||Request Response Record||||Details of the request action service response|||O
+EXECUTE||#CR Execute Action Task Reference||||Reference to a #CR instance execute service call||||O
+EXECUTE||#CR Execute Action Task Record||||The execute service call consolidated processing record||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response||||O
+RETRIEVE||#CR Retrieve Action Task Reference||||Reference to a #CR instance retrieve service call|||||O
+RETRIEVE||#CR Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||IO
+RETRIEVE||#CR Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||I
+RETRIEVE||#CR Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||O
+RETRIEVE||#CR Instance Report Record|##|||A specific #CR instance formatted report|||||IO
+RETRIEVE|||#CR Instance Report Reference|||Reference to the control record instance report|||||I
+RETRIEVE|||#CR Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||#CR Instance Report Type|||The type of external report available|||||IO
+RETRIEVE|||#CR Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||I
+RETRIEVE|||#CR Instance Report|||The external report in any suitable form including selection filters where appropriate|||||O
+RETRIEVE||#CR Instance Analysis|##|||A specific #CR instance analytical report|||||IO
+RETRIEVE|||#CR Instance Analysis Reference|||Reference to the control record instance analysis view|||||I
+RETRIEVE|||#CR Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||#CR Instance Analysis Report Type|||The type of external performance analysis report available|||||IO
+RETRIEVE|||#CR Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||I
+RETRIEVE|||#CR Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||O
+BQ #BQ Instance Record|#BQ||||||
+Initiate||#BQ Initiate Action Reference||||Reference to an Initiate service call|||||||O
+Initiate||#BQ Initiate Action Record||||The Initiate service call input and output record|||||||I/O
+Initiate||#CR Instance Reference||||Reference to the parent #CR instance|||||||I
+Initiate||#BQ Instance Reference||||Reference to the #BQ instance|||||||O
+Initiate||#BQ Instance Status||||The status of the #BQ instance (e.g. initialised, pending, active)|||||||O
+Initiate||#BQ Instance Record||||Consolidated record of the #BQ instance including any input and output record values|||||||I/O
+Initiate|||#BQ Properties|||Properties and reference details of the instance|||||||I/O
+Initiate||||#BQ Property Setting||The initiated property setting (can override default) |||||||I/O
+Initiate|||#BQ Options|||The processing options for the #BQ|||||||I/O
+Initiate||||#BQ Option Setting||The initiated option setting (can override default) |||||||I/O
+Initiate|||#BQ Variables|||The type of #BQ variables|||||||I/O
+Initiate||||#BQ Variable Setting||The initiated variable setting (can override default) |||||||I/O
+Initiate||||||Selected content from the Service Domain Specific Template|||||||I/O
+Update||#BQ Update Action Task Reference||||Reference to an update service call||||||||O
+Update||#BQ Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||#BQ Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Exchange||#BQ Exchange Action Task Reference||||Reference to a #BQ instance exchange service call|||||||||O
+Exchange||#BQ Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||I/O
+Exchange||#BQ Exchange Action Request|##|||Details of the exchange action service request|||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||I
+Exchange||#BQ Exchange Action Response||||Details of the exchange action service response|||||||||O
+Exchange||#BQ Instance Status||||The status of the #BQ instance (e.g. accepted, rejected, verified)|||||||||O
+Grant||#BQ Grant Action Task Reference||||Reference to a #BQ instance grant service call||||||||||O
+Grant||#BQ Grant Action Task Record||||The grant service call consolidated processing record||||||||||I/O
+Grant||Grant Request Record Type||||Grant request type (e.g. access permission)||||||||||I
+Grant||Grant Request Record Reference||||Reference to the grant request record||||||||||O
+Grant||Grant Request Input Record|##|||Grant request record (e.g. access permission)||||||||||I
+Grant|||Grant Request Details|||Details of the permissions requested||||||||||I
+Grant||Grant Request Response Record |##|||Details of the grant request action service response||||||||||O
+Grant|||Grant Permission Details|||Details of the permissions granted||||||||||O
+Retrieve||#BQ Retrieve Action Task Reference||||Reference to a #BQ instance retrieve service call|||||||||||O
+Retrieve||#BQ Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||#BQ Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||#BQ Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||#BQ Instance Report|##|||A specific #BQ instance formatted report|||||||||||IO
+Retrieve|||#BQ Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||#BQ Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||#BQ Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||#BQ Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||#BQ Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||#BQ Instance Analysis|##|||A specific #BQ instance analytical report|||||||||||IO
+Retrieve|||#BQ Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||#BQ Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||#BQ Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||#BQ Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||#BQ Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O

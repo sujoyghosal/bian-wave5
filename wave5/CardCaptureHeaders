@@ -1,0 +1,30 @@
+SD=Card Capture
+CR=Credit Card Financial Capture Transaction
+BQs= TransactionConsolidation TransactionReversal TransactionAuthorization TransactionCapture
+Capture the card payment transaction at the merchant/point of sale. This includes obtaining the authorization for the transaction by accessing the issuer's account through the card network. The authorized transactions are collected for subsequent batch reporting and settlement processing through the network
+A card user uses their card to pay for a meal at a restaurant
+A distributed facility to capture card transactions at the point of sale
+CR - Credit Card Financial Capture Transaction							BQ - Transaction Capture			BQ - Transaction Authorization			BQ - Transaction Consolidation						BQ - Transaction Reversal		
+In	Up	Co	Ec	Ex	Rq	Re	In	Up	Re	In	Up	Re	In	Up	Co	Ec	Ex	Re	In	Up	Re
+InCR Instantiate a new Credit Card Financial Capture Transaction
+UpCR Update details relating to Credit Card Financial Capture Transaction
+CoCR Control the processing of Credit Card Financial Capture Transaction
+EcCR Accept, verify, etc. aspects of Credit Card Financial Capture Transaction processing
+ExCR Execute an available automated action for Credit Card Financial Capture Transaction
+RqCR Request manual intervention or a decision with respect to Credit Card Financial Capture Transaction
+ReCR Retrieve details about any aspect of Credit Card Financial Capture Transaction
+InBQ Instantiate a new Transaction Capture
+UpBQ Update details relating to Transaction Capture
+ReBQ Retrieve details about any aspect of Transaction Capture
+InBQ Instantiate a new Transaction Authorization
+UpBQ Update details relating to Transaction Authorization
+ReBQ Retrieve details about any aspect of Transaction Authorization
+InBQ Instantiate a new Transaction Consolidation
+UpBQ Update details relating to Transaction Consolidation
+CoBQ Control the processing of Transaction Consolidation
+EcBQ Accept, verify, etc. aspects of Transaction Consolidation processing
+ExBQ Execute an available automated action for Transaction Consolidation
+ReBQ Retrieve details about any aspect of Transaction Consolidation
+InBQ Instantiate a new Transaction Reversal
+UpBQ Update details relating to Transaction Reversal
+ReBQ Retrieve details about any aspect of Transaction Reversal

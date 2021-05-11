@@ -1,0 +1,21 @@
+sd=ECM-DCM	Supports the specification, pricing and issuance of equity and debt (bond) capital market primary market products for corporate financing services	A corporate customer raises capital through issuing corporate debt in the private capital markets	The service domain provides fulfillment services for the issuance of primary market equity and debt capital market instruments for corporate customers. It supports both private and public (IPO) placements and covers the specification, pricing and placement activities associated with issuance. (it does not include secondary market trading of the instrument)
+sdpath=ecm-dcm
+crpath=ecm-dcm-fulfillment-arrangement
+crr=ECM-DCM Fulfillment Arrangement Instance
+mcr=ECMDCM Fulfillment Arrangement
+bqs=InstrumentDefinition Prospectus Placement
+CONFIG
+ECMDCMFulfillmentArrangement	initiate	initiate an ECM-DCM transaction for a corporate customer		initiateECMDCMFulfillmentArrangement		#desc
+ECMDCMFulfillmentArrangement	update	Update details of an active ECM-DCM transaction		updateECMDCMFulfillmentArrangement		#desc
+ECMDCMFulfillmentArrangement	exchange	Accept, reject, verify, etc. aspects of an ECM-DCM transaction		exchangeECMDCMFulfillmentArrangement		#desc
+ECMDCMFulfillmentArrangement	request	Request manual intervention to an active ECM-DCM transaction (e.g. schedule investor discussions)		requestECMDCMFulfillmentArrangement		#desc
+ECMDCMFulfillmentArrangement	retrieve	Retrieve details about an active ECM-DCM transaction		retrieveECMDCMFulfillmentArrangement		#desc
+InstrumentDefinition	update	Update details of the ECM-DCM instrument specification	updateECMDCMFulfillmentArrangementInstrumentDefinition	updateECMDCMFulfillmentArrangementInstrumentDefinition		Update to any amendable fields of the Instrument Definition instance
+InstrumentDefinition	request	Request manual intervention to the instrument definition (e.g. request changes for compliance)	requestECMDCMFulfillmentArrangementInstrumentDefinition	requestECMDCMFulfillmentArrangementInstrumentDefinition		Invoke a service request action against the Instrument Definition instance
+InstrumentDefinition	retrieve	Retrieve details about the ECM-DCM instrument definition	retrieveECMDCMFulfillmentArrangementInstrumentDefinition	retrieveECMDCMFulfillmentArrangementInstrumentDefinition		Invoke a reporting action to obtain a Instrument Definition instance related report
+Prospectus	update	Update details of the ECM-DCM prospectus	updateECMDCMFulfillmentArrangementProspectus	updateECMDCMFulfillmentArrangementProspectus		Update to any amendable fields of the Prospectus instance
+Prospectus	request	Request manual intervention with the prospectus development	requestECMDCMFulfillmentArrangementProspectus	requestECMDCMFulfillmentArrangementProspectus		Invoke a service request action against the Prospectus instance
+Prospectus	retrieve	Retrieve details about the ECM-DCM prospectus development	retrieveECMDCMFulfillmentArrangementProspectus	retrieveECMDCMFulfillmentArrangementProspectus		Invoke a reporting action to obtain a Prospectus instance related report
+Placement	update	Update details of ECM-DCM placement activity	updateECMDCMFulfillmentArrangementPlacement	updateECMDCMFulfillmentArrangementPlacement		Update to any amendable fields of the Placement instance
+Placement	request	Request manual intervention in the placement activity (e.g. propose prospects)	requestECMDCMFulfillmentArrangementPlacement	requestECMDCMFulfillmentArrangementPlacement		Invoke a service request action against the Placement instance
+Placement	retrieve	Retrieve details about the ECM-DCM placement actions	retrieveECMDCMFulfillmentArrangementPlacement	retrieveECMDCMFulfillmentArrangementPlacement		Invoke a reporting action to obtain a Placement instance related report

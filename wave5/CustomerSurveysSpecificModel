@@ -1,0 +1,30 @@
+CR Customer Survey Procedure Instance Record	CR Customer Survey Procedure Instance Record	Customer Survey Procedure Instance Record	##			The procedure followed to implement a customer survey (version), track its execution and perform the subsequent analysis	IO	IO		IO	O	IO		O				IO						IO			
+			Customer Survey Type			The type or category of customer survey (e.g. questionnaire, in context solicitation, focus group)	IO	IO		IO	O	IO		O				IO						IO			
+			Customer Survey Description			A description of the customer survey that clarifies the sought customer insights, survey mechanism and target reviewers	IO	IO		IO	O	IO		O				IO						IO			
+			Employee/Business Unit Reference 			Reference to the business unit responsible for the survey execution	IO	IO		IO	O	IO		O				IO						IO			
+			Customer Survey Procedure Set-up			Details of the deployment set-up/configuration of the customer survey	IO	IO		IO	O	IO		O				IO						IO			
+			Customer Survey Procedure Version Number			The customer survey version number used	IO	IO		IO	O	IO		O				IO						IO			
+			Customer Survey Schedule			The customer survey processing schedule, covering survey definition, reviewer selection, survey execution and subsequent analysis. Note for some integrated surveys this can be an on-going activity that attempts provides a constant stream of feedback relating to specific activities/services rather than a specific event	IO	IO		IO	O	IO		O				IO						IO			
+			Customer Survey Consumables Inventory	##		Inventory record of any consumables that are to be used in the execution of the customer survey	IO	IO		IO	O							IO						IO			
+				Customer Survey Consumable Type		The type of consumable item associated with the customer survey (e.g. questionnaire, participation incentive gift)	IO	IO		IO	O							IO						IO			
+				Customer Survey Consumable Holding		The tracked inventory of the consumable item	IO	IO		IO	O							IO						IO			
+			Date Type	##		Key dates associated with the customer survey process (e.g. initiation date, version revision date, completion date)	IO	IO		IO	O	IO		O				IO						IO			
+				Date		Value of the date type	IO	IO		IO	O	IO		O				IO						IO			
+			Customer Survey Procedure Result			The result/impact of the customer survey (will include summary of customer survey activity, survey response data and survey findings presentation analysis)	O	IO		IO	O							IO						IO			
+BQ Definition Instance Record	BQ Definition Instance Record	Definition Instance Record	##			The definition/refinement of the customer survey, including the survey goals/required insights, target reviewer definition, mechanism and supported analysis						IO		O													
+			Customer Survey Design Work Task Type			The type of work task (e.g. research survey context, refine/trial questionnaire, develop supporting materials)						IO		O													
+			Customer Survey Design Work Task Description			Description of the survey development task performed						IO		O													
+			Customer Survey Design Work Task Work Products 			File of consolidated notes, forms and documents for the work task						IO		O													
+			Customer Survey Design Work Task Result			Details of the outcome or result of the work task - specifically developed materials to be used in survey execution						IO		O													
+BQ Reviewer Instance Record	BQ Reviewer Instance Record	Reviewer Instance Record	##			The selection and confirmation of selected customers and/or definition of the type of customer/or production context targeted by the survey (depending on selected survey mechanism)									IO	IO	O										
+			Customer Survey Selection Criteria			Details the selection criteria used to identify candidate customer reviewers									IO	IO	O										
+			Customer Survey Candidate Reference			Reference to the customer selected as a survey candidate									IO	IO	O										
+BQ Execution instance Record	BQ Execution instance Record	Execution Instance Record	##			The execution of the customer survey which can be executed multiple times in different contexts as the opportunity arises												IO	IO	IO	IO	IO	O				
+			Customer Survey Execution Work Task Type			The type of work task (e.g. host focus group session, issue questionnaire)												IO	IO	IO	IO	IO	O				
+			Customer Survey Execution Work Task Description			Description of the task performed, includes summary of activities as necessary												IO	IO	IO	IO	IO	O				
+			Customer Survey Execution Work Task Work Products 			File of consolidated notes, forms and documents for the work task												IO	IO	IO	IO	IO	O				
+			Document Directory Entry Instance Reference			Reference to associated documents (e.g. required legal disclosures for participants)												O	IO	IO	IO	IO	O				
+			Customer Survey Execution Work Task Result			Details of the outcome or result of the work task - typically the captured survey response and any related feedback												O	IO	IO	IO	IO	O				
+			Customer Survey Execution Work Task Date-Time			The date-time the customer survey execution												IO	IO	IO	IO	IO	O				
+BQ Survey Analysis Instance Record	BQ Survey Analysis Instance Record	Survey Analysis Instance Record	##			The survey analysis workstep involves consolidating the survey responses and developing the analysis																		IO	IO	IO	O
+			Customer Survey Procedure Survey Analysis Result			The result customer survey which combines response details/statistics and associated analysis, commentary and derived insights																		IO	IO	IO	O

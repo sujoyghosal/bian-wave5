@@ -1,0 +1,211 @@
+CR Product and Service Assessment Instance Record|Product and Service Assessment||||||CR Product and Service Assessment Initiate|CR Product and Service Assessment Update|CR Product and Service Assessment Exchange|CR Product and Service Assessment Execute|CR Product and Service Assessment Request|CR Product and Service Assessment Grant|CR Product and Service Assessment Retrieve|BQ Resiliency and Performance Checks Initiate|BQ Resiliency and Performance Checks Update|BQ Resiliency and Performance Checks Retrieve|BQ Functional Consistency Checks Initiate|BQ Functional Consistency Checks Update|BQ Functional Consistency Checks Retrieve|BQ Usability Checks Initiate|BQ Usability Checks Update|BQ Usability Checks Retrieve|BQ Processing Error and Integrity Checks Initiate|BQ Processing Error and Integrity Checks Update|BQ Processing Error and Integrity Checks Retrieve|
+Mandatory||Product Quality Assurance Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Product and Service Assessment Instance Reference||||Reference to the Product and Service Assessment instance|O|I|I|I|I|I
+Initiate||Product and Service Assessment Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Product and Service Assessment Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Product and Service Assessment Instance Status||||The status of the Product and Service Assessment instance (e.g. initialised, pending, active)|IO
+||Product and Service Assessment Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Quality Assurance.
+Examples: Perform regulatory tests on a proposed financial transaction and check a new offer conforms to an existing contractual agreement.|||||||||||||||||||
+||Product and Service Assessment Parameter Type||||A Classification value that distinguishes between Assessments according to type of concern defined within Product and Service Assessment . Eg Market Analysis, Risk Analysis, Perfomance Analysis, etc.|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Product and Service Assessment Selected Option||||A selected optional business service as subject matter of assessment|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Product and Service Assessment Type||||The type of Product and Service Assessment|I|I|I|I|I|I|O||||||||||||
+||Product and Service Assessment Reference||||Reference to Product and Service Assessment|I|I|I|I|I|I|O||||||||||||
+||Product and Service Assessment Request||||Request to assess ProductandService|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Product and Service Assessment Schedule||||Timetable to assess ProductandService|I|I|I|I|I|I|O||||||||||||
+||Product and Service Assessment Status||||The status of Product and Service Assessment|I|I|I|I|I|I|O||||||||||||
+||Product and Service Assessment Usage Log||||Reference to the log of (usage) ativities/events of Product and Service Assessment|I|I|I|I|I|I|O||||||||||||
+||Product and Service Assessment Reference||||Party who is involved in Product and Service Assessment|||||||||||||||||||
+||Product and Service Assessment ServiceProvider Reference||||Reference to the party who has provided Product and Service Assessment|I|I|I|I|I|I|O||||||||||||
+||Product and Service Assessment Requester Reference||||Reference to the party who has requested Product and Service Assessment|I|I|I|I|I|I|O||||||||||||
+Update||Product and Service Assessment Update Action Task Reference||||Reference to an update service call||O
+Update||Product and Service Assessment Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+EXCHANGE||Product and Service Assessment Exchange Action Task Reference||||Reference to a Product and Service Assessment instance exchange service call|||O
+EXCHANGE||Product and Service Assessment Exchange Action Task Record||||The exchange service call consolidated processing record|||I/O
+EXCHANGE||Product and Service Assessment Exchange Action Request|##|||Details of the exchange action service request|||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||I
+EXCHANGE||Product and Service Assessment Exchange Action Response||||Details of the exchange action service response|||O
+EXECUTE||Product and Service Assessment Execute Action Task Reference||||Reference to a Product and Service Assessment instance execute service call||||O
+EXECUTE||Product and Service Assessment Execute Action Task Record||||The execute service call consolidated processing record||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response||||O
+REQUEST||Product and Service Assessment Request Action Task Reference||||Reference to a Product and Service Assessment instance request service call|||||O
+REQUEST||Product and Service Assessment Request Action Task Record||||The request service call consolidated processing record|||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record|||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||I
+REQUEST||Request Response Record||||Details of the request action service response|||||O
+GRANT||Product and Service Assessment Grant Action Task Reference||||Reference to a Product and Service Assessment instance grant service call||||||O
+GRANT||Product and Service Assessment Grant Action Task Record||||The grant service call consolidated processing record||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted||||||O
+RETRIEVE||Product and Service Assessment Retrieve Action Task Reference||||Reference to a Product and Service Assessment instance retrieve service call|||||||O
+RETRIEVE||Product and Service Assessment Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Product and Service Assessment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Product and Service Assessment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Product and Service Assessment Instance Report Record|##|||A specific Product and Service Assessment instance formatted report|||||||IO
+RETRIEVE|||Product and Service Assessment Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Product and Service Assessment Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Product and Service Assessment Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Product and Service Assessment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Product and Service Assessment Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Product and Service Assessment Instance Analysis|##|||A specific Product and Service Assessment instance analytical report|||||||IO
+RETRIEVE|||Product and Service Assessment Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Product and Service Assessment Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Product and Service Assessment Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Product and Service Assessment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Product and Service Assessment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Resiliency and Performance Checks Instance Record|Resiliency and Performance Checks||||||
+Mandatory||Product and Service Assessment Instance Reference||||Reference to the parent Product and Service Assessment instance||||||||I|I
+Mandatory||Resiliency and Performance Checks Instance Reference||||Reference to the Resiliency and Performance Checks instance||||||||O|I
+Initiate||Resiliency and Performance Checks Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Resiliency and Performance Checks Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Resiliency and Performance Checks Instance Status||||The status of the Resiliency and Performance Checks instance (e.g. initialised, pending, active)||||||||O
+||Resiliency and Performance Checks Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Quality Assurance.
+|||||||||||||||||||
+||Resiliency and Performance Checks Preconditions||||The required status/situation before the test can be applied||||||||IO|IO|O|||||||||
+||Resiliency and Performance Checks Analysis Schedule||||The schedule and timing of the testing performed||||||||IO|IO|O|||||||||
+||Resiliency and Performance Checks Version Number||||The test version employed||||||||IO|IO|O|||||||||
+||Resiliency and Performance Checks||||The Product and Service Assessment specific Business Service||||||||IO|IO|O|||||||||
+||Resiliency and Performance Checks Service Type||||Reference to the specific business service type||||||||IO|IO|O|||||||||
+||Resiliency and Performance Checks Service Description||||Description of the performed business service||||||||IO|IO|O|||||||||
+||Resiliency and Performance Checks Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|O|||||||||
+||Resiliency and Performance Checks Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|O|||||||||
+||Resiliency and Performance Checks Service Name||||||||||||IO|IO|O|||||||||
+Update||Resiliency and Performance Checks Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Resiliency and Performance Checks Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Resiliency and Performance Checks Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Retrieve||Resiliency and Performance Checks Retrieve Action Task Reference||||Reference to a Resiliency and Performance Checks instance retrieve service call||||||||||O
+Retrieve||Resiliency and Performance Checks Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Resiliency and Performance Checks Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Resiliency and Performance Checks Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Resiliency and Performance Checks Instance Report|##|||A specific Resiliency and Performance Checks instance formatted report||||||||||IO
+Retrieve|||Resiliency and Performance Checks Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Resiliency and Performance Checks Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Resiliency and Performance Checks Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Resiliency and Performance Checks Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Resiliency and Performance Checks Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Resiliency and Performance Checks Instance Analysis|##|||A specific Resiliency and Performance Checks instance analytical report||||||||||IO
+Retrieve|||Resiliency and Performance Checks Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Resiliency and Performance Checks Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Resiliency and Performance Checks Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Resiliency and Performance Checks Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Resiliency and Performance Checks Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Functional Consistency Checks Instance Record|Functional Consistency Checks||||||
+Mandatory||Product and Service Assessment Instance Reference||||Reference to the parent Product and Service Assessment instance|||||||||||I|I
+Mandatory||Functional Consistency Checks Instance Reference||||Reference to the Functional Consistency Checks instance|||||||||||O|I
+Initiate||Functional Consistency Checks Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Initiate||Functional Consistency Checks Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Initiate||Functional Consistency Checks Instance Status||||The status of the Functional Consistency Checks instance (e.g. initialised, pending, active)|||||||||||O
+||Functional Consistency Checks Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Quality Assurance.
+|||||||||||||||||||
+||Functional Consistency Checks Preconditions||||The required status/situation before the test can be applied|||||||||||IO|IO|O||||||
+||Functional Consistency Checks Analysis Schedule||||The schedule and timing of the testing performed|||||||||||IO|IO|O||||||
+||Functional Consistency Checks Version Number||||The test version employed|||||||||||IO|IO|O||||||
+||Functional Consistency Checks||||The Product and Service Assessment specific Business Service|||||||||||||||||||
+||Functional Consistency Checks Service Type||||Reference to the specific business service type|||||||||||IO|IO|O||||||
+||Functional Consistency Checks Service Description||||Description of the performed business service|||||||||||IO|IO|O||||||
+||Functional Consistency Checks Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|IO|O||||||
+||Functional Consistency Checks Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|IO|O||||||
+||Functional Consistency Checks Service Name|||||||||||||||IO|IO|O||||||
+Update||Functional Consistency Checks Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Functional Consistency Checks Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Functional Consistency Checks Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Retrieve||Functional Consistency Checks Retrieve Action Task Reference||||Reference to a Functional Consistency Checks instance retrieve service call|||||||||||||O
+Retrieve||Functional Consistency Checks Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||Functional Consistency Checks Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||Functional Consistency Checks Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||Functional Consistency Checks Instance Report|##|||A specific Functional Consistency Checks instance formatted report|||||||||||||IO
+Retrieve|||Functional Consistency Checks Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||Functional Consistency Checks Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Functional Consistency Checks Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||Functional Consistency Checks Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||Functional Consistency Checks Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||Functional Consistency Checks Instance Analysis|##|||A specific Functional Consistency Checks instance analytical report|||||||||||||IO
+Retrieve|||Functional Consistency Checks Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||Functional Consistency Checks Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Functional Consistency Checks Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||Functional Consistency Checks Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||Functional Consistency Checks Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O
+BQ Usability Checks Instance Record|Usability Checks||||||
+Mandatory||Product and Service Assessment Instance Reference||||Reference to the parent Product and Service Assessment instance||||||||||||||I|I
+Mandatory||Usability Checks Instance Reference||||Reference to the Usability Checks instance||||||||||||||O|I
+Initiate||Usability Checks Initiate Action Reference||||Reference to an Initiate service call||||||||||||||O
+Initiate||Usability Checks Initiate Action Record||||The Initiate service call input and output record||||||||||||||I/O
+Initiate||Usability Checks Instance Status||||The status of the Usability Checks instance (e.g. initialised, pending, active)||||||||||||||O
+||Usability Checks Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Quality Assurance.
+|||||||||||||||||||
+||Usability Checks Preconditions||||The required status/situation before the test can be applied||||||||||||||IO|IO|O|||
+||Usability Checks Analysis Schedule||||The schedule and timing of the testing performed||||||||||||||IO|IO|O|||
+||Usability Checks Version Number||||The test version employed||||||||||||||IO|IO|O|||
+||Usability Checks||||The Product and Service Assessment specific Business Service|||||||||||||||||||
+||Usability Checks Service Type||||Reference to the specific business service type||||||||||||||IO|IO|O|||
+||Usability Checks Service Description||||Description of the performed business service||||||||||||||IO|IO|O|||
+||Usability Checks Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|IO|O|||
+||Usability Checks Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|IO|O|||
+||Usability Checks Service Name||||||||||||||||||IO|IO|O|||
+Update||Usability Checks Update Action Task Reference||||Reference to an update service call|||||||||||||||O
+Update||Usability Checks Update Action Task Record||||The update service call consolidated processing record|||||||||||||||I/O
+Update||Usability Checks Update Action Request||||Details of the update action service request|||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||O
+Retrieve||Usability Checks Retrieve Action Task Reference||||Reference to a Usability Checks instance retrieve service call||||||||||||||||O
+Retrieve||Usability Checks Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Usability Checks Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Usability Checks Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Usability Checks Instance Report|##|||A specific Usability Checks instance formatted report||||||||||||||||IO
+Retrieve|||Usability Checks Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Usability Checks Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Usability Checks Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Usability Checks Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Usability Checks Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Usability Checks Instance Analysis|##|||A specific Usability Checks instance analytical report||||||||||||||||IO
+Retrieve|||Usability Checks Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Usability Checks Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Usability Checks Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Usability Checks Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Usability Checks Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ Processing Error and Integrity Checks Instance Record|Processing Error and Integrity Checks||||||
+Mandatory||Product and Service Assessment Instance Reference||||Reference to the parent Product and Service Assessment instance|||||||||||||||||I|I
+Mandatory||Processing Error and Integrity Checks Instance Reference||||Reference to the Processing Error and Integrity Checks instance|||||||||||||||||O|I
+Initiate||Processing Error and Integrity Checks Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||O
+Initiate||Processing Error and Integrity Checks Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||I/O
+Initiate||Processing Error and Integrity Checks Instance Status||||The status of the Processing Error and Integrity Checks instance (e.g. initialised, pending, active)|||||||||||||||||O
+||Processing Error and Integrity Checks Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Quality Assurance.
+|||||||||||||||||||
+||Processing Error and Integrity Checks Preconditions||||The required status/situation before the test can be applied|||||||||||||||||IO|IO|O
+||Processing Error and Integrity Checks Analysis Schedule||||The schedule and timing of the testing performed|||||||||||||||||IO|IO|O
+||Processing Error and Integrity Checks Version Number||||The test version employed|||||||||||||||||IO|IO|O
+||Processing Error and Integrity Checks||||The Product and Service Assessment specific Business Service|||||||||||||||||IO|IO|O
+||Processing Error and Integrity Checks Service Type||||Reference to the specific business service type|||||||||||||||||IO|IO|O
+||Processing Error and Integrity Checks Service Description||||Description of the performed business service|||||||||||||||||IO|IO|O
+||Processing Error and Integrity Checks Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||IO|IO|O
+||Processing Error and Integrity Checks Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||IO|IO|O
+Update||Processing Error and Integrity Checks Update Action Task Reference||||Reference to an update service call||||||||||||||||||O
+Update||Processing Error and Integrity Checks Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||I/O
+Update||Processing Error and Integrity Checks Update Action Request||||Details of the update action service request||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||O
+Retrieve||Processing Error and Integrity Checks Retrieve Action Task Reference||||Reference to a Processing Error and Integrity Checks instance retrieve service call|||||||||||||||||||O
+Retrieve||Processing Error and Integrity Checks Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Processing Error and Integrity Checks Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Processing Error and Integrity Checks Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Processing Error and Integrity Checks Instance Report|##|||A specific Processing Error and Integrity Checks instance formatted report|||||||||||||||||||IO
+Retrieve|||Processing Error and Integrity Checks Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Processing Error and Integrity Checks Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Processing Error and Integrity Checks Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Processing Error and Integrity Checks Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Processing Error and Integrity Checks Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Processing Error and Integrity Checks Instance Analysis|##|||A specific Processing Error and Integrity Checks instance analytical report|||||||||||||||||||IO
+Retrieve|||Processing Error and Integrity Checks Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Processing Error and Integrity Checks Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Processing Error and Integrity Checks Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Processing Error and Integrity Checks Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Processing Error and Integrity Checks Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O

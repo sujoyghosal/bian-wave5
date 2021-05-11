@@ -1,0 +1,21 @@
+sd=Corporate Tax Advisory	A fee or commission based product providing tax specific assessments, advice and guidance for corporate customers	A corporate customer obtains tax optimization advice from a financial advisor at a branch	Provide corporate customers with tax related advice to better understand tax obligations and to identify and implement tax optimization approaches. The service is fee based and may include the use of product specialist financial advisory resources when required
+sdpath=corporate-tax-advisory
+crpath=corporate-tax-advisory-fulfillment-arrangement
+crr=Corporate Tax Advisory Fulfillment Arrangement Instance
+mcr=Corporate Tax Advisory Fulfillment Arrangement
+bqs=TaxOptimization ServiceFees
+CONFIG
+CorporateTaxAdvisoryFulfillmentArrangement	initiate	Initiate a corporate tax advisory service		initiateCorporateTaxAdvisoryFulfillmentArrangement		#desc
+CorporateTaxAdvisoryFulfillmentArrangement	update	Update details for a corporate tax advisory service		updateCorporateTaxAdvisoryFulfillmentArrangement		#desc
+CorporateTaxAdvisoryFulfillmentArrangement	control	Control the processing of the service (e.g. suspend)		controlCorporateTaxAdvisoryFulfillmentArrangement		#desc
+CorporateTaxAdvisoryFulfillmentArrangement	request	Request manual intervention during the advisory service (e.g. expand coverage)		requestCorporateTaxAdvisoryFulfillmentArrangement		#desc
+CorporateTaxAdvisoryFulfillmentArrangement	retrieve	Retrieve details about a corporate tax advisory service arrangement		retrieveCorporateTaxAdvisoryFulfillmentArrangement		#desc
+TaxOptimization	initiate	Initiate a corporate tax optimization advisory session	initiateCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization	initiateCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization		Details of a new Tax Optimization instance
+TaxOptimization	update	Update details about a corporate tax optimization advisory session	updateCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization	updateCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization		Update to any amendable fields of the Tax Optimization instance
+TaxOptimization	request	Request manual intervention in a session (e.g. request specialist input)	requestCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization	requestCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization		Invoke a service request action against the Tax Optimization instance
+TaxOptimization	retrieve	Retrieve details about a corporate tax optimization advisory session	retrieveCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization	retrieveCorporateTaxAdvisoryFulfillmentArrangementTaxOptimization		Invoke a reporting action to obtain a Tax Optimization instance related report
+ServiceFees	initiate	Initialize service fee processing for corporate tax advisory services (sets up ability to process fees)	initiateCorporateTaxAdvisoryFulfillmentArrangementServiceFees	initiateCorporateTaxAdvisoryFulfillmentArrangementServiceFees		Details of a new Service Fees instance
+ServiceFees	update	Update details of service fees for corporate tax advisory services	updateCorporateTaxAdvisoryFulfillmentArrangementServiceFees	updateCorporateTaxAdvisoryFulfillmentArrangementServiceFees		Update to any amendable fields of the Service Fees instance
+ServiceFees	exchange	Accept/reject/approve fees for an corporate tax advisory session	exchangeCorporateTaxAdvisoryFulfillmentArrangementServiceFees	exchangeCorporateTaxAdvisoryFulfillmentArrangementServiceFees		Handle an external exchange (e.g. accept, reject, verify)
+ServiceFees	execute	Execute/apply a fee for a corporate tax advisory session	executeCorporateTaxAdvisoryFulfillmentArrangementServiceFees	executeCorporateTaxAdvisoryFulfillmentArrangementServiceFees		Invoke an automated execute action against the Service Fees instance
+ServiceFees	retrieve	Retrieve details about service fees for a corporate tax advisory service	retrieveCorporateTaxAdvisoryFulfillmentArrangementServiceFees	retrieveCorporateTaxAdvisoryFulfillmentArrangementServiceFees		Invoke a reporting action to obtain a Service Fees instance related report

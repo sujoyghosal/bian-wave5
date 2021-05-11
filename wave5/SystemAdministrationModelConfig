@@ -1,0 +1,250 @@
+CR ITSystem Administrative Plan Instance Record|ITSystem Administrative Plan||||||CR ITSystem Administrative Plan Initiate|CR ITSystem Administrative Plan Update|CR ITSystem Administrative Plan Control|CR ITSystem Administrative Plan Exchange|CR ITSystem Administrative Plan Capture|CR ITSystem Administrative Plan Request|CR ITSystem Administrative Plan Grant|CR ITSystem Administrative Plan Retrieve|BQ Inventory Update|BQ Inventory Capture|BQ Inventory Request|BQ Inventory Retrieve|BQ Assurance Update|BQ Assurance Capture|BQ Assurance Request|BQ Assurance Retrieve|BQ Configuration Update|BQ Configuration Capture|BQ Configuration Request|BQ Configuration Retrieve|BQ Capacity Planning and Resilience Update|BQ Capacity Planning and Resilience Capture|BQ Capacity Planning and Resilience Request|BQ Capacity Planning and Resilience Retrieve|
+Mandatory||System Administration Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||ITSystem Administrative Plan Instance Reference||||Reference to the ITSystem Administrative Plan instance|O|I|I|I|I|I|I
+Initiate||ITSystem Administrative Plan Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||ITSystem Administrative Plan Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||ITSystem Administrative Plan Instance Status||||The status of the ITSystem Administrative Plan instance (e.g. initialised, pending, active)|IO
+||ITSystem Administrative Plan Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within System Administration.
+Example: Administer the time reporting and billing for the specialist sales support team.||||||||||||||||||||||||
+||ITSystem Administrative Plan Budget Type||||A Classification value that distinguishes between Budgets within ITSystem Administrative Plan according to the type of resource and/or activity that is budgetted|IO|IO|IO|IO|IO|IO|IO|O||||||||||||||||
+||ITSystem Administrative Plan Budget||||An estimate of costs, revenues, and resources over a specified period which is defined for ITSystem Administrative Plan||||||||||||||||||||||||
+||ITSystem Administrative Plan Assignment||||The allocation of someone or something which is specified for ITSystem Administrative Plan|IO|IO|IO|IO|IO|IO|IO|O||||||||||||||||
+||ITSystem Administrative Plan Plan||||A plan that defines clerical support for ITSystem|IO|IO|IO|IO|IO|IO|IO|O||||||||||||||||
+||ITSystem Administrative Plan Reference||||Party who is involved in ITSystem Administrative Plan|I|I|I|I|I|I|I|O||||||||||||||||
+Update||ITSystem Administrative Plan Update Action Task Reference||||Reference to an update service call||O
+Update||ITSystem Administrative Plan Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||ITSystem Administrative Plan Control Action Task Reference||||Reference to a ITSystem Administrative Plan instance control processing service call|||O
+CONTROL||ITSystem Administrative Plan Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||ITSystem Administrative Plan Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||ITSystem Administrative Plan Control Action Response||||Details of the control action service response|||O
+EXCHANGE||ITSystem Administrative Plan Exchange Action Task Reference||||Reference to a ITSystem Administrative Plan instance exchange service call||||O
+EXCHANGE||ITSystem Administrative Plan Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||ITSystem Administrative Plan Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||ITSystem Administrative Plan Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||ITSystem Administrative Plan Capture Action Task Reference||||Reference to a ITSystem Administrative Plan instance capture service call|||||O
+CAPTURE||ITSystem Administrative Plan Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||ITSystem Administrative Plan Request Action Task Reference||||Reference to a ITSystem Administrative Plan instance request service call||||||O
+REQUEST||ITSystem Administrative Plan Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+GRANT||ITSystem Administrative Plan Grant Action Task Reference||||Reference to a ITSystem Administrative Plan instance grant service call|||||||O
+GRANT||ITSystem Administrative Plan Grant Action Task Record||||The grant service call consolidated processing record|||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||||O
+RETRIEVE||ITSystem Administrative Plan Retrieve Action Task Reference||||Reference to a ITSystem Administrative Plan instance retrieve service call||||||||O
+RETRIEVE||ITSystem Administrative Plan Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||IO
+RETRIEVE||ITSystem Administrative Plan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+RETRIEVE||ITSystem Administrative Plan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+RETRIEVE||ITSystem Administrative Plan Instance Report Record|##|||A specific ITSystem Administrative Plan instance formatted report||||||||IO
+RETRIEVE|||ITSystem Administrative Plan Instance Report Reference|||Reference to the control record instance report||||||||I
+RETRIEVE|||ITSystem Administrative Plan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||ITSystem Administrative Plan Instance Report Type|||The type of external report available||||||||IO
+RETRIEVE|||ITSystem Administrative Plan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||I
+RETRIEVE|||ITSystem Administrative Plan Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+RETRIEVE||ITSystem Administrative Plan Instance Analysis|##|||A specific ITSystem Administrative Plan instance analytical report||||||||IO
+RETRIEVE|||ITSystem Administrative Plan Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+RETRIEVE|||ITSystem Administrative Plan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||ITSystem Administrative Plan Instance Analysis Report Type|||The type of external performance analysis report available||||||||IO
+RETRIEVE|||ITSystem Administrative Plan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||I
+RETRIEVE|||ITSystem Administrative Plan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Inventory Instance Record|Inventory||||||
+Mandatory||ITSystem Administrative Plan Instance Reference||||Reference to the parent ITSystem Administrative Plan instance|||||||||I|I|I
+Mandatory||Inventory Instance Reference||||Reference to the Inventory instance|||||||||I|I|I
+||Inventory Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within System Administration.
+||||||||||||||||||||||||
+||Inventory Preconditions||||The required status/situation before the routine can be undertaken|||||||||IO|IO|IO|O||||||||||||
+||Inventory Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||IO|IO|IO|O||||||||||||
+||Inventory Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||IO|IO|IO|O||||||||||||
+||Business Service||||The ITSystem Administrative Plan specific Business Service|||||||||IO|IO|IO|O||||||||||||
+||Inventory Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||IO|IO|IO|O||||||||||||
+||Inventory Service Type||||Reference to the specific business service type|||||||||IO|IO|IO|O||||||||||||
+||Inventory Service Description||||Description of the performed business service|||||||||IO|IO|IO|O||||||||||||
+||Inventory Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||IO|IO|IO|O||||||||||||
+||Inventory Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||IO|IO|IO|O||||||||||||
+||Inventory Service Name|||||||||||||IO|IO|IO|O||||||||||||
+Update||Inventory Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Inventory Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Inventory Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Capture||Inventory Capture Action Task Reference||||Reference to a Inventory instance capture service call||||||||||O
+Capture||Inventory Capture Action Task Record||||The capture service call consolidated processing record||||||||||I/O
+Capture||Inventory Capture Record Reference||||Reference to the Inventory structured input transaction/record||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||O
+Request||Inventory Request Action Task Reference||||Reference to a Inventory instance request service call|||||||||||O
+Request||Inventory Request Action Task Record||||The request service call consolidated processing record|||||||||||I/O
+Request||Inventory Request Record Reference||||Reference to the Inventory service request record|||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||O
+Retrieve||Inventory Retrieve Action Task Reference||||Reference to a Inventory instance retrieve service call||||||||||||O
+Retrieve||Inventory Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Inventory Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Inventory Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Inventory Instance Report|##|||A specific Inventory instance formatted report||||||||||||IO
+Retrieve|||Inventory Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Inventory Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Inventory Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Inventory Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Inventory Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Inventory Instance Analysis|##|||A specific Inventory instance analytical report||||||||||||IO
+Retrieve|||Inventory Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Inventory Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Inventory Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Inventory Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Inventory Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ Assurance Instance Record|Assurance||||||
+Mandatory||ITSystem Administrative Plan Instance Reference||||Reference to the parent ITSystem Administrative Plan instance|||||||||||||I|I|I
+Mandatory||Assurance Instance Reference||||Reference to the Assurance instance|||||||||||||I|I|I
+||Assurance Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within System Administration.
+||||||||||||||||||||||||
+||Assurance Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||IO|IO|IO|O||||||||
+||Assurance Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||IO|IO|IO|O||||||||
+||Assurance Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||IO|IO|IO|O||||||||
+||Collateral Item Assurance||||The ITSystem Administrative Plan specific Business Service|||||||||||||IO|IO|IO|O||||||||
+||Assurance Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||IO|IO|IO|O||||||||
+||Assurance Collateral Item Assurance Service Type||||Reference to the specific business service type|||||||||||||IO|IO|IO|O||||||||
+||Assurance Collateral Item Assurance Service Description||||Description of the performed business service|||||||||||||IO|IO|IO|O||||||||
+||Assurance Collateral Item Assurance Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||IO|IO|IO|O||||||||
+||Assurance Collateral Item Assurance Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||IO|IO|IO|O||||||||
+||Assurance Collateral Item Assurance Service Name|||||||||||||||||IO|IO|IO|O||||||||
+Update||Assurance Update Action Task Reference||||Reference to an update service call|||||||||||||O
+Update||Assurance Update Action Task Record||||The update service call consolidated processing record|||||||||||||I/O
+Update||Assurance Update Action Request||||Details of the update action service request|||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||O
+Capture||Assurance Capture Action Task Reference||||Reference to a Assurance instance capture service call||||||||||||||O
+Capture||Assurance Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||I/O
+Capture||Assurance Capture Record Reference||||Reference to the Assurance structured input transaction/record||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||O
+Request||Assurance Request Action Task Reference||||Reference to a Assurance instance request service call|||||||||||||||O
+Request||Assurance Request Action Task Record||||The request service call consolidated processing record|||||||||||||||I/O
+Request||Assurance Request Record Reference||||Reference to the Assurance service request record|||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||O
+Retrieve||Assurance Retrieve Action Task Reference||||Reference to a Assurance instance retrieve service call||||||||||||||||O
+Retrieve||Assurance Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Assurance Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Assurance Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Assurance Instance Report|##|||A specific Assurance instance formatted report||||||||||||||||IO
+Retrieve|||Assurance Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Assurance Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Assurance Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Assurance Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Assurance Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Assurance Instance Analysis|##|||A specific Assurance instance analytical report||||||||||||||||IO
+Retrieve|||Assurance Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Assurance Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Assurance Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Assurance Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Assurance Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ Configuration Instance Record|Configuration||||||
+Mandatory||ITSystem Administrative Plan Instance Reference||||Reference to the parent ITSystem Administrative Plan instance|||||||||||||||||I|I|I
+Mandatory||Configuration Instance Reference||||Reference to the Configuration instance|||||||||||||||||I|I|I
+||Configuration Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within System Administration.
+||||||||||||||||||||||||
+||Configuration Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||||||IO|IO|IO|O||||
+||Configuration Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||||||IO|IO|IO|O||||
+||Configuration Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||||||IO|IO|IO|O||||
+||Systems Configuration Administration||||The ITSystem Administrative Plan specific Business Service|||||||||||||||||IO|IO|IO|O||||
+||Configuration Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||||||IO|IO|IO|O||||
+||Configuration Systems Configuration Administration Service Type||||Reference to the specific business service type|||||||||||||||||IO|IO|IO|O||||
+||Configuration Systems Configuration Administration Service Description||||Description of the performed business service|||||||||||||||||IO|IO|IO|O||||
+||Configuration Systems Configuration Administration Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||IO|IO|IO|O||||
+||Configuration Systems Configuration Administration Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||IO|IO|IO|O||||
+||Configuration Systems Configuration Administration Service Name|||||||||||||||||||||IO|IO|IO|O||||
+Update||Configuration Update Action Task Reference||||Reference to an update service call|||||||||||||||||O
+Update||Configuration Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||I/O
+Update||Configuration Update Action Request||||Details of the update action service request|||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||O
+Capture||Configuration Capture Action Task Reference||||Reference to a Configuration instance capture service call||||||||||||||||||O
+Capture||Configuration Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||||I/O
+Capture||Configuration Capture Record Reference||||Reference to the Configuration structured input transaction/record||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||||O
+Request||Configuration Request Action Task Reference||||Reference to a Configuration instance request service call|||||||||||||||||||O
+Request||Configuration Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||I/O
+Request||Configuration Request Record Reference||||Reference to the Configuration service request record|||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||O
+Retrieve||Configuration Retrieve Action Task Reference||||Reference to a Configuration instance retrieve service call||||||||||||||||||||O
+Retrieve||Configuration Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||I/O
+Retrieve||Configuration Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||I
+Retrieve||Configuration Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||O
+Retrieve||Configuration Instance Report|##|||A specific Configuration instance formatted report||||||||||||||||||||IO
+Retrieve|||Configuration Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||I
+Retrieve|||Configuration Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Configuration Instance Report Type|||The type of external report available||||||||||||||||||||O
+Retrieve|||Configuration Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||O
+Retrieve|||Configuration Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+Retrieve||Configuration Instance Analysis|##|||A specific Configuration instance analytical report||||||||||||||||||||IO
+Retrieve|||Configuration Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||I
+Retrieve|||Configuration Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Configuration Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||O
+Retrieve|||Configuration Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||O
+Retrieve|||Configuration Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+BQ Capacity Planning and Resilience Instance Record|Capacity Planning and Resilience||||||
+Mandatory||ITSystem Administrative Plan Instance Reference||||Reference to the parent ITSystem Administrative Plan instance|||||||||||||||||||||I|I|I
+Mandatory||Capacity Planning and Resilience Instance Reference||||Reference to the Capacity Planning and Resilience instance|||||||||||||||||||||I|I|I
+||Capacity Planning and Resilience Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within System Administration.
+||||||||||||||||||||||||
+||Capacity Planning and Resilience Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||||||||||IO|IO|IO|O
+||Capacity Planning and Resilience Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||||||||||IO|IO|IO|O
+||Capacity Planning and Resilience Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||||||||||IO|IO|IO|O
+||Capacity Planning and Resilience||||The ITSystem Administrative Plan specific Business Service|||||||||||||||||||||IO|IO|IO|O
+||Capacity Planning and Resilience Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||||||||||IO|IO|IO|O
+||Capacity Planning and Resilience Capacity Planning and Resilience Service Type||||Reference to the specific business service type|||||||||||||||||||||IO|IO|IO|O
+||Capacity Planning and Resilience Capacity Planning and Resilience Service Description||||Description of the performed business service|||||||||||||||||||||IO|IO|IO|O
+||Capacity Planning and Resilience Capacity Planning and Resilience Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||IO|IO|IO|O
+||Capacity Planning and Resilience Capacity Planning and Resilience Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||IO|IO|IO|O
+Update||Capacity Planning and Resilience Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||O
+Update||Capacity Planning and Resilience Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||I/O
+Update||Capacity Planning and Resilience Update Action Request||||Details of the update action service request|||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||O
+Capture||Capacity Planning and Resilience Capture Action Task Reference||||Reference to a Capacity Planning and Resilience instance capture service call||||||||||||||||||||||O
+Capture||Capacity Planning and Resilience Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||||||||I/O
+Capture||Capacity Planning and Resilience Capture Record Reference||||Reference to the Capacity Planning and Resilience structured input transaction/record||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||||||||O
+Request||Capacity Planning and Resilience Request Action Task Reference||||Reference to a Capacity Planning and Resilience instance request service call|||||||||||||||||||||||O
+Request||Capacity Planning and Resilience Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||I/O
+Request||Capacity Planning and Resilience Request Record Reference||||Reference to the Capacity Planning and Resilience service request record|||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||O
+Retrieve||Capacity Planning and Resilience Retrieve Action Task Reference||||Reference to a Capacity Planning and Resilience instance retrieve service call||||||||||||||||||||||||O
+Retrieve||Capacity Planning and Resilience Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||I/O
+Retrieve||Capacity Planning and Resilience Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||I
+Retrieve||Capacity Planning and Resilience Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||O
+Retrieve||Capacity Planning and Resilience Instance Report|##|||A specific Capacity Planning and Resilience instance formatted report||||||||||||||||||||||||IO
+Retrieve|||Capacity Planning and Resilience Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||I
+Retrieve|||Capacity Planning and Resilience Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||O
+Retrieve|||Capacity Planning and Resilience Instance Report Type|||The type of external report available||||||||||||||||||||||||O
+Retrieve|||Capacity Planning and Resilience Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||O
+Retrieve|||Capacity Planning and Resilience Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||O
+Retrieve||Capacity Planning and Resilience Instance Analysis|##|||A specific Capacity Planning and Resilience instance analytical report||||||||||||||||||||||||IO
+Retrieve|||Capacity Planning and Resilience Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||I
+Retrieve|||Capacity Planning and Resilience Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||O
+Retrieve|||Capacity Planning and Resilience Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||O
+Retrieve|||Capacity Planning and Resilience Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||O
+Retrieve|||Capacity Planning and Resilience Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||O

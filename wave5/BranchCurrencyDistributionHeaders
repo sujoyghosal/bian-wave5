@@ -1,0 +1,29 @@
+SD=Branch Currency Distribution
+CR=Cash Distribution Procedure
+BQs= InventoryProvisioning DistributionVehicleAdministration DistributionPlanning InventoryDistributionOversight
+This service domain handles the scheduling and secure distribution of currency throughout the branch network (for bank branches and remote ATM locations). It ensures the required float is maintained at locations and undertakes the movement into and out of central currency holding facilities as necessary to ensure cash availability
+ATMs at a branch location are stocked with currency in response to anticipated customer demand
+Schedule and coordinate the secure distribution of cash inventory across the branch and ATM networks.
+CR - Cash Distribution Procedure							BQ - Distribution Planning				BQ - Inventory Distribution Oversight			BQ - Inventory Provisioning				BQ - Distribution Vehicle Administration		
+In	Up	Co	Ec	Ex	Rq	Re	Up	Ec	Rq	Re	Up	Rq	Re	Up	Ec	Rq	Re	Up	Rq	Re
+InCR Instantiate a new Cash Distribution Procedure
+UpCR Update details relating to Cash Distribution Procedure
+CoCR Control the processing of Cash Distribution Procedure
+EcCR Accept, verify, etc. aspects of Cash Distribution Procedure processing
+ExCR Execute an available automated action for Cash Distribution Procedure
+RqCR Request manual intervention or a decision with respect to Cash Distribution Procedure
+ReCR Retrieve details about any aspect of Cash Distribution Procedure
+UpBQ Update details relating to Distribution Planning
+EcBQ Accept, verify, etc. aspects of Distribution Planning processing
+RqBQ Request manual intervention or a decision with respect to Distribution Planning
+ReBQ Retrieve details about any aspect of Distribution Planning
+UpBQ Update details relating to Inventory Distribution Oversight
+RqBQ Request manual intervention or a decision with respect to Inventory Distribution Oversight
+ReBQ Retrieve details about any aspect of Inventory Distribution Oversight
+UpBQ Update details relating to Inventory Provisioning
+EcBQ Accept, verify, etc. aspects of Inventory Provisioning processing
+RqBQ Request manual intervention or a decision with respect to Inventory Provisioning
+ReBQ Retrieve details about any aspect of Inventory Provisioning
+UpBQ Update details relating to Distribution Vehicle Administration
+RqBQ Request manual intervention or a decision with respect to Distribution Vehicle Administration
+ReBQ Retrieve details about any aspect of Distribution Vehicle Administration

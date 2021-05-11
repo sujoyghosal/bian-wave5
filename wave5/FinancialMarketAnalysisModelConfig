@@ -1,0 +1,99 @@
+CR Financial Market Analysis Instance Record|Financial Market Analysis||||||CR Financial Market Analysis Initiate|CR Financial Market Analysis Update|CR Financial Market Analysis Execute|CR Financial Market Analysis Request|CR Financial Market Analysis Retrieve|BQ Financial Market Insight Initiate|BQ Financial Market Insight Update|BQ Financial Market Insight Execute|BQ Financial Market Insight Request|BQ Financial Market Insight Retrieve|
+Mandatory||Financial Market Analysis Servicing Session Reference||||Reference to the active servicing session|I|I|I|I
+Mandatory||Financial Market Analysis Instance Reference||||Reference to the Financial Market Analysis instance|O|I|I|I
+Initiate||Financial Market Analysis Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Financial Market Analysis Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Financial Market Analysis Instance Status||||The status of the Financial Market Analysis instance (e.g. initialised, pending, active)|IO
+||Financial Market Analysis Instance Record||||Analyze the performance or behavior of some on-going activity or entity within Financial Market Analysis.
+Examples: Provide behavioral insights and analysis into customer behavior and analyze financial market activity in order to identify opportunities, define pricing and evaluate risks.
+
+Analyze the performance or behavior of some on-going activity or entity. Examples: Provide behavioral insights and analysis into customer behavior and analyze financial market activity in order to identify opportunities, define pricing and evaluate risks.||||||||||
+||Financial Market Analysis Parameter Type||||A Classification value that distinguishes between Analysis according to the type of business services and/or type of concern defined within Financial Market Analysis . Eg Market Analysis, Risk Analysis, Perfomance Analysis, etc.|IO|IO|IO|IO|O|||||
+||Financial Market Analysis Selected Option||||A selected optional business service as subject matter of analysis|IO|IO|IO|IO|O|||||
+||Financial Market Analysis Request||||Request to perform Financial Market Analysis|IO|IO|IO|IO|O|||||
+||Financial Market Analysis Schedule||||Timetable to perform Financial Market Analysis|I|I|I|I|O|||||
+||Financial Market Analysis Status||||The status of Financial Market Analysis|IO|IO|IO|IO|O|||||
+||Financial Market Analysis Usage Log||||Reference to the log of (usage) ativities/events of Financial Market Analysis|IO|IO|IO|IO|O|||||
+||Financial Market Analysis Requester Reference||||Reference to the party who has requested Financial Market Analysis|I|I|I|I|O|||||
+Update||Financial Market Analysis Update Action Task Reference||||Reference to an update service call||O
+Update||Financial Market Analysis Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+EXECUTE||Financial Market Analysis Execute Action Task Reference||||Reference to a Financial Market Analysis instance execute service call|||O
+EXECUTE||Financial Market Analysis Execute Action Task Record||||The execute service call consolidated processing record|||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||O
+REQUEST||Financial Market Analysis Request Action Task Reference||||Reference to a Financial Market Analysis instance request service call||||O
+REQUEST||Financial Market Analysis Request Action Task Record||||The request service call consolidated processing record||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||I
+REQUEST||Request Response Record||||Details of the request action service response||||O
+RETRIEVE||Financial Market Analysis Retrieve Action Task Reference||||Reference to a Financial Market Analysis instance retrieve service call|||||O
+RETRIEVE||Financial Market Analysis Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||IO
+RETRIEVE||Financial Market Analysis Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||I
+RETRIEVE||Financial Market Analysis Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||O
+RETRIEVE||Financial Market Analysis Instance Report Record|##|||A specific Financial Market Analysis instance formatted report|||||IO
+RETRIEVE|||Financial Market Analysis Instance Report Reference|||Reference to the control record instance report|||||I
+RETRIEVE|||Financial Market Analysis Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||Financial Market Analysis Instance Report Type|||The type of external report available|||||IO
+RETRIEVE|||Financial Market Analysis Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||I
+RETRIEVE|||Financial Market Analysis Instance Report|||The external report in any suitable form including selection filters where appropriate|||||O
+RETRIEVE||Financial Market Analysis Instance Analysis|##|||A specific Financial Market Analysis instance analytical report|||||IO
+RETRIEVE|||Financial Market Analysis Instance Analysis Reference|||Reference to the control record instance analysis view|||||I
+RETRIEVE|||Financial Market Analysis Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||Financial Market Analysis Instance Analysis Report Type|||The type of external performance analysis report available|||||IO
+RETRIEVE|||Financial Market Analysis Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||I
+RETRIEVE|||Financial Market Analysis Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||O
+BQ Financial Market Insight Instance Record|Financial Market Insight||||||
+Mandatory||Financial Market Analysis Instance Reference||||Reference to the parent Financial Market Analysis instance||||||I|I|I|I
+Mandatory||Financial Market Insight Instance Reference||||Reference to the Financial Market Insight instance||||||O|I|I|I
+Initiate||Financial Market Insight Initiate Action Reference||||Reference to an Initiate service call||||||O
+Initiate||Financial Market Insight Initiate Action Record||||The Initiate service call input and output record||||||I/O
+Initiate||Financial Market Insight Instance Status||||The status of the Financial Market Insight instance (e.g. initialised, pending, active)||||||O
+||Financial Market Insight Instance Record||||Analyze the performance or behavior of some on-going activity or entity within Financial Market Analysis.
+||Examples: Provide behavioral insights and analysis into customer behavior and analyze financial market activity in order to identify opportunities, define pricing and evaluate risks.
+||
+||||||||||
+||Financial Market Insight Preconditions||||The required status/situation before the algorithm can be applied||||||IO|IO|IO|IO|O
+||Financial Market Insight Analysis Schedule||||The schedule and timing of the analysis performed using the algorithm||||||IO|IO|IO|IO|O
+||Financial Market Insight Version Number||||The algorithm version employed in the analysis||||||IO|IO|IO|IO|O
+||Financial Market Analysis||||The Financial Market Analysis specific Business Service||||||IO|IO|IO|IO|O
+||Financial Market Analysis Service Type||||Reference to the specific business service type||||||IO|IO|IO|IO|O
+||Financial Market Analysis Service Description||||Description of the performed business service||||||IO|IO|IO|IO|O
+||Financial Market Analysis Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||IO|IO|IO|IO|O
+||Financial Market Analysis Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||IO|IO|IO|IO|O
+Update||Financial Market Insight Update Action Task Reference||||Reference to an update service call|||||||O
+Update||Financial Market Insight Update Action Task Record||||The update service call consolidated processing record|||||||I/O
+Update||Financial Market Insight Update Action Request||||Details of the update action service request|||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||O
+Execute||Financial Market Insight Execute Action Task Reference||||Reference to a Financial Market Insight instance execute service call||||||||O
+Execute||Financial Market Insight Execute Action Task Record||||The execute service call consolidated processing record||||||||I/O
+Execute||Financial Market Insight Execute Record Reference||||Reference to the Financial Market Insight execute transaction/record||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||O
+Request||Financial Market Insight Request Action Task Reference||||Reference to a Financial Market Insight instance request service call|||||||||O
+Request||Financial Market Insight Request Action Task Record||||The request service call consolidated processing record|||||||||I/O
+Request||Financial Market Insight Request Record Reference||||Reference to the Financial Market Insight service request record|||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||O
+Retrieve||Financial Market Insight Retrieve Action Task Reference||||Reference to a Financial Market Insight instance retrieve service call||||||||||O
+Retrieve||Financial Market Insight Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Financial Market Insight Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Financial Market Insight Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Financial Market Insight Instance Report|##|||A specific Financial Market Insight instance formatted report||||||||||IO
+Retrieve|||Financial Market Insight Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Financial Market Insight Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Financial Market Insight Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Financial Market Insight Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Financial Market Insight Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Financial Market Insight Instance Analysis|##|||A specific Financial Market Insight instance analytical report||||||||||IO
+Retrieve|||Financial Market Insight Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Financial Market Insight Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Financial Market Insight Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Financial Market Insight Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Financial Market Insight Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O

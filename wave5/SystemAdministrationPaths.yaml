@@ -1,0 +1,1015 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - System Administration'
+ description: >
+
+    ## Executive Summary:
+
+    Administer the configuration, maintenance, assignment and track usage and status of all IT assets deployed in development and production across the enterprise
+
+    ## Example of Use:
+
+    Newly acquired hardware is purchased, registered and assigned for deployment to meet pre-approved production capacity requirements
+
+    ## Description:
+
+    Administer the installation, maintenance and configuration of computer systems, monitoring system performance and troubleshooting production issues. Also asses and ensuring the security and performance of systems, covering both licensed and owned technology for the complete range of hardware and software/middleware technology deployed throughout development and production activities within the bank. Oversee decommissioning and disposal of obsolete equipment
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-system-administration/1.0.0
+schemes:
+ - https
+paths:
+  /system-administration/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDSystemAdministration
+      summary: Activate  a SDSystemAdministration servicing session
+      description: Activate  a  SDSystemAdministration servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDSystemAdministration Request Payload
+        schema:
+          $ref: '#/definitions/SDSystemAdministrationActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDSystemAdministrationActivateOutputModel'
+  /system-administration/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDSystemAdministration
+      summary: Update an active SDSystemAdministration session configuration
+      description: Update an active SDSystemAdministration session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDSystemAdministration Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDSystemAdministration Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDSystemAdministrationConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDSystemAdministrationConfigureOutputModel'
+  /system-administration/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDSystemAdministration
+      summary: "Capturing feedback against the SDSystemAdministration service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDSystemAdministration service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDSystemAdministration Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDSystemAdministration Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDSystemAdministrationFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDSystemAdministrationFeedbackOutputModel'
+  /system-administration/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDSystemAdministration
+      summary: Analytical views maintained by the SDSystemAdministration service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDSystemAdministration service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDSystemAdministration Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDSystemAdministrationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDSystemAdministrationRetrieveOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateITSystemAdministrativePlan
+      summary: Details of a new ITSystemAdministrativePlan instance
+      description: Instantiate a new IT System Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITSystemAdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRITSystemAdministrativePlanInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new ITSystemAdministrativePlan instance
+          schema:
+            $ref: '#/definitions/CRITSystemAdministrativePlanInitiateOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateITSystemAdministrativePlan
+      summary: Update to any amendable fields of the ITSystemAdministrativePlan instance
+      description: Update details relating to IT System Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITSystem Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRITSystemAdministrativePlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ITSystem Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRITSystemAdministrativePlanUpdateOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlITSystemAdministrativePlanUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of IT System Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITSystem Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRITSystemAdministrativePlanControlInputModel'
+      responses:
+        200:
+          description: Successful control of ITSystem Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRITSystemAdministrativePlanControlOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeITSystemAdministrativePlanUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of IT System Administrative Plan processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITSystem Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRITSystemAdministrativePlanExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ITSystem Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRITSystemAdministrativePlanExchangeOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureITSystemAdministrativePlanUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture IT System Administrative Plan activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITSystem Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRITSystemAdministrativePlanCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of ITSystem Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRITSystemAdministrativePlanCaptureOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestITSystemAdministrativePlanUpdate
+      summary: Invoke a service request action against the ITSystemAdministrativePlan instance
+      description: Request manual intervention or a decision with respect to IT System Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITSystem Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRITSystemAdministrativePlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ITSystem Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRITSystemAdministrativePlanRequestOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantITSystemAdministrativePlanUpdate
+      summary: Invoke a grant request action from the ITSystemAdministrativePlan instance to obtain access permission
+      description: Obtain permission to act in relation to IT System Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ITSystem Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRITSystemAdministrativePlanGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of ITSystem Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRITSystemAdministrativePlanGrantOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSystemAdministration
+      summary: Invoke a reporting action to obtain a ITSystem Administrative Plan instance related report
+      description: Retrieve details about any aspect of IT System Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRITSystemAdministrativePlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved ITSystem Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRITSystemAdministrativePlanRetrieveOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/inventory/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateITSystemAdministrativePlanInventory
+      summary: Update to any amendable fields of the Inventory instance
+      description: Update details relating to Inventory
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Inventory Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Inventory Request Payload
+        schema:
+          $ref: '#/definitions/BQInventoryUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Inventory Instance
+          schema:
+            $ref: '#/definitions/BQInventoryUpdateOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/inventory/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureITSystemAdministrativePlanInventoryUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Inventory activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Inventory Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Inventory request payload
+        schema:
+          $ref: '#/definitions/BQInventoryCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Inventory Instance Record
+          schema:
+            $ref: '#/definitions/BQInventoryCaptureOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/inventory/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestITSystemAdministrativePlanInventoryUpdate
+      summary: Invoke a service request action against the Inventory instance
+      description: Request manual intervention or a decision with respect to Inventory
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Inventory Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Inventory request payload
+        schema:
+          $ref: '#/definitions/BQInventoryRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Inventory Instance Record
+          schema:
+            $ref: '#/definitions/BQInventoryRequestOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/inventory/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveITSystemAdministrativePlanInventory
+      summary: Invoke a reporting action to obtain a Inventory instance related report.
+      description: Retrieve details about any aspect of Inventory .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Inventory Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQInventoryRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Inventory Instance Record
+          schema:
+            $ref: '#/definitions/BQInventoryRetrieveOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/assurance/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateITSystemAdministrativePlanAssurance
+      summary: Update to any amendable fields of the Assurance instance
+      description: Update details relating to Assurance
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Assurance Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Assurance Request Payload
+        schema:
+          $ref: '#/definitions/BQAssuranceUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Assurance Instance
+          schema:
+            $ref: '#/definitions/BQAssuranceUpdateOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/assurance/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureITSystemAdministrativePlanAssuranceUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Assurance activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Assurance Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Assurance request payload
+        schema:
+          $ref: '#/definitions/BQAssuranceCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Assurance Instance Record
+          schema:
+            $ref: '#/definitions/BQAssuranceCaptureOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/assurance/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestITSystemAdministrativePlanAssuranceUpdate
+      summary: Invoke a service request action against the Assurance instance
+      description: Request manual intervention or a decision with respect to Assurance
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Assurance Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Assurance request payload
+        schema:
+          $ref: '#/definitions/BQAssuranceRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Assurance Instance Record
+          schema:
+            $ref: '#/definitions/BQAssuranceRequestOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/assurance/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveITSystemAdministrativePlanAssurance
+      summary: Invoke a reporting action to obtain a Assurance instance related report.
+      description: Retrieve details about any aspect of Assurance .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Assurance Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQAssuranceRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Assurance Instance Record
+          schema:
+            $ref: '#/definitions/BQAssuranceRetrieveOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/configuration/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateITSystemAdministrativePlanConfiguration
+      summary: Update to any amendable fields of the Configuration instance
+      description: Update details relating to Configuration
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Configuration Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Configuration Request Payload
+        schema:
+          $ref: '#/definitions/BQConfigurationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Configuration Instance
+          schema:
+            $ref: '#/definitions/BQConfigurationUpdateOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/configuration/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureITSystemAdministrativePlanConfigurationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Configuration activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Configuration Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Configuration request payload
+        schema:
+          $ref: '#/definitions/BQConfigurationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Configuration Instance Record
+          schema:
+            $ref: '#/definitions/BQConfigurationCaptureOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/configuration/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestITSystemAdministrativePlanConfigurationUpdate
+      summary: Invoke a service request action against the Configuration instance
+      description: Request manual intervention or a decision with respect to Configuration
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Configuration Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Configuration request payload
+        schema:
+          $ref: '#/definitions/BQConfigurationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Configuration Instance Record
+          schema:
+            $ref: '#/definitions/BQConfigurationRequestOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/configuration/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveITSystemAdministrativePlanConfiguration
+      summary: Invoke a reporting action to obtain a Configuration instance related report.
+      description: Retrieve details about any aspect of Configuration .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Configuration Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQConfigurationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Configuration Instance Record
+          schema:
+            $ref: '#/definitions/BQConfigurationRetrieveOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/capacityplanningandresilience/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateITSystemAdministrativePlanCapacityPlanningandResilience
+      summary: Update to any amendable fields of the CapacityPlanningandResilience instance
+      description: Update details relating to Capacity Planning and Resilience
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanningandResilience Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CapacityPlanningandResilience Request Payload
+        schema:
+          $ref: '#/definitions/BQCapacityPlanningandResilienceUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CapacityPlanningandResilience Instance
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningandResilienceUpdateOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/capacityplanningandresilience/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureITSystemAdministrativePlanCapacityPlanningandResilienceUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Capacity Planning and Resilience activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanningandResilience Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CapacityPlanningandResilience request payload
+        schema:
+          $ref: '#/definitions/BQCapacityPlanningandResilienceCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of CapacityPlanningandResilience Instance Record
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningandResilienceCaptureOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/capacityplanningandresilience/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestITSystemAdministrativePlanCapacityPlanningandResilienceUpdate
+      summary: Invoke a service request action against the CapacityPlanningandResilience instance
+      description: Request manual intervention or a decision with respect to Capacity Planning and Resilience
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanningandResilience Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CapacityPlanningandResilience request payload
+        schema:
+          $ref: '#/definitions/BQCapacityPlanningandResilienceRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of CapacityPlanningandResilience Instance Record
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningandResilienceRequestOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/capacityplanningandresilience/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveITSystemAdministrativePlanCapacityPlanningandResilience
+      summary: Invoke a reporting action to obtain a CapacityPlanningandResilience instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanningandResilience Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCapacityPlanningandResilienceRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CapacityPlanningandResilience Instance Record
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningandResilienceRetrieveOutputModel'
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveSystemAdministrationReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- SystemAdministration Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /system-administration/itsystem-administrative-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveSystemAdministrationBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'CapacityPlanningandResilience',  'Assurance',  'Configuration',  'Inventory', ]
+  /system-administration/{sd-reference-id}/itsystem-administrative-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveSystemAdministrationBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: System Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ITSystem Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Inventory
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Inventory Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [InventoryID1, InventoryID2]

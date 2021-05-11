@@ -1,0 +1,26 @@
+SD=Central Cash Handling
+CR=Central Cash Allocation
+BQs= ProjectionandAllocation TrackingandAllocation
+This service domain is responsible for tracking the available cash inventory held centrally and distributed/collected throughout the branch/ATM network and making allocation/redistribution requests to ensure adequate float is available at all locations and that excess cash at any location is transferred to central secure locations as appropriate. Also coordinating with other banks and central banks to ensure sufficient cash is on hand to support the branch network requirements
+The central cash management function reviews the current and projected available float at locations across the network to ensure adequate supply to meet projected demand
+Track cash inventory, project demand and allocate inventory across the branch/ATM network
+CR - Central Cash Allocation						BQ - Tracking and  Allocation						BQ - Projection and  Allocation					
+In	Up	Co	Ec	Ca	Re	In	Up	Co	Ec	Ca	Re	In	Up	Co	Ec	Ca	Re
+InCR Instantiate a new Central Cash Allocation
+UpCR Update details relating to Central Cash Allocation
+CoCR Control the processing of Central Cash Allocation
+EcCR Accept, verify, etc. aspects of Central Cash Allocation processing
+CaCR Capture Central Cash Allocation activity or event related information
+ReCR Retrieve details about any aspect of Central Cash Allocation
+InBQ Instantiate a new Tracking and Allocation
+UpBQ Update details relating to Tracking and Allocation
+CoBQ Control the processing of Tracking and Allocation
+EcBQ Accept, verify, etc. aspects of Tracking and Allocation processing
+CaBQ Capture Tracking and Allocation activity or event related information
+ReBQ Retrieve details about any aspect of Tracking and Allocation
+InBQ Instantiate a new Projection and Allocation
+UpBQ Update details relating to Projection and Allocation
+CoBQ Control the processing of Projection and Allocation
+EcBQ Accept, verify, etc. aspects of Projection and Allocation processing
+CaBQ Capture Projection and Allocation activity or event related information
+ReBQ Retrieve details about any aspect of Projection and Allocation

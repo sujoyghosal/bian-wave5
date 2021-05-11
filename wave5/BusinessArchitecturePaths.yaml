@@ -1,0 +1,1126 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Business Architecture'
+ description: >
+
+    ## Executive Summary:
+
+    Define and maintain comprehensive business architectural definitions/blueprints to help organize/direct the business
+
+    ## Example of Use:
+
+    Business planning specialists define target business blueprints for staffing and information system/application support for the enterprise
+
+    ## Description:
+
+    Develop and maintain a comprehensive array of business architectural designs and blueprints that reflect the corporate strategy, plan and operational configuration of the enterprise. Support the adoption of the business architecture throughout all procedure and systems development and deployment activities
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-business-architecture/1.0.0
+schemes:
+ - https
+paths:
+  /business-architecture/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDBusinessArchitecture
+      summary: Activate  a SDBusinessArchitecture servicing session
+      description: Activate  a  SDBusinessArchitecture servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDBusinessArchitecture Request Payload
+        schema:
+          $ref: '#/definitions/SDBusinessArchitectureActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDBusinessArchitectureActivateOutputModel'
+  /business-architecture/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDBusinessArchitecture
+      summary: Update an active SDBusinessArchitecture session configuration
+      description: Update an active SDBusinessArchitecture session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBusinessArchitecture Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBusinessArchitecture Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDBusinessArchitectureConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDBusinessArchitectureConfigureOutputModel'
+  /business-architecture/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDBusinessArchitecture
+      summary: "Capturing feedback against the SDBusinessArchitecture service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDBusinessArchitecture service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBusinessArchitecture Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBusinessArchitecture Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDBusinessArchitectureFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDBusinessArchitectureFeedbackOutputModel'
+  /business-architecture/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDBusinessArchitecture
+      summary: Analytical views maintained by the SDBusinessArchitecture service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDBusinessArchitecture service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBusinessArchitecture Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDBusinessArchitectureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDBusinessArchitectureRetrieveOutputModel'  /business-architecture/{sd-reference-id}/business-architecture-specification/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateBusinessArchitectureSpecification
+      summary: Details of a new BusinessArchitectureSpecification instance
+      description: Instantiate a new Business Architecture Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BusinessArchitectureSpecification Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessArchitectureSpecificationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new BusinessArchitectureSpecification instance
+          schema:
+            $ref: '#/definitions/CRBusinessArchitectureSpecificationInitiateOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessArchitectureSpecification
+      summary: Update to any amendable fields of the BusinessArchitectureSpecification instance
+      description: Update details relating to Business Architecture Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Architecture Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessArchitectureSpecificationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Business Architecture Specification Instance
+          schema:
+            $ref: '#/definitions/CRBusinessArchitectureSpecificationUpdateOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlBusinessArchitectureSpecificationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Business Architecture Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Architecture Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessArchitectureSpecificationControlInputModel'
+      responses:
+        200:
+          description: Successful control of Business Architecture Specification Instance
+          schema:
+            $ref: '#/definitions/CRBusinessArchitectureSpecificationControlOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeBusinessArchitectureSpecificationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Business Architecture Specification processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Architecture Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessArchitectureSpecificationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Business Architecture Specification Instance
+          schema:
+            $ref: '#/definitions/CRBusinessArchitectureSpecificationExchangeOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureBusinessArchitectureSpecificationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Business Architecture Specification activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Architecture Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessArchitectureSpecificationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Business Architecture Specification Instance
+          schema:
+            $ref: '#/definitions/CRBusinessArchitectureSpecificationCaptureOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessArchitectureSpecificationUpdate
+      summary: Invoke a service request action against the BusinessArchitectureSpecification instance
+      description: Request manual intervention or a decision with respect to Business Architecture Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Business Architecture Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRBusinessArchitectureSpecificationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Business Architecture Specification Instance
+          schema:
+            $ref: '#/definitions/CRBusinessArchitectureSpecificationRequestOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessArchitecture
+      summary: Invoke a reporting action to obtain a Business Architecture Specification instance related report
+      description: Retrieve details about any aspect of Business Architecture Specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRBusinessArchitectureSpecificationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Business Architecture Specification Instance
+          schema:
+            $ref: '#/definitions/CRBusinessArchitectureSpecificationRetrieveOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/organization/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessArchitectureSpecificationOrganization
+      summary: Update to any amendable fields of the Organization instance
+      description: Update details relating to Organization
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Organization Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Organization Request Payload
+        schema:
+          $ref: '#/definitions/BQOrganizationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Organization Instance
+          schema:
+            $ref: '#/definitions/BQOrganizationUpdateOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/organization/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureBusinessArchitectureSpecificationOrganizationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Organization activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Organization Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Organization request payload
+        schema:
+          $ref: '#/definitions/BQOrganizationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Organization Instance Record
+          schema:
+            $ref: '#/definitions/BQOrganizationCaptureOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/organization/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessArchitectureSpecificationOrganizationUpdate
+      summary: Invoke a service request action against the Organization instance
+      description: Request manual intervention or a decision with respect to Organization
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Organization Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Organization request payload
+        schema:
+          $ref: '#/definitions/BQOrganizationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Organization Instance Record
+          schema:
+            $ref: '#/definitions/BQOrganizationRequestOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/organization/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessArchitectureSpecificationOrganization
+      summary: Invoke a reporting action to obtain a Organization instance related report.
+      description: Retrieve details about any aspect of Organization .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Organization Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQOrganizationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Organization Instance Record
+          schema:
+            $ref: '#/definitions/BQOrganizationRetrieveOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/businessarchitecture/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessArchitectureSpecificationBusinessArchitecture
+      summary: Update to any amendable fields of the BusinessArchitecture instance
+      description: Update details relating to Business Architecture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BusinessArchitecture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BusinessArchitecture Request Payload
+        schema:
+          $ref: '#/definitions/BQBusinessArchitectureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated BusinessArchitecture Instance
+          schema:
+            $ref: '#/definitions/BQBusinessArchitectureUpdateOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/businessarchitecture/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureBusinessArchitectureSpecificationBusinessArchitectureUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Business Architecture activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BusinessArchitecture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BusinessArchitecture request payload
+        schema:
+          $ref: '#/definitions/BQBusinessArchitectureCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of BusinessArchitecture Instance Record
+          schema:
+            $ref: '#/definitions/BQBusinessArchitectureCaptureOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/businessarchitecture/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessArchitectureSpecificationBusinessArchitectureUpdate
+      summary: Invoke a service request action against the BusinessArchitecture instance
+      description: Request manual intervention or a decision with respect to Business Architecture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BusinessArchitecture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BusinessArchitecture request payload
+        schema:
+          $ref: '#/definitions/BQBusinessArchitectureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of BusinessArchitecture Instance Record
+          schema:
+            $ref: '#/definitions/BQBusinessArchitectureRequestOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/businessarchitecture/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessArchitectureSpecificationBusinessArchitecture
+      summary: Invoke a reporting action to obtain a BusinessArchitecture instance related report.
+      description: Retrieve details about any aspect of Business Architecture .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: BusinessArchitecture Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQBusinessArchitectureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved BusinessArchitecture Instance Record
+          schema:
+            $ref: '#/definitions/BQBusinessArchitectureRetrieveOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/applicationarchitecture/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessArchitectureSpecificationApplicationArchitecture
+      summary: Update to any amendable fields of the ApplicationArchitecture instance
+      description: Update details relating to Application Architecture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ApplicationArchitecture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ApplicationArchitecture Request Payload
+        schema:
+          $ref: '#/definitions/BQApplicationArchitectureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ApplicationArchitecture Instance
+          schema:
+            $ref: '#/definitions/BQApplicationArchitectureUpdateOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/applicationarchitecture/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureBusinessArchitectureSpecificationApplicationArchitectureUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Application Architecture activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ApplicationArchitecture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ApplicationArchitecture request payload
+        schema:
+          $ref: '#/definitions/BQApplicationArchitectureCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of ApplicationArchitecture Instance Record
+          schema:
+            $ref: '#/definitions/BQApplicationArchitectureCaptureOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/applicationarchitecture/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessArchitectureSpecificationApplicationArchitectureUpdate
+      summary: Invoke a service request action against the ApplicationArchitecture instance
+      description: Request manual intervention or a decision with respect to Application Architecture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ApplicationArchitecture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ApplicationArchitecture request payload
+        schema:
+          $ref: '#/definitions/BQApplicationArchitectureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ApplicationArchitecture Instance Record
+          schema:
+            $ref: '#/definitions/BQApplicationArchitectureRequestOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/applicationarchitecture/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessArchitectureSpecificationApplicationArchitecture
+      summary: Invoke a reporting action to obtain a ApplicationArchitecture instance related report.
+      description: Retrieve details about any aspect of Application Architecture .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ApplicationArchitecture Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQApplicationArchitectureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ApplicationArchitecture Instance Record
+          schema:
+            $ref: '#/definitions/BQApplicationArchitectureRetrieveOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/informationarchitecture/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessArchitectureSpecificationInformationArchitecture
+      summary: Update to any amendable fields of the InformationArchitecture instance
+      description: Update details relating to Information Architecture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InformationArchitecture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InformationArchitecture Request Payload
+        schema:
+          $ref: '#/definitions/BQInformationArchitectureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated InformationArchitecture Instance
+          schema:
+            $ref: '#/definitions/BQInformationArchitectureUpdateOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/informationarchitecture/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureBusinessArchitectureSpecificationInformationArchitectureUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Information Architecture activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InformationArchitecture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InformationArchitecture request payload
+        schema:
+          $ref: '#/definitions/BQInformationArchitectureCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of InformationArchitecture Instance Record
+          schema:
+            $ref: '#/definitions/BQInformationArchitectureCaptureOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/informationarchitecture/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessArchitectureSpecificationInformationArchitectureUpdate
+      summary: Invoke a service request action against the InformationArchitecture instance
+      description: Request manual intervention or a decision with respect to Information Architecture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InformationArchitecture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InformationArchitecture request payload
+        schema:
+          $ref: '#/definitions/BQInformationArchitectureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of InformationArchitecture Instance Record
+          schema:
+            $ref: '#/definitions/BQInformationArchitectureRequestOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/informationarchitecture/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessArchitectureSpecificationInformationArchitecture
+      summary: Invoke a reporting action to obtain a InformationArchitecture instance related report.
+      description: Retrieve details about any aspect of Information Architecture .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InformationArchitecture Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQInformationArchitectureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved InformationArchitecture Instance Record
+          schema:
+            $ref: '#/definitions/BQInformationArchitectureRetrieveOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/technologyinfrastructure/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBusinessArchitectureSpecificationTechnologyInfrastructure
+      summary: Update to any amendable fields of the TechnologyInfrastructure instance
+      description: Update details relating to Technology Infrastructure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TechnologyInfrastructure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TechnologyInfrastructure Request Payload
+        schema:
+          $ref: '#/definitions/BQTechnologyInfrastructureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TechnologyInfrastructure Instance
+          schema:
+            $ref: '#/definitions/BQTechnologyInfrastructureUpdateOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/technologyinfrastructure/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureBusinessArchitectureSpecificationTechnologyInfrastructureUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Technology Infrastructure activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TechnologyInfrastructure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TechnologyInfrastructure request payload
+        schema:
+          $ref: '#/definitions/BQTechnologyInfrastructureCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of TechnologyInfrastructure Instance Record
+          schema:
+            $ref: '#/definitions/BQTechnologyInfrastructureCaptureOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/technologyinfrastructure/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBusinessArchitectureSpecificationTechnologyInfrastructureUpdate
+      summary: Invoke a service request action against the TechnologyInfrastructure instance
+      description: Request manual intervention or a decision with respect to Technology Infrastructure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TechnologyInfrastructure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TechnologyInfrastructure request payload
+        schema:
+          $ref: '#/definitions/BQTechnologyInfrastructureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of TechnologyInfrastructure Instance Record
+          schema:
+            $ref: '#/definitions/BQTechnologyInfrastructureRequestOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/technologyinfrastructure/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBusinessArchitectureSpecificationTechnologyInfrastructure
+      summary: Invoke a reporting action to obtain a TechnologyInfrastructure instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TechnologyInfrastructure Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTechnologyInfrastructureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TechnologyInfrastructure Instance Record
+          schema:
+            $ref: '#/definitions/BQTechnologyInfrastructureRetrieveOutputModel'
+  /business-architecture/{sd-reference-id}/business-architecture-specification:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBusinessArchitectureReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- BusinessArchitecture Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /business-architecture/business-architecture-specification/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBusinessArchitectureBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'TechnologyInfrastructure',  'ApplicationArchitecture',  'InformationArchitecture',  'BusinessArchitecture',  'Organization', ]
+  /business-architecture/{sd-reference-id}/business-architecture-specification/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBusinessArchitectureBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Business Architecture Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Business Architecture Specification Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Organization
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Organization Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [OrganizationID1, OrganizationID2]

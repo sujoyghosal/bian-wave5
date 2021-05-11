@@ -1,0 +1,245 @@
+CR Cash Distribution Procedure Instance Record|Cash Distribution Procedure||||||CR Cash Distribution Procedure Initiate|CR Cash Distribution Procedure Update|CR Cash Distribution Procedure Control|CR Cash Distribution Procedure Exchange|CR Cash Distribution Procedure Execute|CR Cash Distribution Procedure Request|CR Cash Distribution Procedure Retrieve|BQ Distribution Planning Update|BQ Distribution Planning Exchange|BQ Distribution Planning Request|BQ Distribution Planning Retrieve|BQ Inventory Distribution Oversight Update|BQ Inventory Distribution Oversight Request|BQ Inventory Distribution Oversight Retrieve|BQ Inventory Provisioning Update|BQ Inventory Provisioning Exchange|BQ Inventory Provisioning Request|BQ Inventory Provisioning Retrieve|BQ Distribution Vehicle Administration Update|BQ Distribution Vehicle Administration Request|BQ Distribution Vehicle Administration Retrieve|
+Mandatory||Branch Currency Distribution Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Cash Distribution Procedure Instance Reference||||Reference to the Cash Distribution Procedure instance|O|I|I|I|I|I
+Initiate||Cash Distribution Procedure Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Cash Distribution Procedure Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Cash Distribution Procedure Instance Status||||The status of the Cash Distribution Procedure instance (e.g. initialised, pending, active)|IO
+||Cash Distribution Procedure Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Branch Currency Distribution.
+Example: Process the evaluation and completion of customer offers.|||||||||||||||||||||
+||Cash Distribution Procedure Parameter Type||||A Classification value that distinguishes between Procedures according to the type of business services and/or type of concern defined within Cash Distribution Procedure|IO|IO|IO|IO|IO|IO|O||||||||||||||
+||Cash Distribution Procedure Selected Option||||A selected optional business service as subject matter of Cash Distribution Procedure|IO|IO|IO|IO|IO|IO|O||||||||||||||
+||Cash Distribution Procedure Request||||Request to process CashDistribution|IO|IO|IO|IO|IO|IO|O||||||||||||||
+||Cash Distribution Procedure Schedule||||Timetable to process CashDistribution|IO|IO|IO|IO|IO|IO|O||||||||||||||
+||Cash Distribution Procedure Status||||The status of Cash Distribution Procedure|IO|IO|IO|IO|IO|IO|O||||||||||||||
+||Cash Distribution Procedure Reference||||Reference to the party who is involved in Cash Distribution Procedure|I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Business Unit Reference||||Reference to the business unit which is involved in Cash Distribution Procedure|I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure ServiceProvider Reference||||Reference to the party who is the service provider of Cash Distribution Procedure|I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Financial Facility Reference||||Reference to the Financial Facility related to Cash Distribution Procedure |I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Employee Reference||||Reference to the employee who is involved in Cash Distribution Procedure|I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Customer Reference||||Reference to the customer who is involved in Cash Distribution Procedure|I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Type||||A Classification value that distinguishes between the type of process undertaken within Cash Distribution Procedure|I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Service Provider Schedule||||The schedule according to which the service provider will process the Cash Distribution Procedure|I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Service Type||||A Classification value that distinguishes between the type of services in Cash Distribution Procedure |I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure ProductandService Type||||A Classification value that distinguishes between the type of products/services related to Cash Distribution Procedure |I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure ProductandService Instance||||Reference to the product or service that is related to Cash Distribution Procedure|I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Transaction Type||||A Classification value that distinguishes between the type of transactions in Cash Distribution Procedure |I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Transaction||||Reference to the transaction that is related to Cash Distribution Procedure |||||||||||||||||||||
+||Cash Distribution Procedure Financial Transaction Arrangement||||Reference to the Financial Transaction Arrangement that is related to Cash Distribution Procedure |I|I|I|I|I|I|O||||||||||||||
+||Cash Distribution Procedure Customer Agreement Reference||||Reference to the Customer Agreement that is related to Cash Distribution Procedure |I|I|I|I|I|I|O||||||||||||||
+Update||Cash Distribution Procedure Update Action Task Reference||||Reference to an update service call||O
+Update||Cash Distribution Procedure Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Cash Distribution Procedure Control Action Task Reference||||Reference to a Cash Distribution Procedure instance control processing service call|||O
+CONTROL||Cash Distribution Procedure Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Cash Distribution Procedure Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Cash Distribution Procedure Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Cash Distribution Procedure Exchange Action Task Reference||||Reference to a Cash Distribution Procedure instance exchange service call||||O
+EXCHANGE||Cash Distribution Procedure Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Cash Distribution Procedure Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Cash Distribution Procedure Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Cash Distribution Procedure Execute Action Task Reference||||Reference to a Cash Distribution Procedure instance execute service call|||||O
+EXECUTE||Cash Distribution Procedure Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Cash Distribution Procedure Request Action Task Reference||||Reference to a Cash Distribution Procedure instance request service call||||||O
+REQUEST||Cash Distribution Procedure Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Cash Distribution Procedure Retrieve Action Task Reference||||Reference to a Cash Distribution Procedure instance retrieve service call|||||||O
+RETRIEVE||Cash Distribution Procedure Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Cash Distribution Procedure Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Cash Distribution Procedure Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Cash Distribution Procedure Instance Report Record|##|||A specific Cash Distribution Procedure instance formatted report|||||||IO
+RETRIEVE|||Cash Distribution Procedure Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Cash Distribution Procedure Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Cash Distribution Procedure Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Cash Distribution Procedure Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Cash Distribution Procedure Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Cash Distribution Procedure Instance Analysis|##|||A specific Cash Distribution Procedure instance analytical report|||||||IO
+RETRIEVE|||Cash Distribution Procedure Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Cash Distribution Procedure Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Cash Distribution Procedure Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Cash Distribution Procedure Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Cash Distribution Procedure Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Distribution Planning Instance Record|Distribution Planning||||||
+Mandatory||Cash Distribution Procedure Instance Reference||||Reference to the parent Cash Distribution Procedure instance||||||||I|I|I
+Mandatory||Distribution Planning Instance Reference||||Reference to the Distribution Planning instance||||||||I|I|I
+||Distribution Planning Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Branch Currency Distribution.
+|||||||||||||||||||||
+||Distribution Planning Preconditions||||The required status/situation and or tasks that need to be completed prior to the initiation of the workstep||||||||IO|IO|IO|O||||||||||
+||Distribution Planning Business Unit/Employee Reference||||The operating unit/employee responsible for the workstep||||||||IO|IO|IO|O||||||||||
+||Distribution Planning Work Schedule||||The timing and key actions/milestones making up the workstep||||||||IO|IO|IO|O||||||||||
+||Distribution Planning||||The Cash Distribution Procedure specific Business Service|||||||||||||||||||||
+||Distribution Planning Postconditions||||The completion status and reference to subsequent actions that may be triggered on completion of the workstep||||||||IO|IO|IO|O||||||||||
+||Distribution Planning Distribution Planning Service Type||||Reference to the specific business service type||||||||IO|IO|IO|O||||||||||
+||Distribution Planning Distribution Planning Service Description||||Description of the performed business service||||||||IO|IO|IO|O||||||||||
+||Distribution Planning Distribution Planning Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|O||||||||||
+||Distribution Planning Distribution Planning Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|O||||||||||
+||Distribution Planning Distribution Planning Service Name||||||||||||IO|IO|IO|O||||||||||
+Update||Distribution Planning Update Action Task Reference||||Reference to an update service call||||||||O
+Update||Distribution Planning Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||Distribution Planning Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Exchange||Distribution Planning Exchange Action Task Reference||||Reference to a Distribution Planning instance exchange service call|||||||||O
+Exchange||Distribution Planning Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||I/O
+Exchange||Distribution Planning Exchange Action Request|##|||Details of the exchange action service request|||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||I
+Exchange||Distribution Planning Exchange Action Response||||Details of the exchange action service response|||||||||O
+Exchange||Distribution Planning Instance Status||||The status of the Distribution Planning instance (e.g. accepted, rejected, verified)|||||||||O
+Request||Distribution Planning Request Action Task Reference||||Reference to a Distribution Planning instance request service call||||||||||O
+Request||Distribution Planning Request Action Task Record||||The request service call consolidated processing record||||||||||I/O
+Request||Distribution Planning Request Record Reference||||Reference to the Distribution Planning service request record||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||O
+Retrieve||Distribution Planning Retrieve Action Task Reference||||Reference to a Distribution Planning instance retrieve service call|||||||||||O
+Retrieve||Distribution Planning Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||Distribution Planning Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||Distribution Planning Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||Distribution Planning Instance Report|##|||A specific Distribution Planning instance formatted report|||||||||||IO
+Retrieve|||Distribution Planning Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||Distribution Planning Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Distribution Planning Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||Distribution Planning Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||Distribution Planning Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||Distribution Planning Instance Analysis|##|||A specific Distribution Planning instance analytical report|||||||||||IO
+Retrieve|||Distribution Planning Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||Distribution Planning Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Distribution Planning Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||Distribution Planning Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||Distribution Planning Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O
+BQ Inventory Distribution Oversight Instance Record|Inventory Distribution Oversight||||||
+Mandatory||Cash Distribution Procedure Instance Reference||||Reference to the parent Cash Distribution Procedure instance||||||||||||I|I
+Mandatory||Inventory Distribution Oversight Instance Reference||||Reference to the Inventory Distribution Oversight instance||||||||||||I|I
+||Inventory Distribution Oversight Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Branch Currency Distribution.
+|||||||||||||||||||||
+||Inventory Distribution Oversight Preconditions||||The required status/situation and or tasks that need to be completed prior to the initiation of the workstep|||||||||||||||IO|IO|O||||
+||Inventory Distribution Oversight Business Unit/Employee Reference||||The operating unit/employee responsible for the workstep|||||||||||||||IO|IO|O||||
+||Inventory Distribution Oversight Work Schedule||||The timing and key actions/milestones making up the workstep|||||||||||||||IO|IO|O||||
+||Inventory Distribution Oversight||||The Cash Distribution Procedure specific Business Service|||||||||||||||||||||
+||Inventory Distribution Oversight Postconditions||||The completion status and reference to subsequent actions that may be triggered on completion of the workstep|||||||||||||||IO|IO|O||||
+||Inventory Distribution Oversight Inventory Distribution Oversight Service Type||||Reference to the specific business service type|||||||||||||||IO|IO|O||||
+||Inventory Distribution Oversight Inventory Distribution Oversight Service Description||||Description of the performed business service|||||||||||||||IO|IO|O||||
+||Inventory Distribution Oversight Inventory Distribution Oversight Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||IO|IO|O||||
+||Inventory Distribution Oversight Inventory Distribution Oversight Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||IO|IO|O||||
+||Inventory Distribution Oversight Inventory Distribution Oversight Service Name|||||||||||||||||||IO|IO|O||||
+Update||Inventory Distribution Oversight Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Inventory Distribution Oversight Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Inventory Distribution Oversight Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Request||Inventory Distribution Oversight Request Action Task Reference||||Reference to a Inventory Distribution Oversight instance request service call|||||||||||||O
+Request||Inventory Distribution Oversight Request Action Task Record||||The request service call consolidated processing record|||||||||||||I/O
+Request||Inventory Distribution Oversight Request Record Reference||||Reference to the Inventory Distribution Oversight service request record|||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||O
+Retrieve||Inventory Distribution Oversight Retrieve Action Task Reference||||Reference to a Inventory Distribution Oversight instance retrieve service call||||||||||||||O
+Retrieve||Inventory Distribution Oversight Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Inventory Distribution Oversight Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Inventory Distribution Oversight Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Inventory Distribution Oversight Instance Report|##|||A specific Inventory Distribution Oversight instance formatted report||||||||||||||IO
+Retrieve|||Inventory Distribution Oversight Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Inventory Distribution Oversight Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Inventory Distribution Oversight Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Inventory Distribution Oversight Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Inventory Distribution Oversight Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Inventory Distribution Oversight Instance Analysis|##|||A specific Inventory Distribution Oversight instance analytical report||||||||||||||IO
+Retrieve|||Inventory Distribution Oversight Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Inventory Distribution Oversight Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Inventory Distribution Oversight Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Inventory Distribution Oversight Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Inventory Distribution Oversight Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O
+BQ Inventory Provisioning Instance Record|Inventory Provisioning||||||
+Mandatory||Cash Distribution Procedure Instance Reference||||Reference to the parent Cash Distribution Procedure instance|||||||||||||||I|I|I
+Mandatory||Inventory Provisioning Instance Reference||||Reference to the Inventory Provisioning instance|||||||||||||||I|I|I
+||Inventory Provisioning Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Branch Currency Distribution.
+|||||||||||||||||||||
+||Inventory Provisioning Preconditions||||The required status/situation and or tasks that need to be completed prior to the initiation of the workstep||||||||||||||||||IO|IO|IO|O
+||Inventory Provisioning Business Unit/Employee Reference||||The operating unit/employee responsible for the workstep||||||||||||||||||IO|IO|IO|O
+||Inventory Provisioning Work Schedule||||The timing and key actions/milestones making up the workstep||||||||||||||||||IO|IO|IO|O
+||Inventory Provisioning||||The Cash Distribution Procedure specific Business Service|||||||||||||||||||||
+||Inventory Provisioning Postconditions||||The completion status and reference to subsequent actions that may be triggered on completion of the workstep||||||||||||||||||IO|IO|IO|O
+||Inventory Provisioning Inventory Provisioning Service Type||||Reference to the specific business service type||||||||||||||||||IO|IO|IO|O
+||Inventory Provisioning Inventory Provisioning Service Description||||Description of the performed business service||||||||||||||||||IO|IO|IO|O
+||Inventory Provisioning Inventory Provisioning Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||IO|IO|IO|O
+||Inventory Provisioning Inventory Provisioning Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||IO|IO|IO|O
+Update||Inventory Provisioning Update Action Task Reference||||Reference to an update service call|||||||||||||||O
+Update||Inventory Provisioning Update Action Task Record||||The update service call consolidated processing record|||||||||||||||I/O
+Update||Inventory Provisioning Update Action Request||||Details of the update action service request|||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||O
+Exchange||Inventory Provisioning Exchange Action Task Reference||||Reference to a Inventory Provisioning instance exchange service call||||||||||||||||O
+Exchange||Inventory Provisioning Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||I/O
+Exchange||Inventory Provisioning Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||I
+Exchange||Inventory Provisioning Exchange Action Response||||Details of the exchange action service response||||||||||||||||O
+Exchange||Inventory Provisioning Instance Status||||The status of the Inventory Provisioning instance (e.g. accepted, rejected, verified)||||||||||||||||O
+Request||Inventory Provisioning Request Action Task Reference||||Reference to a Inventory Provisioning instance request service call|||||||||||||||||O
+Request||Inventory Provisioning Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||I/O
+Request||Inventory Provisioning Request Record Reference||||Reference to the Inventory Provisioning service request record|||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||O
+Retrieve||Inventory Provisioning Retrieve Action Task Reference||||Reference to a Inventory Provisioning instance retrieve service call||||||||||||||||||O
+Retrieve||Inventory Provisioning Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||I/O
+Retrieve||Inventory Provisioning Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||I
+Retrieve||Inventory Provisioning Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||O
+Retrieve||Inventory Provisioning Instance Report|##|||A specific Inventory Provisioning instance formatted report||||||||||||||||||IO
+Retrieve|||Inventory Provisioning Instance Report Reference|||Reference to the control record instance report||||||||||||||||||I
+Retrieve|||Inventory Provisioning Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Inventory Provisioning Instance Report Type|||The type of external report available||||||||||||||||||O
+Retrieve|||Inventory Provisioning Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||O
+Retrieve|||Inventory Provisioning Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||O
+Retrieve||Inventory Provisioning Instance Analysis|##|||A specific Inventory Provisioning instance analytical report||||||||||||||||||IO
+Retrieve|||Inventory Provisioning Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||I
+Retrieve|||Inventory Provisioning Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Inventory Provisioning Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||O
+Retrieve|||Inventory Provisioning Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||O
+Retrieve|||Inventory Provisioning Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||O
+BQ Distribution Vehicle Administration Instance Record|Distribution Vehicle Administration||||||
+Mandatory||Cash Distribution Procedure Instance Reference||||Reference to the parent Cash Distribution Procedure instance|||||||||||||||||||I|I
+Mandatory||Distribution Vehicle Administration Instance Reference||||Reference to the Distribution Vehicle Administration instance|||||||||||||||||||I|I
+||Distribution Vehicle Administration Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Branch Currency Distribution.
+|||||||||||||||||||||
+||Distribution Vehicle Administration Preconditions||||The required status/situation and or tasks that need to be completed prior to the initiation of the workstep||||||||||||IO|IO|O|||||||
+||Distribution Vehicle Administration Business Unit/Employee Reference||||The operating unit/employee responsible for the workstep||||||||||||IO|IO|O|||||||
+||Distribution Vehicle Administration Work Schedule||||The timing and key actions/milestones making up the workstep||||||||||||IO|IO|O|||||||
+||Vehicle Administration||||The Cash Distribution Procedure specific Business Service|||||||||||||||||||||
+||Distribution Vehicle Administration Postconditions||||The completion status and reference to subsequent actions that may be triggered on completion of the workstep||||||||||||IO|IO|O|||||||
+||Distribution Vehicle Administration Vehicle Administration Service Type||||Reference to the specific business service type||||||||||||IO|IO|O|||||||
+||Distribution Vehicle Administration Vehicle Administration Service Description||||Description of the performed business service||||||||||||IO|IO|O|||||||
+||Distribution Vehicle Administration Vehicle Administration Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||IO|IO|O|||||||
+||Distribution Vehicle Administration Vehicle Administration Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||IO|IO|O|||||||
+||Distribution Vehicle Administration Vehicle Administration Service Name||||||||||||||||IO|IO|O|||||||
+Update||Distribution Vehicle Administration Update Action Task Reference||||Reference to an update service call|||||||||||||||||||O
+Update||Distribution Vehicle Administration Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||I/O
+Update||Distribution Vehicle Administration Update Action Request||||Details of the update action service request|||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||O
+Request||Distribution Vehicle Administration Request Action Task Reference||||Reference to a Distribution Vehicle Administration instance request service call||||||||||||||||||||O
+Request||Distribution Vehicle Administration Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||I/O
+Request||Distribution Vehicle Administration Request Record Reference||||Reference to the Distribution Vehicle Administration service request record||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||O
+Retrieve||Distribution Vehicle Administration Retrieve Action Task Reference||||Reference to a Distribution Vehicle Administration instance retrieve service call|||||||||||||||||||||O
+Retrieve||Distribution Vehicle Administration Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||I/O
+Retrieve||Distribution Vehicle Administration Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||I
+Retrieve||Distribution Vehicle Administration Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||O
+Retrieve||Distribution Vehicle Administration Instance Report|##|||A specific Distribution Vehicle Administration instance formatted report|||||||||||||||||||||IO
+Retrieve|||Distribution Vehicle Administration Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||I
+Retrieve|||Distribution Vehicle Administration Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||O
+Retrieve|||Distribution Vehicle Administration Instance Report Type|||The type of external report available|||||||||||||||||||||O
+Retrieve|||Distribution Vehicle Administration Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||O
+Retrieve|||Distribution Vehicle Administration Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||O
+Retrieve||Distribution Vehicle Administration Instance Analysis|##|||A specific Distribution Vehicle Administration instance analytical report|||||||||||||||||||||IO
+Retrieve|||Distribution Vehicle Administration Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||I
+Retrieve|||Distribution Vehicle Administration Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||O
+Retrieve|||Distribution Vehicle Administration Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||O
+Retrieve|||Distribution Vehicle Administration Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||O
+Retrieve|||Distribution Vehicle Administration Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||O

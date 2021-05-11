@@ -1,0 +1,55 @@
+CR Asset And Liability Portfolio Strategy Instance Record|Asset And Liability Portfolio Strategy||||||CR Asset And Liability Portfolio Strategy Evaluate|CR Asset And Liability Portfolio Strategy Update|CR Asset And Liability Portfolio Strategy Exchange|CR Asset And Liability Portfolio Strategy Request|CR Asset And Liability Portfolio Strategy Grant|CR Asset And Liability Portfolio Strategy Retrieve|
+Mandatory||Asset And Liability Mnagement Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Asset And Liability Portfolio Strategy Instance Reference||||Reference to the Asset And Liability Portfolio Strategy instance|O|I|I|I|I
+Evaluate||Asset And Liability Portfolio Strategy Evaluate Action Reference||||Reference to an Evaluate service call|O
+Evaluate||Asset And Liability Portfolio Strategy Evaluate Action Record||||The Evaluate service call input and output record|IO
+Evaluate||Asset And Liability Portfolio Strategy Instance Status||||The status of the Asset And Liability Portfolio Strategy instance (e.g. initialised, pending, active)|IO
+||Asset And Liability Mnagement Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Asset And Liability Portfolio Strategy Instance Reference||||Reference to the Asset And Liability Portfolio Strategy instance|I|I|I|I|I
+Update||Asset And Liability Portfolio Strategy Update Action Task Reference||||Reference to an update service call||O
+Update||Asset And Liability Portfolio Strategy Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+Mandatory||Asset And Liability Mnagement Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Asset And Liability Portfolio Strategy Instance Reference||||Reference to the Asset And Liability Portfolio Strategy instance|I|I|I|I|I
+EXCHANGE||Asset And Liability Portfolio Strategy Exchange Action Task Reference||||Reference to a Asset And Liability Portfolio Strategy instance exchange service call|||O
+EXCHANGE||Asset And Liability Portfolio Strategy Exchange Action Task Record||||The exchange service call consolidated processing record|||I/O
+EXCHANGE||Asset And Liability Portfolio Strategy Exchange Action Request|##|||Details of the exchange action service request|||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||I
+EXCHANGE||Asset And Liability Portfolio Strategy Exchange Action Response||||Details of the exchange action service response|||O
+Mandatory||Asset And Liability Mnagement Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Asset And Liability Portfolio Strategy Instance Reference||||Reference to the Asset And Liability Portfolio Strategy instance|I|I|I|I|I
+REQUEST||Asset And Liability Portfolio Strategy Request Action Task Reference||||Reference to a Asset And Liability Portfolio Strategy instance request service call||||O
+REQUEST||Asset And Liability Portfolio Strategy Request Action Task Record||||The request service call consolidated processing record||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||I
+REQUEST||Request Response Record||||Details of the request action service response||||O
+Mandatory||Asset And Liability Mnagement Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Asset And Liability Portfolio Strategy Instance Reference||||Reference to the Asset And Liability Portfolio Strategy instance|I|I|I|I|I
+GRANT||Asset And Liability Portfolio Strategy Grant Action Task Reference||||Reference to a Asset And Liability Portfolio Strategy instance grant service call|||||O
+GRANT||Asset And Liability Portfolio Strategy Grant Action Task Record||||The grant service call consolidated processing record|||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||O
+Mandatory||Asset And Liability Mnagement Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Asset And Liability Portfolio Strategy Instance Reference||||Reference to the Asset And Liability Portfolio Strategy instance|I|I|I|I|I
+RETRIEVE||Asset And Liability Portfolio Strategy Retrieve Action Task Reference||||Reference to a Asset And Liability Portfolio Strategy instance retrieve service call||||||O
+RETRIEVE||Asset And Liability Portfolio Strategy Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||IO
+RETRIEVE||Asset And Liability Portfolio Strategy Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||I
+RETRIEVE||Asset And Liability Portfolio Strategy Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||O
+RETRIEVE||Asset And Liability Portfolio Strategy Instance Report Record|##|||A specific Asset And Liability Portfolio Strategy instance formatted report||||||IO
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Report Reference|||Reference to the control record instance report||||||I
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Report Type|||The type of external report available||||||IO
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||I
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Report|||The external report in any suitable form including selection filters where appropriate||||||O
+RETRIEVE||Asset And Liability Portfolio Strategy Instance Analysis|##|||A specific Asset And Liability Portfolio Strategy instance analytical report||||||IO
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Analysis Reference|||Reference to the control record instance analysis view||||||I
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Analysis Report Type|||The type of external performance analysis report available||||||IO
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||I
+RETRIEVE|||Asset And Liability Portfolio Strategy Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||O

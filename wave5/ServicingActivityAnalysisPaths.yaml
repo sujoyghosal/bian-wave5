@@ -1,0 +1,452 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Servicing Activity Analysis'
+ description: >
+
+    ## Executive Summary:
+
+    This service domain analyzes servicing activity to support continual service improvement
+
+    ## Example of Use:
+
+    Example of use: Contact center management reviews servicing activity analysis in order to identify areas where additional training and guidance is needed to improve the customer experience
+
+    ## Description:
+
+    Analyze customer servicing position activity, including teller, case/contact center traffic and VoIP activity. Analysis includes captured call/channel/device type, activity, onward routing and resolution decisions for operational and procedural insights and facility/process and training improvement (Root Cause Analysis)
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-servicing-activity-analysis/1.0.0
+schemes:
+ - https
+paths:
+  /servicing-activity-analysis/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDServicingActivityAnalysis
+      summary: Activate  a SDServicingActivityAnalysis servicing session
+      description: Activate  a  SDServicingActivityAnalysis servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDServicingActivityAnalysis Request Payload
+        schema:
+          $ref: '#/definitions/SDServicingActivityAnalysisActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDServicingActivityAnalysisActivateOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDServicingActivityAnalysis
+      summary: Update an active SDServicingActivityAnalysis session configuration
+      description: Update an active SDServicingActivityAnalysis session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDServicingActivityAnalysis Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDServicingActivityAnalysis Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDServicingActivityAnalysisConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDServicingActivityAnalysisConfigureOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDServicingActivityAnalysis
+      summary: "Capturing feedback against the SDServicingActivityAnalysis service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDServicingActivityAnalysis service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDServicingActivityAnalysis Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDServicingActivityAnalysis Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDServicingActivityAnalysisFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDServicingActivityAnalysisFeedbackOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDServicingActivityAnalysis
+      summary: Analytical views maintained by the SDServicingActivityAnalysis service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDServicingActivityAnalysis service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDServicingActivityAnalysis Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDServicingActivityAnalysisRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDServicingActivityAnalysisRetrieveOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis/evaluation:
+    post:
+      tags:
+      - evaluate
+      operationId: evaluateServicingRootCauseAnalysis
+      summary: Details of a new ServicingRootCauseAnalysis instance
+      description: Initialize servicing root cause analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ServicingRootCauseAnalysis Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingRootCauseAnalysisEvaluateInputModel'
+      responses:
+        201:
+          description: Successful evaluation of new ServicingRootCauseAnalysis instance
+          schema:
+            $ref: '#/definitions/CRServicingRootCauseAnalysisEvaluateOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateServicingRootCauseAnalysis
+      summary: Update to any amendable fields of the ServicingRootCauseAnalysis instance
+      description: Update aspects of servicing root cause analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Root Cause Analysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Servicing Root Cause Analysis Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingRootCauseAnalysisUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Servicing Root Cause Analysis Instance
+          schema:
+            $ref: '#/definitions/CRServicingRootCauseAnalysisUpdateOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeServicingRootCauseAnalysisUpdate
+      summary: Invoke an automated execute action against the ServicingRootCauseAnalysis instance
+      description: Execute an automated aspect of root cause analysis (e.g. refresh data)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Root Cause Analysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Servicing Root Cause Analysis Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingRootCauseAnalysisExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Servicing Root Cause Analysis Instance
+          schema:
+            $ref: '#/definitions/CRServicingRootCauseAnalysisExecuteOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestServicingRootCauseAnalysisUpdate
+      summary: Invoke a service request action against the ServicingRootCauseAnalysis instance
+      description: Request manual intervention in servicing root cause analysis (e.g. refine request)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Root Cause Analysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Servicing Root Cause Analysis Request Payload
+        schema:
+          $ref: '#/definitions/CRServicingRootCauseAnalysisRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Servicing Root Cause Analysis Instance
+          schema:
+            $ref: '#/definitions/CRServicingRootCauseAnalysisRequestOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveServicingActivityAnalysis
+      summary: Invoke a reporting action to obtain a Servicing Root Cause Analysis instance related report
+      description: Retrieve details about servicing root cause analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Root Cause Analysis Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRServicingRootCauseAnalysisRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Servicing Root Cause Analysis Instance
+          schema:
+            $ref: '#/definitions/CRServicingRootCauseAnalysisRetrieveOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis/{cr-reference-id}/rootcausealgorithm/evaluation:
+    post:
+      tags:
+      - evaluate
+      operationId: evaluateServicingRootCauseAnalysisRootCauseAlgorithm
+      summary: Details of a new RootCauseAlgorithm instance
+      description: Initialize application of a specific algorithm for root cause analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Root Cause Analysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Servicing Root Cause Analysis Request Payload
+        schema:
+          $ref: '#/definitions/BQRootCauseAlgorithmEvaluateInputModel'
+      responses:
+        201:
+          description: Successful evaluation of Servicing Root Cause Analysis instance
+          schema:
+            $ref: '#/definitions/BQRootCauseAlgorithmEvaluateOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis/{cr-reference-id}/rootcausealgorithm/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestServicingRootCauseAnalysisRootCauseAlgorithmUpdate
+      summary: Invoke a service request action against the RootCauseAlgorithm instance
+      description: Request manual intervention to the application of a root cause algorithm
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Root Cause Analysis Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: RootCauseAlgorithm Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: RootCauseAlgorithm request payload
+        schema:
+          $ref: '#/definitions/BQRootCauseAlgorithmRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of RootCauseAlgorithm Instance Record
+          schema:
+            $ref: '#/definitions/BQRootCauseAlgorithmRequestOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis/{cr-reference-id}/rootcausealgorithm/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveServicingRootCauseAnalysisRootCauseAlgorithm
+      summary: Invoke a reporting action to obtain a RootCauseAlgorithm instance related report.
+      description: Retrieve details about the application of a specific root cause algorithm analysis .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Root Cause Analysis Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: RootCauseAlgorithm Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQRootCauseAlgorithmRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved RootCauseAlgorithm Instance Record
+          schema:
+            $ref: '#/definitions/BQRootCauseAlgorithmRetrieveOutputModel'
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveServicingActivityAnalysisReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ServicingActivityAnalysis Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /servicing-activity-analysis/servicing-root-cause-analysis/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveServicingActivityAnalysisBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'RootCauseAlgorithm', ]
+  /servicing-activity-analysis/{sd-reference-id}/servicing-root-cause-analysis/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveServicingActivityAnalysisBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Servicing Activity Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Servicing Root Cause Analysis Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- RootCauseAlgorithm
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- RootCauseAlgorithm Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [RootCauseAlgorithmID1, RootCauseAlgorithmID2]

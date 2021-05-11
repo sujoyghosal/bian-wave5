@@ -1,0 +1,108 @@
+CR Loan Arrangement Instance Record	CR Loan Arrangement Instance Record	Loan Fulfillment Arrangement Instance Record				The control record maintains the fulfillment details for a loan product instance	IO	O	IO			O		IO		IO	O		IO	O	O	IO		O		IO	O		O
+		Product Instance Reference				Reference to the loan product instance	O	O	IO			O				I	O		IO	O	O			O			O		O
+		Loan Number				The associated loan account number in any suitable format	I	O	IO			O				I	O		IO	O	O			O			O		O
+		Customer Reference				Reference to the account primary party/owner	I	O	IO			O				I	O		IO	O	O			O					O
+		Party Reference				The legal entity reference for the borrower, likely to be the same as customer	I	O	IO			O				I	O		IO	O	O			O					
+		Customer Agreement Reference				Reference to the associated customer agreement	I	O	IO							I	O		IO		O								
+		Customer Credit Assessment Reference				Reference to an associated credit assessment	I	O	IO							I	O		IO		O								
+		Insurance Reference				Reference to applicable insurance arrangements	I	O	IO							I	O		IO		O								
+		Delinquency/Collection Reference				Reference to collections/delinquency processing made against the loan	I	O	IO							I	O		IO		O								
+		Bank Branch/Location Reference				Bank branch associated with the account for booking purposes	I	O	IO							I	O		IO		O								
+		Bank Accounting Unit Reference				Bank accounting unit associated with the account for booking purposes	I	O	IO							I	O		IO		O								
+		Loan Type				The specific type of loan (e.g. term, revolving, evergreen)	I	O	IO							I	O		IO		O						O		
+		Loan Amount				The amount of the loan	I	O	IO							I	O		IO		O						O		
+		Loan Currency				The currency for the loan account	I	O	IO							I	O		IO		O						O		
+		Loan Rate Type				The rate type to be applied to the loan	I	O	IO							I	O		IO		O						O		
+		Loan Applicable Rate				The applicable rate for the loan	I	O	IO							I	O		IO		O						O		
+		Repayment Type				The type of repayment arrangement in place (e.g. structured)	I	O	IO			O				I	O		IO		O								
+		Interest Type				The type of interest to be applied (e.g. prime plus)	I	O	IO							I	O		IO		O						O		
+		Interest Accrual Method				The accrual method applied to interest calculations	I	O	IO							I	O		IO		O						O		
+		Loan Origination Date				The origination date for the loan	I	O	IO							I	O		IO	O	O						O		
+		Loan Maturity Date				The planned maturity date of the loan	I	O	IO							I	O		IO		O						O		
+		Collateral Reference				Reference to allocated collateral	I	O	IO							I	O		IO		O								
+		Collateral Allocation				The collateral value applied to the loan	I	O	IO							I	O		IO		O								
+		Tax Reference				Reference identifier linking the account to appropriate tax handling	I	O	IO							I	O		IO		O								
+		Loan Access Terms				Access terms that apply (e.g. allowed payments/withdrawals)	I	O	IO			O				I	O		IO		O			O					O
+		Entitlement Option Definition				The definition of an applicable entitlement option	I	O	IO			O				I	O		IO		O			O					O
+		Entitlement Option Setting				The setting for the entitlement option	I	O	IO			O				I	O		IO		O			O					O
+		Restriction Option Definition				The definition of an applicable restriction option	I	O	IO			O				I	O		IO		O			O					O
+		Restriction Option Setting				The setting for the restriction option	I	O	IO			O				I	O		IO		O			O					O
+		Associations				Definition of the involved parties or associations to the account	I	O	IO							I	O		IO		O								O
+		Association Type				The type of association (e.g. guarantor, co-signer)	I	O	IO							I	O		IO		O								O
+		Association Obligation/Entitlement				Description of the role, obligations or entitlements of the associated party	I	O	IO							I	O		IO		O								O
+		Association Reference				Reference to the associated party	I	O	IO							I	O		IO		O								O
+		Loan Repayment Schedule				The schedule for loan repayments	I	O	IO							I	O		IO		O								
+		Staged Repayment Statement				A statement maintained tracking repayments	IO	O	IO							IO	O		IO		O								
+		Customer Commentary				A record of customer correspondence/feedback	IO	O	IO							IO	O		IO		O								O
+		Loan Outstanding Balance				The outstanding balance	O	O	IO			O		IO		IO	O		IO	O	O			O			O		O
+		Date Type				Key dates associated with the account (e.g. opening date, closing date)	IO	O	IO			O		IO		IO	O		IO	O	O			O			O		O
+		Date				Value of the date type																							
+BQ Repayment Instance Record	BQ Repayment Instance Record	Repayment Instance Record				Handles loan repayments (note scheduled and balloon repayments combined)					IO	O	IO	IO															
+		Repayment Transaction Type				The type of repayment (e.g. scheduled repayment, balloon/early termination)					I	O	I	IO															
+		Repayment Transaction Payer Reference				Reference to the payer					I	O	I	IO															
+		Repayment Transaction Payer Product Instance Reference				Reference to the account where the payment is made from					I	O	I	IO															
+		Repayment Transaction Payer Bank Reference				Reference to the payer's bank					I	O	I	IO															
+		Repayment Transaction Amount				The amount of the repayment					I	O	I	IO															
+		Repayment Transaction Currency				The currency used for the repayment					I	O	I	IO															
+		Repayment Transaction Value Date				The value date for the repayment transaction					IO	O	IO	IO															
+BQ Restructuring Instance Record	BQ Restructuring Instance Record	Restructuring Instance Record				Attributes associated with outlining loan account restructuring										IO	O	IO	IO										
+		Restructuring Task				Description of the restructuring required										IO	O	IO	IO										
+		Restructuring Evaluation				Definition of issue to resolve and the restructuring solution with associated changes to loan terms and the assessed impact										O	O	O	IO										
+		Restructuring Write Down				Calculated loss/costs of restructuring										O	O	O	IO										
+BQ Disbursement Instance Record	BQ Disbursement Instance Record	Disbursement Instance Record				Handles the initial loan disbursement														O									
+		Disbursement Payee Reference				Reference to the party to whom the payment is made														O									
+		Disbursement Payee Product Instance Reference				Reference to the account to which the payment is made														O									
+		Disbursement Payee Bank Reference				Reference to the bank where the payee account is held														O									
+		Disbursement Amount				The amount of the payment														O									
+		Disbursement Currency				The currency of the payment														O									
+		Disbursement Value Date				The value date for the payment transaction														O									
+BQ Maintenance Instance Record	BQ Maintenance Instance Record	Maintenance Instance Record				Handles key maintenance activities, mostly the assembly and delivery of status analyses in ad-hoc reports															O	IO							
+		Maintenance Report Type				The type of maintenance action and report processed (e.g. tax, regulatory, accounting)															O	I							
+		Loan Tax Report				A report summarizing tax considerations															O	O							
+		Loan Fee Type				The type of fee applied															O	O							
+		Loan Fees				A report detailing fees applied to the loan account (range of fees possible for different actions)															O	O							
+		Penalties				A report detailing penalties incurred as booked against loan account															O	O							
+		Collateral Valuation				A report detailing the current applied collateral valuation (value confirmed as of date)															O	O							
+BQ Withdrawal Instance Record	BQ Withdrawal Instance Record	Withdrawal Instance Record				Handles payments from the loan account																	IO	O	IO	IO			
+		Payment Transaction				The general payment transaction with all major attributes - some optional depending on type																	I	O	I	IO			
+		Payment Transaction Type				The type of payment transaction (e.g. customer payment, standing order, direct debit, bill pay)																	I	O	I	IO			
+		Payment Transaction Payee Reference				Reference to the party to whom the payment is made																	I	O	I	IO			
+		Payment Transaction Payee Account Reference				Reference to the account to which the payment is made																	I	O	I	IO			
+		Payment Transaction Payee Bank Reference				Reference to the bank where the payee account is held																	I	O	I	IO			
+		Payment Transaction Amount				The amount (and currency if applicable) of the payment																	I	O	I	IO			
+		Payment Transaction Fee Type				The fee type applied to the payment transaction																	I	O	I	IO			
+		Payment Transaction Fee Charge				The fee charge applied to the transaction																	I	O	I	IO			
+		Payment Transaction Date				The various key dates and times associated with the payment transaction																	I	O	I	IO			
+		Payment Transaction Payment Mechanism				Requested payment mechanism (e.g. Wire, ACH)																	I	O	I	IO			
+		Payment Transaction Payment Purpose				Description of the purpose including any external reference to the transaction																	I	O	I	IO			
+		Payment Transaction Bank Branch/Location Reference				Reference to the location the payment transaction is initiated from																	I	O	I	IO			
+		Payment Transaction Status				The processing status of the transaction (e.g. captured, approved, initiated, confirmed, settled)																	IO	O	IO	IO			
+BQ Interest Instance Record	BQ Interest Instance Record	Interest Instance Record				Applies interest to the loan account																					O		
+		Interest Rate Type				Applicable rate type																					O		
+		Interest Rate Application Schedule				The processing schedule for applying interest rates to the account																					O		
+		Interest Rate Configuration				The collection of applicable rates																					O		
+		Interest Rate				The interest rate value to be applied (note could be variable)																							
+		Interest Application Record				The record of applied interest																					O		
+		Interest Transaction				A record of applied interest																					O		
+		Transaction Description				General description of the interest transaction																					O		
+		Transaction Rate Type				Applicable rate type																					O		
+		Transaction Interest Charge				The derived interest amount to be applied																					O		
+		Interest Accrual Amount				Record of accrued interest																					O		
+		Interest Accrual Type				The interest type being tracked																					O		
+		Interest Accrual Charge				The accrued amount of applied interest																					O		
+BQ Service Fees Instance Record	BQ Service Fees Instance Record	Service Fees Instance Record				Applies service fees and penalties to the loan account																						I	O
+		Fee Configuration Profile				The profile of applicable fees and penalties																						IO	O
+		Fee Type				The fee or penalty type applied																						I	O
+		Fee Definition				Definition of the fee or penalty including when and how to apply																						O	O
+		Fee Application Record				The record of applied fees and penalties including transactions and accrued amounts																						IO	O
+		Fee Transaction				A record of an applied fee or penalty																						IO	O
+		Transaction Description				General description of the fee or penalty transaction																							
+		Transaction Fee Type				The fee or penalty type applied																						IO	O
+		Transaction Fee Charge				The derived fee or penalty amount applied																						O	O
+		Fee Projections and Commitments				A record of projected fees and penalties																						IO	O
+		Projected Transaction Description				General description of the projected fee or penalty																						I	O
+		Projected Transaction Fee Type				The fee or penalty type																						IO	O
+		Projected Transaction Fee Charge				The anticipated fee or penalty amount																						O	O
+		Fee Accrual Amount				Tracking of accumulated fees and penalties																						O	O
+		Accrual Fee Type				The fee or penalty type being tracked																						IO	O
+		Accrual Fee Charge				The accrued amount of fees and penalties																						O	O

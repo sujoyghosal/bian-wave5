@@ -1,0 +1,155 @@
+CR Chequeprocessing Operating Session Instance Record|Chequeprocessing Operating Session||||||CR Chequeprocessing Operating Session Initiate|CR Chequeprocessing Operating Session Update|CR Chequeprocessing Operating Session Control|CR Chequeprocessing Operating Session Exchange|CR Chequeprocessing Operating Session Execute|CR Chequeprocessing Operating Session Request|CR Chequeprocessing Operating Session Retrieve|BQ Cheque Extraction Retrieve|BQ Financial Transaction Initiation Exchange|BQ Financial Transaction Initiation Retrieve|BQ Cancelled Cheque Handling Update|BQ Cancelled Cheque Handling Retrieve|
+Mandatory||Cheque Processing Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Chequeprocessing Operating Session Instance Reference||||Reference to the Chequeprocessing Operating Session instance|O|I|I|I|I|I
+Initiate||Chequeprocessing Operating Session Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Chequeprocessing Operating Session Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Chequeprocessing Operating Session Instance Status||||The status of the Chequeprocessing Operating Session instance (e.g. initialised, pending, active)|IO
+||Cheque Processing Operating Session Instance Record||||Operate equipment and/or a largely automated facility within Cheque Processing.
+Example: Operate the bank's internal intranet facility.||||||||||||
+||Cheque Processing Operating Session Schedule||||The timetable of Cheque Processing Operating Session|I|I|I|I|I|I|O|||||
+||Cheque Processing Operating Session Status||||The status of Cheque Processing Operating Session|I|I|I|I|I|I|O|||||
+||Cheque Processing Operating Session Usage Log||||Reference to the log of (usage) ativities/events of Cheque Processing Operating Session|I|I|I|I|I|I|O|||||
+||Cheque Processing Operating Session Reference||||Reference to the party who is involved in Cheque Processing Operating Session|IO|IO|IO|IO|IO|IO|O|||||
+||Cheque Processing Operating Session ServiceProvider Reference||||Reference to the party who provides the services of Cheque Processing Operating Session |IO|IO|IO|IO|IO|IO|O|||||
+||Cheque Processing Operating Session Type||||A Classification value that distinguishes between the type of operations within Cheque Processing Operating Session |IO|IO|IO|IO|IO|IO|O|||||
+||Cheque Processing Operating Session Service Provider Schedule||||The schedule according to which the service provider will operate the Cheque Processing Operating Session|IO|IO|IO|IO|IO|IO|O|||||
+||Cheque Processing Operating Session Service Type||||A Classification value that distinguishes between the type of services within Cheque Processing Operating Session |IO|IO|IO|IO|IO|IO|O|||||
+||Cheque Processing Operating Session Service Configuration||||The configuration of Cheque Processing Operating Session|I|I|I|I|I|I|O|||||
+Update||Chequeprocessing Operating Session Update Action Task Reference||||Reference to an update service call||O
+Update||Chequeprocessing Operating Session Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Chequeprocessing Operating Session Control Action Task Reference||||Reference to a Chequeprocessing Operating Session instance control processing service call|||O
+CONTROL||Chequeprocessing Operating Session Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Chequeprocessing Operating Session Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Chequeprocessing Operating Session Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Chequeprocessing Operating Session Exchange Action Task Reference||||Reference to a Chequeprocessing Operating Session instance exchange service call||||O
+EXCHANGE||Chequeprocessing Operating Session Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Chequeprocessing Operating Session Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Chequeprocessing Operating Session Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Chequeprocessing Operating Session Execute Action Task Reference||||Reference to a Chequeprocessing Operating Session instance execute service call|||||O
+EXECUTE||Chequeprocessing Operating Session Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Chequeprocessing Operating Session Request Action Task Reference||||Reference to a Chequeprocessing Operating Session instance request service call||||||O
+REQUEST||Chequeprocessing Operating Session Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Chequeprocessing Operating Session Retrieve Action Task Reference||||Reference to a Chequeprocessing Operating Session instance retrieve service call|||||||O
+RETRIEVE||Chequeprocessing Operating Session Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Chequeprocessing Operating Session Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Chequeprocessing Operating Session Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Chequeprocessing Operating Session Instance Report Record|##|||A specific Chequeprocessing Operating Session instance formatted report|||||||IO
+RETRIEVE|||Chequeprocessing Operating Session Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Chequeprocessing Operating Session Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Chequeprocessing Operating Session Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Chequeprocessing Operating Session Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Chequeprocessing Operating Session Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Chequeprocessing Operating Session Instance Analysis|##|||A specific Chequeprocessing Operating Session instance analytical report|||||||IO
+RETRIEVE|||Chequeprocessing Operating Session Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Chequeprocessing Operating Session Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Chequeprocessing Operating Session Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Chequeprocessing Operating Session Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Chequeprocessing Operating Session Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Cheque Extraction Instance Record|Cheque Extraction||||||
+Mandatory||Chequeprocessing Operating Session Instance Reference||||Reference to the parent Chequeprocessing Operating Session instance|||||||
+Mandatory||Cheque Extraction Instance Reference||||Reference to the Cheque Extraction instance|||||||
+||Cheque Extraction Instance Record||||Operate equipment and/or a largely automated facility within Cheque Processing.
+||||||||||||
+||Cheque Extraction Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature||||||||O||||
+||Cheque Extraction Function Schedule||||The schedule and timing of the function||||||||O||||
+||Cheque Extraction||||The Chequeprocessing Operating Session specific Business Service||||||||||||
+||Cheque Extraction Service Type||||Reference to the specific business service type||||||||O||||
+||Cheque Extraction Service Description||||Description of the performed business service||||||||O||||
+||Cheque Extraction Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||O||||
+||Cheque Extraction Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||O||||
+||Cheque Extraction Service Name||||||||||||O||||
+Retrieve||Cheque Extraction Retrieve Action Task Reference||||Reference to a Cheque Extraction instance retrieve service call||||||||O
+Retrieve||Cheque Extraction Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||I/O
+Retrieve||Cheque Extraction Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+Retrieve||Cheque Extraction Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+Retrieve||Cheque Extraction Instance Report|##|||A specific Cheque Extraction instance formatted report||||||||IO
+Retrieve|||Cheque Extraction Instance Report Reference|||Reference to the control record instance report||||||||I
+Retrieve|||Cheque Extraction Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Cheque Extraction Instance Report Type|||The type of external report available||||||||O
+Retrieve|||Cheque Extraction Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||O
+Retrieve|||Cheque Extraction Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+Retrieve||Cheque Extraction Instance Analysis|##|||A specific Cheque Extraction instance analytical report||||||||IO
+Retrieve|||Cheque Extraction Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+Retrieve|||Cheque Extraction Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Cheque Extraction Instance Analysis Report Type|||The type of external performance analysis report available||||||||O
+Retrieve|||Cheque Extraction Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||O
+Retrieve|||Cheque Extraction Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Financial Transaction Initiation Instance Record|Financial Transaction Initiation||||||
+Mandatory||Chequeprocessing Operating Session Instance Reference||||Reference to the parent Chequeprocessing Operating Session instance|||||||||I
+Mandatory||Financial Transaction Initiation Instance Reference||||Reference to the Financial Transaction Initiation instance|||||||||I
+||Financial Transaction Initiation Instance Record||||Operate equipment and/or a largely automated facility within Cheque Processing.
+||||||||||||
+||Financial Transaction Initiation Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature|||||||||IO|O||
+||Financial Transaction Initiation Function Schedule||||The schedule and timing of the function|||||||||IO|O||
+||Financial Transaction Initiation||||The Chequeprocessing Operating Session specific Business Service||||||||||||
+||Financial Transaction Initiation Service Type||||Reference to the specific business service type|||||||||IO|O||
+||Financial Transaction Initiation Service Description||||Description of the performed business service|||||||||IO|O||
+||Financial Transaction Initiation Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||IO|O||
+||Financial Transaction Initiation Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||IO|O||
+||Financial Transaction Initiation Service Name|||||||||||||IO|O||
+Exchange||Financial Transaction Initiation Exchange Action Task Reference||||Reference to a Financial Transaction Initiation instance exchange service call|||||||||O
+Exchange||Financial Transaction Initiation Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||I/O
+Exchange||Financial Transaction Initiation Exchange Action Request|##|||Details of the exchange action service request|||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||I
+Exchange||Financial Transaction Initiation Exchange Action Response||||Details of the exchange action service response|||||||||O
+Exchange||Financial Transaction Initiation Instance Status||||The status of the Financial Transaction Initiation instance (e.g. accepted, rejected, verified)|||||||||O
+Retrieve||Financial Transaction Initiation Retrieve Action Task Reference||||Reference to a Financial Transaction Initiation instance retrieve service call||||||||||O
+Retrieve||Financial Transaction Initiation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Financial Transaction Initiation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Financial Transaction Initiation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Financial Transaction Initiation Instance Report|##|||A specific Financial Transaction Initiation instance formatted report||||||||||IO
+Retrieve|||Financial Transaction Initiation Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Financial Transaction Initiation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Financial Transaction Initiation Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Financial Transaction Initiation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Financial Transaction Initiation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Financial Transaction Initiation Instance Analysis|##|||A specific Financial Transaction Initiation instance analytical report||||||||||IO
+Retrieve|||Financial Transaction Initiation Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Financial Transaction Initiation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Financial Transaction Initiation Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Financial Transaction Initiation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Financial Transaction Initiation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Cancelled Cheque Handling Instance Record|Cancelled Cheque Handling||||||
+Mandatory||Chequeprocessing Operating Session Instance Reference||||Reference to the parent Chequeprocessing Operating Session instance|||||||||||I
+Mandatory||Cancelled Cheque Handling Instance Reference||||Reference to the Cancelled Cheque Handling instance|||||||||||I
+||Cancelled Cheque Handling Instance Record||||Operate equipment and/or a largely automated facility within Cheque Processing.
+||||||||||||
+||Cancelled Cheque Handling Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature|||||||||||IO|O
+||Cancelled Cheque Handling Function Schedule||||The schedule and timing of the function|||||||||||IO|O
+||Cancelled Cheque Handling||||The Chequeprocessing Operating Session specific Business Service||||||||||||
+||Cancelled Cheque Handling Service Type||||Reference to the specific business service type|||||||||||IO|O
+||Cancelled Cheque Handling Service Description||||Description of the performed business service|||||||||||IO|O
+||Cancelled Cheque Handling Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|O
+||Cancelled Cheque Handling Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|O
+Update||Cancelled Cheque Handling Update Action Task Reference||||Reference to an update service call|||||||||||O
+Update||Cancelled Cheque Handling Update Action Task Record||||The update service call consolidated processing record|||||||||||I/O
+Update||Cancelled Cheque Handling Update Action Request||||Details of the update action service request|||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||O
+Retrieve||Cancelled Cheque Handling Retrieve Action Task Reference||||Reference to a Cancelled Cheque Handling instance retrieve service call||||||||||||O
+Retrieve||Cancelled Cheque Handling Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Cancelled Cheque Handling Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Cancelled Cheque Handling Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Cancelled Cheque Handling Instance Report|##|||A specific Cancelled Cheque Handling instance formatted report||||||||||||IO
+Retrieve|||Cancelled Cheque Handling Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Cancelled Cheque Handling Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Cancelled Cheque Handling Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Cancelled Cheque Handling Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Cancelled Cheque Handling Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Cancelled Cheque Handling Instance Analysis|##|||A specific Cancelled Cheque Handling instance analytical report||||||||||||IO
+Retrieve|||Cancelled Cheque Handling Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Cancelled Cheque Handling Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Cancelled Cheque Handling Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Cancelled Cheque Handling Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Cancelled Cheque Handling Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O

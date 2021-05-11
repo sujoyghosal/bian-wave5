@@ -1,0 +1,168 @@
+CR Central Cash Allocation Instance Record|Central Cash Allocation||||||CR Central Cash Allocation Initiate|CR Central Cash Allocation Update|CR Central Cash Allocation Control|CR Central Cash Allocation Exchange|CR Central Cash Allocation Capture|CR Central Cash Allocation Retrieve|BQ Tracking and Allocation Initiate|BQ Tracking and Allocation Update|BQ Tracking and Allocation Control|BQ Tracking and Allocation Exchange|BQ Tracking and Allocation Capture|BQ Tracking and Allocation Retrieve|BQ Projection and Allocation Initiate|BQ Projection and Allocation Update|BQ Projection and Allocation Control|BQ Projection and Allocation Exchange|BQ Projection and Allocation Capture|BQ Projection and Allocation Retrieve|
+Mandatory||Central Cash Handling Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Central Cash Allocation Instance Reference||||Reference to the Central Cash Allocation instance|O|I|I|I|I
+Initiate||Central Cash Allocation Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Central Cash Allocation Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Central Cash Allocation Instance Status||||The status of the Central Cash Allocation instance (e.g. initialised, pending, active)|IO
+||Central Cash Allocation Instance Record||||Maintain an inventory or holding of some resource and make assignments/allocations as requested within Central Cash Handling.
+Example: Track the inventory and administer the distribution of central cash holdings throughout the branch & ATM network.||||||||||||||||||
+||Central Cash Allocation Parameter Type||||A Classification value that distinguishes between allocation Options according to the optional business services defined within Central Cash Allocation|IO|IO|IO|IO|IO|O||||||||||||
+||Central Cash Allocation Selected Option||||A selected optional business service for which resources are allocated|IO|IO|IO|IO|IO|O||||||||||||
+||Central Cash Allocation <Subject Area> Type||||A Classification value, that distinguishes between the the type of resource allocated withing the Central Cash Allocation|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Description||||Documentation of Central Cash Allocation|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Request||||Request to allocate CentralCash|IO|IO|IO|IO|IO|O||||||||||||
+||Central Cash Allocation Schedule||||Timetable to allocate CentralCash|IO|IO|IO|IO|IO|O||||||||||||
+||Central Cash Allocation Status||||The status of Central Cash Allocation|IO|IO|IO|IO|IO|O||||||||||||
+||Central Cash Allocation Reference||||Reference to the party who is involved in Central Cash Allocation|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Customer Reference||||Reference to the customer who is involved in Central Cash Allocation|IO|IO|IO|IO|IO|O||||||||||||
+||Central Cash Allocation Currency||||The curreny which is arranged/used for Central Cash Allocation|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Regulation Reference||||Reference to the regulation which is defined for Central Cash Allocation|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Regulation Type||||A Classification that distinguishes between the regularity domains of Central Cash Allocation|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Jurisdiction||||Reference to the jurisdiction that is assigned to Central Cash Allocation in case of legal dispute.|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Booking Location||||The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement, are entered.|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Account Type||||The type of account which is linked to Central Cash Allocation|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Account Reference||||Reference to the account which is linked to Central Cash Allocation|I|I|I|I|I|O||||||||||||
+||Central Cash Allocation Instance||||Reference to Central Cash Allocation Instance||||||||||||||||||
+Update||Central Cash Allocation Update Action Task Reference||||Reference to an update service call||O
+Update||Central Cash Allocation Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Central Cash Allocation Control Action Task Reference||||Reference to a Central Cash Allocation instance control processing service call|||O
+CONTROL||Central Cash Allocation Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Central Cash Allocation Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Central Cash Allocation Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Central Cash Allocation Exchange Action Task Reference||||Reference to a Central Cash Allocation instance exchange service call||||O
+EXCHANGE||Central Cash Allocation Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Central Cash Allocation Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Central Cash Allocation Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Central Cash Allocation Capture Action Task Reference||||Reference to a Central Cash Allocation instance capture service call|||||O
+CAPTURE||Central Cash Allocation Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+RETRIEVE||Central Cash Allocation Retrieve Action Task Reference||||Reference to a Central Cash Allocation instance retrieve service call||||||O
+RETRIEVE||Central Cash Allocation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||IO
+RETRIEVE||Central Cash Allocation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||I
+RETRIEVE||Central Cash Allocation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||O
+RETRIEVE||Central Cash Allocation Instance Report Record|##|||A specific Central Cash Allocation instance formatted report||||||IO
+RETRIEVE|||Central Cash Allocation Instance Report Reference|||Reference to the control record instance report||||||I
+RETRIEVE|||Central Cash Allocation Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Central Cash Allocation Instance Report Type|||The type of external report available||||||IO
+RETRIEVE|||Central Cash Allocation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||I
+RETRIEVE|||Central Cash Allocation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||O
+RETRIEVE||Central Cash Allocation Instance Analysis|##|||A specific Central Cash Allocation instance analytical report||||||IO
+RETRIEVE|||Central Cash Allocation Instance Analysis Reference|||Reference to the control record instance analysis view||||||I
+RETRIEVE|||Central Cash Allocation Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Central Cash Allocation Instance Analysis Report Type|||The type of external performance analysis report available||||||IO
+RETRIEVE|||Central Cash Allocation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||I
+RETRIEVE|||Central Cash Allocation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||O
+BQ Tracking and Allocation Instance Record|Tracking and Allocation||||||
+Mandatory||Central Cash Allocation Instance Reference||||Reference to the parent Central Cash Allocation instance|||||||I|I|I|I|I
+Mandatory||Tracking and Allocation Instance Reference||||Reference to the Tracking and Allocation instance|||||||O|I|I|I|I
+Initiate||Tracking and Allocation Initiate Action Reference||||Reference to an Initiate service call|||||||O
+Initiate||Tracking and Allocation Initiate Action Record||||The Initiate service call input and output record|||||||I/O
+Initiate||Tracking and Allocation Instance Status||||The status of the Tracking and Allocation instance (e.g. initialised, pending, active)|||||||O
+||Tracking and Allocation Instance Record||||Maintain an inventory or holding of some resource and make assignments/allocations as requested within Central Cash Handling.
+||||||||||||||||||
+||Tracking and Allocation Preconditions||||The required status/situation before the allocation can be made|||||||IO|IO|IO|IO|IO|O||||||
+||Tracking and Allocation Allocation Schedule||||The schedule and timing of allocation decisions|||||||IO|IO|IO|IO|IO|O||||||
+||Cash Inventory Allocation||||The Central Cash Allocation specific Business Service|||||||IO|IO|IO|IO|IO|O||||||
+||Cash Inventory Allocation Service Type||||Reference to the specific business service type|||||||IO|IO|IO|IO|IO|O||||||
+||Cash Inventory Allocation Service Description||||Description of the performed business service|||||||IO|IO|IO|IO|IO|O||||||
+||Cash Inventory Allocation Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||IO|IO|IO|IO|IO|O||||||
+||Cash Inventory Allocation Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||IO|IO|IO|IO|IO|O||||||
+||Cash Inventory Allocation Service Name|||||||||||IO|IO|IO|IO|IO|O||||||
+Update||Tracking and Allocation Update Action Task Reference||||Reference to an update service call||||||||O
+Update||Tracking and Allocation Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||Tracking and Allocation Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Control||Tracking and Allocation Control Action Task Reference||||Reference to a Tracking and Allocation instance control processing service call|||||||||O
+Control||Tracking and Allocation Control Action Task Record||||The processing control service call consolidated processing record|||||||||I/O
+Control||Tracking and Allocation Control Action Request|##|||Details of the control action service request|||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||||||||I
+Control||Tracking and Allocation Control Action Response||||Details of the control action service response|||||||||O
+Control||Tracking and Allocation Instance Status||||The status of the Tracking and Allocation instance (e.g. initialised, pending, active)|||||||||O
+Exchange||Tracking and Allocation Exchange Action Task Reference||||Reference to a Tracking and Allocation instance exchange service call||||||||||O
+Exchange||Tracking and Allocation Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||Tracking and Allocation Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||Tracking and Allocation Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||Tracking and Allocation Instance Status||||The status of the Tracking and Allocation instance (e.g. accepted, rejected, verified)||||||||||O
+Capture||Tracking and Allocation Capture Action Task Reference||||Reference to a Tracking and Allocation instance capture service call|||||||||||O
+Capture||Tracking and Allocation Capture Action Task Record||||The capture service call consolidated processing record|||||||||||I/O
+Capture||Tracking and Allocation Capture Record Reference||||Reference to the Tracking and Allocation structured input transaction/record|||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||O
+Retrieve||Tracking and Allocation Retrieve Action Task Reference||||Reference to a Tracking and Allocation instance retrieve service call||||||||||||O
+Retrieve||Tracking and Allocation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Tracking and Allocation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Tracking and Allocation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Tracking and Allocation Instance Report|##|||A specific Tracking and Allocation instance formatted report||||||||||||IO
+Retrieve|||Tracking and Allocation Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Tracking and Allocation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Tracking and Allocation Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Tracking and Allocation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Tracking and Allocation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Tracking and Allocation Instance Analysis|##|||A specific Tracking and Allocation instance analytical report||||||||||||IO
+Retrieve|||Tracking and Allocation Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Tracking and Allocation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Tracking and Allocation Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Tracking and Allocation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Tracking and Allocation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ Projection and Allocation Instance Record|Projection and Allocation||||||
+Mandatory||Central Cash Allocation Instance Reference||||Reference to the parent Central Cash Allocation instance|||||||||||||I|I|I|I|I
+Mandatory||Projection and Allocation Instance Reference||||Reference to the Projection and Allocation instance|||||||||||||O|I|I|I|I
+Initiate||Projection and Allocation Initiate Action Reference||||Reference to an Initiate service call|||||||||||||O
+Initiate||Projection and Allocation Initiate Action Record||||The Initiate service call input and output record|||||||||||||I/O
+Initiate||Projection and Allocation Instance Status||||The status of the Projection and Allocation instance (e.g. initialised, pending, active)|||||||||||||O
+||Projection and Allocation Instance Record||||Maintain an inventory or holding of some resource and make assignments/allocations as requested within Central Cash Handling.
+||||||||||||||||||
+||Projection and Allocation Preconditions||||The required status/situation before the allocation can be made|||||||||||||IO|IO|IO|IO|IO|O
+||Projection and Allocation Allocation Schedule||||The schedule and timing of allocation decisions|||||||||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Projection||||The Central Cash Allocation specific Business Service|||||||||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Projection Service Type||||Reference to the specific business service type|||||||||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Projection Service Description||||Description of the performed business service|||||||||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Projection Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||IO|IO|IO|IO|IO|O
+||Cash Inventory Projection Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||IO|IO|IO|IO|IO|O
+Update||Projection and Allocation Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||Projection and Allocation Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||Projection and Allocation Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Control||Projection and Allocation Control Action Task Reference||||Reference to a Projection and Allocation instance control processing service call|||||||||||||||O
+Control||Projection and Allocation Control Action Task Record||||The processing control service call consolidated processing record|||||||||||||||I/O
+Control||Projection and Allocation Control Action Request|##|||Details of the control action service request|||||||||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||||||||||||||I
+Control||Projection and Allocation Control Action Response||||Details of the control action service response|||||||||||||||O
+Control||Projection and Allocation Instance Status||||The status of the Projection and Allocation instance (e.g. initialised, pending, active)|||||||||||||||O
+Exchange||Projection and Allocation Exchange Action Task Reference||||Reference to a Projection and Allocation instance exchange service call||||||||||||||||O
+Exchange||Projection and Allocation Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||I/O
+Exchange||Projection and Allocation Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||I
+Exchange||Projection and Allocation Exchange Action Response||||Details of the exchange action service response||||||||||||||||O
+Exchange||Projection and Allocation Instance Status||||The status of the Projection and Allocation instance (e.g. accepted, rejected, verified)||||||||||||||||O
+Capture||Projection and Allocation Capture Action Task Reference||||Reference to a Projection and Allocation instance capture service call|||||||||||||||||O
+Capture||Projection and Allocation Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||I/O
+Capture||Projection and Allocation Capture Record Reference||||Reference to the Projection and Allocation structured input transaction/record|||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||O
+Retrieve||Projection and Allocation Retrieve Action Task Reference||||Reference to a Projection and Allocation instance retrieve service call||||||||||||||||||O
+Retrieve||Projection and Allocation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||I/O
+Retrieve||Projection and Allocation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||I
+Retrieve||Projection and Allocation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||O
+Retrieve||Projection and Allocation Instance Report|##|||A specific Projection and Allocation instance formatted report||||||||||||||||||IO
+Retrieve|||Projection and Allocation Instance Report Reference|||Reference to the control record instance report||||||||||||||||||I
+Retrieve|||Projection and Allocation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Projection and Allocation Instance Report Type|||The type of external report available||||||||||||||||||O
+Retrieve|||Projection and Allocation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||O
+Retrieve|||Projection and Allocation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||O
+Retrieve||Projection and Allocation Instance Analysis|##|||A specific Projection and Allocation instance analytical report||||||||||||||||||IO
+Retrieve|||Projection and Allocation Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||I
+Retrieve|||Projection and Allocation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Projection and Allocation Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||O
+Retrieve|||Projection and Allocation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||O
+Retrieve|||Projection and Allocation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||O

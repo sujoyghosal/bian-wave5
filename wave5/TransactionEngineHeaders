@@ -1,0 +1,14 @@
+SD=Transaction Engine
+CR=Transaction Schedule Fulfillment Arrangement
+BQs=      
+The Service Domain provides a utility/background operational support service to orchestrate a schedule of payment transaction and reporting activities for the fulfillment of certain long term instruments or structured facilities. The Service Domain maintains a link to the associated fulfillment Service Domain and the applicable product instance for reporting and processing issues that may arise.
+Example of use:The mortgage fulfillment Service Domain delegates repayment processing to the Transaction Engine for its active mortgage product instances
+Orchestrate a schedule of payment transaction and reporting activities for the fulfillment of certain long term instruments or structured facilities
+CR - Transaction Schedule Fulfillment Arrangement					
+In	Up	Co	Ec	Ex	Re
+InCR Initiate delegated transaction processing for a product instance
+UpCR Update details for an active transaction processing arrangement
+CoCR Control an active transaction processing arrangement (e.g. suspend)
+EcCR Accept, reject a proposed action 
+ExCR Execute an automated function for a transaction processing arrangement (e.g. trigger some service option)
+ReCR Retrieve details about delegated transaction processing for a product instance

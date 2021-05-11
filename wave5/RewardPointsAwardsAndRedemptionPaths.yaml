@@ -1,0 +1,657 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Reward Points Awards And Redemption'
+ description: >
+
+    ## Executive Summary:
+
+    Handle the allocation and redemption of rewards points for customer transaction activity
+
+    ## Example of Use:
+
+    A customer redeems bank reward points in order to finance a purchase with a bank associated vendor for air travel. The financial transaction engages the service domain in order to determine redemption requirements and associated payment requirements
+
+    ## Description:
+
+    This service domain handles the allocation and redemption of rewards points for customer transaction activity. In order to determine the reward point transaction and apply associated costs the service domain will access reward point arrangement agreements with the customers, merchants and related rewards programs. Note that the interactions between reward programs can be quite complex when 3rd party reward programs are integrated with the bank's own reward programs
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-reward-points-awards-and-redemption/1.0.0
+schemes:
+ - https
+paths:
+  /reward-points-awards-and-redemption/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDRewardPointsAwardsAndRedemption
+      summary: Activate  a SDRewardPointsAwardsAndRedemption servicing session
+      description: Activate  a  SDRewardPointsAwardsAndRedemption servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDRewardPointsAwardsAndRedemption Request Payload
+        schema:
+          $ref: '#/definitions/SDRewardPointsAwardsAndRedemptionActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDRewardPointsAwardsAndRedemptionActivateOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDRewardPointsAwardsAndRedemption
+      summary: Update an active SDRewardPointsAwardsAndRedemption session configuration
+      description: Update an active SDRewardPointsAwardsAndRedemption session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDRewardPointsAwardsAndRedemption Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDRewardPointsAwardsAndRedemption Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDRewardPointsAwardsAndRedemptionConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDRewardPointsAwardsAndRedemptionConfigureOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDRewardPointsAwardsAndRedemption
+      summary: "Capturing feedback against the SDRewardPointsAwardsAndRedemption service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDRewardPointsAwardsAndRedemption service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDRewardPointsAwardsAndRedemption Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDRewardPointsAwardsAndRedemption Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDRewardPointsAwardsAndRedemptionFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDRewardPointsAwardsAndRedemptionFeedbackOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDRewardPointsAwardsAndRedemption
+      summary: Analytical views maintained by the SDRewardPointsAwardsAndRedemption service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDRewardPointsAwardsAndRedemption service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDRewardPointsAwardsAndRedemption Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDRewardPointsAwardsAndRedemptionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDRewardPointsAwardsAndRedemptionRetrieveOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateRewardPointsTransaction
+      summary: Details of a new RewardPointsTransaction instance
+      description: Instantiate a new Reward Points Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: RewardPointsTransaction Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsTransactionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new RewardPointsTransaction instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsTransactionInitiateOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateRewardPointsTransaction
+      summary: Update to any amendable fields of the RewardPointsTransaction instance
+      description: Update details relating to Reward Points Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsTransactionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Reward Points Transaction Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsTransactionUpdateOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeRewardPointsTransactionUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Reward Points Transaction processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsTransactionExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Reward Points Transaction Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsTransactionExchangeOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeRewardPointsTransactionUpdate
+      summary: Invoke an automated execute action against the RewardPointsTransaction instance
+      description: Execute an available automated action for Reward Points Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsTransactionExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Reward Points Transaction Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsTransactionExecuteOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestRewardPointsTransactionUpdate
+      summary: Invoke a service request action against the RewardPointsTransaction instance
+      description: Request manual intervention or a decision with respect to Reward Points Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRRewardPointsTransactionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Reward Points Transaction Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsTransactionRequestOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveRewardPointsAwardsAndRedemption
+      summary: Invoke a reporting action to obtain a Reward Points Transaction instance related report
+      description: Retrieve details about any aspect of Reward Points Transaction
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRRewardPointsTransactionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Reward Points Transaction Instance
+          schema:
+            $ref: '#/definitions/CRRewardPointsTransactionRetrieveOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/redemption/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateRewardPointsTransactionRedemption
+      summary: Details of a new Redemption instance
+      description: Instantiate a new Redemption
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Transaction Request Payload
+        schema:
+          $ref: '#/definitions/BQRedemptionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Reward Points Transaction instance
+          schema:
+            $ref: '#/definitions/BQRedemptionInitiateOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/redemption/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateRewardPointsTransactionRedemption
+      summary: Update to any amendable fields of the Redemption instance
+      description: Update details relating to Redemption
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Redemption Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Redemption Request Payload
+        schema:
+          $ref: '#/definitions/BQRedemptionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Redemption Instance
+          schema:
+            $ref: '#/definitions/BQRedemptionUpdateOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/redemption/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeRewardPointsTransactionRedemptionUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Redemption processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Redemption Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Redemption request payload
+        schema:
+          $ref: '#/definitions/BQRedemptionExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Redemption Instance Record
+          schema:
+            $ref: '#/definitions/BQRedemptionExchangeOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/redemption/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveRewardPointsTransactionRedemption
+      summary: Invoke a reporting action to obtain a Redemption instance related report.
+      description: Retrieve details about any aspect of Redemption .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Redemption Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQRedemptionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Redemption Instance Record
+          schema:
+            $ref: '#/definitions/BQRedemptionRetrieveOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/award/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateRewardPointsTransactionAward
+      summary: Details of a new Award instance
+      description: Instantiate a new Award
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Reward Points Transaction Request Payload
+        schema:
+          $ref: '#/definitions/BQAwardInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Reward Points Transaction instance
+          schema:
+            $ref: '#/definitions/BQAwardInitiateOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/award/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateRewardPointsTransactionAward
+      summary: Update to any amendable fields of the Award instance
+      description: Update details relating to Award
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Award Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Award Request Payload
+        schema:
+          $ref: '#/definitions/BQAwardUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Award Instance
+          schema:
+            $ref: '#/definitions/BQAwardUpdateOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/award/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeRewardPointsTransactionAwardUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Award processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Award Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Award request payload
+        schema:
+          $ref: '#/definitions/BQAwardExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Award Instance Record
+          schema:
+            $ref: '#/definitions/BQAwardExchangeOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/award/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveRewardPointsTransactionAward
+      summary: Invoke a reporting action to obtain a Award instance related report.
+      description: Retrieve details about any aspect of Award .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Award Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQAwardRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Award Instance Record
+          schema:
+            $ref: '#/definitions/BQAwardRetrieveOutputModel'
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveRewardPointsAwardsAndRedemptionReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- RewardPointsAwardsAndRedemption Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /reward-points-awards-and-redemption/reward-points-transaction/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveRewardPointsAwardsAndRedemptionBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Redemption',  'Award', ]
+  /reward-points-awards-and-redemption/{sd-reference-id}/reward-points-transaction/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveRewardPointsAwardsAndRedemptionBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Reward Points Awards And Redemption Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Reward Points Transaction Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Award
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Award Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [AwardID1, AwardID2]

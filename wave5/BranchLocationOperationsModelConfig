@@ -1,0 +1,382 @@
+CR Branch Location Administrative Plan Instance Record|Branch Location Administrative Plan||||||CR Branch Location Administrative Plan Initiate|CR Branch Location Administrative Plan Update|CR Branch Location Administrative Plan Control|CR Branch Location Administrative Plan Exchange|CR Branch Location Administrative Plan Capture|CR Branch Location Administrative Plan Request|CR Branch Location Administrative Plan Grant|CR Branch Location Administrative Plan Retrieve|BQ Staff Assignment Update|BQ Staff Assignment Capture|BQ Staff Assignment Request|BQ Staff Assignment Grant|BQ Staff Assignment Retrieve|BQ Cash Inventory Handling Update|BQ Cash Inventory Handling Capture|BQ Cash Inventory Handling Request|BQ Cash Inventory Handling Grant|BQ Cash Inventory Handling Retrieve|BQ Non Cash Inventory Handling Update|BQ Non Cash Inventory Handling Capture|BQ Non Cash Inventory Handling Request|BQ Non Cash Inventory Handling Grant|BQ Non Cash Inventory Handling Retrieve|BQ Location Security Administration Update|BQ Location Security Administration Exchange|BQ Location Security Administration Capture|BQ Location Security Administration Request|BQ Location Security Administration Grant|BQ Location Security Administration Retrieve|BQ Safe Custody Operations Update|BQ Safe Custody Operations Capture|BQ Safe Custody Operations Request|BQ Safe Custody Operations Retrieve|BQ Workforce Administration Update|BQ Workforce Administration Capture|BQ Workforce Administration Request|BQ Workforce Administration Retrieve|
+Mandatory||Branch Location Operations Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Branch Location Administrative Plan Instance Reference||||Reference to the Branch Location Administrative Plan instance|O|I|I|I|I|I|I
+Initiate||Branch Location Administrative Plan Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Branch Location Administrative Plan Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Branch Location Administrative Plan Instance Status||||The status of the Branch Location Administrative Plan instance (e.g. initialised, pending, active)|IO
+||Branch Location Administrative Plan Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Branch Location Operations.
+Example: Administer the time reporting and billing for the specialist sales support team.|||||||||||||||||||||||||||||||||||||
+||Branch Location Administrative Plan Budget Type||||A Classification value that distinguishes between Budgets within Branch Location Administrative Plan according to the type of resource and/or activity that is budgetted|IO|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||||||||||
+||Branch Location Administrative Plan Budget||||An estimate of costs, revenues, and resources over a specified period which is defined for Branch Location Administrative Plan|||||||||||||||||||||||||||||||||||||
+||Branch Location Administrative Plan Assignment||||The allocation of someone or something which is specified for Branch Location Administrative Plan|IO|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||||||||||
+||Branch Location Administrative Plan Plan||||A plan that defines clerical support for BranchLocation|IO|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||||||||||
+||Branch Location Administrative Plan Reference||||Party who is involved in Branch Location Administrative Plan|I|I|I|I|I|I|I|O|||||||||||||||||||||||||||||
+Update||Branch Location Administrative Plan Update Action Task Reference||||Reference to an update service call||O
+Update||Branch Location Administrative Plan Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Branch Location Administrative Plan Control Action Task Reference||||Reference to a Branch Location Administrative Plan instance control processing service call|||O
+CONTROL||Branch Location Administrative Plan Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Branch Location Administrative Plan Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Branch Location Administrative Plan Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Branch Location Administrative Plan Exchange Action Task Reference||||Reference to a Branch Location Administrative Plan instance exchange service call||||O
+EXCHANGE||Branch Location Administrative Plan Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Branch Location Administrative Plan Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Branch Location Administrative Plan Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Branch Location Administrative Plan Capture Action Task Reference||||Reference to a Branch Location Administrative Plan instance capture service call|||||O
+CAPTURE||Branch Location Administrative Plan Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Branch Location Administrative Plan Request Action Task Reference||||Reference to a Branch Location Administrative Plan instance request service call||||||O
+REQUEST||Branch Location Administrative Plan Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+GRANT||Branch Location Administrative Plan Grant Action Task Reference||||Reference to a Branch Location Administrative Plan instance grant service call|||||||O
+GRANT||Branch Location Administrative Plan Grant Action Task Record||||The grant service call consolidated processing record|||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||||O
+RETRIEVE||Branch Location Administrative Plan Retrieve Action Task Reference||||Reference to a Branch Location Administrative Plan instance retrieve service call||||||||O
+RETRIEVE||Branch Location Administrative Plan Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||IO
+RETRIEVE||Branch Location Administrative Plan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+RETRIEVE||Branch Location Administrative Plan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+RETRIEVE||Branch Location Administrative Plan Instance Report Record|##|||A specific Branch Location Administrative Plan instance formatted report||||||||IO
+RETRIEVE|||Branch Location Administrative Plan Instance Report Reference|||Reference to the control record instance report||||||||I
+RETRIEVE|||Branch Location Administrative Plan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Branch Location Administrative Plan Instance Report Type|||The type of external report available||||||||IO
+RETRIEVE|||Branch Location Administrative Plan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||I
+RETRIEVE|||Branch Location Administrative Plan Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+RETRIEVE||Branch Location Administrative Plan Instance Analysis|##|||A specific Branch Location Administrative Plan instance analytical report||||||||IO
+RETRIEVE|||Branch Location Administrative Plan Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+RETRIEVE|||Branch Location Administrative Plan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Branch Location Administrative Plan Instance Analysis Report Type|||The type of external performance analysis report available||||||||IO
+RETRIEVE|||Branch Location Administrative Plan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||I
+RETRIEVE|||Branch Location Administrative Plan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Staff Assignment Instance Record|Staff Assignment||||||
+Mandatory||Branch Location Administrative Plan Instance Reference||||Reference to the parent Branch Location Administrative Plan instance|||||||||I|I|I|I
+Mandatory||Staff Assignment Instance Reference||||Reference to the Staff Assignment instance|||||||||I|I|I|I
+||Staff Assignment Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Branch Location Operations.
+|||||||||||||||||||||||||||||||||||||
+||Staff Assignment Preconditions||||The required status/situation before the routine can be undertaken|||||||||IO|IO|IO|IO|O||||||||||||||||||||||||
+||Staff Assignment Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||IO|IO|IO|IO|O||||||||||||||||||||||||
+||Staff Assignment Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||IO|IO|IO|IO|O||||||||||||||||||||||||
+||Staff Assignment||||The Branch Location Administrative Plan specific Business Service|||||||||||||||||||||||||||||||||||||
+||Staff Assignment Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||IO|IO|IO|IO|O||||||||||||||||||||||||
+||Staff Assignment Staff Assignment Service Type||||Reference to the specific business service type|||||||||IO|IO|IO|IO|O||||||||||||||||||||||||
+||Staff Assignment Staff Assignment Service Description||||Description of the performed business service|||||||||IO|IO|IO|IO|O||||||||||||||||||||||||
+||Staff Assignment Staff Assignment Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||IO|IO|IO|IO|O||||||||||||||||||||||||
+||Staff Assignment Staff Assignment Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||IO|IO|IO|IO|O||||||||||||||||||||||||
+||Staff Assignment Staff Assignment Service Name|||||||||||||IO|IO|IO|IO|O||||||||||||||||||||||||
+Update||Staff Assignment Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Staff Assignment Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Staff Assignment Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Capture||Staff Assignment Capture Action Task Reference||||Reference to a Staff Assignment instance capture service call||||||||||O
+Capture||Staff Assignment Capture Action Task Record||||The capture service call consolidated processing record||||||||||I/O
+Capture||Staff Assignment Capture Record Reference||||Reference to the Staff Assignment structured input transaction/record||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||O
+Request||Staff Assignment Request Action Task Reference||||Reference to a Staff Assignment instance request service call|||||||||||O
+Request||Staff Assignment Request Action Task Record||||The request service call consolidated processing record|||||||||||I/O
+Request||Staff Assignment Request Record Reference||||Reference to the Staff Assignment service request record|||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||O
+Grant||Staff Assignment Grant Action Task Reference||||Reference to a Staff Assignment instance grant service call||||||||||||O
+Grant||Staff Assignment Grant Action Task Record||||The grant service call consolidated processing record||||||||||||I/O
+Grant||Grant Request Record Type||||Grant request type (e.g. access permission)||||||||||||I
+Grant||Grant Request Record Reference||||Reference to the grant request record||||||||||||O
+Grant||Grant Request Input Record|##|||Grant request record (e.g. access permission)||||||||||||I
+Grant|||Grant Request Details|||Details of the permissions requested||||||||||||I
+Grant||Grant Request Response Record |##|||Details of the grant request action service response||||||||||||O
+Grant|||Grant Permission Details|||Details of the permissions granted||||||||||||O
+Retrieve||Staff Assignment Retrieve Action Task Reference||||Reference to a Staff Assignment instance retrieve service call|||||||||||||O
+Retrieve||Staff Assignment Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||Staff Assignment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||Staff Assignment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||Staff Assignment Instance Report|##|||A specific Staff Assignment instance formatted report|||||||||||||IO
+Retrieve|||Staff Assignment Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||Staff Assignment Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Staff Assignment Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||Staff Assignment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||Staff Assignment Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||Staff Assignment Instance Analysis|##|||A specific Staff Assignment instance analytical report|||||||||||||IO
+Retrieve|||Staff Assignment Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||Staff Assignment Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Staff Assignment Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||Staff Assignment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||Staff Assignment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O
+BQ Cash Inventory Handling Instance Record|Cash Inventory Handling||||||
+Mandatory||Branch Location Administrative Plan Instance Reference||||Reference to the parent Branch Location Administrative Plan instance||||||||||||||I|I|I|I
+Mandatory||Cash Inventory Handling Instance Reference||||Reference to the Cash Inventory Handling instance||||||||||||||I|I|I|I
+||Cash Inventory Handling Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Branch Location Operations.
+|||||||||||||||||||||||||||||||||||||
+||Cash Inventory Handling Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Cash Inventory Handling Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Cash Inventory Handling Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Cash Inventory Handling||||The Branch Location Administrative Plan specific Business Service|||||||||||||||||||||||||||||||||||||
+||Cash Inventory Handling Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Cash Inventory Handling Cash Inventory Handling Service Type||||Reference to the specific business service type|||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Cash Inventory Handling Cash Inventory Handling Service Description||||Description of the performed business service|||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Cash Inventory Handling Cash Inventory Handling Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+||Cash Inventory Handling Cash Inventory Handling Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||||||||||||IO|IO|IO|IO|O
+Update||Cash Inventory Handling Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||Cash Inventory Handling Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||Cash Inventory Handling Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Capture||Cash Inventory Handling Capture Action Task Reference||||Reference to a Cash Inventory Handling instance capture service call|||||||||||||||O
+Capture||Cash Inventory Handling Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||I/O
+Capture||Cash Inventory Handling Capture Record Reference||||Reference to the Cash Inventory Handling structured input transaction/record|||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||O
+Request||Cash Inventory Handling Request Action Task Reference||||Reference to a Cash Inventory Handling instance request service call||||||||||||||||O
+Request||Cash Inventory Handling Request Action Task Record||||The request service call consolidated processing record||||||||||||||||I/O
+Request||Cash Inventory Handling Request Record Reference||||Reference to the Cash Inventory Handling service request record||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||O
+Grant||Cash Inventory Handling Grant Action Task Reference||||Reference to a Cash Inventory Handling instance grant service call|||||||||||||||||O
+Grant||Cash Inventory Handling Grant Action Task Record||||The grant service call consolidated processing record|||||||||||||||||I/O
+Grant||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||||||||||||I
+Grant||Grant Request Record Reference||||Reference to the grant request record|||||||||||||||||O
+Grant||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||||||||||||I
+Grant|||Grant Request Details|||Details of the permissions requested|||||||||||||||||I
+Grant||Grant Request Response Record |##|||Details of the grant request action service response|||||||||||||||||O
+Grant|||Grant Permission Details|||Details of the permissions granted|||||||||||||||||O
+Retrieve||Cash Inventory Handling Retrieve Action Task Reference||||Reference to a Cash Inventory Handling instance retrieve service call||||||||||||||||||O
+Retrieve||Cash Inventory Handling Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||I/O
+Retrieve||Cash Inventory Handling Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||I
+Retrieve||Cash Inventory Handling Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||O
+Retrieve||Cash Inventory Handling Instance Report|##|||A specific Cash Inventory Handling instance formatted report||||||||||||||||||IO
+Retrieve|||Cash Inventory Handling Instance Report Reference|||Reference to the control record instance report||||||||||||||||||I
+Retrieve|||Cash Inventory Handling Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Cash Inventory Handling Instance Report Type|||The type of external report available||||||||||||||||||O
+Retrieve|||Cash Inventory Handling Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||O
+Retrieve|||Cash Inventory Handling Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||O
+Retrieve||Cash Inventory Handling Instance Analysis|##|||A specific Cash Inventory Handling instance analytical report||||||||||||||||||IO
+Retrieve|||Cash Inventory Handling Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||I
+Retrieve|||Cash Inventory Handling Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Cash Inventory Handling Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||O
+Retrieve|||Cash Inventory Handling Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||O
+Retrieve|||Cash Inventory Handling Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||O
+BQ Non Cash Inventory Handling Instance Record|Non Cash Inventory Handling||||||
+Mandatory||Branch Location Administrative Plan Instance Reference||||Reference to the parent Branch Location Administrative Plan instance|||||||||||||||||||I|I|I|I
+Mandatory||Non Cash Inventory Handling Instance Reference||||Reference to the Non Cash Inventory Handling instance|||||||||||||||||||I|I|I|I
+||Non-cash Inventory Handling Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Branch Location Operations.
+|||||||||||||||||||||||||||||||||||||
+||Non-cash Inventory Handling Preconditions||||The required status/situation before the routine can be undertaken||||||||||||||IO|IO|IO|IO|O|||||||||||||||||||
+||Non-cash Inventory Handling Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine||||||||||||||IO|IO|IO|IO|O|||||||||||||||||||
+||Non-cash Inventory Handling Work Schedule||||The timing and key actions/milestones involved in completing the routine||||||||||||||IO|IO|IO|IO|O|||||||||||||||||||
+||Inventory Handling||||The Branch Location Administrative Plan specific Business Service|||||||||||||||||||||||||||||||||||||
+||Non-cash Inventory Handling Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)||||||||||||||IO|IO|IO|IO|O|||||||||||||||||||
+||Non-cash Inventory Handling Inventory Handling Service Type||||Reference to the specific business service type||||||||||||||IO|IO|IO|IO|O|||||||||||||||||||
+||Non-cash Inventory Handling Inventory Handling Service Description||||Description of the performed business service||||||||||||||IO|IO|IO|IO|O|||||||||||||||||||
+||Non-cash Inventory Handling Inventory Handling Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|IO|IO|IO|O|||||||||||||||||||
+||Non-cash Inventory Handling Inventory Handling Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|IO|IO|IO|O|||||||||||||||||||
+||Non-cash Inventory Handling Inventory Handling Service Name||||||||||||||||||IO|IO|IO|IO|O|||||||||||||||||||
+Update||Non Cash Inventory Handling Update Action Task Reference||||Reference to an update service call|||||||||||||||||||O
+Update||Non Cash Inventory Handling Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||I/O
+Update||Non Cash Inventory Handling Update Action Request||||Details of the update action service request|||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||O
+Capture||Non Cash Inventory Handling Capture Action Task Reference||||Reference to a Non Cash Inventory Handling instance capture service call||||||||||||||||||||O
+Capture||Non Cash Inventory Handling Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||||||I/O
+Capture||Non Cash Inventory Handling Capture Record Reference||||Reference to the Non Cash Inventory Handling structured input transaction/record||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||||||O
+Request||Non Cash Inventory Handling Request Action Task Reference||||Reference to a Non Cash Inventory Handling instance request service call|||||||||||||||||||||O
+Request||Non Cash Inventory Handling Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||I/O
+Request||Non Cash Inventory Handling Request Record Reference||||Reference to the Non Cash Inventory Handling service request record|||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||O
+Grant||Non Cash Inventory Handling Grant Action Task Reference||||Reference to a Non Cash Inventory Handling instance grant service call||||||||||||||||||||||O
+Grant||Non Cash Inventory Handling Grant Action Task Record||||The grant service call consolidated processing record||||||||||||||||||||||I/O
+Grant||Grant Request Record Type||||Grant request type (e.g. access permission)||||||||||||||||||||||I
+Grant||Grant Request Record Reference||||Reference to the grant request record||||||||||||||||||||||O
+Grant||Grant Request Input Record|##|||Grant request record (e.g. access permission)||||||||||||||||||||||I
+Grant|||Grant Request Details|||Details of the permissions requested||||||||||||||||||||||I
+Grant||Grant Request Response Record |##|||Details of the grant request action service response||||||||||||||||||||||O
+Grant|||Grant Permission Details|||Details of the permissions granted||||||||||||||||||||||O
+Retrieve||Non Cash Inventory Handling Retrieve Action Task Reference||||Reference to a Non Cash Inventory Handling instance retrieve service call|||||||||||||||||||||||O
+Retrieve||Non Cash Inventory Handling Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||I/O
+Retrieve||Non Cash Inventory Handling Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||I
+Retrieve||Non Cash Inventory Handling Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||O
+Retrieve||Non Cash Inventory Handling Instance Report|##|||A specific Non Cash Inventory Handling instance formatted report|||||||||||||||||||||||IO
+Retrieve|||Non Cash Inventory Handling Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||I
+Retrieve|||Non Cash Inventory Handling Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Non Cash Inventory Handling Instance Report Type|||The type of external report available|||||||||||||||||||||||O
+Retrieve|||Non Cash Inventory Handling Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||O
+Retrieve|||Non Cash Inventory Handling Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O
+Retrieve||Non Cash Inventory Handling Instance Analysis|##|||A specific Non Cash Inventory Handling instance analytical report|||||||||||||||||||||||IO
+Retrieve|||Non Cash Inventory Handling Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||I
+Retrieve|||Non Cash Inventory Handling Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Non Cash Inventory Handling Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||O
+Retrieve|||Non Cash Inventory Handling Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||O
+Retrieve|||Non Cash Inventory Handling Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O
+BQ Location Security Administration Instance Record|Location Security Administration||||||
+Mandatory||Branch Location Administrative Plan Instance Reference||||Reference to the parent Branch Location Administrative Plan instance||||||||||||||||||||||||I|I|I|I|I
+Mandatory||Location Security Administration Instance Reference||||Reference to the Location Security Administration instance||||||||||||||||||||||||I|I|I|I|I
+||Location Security Administration Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Branch Location Operations.
+|||||||||||||||||||||||||||||||||||||
+||Location Security Administration Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||||||||||||IO|IO|IO|IO|IO|O|||||||||
+||Location Security Administration Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||||||||||||IO|IO|IO|IO|IO|O|||||||||
+||Location Security Administration Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||||||||||||IO|IO|IO|IO|IO|O|||||||||
+||Location Security||||The Branch Location Administrative Plan specific Business Service|||||||||||||||||||||||||||||||||||||
+||Location Security Administration Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||||||||||||IO|IO|IO|IO|IO|O|||||||||
+||Location Security Administration Location Security Service Type||||Reference to the specific business service type|||||||||||||||||||||||IO|IO|IO|IO|IO|O|||||||||
+||Location Security Administration Location Security Service Description||||Description of the performed business service|||||||||||||||||||||||IO|IO|IO|IO|IO|O|||||||||
+||Location Security Administration Location Security Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||IO|IO|IO|IO|IO|O|||||||||
+||Location Security Administration Location Security Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||IO|IO|IO|IO|IO|O|||||||||
+||Location Security Administration Location Security Service Name|||||||||||||||||||||||||||IO|IO|IO|IO|IO|O|||||||||
+Update||Location Security Administration Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||||O
+Update||Location Security Administration Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||||I/O
+Update||Location Security Administration Update Action Request||||Details of the update action service request||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||||O
+Exchange||Location Security Administration Exchange Action Task Reference||||Reference to a Location Security Administration instance exchange service call|||||||||||||||||||||||||O
+Exchange||Location Security Administration Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||||||||||I/O
+Exchange||Location Security Administration Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||||||||||I
+Exchange||Location Security Administration Exchange Action Response||||Details of the exchange action service response|||||||||||||||||||||||||O
+Exchange||Location Security Administration Instance Status||||The status of the Location Security Administration instance (e.g. accepted, rejected, verified)|||||||||||||||||||||||||O
+Capture||Location Security Administration Capture Action Task Reference||||Reference to a Location Security Administration instance capture service call||||||||||||||||||||||||||O
+Capture||Location Security Administration Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||||||||||||I/O
+Capture||Location Security Administration Capture Record Reference||||Reference to the Location Security Administration structured input transaction/record||||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||||||||||||O
+Request||Location Security Administration Request Action Task Reference||||Reference to a Location Security Administration instance request service call|||||||||||||||||||||||||||O
+Request||Location Security Administration Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||||||I/O
+Request||Location Security Administration Request Record Reference||||Reference to the Location Security Administration service request record|||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||||||O
+Grant||Location Security Administration Grant Action Task Reference||||Reference to a Location Security Administration instance grant service call||||||||||||||||||||||||||||O
+Grant||Location Security Administration Grant Action Task Record||||The grant service call consolidated processing record||||||||||||||||||||||||||||I/O
+Grant||Grant Request Record Type||||Grant request type (e.g. access permission)||||||||||||||||||||||||||||I
+Grant||Grant Request Record Reference||||Reference to the grant request record||||||||||||||||||||||||||||O
+Grant||Grant Request Input Record|##|||Grant request record (e.g. access permission)||||||||||||||||||||||||||||I
+Grant|||Grant Request Details|||Details of the permissions requested||||||||||||||||||||||||||||I
+Grant||Grant Request Response Record |##|||Details of the grant request action service response||||||||||||||||||||||||||||O
+Grant|||Grant Permission Details|||Details of the permissions granted||||||||||||||||||||||||||||O
+Retrieve||Location Security Administration Retrieve Action Task Reference||||Reference to a Location Security Administration instance retrieve service call|||||||||||||||||||||||||||||O
+Retrieve||Location Security Administration Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||||I/O
+Retrieve||Location Security Administration Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||||I
+Retrieve||Location Security Administration Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||||O
+Retrieve||Location Security Administration Instance Report|##|||A specific Location Security Administration instance formatted report|||||||||||||||||||||||||||||IO
+Retrieve|||Location Security Administration Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||||I
+Retrieve|||Location Security Administration Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||O
+Retrieve|||Location Security Administration Instance Report Type|||The type of external report available|||||||||||||||||||||||||||||O
+Retrieve|||Location Security Administration Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||||O
+Retrieve|||Location Security Administration Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||O
+Retrieve||Location Security Administration Instance Analysis|##|||A specific Location Security Administration instance analytical report|||||||||||||||||||||||||||||IO
+Retrieve|||Location Security Administration Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||||I
+Retrieve|||Location Security Administration Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||O
+Retrieve|||Location Security Administration Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||||O
+Retrieve|||Location Security Administration Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||||O
+Retrieve|||Location Security Administration Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||O
+BQ Safe Custody Operations Instance Record|Safe Custody Operations||||||
+Mandatory||Branch Location Administrative Plan Instance Reference||||Reference to the parent Branch Location Administrative Plan instance||||||||||||||||||||||||||||||I|I|I
+Mandatory||Safe Custody Operations Instance Reference||||Reference to the Safe Custody Operations instance||||||||||||||||||||||||||||||I|I|I
+||Safe Custody Operations Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Branch Location Operations.
+|||||||||||||||||||||||||||||||||||||
+||Safe Custody Operations Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||||||||IO|IO|IO|O|||||||||||||||
+||Safe Custody Operations Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||||||||IO|IO|IO|O|||||||||||||||
+||Safe Custody Operations Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||||||||IO|IO|IO|O|||||||||||||||
+||Safe Custody Operations||||The Branch Location Administrative Plan specific Business Service|||||||||||||||||||||||||||||||||||||
+||Safe Custody Operations Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||||||||IO|IO|IO|O|||||||||||||||
+||Safe Custody Operations Safe Custody Operations Service Type||||Reference to the specific business service type|||||||||||||||||||IO|IO|IO|O|||||||||||||||
+||Safe Custody Operations Safe Custody Operations Service Description||||Description of the performed business service|||||||||||||||||||IO|IO|IO|O|||||||||||||||
+||Safe Custody Operations Safe Custody Operations Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||IO|IO|IO|O|||||||||||||||
+||Safe Custody Operations Safe Custody Operations Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||IO|IO|IO|O|||||||||||||||
+||Safe Custody Operations Safe Custody Operations Service Name|||||||||||||||||||||||IO|IO|IO|O|||||||||||||||
+Update||Safe Custody Operations Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||||||||||O
+Update||Safe Custody Operations Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||||||||||I/O
+Update||Safe Custody Operations Update Action Request||||Details of the update action service request||||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||||||||||O
+Capture||Safe Custody Operations Capture Action Task Reference||||Reference to a Safe Custody Operations instance capture service call|||||||||||||||||||||||||||||||O
+Capture||Safe Custody Operations Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||||||||||||||I/O
+Capture||Safe Custody Operations Capture Record Reference||||Reference to the Safe Custody Operations structured input transaction/record|||||||||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||||||||||||||O
+Request||Safe Custody Operations Request Action Task Reference||||Reference to a Safe Custody Operations instance request service call||||||||||||||||||||||||||||||||O
+Request||Safe Custody Operations Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||||||||||||I/O
+Request||Safe Custody Operations Request Record Reference||||Reference to the Safe Custody Operations service request record||||||||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||||||||||||O
+Retrieve||Safe Custody Operations Retrieve Action Task Reference||||Reference to a Safe Custody Operations instance retrieve service call|||||||||||||||||||||||||||||||||O
+Retrieve||Safe Custody Operations Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||||||||I/O
+Retrieve||Safe Custody Operations Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||||||||I
+Retrieve||Safe Custody Operations Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||||||||O
+Retrieve||Safe Custody Operations Instance Report|##|||A specific Safe Custody Operations instance formatted report|||||||||||||||||||||||||||||||||IO
+Retrieve|||Safe Custody Operations Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||||||||I
+Retrieve|||Safe Custody Operations Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||||O
+Retrieve|||Safe Custody Operations Instance Report Type|||The type of external report available|||||||||||||||||||||||||||||||||O
+Retrieve|||Safe Custody Operations Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||||||||O
+Retrieve|||Safe Custody Operations Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||||O
+Retrieve||Safe Custody Operations Instance Analysis|##|||A specific Safe Custody Operations instance analytical report|||||||||||||||||||||||||||||||||IO
+Retrieve|||Safe Custody Operations Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||||||||I
+Retrieve|||Safe Custody Operations Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||||O
+Retrieve|||Safe Custody Operations Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||||||||O
+Retrieve|||Safe Custody Operations Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||||||||O
+Retrieve|||Safe Custody Operations Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||||O
+BQ Workforce Administration Instance Record|Workforce Administration||||||
+Mandatory||Branch Location Administrative Plan Instance Reference||||Reference to the parent Branch Location Administrative Plan instance||||||||||||||||||||||||||||||||||I|I|I
+Mandatory||Workforce Administration Instance Reference||||Reference to the Workforce Administration instance||||||||||||||||||||||||||||||||||I|I|I
+||Workforce Administration Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Branch Location Operations.
+|||||||||||||||||||||||||||||||||||||
+||Workforce Administration Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||||||||||||||||||IO|IO|IO|O|||||
+||Workforce Administration Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||||||||||||||||||IO|IO|IO|O|||||
+||Workforce Administration Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||||||||||||||||||IO|IO|IO|O|||||
+||Workforce Administration||||The Branch Location Administrative Plan specific Business Service|||||||||||||||||||||||||||||||||||||
+||Workforce Administration Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||||||||||||||||||IO|IO|IO|O|||||
+||Workforce Administration Workforce Administration Service Type||||Reference to the specific business service type|||||||||||||||||||||||||||||IO|IO|IO|O|||||
+||Workforce Administration Workforce Administration Service Description||||Description of the performed business service|||||||||||||||||||||||||||||IO|IO|IO|O|||||
+||Workforce Administration Workforce Administration Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||||||||IO|IO|IO|O|||||
+||Workforce Administration Workforce Administration Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||||||||IO|IO|IO|O|||||
+||Workforce Administration Workforce Administration Service Name|||||||||||||||||||||||||||||||||IO|IO|IO|O|||||
+Update||Workforce Administration Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||||||||||||||O
+Update||Workforce Administration Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||||||||||||||I/O
+Update||Workforce Administration Update Action Request||||Details of the update action service request||||||||||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||||||||||||||O
+Capture||Workforce Administration Capture Action Task Reference||||Reference to a Workforce Administration instance capture service call|||||||||||||||||||||||||||||||||||O
+Capture||Workforce Administration Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||||||||||||||||||I/O
+Capture||Workforce Administration Capture Record Reference||||Reference to the Workforce Administration structured input transaction/record|||||||||||||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||||||||||||||||||O
+Request||Workforce Administration Request Action Task Reference||||Reference to a Workforce Administration instance request service call||||||||||||||||||||||||||||||||||||O
+Request||Workforce Administration Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||||||||||||||||I/O
+Request||Workforce Administration Request Record Reference||||Reference to the Workforce Administration service request record||||||||||||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||||||||||||||||O
+Retrieve||Workforce Administration Retrieve Action Task Reference||||Reference to a Workforce Administration instance retrieve service call|||||||||||||||||||||||||||||||||||||O
+Retrieve||Workforce Administration Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||||||||||||I/O
+Retrieve||Workforce Administration Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||||||||||||I
+Retrieve||Workforce Administration Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||||||||||||O
+Retrieve||Workforce Administration Instance Report|##|||A specific Workforce Administration instance formatted report|||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Workforce Administration Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||||||||||||I
+Retrieve|||Workforce Administration Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Workforce Administration Instance Report Type|||The type of external report available|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Workforce Administration Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Workforce Administration Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||||||||O
+Retrieve||Workforce Administration Instance Analysis|##|||A specific Workforce Administration instance analytical report|||||||||||||||||||||||||||||||||||||IO
+Retrieve|||Workforce Administration Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||||||||||||I
+Retrieve|||Workforce Administration Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Workforce Administration Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Workforce Administration Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||||||||||||O
+Retrieve|||Workforce Administration Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||||||||O

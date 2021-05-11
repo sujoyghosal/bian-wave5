@@ -1,0 +1,25 @@
+SD=Commissions
+CR=Commission Transaction
+BQs= Payment Calculation Check
+Capture and structure commissionable transactions that are subsequently processed against an existing commission agreement
+A qualified servicing representative succeeds in selling an opportunity to an established customer and is awarded a commission
+The service domain processes commissions for transactions for eligible employees
+CR - Commission Transaction							BQ - Calculation			BQ - Payment			BQ - Check			
+In	Up	Co	Ec	Ex	Rq	Re	Up	Ec	Re	Up	Ec	Re	In	Up	Ec	Re
+InCR Instantiate a new Commission Transaction
+UpCR Update details relating to Commission Transaction
+CoCR Control the processing of Commission Transaction
+EcCR Accept, verify, etc. aspects of Commission Transaction processing
+ExCR Execute an available automated action for Commission Transaction
+RqCR Request manual intervention or a decision with respect to Commission Transaction
+ReCR Retrieve details about any aspect of Commission Transaction
+UpBQ Update details relating to Calculation
+EcBQ Accept, verify, etc. aspects of Calculation processing
+ReBQ Retrieve details about any aspect of Calculation
+UpBQ Update details relating to Payment
+EcBQ Accept, verify, etc. aspects of Payment processing
+ReBQ Retrieve details about any aspect of Payment
+InBQ Instantiate a new Check
+UpBQ Update details relating to Check
+EcBQ Accept, verify, etc. aspects of Check processing
+ReBQ Retrieve details about any aspect of Check

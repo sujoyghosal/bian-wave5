@@ -1,0 +1,810 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Compliance Reporting'
+ description: >
+
+    ## Executive Summary:
+
+    This service domain administers and orchestrates the tasks required to apply and report on internal audit control and reporting activity
+
+    ## Example of Use:
+
+    The financial accounting procedures for a back office function are audited
+
+    ## Description:
+
+    This service domain schedules, consolidates information and reports on internal audit and compliance activity across the bank
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-compliance-reporting/1.0.0
+schemes:
+ - https
+paths:
+  /compliance-reporting/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDComplianceReporting
+      summary: Activate  a SDComplianceReporting servicing session
+      description: Activate  a  SDComplianceReporting servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDComplianceReporting Request Payload
+        schema:
+          $ref: '#/definitions/SDComplianceReportingActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDComplianceReportingActivateOutputModel'
+  /compliance-reporting/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDComplianceReporting
+      summary: Update an active SDComplianceReporting session configuration
+      description: Update an active SDComplianceReporting session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDComplianceReporting Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDComplianceReporting Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDComplianceReportingConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDComplianceReportingConfigureOutputModel'
+  /compliance-reporting/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDComplianceReporting
+      summary: "Capturing feedback against the SDComplianceReporting service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDComplianceReporting service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDComplianceReporting Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDComplianceReporting Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDComplianceReportingFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDComplianceReportingFeedbackOutputModel'
+  /compliance-reporting/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDComplianceReporting
+      summary: Analytical views maintained by the SDComplianceReporting service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDComplianceReporting service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDComplianceReporting Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDComplianceReportingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDComplianceReportingRetrieveOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateComplianceReportingAdministrativePlan
+      summary: Details of a new ComplianceReportingAdministrativePlan instance
+      description: Instantiate a new Compliance Reporting Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ComplianceReportingAdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRComplianceReportingAdministrativePlanInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new ComplianceReportingAdministrativePlan instance
+          schema:
+            $ref: '#/definitions/CRComplianceReportingAdministrativePlanInitiateOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateComplianceReportingAdministrativePlan
+      summary: Update to any amendable fields of the ComplianceReportingAdministrativePlan instance
+      description: Update details relating to Compliance Reporting Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Compliance Reporting Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRComplianceReportingAdministrativePlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Compliance Reporting Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRComplianceReportingAdministrativePlanUpdateOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureComplianceReportingAdministrativePlanUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Compliance Reporting Administrative Plan activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Compliance Reporting Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRComplianceReportingAdministrativePlanCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Compliance Reporting Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRComplianceReportingAdministrativePlanCaptureOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestComplianceReportingAdministrativePlanUpdate
+      summary: Invoke a service request action against the ComplianceReportingAdministrativePlan instance
+      description: Request manual intervention or a decision with respect to Compliance Reporting Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Compliance Reporting Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRComplianceReportingAdministrativePlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Compliance Reporting Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRComplianceReportingAdministrativePlanRequestOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveComplianceReporting
+      summary: Invoke a reporting action to obtain a Compliance Reporting Administrative Plan instance related report
+      description: Retrieve details about any aspect of Compliance Reporting Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRComplianceReportingAdministrativePlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Compliance Reporting Administrative Plan Instance
+          schema:
+            $ref: '#/definitions/CRComplianceReportingAdministrativePlanRetrieveOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/consolidation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateComplianceReportingAdministrativePlanConsolidation
+      summary: Update to any amendable fields of the Consolidation instance
+      description: Update details relating to Consolidation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Consolidation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Consolidation Request Payload
+        schema:
+          $ref: '#/definitions/BQConsolidationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Consolidation Instance
+          schema:
+            $ref: '#/definitions/BQConsolidationUpdateOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/consolidation/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureComplianceReportingAdministrativePlanConsolidationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Consolidation activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Consolidation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Consolidation request payload
+        schema:
+          $ref: '#/definitions/BQConsolidationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Consolidation Instance Record
+          schema:
+            $ref: '#/definitions/BQConsolidationCaptureOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/consolidation/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestComplianceReportingAdministrativePlanConsolidationUpdate
+      summary: Invoke a service request action against the Consolidation instance
+      description: Request manual intervention or a decision with respect to Consolidation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Consolidation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Consolidation request payload
+        schema:
+          $ref: '#/definitions/BQConsolidationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Consolidation Instance Record
+          schema:
+            $ref: '#/definitions/BQConsolidationRequestOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/consolidation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveComplianceReportingAdministrativePlanConsolidation
+      summary: Invoke a reporting action to obtain a Consolidation instance related report.
+      description: Retrieve details about any aspect of Consolidation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Consolidation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQConsolidationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Consolidation Instance Record
+          schema:
+            $ref: '#/definitions/BQConsolidationRetrieveOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/remediation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateComplianceReportingAdministrativePlanRemediation
+      summary: Details of a new Remediation instance
+      description: Instantiate a new Remediation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Compliance Reporting Administrative Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQRemediationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Compliance Reporting Administrative Plan instance
+          schema:
+            $ref: '#/definitions/BQRemediationInitiateOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/remediation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateComplianceReportingAdministrativePlanRemediation
+      summary: Update to any amendable fields of the Remediation instance
+      description: Update details relating to Remediation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Remediation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Remediation Request Payload
+        schema:
+          $ref: '#/definitions/BQRemediationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Remediation Instance
+          schema:
+            $ref: '#/definitions/BQRemediationUpdateOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/remediation/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureComplianceReportingAdministrativePlanRemediationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Remediation activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Remediation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Remediation request payload
+        schema:
+          $ref: '#/definitions/BQRemediationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Remediation Instance Record
+          schema:
+            $ref: '#/definitions/BQRemediationCaptureOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/remediation/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestComplianceReportingAdministrativePlanRemediationUpdate
+      summary: Invoke a service request action against the Remediation instance
+      description: Request manual intervention or a decision with respect to Remediation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Remediation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Remediation request payload
+        schema:
+          $ref: '#/definitions/BQRemediationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Remediation Instance Record
+          schema:
+            $ref: '#/definitions/BQRemediationRequestOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/remediation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveComplianceReportingAdministrativePlanRemediation
+      summary: Invoke a reporting action to obtain a Remediation instance related report.
+      description: Retrieve details about any aspect of Remediation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Remediation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQRemediationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Remediation Instance Record
+          schema:
+            $ref: '#/definitions/BQRemediationRetrieveOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/complianceassessment/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateComplianceReportingAdministrativePlanComplianceAssessment
+      summary: Update to any amendable fields of the ComplianceAssessment instance
+      description: Update details relating to Compliance Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ComplianceAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ComplianceAssessment Request Payload
+        schema:
+          $ref: '#/definitions/BQComplianceAssessmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ComplianceAssessment Instance
+          schema:
+            $ref: '#/definitions/BQComplianceAssessmentUpdateOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/complianceassessment/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureComplianceReportingAdministrativePlanComplianceAssessmentUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Compliance Assessment activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ComplianceAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ComplianceAssessment request payload
+        schema:
+          $ref: '#/definitions/BQComplianceAssessmentCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of ComplianceAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQComplianceAssessmentCaptureOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/complianceassessment/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestComplianceReportingAdministrativePlanComplianceAssessmentUpdate
+      summary: Invoke a service request action against the ComplianceAssessment instance
+      description: Request manual intervention or a decision with respect to Compliance Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ComplianceAssessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ComplianceAssessment request payload
+        schema:
+          $ref: '#/definitions/BQComplianceAssessmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ComplianceAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQComplianceAssessmentRequestOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/complianceassessment/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveComplianceReportingAdministrativePlanComplianceAssessment
+      summary: Invoke a reporting action to obtain a ComplianceAssessment instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ComplianceAssessment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQComplianceAssessmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ComplianceAssessment Instance Record
+          schema:
+            $ref: '#/definitions/BQComplianceAssessmentRetrieveOutputModel'
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveComplianceReportingReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ComplianceReporting Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /compliance-reporting/compliance-reporting-administrative-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveComplianceReportingBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Remediation',  'ComplianceAssessment',  'Consolidation', ]
+  /compliance-reporting/{sd-reference-id}/compliance-reporting-administrative-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveComplianceReportingBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Compliance Reporting Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Compliance Reporting Administrative Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Consolidation
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Consolidation Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ConsolidationID1, ConsolidationID2]

@@ -1,0 +1,15 @@
+SD=Securities Position Keeping
+CR= Securities Position Log
+BQs=TransactionCapture      
+Maintain a log of securities transactions for investment account management information, tracking and reconciliation purposes. The facility simply maintains transaction activity details for a collection of instruments, which includes dividend and other corporate action related actions where appropriate. The transaction log is used to maintain the holding positions
+Example of use:An investment account is set up for a customer and the underlying securities position keeping facility is initialized to track subsequent transactions
+This service domain maintains a securities transaction log to support securities investment activity
+CR - Securities Position Log				BQ 1 - Transaction Capture		
+In	Up	Co	Re	Up	Ca	Re
+InCR Initiate a position keeping transaction log
+UpCR Update details for an active financial transaction log, including reflecting an account block (this is managed by the fulfillment SD)
+CoCR Control the processing of the log (e.g. suspend)
+ReCR Retrieve information about the log
+UpBQ Update details of a captured financial transaction
+CaBQ Capture details of a financial transaction in the log
+ReBQ Retrieve details of financial transactions captured in the log

@@ -1,0 +1,188 @@
+CR Compliance Reporting Administrative Plan Instance Record|Compliance Reporting Administrative Plan||||||CR Compliance Reporting Administrative Plan Initiate|CR Compliance Reporting Administrative Plan Update|CR Compliance Reporting Administrative Plan Capture|CR Compliance Reporting Administrative Plan Request|CR Compliance Reporting Administrative Plan Retrieve|BQ Consolidation Update|BQ Consolidation Capture|BQ Consolidation Request|BQ Consolidation Retrieve|BQ Remediation Initiate|BQ Remediation Update|BQ Remediation Capture|BQ Remediation Request|BQ Remediation Retrieve|BQ Compliance Assessment Update|BQ Compliance Assessment Capture|BQ Compliance Assessment Request|BQ Compliance Assessment Retrieve|
+Mandatory||Compliance Reporting Servicing Session Reference||||Reference to the active servicing session|I|I|I|I
+Mandatory||Compliance Reporting Administrative Plan Instance Reference||||Reference to the Compliance Reporting Administrative Plan instance|O|I|I|I
+Initiate||Compliance Reporting Administrative Plan Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Compliance Reporting Administrative Plan Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Compliance Reporting Administrative Plan Instance Status||||The status of the Compliance Reporting Administrative Plan instance (e.g. initialised, pending, active)|IO
+||Compliance Reporting Administrative Plan Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Compliance Reporting.
+Example: Administer the time reporting and billing for the specialist sales support team.||||||||||||||||||
+||Compliance Reporting Administrative Plan Budget Type||||A Classification value that distinguishes between Budgets within Compliance Reporting Administrative Plan according to the type of resource and/or activity that is budgetted|IO|IO|IO|IO|O|||||||||||||
+||Compliance Reporting Administrative Plan Budget||||An estimate of costs, revenues, and resources over a specified period which is defined for Compliance Reporting Administrative Plan||||||||||||||||||
+||Compliance Reporting Administrative Plan Assignment||||The allocation of someone or something which is specified for Compliance Reporting Administrative Plan|IO|IO|IO|IO|O|||||||||||||
+||Compliance Reporting Administrative Plan Plan||||A plan that defines clerical support for ComplianceReporting|IO|IO|IO|IO|O|||||||||||||
+||Compliance Reporting Administrative Plan Reference||||Party who is involved in Compliance Reporting Administrative Plan|I|I|I|I|O|||||||||||||
+Update||Compliance Reporting Administrative Plan Update Action Task Reference||||Reference to an update service call||O
+Update||Compliance Reporting Administrative Plan Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CAPTURE||Compliance Reporting Administrative Plan Capture Action Task Reference||||Reference to a Compliance Reporting Administrative Plan instance capture service call|||O
+CAPTURE||Compliance Reporting Administrative Plan Capture Action Task Record||||The capture service call consolidated processing record|||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||O
+REQUEST||Compliance Reporting Administrative Plan Request Action Task Reference||||Reference to a Compliance Reporting Administrative Plan instance request service call||||O
+REQUEST||Compliance Reporting Administrative Plan Request Action Task Record||||The request service call consolidated processing record||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||I
+REQUEST||Request Response Record||||Details of the request action service response||||O
+RETRIEVE||Compliance Reporting Administrative Plan Retrieve Action Task Reference||||Reference to a Compliance Reporting Administrative Plan instance retrieve service call|||||O
+RETRIEVE||Compliance Reporting Administrative Plan Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||IO
+RETRIEVE||Compliance Reporting Administrative Plan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||I
+RETRIEVE||Compliance Reporting Administrative Plan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||O
+RETRIEVE||Compliance Reporting Administrative Plan Instance Report Record|##|||A specific Compliance Reporting Administrative Plan instance formatted report|||||IO
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Report Reference|||Reference to the control record instance report|||||I
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Report Type|||The type of external report available|||||IO
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||I
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Report|||The external report in any suitable form including selection filters where appropriate|||||O
+RETRIEVE||Compliance Reporting Administrative Plan Instance Analysis|##|||A specific Compliance Reporting Administrative Plan instance analytical report|||||IO
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Analysis Reference|||Reference to the control record instance analysis view|||||I
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||O
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Analysis Report Type|||The type of external performance analysis report available|||||IO
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||I
+RETRIEVE|||Compliance Reporting Administrative Plan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||O
+BQ Consolidation Instance Record|Consolidation||||||
+Mandatory||Compliance Reporting Administrative Plan Instance Reference||||Reference to the parent Compliance Reporting Administrative Plan instance||||||I|I|I
+Mandatory||Consolidation Instance Reference||||Reference to the Consolidation instance||||||I|I|I
+||Consolidation Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Compliance Reporting.
+||||||||||||||||||
+||Consolidation Preconditions||||The required status/situation before the routine can be undertaken||||||IO|IO|IO|O|||||||||
+||Consolidation Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine||||||IO|IO|IO|O|||||||||
+||Consolidation Work Schedule||||The timing and key actions/milestones involved in completing the routine||||||IO|IO|IO|O|||||||||
+||Business Service||||The Compliance Reporting Administrative Plan specific Business Service||||||IO|IO|IO|O|||||||||
+||Consolidation Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)||||||IO|IO|IO|O|||||||||
+||Consolidation Service Type||||Reference to the specific business service type||||||IO|IO|IO|O|||||||||
+||Consolidation Service Description||||Description of the performed business service||||||IO|IO|IO|O|||||||||
+||Consolidation Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||IO|IO|IO|O|||||||||
+||Consolidation Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||IO|IO|IO|O|||||||||
+||Consolidation Service Name||||||||||IO|IO|IO|O|||||||||
+Update||Consolidation Update Action Task Reference||||Reference to an update service call||||||O
+Update||Consolidation Update Action Task Record||||The update service call consolidated processing record||||||I/O
+Update||Consolidation Update Action Request||||Details of the update action service request||||||I
+Update||Update Response Record||||Details of the Update action service response||||||O
+Capture||Consolidation Capture Action Task Reference||||Reference to a Consolidation instance capture service call|||||||O
+Capture||Consolidation Capture Action Task Record||||The capture service call consolidated processing record|||||||I/O
+Capture||Consolidation Capture Record Reference||||Reference to the Consolidation structured input transaction/record|||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||O
+Request||Consolidation Request Action Task Reference||||Reference to a Consolidation instance request service call||||||||O
+Request||Consolidation Request Action Task Record||||The request service call consolidated processing record||||||||I/O
+Request||Consolidation Request Record Reference||||Reference to the Consolidation service request record||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||O
+Retrieve||Consolidation Retrieve Action Task Reference||||Reference to a Consolidation instance retrieve service call|||||||||O
+Retrieve||Consolidation Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||I/O
+Retrieve||Consolidation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||I
+Retrieve||Consolidation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||O
+Retrieve||Consolidation Instance Report|##|||A specific Consolidation instance formatted report|||||||||IO
+Retrieve|||Consolidation Instance Report Reference|||Reference to the control record instance report|||||||||I
+Retrieve|||Consolidation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Consolidation Instance Report Type|||The type of external report available|||||||||O
+Retrieve|||Consolidation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||O
+Retrieve|||Consolidation Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||O
+Retrieve||Consolidation Instance Analysis|##|||A specific Consolidation instance analytical report|||||||||IO
+Retrieve|||Consolidation Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||I
+Retrieve|||Consolidation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Consolidation Instance Analysis Report Type|||The type of external performance analysis report available|||||||||O
+Retrieve|||Consolidation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||O
+Retrieve|||Consolidation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||O
+BQ Remediation Instance Record|Remediation||||||
+Mandatory||Compliance Reporting Administrative Plan Instance Reference||||Reference to the parent Compliance Reporting Administrative Plan instance||||||||||I|I|I|I
+Mandatory||Remediation Instance Reference||||Reference to the Remediation instance||||||||||O|I|I|I
+Initiate||Remediation Initiate Action Reference||||Reference to an Initiate service call||||||||||O
+Initiate||Remediation Initiate Action Record||||The Initiate service call input and output record||||||||||I/O
+Initiate||Remediation Instance Status||||The status of the Remediation instance (e.g. initialised, pending, active)||||||||||O
+||Remediation Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Compliance Reporting.
+||||||||||||||||||
+||Remediation Preconditions||||The required status/situation before the routine can be undertaken||||||||||IO|IO|IO|IO|O||||
+||Remediation Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine||||||||||IO|IO|IO|IO|O||||
+||Remediation Work Schedule||||The timing and key actions/milestones involved in completing the routine||||||||||IO|IO|IO|IO|O||||
+||Remediation Assurance||||The Compliance Reporting Administrative Plan specific Business Service||||||||||IO|IO|IO|IO|O||||
+||Remediation Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)||||||||||IO|IO|IO|IO|O||||
+||Remediation Remediation Assurance Service Type||||Reference to the specific business service type||||||||||IO|IO|IO|IO|O||||
+||Remediation Remediation Assurance Service Description||||Description of the performed business service||||||||||IO|IO|IO|IO|O||||
+||Remediation Remediation Assurance Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||IO|IO|IO|IO|O||||
+||Remediation Remediation Assurance Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||IO|IO|IO|IO|O||||
+||Remediation Remediation Assurance Service Name||||||||||||||IO|IO|IO|IO|O||||
+Update||Remediation Update Action Task Reference||||Reference to an update service call|||||||||||O
+Update||Remediation Update Action Task Record||||The update service call consolidated processing record|||||||||||I/O
+Update||Remediation Update Action Request||||Details of the update action service request|||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||O
+Capture||Remediation Capture Action Task Reference||||Reference to a Remediation instance capture service call||||||||||||O
+Capture||Remediation Capture Action Task Record||||The capture service call consolidated processing record||||||||||||I/O
+Capture||Remediation Capture Record Reference||||Reference to the Remediation structured input transaction/record||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||O
+Request||Remediation Request Action Task Reference||||Reference to a Remediation instance request service call|||||||||||||O
+Request||Remediation Request Action Task Record||||The request service call consolidated processing record|||||||||||||I/O
+Request||Remediation Request Record Reference||||Reference to the Remediation service request record|||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||O
+Retrieve||Remediation Retrieve Action Task Reference||||Reference to a Remediation instance retrieve service call||||||||||||||O
+Retrieve||Remediation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Remediation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Remediation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Remediation Instance Report|##|||A specific Remediation instance formatted report||||||||||||||IO
+Retrieve|||Remediation Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Remediation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Remediation Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Remediation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Remediation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Remediation Instance Analysis|##|||A specific Remediation instance analytical report||||||||||||||IO
+Retrieve|||Remediation Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Remediation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Remediation Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Remediation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Remediation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O
+BQ Compliance Assessment Instance Record|Compliance Assessment||||||
+Mandatory||Compliance Reporting Administrative Plan Instance Reference||||Reference to the parent Compliance Reporting Administrative Plan instance|||||||||||||||I|I|I
+Mandatory||Compliance Assessment Instance Reference||||Reference to the Compliance Assessment instance|||||||||||||||I|I|I
+||Compliance Assessment Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Compliance Reporting.
+||||||||||||||||||
+||Compliance Assessment Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||||IO|IO|IO|O
+||Compliance Assessment Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||||IO|IO|IO|O
+||Compliance Assessment Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||||IO|IO|IO|O
+||Audit and Reporting||||The Compliance Reporting Administrative Plan specific Business Service|||||||||||||||IO|IO|IO|O
+||Compliance Assessment Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||||IO|IO|IO|O
+||Compliance Assessment Audit and Reporting Service Type||||Reference to the specific business service type|||||||||||||||IO|IO|IO|O
+||Compliance Assessment Audit and Reporting Service Description||||Description of the performed business service|||||||||||||||IO|IO|IO|O
+||Compliance Assessment Audit and Reporting Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||IO|IO|IO|O
+||Compliance Assessment Audit and Reporting Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||IO|IO|IO|O
+Update||Compliance Assessment Update Action Task Reference||||Reference to an update service call|||||||||||||||O
+Update||Compliance Assessment Update Action Task Record||||The update service call consolidated processing record|||||||||||||||I/O
+Update||Compliance Assessment Update Action Request||||Details of the update action service request|||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||O
+Capture||Compliance Assessment Capture Action Task Reference||||Reference to a Compliance Assessment instance capture service call||||||||||||||||O
+Capture||Compliance Assessment Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||I/O
+Capture||Compliance Assessment Capture Record Reference||||Reference to the Compliance Assessment structured input transaction/record||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||O
+Request||Compliance Assessment Request Action Task Reference||||Reference to a Compliance Assessment instance request service call|||||||||||||||||O
+Request||Compliance Assessment Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||I/O
+Request||Compliance Assessment Request Record Reference||||Reference to the Compliance Assessment service request record|||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||O
+Retrieve||Compliance Assessment Retrieve Action Task Reference||||Reference to a Compliance Assessment instance retrieve service call||||||||||||||||||O
+Retrieve||Compliance Assessment Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||I/O
+Retrieve||Compliance Assessment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||I
+Retrieve||Compliance Assessment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||O
+Retrieve||Compliance Assessment Instance Report|##|||A specific Compliance Assessment instance formatted report||||||||||||||||||IO
+Retrieve|||Compliance Assessment Instance Report Reference|||Reference to the control record instance report||||||||||||||||||I
+Retrieve|||Compliance Assessment Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Compliance Assessment Instance Report Type|||The type of external report available||||||||||||||||||O
+Retrieve|||Compliance Assessment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||O
+Retrieve|||Compliance Assessment Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||O
+Retrieve||Compliance Assessment Instance Analysis|##|||A specific Compliance Assessment instance analytical report||||||||||||||||||IO
+Retrieve|||Compliance Assessment Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||I
+Retrieve|||Compliance Assessment Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Compliance Assessment Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||O
+Retrieve|||Compliance Assessment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||O
+Retrieve|||Compliance Assessment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||O

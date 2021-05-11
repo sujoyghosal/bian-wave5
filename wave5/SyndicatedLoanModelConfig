@@ -1,0 +1,250 @@
+CR Syndicated Loan Arrangement Instance Record|Syndicated Loan Arrangement||||||CR Syndicated Loan Arrangement Initiate|CR Syndicated Loan Arrangement Update|CR Syndicated Loan Arrangement Control|CR Syndicated Loan Arrangement Exchange|CR Syndicated Loan Arrangement Execute|CR Syndicated Loan Arrangement Request|CR Syndicated Loan Arrangement Retrieve|BQ Fulfillment Update|BQ Fulfillment Exchange|BQ Fulfillment Request|BQ Fulfillment Retrieve|BQ Structuring Initiate|BQ Structuring Update|BQ Structuring Exchange|BQ Structuring Request|BQ Structuring Retrieve|BQ Origination Update|BQ Origination Exchange|BQ Origination Request|BQ Origination Retrieve|BQ Syndicate Assembly Update|BQ Syndicate Assembly Exchange|BQ Syndicate Assembly Request|BQ Syndicate Assembly Retrieve|
+Mandatory||Syndicated Loan Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Syndicated Loan Arrangement Instance Reference||||Reference to the Syndicated Loan Arrangement instance|O|I|I|I|I|I
+Initiate||Syndicated Loan Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Syndicated Loan Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Syndicated Loan Arrangement Instance Status||||The status of the Syndicated Loan Arrangement instance (e.g. initialised, pending, active)|IO
+||Syndicated Loan Arrangement Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Syndicated Loan.
+Example: Perform the scheduled (e.g. statements, standing orders) and ad-hoc/requested (e.g. balance inquiries, fund transfers) fulfillment tasks for a customer current account facility.||||||||||||||||||||||||
+||Syndicated Loan Arrangement Parameter Type||||A Classification value that distinguishes between arrangements according to the type of business services within Syndicated Loan Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||
+||Syndicated Loan Arrangement Selected Option||||A selected optional business service as subject matter of Syndicated Loan Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||
+||Syndicated Loan Arrangement Type||||The type of Syndicated Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||
+||Syndicated Loan Arrangement Reference||||Reference to Syndicated Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||
+||Syndicated Loan Arrangement Schedule||||Timetable to fulfill Syndicated Loan Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||
+||Syndicated Loan Arrangement Status||||The status of Syndicated Loan Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||||||||
+||Syndicated Loan Arrangement Reference||||Reference to the party who is involved in Syndicated Loan Arrangement||||||||||||||||||||||||
+||Syndicated Loan Arrangement Currency||||The curreny which is arranged in Syndicated Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||
+||Syndicated Loan Arrangement Regulation Reference||||Reference to the regulation which is defined in Syndicated Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||
+||Syndicated Loan Arrangement Regulation Type||||A Classification that distinguishes between the regularity domains of Syndicated Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||
+||Syndicated Loan Arrangement Jurisdiction||||Reference to the jurisdiction that is assigned to Syndicated Loan Arrangement in case of legal dispute.|I|I|I|I|I|I|O|||||||||||||||||
+||Syndicated Loan Arrangement Booking Location||||The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement in the context of Syndicated Loan Arrangement, are entered.|I|I|I|I|I|I|O|||||||||||||||||
+||Syndicated Loan Arrangement Account Type||||The type of account which is linked to Syndicated Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||
+||Syndicated Loan Arrangement Account Reference||||Reference to the account which is linked to Syndicated Loan Arrangement|I|I|I|I|I|I|O|||||||||||||||||
+Update||Syndicated Loan Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||Syndicated Loan Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Syndicated Loan Arrangement Control Action Task Reference||||Reference to a Syndicated Loan Arrangement instance control processing service call|||O
+CONTROL||Syndicated Loan Arrangement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Syndicated Loan Arrangement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Syndicated Loan Arrangement Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Syndicated Loan Arrangement Exchange Action Task Reference||||Reference to a Syndicated Loan Arrangement instance exchange service call||||O
+EXCHANGE||Syndicated Loan Arrangement Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Syndicated Loan Arrangement Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Syndicated Loan Arrangement Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Syndicated Loan Arrangement Execute Action Task Reference||||Reference to a Syndicated Loan Arrangement instance execute service call|||||O
+EXECUTE||Syndicated Loan Arrangement Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Syndicated Loan Arrangement Request Action Task Reference||||Reference to a Syndicated Loan Arrangement instance request service call||||||O
+REQUEST||Syndicated Loan Arrangement Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Syndicated Loan Arrangement Retrieve Action Task Reference||||Reference to a Syndicated Loan Arrangement instance retrieve service call|||||||O
+RETRIEVE||Syndicated Loan Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Syndicated Loan Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Syndicated Loan Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Syndicated Loan Arrangement Instance Report Record|##|||A specific Syndicated Loan Arrangement instance formatted report|||||||IO
+RETRIEVE|||Syndicated Loan Arrangement Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Syndicated Loan Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Syndicated Loan Arrangement Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Syndicated Loan Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Syndicated Loan Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Syndicated Loan Arrangement Instance Analysis|##|||A specific Syndicated Loan Arrangement instance analytical report|||||||IO
+RETRIEVE|||Syndicated Loan Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Syndicated Loan Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Syndicated Loan Arrangement Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Syndicated Loan Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Syndicated Loan Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Fulfillment Instance Record|Fulfillment||||||
+Mandatory||Syndicated Loan Arrangement Instance Reference||||Reference to the parent Syndicated Loan Arrangement instance||||||||I|I|I
+Mandatory||Fulfillment Instance Reference||||Reference to the Fulfillment instance||||||||I|I|I
+||Fulfillment Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Syndicated Loan.
+||||||||||||||||||||||||
+||Fulfillment Preconditions||||The required status/situation prior to the implementation of the feature||||||||IO|IO|IO|O|||||||||||||
+||Fulfillment Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||IO|IO|IO|O|||||||||||||
+||Fiduciary Arrangement Fulfillment||||The Syndicated Loan Arrangement specific Business Service||||||||IO|IO|IO|O|||||||||||||
+||Fulfillment Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||IO|IO|IO|O|||||||||||||
+||Fulfillment Fiduciary Arrangement Fulfillment Service Type||||Reference to the specific business service type||||||||IO|IO|IO|O|||||||||||||
+||Fulfillment Fiduciary Arrangement Fulfillment Service Description||||Description of the performed business service||||||||IO|IO|IO|O|||||||||||||
+||Fulfillment Fiduciary Arrangement Fulfillment Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|O|||||||||||||
+||Fulfillment Fiduciary Arrangement Fulfillment Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|O|||||||||||||
+||Fulfillment Fiduciary Arrangement Fulfillment Service Name||||||||||||IO|IO|IO|O|||||||||||||
+Update||Fulfillment Update Action Task Reference||||Reference to an update service call||||||||O
+Update||Fulfillment Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||Fulfillment Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Exchange||Fulfillment Exchange Action Task Reference||||Reference to a Fulfillment instance exchange service call|||||||||O
+Exchange||Fulfillment Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||I/O
+Exchange||Fulfillment Exchange Action Request|##|||Details of the exchange action service request|||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||I
+Exchange||Fulfillment Exchange Action Response||||Details of the exchange action service response|||||||||O
+Exchange||Fulfillment Instance Status||||The status of the Fulfillment instance (e.g. accepted, rejected, verified)|||||||||O
+Request||Fulfillment Request Action Task Reference||||Reference to a Fulfillment instance request service call||||||||||O
+Request||Fulfillment Request Action Task Record||||The request service call consolidated processing record||||||||||I/O
+Request||Fulfillment Request Record Reference||||Reference to the Fulfillment service request record||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||O
+Retrieve||Fulfillment Retrieve Action Task Reference||||Reference to a Fulfillment instance retrieve service call|||||||||||O
+Retrieve||Fulfillment Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||Fulfillment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||Fulfillment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||Fulfillment Instance Report|##|||A specific Fulfillment instance formatted report|||||||||||IO
+Retrieve|||Fulfillment Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||Fulfillment Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Fulfillment Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||Fulfillment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||Fulfillment Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||Fulfillment Instance Analysis|##|||A specific Fulfillment instance analytical report|||||||||||IO
+Retrieve|||Fulfillment Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||Fulfillment Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Fulfillment Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||Fulfillment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||Fulfillment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O
+BQ Structuring Instance Record|Structuring||||||
+Mandatory||Syndicated Loan Arrangement Instance Reference||||Reference to the parent Syndicated Loan Arrangement instance||||||||||||I|I|I|I
+Mandatory||Structuring Instance Reference||||Reference to the Structuring instance||||||||||||O|I|I|I
+Initiate||Structuring Initiate Action Reference||||Reference to an Initiate service call||||||||||||O
+Initiate||Structuring Initiate Action Record||||The Initiate service call input and output record||||||||||||I/O
+Initiate||Structuring Instance Status||||The status of the Structuring instance (e.g. initialised, pending, active)||||||||||||O
+||Structuring Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Syndicated Loan.
+||||||||||||||||||||||||
+||Structuring Preconditions||||The required status/situation prior to the implementation of the feature||||||||||||IO|IO|IO|IO|O||||||||
+||Structuring Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||||||IO|IO|IO|IO|O||||||||
+||Syndicated Loan Arrangement||||The Syndicated Loan Arrangement specific Business Service||||||||||||IO|IO|IO|IO|O||||||||
+||Structuring Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||||||IO|IO|IO|IO|O||||||||
+||Structuring Syndicated Loan Arrangement Service Type||||Reference to the specific business service type||||||||||||IO|IO|IO|IO|O||||||||
+||Structuring Syndicated Loan Arrangement Service Description||||Description of the performed business service||||||||||||IO|IO|IO|IO|O||||||||
+||Structuring Syndicated Loan Arrangement Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||IO|IO|IO|IO|O||||||||
+||Structuring Syndicated Loan Arrangement Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||IO|IO|IO|IO|O||||||||
+||Structuring Syndicated Loan Arrangement Service Name||||||||||||||||IO|IO|IO|IO|O||||||||
+Update||Structuring Update Action Task Reference||||Reference to an update service call|||||||||||||O
+Update||Structuring Update Action Task Record||||The update service call consolidated processing record|||||||||||||I/O
+Update||Structuring Update Action Request||||Details of the update action service request|||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||O
+Exchange||Structuring Exchange Action Task Reference||||Reference to a Structuring instance exchange service call||||||||||||||O
+Exchange||Structuring Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||I/O
+Exchange||Structuring Exchange Action Request|##|||Details of the exchange action service request||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||I
+Exchange||Structuring Exchange Action Response||||Details of the exchange action service response||||||||||||||O
+Exchange||Structuring Instance Status||||The status of the Structuring instance (e.g. accepted, rejected, verified)||||||||||||||O
+Request||Structuring Request Action Task Reference||||Reference to a Structuring instance request service call|||||||||||||||O
+Request||Structuring Request Action Task Record||||The request service call consolidated processing record|||||||||||||||I/O
+Request||Structuring Request Record Reference||||Reference to the Structuring service request record|||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||O
+Retrieve||Structuring Retrieve Action Task Reference||||Reference to a Structuring instance retrieve service call||||||||||||||||O
+Retrieve||Structuring Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Structuring Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Structuring Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Structuring Instance Report|##|||A specific Structuring instance formatted report||||||||||||||||IO
+Retrieve|||Structuring Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Structuring Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Structuring Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Structuring Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Structuring Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Structuring Instance Analysis|##|||A specific Structuring instance analytical report||||||||||||||||IO
+Retrieve|||Structuring Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Structuring Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Structuring Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Structuring Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Structuring Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ Origination Instance Record|Origination||||||
+Mandatory||Syndicated Loan Arrangement Instance Reference||||Reference to the parent Syndicated Loan Arrangement instance|||||||||||||||||I|I|I
+Mandatory||Origination Instance Reference||||Reference to the Origination instance|||||||||||||||||I|I|I
+||Origination Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Syndicated Loan.
+||||||||||||||||||||||||
+||Origination Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||||IO|IO|IO|O||||
+||Origination Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||||IO|IO|IO|O||||
+||Syndicated Loan Origination||||The Syndicated Loan Arrangement specific Business Service|||||||||||||||||IO|IO|IO|O||||
+||Origination Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||||IO|IO|IO|O||||
+||Origination Syndicated Loan Origination Service Type||||Reference to the specific business service type|||||||||||||||||IO|IO|IO|O||||
+||Origination Syndicated Loan Origination Service Description||||Description of the performed business service|||||||||||||||||IO|IO|IO|O||||
+||Origination Syndicated Loan Origination Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||IO|IO|IO|O||||
+||Origination Syndicated Loan Origination Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||IO|IO|IO|O||||
+||Origination Syndicated Loan Origination Service Name|||||||||||||||||||||IO|IO|IO|O||||
+Update||Origination Update Action Task Reference||||Reference to an update service call|||||||||||||||||O
+Update||Origination Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||I/O
+Update||Origination Update Action Request||||Details of the update action service request|||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||O
+Exchange||Origination Exchange Action Task Reference||||Reference to a Origination instance exchange service call||||||||||||||||||O
+Exchange||Origination Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||I/O
+Exchange||Origination Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||I
+Exchange||Origination Exchange Action Response||||Details of the exchange action service response||||||||||||||||||O
+Exchange||Origination Instance Status||||The status of the Origination instance (e.g. accepted, rejected, verified)||||||||||||||||||O
+Request||Origination Request Action Task Reference||||Reference to a Origination instance request service call|||||||||||||||||||O
+Request||Origination Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||I/O
+Request||Origination Request Record Reference||||Reference to the Origination service request record|||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||O
+Retrieve||Origination Retrieve Action Task Reference||||Reference to a Origination instance retrieve service call||||||||||||||||||||O
+Retrieve||Origination Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||I/O
+Retrieve||Origination Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||I
+Retrieve||Origination Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||O
+Retrieve||Origination Instance Report|##|||A specific Origination instance formatted report||||||||||||||||||||IO
+Retrieve|||Origination Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||I
+Retrieve|||Origination Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Origination Instance Report Type|||The type of external report available||||||||||||||||||||O
+Retrieve|||Origination Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||O
+Retrieve|||Origination Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+Retrieve||Origination Instance Analysis|##|||A specific Origination instance analytical report||||||||||||||||||||IO
+Retrieve|||Origination Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||I
+Retrieve|||Origination Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Origination Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||O
+Retrieve|||Origination Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||O
+Retrieve|||Origination Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+BQ Syndicate Assembly Instance Record|Syndicate Assembly||||||
+Mandatory||Syndicated Loan Arrangement Instance Reference||||Reference to the parent Syndicated Loan Arrangement instance|||||||||||||||||||||I|I|I
+Mandatory||Syndicate Assembly Instance Reference||||Reference to the Syndicate Assembly instance|||||||||||||||||||||I|I|I
+||Syndicate Assembly Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Syndicated Loan.
+||||||||||||||||||||||||
+||Syndicate Assembly Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||||||||||IO|IO|IO|O
+||Syndicate Assembly Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||||||||||IO|IO|IO|O
+||Syndicated Loan Organization||||The Syndicated Loan Arrangement specific Business Service|||||||||||||||||||||IO|IO|IO|O
+||Syndicate Assembly Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||||||||||IO|IO|IO|O
+||Syndicate Assembly Syndicated Loan Organization Service Type||||Reference to the specific business service type|||||||||||||||||||||IO|IO|IO|O
+||Syndicate Assembly Syndicated Loan Organization Service Description||||Description of the performed business service|||||||||||||||||||||IO|IO|IO|O
+||Syndicate Assembly Syndicated Loan Organization Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||IO|IO|IO|O
+||Syndicate Assembly Syndicated Loan Organization Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||IO|IO|IO|O
+Update||Syndicate Assembly Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||O
+Update||Syndicate Assembly Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||I/O
+Update||Syndicate Assembly Update Action Request||||Details of the update action service request|||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||O
+Exchange||Syndicate Assembly Exchange Action Task Reference||||Reference to a Syndicate Assembly instance exchange service call||||||||||||||||||||||O
+Exchange||Syndicate Assembly Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||I/O
+Exchange||Syndicate Assembly Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||I
+Exchange||Syndicate Assembly Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||O
+Exchange||Syndicate Assembly Instance Status||||The status of the Syndicate Assembly instance (e.g. accepted, rejected, verified)||||||||||||||||||||||O
+Request||Syndicate Assembly Request Action Task Reference||||Reference to a Syndicate Assembly instance request service call|||||||||||||||||||||||O
+Request||Syndicate Assembly Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||I/O
+Request||Syndicate Assembly Request Record Reference||||Reference to the Syndicate Assembly service request record|||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||O
+Retrieve||Syndicate Assembly Retrieve Action Task Reference||||Reference to a Syndicate Assembly instance retrieve service call||||||||||||||||||||||||O
+Retrieve||Syndicate Assembly Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||I/O
+Retrieve||Syndicate Assembly Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||I
+Retrieve||Syndicate Assembly Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||O
+Retrieve||Syndicate Assembly Instance Report|##|||A specific Syndicate Assembly instance formatted report||||||||||||||||||||||||IO
+Retrieve|||Syndicate Assembly Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||I
+Retrieve|||Syndicate Assembly Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||O
+Retrieve|||Syndicate Assembly Instance Report Type|||The type of external report available||||||||||||||||||||||||O
+Retrieve|||Syndicate Assembly Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||O
+Retrieve|||Syndicate Assembly Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||O
+Retrieve||Syndicate Assembly Instance Analysis|##|||A specific Syndicate Assembly instance analytical report||||||||||||||||||||||||IO
+Retrieve|||Syndicate Assembly Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||I
+Retrieve|||Syndicate Assembly Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||O
+Retrieve|||Syndicate Assembly Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||O
+Retrieve|||Syndicate Assembly Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||O
+Retrieve|||Syndicate Assembly Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||O

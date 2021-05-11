@@ -1,0 +1,464 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Consumer Investments'
+ description: >
+
+    ## Executive Summary:
+
+    Handle the consumer front-end trading requests. These will typically be blocked/netted for market execution
+
+    ## Example of Use:
+
+    An consumer initiates a securities purchase for their investment portfolio, providing funds from their linked 'trading' current account
+
+    ## Description:
+
+    This supports consumer initiated securities investment and trading activity for their self-managed securities investments. Trades will typically be blocked/netted against the bank's own securities position for subsequent market execution. Quotes/prices are based on the prevailing price at the time of the customer instruction to trade
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-consumer-investments/1.0.0
+schemes:
+ - https
+paths:
+  /consumer-investments/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDConsumerInvestments
+      summary: Activate  a SDConsumerInvestments servicing session
+      description: Activate  a  SDConsumerInvestments servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDConsumerInvestments Request Payload
+        schema:
+          $ref: '#/definitions/SDConsumerInvestmentsActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDConsumerInvestmentsActivateOutputModel'
+  /consumer-investments/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDConsumerInvestments
+      summary: Update an active SDConsumerInvestments session configuration
+      description: Update an active SDConsumerInvestments session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDConsumerInvestments Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDConsumerInvestments Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDConsumerInvestmentsConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDConsumerInvestmentsConfigureOutputModel'
+  /consumer-investments/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDConsumerInvestments
+      summary: "Capturing feedback against the SDConsumerInvestments service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDConsumerInvestments service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDConsumerInvestments Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDConsumerInvestments Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDConsumerInvestmentsFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDConsumerInvestmentsFeedbackOutputModel'
+  /consumer-investments/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDConsumerInvestments
+      summary: Analytical views maintained by the SDConsumerInvestments service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDConsumerInvestments service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDConsumerInvestments Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDConsumerInvestmentsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDConsumerInvestmentsRetrieveOutputModel'
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateConsumerSecuritiesOrderTransaction
+      summary: Details of a new ConsumerSecuritiesOrderTransaction instance
+      description: Initiate a consumer securities order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ConsumerSecuritiesOrderTransaction Request Payload
+        schema:
+          $ref: '#/definitions/CRConsumerSecuritiesOrderTransactionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new ConsumerSecuritiesOrderTransaction instance
+          schema:
+            $ref: '#/definitions/CRConsumerSecuritiesOrderTransactionInitiateOutputModel'
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateConsumerSecuritiesOrderTransaction
+      summary: Update to any amendable fields of the ConsumerSecuritiesOrderTransaction instance
+      description: Update details on an active consumer securities order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Consumer Securities Order Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Consumer Securities Order Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRConsumerSecuritiesOrderTransactionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Consumer Securities Order Transaction Instance
+          schema:
+            $ref: '#/definitions/CRConsumerSecuritiesOrderTransactionUpdateOutputModel'
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveConsumerInvestments
+      summary: Invoke a reporting action to obtain a Consumer Securities Order Transaction instance related report
+      description: Retrieve details about a consumer securities order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Consumer Securities Order Transaction Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRConsumerSecuritiesOrderTransactionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Consumer Securities Order Transaction Instance
+          schema:
+            $ref: '#/definitions/CRConsumerSecuritiesOrderTransactionRetrieveOutputModel'
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction/{cr-reference-id}/quote/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveConsumerSecuritiesOrderTransactionQuote
+      summary: Invoke a reporting action to obtain a Quote instance related report.
+      description: Retrieve bank quote for a security .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Consumer Securities Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Quote Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQQuoteRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Quote Instance Record
+          schema:
+            $ref: '#/definitions/BQQuoteRetrieveOutputModel'
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction/{cr-reference-id}/compliance/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveConsumerSecuritiesOrderTransactionCompliance
+      summary: Invoke a reporting action to obtain a Compliance instance related report.
+      description: Retrieve details about a consumer securities order compliance check .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Consumer Securities Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Compliance Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQComplianceRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Compliance Instance Record
+          schema:
+            $ref: '#/definitions/BQComplianceRetrieveOutputModel'
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction/{cr-reference-id}/fundingcheck/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveConsumerSecuritiesOrderTransactionFundingCheck
+      summary: Invoke a reporting action to obtain a FundingCheck instance related report.
+      description: Retrieve details about a funding check for a consumer securities order .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Consumer Securities Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FundingCheck Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFundingCheckRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved FundingCheck Instance Record
+          schema:
+            $ref: '#/definitions/BQFundingCheckRetrieveOutputModel'
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction/{cr-reference-id}/orderinitiation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeConsumerSecuritiesOrderTransactionOrderInitiationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject etc. a proposed consumer securities order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Consumer Securities Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: OrderInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: OrderInitiation request payload
+        schema:
+          $ref: '#/definitions/BQOrderInitiationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of OrderInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQOrderInitiationExchangeOutputModel'
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction/{cr-reference-id}/orderinitiation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveConsumerSecuritiesOrderTransactionOrderInitiation
+      summary: Invoke a reporting action to obtain a OrderInitiation instance related report.
+      description: Retrieve details about a consumer securities order .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Consumer Securities Order Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: OrderInitiation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQOrderInitiationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved OrderInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQOrderInitiationRetrieveOutputModel'
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveConsumerInvestmentsReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ConsumerInvestments Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /consumer-investments/consumer-securities-order-transaction/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveConsumerInvestmentsBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Quote',  'Compliance',  'FundingCheck',  'OrderInitiation', ]
+  /consumer-investments/{sd-reference-id}/consumer-securities-order-transaction/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveConsumerInvestmentsBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Consumer Investments Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Consumer Securities Order Transaction Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- OrderInitiation
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- OrderInitiation Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [OrderInitiationID1, OrderInitiationID2]

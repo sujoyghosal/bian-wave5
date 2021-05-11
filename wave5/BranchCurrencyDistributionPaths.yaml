@@ -1,0 +1,911 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Branch Currency Distribution'
+ description: >
+
+    ## Executive Summary:
+
+    Schedule and coordinate the secure distribution of cash inventory across the branch and ATM networks.
+
+    ## Example of Use:
+
+    ATMs at a branch location are stocked with currency in response to anticipated customer demand
+
+    ## Description:
+
+    This service domain handles the scheduling and secure distribution of currency throughout the branch network (for bank branches and remote ATM locations). It ensures the required float is maintained at locations and undertakes the movement into and out of central currency holding facilities as necessary to ensure cash availability
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-branch-currency-distribution/1.0.0
+schemes:
+ - https
+paths:
+  /branch-currency-distribution/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDBranchCurrencyDistribution
+      summary: Activate  a SDBranchCurrencyDistribution servicing session
+      description: Activate  a  SDBranchCurrencyDistribution servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDBranchCurrencyDistribution Request Payload
+        schema:
+          $ref: '#/definitions/SDBranchCurrencyDistributionActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDBranchCurrencyDistributionActivateOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDBranchCurrencyDistribution
+      summary: Update an active SDBranchCurrencyDistribution session configuration
+      description: Update an active SDBranchCurrencyDistribution session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBranchCurrencyDistribution Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBranchCurrencyDistribution Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDBranchCurrencyDistributionConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDBranchCurrencyDistributionConfigureOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDBranchCurrencyDistribution
+      summary: "Capturing feedback against the SDBranchCurrencyDistribution service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDBranchCurrencyDistribution service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBranchCurrencyDistribution Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDBranchCurrencyDistribution Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDBranchCurrencyDistributionFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDBranchCurrencyDistributionFeedbackOutputModel'
+  /branch-currency-distribution/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDBranchCurrencyDistribution
+      summary: Analytical views maintained by the SDBranchCurrencyDistribution service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDBranchCurrencyDistribution service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDBranchCurrencyDistribution Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDBranchCurrencyDistributionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDBranchCurrencyDistributionRetrieveOutputModel'  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCashDistributionProcedure
+      summary: Details of a new CashDistributionProcedure instance
+      description: Instantiate a new Cash Distribution Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CashDistributionProcedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCashDistributionProcedureInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new CashDistributionProcedure instance
+          schema:
+            $ref: '#/definitions/CRCashDistributionProcedureInitiateOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCashDistributionProcedure
+      summary: Update to any amendable fields of the CashDistributionProcedure instance
+      description: Update details relating to Cash Distribution Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Cash Distribution Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCashDistributionProcedureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Cash Distribution Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCashDistributionProcedureUpdateOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCashDistributionProcedureUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Cash Distribution Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Cash Distribution Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCashDistributionProcedureControlInputModel'
+      responses:
+        200:
+          description: Successful control of Cash Distribution Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCashDistributionProcedureControlOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCashDistributionProcedureUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Cash Distribution Procedure processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Cash Distribution Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCashDistributionProcedureExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Cash Distribution Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCashDistributionProcedureExchangeOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCashDistributionProcedureUpdate
+      summary: Invoke an automated execute action against the CashDistributionProcedure instance
+      description: Execute an available automated action for Cash Distribution Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Cash Distribution Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCashDistributionProcedureExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Cash Distribution Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCashDistributionProcedureExecuteOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCashDistributionProcedureUpdate
+      summary: Invoke a service request action against the CashDistributionProcedure instance
+      description: Request manual intervention or a decision with respect to Cash Distribution Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Cash Distribution Procedure Request Payload
+        schema:
+          $ref: '#/definitions/CRCashDistributionProcedureRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Cash Distribution Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCashDistributionProcedureRequestOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBranchCurrencyDistribution
+      summary: Invoke a reporting action to obtain a Cash Distribution Procedure instance related report
+      description: Retrieve details about any aspect of Cash Distribution Procedure
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCashDistributionProcedureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Cash Distribution Procedure Instance
+          schema:
+            $ref: '#/definitions/CRCashDistributionProcedureRetrieveOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/distributionplanning/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCashDistributionProcedureDistributionPlanning
+      summary: Update to any amendable fields of the DistributionPlanning instance
+      description: Update details relating to Distribution Planning
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DistributionPlanning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DistributionPlanning Request Payload
+        schema:
+          $ref: '#/definitions/BQDistributionPlanningUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated DistributionPlanning Instance
+          schema:
+            $ref: '#/definitions/BQDistributionPlanningUpdateOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/distributionplanning/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCashDistributionProcedureDistributionPlanningUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Distribution Planning processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DistributionPlanning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DistributionPlanning request payload
+        schema:
+          $ref: '#/definitions/BQDistributionPlanningExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of DistributionPlanning Instance Record
+          schema:
+            $ref: '#/definitions/BQDistributionPlanningExchangeOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/distributionplanning/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCashDistributionProcedureDistributionPlanningUpdate
+      summary: Invoke a service request action against the DistributionPlanning instance
+      description: Request manual intervention or a decision with respect to Distribution Planning
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DistributionPlanning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DistributionPlanning request payload
+        schema:
+          $ref: '#/definitions/BQDistributionPlanningRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of DistributionPlanning Instance Record
+          schema:
+            $ref: '#/definitions/BQDistributionPlanningRequestOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/distributionplanning/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCashDistributionProcedureDistributionPlanning
+      summary: Invoke a reporting action to obtain a DistributionPlanning instance related report.
+      description: Retrieve details about any aspect of Distribution Planning .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DistributionPlanning Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQDistributionPlanningRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved DistributionPlanning Instance Record
+          schema:
+            $ref: '#/definitions/BQDistributionPlanningRetrieveOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/inventorydistributionoversight/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCashDistributionProcedureInventoryDistributionOversight
+      summary: Update to any amendable fields of the InventoryDistributionOversight instance
+      description: Update details relating to Inventory Distribution Oversight
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InventoryDistributionOversight Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InventoryDistributionOversight Request Payload
+        schema:
+          $ref: '#/definitions/BQInventoryDistributionOversightUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated InventoryDistributionOversight Instance
+          schema:
+            $ref: '#/definitions/BQInventoryDistributionOversightUpdateOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/inventorydistributionoversight/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCashDistributionProcedureInventoryDistributionOversightUpdate
+      summary: Invoke a service request action against the InventoryDistributionOversight instance
+      description: Request manual intervention or a decision with respect to Inventory Distribution Oversight
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InventoryDistributionOversight Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InventoryDistributionOversight request payload
+        schema:
+          $ref: '#/definitions/BQInventoryDistributionOversightRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of InventoryDistributionOversight Instance Record
+          schema:
+            $ref: '#/definitions/BQInventoryDistributionOversightRequestOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/inventorydistributionoversight/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCashDistributionProcedureInventoryDistributionOversight
+      summary: Invoke a reporting action to obtain a InventoryDistributionOversight instance related report.
+      description: Retrieve details about any aspect of Inventory Distribution Oversight .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InventoryDistributionOversight Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQInventoryDistributionOversightRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved InventoryDistributionOversight Instance Record
+          schema:
+            $ref: '#/definitions/BQInventoryDistributionOversightRetrieveOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/inventoryprovisioning/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCashDistributionProcedureInventoryProvisioning
+      summary: Update to any amendable fields of the InventoryProvisioning instance
+      description: Update details relating to Inventory Provisioning
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InventoryProvisioning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InventoryProvisioning Request Payload
+        schema:
+          $ref: '#/definitions/BQInventoryProvisioningUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated InventoryProvisioning Instance
+          schema:
+            $ref: '#/definitions/BQInventoryProvisioningUpdateOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/inventoryprovisioning/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCashDistributionProcedureInventoryProvisioningUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Inventory Provisioning processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InventoryProvisioning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InventoryProvisioning request payload
+        schema:
+          $ref: '#/definitions/BQInventoryProvisioningExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of InventoryProvisioning Instance Record
+          schema:
+            $ref: '#/definitions/BQInventoryProvisioningExchangeOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/inventoryprovisioning/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCashDistributionProcedureInventoryProvisioningUpdate
+      summary: Invoke a service request action against the InventoryProvisioning instance
+      description: Request manual intervention or a decision with respect to Inventory Provisioning
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InventoryProvisioning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InventoryProvisioning request payload
+        schema:
+          $ref: '#/definitions/BQInventoryProvisioningRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of InventoryProvisioning Instance Record
+          schema:
+            $ref: '#/definitions/BQInventoryProvisioningRequestOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/inventoryprovisioning/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCashDistributionProcedureInventoryProvisioning
+      summary: Invoke a reporting action to obtain a InventoryProvisioning instance related report.
+      description: Retrieve details about any aspect of Inventory Provisioning .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: InventoryProvisioning Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQInventoryProvisioningRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved InventoryProvisioning Instance Record
+          schema:
+            $ref: '#/definitions/BQInventoryProvisioningRetrieveOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/distributionvehicleadministration/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCashDistributionProcedureDistributionVehicleAdministration
+      summary: Update to any amendable fields of the DistributionVehicleAdministration instance
+      description: Update details relating to Distribution Vehicle Administration
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DistributionVehicleAdministration Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DistributionVehicleAdministration Request Payload
+        schema:
+          $ref: '#/definitions/BQDistributionVehicleAdministrationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated DistributionVehicleAdministration Instance
+          schema:
+            $ref: '#/definitions/BQDistributionVehicleAdministrationUpdateOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/distributionvehicleadministration/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCashDistributionProcedureDistributionVehicleAdministrationUpdate
+      summary: Invoke a service request action against the DistributionVehicleAdministration instance
+      description: Request manual intervention or a decision with respect to Distribution Vehicle Administration
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DistributionVehicleAdministration Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DistributionVehicleAdministration request payload
+        schema:
+          $ref: '#/definitions/BQDistributionVehicleAdministrationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of DistributionVehicleAdministration Instance Record
+          schema:
+            $ref: '#/definitions/BQDistributionVehicleAdministrationRequestOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/distributionvehicleadministration/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCashDistributionProcedureDistributionVehicleAdministration
+      summary: Invoke a reporting action to obtain a DistributionVehicleAdministration instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DistributionVehicleAdministration Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQDistributionVehicleAdministrationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved DistributionVehicleAdministration Instance Record
+          schema:
+            $ref: '#/definitions/BQDistributionVehicleAdministrationRetrieveOutputModel'
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBranchCurrencyDistributionReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- BranchCurrencyDistribution Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /branch-currency-distribution/cash-distribution-procedure/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBranchCurrencyDistributionBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'InventoryProvisioning',  'DistributionVehicleAdministration',  'DistributionPlanning',  'InventoryDistributionOversight', ]
+  /branch-currency-distribution/{sd-reference-id}/cash-distribution-procedure/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveBranchCurrencyDistributionBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Branch Currency Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Cash Distribution Procedure Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- InventoryDistributionOversight
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- InventoryDistributionOversight Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [InventoryDistributionOversightID1, InventoryDistributionOversightID2]

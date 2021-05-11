@@ -1,0 +1,211 @@
+CR Investment Account Fulfillment Arrangement Instance Record|Investment Account Fulfillment Arrangement||||||CR Investment Account Fulfillment Arrangement Initiate|CR Investment Account Fulfillment Arrangement Update|CR Investment Account Fulfillment Arrangement Control|CR Investment Account Fulfillment Arrangement Retrieve|BQ Deposits and Withdrawals Initiate|BQ Deposits and Withdrawals Update|BQ Deposits and Withdrawals Exchange|BQ Deposits and Withdrawals Execute|BQ Deposits and Withdrawals Retrieve|BQ Corporate Actions Initiate|BQ Corporate Actions Update|BQ Corporate Actions Exchange|BQ Corporate Actions Execute|BQ Corporate Actions Retrieve|BQ Service Fees Initiate|BQ Service Fees Update|BQ Service Fees Exchange|BQ Service Fees Execute|BQ Service Fees Request|BQ Service Fees Retrieve|
+Mandatory||Investment Account Servicing Session Reference||||Reference to the active servicing session|I|I|I
+Mandatory||Investment Account Fulfillment Arrangement Instance Reference||||Reference to the Investment Account Fulfillment Arrangement instance|O|I|I
+Initiate||Investment Account Fulfillment Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Investment Account Fulfillment Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Investment Account Fulfillment Arrangement Instance Status||||The status of the Investment Account Fulfillment Arrangement instance (e.g. initialised, pending, active)|IO
+||Investment Account Fulfillment Arrangement Instance Record|##|||The control record maintains all details for an investment account product instance|IO|IO||O|IO|||||IO|||||IO|||||
+|||Product Instance Reference |||Reference to the investment account product instance|I|IO||O|IO|||||IO|||||IO|||||
+|||Investment Account Number|||The associated investment account number in any suitable format|O|IO||O|IO|||||IO|||||IO|||||
+|||Customer Reference|||Reference to the account primary party/owner|I|IO||O|IO|||||IO|||||IO|||||
+|||Bank Branch/Location Reference|||Bank branch associated with the account for booking purposes|I|IO||O|IO|||||IO|||||IO|||||
+|||Linked Cash Account|##||Definition of the linked cash account used as the source or target of cash to support securities deposits and withdrawals|IO|IO||O|IO|||||IO|||||IO|||||
+||||Link Type||The type of cash account linkage (e.g. demand, margin)|IO|IO||O|IO|||||IO|||||IO|||||
+||||Account Details||Details of the linked account|IO|IO||O|IO|||||IO|||||IO|||||
+|||Investment Account Type|||The type of investment account (e.g. discretionary, retirement, margin, restricted instrument category - securities, off-balance sheet)|I|IO||O|IO|||||IO|||||IO|||||
+|||Investment Account Instrument Profile|||Details the range of instruments that are tracked by the facility (each instrument has its own transaction record/holding position|IO|IO||O|IO|||||IO|||||IO|||||
+|||Investment Account Instrument Record|##||Details for an individual tracked instrument type - the investment account can track the holdings for multiple securities|IO|IO||O|IO|||||IO|||||IO|||||
+||||Instrument Type||Reference to the type of investment instrument being tracked (e.g. equity, commodity, FX/MM, derivative)|IO|IO||O|IO|||||IO|||||IO|||||
+||||Instrument Reference||The specific instrument trading identifier (e.g. NASDAQ Id)|IO|IO||O|IO|||||IO|||||IO|||||
+||||Trading Marketplace Reference||Reference to the market where the instrument is quoted/traded (e.g. ISE Equities Marketplace)|IO|IO||O|IO|||||IO|||||IO|||||
+||||Instrument Position Record|##|Position limits and holding position that are tracked by the account|IO|IO||O|IO|||||IO|||||IO|||||
+|||||Instrument Position Limit Type|The type of position maintained for the account (e.g. min/max holdings,)|IO|IO||O|IO|||||IO|||||IO|||||
+|||||Instrument Position Limit Settings|The position definition, associated limit settings and rules|IO|IO||O|IO|||||IO|||||IO|||||
+|||||Instrument Position Holding|The current calculated holding/position|O|IO||O|IO|||||IO|||||IO|||||
+||||Instrument Processing Schedule|##|Details of known scheduled events related to the instrument (e.g. dividend payment date)|IO|IO||O|IO|||||IO|||||IO|||||
+|||||Instrument Event Type|The type of event impacting the state of the instrument (e.g. corporate actions)|IO|IO||O|IO|||||IO|||||IO|||||
+|||||Instrument Event Description|Details of the event associated actions or impact|IO|IO||O|IO|||||IO|||||IO|||||
+|||||Instrument Event Date|The date/time the event is anticipated/occurs|IO|IO||O|IO|||||IO|||||IO|||||
+|||Tax Reference |||Reference identifier linking the investment account to appropriate tax handling|I|IO||O|IO|||||IO|||||IO|||||
+|||Entitlement Option Definition|||The definition of an applicable entitlement option|IO|IO||O|IO|||||IO|||||IO|||||
+|||Entitlement Option Setting|||The setting for the entitlement option|IO|IO||O|IO|||||IO|||||IO|||||
+|||Restriction Option Definition|||The definition of an applicable restriction option|O|IO||O|IO|||||IO|||||IO|||||
+|||Restriction Option Setting|||The setting for the restriction option|IO|IO||O|IO|||||IO|||||IO|||||
+|||Linked Accounts|##||Definition of the associations to the account |I|IO||O|IO|||||IO|||||IO|||||
+||||Link Type||The type and purpose for the link (e.g. funding/margin account)|I|IO||O|IO|||||IO|||||IO|||||
+||||Account Details||Details of the linked cash account|I|IO||O|IO|||||IO|||||IO|||||
+|||Date Type|##||Key dates associated with the investment account (e.g. opening date, closing date)|IO|IO||O|IO|||||IO|||||IO|||||
+||||Date||Value of the date type|IO|IO||O|IO|||||IO|||||IO|||||
+Update||Investment Account Fulfillment Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||Investment Account Fulfillment Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Investment Account Fulfillment Arrangement Control Action Task Reference||||Reference to a Investment Account Fulfillment Arrangement instance control processing service call|||O
+CONTROL||Investment Account Fulfillment Arrangement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Investment Account Fulfillment Arrangement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Investment Account Fulfillment Arrangement Control Action Response||||Details of the control action service response|||O
+RETRIEVE||Investment Account Fulfillment Arrangement Retrieve Action Task Reference||||Reference to a Investment Account Fulfillment Arrangement instance retrieve service call||||O
+RETRIEVE||Investment Account Fulfillment Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record||||IO
+RETRIEVE||Investment Account Fulfillment Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||I
+RETRIEVE||Investment Account Fulfillment Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||O
+RETRIEVE||Investment Account Fulfillment Arrangement Instance Report Record|##|||A specific Investment Account Fulfillment Arrangement instance formatted report||||IO
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Report Reference|||Reference to the control record instance report||||I
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||O
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Report Type|||The type of external report available||||IO
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||I
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate||||O
+RETRIEVE||Investment Account Fulfillment Arrangement Instance Analysis|##|||A specific Investment Account Fulfillment Arrangement instance analytical report||||IO
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view||||I
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||O
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Analysis Report Type|||The type of external performance analysis report available||||IO
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||I
+RETRIEVE|||Investment Account Fulfillment Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||O
+BQ Deposits and Withdrawals Instance Record|Deposits and Withdrawals||||||
+Mandatory||Investment Account Fulfillment Arrangement Instance Reference||||Reference to the parent Investment Account Fulfillment Arrangement instance|||||I|I|I|I
+Mandatory||Deposits and Withdrawals Instance Reference||||Reference to the Deposits and Withdrawals instance|||||O|I|I|I
+Initiate||Deposits and Withdrawals Initiate Action Reference||||Reference to an Initiate service call|||||O
+Initiate||Deposits and Withdrawals Initiate Action Record||||The Initiate service call input and output record|||||I/O
+Initiate||Deposits and Withdrawals Instance Status||||The status of the Deposits and Withdrawals instance (e.g. initialised, pending, active)|||||O
+Update||Deposits and Withdrawals Update Action Task Reference||||Reference to an update service call||||||O
+Update||Deposits and Withdrawals Update Action Task Record||||The update service call consolidated processing record||||||I/O
+Update||Deposits and Withdrawals Update Action Request||||Details of the update action service request||||||I
+Update||Update Response Record||||Details of the Update action service response||||||O
+Exchange||Deposits and Withdrawals Exchange Action Task Reference||||Reference to a Deposits and Withdrawals instance exchange service call|||||||O
+Exchange||Deposits and Withdrawals Exchange Action Task Record||||The exchange service call consolidated processing record|||||||I/O
+Exchange||Deposits and Withdrawals Exchange Action Request|##|||Details of the exchange action service request|||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||I
+Exchange||Deposits and Withdrawals Exchange Action Response||||Details of the exchange action service response|||||||O
+Exchange||Deposits and Withdrawals Instance Status||||The status of the Deposits and Withdrawals instance (e.g. accepted, rejected, verified)|||||||O
+Execute||Deposits and Withdrawals Execute Action Task Reference||||Reference to a Deposits and Withdrawals instance execute service call||||||||O
+Execute||Deposits and Withdrawals Execute Action Task Record||||The execute service call consolidated processing record||||||||I/O
+Execute||Deposits and Withdrawals Execute Record Reference||||Reference to the Deposits and Withdrawals execute transaction/record||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||O
+Retrieve||Deposits and Withdrawals Retrieve Action Task Reference||||Reference to a Deposits and Withdrawals instance retrieve service call|||||||||O
+Retrieve||Deposits and Withdrawals Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||I/O
+Retrieve||Deposits and Withdrawals Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||I
+Retrieve||Deposits and Withdrawals Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||O
+Retrieve||Deposits and Withdrawals Instance Report|##|||A specific Deposits and Withdrawals instance formatted report|||||||||IO
+Retrieve|||Deposits and Withdrawals Instance Report Reference|||Reference to the control record instance report|||||||||I
+Retrieve|||Deposits and Withdrawals Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Deposits and Withdrawals Instance Report Type|||The type of external report available|||||||||O
+Retrieve|||Deposits and Withdrawals Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||O
+Retrieve|||Deposits and Withdrawals Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||O
+Retrieve||Deposits and Withdrawals Instance Analysis|##|||A specific Deposits and Withdrawals instance analytical report|||||||||IO
+Retrieve|||Deposits and Withdrawals Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||I
+Retrieve|||Deposits and Withdrawals Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Deposits and Withdrawals Instance Analysis Report Type|||The type of external performance analysis report available|||||||||O
+Retrieve|||Deposits and Withdrawals Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||O
+Retrieve|||Deposits and Withdrawals Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||O
+BQ Corporate Actions Instance Record|Corporate Actions||||||
+Mandatory||Investment Account Fulfillment Arrangement Instance Reference||||Reference to the parent Investment Account Fulfillment Arrangement instance||||||||||I|I|I|I
+Mandatory||Corporate Actions Instance Reference||||Reference to the Corporate Actions instance||||||||||O|I|I|I
+Initiate||Corporate Actions Initiate Action Reference||||Reference to an Initiate service call||||||||||O
+Initiate||Corporate Actions Initiate Action Record||||The Initiate service call input and output record||||||||||I/O
+Initiate||Corporate Actions Instance Status||||The status of the Corporate Actions instance (e.g. initialised, pending, active)||||||||||O
+||Corporate Actions Instance Record |##|||Applies the result of corporate actions to the investment account||||||||||IO|||IO|O||||||
+|||Corporate Action Type|||The type of corporate action that can be applied||||||||||I|||I|O||||||
+|||Corporate Action Application Schedule|||The processing schedule for applying the type of corporate action to the investment account||||||||||IO|||I|O||||||
+|||Corporate Action Instrument Type|||The instrument type that the corporate action impacts (will be one that the investment account tracks)||||||||||IO|||I|O||||||
+|||Corporate Action Transaction|##||Details of the transaction and its impact on the securities holding in the investment account|||||||||||||IO|O||||||
+||||Corporate Action Transaction Type||The type of corporate action applied to the securities holdings|||||||||||||I|O||||||
+||||Corporate Action Transaction Description ||Details describing the purpose and impact of processing the action|||||||||||||IO|O||||||
+||||Corporate Action Work Products||File of consolidated notes, forms and documents for the corporate action|||||||||||||O|O||||||
+||||Document Directory Entry Instance Reference||Reference to associated documents|||||||||||||IO|O||||||
+||||Corporate Action Transaction Result||The outcome of applying the action to the account (can be simple confirmation)|||||||||||||O|O||||||
+||||Corporate Action Transaction Date||The date and time the corporate action was processed to the account|||||||||||||IO|O||||||
+Update||Corporate Actions Update Action Task Reference||||Reference to an update service call|||||||||||O
+Update||Corporate Actions Update Action Task Record||||The update service call consolidated processing record|||||||||||I/O
+Update||Corporate Actions Update Action Request||||Details of the update action service request|||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||O
+Exchange||Corporate Actions Exchange Action Task Reference||||Reference to a Corporate Actions instance exchange service call||||||||||||O
+Exchange||Corporate Actions Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||I/O
+Exchange||Corporate Actions Exchange Action Request|##|||Details of the exchange action service request||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||I
+Exchange||Corporate Actions Exchange Action Response||||Details of the exchange action service response||||||||||||O
+Exchange||Corporate Actions Instance Status||||The status of the Corporate Actions instance (e.g. accepted, rejected, verified)||||||||||||O
+Execute||Corporate Actions Execute Action Task Reference||||Reference to a Corporate Actions instance execute service call|||||||||||||O
+Execute||Corporate Actions Execute Action Task Record||||The execute service call consolidated processing record|||||||||||||I/O
+Execute||Corporate Actions Execute Record Reference||||Reference to the Corporate Actions execute transaction/record|||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response|||||||||||||O
+Retrieve||Corporate Actions Retrieve Action Task Reference||||Reference to a Corporate Actions instance retrieve service call||||||||||||||O
+Retrieve||Corporate Actions Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Corporate Actions Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Corporate Actions Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Corporate Actions Instance Report|##|||A specific Corporate Actions instance formatted report||||||||||||||IO
+Retrieve|||Corporate Actions Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Corporate Actions Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Corporate Actions Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Corporate Actions Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Corporate Actions Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Corporate Actions Instance Analysis|##|||A specific Corporate Actions instance analytical report||||||||||||||IO
+Retrieve|||Corporate Actions Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Corporate Actions Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Corporate Actions Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Corporate Actions Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Corporate Actions Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O
+BQ Service Fees Instance Record|Service Fees||||||
+Mandatory||Investment Account Fulfillment Arrangement Instance Reference||||Reference to the parent Investment Account Fulfillment Arrangement instance|||||||||||||||I|I|I|I|I
+Mandatory||Service Fees Instance Reference||||Reference to the Service Fees instance|||||||||||||||O|I|I|I|I
+Initiate||Service Fees Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||O
+Initiate||Service Fees Initiate Action Record||||The Initiate service call input and output record|||||||||||||||I/O
+Initiate||Service Fees Instance Status||||The status of the Service Fees instance (e.g. initialised, pending, active)|||||||||||||||O
+||Service Fees Instance Record|##|||Applies service fees and penalties to the investment account|||||||||||||||IO|||IO||O
+|||Fee Configuration Profile|##||The profile of applicable fees and penalties|||||||||||||||IO|||IO||O
+||||Fee Definition ||Definition of the fee or penalty including when and how to apply|||||||||||||||O|||O||O
+||||Fee Type||The fee or penalty type applied|||||||||||||||I|||I||O
+|||Fee Application Record|##||The record of applied fees and penalties including transactions and accrued amounts||||||||||||||||||IO||O
+||||Fee Transaction|##|A record of an applied fee or penalty||||||||||||||||||IO||O
+|||||Transaction Description|General description of the fee or penalty transaction||||||||||||||||||I||O
+|||||Transaction Fee Type|The fee or penalty type applied||||||||||||||||||IO||O
+|||||Transaction Fee Charge|The derived fee or penalty amount applied||||||||||||||||||O||O
+|||||Payment Order Procedure Instance Reference|Reference to the payment order raised to apply the fees (will move funds to/from the appropriate accounts)||||||||||||||||||O||O
+||||Fee Projections and Commitments|##|A record of projected fees and penalties||||||||||||||||||IO||O
+|||||Projected Transaction Description|General description of the projected fee or penalty||||||||||||||||||I||O
+|||||Projected Transaction Fee Type|The fee or penalty type||||||||||||||||||IO||O
+|||||Projected Transaction Fee Charge|The anticipated fee or penalty amount||||||||||||||||||O||O
+||||Fee Accrual Amount|##|Tracking of accumulated fees and penalties||||||||||||||||||IO||O
+|||||Accrual Fee Type|The fee or penalty type being tracked||||||||||||||||||IO||O
+|||||Accrual Fee Charge|The accrued amount of fees and penalties||||||||||||||||||O||O
+Update||Service Fees Update Action Task Reference||||Reference to an update service call||||||||||||||||O
+Update||Service Fees Update Action Task Record||||The update service call consolidated processing record||||||||||||||||I/O
+Update||Service Fees Update Action Request||||Details of the update action service request||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||O
+Exchange||Service Fees Exchange Action Task Reference||||Reference to a Service Fees instance exchange service call|||||||||||||||||O
+Exchange||Service Fees Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||I/O
+Exchange||Service Fees Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||I
+Exchange||Service Fees Exchange Action Response||||Details of the exchange action service response|||||||||||||||||O
+Exchange||Service Fees Instance Status||||The status of the Service Fees instance (e.g. accepted, rejected, verified)|||||||||||||||||O
+Execute||Service Fees Execute Action Task Reference||||Reference to a Service Fees instance execute service call||||||||||||||||||O
+Execute||Service Fees Execute Action Task Record||||The execute service call consolidated processing record||||||||||||||||||I/O
+Execute||Service Fees Execute Record Reference||||Reference to the Service Fees execute transaction/record||||||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||||||||||||O
+Request||Service Fees Request Action Task Reference||||Reference to a Service Fees instance request service call|||||||||||||||||||O
+Request||Service Fees Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||I/O
+Request||Service Fees Request Record Reference||||Reference to the Service Fees service request record|||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||O
+Retrieve||Service Fees Retrieve Action Task Reference||||Reference to a Service Fees instance retrieve service call||||||||||||||||||||O
+Retrieve||Service Fees Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||I/O
+Retrieve||Service Fees Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||I
+Retrieve||Service Fees Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||O
+Retrieve||Service Fees Instance Report|##|||A specific Service Fees instance formatted report||||||||||||||||||||IO
+Retrieve|||Service Fees Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||I
+Retrieve|||Service Fees Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Service Fees Instance Report Type|||The type of external report available||||||||||||||||||||O
+Retrieve|||Service Fees Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||O
+Retrieve|||Service Fees Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+Retrieve||Service Fees Instance Analysis|##|||A specific Service Fees instance analytical report||||||||||||||||||||IO
+Retrieve|||Service Fees Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||I
+Retrieve|||Service Fees Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Service Fees Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||O
+Retrieve|||Service Fees Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||O
+Retrieve|||Service Fees Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||O

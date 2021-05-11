@@ -1,0 +1,820 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Product Quality Assurance'
+ description: >
+
+    ## Executive Summary:
+
+    Maintain and execute a portfolio of product quality assurance tests and certifications that can be applied to evaluate any aspect of production activity for quality assurance
+
+    ## Example of Use:
+
+    Quality assurance tests are applied to evaluate a newly released product processing to determine whether error and issue rates are acceptable and support root cause analysis
+
+    ## Description:
+
+    The service domain maintain and execute a portfolio of product quality assurance tests and if appropriate certifications to apply to new and updated production applications. These tests can be applied to any specific aspects of product sales, servicing and fulfillment as might be appropriate
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-product-quality-assurance/1.0.0
+schemes:
+ - https
+paths:
+  /product-quality-assurance/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDProductQualityAssurance
+      summary: Activate  a SDProductQualityAssurance servicing session
+      description: Activate  a  SDProductQualityAssurance servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDProductQualityAssurance Request Payload
+        schema:
+          $ref: '#/definitions/SDProductQualityAssuranceActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDProductQualityAssuranceActivateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDProductQualityAssurance
+      summary: Update an active SDProductQualityAssurance session configuration
+      description: Update an active SDProductQualityAssurance session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProductQualityAssurance Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDProductQualityAssurance Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDProductQualityAssuranceConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDProductQualityAssuranceConfigureOutputModel'
+  /product-quality-assurance/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDProductQualityAssurance
+      summary: "Capturing feedback against the SDProductQualityAssurance service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDProductQualityAssurance service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProductQualityAssurance Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDProductQualityAssurance Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDProductQualityAssuranceFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDProductQualityAssuranceFeedbackOutputModel'
+  /product-quality-assurance/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDProductQualityAssurance
+      summary: Analytical views maintained by the SDProductQualityAssurance service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDProductQualityAssurance service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProductQualityAssurance Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDProductQualityAssuranceRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDProductQualityAssuranceRetrieveOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductandServiceAssessment
+      summary: Details of a new ProductandServiceAssessment instance
+      description: Instantiate a new Product and Service Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductandServiceAssessment Request Payload
+        schema:
+          $ref: '#/definitions/CRProductandServiceAssessmentInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new ProductandServiceAssessment instance
+          schema:
+            $ref: '#/definitions/CRProductandServiceAssessmentInitiateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductandServiceAssessment
+      summary: Update to any amendable fields of the ProductandServiceAssessment instance
+      description: Update details relating to Product and Service Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product and Service Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRProductandServiceAssessmentUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Product and Service Assessment Instance
+          schema:
+            $ref: '#/definitions/CRProductandServiceAssessmentUpdateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeProductandServiceAssessmentUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Product and Service Assessment processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product and Service Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRProductandServiceAssessmentExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Product and Service Assessment Instance
+          schema:
+            $ref: '#/definitions/CRProductandServiceAssessmentExchangeOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeProductandServiceAssessmentUpdate
+      summary: Invoke an automated execute action against the ProductandServiceAssessment instance
+      description: Execute an available automated action for Product and Service Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product and Service Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRProductandServiceAssessmentExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Product and Service Assessment Instance
+          schema:
+            $ref: '#/definitions/CRProductandServiceAssessmentExecuteOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestProductandServiceAssessmentUpdate
+      summary: Invoke a service request action against the ProductandServiceAssessment instance
+      description: Request manual intervention or a decision with respect to Product and Service Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product and Service Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRProductandServiceAssessmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Product and Service Assessment Instance
+          schema:
+            $ref: '#/definitions/CRProductandServiceAssessmentRequestOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantProductandServiceAssessmentUpdate
+      summary: Invoke a grant request action from the ProductandServiceAssessment instance to obtain access permission
+      description: Obtain permission to act in relation to Product and Service Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product and Service Assessment Request Payload
+        schema:
+          $ref: '#/definitions/CRProductandServiceAssessmentGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Product and Service Assessment Instance
+          schema:
+            $ref: '#/definitions/CRProductandServiceAssessmentGrantOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductQualityAssurance
+      summary: Invoke a reporting action to obtain a Product and Service Assessment instance related report
+      description: Retrieve details about any aspect of Product and Service Assessment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRProductandServiceAssessmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Product and Service Assessment Instance
+          schema:
+            $ref: '#/definitions/CRProductandServiceAssessmentRetrieveOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/resiliencyandperformancechecks/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductandServiceAssessmentResiliencyandPerformanceChecks
+      summary: Details of a new ResiliencyandPerformanceChecks instance
+      description: Instantiate a new Resiliency and Performance Checks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product and Service Assessment Request Payload
+        schema:
+          $ref: '#/definitions/BQResiliencyandPerformanceChecksInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product and Service Assessment instance
+          schema:
+            $ref: '#/definitions/BQResiliencyandPerformanceChecksInitiateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/resiliencyandperformancechecks/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductandServiceAssessmentResiliencyandPerformanceChecks
+      summary: Update to any amendable fields of the ResiliencyandPerformanceChecks instance
+      description: Update details relating to Resiliency and Performance Checks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ResiliencyandPerformanceChecks Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ResiliencyandPerformanceChecks Request Payload
+        schema:
+          $ref: '#/definitions/BQResiliencyandPerformanceChecksUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ResiliencyandPerformanceChecks Instance
+          schema:
+            $ref: '#/definitions/BQResiliencyandPerformanceChecksUpdateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/resiliencyandperformancechecks/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductandServiceAssessmentResiliencyandPerformanceChecks
+      summary: Invoke a reporting action to obtain a ResiliencyandPerformanceChecks instance related report.
+      description: Retrieve details about any aspect of Resiliency and Performance Checks .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ResiliencyandPerformanceChecks Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQResiliencyandPerformanceChecksRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ResiliencyandPerformanceChecks Instance Record
+          schema:
+            $ref: '#/definitions/BQResiliencyandPerformanceChecksRetrieveOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/functionalconsistencychecks/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductandServiceAssessmentFunctionalConsistencyChecks
+      summary: Details of a new FunctionalConsistencyChecks instance
+      description: Instantiate a new Functional Consistency Checks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product and Service Assessment Request Payload
+        schema:
+          $ref: '#/definitions/BQFunctionalConsistencyChecksInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product and Service Assessment instance
+          schema:
+            $ref: '#/definitions/BQFunctionalConsistencyChecksInitiateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/functionalconsistencychecks/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductandServiceAssessmentFunctionalConsistencyChecks
+      summary: Update to any amendable fields of the FunctionalConsistencyChecks instance
+      description: Update details relating to Functional Consistency Checks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FunctionalConsistencyChecks Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FunctionalConsistencyChecks Request Payload
+        schema:
+          $ref: '#/definitions/BQFunctionalConsistencyChecksUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated FunctionalConsistencyChecks Instance
+          schema:
+            $ref: '#/definitions/BQFunctionalConsistencyChecksUpdateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/functionalconsistencychecks/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductandServiceAssessmentFunctionalConsistencyChecks
+      summary: Invoke a reporting action to obtain a FunctionalConsistencyChecks instance related report.
+      description: Retrieve details about any aspect of Functional Consistency Checks .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FunctionalConsistencyChecks Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFunctionalConsistencyChecksRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved FunctionalConsistencyChecks Instance Record
+          schema:
+            $ref: '#/definitions/BQFunctionalConsistencyChecksRetrieveOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/usabilitychecks/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductandServiceAssessmentUsabilityChecks
+      summary: Details of a new UsabilityChecks instance
+      description: Instantiate a new Usability Checks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product and Service Assessment Request Payload
+        schema:
+          $ref: '#/definitions/BQUsabilityChecksInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product and Service Assessment instance
+          schema:
+            $ref: '#/definitions/BQUsabilityChecksInitiateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/usabilitychecks/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductandServiceAssessmentUsabilityChecks
+      summary: Update to any amendable fields of the UsabilityChecks instance
+      description: Update details relating to Usability Checks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: UsabilityChecks Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: UsabilityChecks Request Payload
+        schema:
+          $ref: '#/definitions/BQUsabilityChecksUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated UsabilityChecks Instance
+          schema:
+            $ref: '#/definitions/BQUsabilityChecksUpdateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/usabilitychecks/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductandServiceAssessmentUsabilityChecks
+      summary: Invoke a reporting action to obtain a UsabilityChecks instance related report.
+      description: Retrieve details about any aspect of Usability Checks .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: UsabilityChecks Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQUsabilityChecksRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved UsabilityChecks Instance Record
+          schema:
+            $ref: '#/definitions/BQUsabilityChecksRetrieveOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/processingerrorandintegritychecks/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductandServiceAssessmentProcessingErrorandIntegrityChecks
+      summary: Details of a new ProcessingErrorandIntegrityChecks instance
+      description: Instantiate a new Processing Error and Integrity Checks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product and Service Assessment Request Payload
+        schema:
+          $ref: '#/definitions/BQProcessingErrorandIntegrityChecksInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product and Service Assessment instance
+          schema:
+            $ref: '#/definitions/BQProcessingErrorandIntegrityChecksInitiateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/processingerrorandintegritychecks/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductandServiceAssessmentProcessingErrorandIntegrityChecks
+      summary: Update to any amendable fields of the ProcessingErrorandIntegrityChecks instance
+      description: Update details relating to Processing Error and Integrity Checks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProcessingErrorandIntegrityChecks Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProcessingErrorandIntegrityChecks Request Payload
+        schema:
+          $ref: '#/definitions/BQProcessingErrorandIntegrityChecksUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ProcessingErrorandIntegrityChecks Instance
+          schema:
+            $ref: '#/definitions/BQProcessingErrorandIntegrityChecksUpdateOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/processingerrorandintegritychecks/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductandServiceAssessmentProcessingErrorandIntegrityChecks
+      summary: Invoke a reporting action to obtain a ProcessingErrorandIntegrityChecks instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProcessingErrorandIntegrityChecks Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQProcessingErrorandIntegrityChecksRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ProcessingErrorandIntegrityChecks Instance Record
+          schema:
+            $ref: '#/definitions/BQProcessingErrorandIntegrityChecksRetrieveOutputModel'
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProductQualityAssuranceReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ProductQualityAssurance Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /product-quality-assurance/product-and-service-assessment/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProductQualityAssuranceBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'UsabilityChecks',  'ProcessingErrorandIntegrityChecks',  'ResiliencyandPerformanceChecks',  'FunctionalConsistencyChecks', ]
+  /product-quality-assurance/{sd-reference-id}/product-and-service-assessment/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProductQualityAssuranceBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Quality Assurance Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product and Service Assessment Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- FunctionalConsistencyChecks
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- FunctionalConsistencyChecks Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [FunctionalConsistencyChecksID1, FunctionalConsistencyChecksID2]

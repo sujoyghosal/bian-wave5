@@ -1,0 +1,866 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Fiduciary Agreement'
+ description: >
+
+    ## Executive Summary:
+
+    An agreement where the bank agrees to act on behalf of the customer in a financial matter and in accordance with the agreement terms
+
+    ## Example of Use:
+
+    A customer established a fiduciary arrangement with the bank to manage an investment portfolio in accordance with agreed investment guidelines
+
+    ## Description:
+
+    Fulfillment of an arrangement (such as investment management of a trust fund) on behalf of a customer where the banks acts their trusted proxy and acts in compliance with the specific terms of the fiduciary arrangement
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-fiduciary-agreement/1.0.0
+schemes:
+ - https
+paths:
+  /fiduciary-agreement/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDFiduciaryAgreement
+      summary: Activate  a SDFiduciaryAgreement servicing session
+      description: Activate  a  SDFiduciaryAgreement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDFiduciaryAgreement Request Payload
+        schema:
+          $ref: '#/definitions/SDFiduciaryAgreementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDFiduciaryAgreementActivateOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDFiduciaryAgreement
+      summary: Update an active SDFiduciaryAgreement session configuration
+      description: Update an active SDFiduciaryAgreement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDFiduciaryAgreement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDFiduciaryAgreement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDFiduciaryAgreementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDFiduciaryAgreementConfigureOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDFiduciaryAgreement
+      summary: "Capturing feedback against the SDFiduciaryAgreement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDFiduciaryAgreement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDFiduciaryAgreement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDFiduciaryAgreement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDFiduciaryAgreementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDFiduciaryAgreementFeedbackOutputModel'
+  /fiduciary-agreement/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDFiduciaryAgreement
+      summary: Analytical views maintained by the SDFiduciaryAgreement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDFiduciaryAgreement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDFiduciaryAgreement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDFiduciaryAgreementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDFiduciaryAgreementRetrieveOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateFiduciaryRelationshipArrangement
+      summary: Details of a new FiduciaryRelationshipArrangement instance
+      description: Instantiate a new Fiduciary Relationship Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FiduciaryRelationshipArrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRFiduciaryRelationshipArrangementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new FiduciaryRelationshipArrangement instance
+          schema:
+            $ref: '#/definitions/CRFiduciaryRelationshipArrangementInitiateOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateFiduciaryRelationshipArrangement
+      summary: Update to any amendable fields of the FiduciaryRelationshipArrangement instance
+      description: Update details relating to Fiduciary Relationship Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fiduciary Relationship Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRFiduciaryRelationshipArrangementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Fiduciary Relationship Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRFiduciaryRelationshipArrangementUpdateOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlFiduciaryRelationshipArrangementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Fiduciary Relationship Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fiduciary Relationship Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRFiduciaryRelationshipArrangementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Fiduciary Relationship Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRFiduciaryRelationshipArrangementControlOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeFiduciaryRelationshipArrangementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Fiduciary Relationship Arrangement processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fiduciary Relationship Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRFiduciaryRelationshipArrangementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Fiduciary Relationship Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRFiduciaryRelationshipArrangementExchangeOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeFiduciaryRelationshipArrangementUpdate
+      summary: Invoke an automated execute action against the FiduciaryRelationshipArrangement instance
+      description: Execute an available automated action for Fiduciary Relationship Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fiduciary Relationship Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRFiduciaryRelationshipArrangementExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Fiduciary Relationship Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRFiduciaryRelationshipArrangementExecuteOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestFiduciaryRelationshipArrangementUpdate
+      summary: Invoke a service request action against the FiduciaryRelationshipArrangement instance
+      description: Request manual intervention or a decision with respect to Fiduciary Relationship Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fiduciary Relationship Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRFiduciaryRelationshipArrangementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Fiduciary Relationship Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRFiduciaryRelationshipArrangementRequestOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFiduciaryAgreement
+      summary: Invoke a reporting action to obtain a Fiduciary Relationship Arrangement instance related report
+      description: Retrieve details about any aspect of Fiduciary Relationship Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRFiduciaryRelationshipArrangementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Fiduciary Relationship Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRFiduciaryRelationshipArrangementRetrieveOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/fees/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeFiduciaryRelationshipArrangementFeesUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Fees processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fees Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fees request payload
+        schema:
+          $ref: '#/definitions/BQFeesExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Fees Instance Record
+          schema:
+            $ref: '#/definitions/BQFeesExchangeOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/fees/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestFiduciaryRelationshipArrangementFeesUpdate
+      summary: Invoke a service request action against the Fees instance
+      description: Request manual intervention or a decision with respect to Fees
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fees Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fees request payload
+        schema:
+          $ref: '#/definitions/BQFeesRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Fees Instance Record
+          schema:
+            $ref: '#/definitions/BQFeesRequestOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/fees/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFiduciaryRelationshipArrangementFees
+      summary: Invoke a reporting action to obtain a Fees instance related report.
+      description: Retrieve details about any aspect of Fees .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fees Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFeesRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Fees Instance Record
+          schema:
+            $ref: '#/definitions/BQFeesRetrieveOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/agreement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateFiduciaryRelationshipArrangementAgreement
+      summary: Details of a new Agreement instance
+      description: Instantiate a new Agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fiduciary Relationship Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQAgreementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Fiduciary Relationship Arrangement instance
+          schema:
+            $ref: '#/definitions/BQAgreementInitiateOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/agreement/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateFiduciaryRelationshipArrangementAgreement
+      summary: Update to any amendable fields of the Agreement instance
+      description: Update details relating to Agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Agreement Request Payload
+        schema:
+          $ref: '#/definitions/BQAgreementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Agreement Instance
+          schema:
+            $ref: '#/definitions/BQAgreementUpdateOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/agreement/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeFiduciaryRelationshipArrangementAgreementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Agreement processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Agreement request payload
+        schema:
+          $ref: '#/definitions/BQAgreementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Agreement Instance Record
+          schema:
+            $ref: '#/definitions/BQAgreementExchangeOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/agreement/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestFiduciaryRelationshipArrangementAgreementUpdate
+      summary: Invoke a service request action against the Agreement instance
+      description: Request manual intervention or a decision with respect to Agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Agreement request payload
+        schema:
+          $ref: '#/definitions/BQAgreementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Agreement Instance Record
+          schema:
+            $ref: '#/definitions/BQAgreementRequestOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/agreement/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFiduciaryRelationshipArrangementAgreement
+      summary: Invoke a reporting action to obtain a Agreement instance related report.
+      description: Retrieve details about any aspect of Agreement .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Agreement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQAgreementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Agreement Instance Record
+          schema:
+            $ref: '#/definitions/BQAgreementRetrieveOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/assessmentandreporting/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateFiduciaryRelationshipArrangementAssessmentandReporting
+      summary: Details of a new AssessmentandReporting instance
+      description: Instantiate a new Assessment and Reporting
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fiduciary Relationship Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQAssessmentandReportingInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Fiduciary Relationship Arrangement instance
+          schema:
+            $ref: '#/definitions/BQAssessmentandReportingInitiateOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/assessmentandreporting/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFiduciaryRelationshipArrangementAssessmentandReporting
+      summary: Invoke a reporting action to obtain a AssessmentandReporting instance related report.
+      description: Retrieve details about any aspect of Assessment and Reporting .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: AssessmentandReporting Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQAssessmentandReportingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved AssessmentandReporting Instance Record
+          schema:
+            $ref: '#/definitions/BQAssessmentandReportingRetrieveOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/fulfillment/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeFiduciaryRelationshipArrangementFulfillmentUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Fulfillment processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfillment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfillment request payload
+        schema:
+          $ref: '#/definitions/BQFulfillmentExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Fulfillment Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillmentExchangeOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/fulfillment/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestFiduciaryRelationshipArrangementFulfillmentUpdate
+      summary: Invoke a service request action against the Fulfillment instance
+      description: Request manual intervention or a decision with respect to Fulfillment
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfillment Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fulfillment request payload
+        schema:
+          $ref: '#/definitions/BQFulfillmentRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Fulfillment Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillmentRequestOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/fulfillment/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFiduciaryRelationshipArrangementFulfillment
+      summary: Invoke a reporting action to obtain a Fulfillment instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fulfillment Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFulfillmentRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Fulfillment Instance Record
+          schema:
+            $ref: '#/definitions/BQFulfillmentRetrieveOutputModel'
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveFiduciaryAgreementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- FiduciaryAgreement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /fiduciary-agreement/fiduciary-relationship-arrangement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveFiduciaryAgreementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'AssessmentandReporting',  'Fees',  'Fulfillment',  'Agreement', ]
+  /fiduciary-agreement/{sd-reference-id}/fiduciary-relationship-arrangement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveFiduciaryAgreementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Fiduciary Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Fiduciary Relationship Arrangement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Agreement
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Agreement Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [AgreementID1, AgreementID2]

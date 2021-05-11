@@ -1,0 +1,128 @@
+CR Internal Audit Assessment Instance Record|Internal Audit Assessment||||||CR Internal Audit Assessment Initiate|CR Internal Audit Assessment Update|CR Internal Audit Assessment Exchange|CR Internal Audit Assessment Execute|CR Internal Audit Assessment Request|CR Internal Audit Assessment Grant|CR Internal Audit Assessment Retrieve|BQ Audit Initiate|BQ Audit Update|BQ Audit Exchange|BQ Audit Execute|BQ Audit Request|BQ Audit Grant|BQ Audit Retrieve|
+Mandatory||Internal Audit Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Internal Audit Assessment Instance Reference||||Reference to the Internal Audit Assessment instance|O|I|I|I|I|I
+Initiate||Internal Audit Assessment Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Internal Audit Assessment Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Internal Audit Assessment Instance Status||||The status of the Internal Audit Assessment instance (e.g. initialised, pending, active)|IO
+||Internal Audit Assessment Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Internal Audit.
+
+Examples: Perform regulatory tests on a proposed financial transaction and check a new offer conforms to an existing contractual agreement.||||||||||||||
+||Internal Audit Assessment Parameter Type||||A Classification value that distinguishes between Assessments according to type of concern defined within Internal Audit Assessment . Eg Market Analysis, Risk Analysis, Perfomance Analysis, etc.|IO|IO|IO|IO|IO|IO|O|||||||
+||Internal Audit Assessment Selected Option||||A selected optional business service as subject matter of assessment|IO|IO|IO|IO|IO|IO|O|||||||
+||Internal Audit Assessment Type||||The type of Internal Audit Assessment|I|I|I|I|I|I|O|||||||
+||Internal Audit Assessment Reference||||Reference to Internal Audit Assessment|I|I|I|I|I|I|O|||||||
+||Internal Audit Assessment Request||||Request to assess InternalAudit|IO|IO|IO|IO|IO|IO|O|||||||
+||Internal Audit Assessment Schedule||||Timetable to assess InternalAudit|I|I|I|I|I|I|O|||||||
+||Internal Audit Assessment Status||||The status of Internal Audit Assessment|I|I|I|I|I|I|O|||||||
+||Internal Audit Assessment Usage Log||||Reference to the log of (usage) ativities/events of Internal Audit Assessment|I|I|I|I|I|I|O|||||||
+||Internal Audit Assessment Reference||||Party who is involved in Internal Audit Assessment||||||||||||||
+||Internal Audit Assessment ServiceProvider Reference||||Reference to the party who has provided Internal Audit Assessment|I|I|I|I|I|I|O|||||||
+||Internal Audit Assessment Requester Reference||||Reference to the party who has requested Internal Audit Assessment|I|I|I|I|I|I|O|||||||
+Update||Internal Audit Assessment Update Action Task Reference||||Reference to an update service call||O
+Update||Internal Audit Assessment Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+EXCHANGE||Internal Audit Assessment Exchange Action Task Reference||||Reference to a Internal Audit Assessment instance exchange service call|||O
+EXCHANGE||Internal Audit Assessment Exchange Action Task Record||||The exchange service call consolidated processing record|||I/O
+EXCHANGE||Internal Audit Assessment Exchange Action Request|##|||Details of the exchange action service request|||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||I
+EXCHANGE||Internal Audit Assessment Exchange Action Response||||Details of the exchange action service response|||O
+EXECUTE||Internal Audit Assessment Execute Action Task Reference||||Reference to a Internal Audit Assessment instance execute service call||||O
+EXECUTE||Internal Audit Assessment Execute Action Task Record||||The execute service call consolidated processing record||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response||||O
+REQUEST||Internal Audit Assessment Request Action Task Reference||||Reference to a Internal Audit Assessment instance request service call|||||O
+REQUEST||Internal Audit Assessment Request Action Task Record||||The request service call consolidated processing record|||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record|||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||I
+REQUEST||Request Response Record||||Details of the request action service response|||||O
+GRANT||Internal Audit Assessment Grant Action Task Reference||||Reference to a Internal Audit Assessment instance grant service call||||||O
+GRANT||Internal Audit Assessment Grant Action Task Record||||The grant service call consolidated processing record||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted||||||O
+RETRIEVE||Internal Audit Assessment Retrieve Action Task Reference||||Reference to a Internal Audit Assessment instance retrieve service call|||||||O
+RETRIEVE||Internal Audit Assessment Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Internal Audit Assessment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Internal Audit Assessment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Internal Audit Assessment Instance Report Record|##|||A specific Internal Audit Assessment instance formatted report|||||||IO
+RETRIEVE|||Internal Audit Assessment Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Internal Audit Assessment Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Internal Audit Assessment Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Internal Audit Assessment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Internal Audit Assessment Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Internal Audit Assessment Instance Analysis|##|||A specific Internal Audit Assessment instance analytical report|||||||IO
+RETRIEVE|||Internal Audit Assessment Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Internal Audit Assessment Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Internal Audit Assessment Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Internal Audit Assessment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Internal Audit Assessment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Audit Instance Record|Audit||||||
+Mandatory||Internal Audit Assessment Instance Reference||||Reference to the parent Internal Audit Assessment instance||||||||I|I|I|I|I|I
+Mandatory||Audit Instance Reference||||Reference to the Audit instance||||||||O|I|I|I|I|I
+Initiate||Audit Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Audit Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Audit Instance Status||||The status of the Audit instance (e.g. initialised, pending, active)||||||||O
+||Audit Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Internal Audit.
+||
+||||||||||||||
+||Audit Preconditions||||The required status/situation before the test can be applied||||||||IO|IO|IO|IO|IO|IO|O
+||Audit Analysis Schedule||||The schedule and timing of the testing performed||||||||IO|IO|IO|IO|IO|IO|O
+||Audit Version Number||||The test version employed||||||||IO|IO|IO|IO|IO|IO|O
+||Business Service||||The Internal Audit Assessment specific Business Service||||||||IO|IO|IO|IO|IO|IO|O
+||Service Type||||Reference to the specific business service type||||||||IO|IO|IO|IO|IO|IO|O
+||Service Description||||Description of the performed business service||||||||IO|IO|IO|IO|IO|IO|O
+||Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|IO|IO|IO|O
+||Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|IO|IO|IO|O
+Update||Audit Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Audit Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Audit Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Exchange||Audit Exchange Action Task Reference||||Reference to a Audit instance exchange service call||||||||||O
+Exchange||Audit Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||Audit Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||Audit Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||Audit Instance Status||||The status of the Audit instance (e.g. accepted, rejected, verified)||||||||||O
+Execute||Audit Execute Action Task Reference||||Reference to a Audit instance execute service call|||||||||||O
+Execute||Audit Execute Action Task Record||||The execute service call consolidated processing record|||||||||||I/O
+Execute||Audit Execute Record Reference||||Reference to the Audit execute transaction/record|||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response|||||||||||O
+Request||Audit Request Action Task Reference||||Reference to a Audit instance request service call||||||||||||O
+Request||Audit Request Action Task Record||||The request service call consolidated processing record||||||||||||I/O
+Request||Audit Request Record Reference||||Reference to the Audit service request record||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||O
+Grant||Audit Grant Action Task Reference||||Reference to a Audit instance grant service call|||||||||||||O
+Grant||Audit Grant Action Task Record||||The grant service call consolidated processing record|||||||||||||I/O
+Grant||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||||||||I
+Grant||Grant Request Record Reference||||Reference to the grant request record|||||||||||||O
+Grant||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||||||||I
+Grant|||Grant Request Details|||Details of the permissions requested|||||||||||||I
+Grant||Grant Request Response Record |##|||Details of the grant request action service response|||||||||||||O
+Grant|||Grant Permission Details|||Details of the permissions granted|||||||||||||O
+Retrieve||Audit Retrieve Action Task Reference||||Reference to a Audit instance retrieve service call||||||||||||||O
+Retrieve||Audit Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Audit Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Audit Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Audit Instance Report|##|||A specific Audit instance formatted report||||||||||||||IO
+Retrieve|||Audit Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Audit Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Audit Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Audit Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Audit Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Audit Instance Analysis|##|||A specific Audit instance analytical report||||||||||||||IO
+Retrieve|||Audit Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Audit Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Audit Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Audit Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Audit Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O

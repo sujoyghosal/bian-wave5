@@ -1,0 +1,1148 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - ATM Network Operations'
+ description: >
+
+    ## Executive Summary:
+
+    Handling the automated operation of the ATM network and linked devices, including tracing physical cash and document movements
+
+    ## Example of Use:
+
+    A bank tracks the distribution and retrieval of cash inventory across its ATM network of operations
+
+    ## Description:
+
+    This service domain handles all automated aspects of operating the ATM network. This includes tracking the movement of cash and documents through the network and its ATM devices. It also handles the detection and response to device errors and alerts, including overseeing the physical movement of cash and documents and the handling of device alerts and outages
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-atm-network-operations/1.0.0
+schemes:
+ - https
+paths:
+  /atm-network-operations/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDATMNetworkOperations
+      summary: Activate  a SDATMNetworkOperations servicing session
+      description: Activate  a  SDATMNetworkOperations servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDATMNetworkOperations Request Payload
+        schema:
+          $ref: '#/definitions/SDATMNetworkOperationsActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDATMNetworkOperationsActivateOutputModel'
+  /atm-network-operations/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDATMNetworkOperations
+      summary: Update an active SDATMNetworkOperations session configuration
+      description: Update an active SDATMNetworkOperations session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDATMNetworkOperations Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDATMNetworkOperations Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDATMNetworkOperationsConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDATMNetworkOperationsConfigureOutputModel'
+  /atm-network-operations/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDATMNetworkOperations
+      summary: "Capturing feedback against the SDATMNetworkOperations service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDATMNetworkOperations service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDATMNetworkOperations Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDATMNetworkOperations Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDATMNetworkOperationsFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDATMNetworkOperationsFeedbackOutputModel'
+  /atm-network-operations/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDATMNetworkOperations
+      summary: Analytical views maintained by the SDATMNetworkOperations service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDATMNetworkOperations service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDATMNetworkOperations Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDATMNetworkOperationsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDATMNetworkOperationsRetrieveOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateATMNetworkOperatingSession
+      summary: Details of a new ATMNetworkOperatingSession instance
+      description: Instantiate a new ATM Network Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ATMNetworkOperatingSession Request Payload
+        schema:
+          $ref: '#/definitions/CRATMNetworkOperatingSessionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new ATMNetworkOperatingSession instance
+          schema:
+            $ref: '#/definitions/CRATMNetworkOperatingSessionInitiateOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateATMNetworkOperatingSession
+      summary: Update to any amendable fields of the ATMNetworkOperatingSession instance
+      description: Update details relating to ATM Network Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ATM Network Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRATMNetworkOperatingSessionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ATM Network Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRATMNetworkOperatingSessionUpdateOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlATMNetworkOperatingSessionUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of ATM Network Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ATM Network Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRATMNetworkOperatingSessionControlInputModel'
+      responses:
+        200:
+          description: Successful control of ATM Network Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRATMNetworkOperatingSessionControlOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeATMNetworkOperatingSessionUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of ATM Network Operating Session processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ATM Network Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRATMNetworkOperatingSessionExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ATM Network Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRATMNetworkOperatingSessionExchangeOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeATMNetworkOperatingSessionUpdate
+      summary: Invoke an automated execute action against the ATMNetworkOperatingSession instance
+      description: Execute an available automated action for ATM Network Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ATM Network Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRATMNetworkOperatingSessionExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of ATM Network Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRATMNetworkOperatingSessionExecuteOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestATMNetworkOperatingSessionUpdate
+      summary: Invoke a service request action against the ATMNetworkOperatingSession instance
+      description: Request manual intervention or a decision with respect to ATM Network Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ATM Network Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRATMNetworkOperatingSessionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of ATM Network Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRATMNetworkOperatingSessionRequestOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveATMNetworkOperations
+      summary: Invoke a reporting action to obtain a ATM Network Operating Session instance related report
+      description: Retrieve details about any aspect of ATM Network Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRATMNetworkOperatingSessionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved ATM Network Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRATMNetworkOperatingSessionRetrieveOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateATMNetworkOperatingSessionFinancialDocumentHandling
+      summary: Details of a new FinancialDocumentHandling instance
+      description: Instantiate a new Financial Document Handling
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ATM Network Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/BQFinancialDocumentHandlingInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of ATM Network Operating Session instance
+          schema:
+            $ref: '#/definitions/BQFinancialDocumentHandlingInitiateOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateATMNetworkOperatingSessionFinancialDocumentHandling
+      summary: Update to any amendable fields of the FinancialDocumentHandling instance
+      description: Update details relating to Financial Document Handling
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialDocumentHandling Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialDocumentHandling Request Payload
+        schema:
+          $ref: '#/definitions/BQFinancialDocumentHandlingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated FinancialDocumentHandling Instance
+          schema:
+            $ref: '#/definitions/BQFinancialDocumentHandlingUpdateOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeATMNetworkOperatingSessionFinancialDocumentHandlingUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Financial Document Handling processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialDocumentHandling Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialDocumentHandling request payload
+        schema:
+          $ref: '#/definitions/BQFinancialDocumentHandlingExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of FinancialDocumentHandling Instance Record
+          schema:
+            $ref: '#/definitions/BQFinancialDocumentHandlingExchangeOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeATMNetworkOperatingSessionFinancialDocumentHandlingUpdate
+      summary: Invoke an automated execute action against the FinancialDocumentHandling instance
+      description: Execute an available automated action for Financial Document Handling
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialDocumentHandling Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialDocumentHandling request payload
+        schema:
+          $ref: '#/definitions/BQFinancialDocumentHandlingExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of FinancialDocumentHandling Instance Record
+          schema:
+            $ref: '#/definitions/BQFinancialDocumentHandlingExecuteOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialdocumenthandling/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveATMNetworkOperatingSessionFinancialDocumentHandling
+      summary: Invoke a reporting action to obtain a FinancialDocumentHandling instance related report.
+      description: Retrieve details about any aspect of Financial Document Handling .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialDocumentHandling Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFinancialDocumentHandlingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved FinancialDocumentHandling Instance Record
+          schema:
+            $ref: '#/definitions/BQFinancialDocumentHandlingRetrieveOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/networkoperation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateATMNetworkOperatingSessionNetworkOperation
+      summary: Details of a new NetworkOperation instance
+      description: Instantiate a new Network Operation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ATM Network Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/BQNetworkOperationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of ATM Network Operating Session instance
+          schema:
+            $ref: '#/definitions/BQNetworkOperationInitiateOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/networkoperation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateATMNetworkOperatingSessionNetworkOperation
+      summary: Update to any amendable fields of the NetworkOperation instance
+      description: Update details relating to Network Operation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: NetworkOperation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: NetworkOperation Request Payload
+        schema:
+          $ref: '#/definitions/BQNetworkOperationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated NetworkOperation Instance
+          schema:
+            $ref: '#/definitions/BQNetworkOperationUpdateOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/networkoperation/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlATMNetworkOperatingSessionNetworkOperationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Network Operation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: NetworkOperation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: NetworkOperation request payload
+        schema:
+          $ref: '#/definitions/BQNetworkOperationControlInputModel'
+      responses:
+        200:
+          description: Successful control of NetworkOperation Instance Record
+          schema:
+            $ref: '#/definitions/BQNetworkOperationControlOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/networkoperation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveATMNetworkOperatingSessionNetworkOperation
+      summary: Invoke a reporting action to obtain a NetworkOperation instance related report.
+      description: Retrieve details about any aspect of Network Operation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: NetworkOperation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQNetworkOperationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved NetworkOperation Instance Record
+          schema:
+            $ref: '#/definitions/BQNetworkOperationRetrieveOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/cashdistribution/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeATMNetworkOperatingSessionCashDistributionUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Cash Distribution processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CashDistribution Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CashDistribution request payload
+        schema:
+          $ref: '#/definitions/BQCashDistributionExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of CashDistribution Instance Record
+          schema:
+            $ref: '#/definitions/BQCashDistributionExchangeOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/cashdistribution/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestATMNetworkOperatingSessionCashDistributionUpdate
+      summary: Invoke a service request action against the CashDistribution instance
+      description: Request manual intervention or a decision with respect to Cash Distribution
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CashDistribution Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CashDistribution request payload
+        schema:
+          $ref: '#/definitions/BQCashDistributionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of CashDistribution Instance Record
+          schema:
+            $ref: '#/definitions/BQCashDistributionRequestOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/cashdistribution/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveATMNetworkOperatingSessionCashDistribution
+      summary: Invoke a reporting action to obtain a CashDistribution instance related report.
+      description: Retrieve details about any aspect of Cash Distribution .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CashDistribution Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCashDistributionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CashDistribution Instance Record
+          schema:
+            $ref: '#/definitions/BQCashDistributionRetrieveOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/devicetracking/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateATMNetworkOperatingSessionDeviceTracking
+      summary: Update to any amendable fields of the DeviceTracking instance
+      description: Update details relating to Device Tracking
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DeviceTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DeviceTracking Request Payload
+        schema:
+          $ref: '#/definitions/BQDeviceTrackingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated DeviceTracking Instance
+          schema:
+            $ref: '#/definitions/BQDeviceTrackingUpdateOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/devicetracking/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeATMNetworkOperatingSessionDeviceTrackingUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Device Tracking processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DeviceTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DeviceTracking request payload
+        schema:
+          $ref: '#/definitions/BQDeviceTrackingExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of DeviceTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQDeviceTrackingExchangeOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/devicetracking/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeATMNetworkOperatingSessionDeviceTrackingUpdate
+      summary: Invoke an automated execute action against the DeviceTracking instance
+      description: Execute an available automated action for Device Tracking
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DeviceTracking Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: DeviceTracking request payload
+        schema:
+          $ref: '#/definitions/BQDeviceTrackingExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of DeviceTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQDeviceTrackingExecuteOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/devicetracking/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveATMNetworkOperatingSessionDeviceTracking
+      summary: Invoke a reporting action to obtain a DeviceTracking instance related report.
+      description: Retrieve details about any aspect of Device Tracking .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DeviceTracking Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQDeviceTrackingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved DeviceTracking Instance Record
+          schema:
+            $ref: '#/definitions/BQDeviceTrackingRetrieveOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateATMNetworkOperatingSessionFinancialTransactionCapture
+      summary: Details of a new FinancialTransactionCapture instance
+      description: Instantiate a new Financial Transaction Capture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ATM Network Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/BQFinancialTransactionCaptureInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of ATM Network Operating Session instance
+          schema:
+            $ref: '#/definitions/BQFinancialTransactionCaptureInitiateOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateATMNetworkOperatingSessionFinancialTransactionCapture
+      summary: Update to any amendable fields of the FinancialTransactionCapture instance
+      description: Update details relating to Financial Transaction Capture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialTransactionCapture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialTransactionCapture Request Payload
+        schema:
+          $ref: '#/definitions/BQFinancialTransactionCaptureUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated FinancialTransactionCapture Instance
+          schema:
+            $ref: '#/definitions/BQFinancialTransactionCaptureUpdateOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeATMNetworkOperatingSessionFinancialTransactionCaptureUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Financial Transaction Capture processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialTransactionCapture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialTransactionCapture request payload
+        schema:
+          $ref: '#/definitions/BQFinancialTransactionCaptureExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of FinancialTransactionCapture Instance Record
+          schema:
+            $ref: '#/definitions/BQFinancialTransactionCaptureExchangeOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeATMNetworkOperatingSessionFinancialTransactionCaptureUpdate
+      summary: Invoke an automated execute action against the FinancialTransactionCapture instance
+      description: Execute an available automated action for Financial Transaction Capture
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialTransactionCapture Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialTransactionCapture request payload
+        schema:
+          $ref: '#/definitions/BQFinancialTransactionCaptureExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of FinancialTransactionCapture Instance Record
+          schema:
+            $ref: '#/definitions/BQFinancialTransactionCaptureExecuteOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/financialtransactioncapture/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveATMNetworkOperatingSessionFinancialTransactionCapture
+      summary: Invoke a reporting action to obtain a FinancialTransactionCapture instance related report.
+      description: Retrieve details about any aspect of Financial Transaction Capture .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialTransactionCapture Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFinancialTransactionCaptureRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved FinancialTransactionCapture Instance Record
+          schema:
+            $ref: '#/definitions/BQFinancialTransactionCaptureRetrieveOutputModel'
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveATMNetworkOperationsReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ATMNetworkOperations Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /atm-network-operations/atm-network-operating-session/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveATMNetworkOperationsBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'DeviceTracking',  'CashDistribution',  'NetworkOperation',  'FinancialTransactionCapture',  'FinancialDocumentHandling', ]
+  /atm-network-operations/{sd-reference-id}/atm-network-operating-session/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveATMNetworkOperationsBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: ATM Network Operations Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: ATM Network Operating Session Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- FinancialDocumentHandling
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- FinancialDocumentHandling Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [FinancialDocumentHandlingID1, FinancialDocumentHandlingID2]

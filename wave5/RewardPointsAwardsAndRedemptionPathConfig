@@ -1,0 +1,21 @@
+sd=Reward Points Awards And Redemption	Handle the allocation and redemption of rewards points for customer transaction activity	A customer redeems bank reward points in order to finance a purchase with a bank associated vendor for air travel. The financial transaction engages the service domain in order to determine redemption requirements and associated payment requirements	This service domain handles the allocation and redemption of rewards points for customer transaction activity. In order to determine the reward point transaction and apply associated costs the service domain will access reward point arrangement agreements with the customers, merchants and related rewards programs. Note that the interactions between reward programs can be quite complex when 3rd party reward programs are integrated with the bank's own reward programs
+sdpath=reward-points-awards-and-redemption
+crpath=reward-points-transaction
+crr=Reward Points Transaction Instance
+mcr=Reward Points Transaction
+bqs=Redemption Award
+CONFIG
+RewardPointsTransaction	initiate	Instantiate a new Reward Points Transaction		initiateRewardPointsTransaction		#desc
+RewardPointsTransaction	update	Update details relating to Reward Points Transaction		updateRewardPointsTransaction		#desc
+RewardPointsTransaction	exchange	Accept, verify, etc. aspects of Reward Points Transaction processing		exchangeRewardPointsTransaction		#desc
+RewardPointsTransaction	execute	Execute an available automated action for Reward Points Transaction		executeRewardPointsTransaction		#desc
+RewardPointsTransaction	request	Request manual intervention or a decision with respect to Reward Points Transaction		requestRewardPointsTransaction		#desc
+RewardPointsTransaction	retrieve	Retrieve details about any aspect of Reward Points Transaction		retrieveRewardPointsTransaction		#desc
+Redemption	initiate	Instantiate a new Redemption	initiateRewardPointsTransactionRedemption	initiateRewardPointsTransactionRedemption		Details of a new Redemption instance
+Redemption	update	Update details relating to Redemption	updateRewardPointsTransactionRedemption	updateRewardPointsTransactionRedemption		Update to any amendable fields of the Redemption instance
+Redemption	exchange	Accept, verify, etc. aspects of Redemption processing	exchangeRewardPointsTransactionRedemption	exchangeRewardPointsTransactionRedemption		Handle an external exchange (e.g. accept, reject, verify)
+Redemption	retrieve	Retrieve details about any aspect of Redemption	retrieveRewardPointsTransactionRedemption	retrieveRewardPointsTransactionRedemption		Invoke a reporting action to obtain a Redemption instance related report
+Award	initiate	Instantiate a new Award	initiateRewardPointsTransactionAward	initiateRewardPointsTransactionAward		Details of a new Award instance
+Award	update	Update details relating to Award	updateRewardPointsTransactionAward	updateRewardPointsTransactionAward		Update to any amendable fields of the Award instance
+Award	exchange	Accept, verify, etc. aspects of Award processing	exchangeRewardPointsTransactionAward	exchangeRewardPointsTransactionAward		Handle an external exchange (e.g. accept, reject, verify)
+Award	retrieve	Retrieve details about any aspect of Award	retrieveRewardPointsTransactionAward	retrieveRewardPointsTransactionAward		Invoke a reporting action to obtain a Award instance related report

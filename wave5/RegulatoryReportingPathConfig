@@ -1,0 +1,20 @@
+sd=Regulatory Reporting	This service domain administers and orchestrates the tasks required to meet the bank's regulatory reporting obligations	Trading activity is reported to the exchange to comply with regulatory reporting requirements	The service domain handles the bank's regulatory reporting obligations. This includes the consolidation and presentation of information in regulatory reports and disclosures and handling the response to regulatory requests for information as part of ongoing regulator relations. It also handles the scheduled consolidation, formatting and delivery of the range of compliance reports including 'on-line' trade reporting and after the event transaction analysis reporting
+sdpath=regulatory-reporting
+crpath=regulatory-compliance-administrative-plan
+crr=Regulatory Compliance Administrative Plan Instance
+mcr=Regulatory Compliance Administrative Plan
+bqs=Consolidation Authoring Enquiries
+CONFIG
+RegulatoryComplianceAdministrativePlan	update	Update the regulatory reporting set up or schedule		updateRegulatoryComplianceAdministrativePlan		#desc
+RegulatoryComplianceAdministrativePlan	request	Request an override to the regular reporting schedule (e.g. request ad hoc report)		requestRegulatoryComplianceAdministrativePlan		#desc
+RegulatoryComplianceAdministrativePlan	retrieve	Retrieve any details of the regulatory reporting administration		retrieveRegulatoryComplianceAdministrativePlan		#desc
+Consolidation	capture	Provide transaction records as required to support regulatory reporting	captureRegulatoryComplianceAdministrativePlanConsolidation	captureRegulatoryComplianceAdministrativePlanConsolidation		Provide a structured input transaction/record (e.g. timesheet, event)
+Consolidation	retrieve	Retrieve consolidated information for review	retrieveRegulatoryComplianceAdministrativePlanConsolidation	retrieveRegulatoryComplianceAdministrativePlanConsolidation		Invoke a reporting action to obtain a Consolidation instance related report
+Consolidation	update	Update or augment consolidated information to support report generation	updateRegulatoryComplianceAdministrativePlanConsolidation	updateRegulatoryComplianceAdministrativePlanConsolidation		Update to any amendable fields of the Consolidation instance
+Authoring	exchange	Accept or reject a regulatory report prior to submission	exchangeRegulatoryComplianceAdministrativePlanAuthoring	exchangeRegulatoryComplianceAdministrativePlanAuthoring		Handle an external exchange (e.g. accept, reject, verify)
+Authoring	retrieve	Retrieve regulatory reporting detail and reports for review	retrieveRegulatoryComplianceAdministrativePlanAuthoring	retrieveRegulatoryComplianceAdministrativePlanAuthoring		Invoke a reporting action to obtain a Authoring instance related report
+Enquiries	initiate	Initiate the handling of a regulatory reporting enquiry	initiateRegulatoryComplianceAdministrativePlanEnquiries	initiateRegulatoryComplianceAdministrativePlanEnquiries		Details of a new Enquiries instance
+Enquiries	update	Update or augment consolidated information to support enquiry handling	updateRegulatoryComplianceAdministrativePlanEnquiries	updateRegulatoryComplianceAdministrativePlanEnquiries		Update to any amendable fields of the Enquiries instance
+Enquiries	exchange	Accept or reject a regulatory enquiry response prior to submission	exchangeRegulatoryComplianceAdministrativePlanEnquiries	exchangeRegulatoryComplianceAdministrativePlanEnquiries		Handle an external exchange (e.g. accept, reject, verify)
+Enquiries	capture	Provide transaction records as required to support regulatory enquiry	captureRegulatoryComplianceAdministrativePlanEnquiries	captureRegulatoryComplianceAdministrativePlanEnquiries		Provide a structured input transaction/record (e.g. timesheet, event)
+Enquiries	retrieve	Retrieve regulatory enquiry detail and response for review	retrieveRegulatoryComplianceAdministrativePlanEnquiries	retrieveRegulatoryComplianceAdministrativePlanEnquiries		Invoke a reporting action to obtain a Enquiries instance related report

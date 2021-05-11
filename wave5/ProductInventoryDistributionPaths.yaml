@@ -1,0 +1,995 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Product Inventory Distribution'
+ description: >
+
+    ## Executive Summary:
+
+    Administer the provisioning and distribution of product inventory across the branch network and/or distribute direct to customers (e.g. mail) where appropriate
+
+    ## Example of Use:
+
+    The distribution of 'take-one' product marketing materials distributed through the branch network is administered in support of a product sales campaign. Brochures are ordered and distributed to ensure branches are supplied with sufficient inventory to meet customer demand
+
+    ## Description:
+
+    The service domains administer the provisioning and distribution of product inventory across the branch network and/or organizing distribution direct to customers (e.g. using mail services) where appropriate. The administration function keeps track of inventory holdings and administers a provisioning schedule to acquire replacement inventory as needed to meet requirements
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-product-inventory-distribution/1.0.0
+schemes:
+ - https
+paths:
+  /product-inventory-distribution/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDProductInventoryDistribution
+      summary: Activate  a SDProductInventoryDistribution servicing session
+      description: Activate  a  SDProductInventoryDistribution servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDProductInventoryDistribution Request Payload
+        schema:
+          $ref: '#/definitions/SDProductInventoryDistributionActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDProductInventoryDistributionActivateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDProductInventoryDistribution
+      summary: Update an active SDProductInventoryDistribution session configuration
+      description: Update an active SDProductInventoryDistribution session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProductInventoryDistribution Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDProductInventoryDistribution Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDProductInventoryDistributionConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDProductInventoryDistributionConfigureOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDProductInventoryDistribution
+      summary: "Capturing feedback against the SDProductInventoryDistribution service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDProductInventoryDistribution service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProductInventoryDistribution Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDProductInventoryDistribution Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDProductInventoryDistributionFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDProductInventoryDistributionFeedbackOutputModel'
+  /product-inventory-distribution/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDProductInventoryDistribution
+      summary: Analytical views maintained by the SDProductInventoryDistribution service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDProductInventoryDistribution service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDProductInventoryDistribution Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDProductInventoryDistributionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDProductInventoryDistributionRetrieveOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductInventoryDistributionAdministrativePlan
+      summary: Details of a new ProductInventoryDistributionAdministrativePlan instance
+      description: Instantiate a new Product Inventory Distribution Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProductInventoryDistributionAdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new ProductInventoryDistributionAdministrativePlan instance
+          schema:
+            $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanInitiateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductInventoryDistributionAdministrativePlan
+      summary: Update to any amendable fields of the ProductInventoryDistributionAdministrativePlan instance
+      description: Update details relating to Product Inventory Distribution Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Product Inventory Distribution AdministrativePlan Instance
+          schema:
+            $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanUpdateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlProductInventoryDistributionAdministrativePlanUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Product Inventory Distribution Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanControlInputModel'
+      responses:
+        200:
+          description: Successful control of Product Inventory Distribution AdministrativePlan Instance
+          schema:
+            $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanControlOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeProductInventoryDistributionAdministrativePlanUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Product Inventory Distribution Administrative Plan processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Product Inventory Distribution AdministrativePlan Instance
+          schema:
+            $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanExchangeOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureProductInventoryDistributionAdministrativePlanUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Product Inventory Distribution Administrative Plan activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Product Inventory Distribution AdministrativePlan Instance
+          schema:
+            $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanCaptureOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestProductInventoryDistributionAdministrativePlanUpdate
+      summary: Invoke a service request action against the ProductInventoryDistributionAdministrativePlan instance
+      description: Request manual intervention or a decision with respect to Product Inventory Distribution Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Product Inventory Distribution AdministrativePlan Instance
+          schema:
+            $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanRequestOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantProductInventoryDistributionAdministrativePlanUpdate
+      summary: Invoke a grant request action from the ProductInventoryDistributionAdministrativePlan instance to obtain access permission
+      description: Obtain permission to act in relation to Product Inventory Distribution Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Product Inventory Distribution AdministrativePlan Instance
+          schema:
+            $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanGrantOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductInventoryDistribution
+      summary: Invoke a reporting action to obtain a Product Inventory Distribution AdministrativePlan instance related report
+      description: Retrieve details about any aspect of Product Inventory Distribution Administrative Plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRProductInventoryDistributionAdministrativePlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Product Inventory Distribution AdministrativePlan Instance
+          schema:
+            $ref: '#/definitions/CRProductInventoryDistributionAdministrativePlanRetrieveOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/distribution/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductInventoryDistributionAdministrativePlanDistribution
+      summary: Details of a new Distribution instance
+      description: Instantiate a new Distribution
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/BQDistributionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product Inventory Distribution AdministrativePlan instance
+          schema:
+            $ref: '#/definitions/BQDistributionInitiateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/distribution/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductInventoryDistributionAdministrativePlanDistribution
+      summary: Update to any amendable fields of the Distribution instance
+      description: Update details relating to Distribution
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Distribution Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Distribution Request Payload
+        schema:
+          $ref: '#/definitions/BQDistributionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Distribution Instance
+          schema:
+            $ref: '#/definitions/BQDistributionUpdateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/distribution/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureProductInventoryDistributionAdministrativePlanDistributionUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Distribution activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Distribution Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Distribution request payload
+        schema:
+          $ref: '#/definitions/BQDistributionCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Distribution Instance Record
+          schema:
+            $ref: '#/definitions/BQDistributionCaptureOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/distribution/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductInventoryDistributionAdministrativePlanDistribution
+      summary: Invoke a reporting action to obtain a Distribution instance related report.
+      description: Retrieve details about any aspect of Distribution .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Distribution Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQDistributionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Distribution Instance Record
+          schema:
+            $ref: '#/definitions/BQDistributionRetrieveOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/provisioning/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductInventoryDistributionAdministrativePlanProvisioning
+      summary: Details of a new Provisioning instance
+      description: Instantiate a new Provisioning
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/BQProvisioningInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product Inventory Distribution AdministrativePlan instance
+          schema:
+            $ref: '#/definitions/BQProvisioningInitiateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/provisioning/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductInventoryDistributionAdministrativePlanProvisioning
+      summary: Update to any amendable fields of the Provisioning instance
+      description: Update details relating to Provisioning
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Provisioning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Provisioning Request Payload
+        schema:
+          $ref: '#/definitions/BQProvisioningUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Provisioning Instance
+          schema:
+            $ref: '#/definitions/BQProvisioningUpdateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/provisioning/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureProductInventoryDistributionAdministrativePlanProvisioningUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Provisioning activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Provisioning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Provisioning request payload
+        schema:
+          $ref: '#/definitions/BQProvisioningCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Provisioning Instance Record
+          schema:
+            $ref: '#/definitions/BQProvisioningCaptureOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/provisioning/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductInventoryDistributionAdministrativePlanProvisioning
+      summary: Invoke a reporting action to obtain a Provisioning instance related report.
+      description: Retrieve details about any aspect of Provisioning .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Provisioning Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQProvisioningRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Provisioning Instance Record
+          schema:
+            $ref: '#/definitions/BQProvisioningRetrieveOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/oversight/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductInventoryDistributionAdministrativePlanOversight
+      summary: Details of a new Oversight instance
+      description: Instantiate a new Oversight
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/BQOversightInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product Inventory Distribution AdministrativePlan instance
+          schema:
+            $ref: '#/definitions/BQOversightInitiateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/oversight/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductInventoryDistributionAdministrativePlanOversight
+      summary: Update to any amendable fields of the Oversight instance
+      description: Update details relating to Oversight
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Oversight Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Oversight Request Payload
+        schema:
+          $ref: '#/definitions/BQOversightUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Oversight Instance
+          schema:
+            $ref: '#/definitions/BQOversightUpdateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/oversight/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureProductInventoryDistributionAdministrativePlanOversightUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Oversight activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Oversight Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Oversight request payload
+        schema:
+          $ref: '#/definitions/BQOversightCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Oversight Instance Record
+          schema:
+            $ref: '#/definitions/BQOversightCaptureOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/oversight/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductInventoryDistributionAdministrativePlanOversight
+      summary: Invoke a reporting action to obtain a Oversight instance related report.
+      description: Retrieve details about any aspect of Oversight .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Oversight Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQOversightRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Oversight Instance Record
+          schema:
+            $ref: '#/definitions/BQOversightRetrieveOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/mailing/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateProductInventoryDistributionAdministrativePlanMailing
+      summary: Details of a new Mailing instance
+      description: Instantiate a new Mailing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Product Inventory Distribution AdministrativePlan Request Payload
+        schema:
+          $ref: '#/definitions/BQMailingInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Product Inventory Distribution AdministrativePlan instance
+          schema:
+            $ref: '#/definitions/BQMailingInitiateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/mailing/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateProductInventoryDistributionAdministrativePlanMailing
+      summary: Update to any amendable fields of the Mailing instance
+      description: Update details relating to Mailing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Mailing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Mailing Request Payload
+        schema:
+          $ref: '#/definitions/BQMailingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Mailing Instance
+          schema:
+            $ref: '#/definitions/BQMailingUpdateOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/mailing/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureProductInventoryDistributionAdministrativePlanMailingUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Mailing activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Mailing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Mailing request payload
+        schema:
+          $ref: '#/definitions/BQMailingCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Mailing Instance Record
+          schema:
+            $ref: '#/definitions/BQMailingCaptureOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/mailing/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveProductInventoryDistributionAdministrativePlanMailing
+      summary: Invoke a reporting action to obtain a Mailing instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Mailing Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQMailingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Mailing Instance Record
+          schema:
+            $ref: '#/definitions/BQMailingRetrieveOutputModel'
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProductInventoryDistributionReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ProductInventoryDistribution Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /product-inventory-distribution/product-inventory-distribution-administrativeplan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProductInventoryDistributionBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Mailing',  'Distribution',  'Provisioning',  'Oversight', ]
+  /product-inventory-distribution/{sd-reference-id}/product-inventory-distribution-administrativeplan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveProductInventoryDistributionBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Product Inventory Distribution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Product Inventory Distribution AdministrativePlan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Oversight
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Oversight Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [OversightID1, OversightID2]

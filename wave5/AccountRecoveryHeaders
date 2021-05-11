@@ -1,0 +1,26 @@
+SD=Account Recovery
+CR= Account Recovery Procedure
+BQs=Assessment Writedown Planning Negotiation Restructuring
+Handles the recovery of distressed accounts that have exceeded standard late/payment handling but have not yet been fully written off and passed to collections. The restructuring can involve partial write downs and leveraging any tax or other program of assistance that can be applied. The situation is managed until the account is recovered or a decision made to pass the account over to collections
+"A non-performing customer account is handed over for recovery after the normal relationship management efforts have failed. Additional authority is provided to renegotiate/structure the account to enable the customer to attempt recovery. This restructuring can result in write downs that need to be booked appropriately"
+This service domain handles the restructuring of a distressed account (loan) after standard recovery procedures have been exhausted
+CR - Account Recovery Procedure				BQ 1 - Assessment		BQ 2 - Writedown			BQ 3 - Planning		BQ 4 - Negotiation				BQ 5 - Restructuring		
+In	Up	Ec	Re	Up	Re	Up	Ec	Re	Up	Re	Up	Ec	Rq	Re	Up	Ec	Re
+InCR Initiate the account recovery procedure
+UpCR Update details of an active account recovery case
+EcCR Accept, reject, verify etc. an active account recovery case
+ReCR Retrieve details about an active account recovery case
+UpBQ Update details of an active case assessment
+ReBQ Retrieve details of an active case assessment
+UpBQ Update details of an active case write-down
+EcBQ Accept, reject, verify etc. an active case write-down
+ReBQ Retrieve details of an active case assessment
+UpBQ Update details of an active case recovery plan
+ReBQ Retrieve details of an active case recovery plan
+UpBQ Update details of an active case negotiation
+EcBQ Accept, reject, verify etc. an active case negotiation
+RqBQ Request a negotiation for an active recovery case
+ReBQ Retrieve details of an active case negotiation
+UpBQ Update details of case restructuring tasks
+EcBQ Accept, reject, verify etc. case restructuring task
+ReBQ Retrieve details of case restructuring tasks

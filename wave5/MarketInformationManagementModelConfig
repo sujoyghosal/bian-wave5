@@ -1,0 +1,165 @@
+CR Financial Market Information Administrative Plan Instance Record|Financial Market Information Administrative Plan||||||CR Financial Market Information Administrative Plan Create|CR Financial Market Information Administrative Plan Update|CR Financial Market Information Administrative Plan Control|CR Financial Market Information Administrative Plan Exchange|CR Financial Market Information Administrative Plan Execute|CR Financial Market Information Administrative Plan Request|CR Financial Market Information Administrative Plan Grant|CR Financial Market Information Administrative Plan Retrieve|BQ Consolidation Retrieve|BQ Improvement Retrieve|BQ Reporting Create|BQ Reporting Update|BQ Reporting Capture|BQ Reporting Execute|BQ Reporting Request|BQ Reporting Retrieve|
+Mandatory||Market Information Management Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Financial Market Information Administrative Plan Instance Reference||||Reference to the Financial Market Information Administrative Plan instance|O|I|I|I|I|I|I
+Create||Financial Market Information Administrative Plan Create Action Reference||||Reference to an Create service call|O
+Create||Financial Market Information Administrative Plan Create Action Record||||The Create service call input and output record|IO
+Create||Financial Market Information Administrative Plan Instance Status||||The status of the Financial Market Information Administrative Plan instance (e.g. initialised, pending, active)|IO
+||Financial Market Information Administrative Plan Instance Record|##|||The Financial Market Information Management function consolidates information from multiple sources and uses various techniques to improve the integrity of key information views that are not available from external service providers for internal use (e.g. private company M&A activity)|IO|||||||O|||IO|IO||IO|IO|O
+|||Financial Market Information Service|##||Reference to the external sources of financial market information. Can be an ongoing service or some form of report|IO|||||||O|||IO|IO||IO|IO|O
+||||Financial Market Information Provider||The external agency/source of financial market information|IO|||||||O|||IO|IO||IO|IO|O
+||||Financial Market information Description ||Defines the scope/content of the financial market information|IO|||||||O|||IO|IO||IO|IO|O
+||||Financial Market Information Service Type||Defines the type of information service (e.g. a regular feed, periodic report)|IO|||||||O|||IO|IO||IO|IO|O
+||||Financial Market Information Service Schedule||Sets out the delivery schedule for content|IO|||||||O|||IO|IO||IO|IO|O
+||||Financial Market Information Service Agreement||Reference to any agreement covering access to the external service|IO|||||||O|||IO|IO||IO|IO|O
+|||Financial Market Information Database|##||Refers to the consolidated financial market information that is enhanced/improved by the bank for internal reference. This is a collection of different subject areas for which a bank perspective is maintained|IO|||||||O|||IO|IO||IO|IO|O
+||||Financial Market Information Subject Area|##|Refers to a maintained subject area|IO|||||||O|||IO|IO||IO|IO|O
+|||||Financial Market Information Subject Area Description|A description of the information content of the subject area|O|||||||O|||IO|IO||IO|IO|O
+|||||Financial Market Information Subject Area Update History|A record of the update history of the content|IO|||||||O|||IO|IO||IO|IO|O
+|||||Financial Market Information Subject Area Record|The consolidated improved information, includes current and past historical records as necessary|O|||||||O|||IO|IO||IO|IO|O
+Update||Financial Market Information Administrative Plan Update Action Task Reference||||Reference to an update service call||O
+Update||Financial Market Information Administrative Plan Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Financial Market Information Administrative Plan Control Action Task Reference||||Reference to a Financial Market Information Administrative Plan instance control processing service call|||O
+CONTROL||Financial Market Information Administrative Plan Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Financial Market Information Administrative Plan Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Financial Market Information Administrative Plan Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Financial Market Information Administrative Plan Exchange Action Task Reference||||Reference to a Financial Market Information Administrative Plan instance exchange service call||||O
+EXCHANGE||Financial Market Information Administrative Plan Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Financial Market Information Administrative Plan Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Financial Market Information Administrative Plan Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Financial Market Information Administrative Plan Execute Action Task Reference||||Reference to a Financial Market Information Administrative Plan instance execute service call|||||O
+EXECUTE||Financial Market Information Administrative Plan Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Financial Market Information Administrative Plan Request Action Task Reference||||Reference to a Financial Market Information Administrative Plan instance request service call||||||O
+REQUEST||Financial Market Information Administrative Plan Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+GRANT||Financial Market Information Administrative Plan Grant Action Task Reference||||Reference to a Financial Market Information Administrative Plan instance grant service call|||||||O
+GRANT||Financial Market Information Administrative Plan Grant Action Task Record||||The grant service call consolidated processing record|||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||||O
+RETRIEVE||Financial Market Information Administrative Plan Retrieve Action Task Reference||||Reference to a Financial Market Information Administrative Plan instance retrieve service call||||||||O
+RETRIEVE||Financial Market Information Administrative Plan Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||IO
+RETRIEVE||Financial Market Information Administrative Plan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+RETRIEVE||Financial Market Information Administrative Plan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+RETRIEVE||Financial Market Information Administrative Plan Instance Report Record|##|||A specific Financial Market Information Administrative Plan instance formatted report||||||||IO
+RETRIEVE|||Financial Market Information Administrative Plan Instance Report Reference|||Reference to the control record instance report||||||||I
+RETRIEVE|||Financial Market Information Administrative Plan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Financial Market Information Administrative Plan Instance Report Type|||The type of external report available||||||||IO
+RETRIEVE|||Financial Market Information Administrative Plan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||I
+RETRIEVE|||Financial Market Information Administrative Plan Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+RETRIEVE||Financial Market Information Administrative Plan Instance Analysis|##|||A specific Financial Market Information Administrative Plan instance analytical report||||||||IO
+RETRIEVE|||Financial Market Information Administrative Plan Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+RETRIEVE|||Financial Market Information Administrative Plan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Financial Market Information Administrative Plan Instance Analysis Report Type|||The type of external performance analysis report available||||||||IO
+RETRIEVE|||Financial Market Information Administrative Plan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||I
+RETRIEVE|||Financial Market Information Administrative Plan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Consolidation Instance Record|Consolidation||||||
+Mandatory||Financial Market Information Administrative Plan Instance Reference||||Reference to the parent Financial Market Information Administrative Plan instance||||||||
+Mandatory||Consolidation Instance Reference||||Reference to the Consolidation instance||||||||
+||Consolidation Instance Record|##|||Covers the routines for accessing the external sources to consolidate the financial market information|||||||||O|||||||
+|||Financial Market Information Service Report|||Refers to the content record provided by the external service provider in whatever form suitable |||||||||O|||||||
+|||Financial Market Information Service Report Properties|||Key properties of the report used in its improvement (e.g. date created, qualifications of integrity)|||||||||O|||||||
+Retrieve||Consolidation Retrieve Action Task Reference||||Reference to a Consolidation instance retrieve service call|||||||||O
+Retrieve||Consolidation Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||I/O
+Retrieve||Consolidation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||I
+Retrieve||Consolidation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||O
+Retrieve||Consolidation Instance Report|##|||A specific Consolidation instance formatted report|||||||||IO
+Retrieve|||Consolidation Instance Report Reference|||Reference to the control record instance report|||||||||I
+Retrieve|||Consolidation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Consolidation Instance Report Type|||The type of external report available|||||||||O
+Retrieve|||Consolidation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||O
+Retrieve|||Consolidation Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||O
+Retrieve||Consolidation Instance Analysis|##|||A specific Consolidation instance analytical report|||||||||IO
+Retrieve|||Consolidation Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||I
+Retrieve|||Consolidation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||O
+Retrieve|||Consolidation Instance Analysis Report Type|||The type of external performance analysis report available|||||||||O
+Retrieve|||Consolidation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||O
+Retrieve|||Consolidation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||O
+BQ Improvement Instance Record|Improvement||||||
+Mandatory||Financial Market Information Administrative Plan Instance Reference||||Reference to the parent Financial Market Information Administrative Plan instance|||||||||
+Mandatory||Improvement Instance Reference||||Reference to the Improvement instance|||||||||
+||Improvement Instance Record|##|||Covers the routines used to improve the quality of the information||||||||||O||||||
+|||Financial Market Information Improvement Task Type|||Defines the type of technique used to improve the content (e.g. cross verification, pattern/anomaly detection)||||||||||O||||||
+|||Financial Market Information Improvement Task Sources|||References to the different sources of financial market information used to improve the content (can be primary source and comparison data) ||||||||||O||||||
+|||Financial Market Information Improvement Task Work Products|||Work documentation, forms and schedules produced and referenced during the enquiry||||||||||O||||||
+|||Financial Market Information Improvement Task Result|||Output of the improvement task that is recorded back to the Financial Market Information Database||||||||||O||||||
+Retrieve||Improvement Retrieve Action Task Reference||||Reference to a Improvement instance retrieve service call||||||||||O
+Retrieve||Improvement Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Improvement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Improvement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Improvement Instance Report|##|||A specific Improvement instance formatted report||||||||||IO
+Retrieve|||Improvement Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Improvement Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Improvement Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Improvement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Improvement Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Improvement Instance Analysis|##|||A specific Improvement instance analytical report||||||||||IO
+Retrieve|||Improvement Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Improvement Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Improvement Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Improvement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Improvement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Reporting Instance Record|Reporting||||||
+Mandatory||Financial Market Information Administrative Plan Instance Reference||||Reference to the parent Financial Market Information Administrative Plan instance|||||||||||I|I|I|I|I
+Mandatory||Reporting Instance Reference||||Reference to the Reporting instance|||||||||||O|I|I|I|I
+Create||Reporting Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Create||Reporting Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Create||Reporting Instance Status||||The status of the Reporting instance (e.g. initialised, pending, active)|||||||||||O
+||Reporting Instance Record|##|||Covers the assembly and maintenance of managed report views of the bank managed financial market information that are accessed by users|||||||||||IO|IO|IO|IO|IO|O
+|||Financial Market Information Report|##||Refers to structured extracts of reports of the managed financial market information that can be referenced|||||||||||IO|IO|IO|IO|IO|O
+||||Financial Market Information Report Type||The report represents a specific managed information view of the scrubbed financial market information|||||||||||IO|IO||IO|IO|O
+||||Financial Market Information Report Description ||Is a detailed definition of the report contents, including properties that clarify the quality/integrity and timeliness of the content|||||||||||O|IO||O|O|O
+||||Financial Market Information Report Schedule||Is the schedule for maintaining the report content|||||||||||IO|IO||IO|IO|O
+||||Financial Market Information Report Access History||Is a log/record of access made to the report by bank users|||||||||||IO|IO|IO|IO|IO|O
+||||Financial Market Information Report||Is the report itself, including historical versions as appropriate|||||||||||O|IO||O|O|O
+Update||Reporting Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Reporting Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Reporting Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Capture||Reporting Capture Action Task Reference||||Reference to a Reporting instance capture service call|||||||||||||O
+Capture||Reporting Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||I/O
+Capture||Reporting Capture Record Reference||||Reference to the Reporting structured input transaction/record|||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||O
+Execute||Reporting Execute Action Task Reference||||Reference to a Reporting instance execute service call||||||||||||||O
+Execute||Reporting Execute Action Task Record||||The execute service call consolidated processing record||||||||||||||I/O
+Execute||Reporting Execute Record Reference||||Reference to the Reporting execute transaction/record||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||||||||O
+Request||Reporting Request Action Task Reference||||Reference to a Reporting instance request service call|||||||||||||||O
+Request||Reporting Request Action Task Record||||The request service call consolidated processing record|||||||||||||||I/O
+Request||Reporting Request Record Reference||||Reference to the Reporting service request record|||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||O
+Retrieve||Reporting Retrieve Action Task Reference||||Reference to a Reporting instance retrieve service call||||||||||||||||O
+Retrieve||Reporting Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Reporting Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Reporting Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Reporting Instance Report|##|||A specific Reporting instance formatted report||||||||||||||||IO
+Retrieve|||Reporting Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Reporting Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Reporting Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Reporting Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Reporting Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Reporting Instance Analysis|##|||A specific Reporting instance analytical report||||||||||||||||IO
+Retrieve|||Reporting Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Reporting Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Reporting Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Reporting Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Reporting Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O

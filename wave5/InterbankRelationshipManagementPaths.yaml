@@ -1,0 +1,550 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Interbank Relationship Management'
+ description: >
+
+    ## Executive Summary:
+
+    Manage the bank's relationship with other banks, covering any specific agreements that may be in place and overseeing operational issues.
+
+    ## Example of Use:
+
+    The interbank relationship management function is used to coordinate contacts for a joint venture marketing opportunity between the banks
+
+    ## Description:
+
+    This function handles managed interbank relationships. The are a range of relationship considerations that may apply between banks covering trading arrangements, joint ventures, clearing and settlement arrangements etc. The Interbank Relationship Management function acts as a relationship planning and coordination point to facilitate interbank interactions
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-interbank-relationship-management/1.0.0
+schemes:
+ - https
+paths:
+  /interbank-relationship-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDInterbankRelationshipManagement
+      summary: Activate  a SDInterbankRelationshipManagement servicing session
+      description: Activate  a  SDInterbankRelationshipManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDInterbankRelationshipManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDInterbankRelationshipManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDInterbankRelationshipManagementActivateOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDInterbankRelationshipManagement
+      summary: Update an active SDInterbankRelationshipManagement session configuration
+      description: Update an active SDInterbankRelationshipManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInterbankRelationshipManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInterbankRelationshipManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDInterbankRelationshipManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDInterbankRelationshipManagementConfigureOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDInterbankRelationshipManagement
+      summary: "Capturing feedback against the SDInterbankRelationshipManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDInterbankRelationshipManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInterbankRelationshipManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInterbankRelationshipManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDInterbankRelationshipManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDInterbankRelationshipManagementFeedbackOutputModel'
+  /interbank-relationship-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDInterbankRelationshipManagement
+      summary: Analytical views maintained by the SDInterbankRelationshipManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDInterbankRelationshipManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInterbankRelationshipManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDInterbankRelationshipManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDInterbankRelationshipManagementRetrieveOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/creation:
+    post:
+      tags:
+      - create
+      operationId: createBankRelationshipManagementPlan
+      summary: Details of a new BankRelationshipManagementPlan instance
+      description: Create an initial bank relationship management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: BankRelationshipManagementPlan Request Payload
+        schema:
+          $ref: '#/definitions/CRBankRelationshipManagementPlanCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new BankRelationshipManagementPlan instance
+          schema:
+            $ref: '#/definitions/CRBankRelationshipManagementPlanCreateOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBankRelationshipManagementPlan
+      summary: Update to any amendable fields of the BankRelationshipManagementPlan instance
+      description: Update details of an active bank relationship plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Bank Relationship Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBankRelationshipManagementPlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Bank Relationship Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBankRelationshipManagementPlanUpdateOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlBankRelationshipManagementPlanUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of a bank relationship plan (e.g. suspend)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Bank Relationship Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBankRelationshipManagementPlanControlInputModel'
+      responses:
+        200:
+          description: Successful control of Bank Relationship Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBankRelationshipManagementPlanControlOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeBankRelationshipManagementPlanUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, reject aspects of the bank relationship plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Bank Relationship Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBankRelationshipManagementPlanExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Bank Relationship Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBankRelationshipManagementPlanExchangeOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBankRelationshipManagementPlanUpdate
+      summary: Invoke a service request action against the BankRelationshipManagementPlan instance
+      description: Request intervention with a bank relationship plan (e.g. arrange a meeting)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Bank Relationship Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBankRelationshipManagementPlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Bank Relationship Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBankRelationshipManagementPlanRequestOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantBankRelationshipManagementPlanUpdate
+      summary: Invoke a grant request action from the BankRelationshipManagementPlan instance to obtain access permission
+      description: Grant authorization for actions that impact the bank plan (e.g. approve a product specialist meeting to discuss joint venture opportunity)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Bank Relationship Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CRBankRelationshipManagementPlanGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Bank Relationship Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBankRelationshipManagementPlanGrantOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveInterbankRelationshipManagement
+      summary: Invoke a reporting action to obtain a Bank Relationship Management Plan instance related report
+      description: Retrieve details about a bank relationship plan and associated activity
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRBankRelationshipManagementPlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Bank Relationship Management Plan Instance
+          schema:
+            $ref: '#/definitions/CRBankRelationshipManagementPlanRetrieveOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/contact/creation:
+    post:
+      tags:
+      - create
+      operationId: createBankRelationshipManagementPlanContact
+      summary: Details of a new Contact instance
+      description: Create a bank contact
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Bank Relationship Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQContactCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of Bank Relationship Management Plan instance
+          schema:
+            $ref: '#/definitions/BQContactCreateOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/contact/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateBankRelationshipManagementPlanContact
+      summary: Update to any amendable fields of the Contact instance
+      description: Update details about the bank contact schedule or a contact record
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Contact Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Contact Request Payload
+        schema:
+          $ref: '#/definitions/BQContactUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Contact Instance
+          schema:
+            $ref: '#/definitions/BQContactUpdateOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/contact/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestBankRelationshipManagementPlanContactUpdate
+      summary: Invoke a service request action against the Contact instance
+      description: Request manual intervention with the bank relationship (e.g. set-up a meeting)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Contact Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Contact request payload
+        schema:
+          $ref: '#/definitions/BQContactRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Contact Instance Record
+          schema:
+            $ref: '#/definitions/BQContactRequestOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/contact/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveBankRelationshipManagementPlanContact
+      summary: Invoke a reporting action to obtain a Contact instance related report.
+      description: Retrieve details about the contact schedule or specific contacts .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Contact Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQContactRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Contact Instance Record
+          schema:
+            $ref: '#/definitions/BQContactRetrieveOutputModel'
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInterbankRelationshipManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- InterbankRelationshipManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /interbank-relationship-management/bank-relationship-management-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInterbankRelationshipManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Contact', ]
+  /interbank-relationship-management/{sd-reference-id}/bank-relationship-management-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInterbankRelationshipManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interbank Relationship Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Bank Relationship Management Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Contact
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Contact Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ContactID1, ContactID2]

@@ -1,0 +1,264 @@
+CR Branch Location Management Plan Instance Record|Branch Location Management Plan||||||CR Branch Location Management Plan Initiate|CR Branch Location Management Plan Update|CR Branch Location Management Plan Control|CR Branch Location Management Plan Exchange|CR Branch Location Management Plan Capture|CR Branch Location Management Plan Request|CR Branch Location Management Plan Grant|CR Branch Location Management Plan Retrieve|BQ Staff and Location Planning Update|BQ Staff and Location Planning Capture|BQ Staff and Location Planning Request|BQ Staff and Location Planning Retrieve|BQ Troubleshooting Initiate|BQ Troubleshooting Update|BQ Troubleshooting Capture|BQ Troubleshooting Request|BQ Troubleshooting Retrieve|BQ Customer Liaison Initiate|BQ Customer Liaison Update|BQ Customer Liaison Capture|BQ Customer Liaison Request|BQ Customer Liaison Retrieve|BQ Product and Service Planning Update|BQ Product and Service Planning Control|BQ Product and Service Planning Capture|BQ Product and Service Planning Request|BQ Product and Service Planning Retrieve|
+Mandatory||Branch Location Management Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Branch Location Management Plan Instance Reference||||Reference to the Branch Location Management Plan instance|O|I|I|I|I|I|I
+Initiate||Branch Location Management Plan Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Branch Location Management Plan Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Branch Location Management Plan Instance Status||||The status of the Branch Location Management Plan instance (e.g. initialised, pending, active)|IO
+||Branch Location Management Plan Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Branch Location Management.
+Example: Manage the day to day activities at a bank branch location.|||||||||||||||||||||||||||
+||Branch Location Management Plan <Subject Area> Type||||The type of Branch Location Management Plan|I|I|I|I|I|I|I|O|||||||||||||||||||
+||Branch Location Management Plan <Subject Area> Reference||||Reference to Branch Location Management Plan|I|I|I|I|I|I|I|O|||||||||||||||||||
+||Branch Location Management Plan Budget Type||||A Classification value that distinguishes between Budgets within Branch Location Management Plan according to the type of resource and/or activity that is budgetted|IO|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||
+||Branch Location Management Plan Budget||||An estimate of costs, revenues, and resources over a specified period which is defined for Branch Location Management Plan|||||||||||||||||||||||||||
+||Branch Location Management Plan Assignment||||The allocation of someone or something which is specified for Branch Location Management Plan|IO|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||
+||Branch Location Management Plan Plan||||Reference to Branch Location Management Plan |IO|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||
+||Branch Location Management Plan Description||||Documentation of Branch Location Management Plan|I|I|I|I|I|I|I|O|||||||||||||||||||
+Update||Branch Location Management Plan Update Action Task Reference||||Reference to an update service call||O
+Update||Branch Location Management Plan Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Branch Location Management Plan Control Action Task Reference||||Reference to a Branch Location Management Plan instance control processing service call|||O
+CONTROL||Branch Location Management Plan Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Branch Location Management Plan Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Branch Location Management Plan Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Branch Location Management Plan Exchange Action Task Reference||||Reference to a Branch Location Management Plan instance exchange service call||||O
+EXCHANGE||Branch Location Management Plan Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Branch Location Management Plan Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Branch Location Management Plan Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Branch Location Management Plan Capture Action Task Reference||||Reference to a Branch Location Management Plan instance capture service call|||||O
+CAPTURE||Branch Location Management Plan Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Branch Location Management Plan Request Action Task Reference||||Reference to a Branch Location Management Plan instance request service call||||||O
+REQUEST||Branch Location Management Plan Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+GRANT||Branch Location Management Plan Grant Action Task Reference||||Reference to a Branch Location Management Plan instance grant service call|||||||O
+GRANT||Branch Location Management Plan Grant Action Task Record||||The grant service call consolidated processing record|||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||||O
+RETRIEVE||Branch Location Management Plan Retrieve Action Task Reference||||Reference to a Branch Location Management Plan instance retrieve service call||||||||O
+RETRIEVE||Branch Location Management Plan Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||IO
+RETRIEVE||Branch Location Management Plan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+RETRIEVE||Branch Location Management Plan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+RETRIEVE||Branch Location Management Plan Instance Report Record|##|||A specific Branch Location Management Plan instance formatted report||||||||IO
+RETRIEVE|||Branch Location Management Plan Instance Report Reference|||Reference to the control record instance report||||||||I
+RETRIEVE|||Branch Location Management Plan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Branch Location Management Plan Instance Report Type|||The type of external report available||||||||IO
+RETRIEVE|||Branch Location Management Plan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||I
+RETRIEVE|||Branch Location Management Plan Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+RETRIEVE||Branch Location Management Plan Instance Analysis|##|||A specific Branch Location Management Plan instance analytical report||||||||IO
+RETRIEVE|||Branch Location Management Plan Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+RETRIEVE|||Branch Location Management Plan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Branch Location Management Plan Instance Analysis Report Type|||The type of external performance analysis report available||||||||IO
+RETRIEVE|||Branch Location Management Plan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||I
+RETRIEVE|||Branch Location Management Plan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Staff and Location Planning Instance Record|Staff and Location Planning||||||
+Mandatory||Branch Location Management Plan Instance Reference||||Reference to the parent Branch Location Management Plan instance|||||||||I|I|I
+Mandatory||Staff and Location Planning Instance Reference||||Reference to the Staff and Location Planning instance|||||||||I|I|I
+||Staff and Location Planning Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Branch Location Management.
+|||||||||||||||||||||||||||
+||Staff and Location Planning Preconditions||||The required status/situation before the duty/obligation can be met||||||||||||||||||||||||IO|IO|IO|O
+||Staff and Location Planning Business Unit/Employee Reference||||The operating unit/employee responsible for undertaking the duty||||||||||||||||||||||||IO|IO|IO|O
+||Staff and Location Planning Work Schedule||||The timing and key actions/milestones involved in fulfilling the duty||||||||||||||||||||||||IO|IO|IO|O
+||Staff and Location Planning||||The Branch Location Management Plan specific Business Service||||||||||||||||||||||||IO|IO|IO|O
+||Staff and Location Planning Postconditions||||The completion status once the duty has been complied with (note the need to fulfill a duty may recur frequently)||||||||||||||||||||||||IO|IO|IO|O
+||Staff and Location Planning Staff and Location Planning Service Type||||Reference to the specific business service type||||||||||||||||||||||||IO|IO|IO|O
+||Staff and Location Planning Staff and Location Planning Service Description||||Description of the performed business service||||||||||||||||||||||||IO|IO|IO|O
+||Staff and Location Planning Staff and Location Planning Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||||||IO|IO|IO|O
+||Staff and Location Planning Staff and Location Planning Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||||||IO|IO|IO|O
+Update||Staff and Location Planning Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Staff and Location Planning Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Staff and Location Planning Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Capture||Staff and Location Planning Capture Action Task Reference||||Reference to a Staff and Location Planning instance capture service call||||||||||O
+Capture||Staff and Location Planning Capture Action Task Record||||The capture service call consolidated processing record||||||||||I/O
+Capture||Staff and Location Planning Capture Record Reference||||Reference to the Staff and Location Planning structured input transaction/record||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||O
+Request||Staff and Location Planning Request Action Task Reference||||Reference to a Staff and Location Planning instance request service call|||||||||||O
+Request||Staff and Location Planning Request Action Task Record||||The request service call consolidated processing record|||||||||||I/O
+Request||Staff and Location Planning Request Record Reference||||Reference to the Staff and Location Planning service request record|||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||O
+Retrieve||Staff and Location Planning Retrieve Action Task Reference||||Reference to a Staff and Location Planning instance retrieve service call||||||||||||O
+Retrieve||Staff and Location Planning Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Staff and Location Planning Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Staff and Location Planning Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Staff and Location Planning Instance Report|##|||A specific Staff and Location Planning instance formatted report||||||||||||IO
+Retrieve|||Staff and Location Planning Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Staff and Location Planning Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Staff and Location Planning Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Staff and Location Planning Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Staff and Location Planning Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Staff and Location Planning Instance Analysis|##|||A specific Staff and Location Planning instance analytical report||||||||||||IO
+Retrieve|||Staff and Location Planning Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Staff and Location Planning Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Staff and Location Planning Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Staff and Location Planning Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Staff and Location Planning Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ Troubleshooting Instance Record|Troubleshooting||||||
+Mandatory||Branch Location Management Plan Instance Reference||||Reference to the parent Branch Location Management Plan instance|||||||||||||I|I|I|I
+Mandatory||Troubleshooting Instance Reference||||Reference to the Troubleshooting instance|||||||||||||O|I|I|I
+Initiate||Troubleshooting Initiate Action Reference||||Reference to an Initiate service call|||||||||||||O
+Initiate||Troubleshooting Initiate Action Record||||The Initiate service call input and output record|||||||||||||I/O
+Initiate||Troubleshooting Instance Status||||The status of the Troubleshooting instance (e.g. initialised, pending, active)|||||||||||||O
+||Troubleshooting Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Branch Location Management.
+|||||||||||||||||||||||||||
+||Troubleshooting Preconditions||||The required status/situation before the duty/obligation can be met|||||||||IO|IO|IO|IO|O||||||||||||||
+||Troubleshooting Business Unit/Employee Reference||||The operating unit/employee responsible for undertaking the duty|||||||||IO|IO|IO|IO|O||||||||||||||
+||Troubleshooting Work Schedule||||The timing and key actions/milestones involved in fulfilling the duty|||||||||IO|IO|IO|IO|O||||||||||||||
+||Business Service||||The Branch Location Management Plan specific Business Service|||||||||IO|IO|IO|IO|O||||||||||||||
+||Troubleshooting Postconditions||||The completion status once the duty has been complied with (note the need to fulfill a duty may recur frequently)|||||||||IO|IO|IO|IO|O||||||||||||||
+||Troubleshooting Service Type||||Reference to the specific business service type|||||||||IO|IO|IO|IO|O||||||||||||||
+||Troubleshooting Service Description||||Description of the performed business service|||||||||IO|IO|IO|IO|O||||||||||||||
+||Troubleshooting Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||IO|IO|IO|IO|O||||||||||||||
+||Troubleshooting Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||IO|IO|IO|IO|O||||||||||||||
+||Troubleshooting Service Name|||||||||||||IO|IO|IO|IO|O||||||||||||||
+Update||Troubleshooting Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||Troubleshooting Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||Troubleshooting Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Capture||Troubleshooting Capture Action Task Reference||||Reference to a Troubleshooting instance capture service call|||||||||||||||O
+Capture||Troubleshooting Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||I/O
+Capture||Troubleshooting Capture Record Reference||||Reference to the Troubleshooting structured input transaction/record|||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||O
+Request||Troubleshooting Request Action Task Reference||||Reference to a Troubleshooting instance request service call||||||||||||||||O
+Request||Troubleshooting Request Action Task Record||||The request service call consolidated processing record||||||||||||||||I/O
+Request||Troubleshooting Request Record Reference||||Reference to the Troubleshooting service request record||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||O
+Retrieve||Troubleshooting Retrieve Action Task Reference||||Reference to a Troubleshooting instance retrieve service call|||||||||||||||||O
+Retrieve||Troubleshooting Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||I/O
+Retrieve||Troubleshooting Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||I
+Retrieve||Troubleshooting Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||O
+Retrieve||Troubleshooting Instance Report|##|||A specific Troubleshooting instance formatted report|||||||||||||||||IO
+Retrieve|||Troubleshooting Instance Report Reference|||Reference to the control record instance report|||||||||||||||||I
+Retrieve|||Troubleshooting Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Troubleshooting Instance Report Type|||The type of external report available|||||||||||||||||O
+Retrieve|||Troubleshooting Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||O
+Retrieve|||Troubleshooting Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||O
+Retrieve||Troubleshooting Instance Analysis|##|||A specific Troubleshooting instance analytical report|||||||||||||||||IO
+Retrieve|||Troubleshooting Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||I
+Retrieve|||Troubleshooting Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Troubleshooting Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||O
+Retrieve|||Troubleshooting Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||O
+Retrieve|||Troubleshooting Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||O
+BQ Customer Liaison Instance Record|Customer Liaison||||||
+Mandatory||Branch Location Management Plan Instance Reference||||Reference to the parent Branch Location Management Plan instance||||||||||||||||||I|I|I|I
+Mandatory||Customer Liaison Instance Reference||||Reference to the Customer Liaison instance||||||||||||||||||O|I|I|I
+Initiate||Customer Liaison Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||O
+Initiate||Customer Liaison Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||I/O
+Initiate||Customer Liaison Instance Status||||The status of the Customer Liaison instance (e.g. initialised, pending, active)||||||||||||||||||O
+||Customer Liaison Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Branch Location Management.
+|||||||||||||||||||||||||||
+||Customer Liaison Preconditions||||The required status/situation before the duty/obligation can be met||||||||||||||IO|IO|IO|IO|O|||||||||
+||Customer Liaison Business Unit/Employee Reference||||The operating unit/employee responsible for undertaking the duty||||||||||||||IO|IO|IO|IO|O|||||||||
+||Customer Liaison Work Schedule||||The timing and key actions/milestones involved in fulfilling the duty||||||||||||||IO|IO|IO|IO|O|||||||||
+||Customer Liaison||||The Branch Location Management Plan specific Business Service|||||||||||||||||||||||||||
+||Customer Liaison Postconditions||||The completion status once the duty has been complied with (note the need to fulfill a duty may recur frequently)||||||||||||||IO|IO|IO|IO|O|||||||||
+||Customer Liaison Customer Liaison Service Type||||Reference to the specific business service type||||||||||||||IO|IO|IO|IO|O|||||||||
+||Customer Liaison Customer Liaison Service Description||||Description of the performed business service||||||||||||||IO|IO|IO|IO|O|||||||||
+||Customer Liaison Customer Liaison Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|IO|IO|IO|O|||||||||
+||Customer Liaison Customer Liaison Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|IO|IO|IO|O|||||||||
+||Customer Liaison Customer Liaison Service Name||||||||||||||||||IO|IO|IO|IO|O|||||||||
+Update||Customer Liaison Update Action Task Reference||||Reference to an update service call|||||||||||||||||||O
+Update||Customer Liaison Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||I/O
+Update||Customer Liaison Update Action Request||||Details of the update action service request|||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||O
+Capture||Customer Liaison Capture Action Task Reference||||Reference to a Customer Liaison instance capture service call||||||||||||||||||||O
+Capture||Customer Liaison Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||||||I/O
+Capture||Customer Liaison Capture Record Reference||||Reference to the Customer Liaison structured input transaction/record||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||||||O
+Request||Customer Liaison Request Action Task Reference||||Reference to a Customer Liaison instance request service call|||||||||||||||||||||O
+Request||Customer Liaison Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||I/O
+Request||Customer Liaison Request Record Reference||||Reference to the Customer Liaison service request record|||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||O
+Retrieve||Customer Liaison Retrieve Action Task Reference||||Reference to a Customer Liaison instance retrieve service call||||||||||||||||||||||O
+Retrieve||Customer Liaison Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||I/O
+Retrieve||Customer Liaison Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||I
+Retrieve||Customer Liaison Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||O
+Retrieve||Customer Liaison Instance Report|##|||A specific Customer Liaison instance formatted report||||||||||||||||||||||IO
+Retrieve|||Customer Liaison Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||I
+Retrieve|||Customer Liaison Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||O
+Retrieve|||Customer Liaison Instance Report Type|||The type of external report available||||||||||||||||||||||O
+Retrieve|||Customer Liaison Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||O
+Retrieve|||Customer Liaison Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||O
+Retrieve||Customer Liaison Instance Analysis|##|||A specific Customer Liaison instance analytical report||||||||||||||||||||||IO
+Retrieve|||Customer Liaison Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||I
+Retrieve|||Customer Liaison Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||O
+Retrieve|||Customer Liaison Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||O
+Retrieve|||Customer Liaison Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||O
+Retrieve|||Customer Liaison Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||O
+BQ Product and Service Planning Instance Record|Product and Service Planning||||||
+Mandatory||Branch Location Management Plan Instance Reference||||Reference to the parent Branch Location Management Plan instance|||||||||||||||||||||||I|I|I|I
+Mandatory||Product and Service Planning Instance Reference||||Reference to the Product and Service Planning instance|||||||||||||||||||||||I|I|I|I
+||Product and Service Planning Instance Record||||Oversee the working of a business unit, assign work, manage against a plan and troubleshoot issues within Branch Location Management.
+|||||||||||||||||||||||||||
+||Product and Service Planning Preconditions||||The required status/situation before the duty/obligation can be met|||||||||||||||||||IO|IO|IO|IO|O||||
+||Product and Service Planning Business Unit/Employee Reference||||The operating unit/employee responsible for undertaking the duty|||||||||||||||||||IO|IO|IO|IO|O||||
+||Product and Service Planning Work Schedule||||The timing and key actions/milestones involved in fulfilling the duty|||||||||||||||||||IO|IO|IO|IO|O||||
+||Product and Service Planning||||The Branch Location Management Plan specific Business Service|||||||||||||||||||IO|IO|IO|IO|O||||
+||Product and Service Planning Postconditions||||The completion status once the duty has been complied with (note the need to fulfill a duty may recur frequently)|||||||||||||||||||IO|IO|IO|IO|O||||
+||Product and Service Planning Product and Service Planning Service Type||||Reference to the specific business service type|||||||||||||||||||IO|IO|IO|IO|O||||
+||Product and Service Planning Product and Service Planning Service Description||||Description of the performed business service|||||||||||||||||||IO|IO|IO|IO|O||||
+||Product and Service Planning Product and Service Planning Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||IO|IO|IO|IO|O||||
+||Product and Service Planning Product and Service Planning Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||IO|IO|IO|IO|O||||
+||Product and Service Planning Product and Service Planning Service Name|||||||||||||||||||||||IO|IO|IO|IO|O||||
+Update||Product and Service Planning Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||O
+Update||Product and Service Planning Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||I/O
+Update||Product and Service Planning Update Action Request||||Details of the update action service request|||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||O
+Control||Product and Service Planning Control Action Task Reference||||Reference to a Product and Service Planning instance control processing service call||||||||||||||||||||||||O
+Control||Product and Service Planning Control Action Task Record||||The processing control service call consolidated processing record||||||||||||||||||||||||I/O
+Control||Product and Service Planning Control Action Request|##|||Details of the control action service request||||||||||||||||||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)||||||||||||||||||||||||I
+Control||Product and Service Planning Control Action Response||||Details of the control action service response||||||||||||||||||||||||O
+Control||Product and Service Planning Instance Status||||The status of the Product and Service Planning instance (e.g. initialised, pending, active)||||||||||||||||||||||||O
+Capture||Product and Service Planning Capture Action Task Reference||||Reference to a Product and Service Planning instance capture service call|||||||||||||||||||||||||O
+Capture||Product and Service Planning Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||||||||I/O
+Capture||Product and Service Planning Capture Record Reference||||Reference to the Product and Service Planning structured input transaction/record|||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||||||||O
+Request||Product and Service Planning Request Action Task Reference||||Reference to a Product and Service Planning instance request service call||||||||||||||||||||||||||O
+Request||Product and Service Planning Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||||||I/O
+Request||Product and Service Planning Request Record Reference||||Reference to the Product and Service Planning service request record||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||||||O
+Retrieve||Product and Service Planning Retrieve Action Task Reference||||Reference to a Product and Service Planning instance retrieve service call|||||||||||||||||||||||||||O
+Retrieve||Product and Service Planning Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||I/O
+Retrieve||Product and Service Planning Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||I
+Retrieve||Product and Service Planning Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||O
+Retrieve||Product and Service Planning Instance Report|##|||A specific Product and Service Planning instance formatted report|||||||||||||||||||||||||||IO
+Retrieve|||Product and Service Planning Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||I
+Retrieve|||Product and Service Planning Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||O
+Retrieve|||Product and Service Planning Instance Report Type|||The type of external report available|||||||||||||||||||||||||||O
+Retrieve|||Product and Service Planning Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||O
+Retrieve|||Product and Service Planning Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||O
+Retrieve||Product and Service Planning Instance Analysis|##|||A specific Product and Service Planning instance analytical report|||||||||||||||||||||||||||IO
+Retrieve|||Product and Service Planning Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||I
+Retrieve|||Product and Service Planning Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||O
+Retrieve|||Product and Service Planning Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||O
+Retrieve|||Product and Service Planning Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||O
+Retrieve|||Product and Service Planning Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||O

@@ -1,0 +1,10 @@
+cp AssetSecuritization.yaml wave5/
+cp AccountsReceivable.yaml wave5/
+cp ATMNetworkOperations.yaml wave5/
+cp BranchCurrencyDistribution.yaml wave5/
+cp BranchCurrencyManagement.yaml wave5/
+cp BranchLocationManagement.yaml wave5/
+cp BranchLocationOperations.yaml wave5/
+cp BusinessArchitecture.yaml wave5/
+cp CardCapture.yaml wave5/
+cp Collections.yaml wave5/

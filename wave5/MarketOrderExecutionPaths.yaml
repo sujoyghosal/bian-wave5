@@ -1,0 +1,738 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Market Order Execution'
+ description: >
+
+    ## Executive Summary:
+
+    Orchestrate the completion of market trades to fulfill market orders as requested
+
+    ## Example of Use:
+
+    An investment manager initiates a market order to rebalance a customer's investment portfolio. The resulting market order triggers market trading
+
+    ## Description:
+
+    Orchestrate market trades. This handles the trader side of the transaction, optionally applying the market order to the bank's traded security position (when acting as market maker) and as necessary executing a market trade to manage that position and take advantage of prevailing market conditions.
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-market-order-execution/1.0.0
+schemes:
+ - https
+paths:
+  /market-order-execution/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDMarketOrderExecution
+      summary: Activate  a SDMarketOrderExecution servicing session
+      description: Activate  a  SDMarketOrderExecution servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDMarketOrderExecution Request Payload
+        schema:
+          $ref: '#/definitions/SDMarketOrderExecutionActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDMarketOrderExecutionActivateOutputModel'
+  /market-order-execution/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDMarketOrderExecution
+      summary: Update an active SDMarketOrderExecution session configuration
+      description: Update an active SDMarketOrderExecution session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDMarketOrderExecution Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDMarketOrderExecution Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDMarketOrderExecutionConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDMarketOrderExecutionConfigureOutputModel'
+  /market-order-execution/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDMarketOrderExecution
+      summary: "Capturing feedback against the SDMarketOrderExecution service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDMarketOrderExecution service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDMarketOrderExecution Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDMarketOrderExecution Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDMarketOrderExecutionFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDMarketOrderExecutionFeedbackOutputModel'
+  /market-order-execution/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDMarketOrderExecution
+      summary: Analytical views maintained by the SDMarketOrderExecution service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDMarketOrderExecution service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDMarketOrderExecution Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDMarketOrderExecutionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDMarketOrderExecutionRetrieveOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateMarketTradeTransaction
+      summary: Details of a new MarketTradeTransaction instance
+      description: Initiate a market trade
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MarketTradeTransaction Request Payload
+        schema:
+          $ref: '#/definitions/CRMarketTradeTransactionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new MarketTradeTransaction instance
+          schema:
+            $ref: '#/definitions/CRMarketTradeTransactionInitiateOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateMarketTradeTransaction
+      summary: Update to any amendable fields of the MarketTradeTransaction instance
+      description: Update details on an active market trade request
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Market Trade Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRMarketTradeTransactionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Market Trade Transaction Instance
+          schema:
+            $ref: '#/definitions/CRMarketTradeTransactionUpdateOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestMarketTradeTransactionUpdate
+      summary: Invoke a service request action against the MarketTradeTransaction instance
+      description: Request manual intervention to an active market trade (e.g. amend response to prevailing market conditions)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Market Trade Transaction Request Payload
+        schema:
+          $ref: '#/definitions/CRMarketTradeTransactionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Market Trade Transaction Instance
+          schema:
+            $ref: '#/definitions/CRMarketTradeTransactionRequestOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketOrderExecution
+      summary: Invoke a reporting action to obtain a Market Trade Transaction instance related report
+      description: Retrieve details about a market trade
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRMarketTradeTransactionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Market Trade Transaction Instance
+          schema:
+            $ref: '#/definitions/CRMarketTradeTransactionRetrieveOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/quote/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateMarketTradeTransactionQuote
+      summary: Details of a new Quote instance
+      description: Obtain a trading quote for a proposed order
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Market Trade Transaction Request Payload
+        schema:
+          $ref: '#/definitions/BQQuoteInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Market Trade Transaction instance
+          schema:
+            $ref: '#/definitions/BQQuoteInitiateOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/quote/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketTradeTransactionQuote
+      summary: Invoke a reporting action to obtain a Quote instance related report.
+      description: Retrieve details about quotation activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Quote Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQQuoteRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Quote Instance Record
+          schema:
+            $ref: '#/definitions/BQQuoteRetrieveOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/tradeinitiation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateMarketTradeTransactionTradeInitiation
+      summary: Details of a new TradeInitiation instance
+      description: Initiate a market trade
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Market Trade Transaction Request Payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Market Trade Transaction instance
+          schema:
+            $ref: '#/definitions/BQTradeInitiationInitiateOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/tradeinitiation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateMarketTradeTransactionTradeInitiation
+      summary: Update to any amendable fields of the TradeInitiation instance
+      description: Update details of an 'executed' market trade
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TradeInitiation Request Payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TradeInitiation Instance
+          schema:
+            $ref: '#/definitions/BQTradeInitiationUpdateOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/tradeinitiation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeMarketTradeTransactionTradeInitiationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, etc a market trade
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TradeInitiation request payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of TradeInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQTradeInitiationExchangeOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/tradeinitiation/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeMarketTradeTransactionTradeInitiationUpdate
+      summary: Invoke an automated execute action against the TradeInitiation instance
+      description: Execute an automated action against an active market trade (e.g. obtain confirmation notification)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TradeInitiation request payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of TradeInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQTradeInitiationExecuteOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/tradeinitiation/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestMarketTradeTransactionTradeInitiationUpdate
+      summary: Invoke a service request action against the TradeInitiation instance
+      description: Request manual intervention for an active market trade (e.g. specific clearing and settlement processing)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TradeInitiation request payload
+        schema:
+          $ref: '#/definitions/BQTradeInitiationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of TradeInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQTradeInitiationRequestOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/tradeinitiation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketTradeTransactionTradeInitiation
+      summary: Invoke a reporting action to obtain a TradeInitiation instance related report.
+      description: Retrieve details about a market trade .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TradeInitiation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTradeInitiationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TradeInitiation Instance Record
+          schema:
+            $ref: '#/definitions/BQTradeInitiationRetrieveOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/position/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlMarketTradeTransactionPositionUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the position trading activity (e.g. suspend, amend limits)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Position Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Position request payload
+        schema:
+          $ref: '#/definitions/BQPositionControlInputModel'
+      responses:
+        200:
+          description: Successful control of Position Instance Record
+          schema:
+            $ref: '#/definitions/BQPositionControlOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/position/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeMarketTradeTransactionPositionUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, etc wholesale position trading
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Position Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Position request payload
+        schema:
+          $ref: '#/definitions/BQPositionExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Position Instance Record
+          schema:
+            $ref: '#/definitions/BQPositionExchangeOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/position/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestMarketTradeTransactionPositionUpdate
+      summary: Invoke a service request action against the Position instance
+      description: Request manual intervention for position management (e.g. unwind a position)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Position Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Position request payload
+        schema:
+          $ref: '#/definitions/BQPositionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Position Instance Record
+          schema:
+            $ref: '#/definitions/BQPositionRequestOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/position/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveMarketTradeTransactionPosition
+      summary: Invoke a reporting action to obtain a Position instance related report.
+      description: Retrieve details about position wholesale trading activity .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Position Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQPositionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Position Instance Record
+          schema:
+            $ref: '#/definitions/BQPositionRetrieveOutputModel'
+  /market-order-execution/{sd-reference-id}/market-trade-transaction:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveMarketOrderExecutionReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- MarketOrderExecution Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /market-order-execution/market-trade-transaction/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveMarketOrderExecutionBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Quote',  'TradeInitiation',  'Position', ]
+  /market-order-execution/{sd-reference-id}/market-trade-transaction/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveMarketOrderExecutionBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Market Order Execution Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Market Trade Transaction Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Position
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Position Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [PositionID1, PositionID2]

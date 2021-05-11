@@ -1,0 +1,194 @@
+CR Leasing Item Administrative Plan Instance Record|Leasing Item Administrative Plan||||||CR Leasing Item Administrative Plan Initiate|CR Leasing Item Administrative Plan Update|CR Leasing Item Administrative Plan Control|CR Leasing Item Administrative Plan Exchange|CR Leasing Item Administrative Plan Capture|CR Leasing Item Administrative Plan Request|CR Leasing Item Administrative Plan Grant|CR Leasing Item Administrative Plan Retrieve|BQ Valuation Initiate|BQ Valuation Update|BQ Valuation Capture|BQ Valuation Retrieve|BQ Registration Initiate|BQ Registration Update|BQ Registration Capture|BQ Registration Retrieve|BQ Assurance Initiate|BQ Assurance Update|BQ Assurance Capture|BQ Assurance Retrieve|
+Mandatory||Leasing Item Administration Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Leasing Item Administrative Plan Instance Reference||||Reference to the Leasing Item Administrative Plan instance|O|I|I|I|I|I|I
+Initiate||Leasing Item Administrative Plan Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Leasing Item Administrative Plan Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Leasing Item Administrative Plan Instance Status||||The status of the Leasing Item Administrative Plan instance (e.g. initialised, pending, active)|IO
+||Leasing Item Administrative Plan Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Leasing Item Administration.
+Example: Administer the time reporting and billing for the specialist sales support team.||||||||||||||||||||
+||Leasing Item Administrative Plan Budget Type||||A Classification value that distinguishes between Budgets within Leasing Item Administrative Plan according to the type of resource and/or activity that is budgetted|IO|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Leasing Item Administrative Plan Budget||||An estimate of costs, revenues, and resources over a specified period which is defined for Leasing Item Administrative Plan||||||||||||||||||||
+||Leasing Item Administrative Plan Assignment||||The allocation of someone or something which is specified for Leasing Item Administrative Plan|IO|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Leasing Item Administrative Plan Plan||||A plan that defines clerical support for LeasingItem|IO|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Leasing Item Administrative Plan Reference||||Party who is involved in Leasing Item Administrative Plan|I|I|I|I|I|I|I|O||||||||||||
+Update||Leasing Item Administrative Plan Update Action Task Reference||||Reference to an update service call||O
+Update||Leasing Item Administrative Plan Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Leasing Item Administrative Plan Control Action Task Reference||||Reference to a Leasing Item Administrative Plan instance control processing service call|||O
+CONTROL||Leasing Item Administrative Plan Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Leasing Item Administrative Plan Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Leasing Item Administrative Plan Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Leasing Item Administrative Plan Exchange Action Task Reference||||Reference to a Leasing Item Administrative Plan instance exchange service call||||O
+EXCHANGE||Leasing Item Administrative Plan Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Leasing Item Administrative Plan Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Leasing Item Administrative Plan Exchange Action Response||||Details of the exchange action service response||||O
+CAPTURE||Leasing Item Administrative Plan Capture Action Task Reference||||Reference to a Leasing Item Administrative Plan instance capture service call|||||O
+CAPTURE||Leasing Item Administrative Plan Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+REQUEST||Leasing Item Administrative Plan Request Action Task Reference||||Reference to a Leasing Item Administrative Plan instance request service call||||||O
+REQUEST||Leasing Item Administrative Plan Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+GRANT||Leasing Item Administrative Plan Grant Action Task Reference||||Reference to a Leasing Item Administrative Plan instance grant service call|||||||O
+GRANT||Leasing Item Administrative Plan Grant Action Task Record||||The grant service call consolidated processing record|||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||||O
+RETRIEVE||Leasing Item Administrative Plan Retrieve Action Task Reference||||Reference to a Leasing Item Administrative Plan instance retrieve service call||||||||O
+RETRIEVE||Leasing Item Administrative Plan Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||IO
+RETRIEVE||Leasing Item Administrative Plan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+RETRIEVE||Leasing Item Administrative Plan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+RETRIEVE||Leasing Item Administrative Plan Instance Report Record|##|||A specific Leasing Item Administrative Plan instance formatted report||||||||IO
+RETRIEVE|||Leasing Item Administrative Plan Instance Report Reference|||Reference to the control record instance report||||||||I
+RETRIEVE|||Leasing Item Administrative Plan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Leasing Item Administrative Plan Instance Report Type|||The type of external report available||||||||IO
+RETRIEVE|||Leasing Item Administrative Plan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||I
+RETRIEVE|||Leasing Item Administrative Plan Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+RETRIEVE||Leasing Item Administrative Plan Instance Analysis|##|||A specific Leasing Item Administrative Plan instance analytical report||||||||IO
+RETRIEVE|||Leasing Item Administrative Plan Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+RETRIEVE|||Leasing Item Administrative Plan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Leasing Item Administrative Plan Instance Analysis Report Type|||The type of external performance analysis report available||||||||IO
+RETRIEVE|||Leasing Item Administrative Plan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||I
+RETRIEVE|||Leasing Item Administrative Plan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Valuation Instance Record|Valuation||||||
+Mandatory||Leasing Item Administrative Plan Instance Reference||||Reference to the parent Leasing Item Administrative Plan instance|||||||||I|I|I
+Mandatory||Valuation Instance Reference||||Reference to the Valuation instance|||||||||O|I|I
+Initiate||Valuation Initiate Action Reference||||Reference to an Initiate service call|||||||||O
+Initiate||Valuation Initiate Action Record||||The Initiate service call input and output record|||||||||I/O
+Initiate||Valuation Instance Status||||The status of the Valuation instance (e.g. initialised, pending, active)|||||||||O
+||Valuation Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Leasing Item Administration.
+||||||||||||||||||||
+||Valuation Preconditions||||The required status/situation before the routine can be undertaken|||||||||IO|IO|IO|O||||||||
+||Valuation Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||IO|IO|IO|O||||||||
+||Valuation Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||IO|IO|IO|O||||||||
+||Business Service||||The Leasing Item Administrative Plan specific Business Service|||||||||IO|IO|IO|O||||||||
+||Valuation Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||IO|IO|IO|O||||||||
+||Valuation Service Type||||Reference to the specific business service type|||||||||IO|IO|IO|O||||||||
+||Valuation Service Description||||Description of the performed business service|||||||||IO|IO|IO|O||||||||
+||Valuation Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||IO|IO|IO|O||||||||
+||Valuation Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||IO|IO|IO|O||||||||
+||Valuation Service Name|||||||||||||IO|IO|IO|O||||||||
+Update||Valuation Update Action Task Reference||||Reference to an update service call||||||||||O
+Update||Valuation Update Action Task Record||||The update service call consolidated processing record||||||||||I/O
+Update||Valuation Update Action Request||||Details of the update action service request||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||O
+Capture||Valuation Capture Action Task Reference||||Reference to a Valuation instance capture service call|||||||||||O
+Capture||Valuation Capture Action Task Record||||The capture service call consolidated processing record|||||||||||I/O
+Capture||Valuation Capture Record Reference||||Reference to the Valuation structured input transaction/record|||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||O
+Retrieve||Valuation Retrieve Action Task Reference||||Reference to a Valuation instance retrieve service call||||||||||||O
+Retrieve||Valuation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Valuation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Valuation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Valuation Instance Report|##|||A specific Valuation instance formatted report||||||||||||IO
+Retrieve|||Valuation Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Valuation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Valuation Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Valuation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Valuation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Valuation Instance Analysis|##|||A specific Valuation instance analytical report||||||||||||IO
+Retrieve|||Valuation Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Valuation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Valuation Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Valuation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Valuation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ Registration Instance Record|Registration||||||
+Mandatory||Leasing Item Administrative Plan Instance Reference||||Reference to the parent Leasing Item Administrative Plan instance|||||||||||||I|I|I
+Mandatory||Registration Instance Reference||||Reference to the Registration instance|||||||||||||O|I|I
+Initiate||Registration Initiate Action Reference||||Reference to an Initiate service call|||||||||||||O
+Initiate||Registration Initiate Action Record||||The Initiate service call input and output record|||||||||||||I/O
+Initiate||Registration Instance Status||||The status of the Registration instance (e.g. initialised, pending, active)|||||||||||||O
+||Registration Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Leasing Item Administration.
+||||||||||||||||||||
+||Registration Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||IO|IO|IO|O||||
+||Registration Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||IO|IO|IO|O||||
+||Registration Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||IO|IO|IO|O||||
+||Collateral Registration||||The Leasing Item Administrative Plan specific Business Service|||||||||||||IO|IO|IO|O||||
+||Registration Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||IO|IO|IO|O||||
+||Registration Collateral Registration Service Type||||Reference to the specific business service type|||||||||||||IO|IO|IO|O||||
+||Registration Collateral Registration Service Description||||Description of the performed business service|||||||||||||IO|IO|IO|O||||
+||Registration Collateral Registration Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||IO|IO|IO|O||||
+||Registration Collateral Registration Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||IO|IO|IO|O||||
+||Registration Collateral Registration Service Name|||||||||||||||||IO|IO|IO|O||||
+Update||Registration Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||Registration Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||Registration Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Capture||Registration Capture Action Task Reference||||Reference to a Registration instance capture service call|||||||||||||||O
+Capture||Registration Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||I/O
+Capture||Registration Capture Record Reference||||Reference to the Registration structured input transaction/record|||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||O
+Retrieve||Registration Retrieve Action Task Reference||||Reference to a Registration instance retrieve service call||||||||||||||||O
+Retrieve||Registration Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Registration Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Registration Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Registration Instance Report|##|||A specific Registration instance formatted report||||||||||||||||IO
+Retrieve|||Registration Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Registration Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Registration Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Registration Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Registration Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Registration Instance Analysis|##|||A specific Registration instance analytical report||||||||||||||||IO
+Retrieve|||Registration Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Registration Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Registration Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Registration Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Registration Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ Assurance Instance Record|Assurance||||||
+Mandatory||Leasing Item Administrative Plan Instance Reference||||Reference to the parent Leasing Item Administrative Plan instance|||||||||||||||||I|I|I
+Mandatory||Assurance Instance Reference||||Reference to the Assurance instance|||||||||||||||||O|I|I
+Initiate||Assurance Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||O
+Initiate||Assurance Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||I/O
+Initiate||Assurance Instance Status||||The status of the Assurance instance (e.g. initialised, pending, active)|||||||||||||||||O
+||Assurance Instance Record||||Handle and assign the day to day activities, capture time, costs and income for an operational unit within Leasing Item Administration.
+||||||||||||||||||||
+||Assurance Preconditions||||The required status/situation before the routine can be undertaken|||||||||||||||||IO|IO|IO|O
+||Assurance Business Unit/Employee Reference||||The operating unit/employee responsible for performing the routine|||||||||||||||||IO|IO|IO|O
+||Assurance Work Schedule||||The timing and key actions/milestones involved in completing the routine|||||||||||||||||IO|IO|IO|O
+||Collateral Item Assurance||||The Leasing Item Administrative Plan specific Business Service|||||||||||||||||IO|IO|IO|O
+||Assurance Postconditions||||The completion status once the routine has been completed (note the need to fulfill a routine may recur frequently)|||||||||||||||||IO|IO|IO|O
+||Assurance Collateral Item Assurance Service Type||||Reference to the specific business service type|||||||||||||||||IO|IO|IO|O
+||Assurance Collateral Item Assurance Service Description||||Description of the performed business service|||||||||||||||||IO|IO|IO|O
+||Assurance Collateral Item Assurance Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||IO|IO|IO|O
+||Assurance Collateral Item Assurance Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||IO|IO|IO|O
+Update||Assurance Update Action Task Reference||||Reference to an update service call||||||||||||||||||O
+Update||Assurance Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||I/O
+Update||Assurance Update Action Request||||Details of the update action service request||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||O
+Capture||Assurance Capture Action Task Reference||||Reference to a Assurance instance capture service call|||||||||||||||||||O
+Capture||Assurance Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||I/O
+Capture||Assurance Capture Record Reference||||Reference to the Assurance structured input transaction/record|||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||O
+Retrieve||Assurance Retrieve Action Task Reference||||Reference to a Assurance instance retrieve service call||||||||||||||||||||O
+Retrieve||Assurance Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||I/O
+Retrieve||Assurance Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||I
+Retrieve||Assurance Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||O
+Retrieve||Assurance Instance Report|##|||A specific Assurance instance formatted report||||||||||||||||||||IO
+Retrieve|||Assurance Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||I
+Retrieve|||Assurance Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Assurance Instance Report Type|||The type of external report available||||||||||||||||||||O
+Retrieve|||Assurance Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||O
+Retrieve|||Assurance Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+Retrieve||Assurance Instance Analysis|##|||A specific Assurance instance analytical report||||||||||||||||||||IO
+Retrieve|||Assurance Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||I
+Retrieve|||Assurance Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Assurance Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||O
+Retrieve|||Assurance Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||O
+Retrieve|||Assurance Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||O

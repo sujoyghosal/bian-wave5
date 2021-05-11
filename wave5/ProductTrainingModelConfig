@@ -1,0 +1,278 @@
+CR Product Training Procedure Instance Record|Product Training Procedure||||||CR Product Training Procedure Initiate|CR Product Training Procedure Update|CR Product Training Procedure Control|CR Product Training Procedure Exchange|CR Product Training Procedure Execute|CR Product Training Procedure Request|CR Product Training Procedure Retrieve|BQ Content Development Initiate|BQ Content Development Update|BQ Content Development Exchange|BQ Content Development Request|BQ Content Development Retrieve|BQ Service Delivery Initiate|BQ Service Delivery Update|BQ Service Delivery Exchange|BQ Service Delivery Execute|BQ Service Delivery Request|BQ Service Delivery Retrieve|BQ Service Scheduling Initiate|BQ Service Scheduling Update|BQ Service Scheduling Exchange|BQ Service Scheduling Execute|BQ Service Scheduling Request|BQ Service Scheduling Retrieve|BQ Service Evaluation Update|BQ Service Evaluation Exchange|BQ Service Evaluation Request|BQ Service Evaluation Retrieve|
+Mandatory||Product Training Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Product Training Procedure Instance Reference||||Reference to the Product Training Procedure instance|O|I|I|I|I|I
+Initiate||Product Training Procedure Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Product Training Procedure Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Product Training Procedure Instance Status||||The status of the Product Training Procedure instance (e.g. initialised, pending, active)|IO
+||Product Training Procedure Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Product Training.
+Example: Process the evaluation and completion of customer offers.||||||||||||||||||||||||||||
+||Product Training Procedure Parameter Type||||A Classification value that distinguishes between Procedures according to the type of business services and/or type of concern defined within Product Training Procedure|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||Product Training Procedure Selected Option||||A selected optional business service as subject matter of Product Training Procedure|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||Product Training Procedure Request||||Request to process ProductTraining|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||Product Training Procedure Schedule||||Timetable to process ProductTraining|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||Product Training Procedure Status||||The status of Product Training Procedure|IO|IO|IO|IO|IO|IO|O|||||||||||||||||||||
+||Product Training Procedure Reference||||Reference to the party who is involved in Product Training Procedure|I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Business Unit Reference||||Reference to the business unit which is involved in Product Training Procedure|I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure ServiceProvider Reference||||Reference to the party who is the service provider of Product Training Procedure|I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Financial Facility Reference||||Reference to the Financial Facility related to Product Training Procedure |I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Employee Reference||||Reference to the employee who is involved in Product Training Procedure|I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Customer Reference||||Reference to the customer who is involved in Product Training Procedure|I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Type||||A Classification value that distinguishes between the type of process undertaken within Product Training Procedure|I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Service Provider Schedule||||The schedule according to which the service provider will process the Product Training Procedure|I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Service Type||||A Classification value that distinguishes between the type of services in Product Training Procedure |I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure ProductandService Type||||A Classification value that distinguishes between the type of products/services related to Product Training Procedure |I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure ProductandService Instance||||Reference to the product or service that is related to Product Training Procedure|I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Transaction Type||||A Classification value that distinguishes between the type of transactions in Product Training Procedure |I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Transaction||||Reference to the transaction that is related to Product Training Procedure ||||||||||||||||||||||||||||
+||Product Training Procedure Financial Transaction Arrangement||||Reference to the Financial Transaction Arrangement that is related to Product Training Procedure |I|I|I|I|I|I|O|||||||||||||||||||||
+||Product Training Procedure Customer Agreement Reference||||Reference to the Customer Agreement that is related to Product Training Procedure |I|I|I|I|I|I|O|||||||||||||||||||||
+Update||Product Training Procedure Update Action Task Reference||||Reference to an update service call||O
+Update||Product Training Procedure Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Product Training Procedure Control Action Task Reference||||Reference to a Product Training Procedure instance control processing service call|||O
+CONTROL||Product Training Procedure Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Product Training Procedure Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Product Training Procedure Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Product Training Procedure Exchange Action Task Reference||||Reference to a Product Training Procedure instance exchange service call||||O
+EXCHANGE||Product Training Procedure Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Product Training Procedure Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Product Training Procedure Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Product Training Procedure Execute Action Task Reference||||Reference to a Product Training Procedure instance execute service call|||||O
+EXECUTE||Product Training Procedure Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Product Training Procedure Request Action Task Reference||||Reference to a Product Training Procedure instance request service call||||||O
+REQUEST||Product Training Procedure Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Product Training Procedure Retrieve Action Task Reference||||Reference to a Product Training Procedure instance retrieve service call|||||||O
+RETRIEVE||Product Training Procedure Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Product Training Procedure Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Product Training Procedure Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Product Training Procedure Instance Report Record|##|||A specific Product Training Procedure instance formatted report|||||||IO
+RETRIEVE|||Product Training Procedure Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Product Training Procedure Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Product Training Procedure Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Product Training Procedure Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Product Training Procedure Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Product Training Procedure Instance Analysis|##|||A specific Product Training Procedure instance analytical report|||||||IO
+RETRIEVE|||Product Training Procedure Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Product Training Procedure Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Product Training Procedure Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Product Training Procedure Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Product Training Procedure Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Content Development Instance Record|Content Development||||||
+Mandatory||Product Training Procedure Instance Reference||||Reference to the parent Product Training Procedure instance||||||||I|I|I|I
+Mandatory||Content Development Instance Reference||||Reference to the Content Development instance||||||||O|I|I|I
+Initiate||Content Development Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Content Development Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Content Development Instance Status||||The status of the Content Development instance (e.g. initialised, pending, active)||||||||O
+||Content Development Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Product Training.
+||||||||||||||||||||||||||||
+||Content Development Preconditions||||The required status/situation and or tasks that need to be completed prior to the initiation of the workstep||||||||IO|IO|IO|IO|O||||||||||||||||
+||Content Development Business Unit/Employee Reference||||The operating unit/employee responsible for the workstep||||||||IO|IO|IO|IO|O||||||||||||||||
+||Content Development Work Schedule||||The timing and key actions/milestones making up the workstep||||||||IO|IO|IO|IO|O||||||||||||||||
+||Content Development||||The Product Training Procedure specific Business Service||||||||||||||||||||||||||||
+||Content Development Postconditions||||The completion status and reference to subsequent actions that may be triggered on completion of the workstep||||||||IO|IO|IO|IO|O||||||||||||||||
+||Content Development Content Development Service Type||||Reference to the specific business service type||||||||IO|IO|IO|IO|O||||||||||||||||
+||Content Development Content Development Service Description||||Description of the performed business service||||||||IO|IO|IO|IO|O||||||||||||||||
+||Content Development Content Development Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|IO|O||||||||||||||||
+||Content Development Content Development Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|IO|O||||||||||||||||
+||Content Development Content Development Service Name||||||||||||IO|IO|IO|IO|O||||||||||||||||
+Update||Content Development Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Content Development Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Content Development Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Exchange||Content Development Exchange Action Task Reference||||Reference to a Content Development instance exchange service call||||||||||O
+Exchange||Content Development Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||Content Development Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||Content Development Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||Content Development Instance Status||||The status of the Content Development instance (e.g. accepted, rejected, verified)||||||||||O
+Request||Content Development Request Action Task Reference||||Reference to a Content Development instance request service call|||||||||||O
+Request||Content Development Request Action Task Record||||The request service call consolidated processing record|||||||||||I/O
+Request||Content Development Request Record Reference||||Reference to the Content Development service request record|||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||O
+Retrieve||Content Development Retrieve Action Task Reference||||Reference to a Content Development instance retrieve service call||||||||||||O
+Retrieve||Content Development Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Content Development Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Content Development Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Content Development Instance Report|##|||A specific Content Development instance formatted report||||||||||||IO
+Retrieve|||Content Development Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Content Development Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Content Development Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Content Development Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Content Development Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Content Development Instance Analysis|##|||A specific Content Development instance analytical report||||||||||||IO
+Retrieve|||Content Development Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Content Development Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Content Development Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Content Development Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Content Development Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ Service Delivery Instance Record|Service Delivery||||||
+Mandatory||Product Training Procedure Instance Reference||||Reference to the parent Product Training Procedure instance|||||||||||||I|I|I|I|I
+Mandatory||Service Delivery Instance Reference||||Reference to the Service Delivery instance|||||||||||||O|I|I|I|I
+Initiate||Service Delivery Initiate Action Reference||||Reference to an Initiate service call|||||||||||||O
+Initiate||Service Delivery Initiate Action Record||||The Initiate service call input and output record|||||||||||||I/O
+Initiate||Service Delivery Instance Status||||The status of the Service Delivery instance (e.g. initialised, pending, active)|||||||||||||O
+||Service Delivery Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Product Training.
+||||||||||||||||||||||||||||
+||Service Delivery Preconditions||||The required status/situation and or tasks that need to be completed prior to the initiation of the workstep|||||||||||||IO|IO|IO|IO|IO|O||||||||||
+||Service Delivery Business Unit/Employee Reference||||The operating unit/employee responsible for the workstep|||||||||||||IO|IO|IO|IO|IO|O||||||||||
+||Service Delivery Work Schedule||||The timing and key actions/milestones making up the workstep|||||||||||||IO|IO|IO|IO|IO|O||||||||||
+||Service Delivery||||The Product Training Procedure specific Business Service||||||||||||||||||||||||||||
+||Service Delivery Postconditions||||The completion status and reference to subsequent actions that may be triggered on completion of the workstep|||||||||||||IO|IO|IO|IO|IO|O||||||||||
+||Service Delivery Service Delivery Service Type||||Reference to the specific business service type|||||||||||||IO|IO|IO|IO|IO|O||||||||||
+||Service Delivery Service Delivery Service Description||||Description of the performed business service|||||||||||||IO|IO|IO|IO|IO|O||||||||||
+||Service Delivery Service Delivery Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||IO|IO|IO|IO|IO|O||||||||||
+||Service Delivery Service Delivery Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||IO|IO|IO|IO|IO|O||||||||||
+||Service Delivery Service Delivery Service Name|||||||||||||||||IO|IO|IO|IO|IO|O||||||||||
+Update||Service Delivery Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||Service Delivery Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||Service Delivery Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Exchange||Service Delivery Exchange Action Task Reference||||Reference to a Service Delivery instance exchange service call|||||||||||||||O
+Exchange||Service Delivery Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||I/O
+Exchange||Service Delivery Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||I
+Exchange||Service Delivery Exchange Action Response||||Details of the exchange action service response|||||||||||||||O
+Exchange||Service Delivery Instance Status||||The status of the Service Delivery instance (e.g. accepted, rejected, verified)|||||||||||||||O
+Execute||Service Delivery Execute Action Task Reference||||Reference to a Service Delivery instance execute service call||||||||||||||||O
+Execute||Service Delivery Execute Action Task Record||||The execute service call consolidated processing record||||||||||||||||I/O
+Execute||Service Delivery Execute Record Reference||||Reference to the Service Delivery execute transaction/record||||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||||||||||O
+Request||Service Delivery Request Action Task Reference||||Reference to a Service Delivery instance request service call|||||||||||||||||O
+Request||Service Delivery Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||I/O
+Request||Service Delivery Request Record Reference||||Reference to the Service Delivery service request record|||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||O
+Retrieve||Service Delivery Retrieve Action Task Reference||||Reference to a Service Delivery instance retrieve service call||||||||||||||||||O
+Retrieve||Service Delivery Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||I/O
+Retrieve||Service Delivery Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||I
+Retrieve||Service Delivery Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||O
+Retrieve||Service Delivery Instance Report|##|||A specific Service Delivery instance formatted report||||||||||||||||||IO
+Retrieve|||Service Delivery Instance Report Reference|||Reference to the control record instance report||||||||||||||||||I
+Retrieve|||Service Delivery Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Service Delivery Instance Report Type|||The type of external report available||||||||||||||||||O
+Retrieve|||Service Delivery Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||O
+Retrieve|||Service Delivery Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||O
+Retrieve||Service Delivery Instance Analysis|##|||A specific Service Delivery instance analytical report||||||||||||||||||IO
+Retrieve|||Service Delivery Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||I
+Retrieve|||Service Delivery Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Service Delivery Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||O
+Retrieve|||Service Delivery Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||O
+Retrieve|||Service Delivery Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||O
+BQ Service Scheduling Instance Record|Service Scheduling||||||
+Mandatory||Product Training Procedure Instance Reference||||Reference to the parent Product Training Procedure instance|||||||||||||||||||I|I|I|I|I
+Mandatory||Service Scheduling Instance Reference||||Reference to the Service Scheduling instance|||||||||||||||||||O|I|I|I|I
+Initiate||Service Scheduling Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||||O
+Initiate||Service Scheduling Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||||I/O
+Initiate||Service Scheduling Instance Status||||The status of the Service Scheduling instance (e.g. initialised, pending, active)|||||||||||||||||||O
+||Service Scheduling Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Product Training.
+||||||||||||||||||||||||||||
+||Service Scheduling Preconditions||||The required status/situation and or tasks that need to be completed prior to the initiation of the workstep|||||||||||||||||||IO|IO|IO|IO|IO|O||||
+||Service Scheduling Business Unit/Employee Reference||||The operating unit/employee responsible for the workstep|||||||||||||||||||IO|IO|IO|IO|IO|O||||
+||Service Scheduling Work Schedule||||The timing and key actions/milestones making up the workstep|||||||||||||||||||IO|IO|IO|IO|IO|O||||
+||Service Scheduling||||The Product Training Procedure specific Business Service||||||||||||||||||||||||||||
+||Service Scheduling Postconditions||||The completion status and reference to subsequent actions that may be triggered on completion of the workstep|||||||||||||||||||IO|IO|IO|IO|IO|O||||
+||Service Scheduling Service Scheduling Service Type||||Reference to the specific business service type|||||||||||||||||||IO|IO|IO|IO|IO|O||||
+||Service Scheduling Service Scheduling Service Description||||Description of the performed business service|||||||||||||||||||IO|IO|IO|IO|IO|O||||
+||Service Scheduling Service Scheduling Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||IO|IO|IO|IO|IO|O||||
+||Service Scheduling Service Scheduling Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||IO|IO|IO|IO|IO|O||||
+||Service Scheduling Service Scheduling Service Name|||||||||||||||||||||||IO|IO|IO|IO|IO|O||||
+Update||Service Scheduling Update Action Task Reference||||Reference to an update service call||||||||||||||||||||O
+Update||Service Scheduling Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||I/O
+Update||Service Scheduling Update Action Request||||Details of the update action service request||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||O
+Exchange||Service Scheduling Exchange Action Task Reference||||Reference to a Service Scheduling instance exchange service call|||||||||||||||||||||O
+Exchange||Service Scheduling Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||||||I/O
+Exchange||Service Scheduling Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||||||I
+Exchange||Service Scheduling Exchange Action Response||||Details of the exchange action service response|||||||||||||||||||||O
+Exchange||Service Scheduling Instance Status||||The status of the Service Scheduling instance (e.g. accepted, rejected, verified)|||||||||||||||||||||O
+Execute||Service Scheduling Execute Action Task Reference||||Reference to a Service Scheduling instance execute service call||||||||||||||||||||||O
+Execute||Service Scheduling Execute Action Task Record||||The execute service call consolidated processing record||||||||||||||||||||||I/O
+Execute||Service Scheduling Execute Record Reference||||Reference to the Service Scheduling execute transaction/record||||||||||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||||||||||||||||O
+Request||Service Scheduling Request Action Task Reference||||Reference to a Service Scheduling instance request service call|||||||||||||||||||||||O
+Request||Service Scheduling Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||I/O
+Request||Service Scheduling Request Record Reference||||Reference to the Service Scheduling service request record|||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||O
+Retrieve||Service Scheduling Retrieve Action Task Reference||||Reference to a Service Scheduling instance retrieve service call||||||||||||||||||||||||O
+Retrieve||Service Scheduling Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||I/O
+Retrieve||Service Scheduling Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||I
+Retrieve||Service Scheduling Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||O
+Retrieve||Service Scheduling Instance Report|##|||A specific Service Scheduling instance formatted report||||||||||||||||||||||||IO
+Retrieve|||Service Scheduling Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||I
+Retrieve|||Service Scheduling Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||O
+Retrieve|||Service Scheduling Instance Report Type|||The type of external report available||||||||||||||||||||||||O
+Retrieve|||Service Scheduling Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||O
+Retrieve|||Service Scheduling Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||O
+Retrieve||Service Scheduling Instance Analysis|##|||A specific Service Scheduling instance analytical report||||||||||||||||||||||||IO
+Retrieve|||Service Scheduling Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||I
+Retrieve|||Service Scheduling Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||O
+Retrieve|||Service Scheduling Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||O
+Retrieve|||Service Scheduling Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||O
+Retrieve|||Service Scheduling Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||O
+BQ Service Evaluation Instance Record|Service Evaluation||||||
+Mandatory||Product Training Procedure Instance Reference||||Reference to the parent Product Training Procedure instance|||||||||||||||||||||||||I|I|I
+Mandatory||Service Evaluation Instance Reference||||Reference to the Service Evaluation instance|||||||||||||||||||||||||I|I|I
+||Service Evaluation Instance Record||||Complete work tasks following a defined procedure in support of general office activities and product and service delivery within Product Training.
+||||||||||||||||||||||||||||
+||Service Evaluation Preconditions||||The required status/situation and or tasks that need to be completed prior to the initiation of the workstep|||||||||||||||||||||||||IO|IO|IO|O
+||Service Evaluation Business Unit/Employee Reference||||The operating unit/employee responsible for the workstep|||||||||||||||||||||||||IO|IO|IO|O
+||Service Evaluation Work Schedule||||The timing and key actions/milestones making up the workstep|||||||||||||||||||||||||IO|IO|IO|O
+||Service Evaluation||||The Product Training Procedure specific Business Service||||||||||||||||||||||||||||
+||Service Evaluation Postconditions||||The completion status and reference to subsequent actions that may be triggered on completion of the workstep|||||||||||||||||||||||||IO|IO|IO|O
+||Service Evaluation Service Evaluation Service Type||||Reference to the specific business service type|||||||||||||||||||||||||IO|IO|IO|O
+||Service Evaluation Service Evaluation Service Description||||Description of the performed business service|||||||||||||||||||||||||IO|IO|IO|O
+||Service Evaluation Service Evaluation Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||||||IO|IO|IO|O
+||Service Evaluation Service Evaluation Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||||||IO|IO|IO|O
+Update||Service Evaluation Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||O
+Update||Service Evaluation Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||I/O
+Update||Service Evaluation Update Action Request||||Details of the update action service request|||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||O
+Exchange||Service Evaluation Exchange Action Task Reference||||Reference to a Service Evaluation instance exchange service call||||||||||||||||||||||||||O
+Exchange||Service Evaluation Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||||||I/O
+Exchange||Service Evaluation Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||||||I
+Exchange||Service Evaluation Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||||||O
+Exchange||Service Evaluation Instance Status||||The status of the Service Evaluation instance (e.g. accepted, rejected, verified)||||||||||||||||||||||||||O
+Request||Service Evaluation Request Action Task Reference||||Reference to a Service Evaluation instance request service call|||||||||||||||||||||||||||O
+Request||Service Evaluation Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||||||I/O
+Request||Service Evaluation Request Record Reference||||Reference to the Service Evaluation service request record|||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||||||O
+Retrieve||Service Evaluation Retrieve Action Task Reference||||Reference to a Service Evaluation instance retrieve service call||||||||||||||||||||||||||||O
+Retrieve||Service Evaluation Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||||I/O
+Retrieve||Service Evaluation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||||I
+Retrieve||Service Evaluation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||||O
+Retrieve||Service Evaluation Instance Report|##|||A specific Service Evaluation instance formatted report||||||||||||||||||||||||||||IO
+Retrieve|||Service Evaluation Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||||I
+Retrieve|||Service Evaluation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||O
+Retrieve|||Service Evaluation Instance Report Type|||The type of external report available||||||||||||||||||||||||||||O
+Retrieve|||Service Evaluation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||||O
+Retrieve|||Service Evaluation Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||O
+Retrieve||Service Evaluation Instance Analysis|##|||A specific Service Evaluation instance analytical report||||||||||||||||||||||||||||IO
+Retrieve|||Service Evaluation Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||||I
+Retrieve|||Service Evaluation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||||O
+Retrieve|||Service Evaluation Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||||O
+Retrieve|||Service Evaluation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||||O
+Retrieve|||Service Evaluation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||||O

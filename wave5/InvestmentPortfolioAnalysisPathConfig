@@ -1,0 +1,16 @@
+sd=Investment Portfolio Analysis	Assess and report on investment portfolio make-up, valuation and performance	Example of use:A relationship manager requests an investment portfolio performance analysis prior to a regular client meeting	Perform scheduled and ad-hoc performance analysis on a customer's investment portfolio. This can include different types of analysis and performance comparisons
+sdpath=investment-portfolio-analysis
+crpath=managed-investment-portfolio-analysis
+crr=Managed Investment Portfolio Analysis Instance
+mcr=Managed Investment Portfolio Analysis
+bqs=PerformanceAnalysis
+CONFIG
+ManagedInvestmentPortfolioAnalysis	evaluate	perform an evaluation of an investment portfolio		evaluateManagedInvestmentPortfolioAnalysis		#desc
+ManagedInvestmentPortfolioAnalysis	exchange	Accept, verify, etc. the investment portfolio evaluation		exchangeManagedInvestmentPortfolioAnalysis		#desc
+ManagedInvestmentPortfolioAnalysis	execute	Execute an automated task for a evaluation (e.g. automated data import)		executeManagedInvestmentPortfolioAnalysis		#desc
+ManagedInvestmentPortfolioAnalysis	request	Request manual intervention for an evaluation (e.g. customize analysis request)		requestManagedInvestmentPortfolioAnalysis		#desc
+ManagedInvestmentPortfolioAnalysis	retrieve	Retrieve details about an investment portfolio analysis		retrieveManagedInvestmentPortfolioAnalysis		#desc
+PerformanceAnalysis	exchange	Accept, verify etc. an analysis result	exchangeManagedInvestmentPortfolioAnalysisPerformanceAnalysis	exchangeManagedInvestmentPortfolioAnalysisPerformanceAnalysis		Handle an external exchange (e.g. accept, reject, verify)
+PerformanceAnalysis	execute	Execute an automated task for a specific type of analysis (e.g. data upload)	executeManagedInvestmentPortfolioAnalysisPerformanceAnalysis	executeManagedInvestmentPortfolioAnalysisPerformanceAnalysis		Invoke an automated execute action against the Performance Analysis instance
+PerformanceAnalysis	request	Request manual intervention for a specific type of analysis (e.g. adapt aspects of the analysis)	requestManagedInvestmentPortfolioAnalysisPerformanceAnalysis	requestManagedInvestmentPortfolioAnalysisPerformanceAnalysis		Invoke a service request action against the Performance Analysis instance
+PerformanceAnalysis	retrieve	Retrieve details about a specific type of investment portfolio analysis	retrieveManagedInvestmentPortfolioAnalysisPerformanceAnalysis	retrieveManagedInvestmentPortfolioAnalysisPerformanceAnalysis		Invoke a reporting action to obtain a Performance Analysis instance related report

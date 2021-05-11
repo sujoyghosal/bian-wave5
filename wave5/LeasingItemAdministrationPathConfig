@@ -1,0 +1,27 @@
+sd=Leasing Item Administration	Track the status of the assets underlying leasing agreements as they represent collateral items that could be accessed in the event of account recovery	The bank reviews the maintenance schedule for a major piece of equipment leased by a customer with bank financing to confirm that preventative maintenance has been undertaken as required and that the equipment is being used as intended	This service domain handles the oversight, administration and confirmation that any required maintenance tasks that are associated with a leased item that is the subject of a leasing agreement financed through the bank. This can include scheduled and ad-hoc item valuations, status/documentation and title checks and tracking upkeep actions that the item owner is obliged to undertake (such as obtaining certification and insurance)
+sdpath=leasing-item-administration
+crpath=leasing-item-administrative-plan
+crr=Leasing Item Administrative Plan Instance
+mcr=Leasing Item Administrative Plan
+bqs=Assurance Valuation Registration
+CONFIG
+LeasingItemAdministrativePlan	initiate	Instantiate a new Leasing Item Administrative Plan		initiateLeasingItemAdministrativePlan		#desc
+LeasingItemAdministrativePlan	update	Update details relating to Leasing Item Administrative Plan		updateLeasingItemAdministrativePlan		#desc
+LeasingItemAdministrativePlan	control	Control the processing of Leasing Item Administrative Plan		controlLeasingItemAdministrativePlan		#desc
+LeasingItemAdministrativePlan	exchange	Accept, verify, etc. aspects of Leasing Item Administrative Plan processing		exchangeLeasingItemAdministrativePlan		#desc
+LeasingItemAdministrativePlan	capture	Capture Leasing Item Administrative Plan activity or event related information		captureLeasingItemAdministrativePlan		#desc
+LeasingItemAdministrativePlan	request	Request manual intervention or a decision with respect to Leasing Item Administrative Plan		requestLeasingItemAdministrativePlan		#desc
+LeasingItemAdministrativePlan	grant	Obtain permission to act in relation to Leasing Item Administrative Plan		grantLeasingItemAdministrativePlan		#desc
+LeasingItemAdministrativePlan	retrieve	Retrieve details about any aspect of Leasing Item Administrative Plan		retrieveLeasingItemAdministrativePlan		#desc
+Valuation	initiate	Instantiate a new Valuation	initiateLeasingItemAdministrativePlanValuation	initiateLeasingItemAdministrativePlanValuation		Details of a new Valuation instance
+Valuation	update	Update details relating to Valuation	updateLeasingItemAdministrativePlanValuation	updateLeasingItemAdministrativePlanValuation		Update to any amendable fields of the Valuation instance
+Valuation	capture	Capture Valuation activity or event related information	captureLeasingItemAdministrativePlanValuation	captureLeasingItemAdministrativePlanValuation		Provide a structured input transaction/record (e.g. timesheet, event)
+Valuation	retrieve	Retrieve details about any aspect of Valuation	retrieveLeasingItemAdministrativePlanValuation	retrieveLeasingItemAdministrativePlanValuation		Invoke a reporting action to obtain a Valuation instance related report
+Registration	initiate	Instantiate a new Registration	initiateLeasingItemAdministrativePlanRegistration	initiateLeasingItemAdministrativePlanRegistration		Details of a new Registration instance
+Registration	update	Update details relating to Registration	updateLeasingItemAdministrativePlanRegistration	updateLeasingItemAdministrativePlanRegistration		Update to any amendable fields of the Registration instance
+Registration	capture	Capture Registration activity or event related information	captureLeasingItemAdministrativePlanRegistration	captureLeasingItemAdministrativePlanRegistration		Provide a structured input transaction/record (e.g. timesheet, event)
+Registration	retrieve	Retrieve details about any aspect of Registration	retrieveLeasingItemAdministrativePlanRegistration	retrieveLeasingItemAdministrativePlanRegistration		Invoke a reporting action to obtain a Registration instance related report
+Assurance	initiate	Instantiate a new Assurance	initiateLeasingItemAdministrativePlanAssurance	initiateLeasingItemAdministrativePlanAssurance		Details of a new Assurance instance
+Assurance	update	Update details relating to Assurance	updateLeasingItemAdministrativePlanAssurance	updateLeasingItemAdministrativePlanAssurance		Update to any amendable fields of the Assurance instance
+Assurance	capture	Capture Assurance activity or event related information	captureLeasingItemAdministrativePlanAssurance	captureLeasingItemAdministrativePlanAssurance		Provide a structured input transaction/record (e.g. timesheet, event)
+Assurance	retrieve		retrieveLeasingItemAdministrativePlanAssurance	retrieveLeasingItemAdministrativePlanAssurance		Invoke a reporting action to obtain a Assurance instance related report

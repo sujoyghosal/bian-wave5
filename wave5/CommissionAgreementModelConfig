@@ -1,0 +1,128 @@
+CR Employee Commission Agreement Instance Record|Employee Commission Agreement||||||CR Employee Commission Agreement Initiate|CR Employee Commission Agreement Update|CR Employee Commission Agreement Control|CR Employee Commission Agreement Exchange|CR Employee Commission Agreement Request|CR Employee Commission Agreement Grant|CR Employee Commission Agreement Retrieve|BQ Commission Terms Initiate|BQ Commission Terms Update|BQ Commission Terms Control|BQ Commission Terms Exchange|BQ Commission Terms Request|BQ Commission Terms Grant|BQ Commission Terms Retrieve|
+Mandatory||Commission Agreement Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Employee Commission Agreement Instance Reference||||Reference to the Employee Commission Agreement instance|O|I|I|I|I|I
+Initiate||Employee Commission Agreement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Employee Commission Agreement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Employee Commission Agreement Instance Status||||The status of the Employee Commission Agreement instance (e.g. initialised, pending, active)|IO
+||Employee Commission Agreement Instance Record||||Maintain the terms and conditions that apply to a commercial relationship within Commission Agreement.
+Example: Define and maintain the terms govering the contratcual relationship with a customer.||||||||||||||
+||Employee Commission Agreement Parameter Type||||A Classification value that distinguishes between Options defined within Employee Commission Agreement|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Selected Option||||A selected optional feature in a product, identified by Parameter Type|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Type||||A Classification value that distinguishes between the subject matters of Employee Commission Agreement|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Reference||||Reference to Employee Commission Agreement|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Request||||Request to discharge Employee Commission Agreement|IO|IO|IO|IO|IO|IO|O|||||||
+||Employee Commission Agreement Schedule||||Timetable to discharge Employee Commission Agreement|IO|IO|IO|IO|IO|IO|O|||||||
+||Employee Commission Agreement Status||||The status of Employee Commission Agreement discharging|IO|IO|IO|IO|IO|IO|O|||||||
+||Employee Commission Agreement Customer Reference||||Reference to the customer who is involved in Employee Commission Agreement|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Obligation||||Liability or duty to do something under the terms of Employee Commission Agreement|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Entitlement||||Right to do something under the terms of Employee Commission Agreement|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Regulation Reference||||Reference to the regulation which is defined in Employee Commission Agreement|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Regulation Type||||A Classification that distinguishes between the regularity domains of Employee Commission Agreement|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Jurisdiction||||Reference to the jurisdiction that is assigned to Employee Commission Agreement in case of legal dispute.|I|I|I|I|I|I|O|||||||
+||Employee Commission Agreement Account Reference||||Reference to the account which is linked to Employee Commission Agreement|I|I|I|I|I|I|O|||||||
+Update||Employee Commission Agreement Update Action Task Reference||||Reference to an update service call||O
+Update||Employee Commission Agreement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Employee Commission Agreement Control Action Task Reference||||Reference to a Employee Commission Agreement instance control processing service call|||O
+CONTROL||Employee Commission Agreement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Employee Commission Agreement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Employee Commission Agreement Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Employee Commission Agreement Exchange Action Task Reference||||Reference to a Employee Commission Agreement instance exchange service call||||O
+EXCHANGE||Employee Commission Agreement Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Employee Commission Agreement Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Employee Commission Agreement Exchange Action Response||||Details of the exchange action service response||||O
+REQUEST||Employee Commission Agreement Request Action Task Reference||||Reference to a Employee Commission Agreement instance request service call|||||O
+REQUEST||Employee Commission Agreement Request Action Task Record||||The request service call consolidated processing record|||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record|||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||I
+REQUEST||Request Response Record||||Details of the request action service response|||||O
+GRANT||Employee Commission Agreement Grant Action Task Reference||||Reference to a Employee Commission Agreement instance grant service call||||||O
+GRANT||Employee Commission Agreement Grant Action Task Record||||The grant service call consolidated processing record||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted||||||O
+RETRIEVE||Employee Commission Agreement Retrieve Action Task Reference||||Reference to a Employee Commission Agreement instance retrieve service call|||||||O
+RETRIEVE||Employee Commission Agreement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Employee Commission Agreement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Employee Commission Agreement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Employee Commission Agreement Instance Report Record|##|||A specific Employee Commission Agreement instance formatted report|||||||IO
+RETRIEVE|||Employee Commission Agreement Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Employee Commission Agreement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Employee Commission Agreement Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Employee Commission Agreement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Employee Commission Agreement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Employee Commission Agreement Instance Analysis|##|||A specific Employee Commission Agreement instance analytical report|||||||IO
+RETRIEVE|||Employee Commission Agreement Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Employee Commission Agreement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Employee Commission Agreement Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Employee Commission Agreement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Employee Commission Agreement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Commission Terms Instance Record|Commission Terms||||||
+Mandatory||Employee Commission Agreement Instance Reference||||Reference to the parent Employee Commission Agreement instance||||||||I|I|I|I|I|I
+Mandatory||Commission Terms Instance Reference||||Reference to the Commission Terms instance||||||||O|I|I|I|I|I
+Initiate||Commission Terms Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Commission Terms Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Commission Terms Instance Status||||The status of the Commission Terms instance (e.g. initialised, pending, active)||||||||O
+||Commission Terms Instance Record||||Maintain the terms and conditions that apply to a commercial relationship within Commission Agreement.
+||||||||||||||
+||Commission Terms Preconditions||||The required status/situation for the terms to applyand or tasks that need to be completed prior to the initiation of the workstep||||||||IO|IO|IO|IO|IO|IO|O
+||Commission Terms Term Schedule||||Any timing/duration considerations applying to the terms||||||||IO|IO|IO|IO|IO|IO|O
+||Commission Terms||||The Employee Commission Agreement
+||||||||||||||
+||Commission Terms Service Type||||Reference to the specific business service type||||||||IO|IO|IO|IO|IO|IO|O
+||Commission Terms Service Description||||Description of the performed business service||||||||IO|IO|IO|IO|IO|IO|O
+||Commission Terms Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|IO|IO|IO|O
+||Commission Terms Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|IO|IO|IO|O
+Update||Commission Terms Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Commission Terms Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Commission Terms Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Control||Commission Terms Control Action Task Reference||||Reference to a Commission Terms instance control processing service call||||||||||O
+Control||Commission Terms Control Action Task Record||||The processing control service call consolidated processing record||||||||||I/O
+Control||Commission Terms Control Action Request|##|||Details of the control action service request||||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)||||||||||I
+Control||Commission Terms Control Action Response||||Details of the control action service response||||||||||O
+Control||Commission Terms Instance Status||||The status of the Commission Terms instance (e.g. initialised, pending, active)||||||||||O
+Exchange||Commission Terms Exchange Action Task Reference||||Reference to a Commission Terms instance exchange service call|||||||||||O
+Exchange||Commission Terms Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||I/O
+Exchange||Commission Terms Exchange Action Request|##|||Details of the exchange action service request|||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||I
+Exchange||Commission Terms Exchange Action Response||||Details of the exchange action service response|||||||||||O
+Exchange||Commission Terms Instance Status||||The status of the Commission Terms instance (e.g. accepted, rejected, verified)|||||||||||O
+Request||Commission Terms Request Action Task Reference||||Reference to a Commission Terms instance request service call||||||||||||O
+Request||Commission Terms Request Action Task Record||||The request service call consolidated processing record||||||||||||I/O
+Request||Commission Terms Request Record Reference||||Reference to the Commission Terms service request record||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||O
+Grant||Commission Terms Grant Action Task Reference||||Reference to a Commission Terms instance grant service call|||||||||||||O
+Grant||Commission Terms Grant Action Task Record||||The grant service call consolidated processing record|||||||||||||I/O
+Grant||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||||||||I
+Grant||Grant Request Record Reference||||Reference to the grant request record|||||||||||||O
+Grant||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||||||||I
+Grant|||Grant Request Details|||Details of the permissions requested|||||||||||||I
+Grant||Grant Request Response Record |##|||Details of the grant request action service response|||||||||||||O
+Grant|||Grant Permission Details|||Details of the permissions granted|||||||||||||O
+Retrieve||Commission Terms Retrieve Action Task Reference||||Reference to a Commission Terms instance retrieve service call||||||||||||||O
+Retrieve||Commission Terms Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Commission Terms Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Commission Terms Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Commission Terms Instance Report|##|||A specific Commission Terms instance formatted report||||||||||||||IO
+Retrieve|||Commission Terms Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Commission Terms Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Commission Terms Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Commission Terms Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Commission Terms Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Commission Terms Instance Analysis|##|||A specific Commission Terms instance analytical report||||||||||||||IO
+Retrieve|||Commission Terms Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Commission Terms Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Commission Terms Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Commission Terms Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Commission Terms Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O

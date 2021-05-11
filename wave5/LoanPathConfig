@@ -1,0 +1,30 @@
+sd=Loan	This service domain handles the fulfillment of a general loan product. This includes the initial set-up of the loan facility and the completion of scheduled and ad-hoc product processing tasks	Example of use:An established and valued bank customer applies for and gets a loan for a home improvement project	The loan product represents a generic loan capability that may include different properties/features depending on a bank's preferences and policies. The loan may or may not be secured by collateral.
+sdpath=loan
+crpath=loan-arrangement
+crr=Loan Arrangement Instance
+mcr=Loan Arrangement
+bqs=Disbursement Maintenance ServiceFees Interest Repayment Restructuring Withdrawal
+CONFIG
+LoanArrangement	initiate	Initiate a loan		initiateLoanArrangement		#desc
+LoanArrangement	retrieve	Retrieve details about a loan		retrieveLoanArrangement		#desc
+LoanArrangement	update	Update details for an existing loan		updateLoanArrangement		#desc
+LoanArrangement	control	Control a loan		controlLoanArrangement		#desc
+Repayment	execute	Execute an automated repayment transaction	executeLoanArrangementRepayment	executeLoanArrangementRepayment		Invoke an automated execute action against the Repayment instance
+Repayment	retrieve	Retrieve details about a loan repayment	retrieveLoanArrangementRepayment	retrieveLoanArrangementRepayment		Invoke a reporting action to obtain a Repayment instance related report
+Repayment	request	Request handling of an exceptional repayment	requestLoanArrangementRepayment	requestLoanArrangementRepayment		Invoke a service request action against the Repayment instance
+Repayment	update	Update a repayment transaction made to the loan	updateLoanArrangementRepayment	updateLoanArrangementRepayment		Update to any amendable fields of the Repayment instance
+Restructuring	exchange	Accept, reject etc a loan restructuring proposal	exchangeLoanArrangementRestructuring	exchangeLoanArrangementRestructuring		Handle an external exchange (e.g. accept, reject, verify)
+Restructuring	initiate	Initiate loan account restructuring	initiateLoanArrangementRestructuring	initiateLoanArrangementRestructuring		Details of a new Restructuring instance
+Restructuring	retrieve	Retrieve details about a loan restructuring task	retrieveLoanArrangementRestructuring	retrieveLoanArrangementRestructuring		Invoke a reporting action to obtain a Restructuring instance related report
+Restructuring	request	Request activity associated with a restructuring effort	requestLoanArrangementRestructuring	requestLoanArrangementRestructuring		Invoke a service request action against the Restructuring instance
+Restructuring	update	Update details of a loan or restructuring activities	updateLoanArrangementRestructuring	updateLoanArrangementRestructuring		Update to any amendable fields of the Restructuring instance
+Disbursement	retrieve	Retrieve details about a disbursement paid against a loan	retrieveLoanArrangementDisbursement	retrieveLoanArrangementDisbursement		Invoke a reporting action to obtain a Disbursement instance related report
+Maintenance	retrieve	Retrieve details about maintenance processing for a loan	retrieveLoanArrangementMaintenance	retrieveLoanArrangementMaintenance		Invoke a reporting action to obtain a Maintenance instance related report
+Maintenance	request	Request a maintenance activity for a consumer load	requestLoanArrangementMaintenance	requestLoanArrangementMaintenance		Invoke a service request action against the Maintenance instance
+Withdrawal	execute	Execute an automated withdrawal against a loan	executeLoanArrangementWithdrawal	executeLoanArrangementWithdrawal		Invoke an automated execute action against the Withdrawal instance
+Withdrawal	retrieve	Retrieve details about a loan withdrawal	retrieveLoanArrangementWithdrawal	retrieveLoanArrangementWithdrawal		Invoke a reporting action to obtain a Withdrawal instance related report
+Withdrawal	request	Request handling of a withdrawal	requestLoanArrangementWithdrawal	requestLoanArrangementWithdrawal		Invoke a service request action against the Withdrawal instance
+Withdrawal	update	Update details of a withdrawal from a loan	updateLoanArrangementWithdrawal	updateLoanArrangementWithdrawal		Update to any amendable fields of the Withdrawal instance
+Interest	retrieve	Retrieve details about interest applied to a loan	retrieveLoanArrangementInterest	retrieveLoanArrangementInterest		Invoke a reporting action to obtain a Interest instance related report
+ServiceFees	execute	Execute a fee charge against a loan	executeLoanArrangementServiceFees	executeLoanArrangementServiceFees		Invoke an automated execute action against the Service Fees instance
+ServiceFees	retrieve	Retrieve details about a loan fees	retrieveLoanArrangementServiceFees	retrieveLoanArrangementServiceFees		Invoke a reporting action to obtain a Service Fees instance related report

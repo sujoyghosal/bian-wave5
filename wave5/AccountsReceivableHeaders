@@ -1,0 +1,30 @@
+SD=Accounts Receivable
+CR=Accounts Receivable Procedure
+BQs=Payment CustomerNegotiation Resolution ReceivablesEvaluation
+Manage the tracking, chasing and receipt of scheduled payments against issued invoices. For the significant majority accounts are likely to be settled in compliance with established arrangements. For late payment the Service Domain includes actions to negotiate with the customer and handle defaulted payments
+A product business unit submits an invoice to a customer for services rendered that requires customer payment from an account not managed by the bank.
+This service domain handles accounts receivable for invoices issue by the bank to customers and partners. It includes follow-up and resolution activity for delayed/missed payments
+CR - Accounts Receivable Procedure							BQ - Customer Negotiation	BQ Customer Negotiation				BQ - Resolution			BQ - Payment			BQ - Receivables Evaluation			
+In	Up	Co	Ec	Ex	Rq	Re	In	Up	Ec	Rq	Re	In	Up	Re	In	Up	Re	In	Up	Ec	Re
+InCR Instantiate a new Accounts Receivable Procedure
+UpCR Update details relating to Accounts Receivable Procedure
+CoCR Control the processing of Accounts Receivable Procedure
+EcCR Accept, verify, etc. aspects of Accounts Receivable Procedure processing
+ExCR Execute an available automated action for Accounts Receivable Procedure
+RqCR Request manual intervention or a decision with respect to Accounts Receivable Procedure
+ReCR Retrieve details about any aspect of Accounts Receivable Procedure
+InBQ Instantiate a new Customer Negotiation
+UpBQ Update details relating to Customer Negotiation
+EcBQ Accept, verify, etc. aspects of Customer Negotiation processing
+RqBQ Request manual intervention or a decision with respect to Customer Negotiation
+ReBQ Retrieve details about any aspect of Customer Negotiation
+InBQ Instantiate a new Resolution
+UpBQ Update details relating to Resolution
+ReBQ Retrieve details about any aspect of Resolution
+InBQ Instantiate a new Payment
+UpBQ Update details relating to Payment
+ReBQ Retrieve details about any aspect of Payment
+InBQ Instantiate a new Receivables Evaluation
+UpBQ Update details relating to Receivables Evaluation
+EcBQ Accept, verify, etc. aspects of Receivables Evaluation processing
+ReBQ Retrieve details about any aspect of Receivables Evaluation

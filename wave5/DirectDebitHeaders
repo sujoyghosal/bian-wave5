@@ -1,0 +1,28 @@
+SD=Direct Debit
+CR=Direct Debit Arrangement
+BQs= Reporting PaymentTracking PaymentInitiation FundsAvailableCheck VerifyMandate
+This service domain processes the creditor side of direct debit processing. Typically a creditor will submit a batch of direct debit requests. The process checks the required service mandates are in place and initiates the payment processing. It tracks payment and reports on completion or other processing issues that might arise (such as insufficient funds available).
+A corporate customer submits a batch of direct debit instructions for customers with accounts held at the bank
+Fulfils a direct debit agreement.  Handles the creditor side of direct debits.
+CR - Direct Debit Arrangement							BQ - Reporting		BQ - Payment Tracking				BQ - Payment Initiation		BQ - Verify Mandate		BQ - Funds Available Check		
+In	Up	Co	Ec	Ex	Rq	Re	In	Re	In	Co	Ex	Re	Ec	Re	Ec	Re	Ec	Rq	Re
+InCR Instantiate a new Direct Debit Arrangement
+UpCR Update details relating to Direct Debit Arrangement
+CoCR Control the processing of Direct Debit Arrangement
+EcCR Accept, verify, etc. aspects of Direct Debit Arrangement processing
+ExCR Execute an available automated action for Direct Debit Arrangement
+RqCR Request manual intervention or a decision with respect to Direct Debit Arrangement
+ReCR Retrieve details about any aspect of Direct Debit Arrangement
+InBQ Instantiate a new Reporting
+ReBQ Retrieve details about any aspect of Reporting
+InBQ Instantiate a new Payment Tracking
+CoBQ Control the processing of Payment Tracking
+ExBQ Execute an available automated action for Payment Tracking
+ReBQ Retrieve details about any aspect of Payment Tracking
+EcBQ Accept, verify, etc. aspects of Payment Initiation processing
+ReBQ Retrieve details about any aspect of Payment Initiation
+EcBQ Accept, verify, etc. aspects of Verify Mandate processing
+ReBQ Retrieve details about any aspect of Verify Mandate
+EcBQ Accept, verify, etc. aspects of Funds Available Check processing
+RqBQ Request manual intervention or a decision with respect to Funds Available Check
+ReBQ Retrieve details about any aspect of Funds Available Check

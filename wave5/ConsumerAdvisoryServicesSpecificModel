@@ -1,0 +1,33 @@
+CR Consumer Advice Fulfillment Arrangement Instance Record	CR Consumer Advice Fulfillment Arrangement Instance Record	Consumer Advice Fulfillment Arrangement Instance Record	##			The control record maintains the details for providing financial advice to a customer as a structured service offering (in contrast to general relationship management support)	IO	IO		IO	O	IO				IO				IO								
+			Product Instance Reference 			Reference to the advisory service session	O	IO		I	O	I				I				I								
+			Customer Reference			Reference to the customer receiving the financial advice	I	IO		I	O	I				I				I								
+			Customer Position State Instance Record			The overall customer position state tracking and analysis, combining different analytical measures including credit, collateral and product/service cash flows	I	IO		IO	O	IO				IO				IO								
+			Bank Branch/Location Reference			Bank branch associated with the customer account/relationship for booking purposes	I	IO		IO	O	IO				IO				IO								
+			Employee/Business Unit Reference 			Business unit and or employee reference to the source of the financial advice	I	IO		IO	O	IO				IO				IO								
+			Consumer Advice Work Products 			File of consolidated notes, forms and documents for the advisory session	O	IO		IO	O	IO				IO				IO								
+			Document Directory Entry Instance Reference			The document reference for associated documents such as disclosures and acceptance records	IO	IO		IO	O	IO				IO				IO								
+			Consumer Advice Session Schedule			Target and actual dates for tasks performed (includes any specialist sessions)	O	IO		IO	O	IO				IO				IO								
+			Consumer Advice Profile	##		Details the types of consumer advice that are combined into the overall evaluation	IO	IO		IO	O	IO				IO				IO								
+				Advice Type		Reference to the different types of advice	IO	IO		IO	O	IO				IO				IO								
+			Consumer Advice Consolidation Record 			The combination of the different customer advisory assessments provided to the customer	O	IO		O	O	O				O				O								
+			Date Type	##		Key dates and times associated with the advisory session (e.g. booking date, start date/time)	IO	IO		IO	O	IO				IO				IO								
+				Date		Value of the date type	IO	IO		IO	O	IO				IO				IO								
+BQ Financial Planning Instance Record	BQ Financial Planning Instance Record	Financial Planning Instance Record	##			Provide basic financial advice for short and long term investment and financing options						IO	IO	IO	O													
+			Product/Service Reference 			Reference to the financial planning advisory service (used to access guidance materials)						I	IO	IO	O													
+			Financial Planning Advice Result			Summary recommendations arising from the advice that is added to the consolidated record						O	IO	IO	O													
+BQ Tax Optimization Instance Record	BQ Tax Optimization Instance Record	Tax Optimization Instance Record	##			Provide tax (and compliance) related advice for product and service optimization										IO	IO	IO	O									
+			Product/Service Reference 			Reference to the consumer tax advisory service (used to access guidance materials)										I	IO	IO	O									
+			Tax Optimization Advice Result			Summary recommendations arising from the advice that is added to the consolidated record										O	IO	IO	O									
+BQ Product Guidance Instance Record	BQ Product Guidance Instance Record	Product Guidance Instance Record	##			Provide product and service specific guidance and insights														IO	IO	IO	O					
+			Product/Service Reference 			Reference to the consumer tax advisory service (used to access guidance materials)														I	IO	IO	O					
+			Specialist Support Task	##		A record of engaging a product specialist to liaise with the customer														IO	IO	IO	O					
+				Specialist Employee/Business Unit Reference 		Business unit and or employee reference for the product specialist engaged														IO	IO	IO	O					
+				Specialist Advice Description		General description of the product specialist advice provided														O	IO	IO	O					
+				Specialist Advice Charge		The service charge to be made to the customer for the specialist support														O	IO	IO	O					
+			Product Guidance Advice Result			Summary recommendations arising from the advice that is added to the consolidated record														O	IO	IO	O					
+BQ Service Fees Instance Record	BQ Service Fees Instance Record	Service Fees Instance Record	##			Applies service fees and penalties to the account																		IO	IO		IO	O
+			Fee Application Record	##		The record of applied fees for the specialist advice																		IO	IO		IO	O
+				Fee Transaction	##	A record of an applied fee																		IO	IO		IO	O
+					Fee Transaction Description	General description of the fee																		IO	IO		I	O
+					Fee Transaction Type	The fee type applied																		IO	IO		IO	O
+					Fee Transaction Charge	The derived fee amount to be charged																		IO	IO		I	O

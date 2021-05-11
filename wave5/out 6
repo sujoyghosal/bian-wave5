@@ -1,0 +1,60 @@
+Mandatory||Contact Dialogue Servicing Session Reference||||Reference to the active servicing session
+Mandatory||Customer Contact Session Procedure Instance Reference||||Reference to the Customer Contact Session Procedure instance
+Initiate||Customer Contact Session Procedure Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Customer Contact Session Procedure Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Customer Contact Session Procedure Instance Status||||The status of the Customer Contact Session Procedure instance (e.g. initialised, pending, active)|IO
+CR Customer Contact Session Procedure Instance Record|Customer Contact Session Procedure|CR Customer Contact Session Procedure Instance Record|##|||Handles a customer interaction by optimizing the dialogue|IO|IO|||IO|IO|O|IO|IO|O|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O
+|||Customer Contact Operating Session Instance Record|||Reference to the parent contact record|I|IO|||I|I|O|I||O||O|I||O|I||O|I||O|I||O|I||O|I||O|I||O
+|||Customer Reference |||Reference to the customer (can be extracted from Contact Record or provided by customer)|I|IO|||I|I|O|I||O||O|I||O|I||O|I||O|I||O|I||O|I||O|I||O
+|||Employee Reference|||Reference to the servicing agent|I|IO|||I|I|O|I||O|||I||O|I||O|I||O|I||O|I||O|I||O|I||O
+|||Servicing Position Reference|||Reference to the servicing location/desk for assisted customer exchanges|I|IO|||I|I|O|I||O|||I||O|I||O|I||O|I||O|I||O|I||O|I||O
+|||Session Mechanism|||The type of channel device involved in the session exchange (e.g. web, phone, chat, video, VOIP, face to face at a branch - note there can be concurrent sessions within a single customer contact)|I|IO|||I|I|O|I||O|||I||O|I||O|I||O|I||O|I||O|I||O|I||O
+|||Session Start/End Time|||The start and duration of the dialogue|IO|IO|||IO|IO|O|IO||O|||IO||O|IO||O|IO||O|IO||O|IO||O|IO||O|IO||O
+|||Contact Dialogue Record|##||The session dialogue log of actions is returned to SD-Contact Handler and added to the contact record|IO|IO|||IO|IO|O|IO|IO|O|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O
+||||Contact Dialogue Type||The general type of customer exchange (e.g. verified customer, anonymous contact, topic - used to structure/script dialogue)|IO|IO|||IO|IO|O|IO||O|||IO||O|IO||O|IO||O|IO||O|IO||O|IO||O|IO||O
+||||Contact Dialogue Script||In cases a prompt or script can provided to structure the interaction for self-service and assisted interactions|O|IO|||IO|IO|O|IO||O|||IO||O|IO||O|IO||O|IO||O|IO||O|IO||O|IO||O
+||||Contact Dialogue Log Reference||Reference to a dialogue log that is built up|O|IO|||I|I|O|I||O|||I||O|I||O|I||O|I||O|I||O|I||O|I||O
+||||Contact Dialogue Log||The dialogue log, used for training and root cause analysis etc. (e.g. click-stream, video/audio recording)|O|IO|||IO|IO|O|IO|IO|O|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O
+||||Contact Dialogue Result||The outcome of the dialogue (e.g. customer satisfied, on-ward routing, hang-up)|O|IO|||IO|IO|O|IO|IO|O|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O|IO|IO|O
+Update||Customer Contact Session Procedure Update Action Task Reference||||Reference to an update service call||O
+Update||Customer Contact Session Procedure Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Customer Contact Session Procedure Control Action Task Reference||||Reference to a Customer Contact Session Procedure instance control processing service call|||O
+CONTROL||Customer Contact Session Procedure Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Customer Contact Session Procedure Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Customer Contact Session Procedure Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Customer Contact Session Procedure Exchange Action Task Reference||||Reference to a Customer Contact Session Procedure instance exchange service call||||O
+EXCHANGE||Customer Contact Session Procedure Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Customer Contact Session Procedure Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Customer Contact Session Procedure Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Customer Contact Session Procedure Execute Action Task Reference||||Reference to a Customer Contact Session Procedure instance execute service call|||||O
+EXECUTE||Customer Contact Session Procedure Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Customer Contact Session Procedure Request Action Task Reference||||Reference to a Customer Contact Session Procedure instance request service call||||||O
+REQUEST||Customer Contact Session Procedure Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Customer Contact Session Procedure Retrieve Action Task Reference||||Reference to a Customer Contact Session Procedure instance retrieve service call|||||||O
+RETRIEVE||Customer Contact Session Procedure Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Customer Contact Session Procedure Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Customer Contact Session Procedure Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Customer Contact Session Procedure Instance Report Record|##|||A specific Customer Contact Session Procedure instance formatted report|||||||IO
+RETRIEVE|||Customer Contact Session Procedure Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Customer Contact Session Procedure Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Customer Contact Session Procedure Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Customer Contact Session Procedure Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Customer Contact Session Procedure Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Customer Contact Session Procedure Instance Analysis|##|||A specific Customer Contact Session Procedure instance analytical report|||||||IO
+RETRIEVE|||Customer Contact Session Procedure Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Customer Contact Session Procedure Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Customer Contact Session Procedure Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Customer Contact Session Procedure Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Customer Contact Session Procedure Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O

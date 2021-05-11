@@ -1,0 +1,19 @@
+sd=Branch Currency Management	Track cash inventory, project demand and ensure all cash is accounted for within the branch	The branch management reviews the available float and confirms end of day balances at the teller positions	This service domain is responsible for tracking the available cash (currency) inventory held and distributed within the Branch location to teller and ATM positions, to ensure adequate float is always available at all positions. Also to check balances and see that excess cash is transferred to secure central storage as appropriate. If necessary specific criteria can be selected to refine the allocation
+sdpath=branch-currency-management
+crpath=branch-cash-allocation
+crr=Branch Cash Allocation Instance
+mcr=Branch Cash Allocation
+bqs=InventoryAllocation
+CONFIG
+BranchCashAllocation	initiate	Instantiate a new Branch Cash Allocation		initiateBranchCashAllocation		#desc
+BranchCashAllocation	update	Update details relating to Branch Cash Allocation		updateBranchCashAllocation		#desc
+BranchCashAllocation	control	Control the processing of Branch Cash Allocation		controlBranchCashAllocation		#desc
+BranchCashAllocation	exchange	Accept, verify, etc. aspects of Branch Cash Allocation processing		exchangeBranchCashAllocation		#desc
+BranchCashAllocation	capture	Capture Branch Cash Allocation activity or event related information		captureBranchCashAllocation		#desc
+BranchCashAllocation	retrieve	Retrieve details about any aspect of Branch Cash Allocation		retrieveBranchCashAllocation		#desc
+InventoryAllocation	initiate	Instantiate a new Inventory Allocation	initiateBranchCashAllocationInventoryAllocation	initiateBranchCashAllocationInventoryAllocation		Details of a new Inventory Allocation instance
+InventoryAllocation	update	Update details relating to Inventory Allocation	updateBranchCashAllocationInventoryAllocation	updateBranchCashAllocationInventoryAllocation		Update to any amendable fields of the Inventory Allocation instance
+InventoryAllocation	control	Control the processing of Inventory Allocation	controlBranchCashAllocationInventoryAllocation	controlBranchCashAllocationInventoryAllocation		Request specific processing (e.g. suspend, skip, terminate)
+InventoryAllocation	exchange	Accept, verify, etc. aspects of Inventory Allocation processing	exchangeBranchCashAllocationInventoryAllocation	exchangeBranchCashAllocationInventoryAllocation		Handle an external exchange (e.g. accept, reject, verify)
+InventoryAllocation	capture	Capture Inventory Allocation activity or event related information	captureBranchCashAllocationInventoryAllocation	captureBranchCashAllocationInventoryAllocation		Provide a structured input transaction/record (e.g. timesheet, event)
+InventoryAllocation	retrieve		retrieveBranchCashAllocationInventoryAllocation	retrieveBranchCashAllocationInventoryAllocation		Invoke a reporting action to obtain a Inventory Allocation instance related report

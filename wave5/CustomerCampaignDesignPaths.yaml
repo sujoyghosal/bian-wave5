@@ -1,0 +1,443 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Customer Campaign Design'
+ description: >
+
+    ## Executive Summary:
+
+    Design and refine customer campaign specifications based on their impact
+
+    ## Example of Use:
+
+    A retention campaign is updated to provide amended/improved pricing terms that can be offered to targeted customers to help retain their business after a poor response rate has been detected for the campaign
+
+    ## Description:
+
+    This Service Domain designs and refines customer campaigns (or integrates designs from external campaign specialists). Customer campaigns target the existing customer base and can be proactive (involving customer targeting, contact and solicitation) or self-service and include activities such as cross-sell, up-sell and retention. Version numbering is used to track the impact of changes made to campaigns over their usage.
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-customer-campaign-design/1.0.0
+schemes:
+ - https
+paths:
+  /customer-campaign-design/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCustomerCampaignDesign
+      summary: Activate  a SDCustomerCampaignDesign servicing session
+      description: Activate  a  SDCustomerCampaignDesign servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCustomerCampaignDesign Request Payload
+        schema:
+          $ref: '#/definitions/SDCustomerCampaignDesignActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCustomerCampaignDesignActivateOutputModel'
+  /customer-campaign-design/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCustomerCampaignDesign
+      summary: Update an active SDCustomerCampaignDesign session configuration
+      description: Update an active SDCustomerCampaignDesign session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustomerCampaignDesign Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCustomerCampaignDesign Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCustomerCampaignDesignConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCustomerCampaignDesignConfigureOutputModel'
+  /customer-campaign-design/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCustomerCampaignDesign
+      summary: "Capturing feedback against the SDCustomerCampaignDesign service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCustomerCampaignDesign service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustomerCampaignDesign Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCustomerCampaignDesign Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCustomerCampaignDesignFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCustomerCampaignDesignFeedbackOutputModel'
+  /customer-campaign-design/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCustomerCampaignDesign
+      summary: Analytical views maintained by the SDCustomerCampaignDesign service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCustomerCampaignDesign service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustomerCampaignDesign Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCustomerCampaignDesignRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCustomerCampaignDesignRetrieveOutputModel'
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification/creation:
+    post:
+      tags:
+      - create
+      operationId: createCustomerCampaignSpecification
+      summary: Details of a new CustomerCampaignSpecification instance
+      description: Create or register an imported customer campaign design
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CustomerCampaignSpecification Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignSpecificationCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new CustomerCampaignSpecification instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignSpecificationCreateOutputModel'
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustomerCampaignSpecification
+      summary: Update to any amendable fields of the CustomerCampaignSpecification instance
+      description: Update details of a customer campaign specification or usage record
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignSpecificationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Customer Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignSpecificationUpdateOutputModel'
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCustomerCampaignSpecificationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the use of a customer campaign specification (e.g. suspend pending revision)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignSpecificationControlInputModel'
+      responses:
+        200:
+          description: Successful control of Customer Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignSpecificationControlOutputModel'
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCustomerCampaignSpecificationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, etc. a customer campaign specification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignSpecificationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Customer Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignSpecificationExchangeOutputModel'
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureCustomerCampaignSpecificationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture impact feedback against a customer campaign specification (by version number)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignSpecificationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Customer Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignSpecificationCaptureOutputModel'
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCustomerCampaignSpecificationUpdate
+      summary: Invoke an automated execute action against the CustomerCampaignSpecification instance
+      description: Execute an automated action for a customer campaign specification (e.g. confirm eligibility requirements)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignSpecificationExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Customer Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignSpecificationExecuteOutputModel'
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustomerCampaignSpecificationUpdate
+      summary: Invoke a service request action against the CustomerCampaignSpecification instance
+      description: Request manual intervention with a customer campaign specification (e.g. obtain interpretation guidance)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Customer Campaign Specification Request Payload
+        schema:
+          $ref: '#/definitions/CRCustomerCampaignSpecificationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Customer Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignSpecificationRequestOutputModel'
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustomerCampaignDesign
+      summary: Invoke a reporting action to obtain a Customer Campaign Specification instance related report
+      description: Retrieve details about a customer campaign specification (e.g. obtain use and impact reports)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Specification Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCustomerCampaignSpecificationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Customer Campaign Specification Instance
+          schema:
+            $ref: '#/definitions/CRCustomerCampaignSpecificationRetrieveOutputModel'
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustomerCampaignDesignReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CustomerCampaignDesign Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /customer-campaign-design/customer-campaign-specification/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustomerCampaignDesignBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: []
+  /customer-campaign-design/{sd-reference-id}/customer-campaign-specification/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustomerCampaignDesignBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Customer Campaign Design Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Customer Campaign Specification Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- 
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex-  Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ID1, ID2]

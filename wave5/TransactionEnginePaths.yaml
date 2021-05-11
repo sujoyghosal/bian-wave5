@@ -1,0 +1,381 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Transaction Engine'
+ description: >
+
+    ## Executive Summary:
+
+    Orchestrate a schedule of payment transaction and reporting activities for the fulfillment of certain long term instruments or structured facilities
+
+    ## Example of Use:
+
+    Example of use:The mortgage fulfillment Service Domain delegates repayment processing to the Transaction Engine for its active mortgage product instances
+
+    ## Description:
+
+    The Service Domain provides a utility/background operational support service to orchestrate a schedule of payment transaction and reporting activities for the fulfillment of certain long term instruments or structured facilities. The Service Domain maintains a link to the associated fulfillment Service Domain and the applicable product instance for reporting and processing issues that may arise.
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-transaction-engine/1.0.0
+schemes:
+ - https
+paths:
+  /transaction-engine/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDTransactionEngine
+      summary: Activate  a SDTransactionEngine servicing session
+      description: Activate  a  SDTransactionEngine servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDTransactionEngine Request Payload
+        schema:
+          $ref: '#/definitions/SDTransactionEngineActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDTransactionEngineActivateOutputModel'
+  /transaction-engine/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDTransactionEngine
+      summary: Update an active SDTransactionEngine session configuration
+      description: Update an active SDTransactionEngine session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDTransactionEngine Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDTransactionEngine Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDTransactionEngineConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDTransactionEngineConfigureOutputModel'
+  /transaction-engine/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDTransactionEngine
+      summary: "Capturing feedback against the SDTransactionEngine service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDTransactionEngine service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDTransactionEngine Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDTransactionEngine Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDTransactionEngineFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDTransactionEngineFeedbackOutputModel'
+  /transaction-engine/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDTransactionEngine
+      summary: Analytical views maintained by the SDTransactionEngine service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDTransactionEngine service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDTransactionEngine Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDTransactionEngineRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDTransactionEngineRetrieveOutputModel'
+  /transaction-engine/{sd-reference-id}/transaction-schedule-fulfillment-arrangement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateTransactionScheduleFulfillmentArrangement
+      summary: Details of a new TransactionScheduleFulfillmentArrangement instance
+      description: Initiate delegated transaction processing for a product instance
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Transaction Engine Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TransactionScheduleFulfillmentArrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new TransactionScheduleFulfillmentArrangement instance
+          schema:
+            $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementInitiateOutputModel'
+  /transaction-engine/{sd-reference-id}/transaction-schedule-fulfillment-arrangement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateTransactionScheduleFulfillmentArrangement
+      summary: Update to any amendable fields of the TransactionScheduleFulfillmentArrangement instance
+      description: Update details for an active transaction processing arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Transaction Engine Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Transaction Schedule Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Transaction Schedule Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Transaction Schedule Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementUpdateOutputModel'
+  /transaction-engine/{sd-reference-id}/transaction-schedule-fulfillment-arrangement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlTransactionScheduleFulfillmentArrangementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control an active transaction processing arrangement (e.g. suspend)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Transaction Engine Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Transaction Schedule Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Transaction Schedule Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Transaction Schedule Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementControlOutputModel'
+  /transaction-engine/{sd-reference-id}/transaction-schedule-fulfillment-arrangement/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeTransactionScheduleFulfillmentArrangementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject a proposed action
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Transaction Engine Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Transaction Schedule Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Transaction Schedule Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Transaction Schedule Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementExchangeOutputModel'
+  /transaction-engine/{sd-reference-id}/transaction-schedule-fulfillment-arrangement/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeTransactionScheduleFulfillmentArrangementUpdate
+      summary: Invoke an automated execute action against the TransactionScheduleFulfillmentArrangement instance
+      description: Execute an automated function for a transaction processing arrangement (e.g. trigger some service option)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Transaction Engine Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Transaction Schedule Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Transaction Schedule Fulfillment Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Transaction Schedule Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementExecuteOutputModel'
+  /transaction-engine/{sd-reference-id}/transaction-schedule-fulfillment-arrangement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveTransactionEngine
+      summary: Invoke a reporting action to obtain a Transaction Schedule Fulfillment Arrangement instance related report
+      description: Retrieve details about delegated transaction processing for a product instance
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Transaction Engine Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Transaction Schedule Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRTransactionScheduleFulfillmentArrangementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Transaction Schedule Fulfillment Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRTransactionScheduleFulfillmentArrangementRetrieveOutputModel'
+  /transaction-engine/{sd-reference-id}/transaction-schedule-fulfillment-arrangement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveTransactionEngineReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Transaction Engine Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- TransactionEngine Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /transaction-engine/transaction-schedule-fulfillment-arrangement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveTransactionEngineBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: []
+  /transaction-engine/{sd-reference-id}/transaction-schedule-fulfillment-arrangement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveTransactionEngineBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Transaction Engine Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Transaction Schedule Fulfillment Arrangement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- 
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex-  Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ID1, ID2]

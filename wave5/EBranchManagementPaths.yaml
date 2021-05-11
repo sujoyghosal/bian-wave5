@@ -1,0 +1,702 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - E-Branch Management'
+ description: >
+
+    ## Executive Summary:
+
+    Oversee the configuration and operation of the e-branch channel facilities
+
+    ## Example of Use:
+
+    Management review and define the reconfiguration requirements for the e-branch channel based on capacity/volume projections
+
+    ## Description:
+
+    Handles the oversight and configuration of the e-branch (web/data) access channel. This includes assessing capacity, performance, scheduling maintenance and updates to the channel configuration. Also determining allowed access and usage and troubleshooting major production problems
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-e-branch-management/1.0.0
+schemes:
+ - https
+paths:
+  /e-branch-management/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDEBranchManagement
+      summary: Activate  a SDEBranchManagement servicing session
+      description: Activate  a  SDEBranchManagement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDEBranchManagement Request Payload
+        schema:
+          $ref: '#/definitions/SDEBranchManagementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDEBranchManagementActivateOutputModel'
+  /e-branch-management/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDEBranchManagement
+      summary: Update an active SDEBranchManagement session configuration
+      description: Update an active SDEBranchManagement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDEBranchManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDEBranchManagement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDEBranchManagementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDEBranchManagementConfigureOutputModel'
+  /e-branch-management/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDEBranchManagement
+      summary: "Capturing feedback against the SDEBranchManagement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDEBranchManagement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDEBranchManagement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDEBranchManagement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDEBranchManagementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDEBranchManagementFeedbackOutputModel'
+  /e-branch-management/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDEBranchManagement
+      summary: Analytical views maintained by the SDEBranchManagement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDEBranchManagement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDEBranchManagement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDEBranchManagementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDEBranchManagementRetrieveOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/creation:
+    post:
+      tags:
+      - create
+      operationId: createEBranchChannelManagementPlan
+      summary: Details of a new EBranchChannelManagementPlan instance
+      description: Create the management plan for the e-branch channel
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: EBranchChannelManagementPlan Request Payload
+        schema:
+          $ref: '#/definitions/CREBranchChannelManagementPlanCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of new EBranchChannelManagementPlan instance
+          schema:
+            $ref: '#/definitions/CREBranchChannelManagementPlanCreateOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateEBranchChannelManagementPlan
+      summary: Update to any amendable fields of the EBranchChannelManagementPlan instance
+      description: Update aspects of the e-branch channel management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: EBranch Channel Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CREBranchChannelManagementPlanUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated EBranch Channel Management Plan Instance
+          schema:
+            $ref: '#/definitions/CREBranchChannelManagementPlanUpdateOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeEBranchChannelManagementPlanUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, reject, etc. aspects of the e-branch channel management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: EBranch Channel Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CREBranchChannelManagementPlanExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of EBranch Channel Management Plan Instance
+          schema:
+            $ref: '#/definitions/CREBranchChannelManagementPlanExchangeOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestEBranchChannelManagementPlanUpdate
+      summary: Invoke a service request action against the EBranchChannelManagementPlan instance
+      description: Request manual intervention with the plan (e.g. reprioritize activities)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: EBranch Channel Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/CREBranchChannelManagementPlanRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of EBranch Channel Management Plan Instance
+          schema:
+            $ref: '#/definitions/CREBranchChannelManagementPlanRequestOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveE-BranchManagement
+      summary: Invoke a reporting action to obtain a EBranch Channel Management Plan instance related report
+      description: Retrieve details about the e-branch channel management plan
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CREBranchChannelManagementPlanRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved EBranch Channel Management Plan Instance
+          schema:
+            $ref: '#/definitions/CREBranchChannelManagementPlanRetrieveOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/capacityplanning/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateEBranchChannelManagementPlanCapacityPlanning
+      summary: Update to any amendable fields of the CapacityPlanning instance
+      description: Update details of the capacity management plan for the channel
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CapacityPlanning Request Payload
+        schema:
+          $ref: '#/definitions/BQCapacityPlanningUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CapacityPlanning Instance
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningUpdateOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/capacityplanning/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestEBranchChannelManagementPlanCapacityPlanningUpdate
+      summary: Invoke a service request action against the CapacityPlanning instance
+      description: Request manual intervention in the capacity plan (e.g. revise projections)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanning Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CapacityPlanning request payload
+        schema:
+          $ref: '#/definitions/BQCapacityPlanningRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of CapacityPlanning Instance Record
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningRequestOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/capacityplanning/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveEBranchChannelManagementPlanCapacityPlanning
+      summary: Invoke a reporting action to obtain a CapacityPlanning instance related report.
+      description: Retrieve details about the channel capacity plan .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CapacityPlanning Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCapacityPlanningRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CapacityPlanning Instance Record
+          schema:
+            $ref: '#/definitions/BQCapacityPlanningRetrieveOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/maintenanceandupgrade/creation:
+    post:
+      tags:
+      - create
+      operationId: createEBranchChannelManagementPlanMaintenanceAndUpgrade
+      summary: Details of a new MaintenanceAndUpgrade instance
+      description: Create a maintenance or upgrade task plan item for the channel
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: EBranch Channel Management Plan Request Payload
+        schema:
+          $ref: '#/definitions/BQMaintenanceAndUpgradeCreateInputModel'
+      responses:
+        201:
+          description: Successful creation of EBranch Channel Management Plan instance
+          schema:
+            $ref: '#/definitions/BQMaintenanceAndUpgradeCreateOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/maintenanceandupgrade/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateEBranchChannelManagementPlanMaintenanceAndUpgrade
+      summary: Update to any amendable fields of the MaintenanceAndUpgrade instance
+      description: Update details of a maintenance or upgrade management plan item
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MaintenanceAndUpgrade Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MaintenanceAndUpgrade Request Payload
+        schema:
+          $ref: '#/definitions/BQMaintenanceAndUpgradeUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated MaintenanceAndUpgrade Instance
+          schema:
+            $ref: '#/definitions/BQMaintenanceAndUpgradeUpdateOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/maintenanceandupgrade/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestEBranchChannelManagementPlanMaintenanceAndUpgradeUpdate
+      summary: Invoke a service request action against the MaintenanceAndUpgrade instance
+      description: Request manual intervention to a maintenance or upgrade action
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MaintenanceAndUpgrade Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MaintenanceAndUpgrade request payload
+        schema:
+          $ref: '#/definitions/BQMaintenanceAndUpgradeRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of MaintenanceAndUpgrade Instance Record
+          schema:
+            $ref: '#/definitions/BQMaintenanceAndUpgradeRequestOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/maintenanceandupgrade/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveEBranchChannelManagementPlanMaintenanceAndUpgrade
+      summary: Invoke a reporting action to obtain a MaintenanceAndUpgrade instance related report.
+      description: Retrieve details about a maintenance or upgrade management plan .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MaintenanceAndUpgrade Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQMaintenanceAndUpgradeRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved MaintenanceAndUpgrade Instance Record
+          schema:
+            $ref: '#/definitions/BQMaintenanceAndUpgradeRetrieveOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateEBranchChannelManagementPlanTroubleshooting
+      summary: Update to any amendable fields of the Troubleshooting instance
+      description: Update details of a production issue, root cause or remedial action recommendation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshooting Request Payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Troubleshooting Instance
+          schema:
+            $ref: '#/definitions/BQTroubleshootingUpdateOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestEBranchChannelManagementPlanTroubleshootingUpdate
+      summary: Invoke a service request action against the Troubleshooting instance
+      description: Request manual intervention in troubleshooting tasks
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Troubleshooting request payload
+        schema:
+          $ref: '#/definitions/BQTroubleshootingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Troubleshooting Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootingRequestOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/troubleshooting/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveEBranchChannelManagementPlanTroubleshooting
+      summary: Invoke a reporting action to obtain a Troubleshooting instance related report.
+      description: Retrieve details about troubleshooting tasks, root cause and proposed remedial actions .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Troubleshooting Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTroubleshootingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Troubleshooting Instance Record
+          schema:
+            $ref: '#/definitions/BQTroubleshootingRetrieveOutputModel'
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveE-BranchManagementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- EBranchManagement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /e-branch-management/e-branch-channel-management-plan/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveE-BranchManagementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'CapacityPlanning',  'MaintenanceAndUpgrade',  'Troubleshooting', ]
+  /e-branch-management/{sd-reference-id}/e-branch-channel-management-plan/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveE-BranchManagementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: E-Branch Management Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: EBranch Channel Management Plan Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Troubleshooting
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Troubleshooting Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [TroubleshootingID1, TroubleshootingID2]

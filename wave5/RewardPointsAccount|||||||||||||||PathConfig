@@ -1,0 +1,23 @@
+sd=Reward Points Account|||||||||||||||	Administer the booking and remittance of rewards points|||||||||||||||	Example of use: A customer transaction that generates reward points is captured on the log, resulting in an increase in their available point balance|||||||||||||||	Track/log the allocation and remittance of rewards points. The service domain acts as a transaction log similar where the instrument is not subject to interest considerations (as with cash) but may have a finite life-time with expiry dates on reward points|||||||||||||||
+sdpath=reward-points-account|||||||||||||||
+crpath=reward-points-log|||||||||||||||
+crr=Reward Points Log||||||||||||||| Instance
+mcr=Reward Points Log|||||||||||||||
+bqs=Expiration Capture|||||||||||||||
+CONFIG
+RewardPointsLog|||||||||||||||	initiate	Instantiate a new Reward Points Log		initiateRewardPointsLog|||||||||||||||		#desc
+RewardPointsLog|||||||||||||||	update			updateRewardPointsLog|||||||||||||||		#desc
+RewardPointsLog|||||||||||||||	control			controlRewardPointsLog|||||||||||||||		#desc
+RewardPointsLog|||||||||||||||	exchange			exchangeRewardPointsLog|||||||||||||||		#desc
+RewardPointsLog|||||||||||||||	capture			captureRewardPointsLog|||||||||||||||		#desc
+RewardPointsLog|||||||||||||||	request			requestRewardPointsLog|||||||||||||||		#desc
+RewardPointsLog|||||||||||||||	grant			grantRewardPointsLog|||||||||||||||		#desc
+RewardPointsLog|||||||||||||||	retrieve			retrieveRewardPointsLog|||||||||||||||		#desc
+BQExpiration	initiate		initiateRewardPointsLog|||||||||||||||BQExpiration	initiateRewardPointsLog|||||||||||||||BQExpiration		Details of a new BQ Expiration instance
+BQExpiration	update		updateRewardPointsLog|||||||||||||||BQExpiration	updateRewardPointsLog|||||||||||||||BQExpiration		Update to any amendable fields of the BQ Expiration instance
+BQExpiration	capture		captureRewardPointsLog|||||||||||||||BQExpiration	captureRewardPointsLog|||||||||||||||BQExpiration		Provide a structured input transaction/record (e.g. timesheet, event)
+BQExpiration	retrieve		retrieveRewardPointsLog|||||||||||||||BQExpiration	retrieveRewardPointsLog|||||||||||||||BQExpiration		Invoke a reporting action to obtain a BQ Expiration instance related report
+BQCapture	initiate		initiateRewardPointsLog|||||||||||||||BQCapture	initiateRewardPointsLog|||||||||||||||BQCapture		Details of a new BQ Capture instance
+BQCapture	update		updateRewardPointsLog|||||||||||||||BQCapture	updateRewardPointsLog|||||||||||||||BQCapture		Update to any amendable fields of the BQ Capture instance
+BQCapture	capture		captureRewardPointsLog|||||||||||||||BQCapture	captureRewardPointsLog|||||||||||||||BQCapture		Provide a structured input transaction/record (e.g. timesheet, event)
+BQCapture	retrieve		retrieveRewardPointsLog|||||||||||||||BQCapture	retrieveRewardPointsLog|||||||||||||||BQCapture		Invoke a reporting action to obtain a BQ Capture instance related report

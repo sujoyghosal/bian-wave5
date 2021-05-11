@@ -1,0 +1,258 @@
+CR Intellectual Property Exchange Operating Session Instance Record|Intellectual Property Exchange Operating Session||||||CR Intellectual Property Exchange Operating Session Initiate|CR Intellectual Property Exchange Operating Session Update|CR Intellectual Property Exchange Operating Session Control|CR Intellectual Property Exchange Operating Session Exchange|CR Intellectual Property Exchange Operating Session Execute|CR Intellectual Property Exchange Operating Session Request|CR Intellectual Property Exchange Operating Session Retrieve|BQ Capture and Classification Initiate|BQ Capture and Classification Update|BQ Capture and Classification Exchange|BQ Capture and Classification Execute|BQ Capture and Classification Request|BQ Capture and Classification Retrieve|BQ Indexing and Publication Update|BQ Indexing and Publication Exchange|BQ Indexing and Publication Retrieve|BQ Review Refinement and Editing Update|BQ Review Refinement and Editing Exchange|BQ Review Refinement and Editing Retrieve|BQ Archiving Retrieve|BQ Maintenance and Access Administration Update|BQ Maintenance and Access Administration Request|BQ Maintenance and Access Administration Retrieve|
+Mandatory||Knowledge Exchange Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Intellectual Property Exchange Operating Session Instance Reference||||Reference to the Intellectual Property Exchange Operating Session instance|O|I|I|I|I|I
+Initiate||Intellectual Property Exchange Operating Session Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Intellectual Property Exchange Operating Session Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Intellectual Property Exchange Operating Session Instance Status||||The status of the Intellectual Property Exchange Operating Session instance (e.g. initialised, pending, active)|IO
+||Intellectual Property Exchange Operating Session Instance Record||||Operate equipment and/or a largely automated facility within Knowledge Exchange.
+Example: Operate the bank's internal intranet facility.|||||||||||||||||||||||
+||Intellectual Property Exchange Operating Session Schedule||||The timetable of Intellectual Property Exchange Operating Session|I|I|I|I|I|I|O||||||||||||||||
+||Intellectual Property Exchange Operating Session Status||||The status of Intellectual Property Exchange Operating Session|I|I|I|I|I|I|O||||||||||||||||
+||Intellectual Property Exchange Operating Session Usage Log||||Reference to the log of (usage) ativities/events of Intellectual Property Exchange Operating Session|I|I|I|I|I|I|O||||||||||||||||
+||Intellectual Property Exchange Operating Session Reference||||Reference to the party who is involved in Intellectual Property Exchange Operating Session|IO|IO|IO|IO|IO|IO|O||||||||||||||||
+||Intellectual Property Exchange Operating Session ServiceProvider Reference||||Reference to the party who provides the services of Intellectual Property Exchange Operating Session |IO|IO|IO|IO|IO|IO|O||||||||||||||||
+||Intellectual Property Exchange Operating Session Type||||A Classification value that distinguishes between the type of operations within Intellectual Property Exchange Operating Session |IO|IO|IO|IO|IO|IO|O||||||||||||||||
+||Intellectual Property Exchange Operating Session Service Provider Schedule||||The schedule according to which the service provider will operate the Intellectual Property Exchange Operating Session|IO|IO|IO|IO|IO|IO|O||||||||||||||||
+||Intellectual Property Exchange Operating Session Service Type||||A Classification value that distinguishes between the type of services within Intellectual Property Exchange Operating Session |IO|IO|IO|IO|IO|IO|O||||||||||||||||
+||Intellectual Property Exchange Operating Session Service Configuration||||The configuration of Intellectual Property Exchange Operating Session|I|I|I|I|I|I|O||||||||||||||||
+Update||Intellectual Property Exchange Operating Session Update Action Task Reference||||Reference to an update service call||O
+Update||Intellectual Property Exchange Operating Session Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Intellectual Property Exchange Operating Session Control Action Task Reference||||Reference to a Intellectual Property Exchange Operating Session instance control processing service call|||O
+CONTROL||Intellectual Property Exchange Operating Session Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Intellectual Property Exchange Operating Session Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Intellectual Property Exchange Operating Session Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Intellectual Property Exchange Operating Session Exchange Action Task Reference||||Reference to a Intellectual Property Exchange Operating Session instance exchange service call||||O
+EXCHANGE||Intellectual Property Exchange Operating Session Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Intellectual Property Exchange Operating Session Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Intellectual Property Exchange Operating Session Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Intellectual Property Exchange Operating Session Execute Action Task Reference||||Reference to a Intellectual Property Exchange Operating Session instance execute service call|||||O
+EXECUTE||Intellectual Property Exchange Operating Session Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Intellectual Property Exchange Operating Session Request Action Task Reference||||Reference to a Intellectual Property Exchange Operating Session instance request service call||||||O
+REQUEST||Intellectual Property Exchange Operating Session Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Intellectual Property Exchange Operating Session Retrieve Action Task Reference||||Reference to a Intellectual Property Exchange Operating Session instance retrieve service call|||||||O
+RETRIEVE||Intellectual Property Exchange Operating Session Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Intellectual Property Exchange Operating Session Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Intellectual Property Exchange Operating Session Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Intellectual Property Exchange Operating Session Instance Report Record|##|||A specific Intellectual Property Exchange Operating Session instance formatted report|||||||IO
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Intellectual Property Exchange Operating Session Instance Analysis|##|||A specific Intellectual Property Exchange Operating Session instance analytical report|||||||IO
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Intellectual Property Exchange Operating Session Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Capture and Classification Instance Record|Capture and Classification||||||
+Mandatory||Intellectual Property Exchange Operating Session Instance Reference||||Reference to the parent Intellectual Property Exchange Operating Session instance||||||||I|I|I|I|I
+Mandatory||Capture and Classification Instance Reference||||Reference to the Capture and Classification instance||||||||O|I|I|I|I
+Initiate||Capture and Classification Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Capture and Classification Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Capture and Classification Instance Status||||The status of the Capture and Classification instance (e.g. initialised, pending, active)||||||||O
+||Capture and Classification Instance Record||||Operate equipment and/or a largely automated facility within Knowledge Exchange.
+|||||||||||||||||||||||
+||Capture and Classification Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature||||||||IO|IO|IO|IO|IO|O||||||||||
+||Capture and Classification Function Schedule||||The schedule and timing of the function||||||||IO|IO|IO|IO|IO|O||||||||||
+||Content Capture and Classification||||The Intellectual Property Exchange Operating Session specific Business Service||||||||IO|IO|IO|IO|IO|O||||||||||
+||Content Capture and Classification Service Type||||Reference to the specific business service type||||||||IO|IO|IO|IO|IO|O||||||||||
+||Content Capture and Classification Service Description||||Description of the performed business service||||||||IO|IO|IO|IO|IO|O||||||||||
+||Content Capture and Classification Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|IO|IO|O||||||||||
+||Content Capture and Classification Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|IO|IO|O||||||||||
+||Content Capture and Classification Service Name||||||||||||IO|IO|IO|IO|IO|O||||||||||
+Update||Capture and Classification Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Capture and Classification Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Capture and Classification Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Exchange||Capture and Classification Exchange Action Task Reference||||Reference to a Capture and Classification instance exchange service call||||||||||O
+Exchange||Capture and Classification Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||Capture and Classification Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||Capture and Classification Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||Capture and Classification Instance Status||||The status of the Capture and Classification instance (e.g. accepted, rejected, verified)||||||||||O
+Execute||Capture and Classification Execute Action Task Reference||||Reference to a Capture and Classification instance execute service call|||||||||||O
+Execute||Capture and Classification Execute Action Task Record||||The execute service call consolidated processing record|||||||||||I/O
+Execute||Capture and Classification Execute Record Reference||||Reference to the Capture and Classification execute transaction/record|||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response|||||||||||O
+Request||Capture and Classification Request Action Task Reference||||Reference to a Capture and Classification instance request service call||||||||||||O
+Request||Capture and Classification Request Action Task Record||||The request service call consolidated processing record||||||||||||I/O
+Request||Capture and Classification Request Record Reference||||Reference to the Capture and Classification service request record||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||O
+Retrieve||Capture and Classification Retrieve Action Task Reference||||Reference to a Capture and Classification instance retrieve service call|||||||||||||O
+Retrieve||Capture and Classification Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||Capture and Classification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||Capture and Classification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||Capture and Classification Instance Report|##|||A specific Capture and Classification instance formatted report|||||||||||||IO
+Retrieve|||Capture and Classification Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||Capture and Classification Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Capture and Classification Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||Capture and Classification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||Capture and Classification Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||Capture and Classification Instance Analysis|##|||A specific Capture and Classification instance analytical report|||||||||||||IO
+Retrieve|||Capture and Classification Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||Capture and Classification Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Capture and Classification Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||Capture and Classification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||Capture and Classification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O
+BQ Indexing and Publication Instance Record|Indexing and Publication||||||
+Mandatory||Intellectual Property Exchange Operating Session Instance Reference||||Reference to the parent Intellectual Property Exchange Operating Session instance||||||||||||||I|I
+Mandatory||Indexing and Publication Instance Reference||||Reference to the Indexing and Publication instance||||||||||||||I|I
+||Indexing and Publication Instance Record||||Operate equipment and/or a largely automated facility within Knowledge Exchange.
+|||||||||||||||||||||||
+||Indexing and Publication Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature||||||||||||||IO|IO|O|||||||
+||Indexing and Publication Function Schedule||||The schedule and timing of the function||||||||||||||IO|IO|O|||||||
+||Content Indexing and Publication||||The Intellectual Property Exchange Operating Session specific Business Service||||||||||||||IO|IO|O|||||||
+||Content Indexing and Publication Service Type||||Reference to the specific business service type||||||||||||||IO|IO|O|||||||
+||Content Indexing and Publication Service Description||||Description of the performed business service||||||||||||||IO|IO|O|||||||
+||Content Indexing and Publication Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|IO|O|||||||
+||Content Indexing and Publication Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|IO|O|||||||
+||Content Indexing and Publication Service Name||||||||||||||||||IO|IO|O|||||||
+Update||Indexing and Publication Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||Indexing and Publication Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||Indexing and Publication Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Exchange||Indexing and Publication Exchange Action Task Reference||||Reference to a Indexing and Publication instance exchange service call|||||||||||||||O
+Exchange||Indexing and Publication Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||I/O
+Exchange||Indexing and Publication Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||I
+Exchange||Indexing and Publication Exchange Action Response||||Details of the exchange action service response|||||||||||||||O
+Exchange||Indexing and Publication Instance Status||||The status of the Indexing and Publication instance (e.g. accepted, rejected, verified)|||||||||||||||O
+Retrieve||Indexing and Publication Retrieve Action Task Reference||||Reference to a Indexing and Publication instance retrieve service call||||||||||||||||O
+Retrieve||Indexing and Publication Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Indexing and Publication Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Indexing and Publication Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Indexing and Publication Instance Report|##|||A specific Indexing and Publication instance formatted report||||||||||||||||IO
+Retrieve|||Indexing and Publication Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Indexing and Publication Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Indexing and Publication Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Indexing and Publication Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Indexing and Publication Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Indexing and Publication Instance Analysis|##|||A specific Indexing and Publication instance analytical report||||||||||||||||IO
+Retrieve|||Indexing and Publication Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Indexing and Publication Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Indexing and Publication Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Indexing and Publication Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Indexing and Publication Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ Review Refinement and Editing Instance Record|Review Refinement and Editing||||||
+Mandatory||Intellectual Property Exchange Operating Session Instance Reference||||Reference to the parent Intellectual Property Exchange Operating Session instance|||||||||||||||||I|I
+Mandatory||Review Refinement and Editing Instance Reference||||Reference to the Review Refinement and Editing instance|||||||||||||||||I|I
+||Review,Refinement and Editing Instance Record||||Operate equipment and/or a largely automated facility within Knowledge Exchange.
+|||||||||||||||||||||||
+||Review,Refinement and Editing Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature|||||||||||||||||IO|IO|O||||
+||Review,Refinement and Editing Function Schedule||||The schedule and timing of the function|||||||||||||||||IO|IO|O||||
+||Content Review, Refinement and Editing||||The Intellectual Property Exchange Operating Session specific Business Service|||||||||||||||||IO|IO|O||||
+||Content Review, Refinement and Editing Service Type||||Reference to the specific business service type|||||||||||||||||IO|IO|O||||
+||Content Review, Refinement and Editing Service Description||||Description of the performed business service|||||||||||||||||IO|IO|O||||
+||Content Review, Refinement and Editing Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||IO|IO|O||||
+||Content Review, Refinement and Editing Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||IO|IO|O||||
+||Content Review, Refinement and Editing Service Name|||||||||||||||||||||IO|IO|O||||
+Update||Review Refinement and Editing Update Action Task Reference||||Reference to an update service call|||||||||||||||||O
+Update||Review Refinement and Editing Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||I/O
+Update||Review Refinement and Editing Update Action Request||||Details of the update action service request|||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||O
+Exchange||Review Refinement and Editing Exchange Action Task Reference||||Reference to a Review Refinement and Editing instance exchange service call||||||||||||||||||O
+Exchange||Review Refinement and Editing Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||I/O
+Exchange||Review Refinement and Editing Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||I
+Exchange||Review Refinement and Editing Exchange Action Response||||Details of the exchange action service response||||||||||||||||||O
+Exchange||Review Refinement and Editing Instance Status||||The status of the Review Refinement and Editing instance (e.g. accepted, rejected, verified)||||||||||||||||||O
+Retrieve||Review Refinement and Editing Retrieve Action Task Reference||||Reference to a Review Refinement and Editing instance retrieve service call|||||||||||||||||||O
+Retrieve||Review Refinement and Editing Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Review Refinement and Editing Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Review Refinement and Editing Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Review Refinement and Editing Instance Report|##|||A specific Review Refinement and Editing instance formatted report|||||||||||||||||||IO
+Retrieve|||Review Refinement and Editing Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Review Refinement and Editing Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Review Refinement and Editing Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Review Refinement and Editing Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Review Refinement and Editing Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Review Refinement and Editing Instance Analysis|##|||A specific Review Refinement and Editing instance analytical report|||||||||||||||||||IO
+Retrieve|||Review Refinement and Editing Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Review Refinement and Editing Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Review Refinement and Editing Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Review Refinement and Editing Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Review Refinement and Editing Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+BQ Archiving Instance Record|Archiving||||||
+Mandatory||Intellectual Property Exchange Operating Session Instance Reference||||Reference to the parent Intellectual Property Exchange Operating Session instance|||||||||||||||||||
+Mandatory||Archiving Instance Reference||||Reference to the Archiving instance|||||||||||||||||||
+||Archiving Instance Record||||Operate equipment and/or a largely automated facility within Knowledge Exchange.
+|||||||||||||||||||||||
+||Archiving Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature||||||||||||||||||||O|||
+||Archiving Function Schedule||||The schedule and timing of the function||||||||||||||||||||O|||
+||Content Archiving||||The Intellectual Property Exchange Operating Session specific Business Service||||||||||||||||||||O|||
+||Content Archiving Service Type||||Reference to the specific business service type||||||||||||||||||||O|||
+||Content Archiving Service Description||||Description of the performed business service||||||||||||||||||||O|||
+||Content Archiving Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||||O|||
+||Content Archiving Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||||O|||
+||Content Archiving Service Name||||||||||||||||||||||||O|||
+Retrieve||Archiving Retrieve Action Task Reference||||Reference to a Archiving instance retrieve service call||||||||||||||||||||O
+Retrieve||Archiving Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||I/O
+Retrieve||Archiving Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||I
+Retrieve||Archiving Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||O
+Retrieve||Archiving Instance Report|##|||A specific Archiving instance formatted report||||||||||||||||||||IO
+Retrieve|||Archiving Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||I
+Retrieve|||Archiving Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Archiving Instance Report Type|||The type of external report available||||||||||||||||||||O
+Retrieve|||Archiving Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||O
+Retrieve|||Archiving Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+Retrieve||Archiving Instance Analysis|##|||A specific Archiving instance analytical report||||||||||||||||||||IO
+Retrieve|||Archiving Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||I
+Retrieve|||Archiving Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||O
+Retrieve|||Archiving Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||O
+Retrieve|||Archiving Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||O
+Retrieve|||Archiving Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||O
+BQ Maintenance and Access Administration Instance Record|Maintenance and Access Administration||||||
+Mandatory||Intellectual Property Exchange Operating Session Instance Reference||||Reference to the parent Intellectual Property Exchange Operating Session instance|||||||||||||||||||||I|I
+Mandatory||Maintenance and Access Administration Instance Reference||||Reference to the Maintenance and Access Administration instance|||||||||||||||||||||I|I
+||Maintenance and Access Administration Instance Record||||Operate equipment and/or a largely automated facility within Knowledge Exchange.
+|||||||||||||||||||||||
+||Maintenance and Access Administration Preconditions||||The required status/situation and or tasks that need to be completed prior to the invocation of the feature|||||||||||||||||||||IO|IO|O
+||Maintenance and Access Administration Function Schedule||||The schedule and timing of the function|||||||||||||||||||||IO|IO|O
+||Content Maintenance and Access Administration||||The Intellectual Property Exchange Operating Session specific Business Service|||||||||||||||||||||IO|IO|O
+||Content Maintenance and Access Administration Service Type||||Reference to the specific business service type|||||||||||||||||||||IO|IO|O
+||Content Maintenance and Access Administration Service Description||||Description of the performed business service|||||||||||||||||||||IO|IO|O
+||Content Maintenance and Access Administration Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||||||IO|IO|O
+||Content Maintenance and Access Administration Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||||||IO|IO|O
+Update||Maintenance and Access Administration Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||O
+Update||Maintenance and Access Administration Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||I/O
+Update||Maintenance and Access Administration Update Action Request||||Details of the update action service request|||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||O
+Request||Maintenance and Access Administration Request Action Task Reference||||Reference to a Maintenance and Access Administration instance request service call||||||||||||||||||||||O
+Request||Maintenance and Access Administration Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||I/O
+Request||Maintenance and Access Administration Request Record Reference||||Reference to the Maintenance and Access Administration service request record||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||O
+Retrieve||Maintenance and Access Administration Retrieve Action Task Reference||||Reference to a Maintenance and Access Administration instance retrieve service call|||||||||||||||||||||||O
+Retrieve||Maintenance and Access Administration Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||I/O
+Retrieve||Maintenance and Access Administration Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||I
+Retrieve||Maintenance and Access Administration Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||O
+Retrieve||Maintenance and Access Administration Instance Report|##|||A specific Maintenance and Access Administration instance formatted report|||||||||||||||||||||||IO
+Retrieve|||Maintenance and Access Administration Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||I
+Retrieve|||Maintenance and Access Administration Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Maintenance and Access Administration Instance Report Type|||The type of external report available|||||||||||||||||||||||O
+Retrieve|||Maintenance and Access Administration Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||O
+Retrieve|||Maintenance and Access Administration Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O
+Retrieve||Maintenance and Access Administration Instance Analysis|##|||A specific Maintenance and Access Administration instance analytical report|||||||||||||||||||||||IO
+Retrieve|||Maintenance and Access Administration Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||I
+Retrieve|||Maintenance and Access Administration Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||O
+Retrieve|||Maintenance and Access Administration Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||O
+Retrieve|||Maintenance and Access Administration Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||O
+Retrieve|||Maintenance and Access Administration Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||O

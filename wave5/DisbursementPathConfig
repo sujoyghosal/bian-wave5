@@ -1,0 +1,14 @@
+sd=Disbursement	This service domain handles the disbursement of funds to newly established loans/facilities as necessary	A disbursement is processed at the closing of a new loan	This service domain handles the disbursement of funds typically for different loan facilities. Though typically a rather simple service it is modeled as a discrete service center as many banks handle disbursements from a specialist unit
+sdpath=disbursement
+crpath=disbursement-transaction
+crr=Disbursement Transaction Instance
+mcr=Disbursement Transaction
+bqs=
+CONFIG
+DisbursementTransaction	initiate	Initiate a disbursement		initiateDisbursementTransaction		#desc
+DisbursementTransaction	update	Update details of a disbursement		updateDisbursementTransaction		#desc
+DisbursementTransaction	control	Control the processing of a disbursement (e.g. delay)		controlDisbursementTransaction		#desc
+DisbursementTransaction	exchange	Verify, confirm etc. a disbursement		exchangeDisbursementTransaction		#desc
+DisbursementTransaction	execute	Execute an automated task against an active disbursement (e.g. generate confirmation note)		executeDisbursementTransaction		#desc
+DisbursementTransaction	request	Request manual intervention with a disbursement transaction (e.g. contact interested parties)		requestDisbursementTransaction		#desc
+DisbursementTransaction	retrieve	Retrieve details about a disbursement transaction		retrieveDisbursementTransaction		#desc

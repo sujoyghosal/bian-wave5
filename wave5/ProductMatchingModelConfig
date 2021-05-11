@@ -1,0 +1,216 @@
+CR Product Customer Combination Assessment Instance Record|Product Customer Combination Assessment||||||CR Product Customer Combination Assessment Initiate|CR Product Customer Combination Assessment Update|CR Product Customer Combination Assessment Exchange|CR Product Customer Combination Assessment Execute|CR Product Customer Combination Assessment Request|CR Product Customer Combination Assessment Grant|CR Product Customer Combination Assessment Retrieve|BQ Product Type Selection Initiate|BQ Product Type Selection Update|BQ Product Type Selection Retrieve|BQ Product Eligibility Initiate|BQ Product Eligibility Update|BQ Product Eligibility Retrieve|BQ Bank and Campaign Alignment Initiate|BQ Bank and Campaign Alignment Update|BQ Bank and Campaign Alignment Retrieve|BQ Context Criteria Initiate|BQ Context Criteria Update|BQ Context Criteria Retrieve|
+Mandatory||Product Matching Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Product Customer Combination Assessment Instance Reference||||Reference to the Product Customer Combination Assessment instance|O|I|I|I|I|I
+Initiate||Product Customer Combination Assessment Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Product Customer Combination Assessment Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Product Customer Combination Assessment Instance Status||||The status of the Product Customer Combination Assessment instance (e.g. initialised, pending, active)|IO
+||Product Customer Combination Assessment Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Matching.
+
+Examples: Perform regulatory tests on a proposed financial transaction and check a new offer conforms to an existing contractual agreement.|||||||||||||||||||
+||Product Customer Combination Assessment Parameter Type||||A Classification value that distinguishes between Assessments according to type of concern defined within Product Customer Combination Assessment . Eg Market Analysis, Risk Analysis, Perfomance Analysis, etc.|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Product Customer Combination Assessment Selected Option||||A selected optional business service as subject matter of assessment|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Product Customer Combination Assessment Type||||The type of Product Customer Combination Assessment|I|I|I|I|I|I|O||||||||||||
+||Product Customer Combination Assessment Reference||||Reference to Product Customer Combination Assessment|I|I|I|I|I|I|O||||||||||||
+||Product Customer Combination Assessment Request||||Request to assess Product CustomerCombination|IO|IO|IO|IO|IO|IO|O||||||||||||
+||Product Customer Combination Assessment Schedule||||Timetable to assess Product CustomerCombination|I|I|I|I|I|I|O||||||||||||
+||Product Customer Combination Assessment Status||||The status of Product Customer Combination Assessment|I|I|I|I|I|I|O||||||||||||
+||Product Customer Combination Assessment Usage Log||||Reference to the log of (usage) ativities/events of Product Customer Combination Assessment|I|I|I|I|I|I|O||||||||||||
+||Product Customer Combination Assessment Reference||||Party who is involved in Product Customer Combination Assessment|||||||||||||||||||
+||Product Customer Combination Assessment ServiceProvider Reference||||Reference to the party who has provided Product Customer Combination Assessment|I|I|I|I|I|I|O||||||||||||
+||Product Customer Combination Assessment Requester Reference||||Reference to the party who has requested Product Customer Combination Assessment|I|I|I|I|I|I|O||||||||||||
+Update||Product Customer Combination Assessment Update Action Task Reference||||Reference to an update service call||O
+Update||Product Customer Combination Assessment Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+EXCHANGE||Product Customer Combination Assessment Exchange Action Task Reference||||Reference to a Product Customer Combination Assessment instance exchange service call|||O
+EXCHANGE||Product Customer Combination Assessment Exchange Action Task Record||||The exchange service call consolidated processing record|||I/O
+EXCHANGE||Product Customer Combination Assessment Exchange Action Request|##|||Details of the exchange action service request|||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||I
+EXCHANGE||Product Customer Combination Assessment Exchange Action Response||||Details of the exchange action service response|||O
+EXECUTE||Product Customer Combination Assessment Execute Action Task Reference||||Reference to a Product Customer Combination Assessment instance execute service call||||O
+EXECUTE||Product Customer Combination Assessment Execute Action Task Record||||The execute service call consolidated processing record||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response||||O
+REQUEST||Product Customer Combination Assessment Request Action Task Reference||||Reference to a Product Customer Combination Assessment instance request service call|||||O
+REQUEST||Product Customer Combination Assessment Request Action Task Record||||The request service call consolidated processing record|||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record|||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||I
+REQUEST||Request Response Record||||Details of the request action service response|||||O
+GRANT||Product Customer Combination Assessment Grant Action Task Reference||||Reference to a Product Customer Combination Assessment instance grant service call||||||O
+GRANT||Product Customer Combination Assessment Grant Action Task Record||||The grant service call consolidated processing record||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted||||||O
+RETRIEVE||Product Customer Combination Assessment Retrieve Action Task Reference||||Reference to a Product Customer Combination Assessment instance retrieve service call|||||||O
+RETRIEVE||Product Customer Combination Assessment Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Product Customer Combination Assessment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Product Customer Combination Assessment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Product Customer Combination Assessment Instance Report Record|##|||A specific Product Customer Combination Assessment instance formatted report|||||||IO
+RETRIEVE|||Product Customer Combination Assessment Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Product Customer Combination Assessment Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Product Customer Combination Assessment Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Product Customer Combination Assessment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Product Customer Combination Assessment Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Product Customer Combination Assessment Instance Analysis|##|||A specific Product Customer Combination Assessment instance analytical report|||||||IO
+RETRIEVE|||Product Customer Combination Assessment Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Product Customer Combination Assessment Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Product Customer Combination Assessment Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Product Customer Combination Assessment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Product Customer Combination Assessment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Product Type Selection Instance Record|Product Type Selection||||||
+Mandatory||Product Customer Combination Assessment Instance Reference||||Reference to the parent Product Customer Combination Assessment instance||||||||I|I
+Mandatory||Product Type Selection Instance Reference||||Reference to the Product Type Selection instance||||||||O|I
+Initiate||Product Type Selection Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Product Type Selection Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Product Type Selection Instance Status||||The status of the Product Type Selection instance (e.g. initialised, pending, active)||||||||O
+||Product Type Selection Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Matching.
+||
+|||||||||||||||||||
+||Product Type Selection Preconditions||||The required status/situation before the test can be applied||||||||IO|IO|O|||||||||
+||Product Type Selection Analysis Schedule||||The schedule and timing of the testing performed||||||||IO|IO|O|||||||||
+||Product Type Selection Version Number||||The test version employed||||||||IO|IO|O|||||||||
+||Product Type Selection||||The Product Customer Combination Assessment specific Business Service|||||||||||||||||||
+||Product Type Selection Service Type||||Reference to the specific business service type||||||||IO|IO|O|||||||||
+||Product Type Selection Service Description||||Description of the performed business service||||||||IO|IO|O|||||||||
+||Product Type Selection Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|O|||||||||
+||Product Type Selection Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|O|||||||||
+||Product Type Selection Service Name||||||||||||IO|IO|O|||||||||
+Update||Product Type Selection Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Product Type Selection Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Product Type Selection Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Retrieve||Product Type Selection Retrieve Action Task Reference||||Reference to a Product Type Selection instance retrieve service call||||||||||O
+Retrieve||Product Type Selection Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Product Type Selection Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Product Type Selection Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Product Type Selection Instance Report|##|||A specific Product Type Selection instance formatted report||||||||||IO
+Retrieve|||Product Type Selection Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Product Type Selection Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Product Type Selection Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Product Type Selection Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Product Type Selection Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Product Type Selection Instance Analysis|##|||A specific Product Type Selection instance analytical report||||||||||IO
+Retrieve|||Product Type Selection Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Product Type Selection Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Product Type Selection Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Product Type Selection Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Product Type Selection Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Product Eligibility Instance Record|Product Eligibility||||||
+Mandatory||Product Customer Combination Assessment Instance Reference||||Reference to the parent Product Customer Combination Assessment instance|||||||||||I|I
+Mandatory||Product Eligibility Instance Reference||||Reference to the Product Eligibility instance|||||||||||O|I
+Initiate||Product Eligibility Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Initiate||Product Eligibility Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Initiate||Product Eligibility Instance Status||||The status of the Product Eligibility instance (e.g. initialised, pending, active)|||||||||||O
+||Product Eligibility Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Matching.
+||
+|||||||||||||||||||
+||Product Eligibility Preconditions||||The required status/situation before the test can be applied|||||||||||IO|IO|O||||||
+||Product Eligibility Analysis Schedule||||The schedule and timing of the testing performed|||||||||||IO|IO|O||||||
+||Product Eligibility Version Number||||The test version employed|||||||||||IO|IO|O||||||
+||Product Eligibility||||The Product Customer Combination Assessment specific Business Service|||||||||||||||||||
+||Product Eligibility Service Type||||Reference to the specific business service type|||||||||||IO|IO|O||||||
+||Product Eligibility Service Description||||Description of the performed business service|||||||||||IO|IO|O||||||
+||Product Eligibility Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|IO|O||||||
+||Product Eligibility Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|IO|O||||||
+||Product Eligibility Service Name|||||||||||||||IO|IO|O||||||
+Update||Product Eligibility Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Product Eligibility Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Product Eligibility Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Retrieve||Product Eligibility Retrieve Action Task Reference||||Reference to a Product Eligibility instance retrieve service call|||||||||||||O
+Retrieve||Product Eligibility Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||Product Eligibility Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||Product Eligibility Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||Product Eligibility Instance Report|##|||A specific Product Eligibility instance formatted report|||||||||||||IO
+Retrieve|||Product Eligibility Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||Product Eligibility Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Product Eligibility Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||Product Eligibility Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||Product Eligibility Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||Product Eligibility Instance Analysis|##|||A specific Product Eligibility instance analytical report|||||||||||||IO
+Retrieve|||Product Eligibility Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||Product Eligibility Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Product Eligibility Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||Product Eligibility Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||Product Eligibility Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O
+BQ Bank and Campaign Alignment Instance Record|Bank and Campaign Alignment||||||
+Mandatory||Product Customer Combination Assessment Instance Reference||||Reference to the parent Product Customer Combination Assessment instance||||||||||||||I|I
+Mandatory||Bank and Campaign Alignment Instance Reference||||Reference to the Bank and Campaign Alignment instance||||||||||||||O|I
+Initiate||Bank and Campaign Alignment Initiate Action Reference||||Reference to an Initiate service call||||||||||||||O
+Initiate||Bank and Campaign Alignment Initiate Action Record||||The Initiate service call input and output record||||||||||||||I/O
+Initiate||Bank and Campaign Alignment Instance Status||||The status of the Bank and Campaign Alignment instance (e.g. initialised, pending, active)||||||||||||||O
+||Bank and Campaign Alignment Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Matching.
+||
+|||||||||||||||||||
+||Bank and Campaign Alignment Preconditions||||The required status/situation before the test can be applied||||||||||||||IO|IO|O|||
+||Bank and Campaign Alignment Analysis Schedule||||The schedule and timing of the testing performed||||||||||||||IO|IO|O|||
+||Bank and Campaign Alignment Version Number||||The test version employed||||||||||||||IO|IO|O|||
+||Bank and Campaign Alignment||||The Product Customer Combination Assessment specific Business Service||||||||||||||IO|IO|O|||
+||Bank and Campaign Alignment Service Type||||Reference to the specific business service type||||||||||||||IO|IO|O|||
+||Bank and Campaign Alignment Service Description||||Description of the performed business service||||||||||||||IO|IO|O|||
+||Bank and Campaign Alignment Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||IO|IO|O|||
+||Bank and Campaign Alignment Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||IO|IO|O|||
+||Bank and Campaign Alignment Service Name||||||||||||||||||IO|IO|O|||
+Update||Bank and Campaign Alignment Update Action Task Reference||||Reference to an update service call|||||||||||||||O
+Update||Bank and Campaign Alignment Update Action Task Record||||The update service call consolidated processing record|||||||||||||||I/O
+Update||Bank and Campaign Alignment Update Action Request||||Details of the update action service request|||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||O
+Retrieve||Bank and Campaign Alignment Retrieve Action Task Reference||||Reference to a Bank and Campaign Alignment instance retrieve service call||||||||||||||||O
+Retrieve||Bank and Campaign Alignment Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Bank and Campaign Alignment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Bank and Campaign Alignment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Bank and Campaign Alignment Instance Report|##|||A specific Bank and Campaign Alignment instance formatted report||||||||||||||||IO
+Retrieve|||Bank and Campaign Alignment Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Bank and Campaign Alignment Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Bank and Campaign Alignment Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Bank and Campaign Alignment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Bank and Campaign Alignment Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Bank and Campaign Alignment Instance Analysis|##|||A specific Bank and Campaign Alignment instance analytical report||||||||||||||||IO
+Retrieve|||Bank and Campaign Alignment Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Bank and Campaign Alignment Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Bank and Campaign Alignment Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Bank and Campaign Alignment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Bank and Campaign Alignment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ Context Criteria Instance Record|Context Criteria||||||
+Mandatory||Product Customer Combination Assessment Instance Reference||||Reference to the parent Product Customer Combination Assessment instance|||||||||||||||||I|I
+Mandatory||Context Criteria Instance Reference||||Reference to the Context Criteria instance|||||||||||||||||O|I
+Initiate||Context Criteria Initiate Action Reference||||Reference to an Initiate service call|||||||||||||||||O
+Initiate||Context Criteria Initiate Action Record||||The Initiate service call input and output record|||||||||||||||||I/O
+Initiate||Context Criteria Instance Status||||The status of the Context Criteria instance (e.g. initialised, pending, active)|||||||||||||||||O
+||Context Criteria Instance Record||||To test or assess an entity, possibly against some formal qualification or certification requirement within Product Matching.
+||
+|||||||||||||||||||
+||Context Criteria Preconditions||||The required status/situation before the test can be applied|||||||||||||||||IO|IO|O
+||Context Criteria Analysis Schedule||||The schedule and timing of the testing performed|||||||||||||||||IO|IO|O
+||Context Criteria Version Number||||The test version employed|||||||||||||||||IO|IO|O
+||Context Criteria||||The Product Customer Combination Assessment specific Business Service|||||||||||||||||||
+||Context Criteria Service Type||||Reference to the specific business service type|||||||||||||||||IO|IO|O
+||Context Criteria Service Description||||Description of the performed business service|||||||||||||||||IO|IO|O
+||Context Criteria Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||||||IO|IO|O
+||Context Criteria Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||||||IO|IO|O
+Update||Context Criteria Update Action Task Reference||||Reference to an update service call||||||||||||||||||O
+Update||Context Criteria Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||I/O
+Update||Context Criteria Update Action Request||||Details of the update action service request||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||O
+Retrieve||Context Criteria Retrieve Action Task Reference||||Reference to a Context Criteria instance retrieve service call|||||||||||||||||||O
+Retrieve||Context Criteria Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||I/O
+Retrieve||Context Criteria Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||I
+Retrieve||Context Criteria Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||O
+Retrieve||Context Criteria Instance Report|##|||A specific Context Criteria instance formatted report|||||||||||||||||||IO
+Retrieve|||Context Criteria Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||I
+Retrieve|||Context Criteria Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Context Criteria Instance Report Type|||The type of external report available|||||||||||||||||||O
+Retrieve|||Context Criteria Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||O
+Retrieve|||Context Criteria Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||O
+Retrieve||Context Criteria Instance Analysis|##|||A specific Context Criteria instance analytical report|||||||||||||||||||IO
+Retrieve|||Context Criteria Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||I
+Retrieve|||Context Criteria Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||O
+Retrieve|||Context Criteria Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||O
+Retrieve|||Context Criteria Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||O
+Retrieve|||Context Criteria Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||O

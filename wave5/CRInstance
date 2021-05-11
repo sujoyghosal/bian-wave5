@@ -1,0 +1,15 @@
+Inbound Payments Instance Record				Handle inbound correspondent bank payment transactions
+	Correspondent Transaction Record			Inbound payment transaction details
+		SWIFT Transaction Reference		
+		Payer Bank Reference		The  primary correspondent bank
+		Payer Reference		Reference to the payer 
+		Corresponded Bank Reference		Intermediary correspondents if needed
+		Payer Product Instance Reference 		Payer account reference or number
+		Payee Reference		Reference to the payee
+		Payee Product Instance Reference		Reference to the payee account as source of funds
+		Payee Bank Reference		Refers to the payee's bank as the receiver of funds
+		Special Instructions		Transaction specific clearing and settlement instructions
+		Amount		Key amounts of the transaction
+		Currency		Currencies of the amounts
+		Date Type		Transaction dates  (e.g. order, booking, execution, value date, interest bearing)
+			Date	Specific date type value

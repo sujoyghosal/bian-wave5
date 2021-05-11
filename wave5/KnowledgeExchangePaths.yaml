@@ -1,0 +1,978 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Knowledge Exchange'
+ description: >
+
+    ## Executive Summary:
+
+    Consolidate, classify and provide structured access to consolidated market intelligence, product and procedural knowledge gained from the workforce in the execution of business to inform business activity and support continual improvement
+
+    ## Example of Use:
+
+    An employee identifies a way to streamline some aspect of customer servicing and publishes the approach to the knowledge base for consideration and comment from their peers
+
+    ## Description:
+
+    This service domains implements a general facility that enables the enterprise to consolidate, classify and provide structured access to all types of information gleaned from the workforce during their day to day execution of business. This includes market intelligence, product and procedural insights and expertise, identified competitor and customer practices and insights and any other form of general knowledge of potential value to inform business activity and support continual improvement
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-knowledge-exchange/1.0.0
+schemes:
+ - https
+paths:
+  /knowledge-exchange/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDKnowledgeExchange
+      summary: Activate  a SDKnowledgeExchange servicing session
+      description: Activate  a  SDKnowledgeExchange servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDKnowledgeExchange Request Payload
+        schema:
+          $ref: '#/definitions/SDKnowledgeExchangeActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDKnowledgeExchangeActivateOutputModel'
+  /knowledge-exchange/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDKnowledgeExchange
+      summary: Update an active SDKnowledgeExchange session configuration
+      description: Update an active SDKnowledgeExchange session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDKnowledgeExchange Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDKnowledgeExchange Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDKnowledgeExchangeConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDKnowledgeExchangeConfigureOutputModel'
+  /knowledge-exchange/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDKnowledgeExchange
+      summary: "Capturing feedback against the SDKnowledgeExchange service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDKnowledgeExchange service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDKnowledgeExchange Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDKnowledgeExchange Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDKnowledgeExchangeFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDKnowledgeExchangeFeedbackOutputModel'
+  /knowledge-exchange/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDKnowledgeExchange
+      summary: Analytical views maintained by the SDKnowledgeExchange service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDKnowledgeExchange service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDKnowledgeExchange Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDKnowledgeExchangeRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDKnowledgeExchangeRetrieveOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateIntellectualPropertyExchangeOperatingSession
+      summary: Details of a new IntellectualPropertyExchangeOperatingSession instance
+      description: Instantiate a new Intellectual Property Exchange Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: IntellectualPropertyExchangeOperatingSession Request Payload
+        schema:
+          $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new IntellectualPropertyExchangeOperatingSession instance
+          schema:
+            $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionInitiateOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateIntellectualPropertyExchangeOperatingSession
+      summary: Update to any amendable fields of the IntellectualPropertyExchangeOperatingSession instance
+      description: Update details relating to Intellectual Property Exchange Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Intellectual Property Exchange Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Intellectual Property Exchange Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionUpdateOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlIntellectualPropertyExchangeOperatingSessionUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Intellectual Property Exchange Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Intellectual Property Exchange Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionControlInputModel'
+      responses:
+        200:
+          description: Successful control of Intellectual Property Exchange Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionControlOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeIntellectualPropertyExchangeOperatingSessionUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Intellectual Property Exchange Operating Session processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Intellectual Property Exchange Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Intellectual Property Exchange Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionExchangeOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeIntellectualPropertyExchangeOperatingSessionUpdate
+      summary: Invoke an automated execute action against the IntellectualPropertyExchangeOperatingSession instance
+      description: Execute an available automated action for Intellectual Property Exchange Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Intellectual Property Exchange Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Intellectual Property Exchange Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionExecuteOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestIntellectualPropertyExchangeOperatingSessionUpdate
+      summary: Invoke a service request action against the IntellectualPropertyExchangeOperatingSession instance
+      description: Request manual intervention or a decision with respect to Intellectual Property Exchange Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Intellectual Property Exchange Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Intellectual Property Exchange Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionRequestOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveKnowledgeExchange
+      summary: Invoke a reporting action to obtain a Intellectual Property Exchange Operating Session instance related report
+      description: Retrieve details about any aspect of Intellectual Property Exchange Operating Session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRIntellectualPropertyExchangeOperatingSessionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Intellectual Property Exchange Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRIntellectualPropertyExchangeOperatingSessionRetrieveOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/captureandclassification/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateIntellectualPropertyExchangeOperatingSessionCaptureandClassification
+      summary: Details of a new CaptureandClassification instance
+      description: Instantiate a new Capture and Classification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Intellectual Property Exchange Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/BQCaptureandClassificationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Intellectual Property Exchange Operating Session instance
+          schema:
+            $ref: '#/definitions/BQCaptureandClassificationInitiateOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/captureandclassification/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateIntellectualPropertyExchangeOperatingSessionCaptureandClassification
+      summary: Update to any amendable fields of the CaptureandClassification instance
+      description: Update details relating to Capture and Classification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CaptureandClassification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CaptureandClassification Request Payload
+        schema:
+          $ref: '#/definitions/BQCaptureandClassificationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CaptureandClassification Instance
+          schema:
+            $ref: '#/definitions/BQCaptureandClassificationUpdateOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/captureandclassification/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeIntellectualPropertyExchangeOperatingSessionCaptureandClassificationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Capture and Classification processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CaptureandClassification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CaptureandClassification request payload
+        schema:
+          $ref: '#/definitions/BQCaptureandClassificationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of CaptureandClassification Instance Record
+          schema:
+            $ref: '#/definitions/BQCaptureandClassificationExchangeOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/captureandclassification/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeIntellectualPropertyExchangeOperatingSessionCaptureandClassificationUpdate
+      summary: Invoke an automated execute action against the CaptureandClassification instance
+      description: Execute an available automated action for Capture and Classification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CaptureandClassification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CaptureandClassification request payload
+        schema:
+          $ref: '#/definitions/BQCaptureandClassificationExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of CaptureandClassification Instance Record
+          schema:
+            $ref: '#/definitions/BQCaptureandClassificationExecuteOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/captureandclassification/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestIntellectualPropertyExchangeOperatingSessionCaptureandClassificationUpdate
+      summary: Invoke a service request action against the CaptureandClassification instance
+      description: Request manual intervention or a decision with respect to Capture and Classification
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CaptureandClassification Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CaptureandClassification request payload
+        schema:
+          $ref: '#/definitions/BQCaptureandClassificationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of CaptureandClassification Instance Record
+          schema:
+            $ref: '#/definitions/BQCaptureandClassificationRequestOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/captureandclassification/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveIntellectualPropertyExchangeOperatingSessionCaptureandClassification
+      summary: Invoke a reporting action to obtain a CaptureandClassification instance related report.
+      description: Retrieve details about any aspect of Capture and Classification .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CaptureandClassification Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCaptureandClassificationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CaptureandClassification Instance Record
+          schema:
+            $ref: '#/definitions/BQCaptureandClassificationRetrieveOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/indexingandpublication/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateIntellectualPropertyExchangeOperatingSessionIndexingandPublication
+      summary: Update to any amendable fields of the IndexingandPublication instance
+      description: Update details relating to Indexing and Publication
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: IndexingandPublication Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: IndexingandPublication Request Payload
+        schema:
+          $ref: '#/definitions/BQIndexingandPublicationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated IndexingandPublication Instance
+          schema:
+            $ref: '#/definitions/BQIndexingandPublicationUpdateOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/indexingandpublication/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeIntellectualPropertyExchangeOperatingSessionIndexingandPublicationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Indexing and Publication processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: IndexingandPublication Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: IndexingandPublication request payload
+        schema:
+          $ref: '#/definitions/BQIndexingandPublicationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of IndexingandPublication Instance Record
+          schema:
+            $ref: '#/definitions/BQIndexingandPublicationExchangeOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/indexingandpublication/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveIntellectualPropertyExchangeOperatingSessionIndexingandPublication
+      summary: Invoke a reporting action to obtain a IndexingandPublication instance related report.
+      description: Retrieve details about any aspect of Indexing and Publication .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: IndexingandPublication Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQIndexingandPublicationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved IndexingandPublication Instance Record
+          schema:
+            $ref: '#/definitions/BQIndexingandPublicationRetrieveOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/reviewrefinementandediting/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateIntellectualPropertyExchangeOperatingSessionReviewRefinementandEditing
+      summary: Update to any amendable fields of the ReviewRefinementandEditing instance
+      description: Update details relating to Review, Refinement and Editing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ReviewRefinementandEditing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ReviewRefinementandEditing Request Payload
+        schema:
+          $ref: '#/definitions/BQReviewRefinementandEditingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ReviewRefinementandEditing Instance
+          schema:
+            $ref: '#/definitions/BQReviewRefinementandEditingUpdateOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/reviewrefinementandediting/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeIntellectualPropertyExchangeOperatingSessionReviewRefinementandEditingUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Review, Refinement and Editing processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ReviewRefinementandEditing Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ReviewRefinementandEditing request payload
+        schema:
+          $ref: '#/definitions/BQReviewRefinementandEditingExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ReviewRefinementandEditing Instance Record
+          schema:
+            $ref: '#/definitions/BQReviewRefinementandEditingExchangeOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/reviewrefinementandediting/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveIntellectualPropertyExchangeOperatingSessionReviewRefinementandEditing
+      summary: Invoke a reporting action to obtain a ReviewRefinementandEditing instance related report.
+      description: Retrieve details about any aspect of Review, Refinement and Editing .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ReviewRefinementandEditing Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQReviewRefinementandEditingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ReviewRefinementandEditing Instance Record
+          schema:
+            $ref: '#/definitions/BQReviewRefinementandEditingRetrieveOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/archiving/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveIntellectualPropertyExchangeOperatingSessionArchiving
+      summary: Invoke a reporting action to obtain a Archiving instance related report.
+      description: Retrieve details about any aspect of Archiving .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Archiving Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQArchivingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Archiving Instance Record
+          schema:
+            $ref: '#/definitions/BQArchivingRetrieveOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/maintenanceandaccessadministration/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateIntellectualPropertyExchangeOperatingSessionMaintenanceandAccessAdministration
+      summary: Update to any amendable fields of the MaintenanceandAccessAdministration instance
+      description: Update details relating to Maintenance and Access Administration
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MaintenanceandAccessAdministration Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MaintenanceandAccessAdministration Request Payload
+        schema:
+          $ref: '#/definitions/BQMaintenanceandAccessAdministrationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated MaintenanceandAccessAdministration Instance
+          schema:
+            $ref: '#/definitions/BQMaintenanceandAccessAdministrationUpdateOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/maintenanceandaccessadministration/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestIntellectualPropertyExchangeOperatingSessionMaintenanceandAccessAdministrationUpdate
+      summary: Invoke a service request action against the MaintenanceandAccessAdministration instance
+      description: Request manual intervention or a decision with respect to Maintenance and Access Administration
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MaintenanceandAccessAdministration Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: MaintenanceandAccessAdministration request payload
+        schema:
+          $ref: '#/definitions/BQMaintenanceandAccessAdministrationRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of MaintenanceandAccessAdministration Instance Record
+          schema:
+            $ref: '#/definitions/BQMaintenanceandAccessAdministrationRequestOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/maintenanceandaccessadministration/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveIntellectualPropertyExchangeOperatingSessionMaintenanceandAccessAdministration
+      summary: Invoke a reporting action to obtain a MaintenanceandAccessAdministration instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: MaintenanceandAccessAdministration Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQMaintenanceandAccessAdministrationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved MaintenanceandAccessAdministration Instance Record
+          schema:
+            $ref: '#/definitions/BQMaintenanceandAccessAdministrationRetrieveOutputModel'
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveKnowledgeExchangeReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- KnowledgeExchange Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /knowledge-exchange/intellectual-property-exchange-operating-session/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveKnowledgeExchangeBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Archiving',  'MaintenanceandAccessAdministration',  'IndexingandPublication',  'Review,RefinementandEditing',  'CaptureandClassification', ]
+  /knowledge-exchange/{sd-reference-id}/intellectual-property-exchange-operating-session/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveKnowledgeExchangeBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Knowledge Exchange Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Intellectual Property Exchange Operating Session Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- CaptureandClassification
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CaptureandClassification Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [CaptureandClassificationID1, CaptureandClassificationID2]

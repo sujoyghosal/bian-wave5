@@ -1,0 +1,658 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Commission Agreement'
+ description: >
+
+    ## Executive Summary:
+
+    Maintain and administer the terms and transactions for employee and broker commissions
+
+    ## Example of Use:
+
+    An employee's commission agreement is established once they have qualified to undertake sales activity in the contact center
+
+    ## Description:
+
+    This service domain sets up and maintains the terms for applying commissions to transactions assigned to employees and representative service brokers or intermediaries
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-commission-agreement/1.0.0
+schemes:
+ - https
+paths:
+  /commission-agreement/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCommissionAgreement
+      summary: Activate  a SDCommissionAgreement servicing session
+      description: Activate  a  SDCommissionAgreement servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCommissionAgreement Request Payload
+        schema:
+          $ref: '#/definitions/SDCommissionAgreementActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCommissionAgreementActivateOutputModel'
+  /commission-agreement/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCommissionAgreement
+      summary: Update an active SDCommissionAgreement session configuration
+      description: Update an active SDCommissionAgreement session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCommissionAgreement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCommissionAgreement Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCommissionAgreementConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCommissionAgreementConfigureOutputModel'
+  /commission-agreement/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCommissionAgreement
+      summary: "Capturing feedback against the SDCommissionAgreement service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCommissionAgreement service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCommissionAgreement Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCommissionAgreement Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCommissionAgreementFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCommissionAgreementFeedbackOutputModel'
+  /commission-agreement/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCommissionAgreement
+      summary: Analytical views maintained by the SDCommissionAgreement service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCommissionAgreement service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCommissionAgreement Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCommissionAgreementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCommissionAgreementRetrieveOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateEmployeeCommissionAgreement
+      summary: Details of a new EmployeeCommissionAgreement instance
+      description: Instantiate a new Employee Commission Agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: EmployeeCommissionAgreement Request Payload
+        schema:
+          $ref: '#/definitions/CREmployeeCommissionAgreementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new EmployeeCommissionAgreement instance
+          schema:
+            $ref: '#/definitions/CREmployeeCommissionAgreementInitiateOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateEmployeeCommissionAgreement
+      summary: Update to any amendable fields of the EmployeeCommissionAgreement instance
+      description: Update details relating to Employee Commission Agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Employee Commission Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CREmployeeCommissionAgreementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Employee Commission Agreement Instance
+          schema:
+            $ref: '#/definitions/CREmployeeCommissionAgreementUpdateOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlEmployeeCommissionAgreementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Employee Commission Agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Employee Commission Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CREmployeeCommissionAgreementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Employee Commission Agreement Instance
+          schema:
+            $ref: '#/definitions/CREmployeeCommissionAgreementControlOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeEmployeeCommissionAgreementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Employee Commission Agreement processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Employee Commission Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CREmployeeCommissionAgreementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Employee Commission Agreement Instance
+          schema:
+            $ref: '#/definitions/CREmployeeCommissionAgreementExchangeOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestEmployeeCommissionAgreementUpdate
+      summary: Invoke a service request action against the EmployeeCommissionAgreement instance
+      description: Request manual intervention or a decision with respect to Employee Commission Agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Employee Commission Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CREmployeeCommissionAgreementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Employee Commission Agreement Instance
+          schema:
+            $ref: '#/definitions/CREmployeeCommissionAgreementRequestOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantEmployeeCommissionAgreementUpdate
+      summary: Invoke a grant request action from the EmployeeCommissionAgreement instance to obtain access permission
+      description: Obtain permission to act in relation to Employee Commission Agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Employee Commission Agreement Request Payload
+        schema:
+          $ref: '#/definitions/CREmployeeCommissionAgreementGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of Employee Commission Agreement Instance
+          schema:
+            $ref: '#/definitions/CREmployeeCommissionAgreementGrantOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCommissionAgreement
+      summary: Invoke a reporting action to obtain a Employee Commission Agreement instance related report
+      description: Retrieve details about any aspect of Employee Commission Agreement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CREmployeeCommissionAgreementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Employee Commission Agreement Instance
+          schema:
+            $ref: '#/definitions/CREmployeeCommissionAgreementRetrieveOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/commissionterms/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateEmployeeCommissionAgreementCommissionTerms
+      summary: Details of a new CommissionTerms instance
+      description: Instantiate a new Commission Terms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Employee Commission Agreement Request Payload
+        schema:
+          $ref: '#/definitions/BQCommissionTermsInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Employee Commission Agreement instance
+          schema:
+            $ref: '#/definitions/BQCommissionTermsInitiateOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/commissionterms/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateEmployeeCommissionAgreementCommissionTerms
+      summary: Update to any amendable fields of the CommissionTerms instance
+      description: Update details relating to Commission Terms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CommissionTerms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CommissionTerms Request Payload
+        schema:
+          $ref: '#/definitions/BQCommissionTermsUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated CommissionTerms Instance
+          schema:
+            $ref: '#/definitions/BQCommissionTermsUpdateOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/commissionterms/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlEmployeeCommissionAgreementCommissionTermsUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Commission Terms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CommissionTerms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CommissionTerms request payload
+        schema:
+          $ref: '#/definitions/BQCommissionTermsControlInputModel'
+      responses:
+        200:
+          description: Successful control of CommissionTerms Instance Record
+          schema:
+            $ref: '#/definitions/BQCommissionTermsControlOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/commissionterms/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeEmployeeCommissionAgreementCommissionTermsUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Commission Terms processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CommissionTerms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CommissionTerms request payload
+        schema:
+          $ref: '#/definitions/BQCommissionTermsExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of CommissionTerms Instance Record
+          schema:
+            $ref: '#/definitions/BQCommissionTermsExchangeOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/commissionterms/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestEmployeeCommissionAgreementCommissionTermsUpdate
+      summary: Invoke a service request action against the CommissionTerms instance
+      description: Request manual intervention or a decision with respect to Commission Terms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CommissionTerms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CommissionTerms request payload
+        schema:
+          $ref: '#/definitions/BQCommissionTermsRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of CommissionTerms Instance Record
+          schema:
+            $ref: '#/definitions/BQCommissionTermsRequestOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/commissionterms/{bq-reference-id}/grant:
+    put:
+      tags:
+      - grant
+      operationId: grantEmployeeCommissionAgreementCommissionTermsUpdate
+      summary: Invoke a grant request action from the CommissionTerms instance to obtain access permission
+      description: Obtain permission to act in relation to Commission Terms
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CommissionTerms Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CommissionTerms request payload
+        schema:
+          $ref: '#/definitions/BQCommissionTermsGrantInputModel'
+      responses:
+        200:
+          description: Successful grant of CommissionTerms Instance Record
+          schema:
+            $ref: '#/definitions/BQCommissionTermsGrantOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/commissionterms/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveEmployeeCommissionAgreementCommissionTerms
+      summary: Invoke a reporting action to obtain a CommissionTerms instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: CommissionTerms Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQCommissionTermsRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved CommissionTerms Instance Record
+          schema:
+            $ref: '#/definitions/BQCommissionTermsRetrieveOutputModel'
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCommissionAgreementReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CommissionAgreement Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /commission-agreement/employee-commission-agreement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCommissionAgreementBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'CommissionTerms', ]
+  /commission-agreement/{sd-reference-id}/employee-commission-agreement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCommissionAgreementBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Commission Agreement Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Employee Commission Agreement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- CommissionTerms
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CommissionTerms Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [CommissionTermsID1, CommissionTermsID2]

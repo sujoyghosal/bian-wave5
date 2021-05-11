@@ -484,46 +484,46 @@ definitions:
  SDAdvancedVoiceServicesOperationsActivateInputModel:
   type: object
   properties: 
-   SDAdvancedVoiceServicesOperationsActivationActionTaskRecord:
+   advancedVoiceServicesOperationsActivationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The activation service call consolidated processing record
-   SDAdvancedVoiceServicesOperationsCenterReference:
+   advancedVoiceServicesOperationsCenterReference:
     type: string
     example: "SCR793499"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the service center/operational unit
-   SDAdvancedVoiceServicesOperationsServiceReference:
+   advancedVoiceServicesOperationsServiceReference:
     type: string
     example: "CPASSR703914"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service offered by the service center
-   SDAdvancedVoiceServicesOperationsServiceConfigurationRecord:
+   advancedVoiceServicesOperationsServiceConfigurationRecord:
     type: object
     properties:
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSettingReference:
+     advancedVoiceServicesOperationsServiceConfigurationSettingReference:
       type: string
       example: "700761"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Refers to the service configuration parameter for the service
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSettingType:
+     advancedVoiceServicesOperationsServiceConfigurationSettingType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The type of service configuration parameter
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSetup:
+     advancedVoiceServicesOperationsServiceConfigurationSetup:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceConfigurationParameter:
+       advancedVoiceServicesOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
@@ -532,103 +532,103 @@ definitions:
  SDAdvancedVoiceServicesOperationsActivateOutputModel:
   type: object
   properties: 
-   SDAdvancedVoiceServicesOperationsActivationActionTaskReference:
+   advancedVoiceServicesOperationsActivationActionTaskReference:
     type: string
     example: "SAATR758836"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service activation service call
-   SDAdvancedVoiceServicesOperationsActivationActionTaskRecord:
+   advancedVoiceServicesOperationsActivationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The activation service call consolidated processing record
-   SDAdvancedVoiceServicesOperationsServicingSessionReference:
+   advancedVoiceServicesOperationsServicingSessionReference:
     type: string
     example: "SSSR783215"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   SDAdvancedVoiceServicesOperationsServicingSessionRecord:
+   advancedVoiceServicesOperationsServicingSessionRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: Consolidated information record for the servicing session
-   SDAdvancedVoiceServicesOperationsServiceConfigurationRecord:
+   advancedVoiceServicesOperationsServiceConfigurationRecord:
     type: object
     properties:
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSettingReference:
+     advancedVoiceServicesOperationsServiceConfigurationSettingReference:
       type: string
       example: "700761"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Refers to the service configuration parameter for the service
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSettingDescription:
+     advancedVoiceServicesOperationsServiceConfigurationSettingDescription:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: Description of the configuration parameter, allowed values and processing impact
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSetup:
+     advancedVoiceServicesOperationsServiceConfigurationSetup:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceConfigurationParameter:
+       advancedVoiceServicesOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The default activation setting for the offered service configuration parameter 
-     SDAdvancedVoiceServicesOperationsServiceSubscription:
+     advancedVoiceServicesOperationsServiceSubscription:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceSubscriberReference:
+       advancedVoiceServicesOperationsServiceSubscriberReference:
         type: string
         example: "769192"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
-       SDAdvancedVoiceServicesOperationsServiceSubscriberAccessProfile:
+       advancedVoiceServicesOperationsServiceSubscriberAccessProfile:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The allowed service access for a user or subscriber to the service which can be any known party
-     SDAdvancedVoiceServicesOperationsServiceAgreement:
+     advancedVoiceServicesOperationsServiceAgreement:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceAgreementReference:
+       advancedVoiceServicesOperationsServiceAgreementReference:
         type: string
         example: "791202"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the offered service agreement
-       SDAdvancedVoiceServicesOperationsServiceUserReference:
+       advancedVoiceServicesOperationsServiceUserReference:
         type: string
         example: "767210"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the user covered by the contract
-       SDAdvancedVoiceServicesOperationsServiceAgreementTermsandConditions:
+       advancedVoiceServicesOperationsServiceAgreementTermsandConditions:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Terms and conditions covering the service agreement
-     SDAdvancedVoiceServicesOperationsServiceStatus:
+     advancedVoiceServicesOperationsServiceStatus:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The status of the offered service (e.g. active, suspended, idle)
-   SDAdvancedVoiceServicesOperationsServicingSessionStatus:
+   advancedVoiceServicesOperationsServicingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
@@ -637,85 +637,85 @@ definitions:
  SDAdvancedVoiceServicesOperationsConfigureInputModel:
   type: object
   properties: 
-   SDAdvancedVoiceServicesOperationsConfigurationActionTaskRecord:
+   advancedVoiceServicesOperationsConfigurationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The configuration service call consolidated processing record
-   SDAdvancedVoiceServicesOperationsServicingSessionReference:
+   advancedVoiceServicesOperationsServicingSessionReference:
     type: string
     example: "SSSR764367"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
-   SDAdvancedVoiceServicesOperationsServiceReference:
+   advancedVoiceServicesOperationsServiceReference:
     type: string
     example: "CPASSR744740"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service offered by the service center
-   SDAdvancedVoiceServicesOperationsServiceConfigurationRecord:
+   advancedVoiceServicesOperationsServiceConfigurationRecord:
     type: object
     properties:
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSettingReference:
+     advancedVoiceServicesOperationsServiceConfigurationSettingReference:
       type: string
       example: "710630"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Refers to the service configuration parameter for the service
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSettingType:
+     advancedVoiceServicesOperationsServiceConfigurationSettingType:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The type of service configuration parameter
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSetup:
+     advancedVoiceServicesOperationsServiceConfigurationSetup:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceConfigurationParameter:
+       advancedVoiceServicesOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The requested and current activation values for the service configuration parameter 
-     SDAdvancedVoiceServicesOperationsServiceSubscription:
+     advancedVoiceServicesOperationsServiceSubscription:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceSubscriberReference:
+       advancedVoiceServicesOperationsServiceSubscriberReference:
         type: string
         example: "756221"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
-       SDAdvancedVoiceServicesOperationsServiceSubscriberAccessProfile:
+       advancedVoiceServicesOperationsServiceSubscriberAccessProfile:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The allowed service access for a user or subscriber to the service which can be any known party
-     SDAdvancedVoiceServicesOperationsServiceAgreement:
+     advancedVoiceServicesOperationsServiceAgreement:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceAgreementReference:
+       advancedVoiceServicesOperationsServiceAgreementReference:
         type: string
         example: "721156"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the offered service agreement
-       SDAdvancedVoiceServicesOperationsServiceUserReference:
+       advancedVoiceServicesOperationsServiceUserReference:
         type: string
         example: "733696"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the user covered by the contract
-       SDAdvancedVoiceServicesOperationsServiceAgreementTermsandConditions:
+       advancedVoiceServicesOperationsServiceAgreementTermsandConditions:
         type: string
         description: |
          `status: Not Mapped`
@@ -724,83 +724,83 @@ definitions:
  SDAdvancedVoiceServicesOperationsConfigureOutputModel:
   type: object
   properties: 
-   SDAdvancedVoiceServicesOperationsConfigurationActionTaskReference:
+   advancedVoiceServicesOperationsConfigurationActionTaskReference:
     type: string
     example: "SCATR765419"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a service configuration service call
-   SDAdvancedVoiceServicesOperationsConfigurationActionTaskRecord:
+   advancedVoiceServicesOperationsConfigurationActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The configuration service call consolidated processing record
-   SDAdvancedVoiceServicesOperationsServiceConfigurationRecord:
+   advancedVoiceServicesOperationsServiceConfigurationRecord:
     type: object
     properties:
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSettingDescription:
+     advancedVoiceServicesOperationsServiceConfigurationSettingDescription:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: Description of the configuration parameter, allowed values and processing impact
-     SDAdvancedVoiceServicesOperationsServiceConfigurationSetup:
+     advancedVoiceServicesOperationsServiceConfigurationSetup:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceConfigurationParameter:
+       advancedVoiceServicesOperationsServiceConfigurationParameter:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The requested and current activation values for the service configuration parameter 
-     SDAdvancedVoiceServicesOperationsServiceSubscription:
+     advancedVoiceServicesOperationsServiceSubscription:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceSubscriberReference:
+       advancedVoiceServicesOperationsServiceSubscriberReference:
         type: string
         example: "756221"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Maintains reference to allowed users or subscribers to the service which can be any known party
-       SDAdvancedVoiceServicesOperationsServiceSubscriberAccessProfile:
+       advancedVoiceServicesOperationsServiceSubscriberAccessProfile:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The allowed service access for a user or subscriber to the service which can be any known party
-     SDAdvancedVoiceServicesOperationsServiceAgreement:
+     advancedVoiceServicesOperationsServiceAgreement:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceAgreementReference:
+       advancedVoiceServicesOperationsServiceAgreementReference:
         type: string
         example: "721156"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the offered service agreement
-       SDAdvancedVoiceServicesOperationsServiceUserReference:
+       advancedVoiceServicesOperationsServiceUserReference:
         type: string
         example: "733696"
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the user covered by the contract
-       SDAdvancedVoiceServicesOperationsServiceAgreementTermsandConditions:
+       advancedVoiceServicesOperationsServiceAgreementTermsandConditions:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Terms and conditions covering the service agreement
-     SDAdvancedVoiceServicesOperationsServiceStatus:
+     advancedVoiceServicesOperationsServiceStatus:
       type: string
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
         general-info: The status of the offered service (e.g. active, suspended, idle)
-   SDAdvancedVoiceServicesOperationsServicingSessionStatus:
+   advancedVoiceServicesOperationsServicingSessionStatus:
     type: string
     description: |
      `status: Not Mapped`
@@ -809,16 +809,16 @@ definitions:
  SDAdvancedVoiceServicesOperationsFeedbackInputModel:
   type: object
   properties: 
-   SDAdvancedVoiceServicesOperationsFeedbackActionTaskRecord:
+   advancedVoiceServicesOperationsFeedbackActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The feedback service call consolidated processing record
-   SDAdvancedVoiceServicesOperationsFeedbackActionRecord:
+   advancedVoiceServicesOperationsFeedbackActionRecord:
     type: object
     properties:
-     SDAdvancedVoiceServicesOperationsServicingSessionReference:
+     advancedVoiceServicesOperationsServicingSessionReference:
       type: string
       example: "796678"
       description: |
@@ -854,20 +854,20 @@ definitions:
  SDAdvancedVoiceServicesOperationsFeedbackOutputModel:
   type: object
   properties: 
-   SDAdvancedVoiceServicesOperationsFeedbackActionTaskReference:
+   advancedVoiceServicesOperationsFeedbackActionTaskReference:
     type: string
     example: "SFATR765157"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a feedback service call
-   SDAdvancedVoiceServicesOperationsFeedbackActionTaskRecord:
+   advancedVoiceServicesOperationsFeedbackActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The feedback service call consolidated processing record
-   SDAdvancedVoiceServicesOperationsFeedbackActionRecord:
+   advancedVoiceServicesOperationsFeedbackActionRecord:
     type: object
     properties:
      feedbackRecordDateTime:
@@ -893,22 +893,22 @@ definitions:
  SDAdvancedVoiceServicesOperationsRetrieveInputModel:
   type: object
   properties: 
-   SDAdvancedVoiceServicesOperationsRetrieveActionTaskRecord:
+   advancedVoiceServicesOperationsRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   SDAdvancedVoiceServicesOperationsRetrieveActionRequest:
+   advancedVoiceServicesOperationsRetrieveActionRequest:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service request (lists requested reports)
-   SDAdvancedVoiceServicesOperationsRetrieveActionRecord:
+   advancedVoiceServicesOperationsRetrieveActionRecord:
     type: object
     properties:
-     SDAdvancedVoiceServicesOperationsActivityAnalysis:
+     advancedVoiceServicesOperationsActivityAnalysis:
       type: object
       properties:
        activityAnalysisReference:
@@ -918,7 +918,7 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the internal activity analysis view maintained by the service center
-     SDAdvancedVoiceServicesOperationsPerformanceAnalysis:
+     advancedVoiceServicesOperationsPerformanceAnalysis:
       type: object
       properties:
        performanceAnalysisReference:
@@ -938,20 +938,20 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
           general-info: Reference to the control record portfolio analysis view maintained by the service center
-   SDAdvancedVoiceServicesOperationsOfferedService:
+   advancedVoiceServicesOperationsOfferedService:
     type: object
     properties:
-     SDAdvancedVoiceServicesOperationsServiceReference:
+     advancedVoiceServicesOperationsServiceReference:
       type: string
       example: "776158"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to a service offered by the service center
-     SDAdvancedVoiceServicesOperationsServiceRecord:
+     advancedVoiceServicesOperationsServiceRecord:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceVersion:
+       advancedVoiceServicesOperationsServiceVersion:
         type: string
         description: |
          `status: Not Mapped`
@@ -960,29 +960,29 @@ definitions:
  SDAdvancedVoiceServicesOperationsRetrieveOutputModel:
   type: object
   properties: 
-   SDAdvancedVoiceServicesOperationsRetrieveActionTaskReference:
+   advancedVoiceServicesOperationsRetrieveActionTaskReference:
     type: string
     example: "SRATR795161"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to a retrieve service call
-   SDAdvancedVoiceServicesOperationsRetrieveActionTaskRecord:
+   advancedVoiceServicesOperationsRetrieveActionTaskRecord:
     type: object
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
       general-info: The retrieve service call consolidated processing record
-   SDAdvancedVoiceServicesOperationsRetrieveActionResponse:
+   advancedVoiceServicesOperationsRetrieveActionResponse:
     type: string
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
       general-info: Details of the retrieve action service response (lists returned reports)
-   SDAdvancedVoiceServicesOperationsRetrieveActionRecord:
+   advancedVoiceServicesOperationsRetrieveActionRecord:
     type: object
     properties:
-     SDAdvancedVoiceServicesOperationsActivityAnalysis:
+     advancedVoiceServicesOperationsActivityAnalysis:
       type: object
       properties:
        activityAnalysisReference:
@@ -1010,7 +1010,7 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
           general-info: The activity analysis report in any suitable form including selection filters where appropriate
-     SDAdvancedVoiceServicesOperationsPerformanceAnalysis:
+     advancedVoiceServicesOperationsPerformanceAnalysis:
       type: object
       properties:
        performanceAnalysisReference:
@@ -1066,59 +1066,59 @@ definitions:
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
           general-info: The external analysis report in any suitable form including selection filters where appropriate
-   SDAdvancedVoiceServicesOperationsOfferedService:
+   advancedVoiceServicesOperationsOfferedService:
     type: object
     properties:
-     SDAdvancedVoiceServicesOperationsServiceReference:
+     advancedVoiceServicesOperationsServiceReference:
       type: string
       example: "776158"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
         general-info: Reference to a service offered by the service center
-     SDAdvancedVoiceServicesOperationsServiceRecord:
+     advancedVoiceServicesOperationsServiceRecord:
       type: object
       properties:
-       SDAdvancedVoiceServicesOperationsServiceType:
+       advancedVoiceServicesOperationsServiceType:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Refers to the different types of services offered
-       SDAdvancedVoiceServicesOperationsServiceVersion:
+       advancedVoiceServicesOperationsServiceVersion:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: The version details of the service when appropriate
-       SDAdvancedVoiceServicesOperationsServiceDescription:
+       advancedVoiceServicesOperationsServiceDescription:
         type: string
         description: |
          `status: Not Mapped`
           core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
           general-info: Description of the offered service 
-       SDAdvancedVoiceServicesOperationsServicePoliciesandGuidelines:
+       advancedVoiceServicesOperationsServicePoliciesandGuidelines:
         type: object
         properties:
-         SDAdvancedVoiceServicesOperationsServiceEligibility:
+         advancedVoiceServicesOperationsServiceEligibility:
           type: string
           description: |
            `status: Not Mapped`
             core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
             general-info: Policies and rules governing access to the offered service, includes eligibility and qualifications
-         SDAdvancedVoiceServicesOperationsServiceIntendedUses:
+         advancedVoiceServicesOperationsServiceIntendedUses:
           type: string
           description: |
            `status: Not Mapped`
             core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
             general-info: Guidelines covering allowed, intended use of the service
-         SDAdvancedVoiceServicesOperationsServicePricingandTerms:
+         advancedVoiceServicesOperationsServicePricingandTerms:
           type: string
           description: |
            `status: Not Mapped`
             core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
             general-info: Terms, prices, penalties associated with use of the service
-       SDAdvancedVoiceServicesOperationsServiceSchedule:
+       advancedVoiceServicesOperationsServiceSchedule:
         type: string
         description: |
          `status: Not Mapped`
@@ -1129,7 +1129,7 @@ definitions:
   properties: 
    advancedVoiceServicesOperationsServicingSessionReference:
     type: string
-    example: "AVSOSSR712366"
+    example: "AVSOSSR790937"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1151,14 +1151,14 @@ definitions:
   properties: 
    voiceChannelOperatingSessionInstanceReference:
     type: string
-    example: "VCOSIR711393"
+    example: "VCOSIR781089"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Voice Channel Operating Session instance
    voiceChannelOperatingSessionInitiateActionReference:
     type: string
-    example: "VCOSIAR765236"
+    example: "VCOSIAR717962"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1180,14 +1180,14 @@ definitions:
   properties: 
    advancedVoiceServicesOperationsServicingSessionReference:
     type: string
-    example: "AVSOSSR735867"
+    example: "AVSOSSR764817"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    voiceChannelOperatingSessionInstanceReference:
     type: string
-    example: "VCOSIR766905"
+    example: "VCOSIR764070"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1218,14 +1218,14 @@ definitions:
       general-info: A record of any production issues arising during the session
    employeeBusinessUnitReference:
     type: string
-    example: "EUR729413"
+    example: "EUR731487"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: The source of the issue report if appropriate
    customerContactRecordReference:
     type: string
-    example: "CCRR799447"
+    example: "CCRR786055"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1259,7 +1259,7 @@ definitions:
     properties:
      voiceChannelOperatingSessionInstanceReportReference:
       type: string
-      example: "717726"
+      example: "781993"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1281,7 +1281,7 @@ definitions:
     properties:
      voiceChannelOperatingSessionInstanceAnalysisReference:
       type: string
-      example: "733918"
+      example: "741375"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1351,7 +1351,7 @@ definitions:
       general-info: Tracking the state of resolution of a reported issue during the session
    voiceChannelOperatingSessionRetrieveActionTaskReference:
     type: string
-    example: "VCOSRATR704347"
+    example: "VCOSRATR786002"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1415,14 +1415,14 @@ definitions:
   properties: 
    advancedVoiceServicesOperationsServicingSessionReference:
     type: string
-    example: "AVSOSSR720304"
+    example: "AVSOSSR772621"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    voiceChannelOperatingSessionInstanceReference:
     type: string
-    example: "VCOSIR773257"
+    example: "VCOSIR732494"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1477,14 +1477,14 @@ definitions:
       general-info: A record of any production issues arising during the session
    employeeBusinessUnitReference:
     type: string
-    example: "EUR746388"
+    example: "EUR767225"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: The source of the issue report if appropriate
    customerContactRecordReference:
     type: string
-    example: "CCRR778755"
+    example: "CCRR736067"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1521,7 +1521,7 @@ definitions:
       general-info: Tracking the state of resolution of a reported issue during the session
    voiceChannelOperatingSessionRequestActionTaskReference:
     type: string
-    example: "VCOSRATR720033"
+    example: "VCOSRATR748319"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1534,7 +1534,7 @@ definitions:
       general-info: The request service call consolidated processing record
    requestRecordReference:
     type: string
-    example: "RRR753910"
+    example: "RRR709626"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1550,14 +1550,14 @@ definitions:
   properties: 
    advancedVoiceServicesOperationsServicingSessionReference:
     type: string
-    example: "AVSOSSR715601"
+    example: "AVSOSSR754289"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the active servicing session
    voiceChannelOperatingSessionInstanceReference:
     type: string
-    example: "VCOSIR772224"
+    example: "VCOSIR751792"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1570,14 +1570,14 @@ definitions:
       general-info: A record of any production issues arising during the session
    employeeBusinessUnitReference:
     type: string
-    example: "EUR703044"
+    example: "EUR739917"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: The source of the issue report if appropriate
    customerContactRecordReference:
     type: string
-    example: "CCRR728175"
+    example: "CCRR781452"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1617,14 +1617,14 @@ definitions:
       general-info: A record of any production issues arising during the session
    employeeBusinessUnitReference:
     type: string
-    example: "EUR703044"
+    example: "EUR739917"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: The source of the issue report if appropriate
    customerContactRecordReference:
     type: string
-    example: "CCRR728175"
+    example: "CCRR781452"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1661,7 +1661,7 @@ definitions:
       general-info: Tracking the state of resolution of a reported issue during the session
    voiceChannelOperatingSessionUpdateActionTaskReference:
     type: string
-    example: "VCOSUATR765646"
+    example: "VCOSUATR786820"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1713,14 +1713,14 @@ definitions:
       general-info: A record of any production issues arising during the session
    employeeBusinessUnitReference:
     type: string
-    example: "EUR758494"
+    example: "EUR787557"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: The source of the issue report if appropriate
    customerContactRecordReference:
     type: string
-    example: "CCRR735616"
+    example: "CCRR762296"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1805,14 +1805,14 @@ definitions:
       general-info: A record of any production issues arising during the session
    employeeBusinessUnitReference:
     type: string
-    example: "EUR758494"
+    example: "EUR787557"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: The source of the issue report if appropriate
    customerContactRecordReference:
     type: string
-    example: "CCRR735616"
+    example: "CCRR762296"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1849,7 +1849,7 @@ definitions:
       general-info: Tracking the state of resolution of a reported issue during the session
    voiceChannelOperatingSessionControlActionTaskReference:
     type: string
-    example: "VCOSCATR764438"
+    example: "VCOSCATR754927"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1871,7 +1871,7 @@ definitions:
   properties: 
    voiceChannelOperatingSessionInstanceReference:
     type: string
-    example: "VCOSIR740332"
+    example: "VCOSIR748807"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1887,14 +1887,14 @@ definitions:
   properties: 
    outboundInstanceReference:
     type: string
-    example: "OIR750814"
+    example: "OIR769834"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Outbound instance
    outboundInitiateActionReference:
     type: string
-    example: "OIAR724277"
+    example: "OIAR749498"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1940,7 +1940,7 @@ definitions:
       general-info: The record used to handle the contact (see Service Domain-Contact Handler for complete definition)
    vChannelCustomerDeviceReference:
     type: string
-    example: "VCDR797807"
+    example: "VCDR726699"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1962,7 +1962,7 @@ definitions:
     properties:
      outboundInstanceReportReference:
       type: string
-      example: "736846"
+      example: "797719"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -1972,7 +1972,7 @@ definitions:
     properties:
      outboundInstanceAnalysisReference:
       type: string
-      example: "740400"
+      example: "746773"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2019,7 +2019,7 @@ definitions:
       general-info: Detail used for statistics
    outboundRetrieveActionTaskReference:
     type: string
-    example: "ORATR781281"
+    example: "ORATR744777"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2095,7 +2095,7 @@ definitions:
   properties: 
    voiceChannelOperatingSessionInstanceReference:
     type: string
-    example: "VCOSIR716862"
+    example: "VCOSIR751166"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2135,7 +2135,7 @@ definitions:
       general-info: The record used to handle the contact (see Service Domain-Contact Handler for complete definition)
    vChannelCustomerDeviceReference:
     type: string
-    example: "VCDR708319"
+    example: "VCDR787931"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2155,14 +2155,14 @@ definitions:
       general-info: Detail used for statistics
    inboundInstanceReference:
     type: string
-    example: "IIR715443"
+    example: "IIR768973"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
       general-info: Reference to the Inbound instance
    inboundInitiateActionReference:
     type: string
-    example: "IIAR709532"
+    example: "IIAR732748"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2202,7 +2202,7 @@ definitions:
       general-info: Record of an inbound voice connection
    vChannelDeviceReference:
     type: string
-    example: "VDR738933"
+    example: "VDR751222"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2215,7 +2215,7 @@ definitions:
       general-info: Property of the device that can be used in identification ( e.g. ANI phone number)
    vChannelInboundConnectionContactReference:
     type: string
-    example: "VICCR746234"
+    example: "VICCR798152"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2237,7 +2237,7 @@ definitions:
     properties:
      inboundInstanceReportReference:
       type: string
-      example: "772789"
+      example: "724800"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2247,7 +2247,7 @@ definitions:
     properties:
      inboundInstanceAnalysisReference:
       type: string
-      example: "775963"
+      example: "772700"
       description: |
        `status: Not Mapped`
         core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
@@ -2288,7 +2288,7 @@ definitions:
       general-info: Detain used for statistics
    inboundRetrieveActionTaskReference:
     type: string
-    example: "IRATR727849"
+    example: "IRATR727155"
     description: |
      `status: Not Mapped`
       core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier

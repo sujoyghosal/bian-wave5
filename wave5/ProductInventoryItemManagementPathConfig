@@ -1,0 +1,15 @@
+sd=Product Inventory Item Management	Maintain and distribute product inventory	Newly developed product inventory is distributed as part of a product deployment project	Maintain the available central product materials inventory in coordination with distribution activities and new product/materials ordering, receipt and warehousing
+sdpath=product-inventory-item-management
+crpath=product-inventory-allocation
+crr=Product Inventory Allocation Instance
+mcr=Product Inventory Allocation
+bqs=Assignment
+CONFIG
+ProductInventoryAllocation	update	Update details of the product inventory distribution service		updateProductInventoryAllocation		#desc
+ProductInventoryAllocation	request	Request manual intervention with the inventory distribution service (e.g. change arrangements for a scheduled delivery)		requestProductInventoryAllocation		#desc
+ProductInventoryAllocation	retrieve	Retrieve details about the product inventory distribution		retrieveProductInventoryAllocation		#desc
+Assignment	initiate	Obtain the provision of product inventory (can be internally scheduled or requested)	initiateProductInventoryAllocationAssignment	initiateProductInventoryAllocationAssignment		Details of a new Assignment instance
+Assignment	update	Update details of a scheduled item assignment	updateProductInventoryAllocationAssignment	updateProductInventoryAllocationAssignment		Update to any amendable fields of the Assignment instance
+Assignment	exchange	Accept, reject etc. a schedule product item assignment	exchangeProductInventoryAllocationAssignment	exchangeProductInventoryAllocationAssignment		Handle an external exchange (e.g. accept, reject, verify)
+Assignment	request	Request manual intervention with a product inventory item assignment (e.g. special delivery arrangements)	requestProductInventoryAllocationAssignment	requestProductInventoryAllocationAssignment		Invoke a service request action against the Assignment instance
+Assignment	retrieve	Retrieve details about a product inventory item's distribution	retrieveProductInventoryAllocationAssignment	retrieveProductInventoryAllocationAssignment		Invoke a reporting action to obtain a Assignment instance related report

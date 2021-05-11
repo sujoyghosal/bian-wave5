@@ -1,0 +1,202 @@
+CR Asset Securitization Transaction Instance Record|Asset Securitization Transaction||||||CR Asset Securitization Transaction Initiate|CR Asset Securitization Transaction Update|CR Asset Securitization Transaction Control|CR Asset Securitization Transaction Exchange|CR Asset Securitization Transaction Execute|CR Asset Securitization Transaction Request|CR Asset Securitization Transaction Retrieve|BQ Placement Initiate|BQ Placement Update|BQ Placement Exchange|BQ Placement Request|BQ Placement Retrieve|BQ Securitization Initiate|BQ Securitization Update|BQ Securitization Exchange|BQ Securitization Request|BQ Securitization Retrieve|BQ Selection Initiate|BQ Selection Update|BQ Selection Exchange|BQ Selection Request|BQ Selection Retrieve|
+Mandatory||Asset Securitization Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Asset Securitization Transaction Instance Reference||||Reference to the Asset Securitization Transaction instance|O|I|I|I|I|I
+Initiate||Asset Securitization Transaction Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Asset Securitization Transaction Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Asset Securitization Transaction Instance Status||||The status of the Asset Securitization Transaction instance (e.g. initialised, pending, active)|IO
+||Asset Securitization Transaction Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Asset Securitization.
+Example: Execute a payment transaction.||||||||||||||||||||||
+||Asset Securitization Transaction Parameter Type||||A Classification value that distinguishes between business sercice transaction within Asset Securitization Transaction|IO|IO|IO|IO|IO|IO|O|||||||||||||||
+||Asset Securitization Transaction Selected Option||||A selected optional business service as subject matter of Asset Securitization Transaction|IO|IO|IO|IO|IO|IO|O|||||||||||||||
+||Asset Securitization Transaction Status||||The status of Asset Securitization Transaction|IO|IO|IO|IO|IO|IO|O|||||||||||||||
+||Asset Securitization Transaction Type||||A Classification value that specifies type of business action for this Asset Securitization Transaction|I|I|I|I|I|I|O|||||||||||||||
+||Asset Securitization Transaction Transaction Type||||A Classification value that specifies type of transaction for this Asset Securitization Transaction|I|I|I|I|I|I|O|||||||||||||||
+||Asset Securitization Transaction Transaction||||Reference to Asset Securitization Transaction||||||||||||||||||||||
+Update||Asset Securitization Transaction Update Action Task Reference||||Reference to an update service call||O
+Update||Asset Securitization Transaction Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Asset Securitization Transaction Control Action Task Reference||||Reference to a Asset Securitization Transaction instance control processing service call|||O
+CONTROL||Asset Securitization Transaction Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Asset Securitization Transaction Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Asset Securitization Transaction Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Asset Securitization Transaction Exchange Action Task Reference||||Reference to a Asset Securitization Transaction instance exchange service call||||O
+EXCHANGE||Asset Securitization Transaction Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Asset Securitization Transaction Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Asset Securitization Transaction Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Asset Securitization Transaction Execute Action Task Reference||||Reference to a Asset Securitization Transaction instance execute service call|||||O
+EXECUTE||Asset Securitization Transaction Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Asset Securitization Transaction Request Action Task Reference||||Reference to a Asset Securitization Transaction instance request service call||||||O
+REQUEST||Asset Securitization Transaction Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Asset Securitization Transaction Retrieve Action Task Reference||||Reference to a Asset Securitization Transaction instance retrieve service call|||||||O
+RETRIEVE||Asset Securitization Transaction Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Asset Securitization Transaction Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Asset Securitization Transaction Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Asset Securitization Transaction Instance Report Record|##|||A specific Asset Securitization Transaction instance formatted report|||||||IO
+RETRIEVE|||Asset Securitization Transaction Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Asset Securitization Transaction Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Asset Securitization Transaction Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Asset Securitization Transaction Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Asset Securitization Transaction Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Asset Securitization Transaction Instance Analysis|##|||A specific Asset Securitization Transaction instance analytical report|||||||IO
+RETRIEVE|||Asset Securitization Transaction Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Asset Securitization Transaction Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Asset Securitization Transaction Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Asset Securitization Transaction Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Asset Securitization Transaction Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Placement Instance Record|Placement||||||
+Mandatory||Asset Securitization Transaction Instance Reference||||Reference to the parent Asset Securitization Transaction instance||||||||I|I|I|I
+Mandatory||Placement Instance Reference||||Reference to the Placement instance||||||||O|I|I|I
+Initiate||Placement Initiate Action Reference||||Reference to an Initiate service call||||||||O
+Initiate||Placement Initiate Action Record||||The Initiate service call input and output record||||||||I/O
+Initiate||Placement Instance Status||||The status of the Placement instance (e.g. initialised, pending, active)||||||||O
+||Placement Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Asset Securitization.
+||||||||||||||||||||||
+||Placement Preconditions||||The required status/situation prior to the execution of the task||||||||IO|IO|IO|IO|O||||||||||
+||Placement Task Schedule||||The timing and key actions/milestones involved in completing the transaction task||||||||IO|IO|IO|IO|O||||||||||
+||Business Service||||The Asset Securitization Transaction specific Business Service||||||||IO|IO|IO|IO|O||||||||||
+||Placement Postconditions||||The completion status and any triggered/dependent actions once the task has been completed||||||||IO|IO|IO|IO|O||||||||||
+||Placement Service Type||||Reference to the specific business service type||||||||IO|IO|IO|IO|O||||||||||
+||Placement Service Description||||Description of the performed business service||||||||IO|IO|IO|IO|O||||||||||
+||Placement Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|IO|O||||||||||
+||Placement Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|IO|O||||||||||
+||Placement Service Name||||||||||||IO|IO|IO|IO|O||||||||||
+Update||Placement Update Action Task Reference||||Reference to an update service call|||||||||O
+Update||Placement Update Action Task Record||||The update service call consolidated processing record|||||||||I/O
+Update||Placement Update Action Request||||Details of the update action service request|||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||O
+Exchange||Placement Exchange Action Task Reference||||Reference to a Placement instance exchange service call||||||||||O
+Exchange||Placement Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||Placement Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||Placement Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||Placement Instance Status||||The status of the Placement instance (e.g. accepted, rejected, verified)||||||||||O
+Request||Placement Request Action Task Reference||||Reference to a Placement instance request service call|||||||||||O
+Request||Placement Request Action Task Record||||The request service call consolidated processing record|||||||||||I/O
+Request||Placement Request Record Reference||||Reference to the Placement service request record|||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||O
+Retrieve||Placement Retrieve Action Task Reference||||Reference to a Placement instance retrieve service call||||||||||||O
+Retrieve||Placement Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Placement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Placement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Placement Instance Report|##|||A specific Placement instance formatted report||||||||||||IO
+Retrieve|||Placement Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Placement Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Placement Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Placement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Placement Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Placement Instance Analysis|##|||A specific Placement instance analytical report||||||||||||IO
+Retrieve|||Placement Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Placement Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Placement Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Placement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Placement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ Securitization Instance Record|Securitization||||||
+Mandatory||Asset Securitization Transaction Instance Reference||||Reference to the parent Asset Securitization Transaction instance|||||||||||||I|I|I|I
+Mandatory||Securitization Instance Reference||||Reference to the Securitization instance|||||||||||||O|I|I|I
+Initiate||Securitization Initiate Action Reference||||Reference to an Initiate service call|||||||||||||O
+Initiate||Securitization Initiate Action Record||||The Initiate service call input and output record|||||||||||||I/O
+Initiate||Securitization Instance Status||||The status of the Securitization instance (e.g. initialised, pending, active)|||||||||||||O
+||Securitization Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Asset Securitization.
+||||||||||||||||||||||
+||Securitization Preconditions||||The required status/situation prior to the execution of the task||||||||||||||||||IO|IO|IO|IO|O
+||Securitization Task Schedule||||The timing and key actions/milestones involved in completing the transaction task||||||||||||||||||IO|IO|IO|IO|O
+||Business Service||||The Asset Securitization Transaction specific Business Service||||||||||||||||||IO|IO|IO|IO|O
+||Securitization Postconditions||||The completion status and any triggered/dependent actions once the task has been completed||||||||||||||||||IO|IO|IO|IO|O
+||Securitization Service Type||||Reference to the specific business service type||||||||||||||||||IO|IO|IO|IO|O
+||Securitization Service Description||||Description of the performed business service||||||||||||||||||IO|IO|IO|IO|O
+||Securitization Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||||||||||||IO|IO|IO|IO|O
+||Securitization Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||||||||||||IO|IO|IO|IO|O
+Update||Securitization Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||Securitization Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||Securitization Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Exchange||Securitization Exchange Action Task Reference||||Reference to a Securitization instance exchange service call|||||||||||||||O
+Exchange||Securitization Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||I/O
+Exchange||Securitization Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||I
+Exchange||Securitization Exchange Action Response||||Details of the exchange action service response|||||||||||||||O
+Exchange||Securitization Instance Status||||The status of the Securitization instance (e.g. accepted, rejected, verified)|||||||||||||||O
+Request||Securitization Request Action Task Reference||||Reference to a Securitization instance request service call||||||||||||||||O
+Request||Securitization Request Action Task Record||||The request service call consolidated processing record||||||||||||||||I/O
+Request||Securitization Request Record Reference||||Reference to the Securitization service request record||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||O
+Retrieve||Securitization Retrieve Action Task Reference||||Reference to a Securitization instance retrieve service call|||||||||||||||||O
+Retrieve||Securitization Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||I/O
+Retrieve||Securitization Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||I
+Retrieve||Securitization Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||O
+Retrieve||Securitization Instance Report|##|||A specific Securitization instance formatted report|||||||||||||||||IO
+Retrieve|||Securitization Instance Report Reference|||Reference to the control record instance report|||||||||||||||||I
+Retrieve|||Securitization Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Securitization Instance Report Type|||The type of external report available|||||||||||||||||O
+Retrieve|||Securitization Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||O
+Retrieve|||Securitization Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||O
+Retrieve||Securitization Instance Analysis|##|||A specific Securitization instance analytical report|||||||||||||||||IO
+Retrieve|||Securitization Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||I
+Retrieve|||Securitization Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||O
+Retrieve|||Securitization Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||O
+Retrieve|||Securitization Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||O
+Retrieve|||Securitization Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||O
+BQ Selection Instance Record|Selection||||||
+Mandatory||Asset Securitization Transaction Instance Reference||||Reference to the parent Asset Securitization Transaction instance||||||||||||||||||I|I|I|I
+Mandatory||Selection Instance Reference||||Reference to the Selection instance||||||||||||||||||O|I|I|I
+Initiate||Selection Initiate Action Reference||||Reference to an Initiate service call||||||||||||||||||O
+Initiate||Selection Initiate Action Record||||The Initiate service call input and output record||||||||||||||||||I/O
+Initiate||Selection Instance Status||||The status of the Selection instance (e.g. initialised, pending, active)||||||||||||||||||O
+||Selection Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Asset Securitization.
+||||||||||||||||||||||
+||Selection Preconditions||||The required status/situation prior to the execution of the task|||||||||||||IO|IO|IO|IO|O|||||
+||Selection Task Schedule||||The timing and key actions/milestones involved in completing the transaction task|||||||||||||IO|IO|IO|IO|O|||||
+||Asset Selection||||The Asset Securitization Transaction specific Business Service|||||||||||||IO|IO|IO|IO|O|||||
+||Selection Postconditions||||The completion status and any triggered/dependent actions once the task has been completed|||||||||||||IO|IO|IO|IO|O|||||
+||Selection Asset Selection Service Type||||Reference to the specific business service type|||||||||||||IO|IO|IO|IO|O|||||
+||Selection Asset Selection Service Description||||Description of the performed business service|||||||||||||IO|IO|IO|IO|O|||||
+||Selection Asset Selection Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||IO|IO|IO|IO|O|||||
+||Selection Asset Selection Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||IO|IO|IO|IO|O|||||
+||Selection Asset Selection Service Name|||||||||||||||||IO|IO|IO|IO|O|||||
+Update||Selection Update Action Task Reference||||Reference to an update service call|||||||||||||||||||O
+Update||Selection Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||I/O
+Update||Selection Update Action Request||||Details of the update action service request|||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||O
+Exchange||Selection Exchange Action Task Reference||||Reference to a Selection instance exchange service call||||||||||||||||||||O
+Exchange||Selection Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||I/O
+Exchange||Selection Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||I
+Exchange||Selection Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||O
+Exchange||Selection Instance Status||||The status of the Selection instance (e.g. accepted, rejected, verified)||||||||||||||||||||O
+Request||Selection Request Action Task Reference||||Reference to a Selection instance request service call|||||||||||||||||||||O
+Request||Selection Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||I/O
+Request||Selection Request Record Reference||||Reference to the Selection service request record|||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||O
+Retrieve||Selection Retrieve Action Task Reference||||Reference to a Selection instance retrieve service call||||||||||||||||||||||O
+Retrieve||Selection Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||I/O
+Retrieve||Selection Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||I
+Retrieve||Selection Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||O
+Retrieve||Selection Instance Report|##|||A specific Selection instance formatted report||||||||||||||||||||||IO
+Retrieve|||Selection Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||I
+Retrieve|||Selection Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||O
+Retrieve|||Selection Instance Report Type|||The type of external report available||||||||||||||||||||||O
+Retrieve|||Selection Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||O
+Retrieve|||Selection Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||O
+Retrieve||Selection Instance Analysis|##|||A specific Selection instance analytical report||||||||||||||||||||||IO
+Retrieve|||Selection Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||I
+Retrieve|||Selection Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||O
+Retrieve|||Selection Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||O
+Retrieve|||Selection Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||O
+Retrieve|||Selection Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||O

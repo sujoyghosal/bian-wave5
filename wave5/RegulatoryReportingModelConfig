@@ -1,0 +1,149 @@
+CR Regulatory Compliance Administrative Plan Instance Record|Regulatory Compliance Administrative Plan||||||CR Regulatory Compliance Administrative Plan Update|CR Regulatory Compliance Administrative Plan Request|CR Regulatory Compliance Administrative Plan Retrieve|BQ Consolidation Capture|BQ Consolidation Retrieve|BQ Consolidation Update|BQ Authoring Exchange|BQ Authoring Retrieve|BQ Enquiries Initiate|BQ Enquiries Update|BQ Enquiries Exchange|BQ Enquiries Capture|BQ Enquiries Retrieve|
+Mandatory||Regulatory Reporting Servicing Session Reference||||Reference to the active servicing session|I|I
+Mandatory||Regulatory Compliance Administrative Plan Instance Reference||||Reference to the Regulatory Compliance Administrative Plan instance|I|I
+||Regulatory Compliance Administrative Plan Instance Record|##|||The regulatory reporting administrative schedule|IO|I|O||O|||O|I||||O
+|||Regulatory Authority Reference|||Reference to the interested regulatory reporting authority|IO||O||O|||O|I||||O
+|||Regulatory Reporting Schedule|##||The details of all regulatory reporting requirements and scheduled reporting tasks|IO|I|O||O|||O|||||
+||||Regulation Reference||Reference to the regulation for which content is being collected|IO|I|O||O|||O|||||
+||||Regulatory Report Type||The types of report, included in the reporting schedule|IO|I|O||O|||O|||||
+Update||Regulatory Compliance Administrative Plan Update Action Task Reference||||Reference to an update service call|O
+Update||Regulatory Compliance Administrative Plan Update Action Task Record||||The update service call consolidated processing record|I/O
+Update||Update Action Request||||Details of the update action service request|I
+Update||Update Response Record||||Details of the Update action service response|O
+REQUEST||Regulatory Compliance Administrative Plan Request Action Task Reference||||Reference to a Regulatory Compliance Administrative Plan instance request service call||O
+REQUEST||Regulatory Compliance Administrative Plan Request Action Task Record||||The request service call consolidated processing record||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||I
+REQUEST||Request Response Record||||Details of the request action service response||O
+RETRIEVE||Regulatory Compliance Administrative Plan Retrieve Action Task Reference||||Reference to a Regulatory Compliance Administrative Plan instance retrieve service call|||O
+RETRIEVE||Regulatory Compliance Administrative Plan Retrieve Action Task Record||||The retrieve service call consolidated processing record|||IO
+RETRIEVE||Regulatory Compliance Administrative Plan Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||I
+RETRIEVE||Regulatory Compliance Administrative Plan Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||O
+RETRIEVE||Regulatory Compliance Administrative Plan Instance Report Record|##|||A specific Regulatory Compliance Administrative Plan instance formatted report|||IO
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Report Reference|||Reference to the control record instance report|||I
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||O
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Report Type|||The type of external report available|||IO
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||I
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Report|||The external report in any suitable form including selection filters where appropriate|||O
+RETRIEVE||Regulatory Compliance Administrative Plan Instance Analysis|##|||A specific Regulatory Compliance Administrative Plan instance analytical report|||IO
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Analysis Reference|||Reference to the control record instance analysis view|||I
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||O
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Analysis Report Type|||The type of external performance analysis report available|||IO
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||I
+RETRIEVE|||Regulatory Compliance Administrative Plan Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||O
+BQ Consolidation Instance Record|Consolidation||||||
+Mandatory||Regulatory Compliance Administrative Plan Instance Reference||||Reference to the parent Regulatory Compliance Administrative Plan instance||||I|I
+Mandatory||Consolidation Instance Reference||||Reference to the Consolidation instance||||I|I
+||Consolidation Instance Record|##|||The administration of production information consolidation and verification|||O|IO|O|I||O|||||
+|||Regulatory Report Type Content Requirements|||Description of the source content required for a report type|||O|IO|O|||O|||||
+|||Source Business Unit/Employee Reference|||Reference to the source of production information being assembled|||O|IO|O|I||O|||||
+|||Source Product/Service Reference|||Reference to the source service or product for content if appropriate|||O|IO|O|I||O|||||
+|||Source Customer Reference|||Reference to the bank customer that is subject of the source content if appropriate|||O|IO|O|||O|||||
+|||Source Transaction Records|||The possibly extensive collection of production transaction records assembled for reporting |||O|IO|O|I||O|||||
+Capture||Consolidation Capture Action Task Reference||||Reference to a Consolidation instance capture service call||||O
+Capture||Consolidation Capture Action Task Record||||The capture service call consolidated processing record||||I/O
+Capture||Consolidation Capture Record Reference||||Reference to the Consolidation structured input transaction/record||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||I
+Capture||Capture Response Record||||Details of the capture action service response||||O
+Retrieve||Consolidation Retrieve Action Task Reference||||Reference to a Consolidation instance retrieve service call|||||O
+Retrieve||Consolidation Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||I/O
+Retrieve||Consolidation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||I
+Retrieve||Consolidation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||O
+Retrieve||Consolidation Instance Report|##|||A specific Consolidation instance formatted report|||||IO
+Retrieve|||Consolidation Instance Report Reference|||Reference to the control record instance report|||||I
+Retrieve|||Consolidation Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||O
+Retrieve|||Consolidation Instance Report Type|||The type of external report available|||||O
+Retrieve|||Consolidation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||O
+Retrieve|||Consolidation Instance Report|||The external report in any suitable form including selection filters where appropriate|||||O
+Retrieve||Consolidation Instance Analysis|##|||A specific Consolidation instance analytical report|||||IO
+Retrieve|||Consolidation Instance Analysis Reference|||Reference to the control record instance analysis view|||||I
+Retrieve|||Consolidation Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||O
+Retrieve|||Consolidation Instance Analysis Report Type|||The type of external performance analysis report available|||||O
+Retrieve|||Consolidation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||O
+Retrieve|||Consolidation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||O
+Update||Consolidation Update Action Task Reference||||Reference to an update service call||||||O
+Update||Consolidation Update Action Task Record||||The update service call consolidated processing record||||||I/O
+Update||Consolidation Update Action Request||||Details of the update action service request||||||I
+Update||Update Response Record||||Details of the Update action service response||||||O
+BQ Authoring Instance Record|Authoring||||||
+Mandatory||Regulatory Compliance Administrative Plan Instance Reference||||Reference to the parent Regulatory Compliance Administrative Plan instance|||||||I
+Mandatory||Authoring Instance Reference||||Reference to the Authoring instance|||||||I
+||Authoring Instance Record|##|||The analysis and assembly of production information to create regulatory reports||||||||O|||||
+|||Regulatory Report Type Compliance Reporting Requirements |||Details the production information/measurements required for reporting - includes reporting format||||||||O|||||
+|||Reporting Period|||The time period covered by a report||||||||O|||||
+|||Reporting Business Legal Entity Reference|||Refers to the company group or subsidiary covered by the regulatory report||||||||O|||||
+|||Reporting Business Unit Reference|||Refers to the responsible reporting business units for the report||||||||O|||||
+|||Regulatory Report Reference|||Refers to the regulatory report||||||||O|||||
+|||Regulatory Report|||The regulatory report in any suitable format and media||||||||O|||||
+|||Regulatory Report Document Reference|||The document reference for the record of the report||||||||O|||||
+Exchange||Authoring Exchange Action Task Reference||||Reference to a Authoring instance exchange service call|||||||O
+Exchange||Authoring Exchange Action Task Record||||The exchange service call consolidated processing record|||||||I/O
+Exchange||Authoring Exchange Action Request|##|||Details of the exchange action service request|||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||I
+Exchange||Authoring Exchange Action Response||||Details of the exchange action service response|||||||O
+Exchange||Authoring Instance Status||||The status of the Authoring instance (e.g. accepted, rejected, verified)|||||||O
+Retrieve||Authoring Retrieve Action Task Reference||||Reference to a Authoring instance retrieve service call||||||||O
+Retrieve||Authoring Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||I/O
+Retrieve||Authoring Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+Retrieve||Authoring Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+Retrieve||Authoring Instance Report|##|||A specific Authoring instance formatted report||||||||IO
+Retrieve|||Authoring Instance Report Reference|||Reference to the control record instance report||||||||I
+Retrieve|||Authoring Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Authoring Instance Report Type|||The type of external report available||||||||O
+Retrieve|||Authoring Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||O
+Retrieve|||Authoring Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+Retrieve||Authoring Instance Analysis|##|||A specific Authoring instance analytical report||||||||IO
+Retrieve|||Authoring Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+Retrieve|||Authoring Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Authoring Instance Analysis Report Type|||The type of external performance analysis report available||||||||O
+Retrieve|||Authoring Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||O
+Retrieve|||Authoring Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ Enquiries Instance Record|Enquiries||||||
+Mandatory||Regulatory Compliance Administrative Plan Instance Reference||||Reference to the parent Regulatory Compliance Administrative Plan instance|||||||||I|I|I|I
+Mandatory||Enquiries Instance Reference||||Reference to the Enquiries instance|||||||||O|I|I|I
+Initiate||Enquiries Initiate Action Reference||||Reference to an Initiate service call|||||||||O
+Initiate||Enquiries Initiate Action Record||||The Initiate service call input and output record|||||||||I/O
+Initiate||Enquiries Instance Status||||The status of the Enquiries instance (e.g. initialised, pending, active)|||||||||O
+||Enquiries Instance Record|##|||The handling of specific regulatory enquiries in excess of regular scheduled reporting|||||||||IO|I||I|O
+|||Regulatory Enquiry|||The description of the requested information for the regulatory enquiry|||||||||I||||O
+|||Enquiry Business Unit Reference|||The business unit being assessed for enquiry if appropriate|||||||||I|I|||O
+|||Enquiry Product/Service Reference|||The instances of products/services being assessed if appropriate|||||||||I|I|||O
+|||Enquiry Customer Reference|||Reference to the customer being assessed if appropriate|||||||||I||||O
+|||Enquiry Transaction Records|||The possibly extensive collection of production transaction records assembled for the enquiry|||||||||IO|I||I|O
+|||Regulatory Enquiry Work Products|||Work documentation, forms and schedules produced and referenced during the enquiry|||||||||O||||O
+|||Regulatory Enquiry Result |||The record or report that is the outcome/result of the enquiry|||||||||O||||O
+|||Regulatory Enquiry Document Reference|||The document reference for all classified/archived documents from the enquiry|||||||||O||||O
+Update||Enquiries Update Action Task Reference||||Reference to an update service call||||||||||O
+Update||Enquiries Update Action Task Record||||The update service call consolidated processing record||||||||||I/O
+Update||Enquiries Update Action Request||||Details of the update action service request||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||O
+Exchange||Enquiries Exchange Action Task Reference||||Reference to a Enquiries instance exchange service call|||||||||||O
+Exchange||Enquiries Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||I/O
+Exchange||Enquiries Exchange Action Request|##|||Details of the exchange action service request|||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||I
+Exchange||Enquiries Exchange Action Response||||Details of the exchange action service response|||||||||||O
+Exchange||Enquiries Instance Status||||The status of the Enquiries instance (e.g. accepted, rejected, verified)|||||||||||O
+Capture||Enquiries Capture Action Task Reference||||Reference to a Enquiries instance capture service call||||||||||||O
+Capture||Enquiries Capture Action Task Record||||The capture service call consolidated processing record||||||||||||I/O
+Capture||Enquiries Capture Record Reference||||Reference to the Enquiries structured input transaction/record||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||O
+Retrieve||Enquiries Retrieve Action Task Reference||||Reference to a Enquiries instance retrieve service call|||||||||||||O
+Retrieve||Enquiries Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||I/O
+Retrieve||Enquiries Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||I
+Retrieve||Enquiries Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||O
+Retrieve||Enquiries Instance Report|##|||A specific Enquiries instance formatted report|||||||||||||IO
+Retrieve|||Enquiries Instance Report Reference|||Reference to the control record instance report|||||||||||||I
+Retrieve|||Enquiries Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Enquiries Instance Report Type|||The type of external report available|||||||||||||O
+Retrieve|||Enquiries Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||O
+Retrieve|||Enquiries Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||O
+Retrieve||Enquiries Instance Analysis|##|||A specific Enquiries instance analytical report|||||||||||||IO
+Retrieve|||Enquiries Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||I
+Retrieve|||Enquiries Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||O
+Retrieve|||Enquiries Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||O
+Retrieve|||Enquiries Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||O
+Retrieve|||Enquiries Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||O

@@ -1,0 +1,36 @@
+SD=ATM Network Operations
+CR=ATM Network Operating Session
+BQs=DeviceTracking CashDistribution NetworkOperation FinancialTransactionCapture FinancialDocumentHandling
+This service domain handles all automated aspects of operating the ATM network. This includes tracking the movement of cash and documents through the network and its ATM devices. It also handles the detection and response to device errors and alerts, including overseeing the physical movement of cash and documents and the handling of device alerts and outages
+A bank tracks the distribution and retrieval of cash inventory across its ATM network of operations
+Handling the automated operation of the ATM network and linked devices, including tracing physical cash and document movements
+CR - ATMNetwork Operating Session							BQ - Financial Document Handling					BQ - Network Operation				BQ - Cash Distribution			BQ - Device Tracking	 			BQ - Financial Transaction Capture				
+In	Up	Co	Ec	Ex	Rq	Re	In	Up	Ec	Ex	Re	In	Up	Co	Re	Ec	Rq	Re	Up	Ec	Ex	Re	In	Up	Ec	Ex	Re
+InCR Instantiate a new ATM Network Operating Session
+UpCR Update details relating to ATM Network Operating Session
+CoCR Control the processing of ATM Network Operating Session
+EcCR Accept, verify, etc. aspects of ATM Network Operating Session processing
+ExCR Execute an available automated action for ATM Network Operating Session
+RqCR Request manual intervention or a decision with respect to ATM Network Operating Session
+ReCR Retrieve details about any aspect of ATM Network Operating Session
+InBQ Instantiate a new Financial Document Handling
+UpBQ Update details relating to Financial Document Handling
+EcBQ Accept, verify, etc. aspects of Financial Document Handling processing
+ExBQ Execute an available automated action for Financial Document Handling
+ReBQ Retrieve details about any aspect of Financial Document Handling
+InBQ Instantiate a new Network Operation
+UpBQ Update details relating to Network Operation
+CoBQ Control the processing of Network Operation
+ReBQ Retrieve details about any aspect of Network Operation
+EcBQ Accept, verify, etc. aspects of Cash Distribution processing
+RqBQ Request manual intervention or a decision with respect to Cash Distribution
+ReBQ Retrieve details about any aspect of Cash Distribution
+UpBQ Update details relating to Device Tracking
+EcBQ Accept, verify, etc. aspects of Device Tracking processing
+ExBQ Execute an available automated action for Device Tracking
+ReBQ Retrieve details about any aspect of Device Tracking
+InBQ Instantiate a new Financial Transaction Capture
+UpBQ Update details relating to Financial Transaction Capture
+EcBQ Accept, verify, etc. aspects of Financial Transaction Capture processing
+ExBQ Execute an available automated action for Financial Transaction Capture
+ReBQ Retrieve details about any aspect of Financial Transaction Capture

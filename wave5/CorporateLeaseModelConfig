@@ -1,0 +1,170 @@
+CR Corporate Lease Arrangement Instance Record|Corporate Lease Arrangement||||||CR Corporate Lease Arrangement Initiate|CR Corporate Lease Arrangement Update|CR Corporate Lease Arrangement Control|CR Corporate Lease Arrangement Exchange|CR Corporate Lease Arrangement Execute|CR Corporate Lease Arrangement Request|CR Corporate Lease Arrangement Retrieve|BQ Administer Update|BQ Administer Control|BQ Administer Exchange|BQ Administer Request|BQ Administer Retrieve|BQ Fulfill Initiate|BQ Fulfill Update|BQ Fulfill Exchange|BQ Fulfill Execute|BQ Fulfill Request|BQ Fulfill Retrieve|
+Mandatory||Corporate Lease Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I
+Mandatory||Corporate Lease Arrangement Instance Reference||||Reference to the Corporate Lease Arrangement instance|O|I|I|I|I|I
+Initiate||Corporate Lease Arrangement Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Corporate Lease Arrangement Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Corporate Lease Arrangement Instance Status||||The status of the Corporate Lease Arrangement instance (e.g. initialised, pending, active)|IO
+||Corporate Lease Arrangement Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Corporate Lease.
+Example: Perform the scheduled (e.g. statements, standing orders) and ad-hoc/requested (e.g. balance inquiries, fund transfers) fulfillment tasks for a customer current account facility.||||||||||||||||||
+||Corporate Lease Arrangement Parameter Type||||A Classification value that distinguishes between arrangements according to the type of business services within Corporate Lease Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||
+||Corporate Lease Arrangement Selected Option||||A selected optional business service as subject matter of Corporate Lease Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||
+||Corporate Lease Arrangement Type||||The type of Corporate Lease Arrangement|I|I|I|I|I|I|O|||||||||||
+||Corporate Lease Arrangement Reference||||Reference to Corporate Lease Arrangement|I|I|I|I|I|I|O|||||||||||
+||Corporate Lease Arrangement Schedule||||Timetable to fulfill Corporate Lease Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||
+||Corporate Lease Arrangement Status||||The status of Corporate Lease Arrangement|IO|IO|IO|IO|IO|IO|O|||||||||||
+||Corporate Lease Arrangement Reference||||Reference to the party who is involved in Corporate Lease Arrangement||||||||||||||||||
+||Corporate Lease Arrangement Currency||||The curreny which is arranged in Corporate Lease Arrangement|I|I|I|I|I|I|O|||||||||||
+||Corporate Lease Arrangement Regulation Reference||||Reference to the regulation which is defined in Corporate Lease Arrangement|I|I|I|I|I|I|O|||||||||||
+||Corporate Lease Arrangement Regulation Type||||A Classification that distinguishes between the regularity domains of Corporate Lease Arrangement|I|I|I|I|I|I|O|||||||||||
+||Corporate Lease Arrangement Jurisdiction||||Reference to the jurisdiction that is assigned to Corporate Lease Arrangement in case of legal dispute.|I|I|I|I|I|I|O|||||||||||
+||Corporate Lease Arrangement Booking Location||||The financial accounting unit into which the financial events, with regard to the origination and fulfillment of the agreement in the context of Corporate Lease Arrangement, are entered.|I|I|I|I|I|I|O|||||||||||
+||Corporate Lease Arrangement Account Type||||The type of account which is linked to Corporate Lease Arrangement|I|I|I|I|I|I|O|||||||||||
+||Corporate Lease Arrangement Account Reference||||Reference to the account which is linked to Corporate Lease Arrangement|I|I|I|I|I|I|O|||||||||||
+Update||Corporate Lease Arrangement Update Action Task Reference||||Reference to an update service call||O
+Update||Corporate Lease Arrangement Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||Corporate Lease Arrangement Control Action Task Reference||||Reference to a Corporate Lease Arrangement instance control processing service call|||O
+CONTROL||Corporate Lease Arrangement Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Corporate Lease Arrangement Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Corporate Lease Arrangement Control Action Response||||Details of the control action service response|||O
+EXCHANGE||Corporate Lease Arrangement Exchange Action Task Reference||||Reference to a Corporate Lease Arrangement instance exchange service call||||O
+EXCHANGE||Corporate Lease Arrangement Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Corporate Lease Arrangement Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Corporate Lease Arrangement Exchange Action Response||||Details of the exchange action service response||||O
+EXECUTE||Corporate Lease Arrangement Execute Action Task Reference||||Reference to a Corporate Lease Arrangement instance execute service call|||||O
+EXECUTE||Corporate Lease Arrangement Execute Action Task Record||||The execute service call consolidated processing record|||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record|||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)|||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response|||||O
+REQUEST||Corporate Lease Arrangement Request Action Task Reference||||Reference to a Corporate Lease Arrangement instance request service call||||||O
+REQUEST||Corporate Lease Arrangement Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+RETRIEVE||Corporate Lease Arrangement Retrieve Action Task Reference||||Reference to a Corporate Lease Arrangement instance retrieve service call|||||||O
+RETRIEVE||Corporate Lease Arrangement Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||IO
+RETRIEVE||Corporate Lease Arrangement Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||I
+RETRIEVE||Corporate Lease Arrangement Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||O
+RETRIEVE||Corporate Lease Arrangement Instance Report Record|##|||A specific Corporate Lease Arrangement instance formatted report|||||||IO
+RETRIEVE|||Corporate Lease Arrangement Instance Report Reference|||Reference to the control record instance report|||||||I
+RETRIEVE|||Corporate Lease Arrangement Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Corporate Lease Arrangement Instance Report Type|||The type of external report available|||||||IO
+RETRIEVE|||Corporate Lease Arrangement Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||I
+RETRIEVE|||Corporate Lease Arrangement Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||O
+RETRIEVE||Corporate Lease Arrangement Instance Analysis|##|||A specific Corporate Lease Arrangement instance analytical report|||||||IO
+RETRIEVE|||Corporate Lease Arrangement Instance Analysis Reference|||Reference to the control record instance analysis view|||||||I
+RETRIEVE|||Corporate Lease Arrangement Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||O
+RETRIEVE|||Corporate Lease Arrangement Instance Analysis Report Type|||The type of external performance analysis report available|||||||IO
+RETRIEVE|||Corporate Lease Arrangement Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||I
+RETRIEVE|||Corporate Lease Arrangement Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||O
+BQ Administer Instance Record|Administer||||||
+Mandatory||Corporate Lease Arrangement Instance Reference||||Reference to the parent Corporate Lease Arrangement instance||||||||I|I|I|I
+Mandatory||Administer Instance Reference||||Reference to the Administer instance||||||||I|I|I|I
+||Administer Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Corporate Lease.
+||||||||||||||||||
+||Administer Preconditions||||The required status/situation prior to the implementation of the feature||||||||IO|IO|IO|IO|O||||||
+||Administer Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance||||||||IO|IO|IO|IO|O||||||
+||Business Service||||The Corporate Lease Arrangement specific Business Service||||||||IO|IO|IO|IO|O||||||
+||Administer Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled||||||||IO|IO|IO|IO|O||||||
+||Administer Service Type||||Reference to the specific business service type||||||||IO|IO|IO|IO|O||||||
+||Administer Service Description||||Description of the performed business service||||||||IO|IO|IO|IO|O||||||
+||Administer Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service||||||||IO|IO|IO|IO|O||||||
+||Administer Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service||||||||IO|IO|IO|IO|O||||||
+||Administer Service Name||||||||||||IO|IO|IO|IO|O||||||
+Update||Administer Update Action Task Reference||||Reference to an update service call||||||||O
+Update||Administer Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||Administer Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Control||Administer Control Action Task Reference||||Reference to a Administer instance control processing service call|||||||||O
+Control||Administer Control Action Task Record||||The processing control service call consolidated processing record|||||||||I/O
+Control||Administer Control Action Request|##|||Details of the control action service request|||||||||I
+Control|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||||||||I
+Control||Administer Control Action Response||||Details of the control action service response|||||||||O
+Control||Administer Instance Status||||The status of the Administer instance (e.g. initialised, pending, active)|||||||||O
+Exchange||Administer Exchange Action Task Reference||||Reference to a Administer instance exchange service call||||||||||O
+Exchange||Administer Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||I/O
+Exchange||Administer Exchange Action Request|##|||Details of the exchange action service request||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||I
+Exchange||Administer Exchange Action Response||||Details of the exchange action service response||||||||||O
+Exchange||Administer Instance Status||||The status of the Administer instance (e.g. accepted, rejected, verified)||||||||||O
+Request||Administer Request Action Task Reference||||Reference to a Administer instance request service call|||||||||||O
+Request||Administer Request Action Task Record||||The request service call consolidated processing record|||||||||||I/O
+Request||Administer Request Record Reference||||Reference to the Administer service request record|||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||O
+Retrieve||Administer Retrieve Action Task Reference||||Reference to a Administer instance retrieve service call||||||||||||O
+Retrieve||Administer Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||Administer Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||Administer Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||Administer Instance Report|##|||A specific Administer instance formatted report||||||||||||IO
+Retrieve|||Administer Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||Administer Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Administer Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||Administer Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||Administer Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||Administer Instance Analysis|##|||A specific Administer instance analytical report||||||||||||IO
+Retrieve|||Administer Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||Administer Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||Administer Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||Administer Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||Administer Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ Fulfill Instance Record|Fulfill||||||
+Mandatory||Corporate Lease Arrangement Instance Reference||||Reference to the parent Corporate Lease Arrangement instance|||||||||||||I|I|I|I|I
+Mandatory||Fulfill Instance Reference||||Reference to the Fulfill instance|||||||||||||O|I|I|I|I
+Initiate||Fulfill Initiate Action Reference||||Reference to an Initiate service call|||||||||||||O
+Initiate||Fulfill Initiate Action Record||||The Initiate service call input and output record|||||||||||||I/O
+Initiate||Fulfill Instance Status||||The status of the Fulfill instance (e.g. initialised, pending, active)|||||||||||||O
+||Fulfill Instance Record||||Fulfill any scheduled and ad-hoc obligations under a service arrangement, most typically for a financial product or facility within Corporate Lease.
+||||||||||||||||||
+||Fulfill Preconditions||||The required status/situation prior to the implementation of the feature|||||||||||||IO|IO|IO|IO|IO|O
+||Fulfill Feature Schedule||||The timing and key actions/milestones involved in completing the fulfillment feature instance|||||||||||||IO|IO|IO|IO|IO|O
+||Business Service||||The Corporate Lease Arrangement specific Business Service|||||||||||||IO|IO|IO|IO|IO|O
+||Fulfill Postconditions||||The completion status and any triggered/dependent actions once the feature instance has been fulfilled|||||||||||||IO|IO|IO|IO|IO|O
+||Fulfill Service Type||||Reference to the specific business service type|||||||||||||IO|IO|IO|IO|IO|O
+||Fulfill Service Description||||Description of the performed business service|||||||||||||IO|IO|IO|IO|IO|O
+||Fulfill Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||||IO|IO|IO|IO|IO|O
+||Fulfill Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||||IO|IO|IO|IO|IO|O
+Update||Fulfill Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||Fulfill Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||Fulfill Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Exchange||Fulfill Exchange Action Task Reference||||Reference to a Fulfill instance exchange service call|||||||||||||||O
+Exchange||Fulfill Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||I/O
+Exchange||Fulfill Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||I
+Exchange||Fulfill Exchange Action Response||||Details of the exchange action service response|||||||||||||||O
+Exchange||Fulfill Instance Status||||The status of the Fulfill instance (e.g. accepted, rejected, verified)|||||||||||||||O
+Execute||Fulfill Execute Action Task Reference||||Reference to a Fulfill instance execute service call||||||||||||||||O
+Execute||Fulfill Execute Action Task Record||||The execute service call consolidated processing record||||||||||||||||I/O
+Execute||Fulfill Execute Record Reference||||Reference to the Fulfill execute transaction/record||||||||||||||||O
+Execute||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||I
+Execute|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||||||||||||||I
+Execute||Execute Response Record||||Details of the execute action service response||||||||||||||||O
+Request||Fulfill Request Action Task Reference||||Reference to a Fulfill instance request service call|||||||||||||||||O
+Request||Fulfill Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||I/O
+Request||Fulfill Request Record Reference||||Reference to the Fulfill service request record|||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||O
+Retrieve||Fulfill Retrieve Action Task Reference||||Reference to a Fulfill instance retrieve service call||||||||||||||||||O
+Retrieve||Fulfill Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||I/O
+Retrieve||Fulfill Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||I
+Retrieve||Fulfill Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||O
+Retrieve||Fulfill Instance Report|##|||A specific Fulfill instance formatted report||||||||||||||||||IO
+Retrieve|||Fulfill Instance Report Reference|||Reference to the control record instance report||||||||||||||||||I
+Retrieve|||Fulfill Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Fulfill Instance Report Type|||The type of external report available||||||||||||||||||O
+Retrieve|||Fulfill Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||O
+Retrieve|||Fulfill Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||O
+Retrieve||Fulfill Instance Analysis|##|||A specific Fulfill instance analytical report||||||||||||||||||IO
+Retrieve|||Fulfill Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||I
+Retrieve|||Fulfill Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||O
+Retrieve|||Fulfill Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||O
+Retrieve|||Fulfill Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||O
+Retrieve|||Fulfill Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||O

@@ -1,0 +1,84 @@
+CR Product Inventory Allocation Instance Record|Product Inventory Allocation||||||CR Product Inventory Allocation Update|CR Product Inventory Allocation Request|CR Product Inventory Allocation Retrieve|BQ Assignment Initiate|BQ Assignment Update|BQ Assignment Exchange|BQ Assignment Request|BQ Assignment Retrieve|
+Mandatory||Product Inventory Item Management Servicing Session Reference||||Reference to the active servicing session|I|I
+Mandatory||Product Inventory Allocation Instance Reference||||Reference to the Product Inventory Allocation instance|I|I
+||Product Inventory Allocation Instance Record|##|||The allocation and distribution management of product inventory (product sales and delivery support materials) throughout the branch network and merchant locations as required|IO|IO|O|IO|||IO|O
+|||Product Inventory Allocation Service Schedule|||Maintains the distribution schedule for all managed product inventory items. This includes all past distribution records and future scheduled deliveries|IO|IO|O|IO|||IO|O
+|||Product Inventory Holdings|##||The collection of product inventory items|IO|IO|O|IO|||IO|O
+||||Product/Service Type||The type or category of product or service for which inventory items are held (e.g. specialized consumer loan, relocation services)|IO|IO|O|IO|||IO|O
+||||Product Inventory Item Type ||Reference to a specific type of product inventory item|IO|IO|O|IO|||IO|O
+||||Product Inventory Item Record |##|Details about a product inventory type holding|IO|IO|O|IO|||IO|O
+|||||Product Inventory Item Description|Description of the inventory item used for selection/reference purposes|IO|O|O|O|||O|O
+|||||Product Inventory Item Supplier Details|Details as to the supplier details for obtaining additional items when required (includes ordering details, volumes and frequency, pricing, delivery timelines etc.)|IO|IO|O|IO|||IO|O
+|||||Product Inventory Used Locations|Details the locations where the inventory item is distributed to and the minimum and maximum holding amounts and inventory renewal cycles (used to trigger/schedule renewal deliveries)|IO|IO|O|IO|||IO|O
+|||||Product Inventory Holding|The current and projected holding and holding targets/limits by location - taking into account scheduled distribution plans|IO|IO|O|IO|||IO|O
+Update||Product Inventory Allocation Update Action Task Reference||||Reference to an update service call|O
+Update||Product Inventory Allocation Update Action Task Record||||The update service call consolidated processing record|I/O
+Update||Update Action Request||||Details of the update action service request|I
+Update||Update Response Record||||Details of the Update action service response|O
+REQUEST||Product Inventory Allocation Request Action Task Reference||||Reference to a Product Inventory Allocation instance request service call||O
+REQUEST||Product Inventory Allocation Request Action Task Record||||The request service call consolidated processing record||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||I
+REQUEST||Request Response Record||||Details of the request action service response||O
+RETRIEVE||Product Inventory Allocation Retrieve Action Task Reference||||Reference to a Product Inventory Allocation instance retrieve service call|||O
+RETRIEVE||Product Inventory Allocation Retrieve Action Task Record||||The retrieve service call consolidated processing record|||IO
+RETRIEVE||Product Inventory Allocation Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||I
+RETRIEVE||Product Inventory Allocation Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||O
+RETRIEVE||Product Inventory Allocation Instance Report Record|##|||A specific Product Inventory Allocation instance formatted report|||IO
+RETRIEVE|||Product Inventory Allocation Instance Report Reference|||Reference to the control record instance report|||I
+RETRIEVE|||Product Inventory Allocation Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||O
+RETRIEVE|||Product Inventory Allocation Instance Report Type|||The type of external report available|||IO
+RETRIEVE|||Product Inventory Allocation Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||I
+RETRIEVE|||Product Inventory Allocation Instance Report|||The external report in any suitable form including selection filters where appropriate|||O
+RETRIEVE||Product Inventory Allocation Instance Analysis|##|||A specific Product Inventory Allocation instance analytical report|||IO
+RETRIEVE|||Product Inventory Allocation Instance Analysis Reference|||Reference to the control record instance analysis view|||I
+RETRIEVE|||Product Inventory Allocation Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||O
+RETRIEVE|||Product Inventory Allocation Instance Analysis Report Type|||The type of external performance analysis report available|||IO
+RETRIEVE|||Product Inventory Allocation Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||I
+RETRIEVE|||Product Inventory Allocation Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||O
+BQ Assignment Instance Record|Assignment||||||
+Mandatory||Product Inventory Allocation Instance Reference||||Reference to the parent Product Inventory Allocation instance||||I|I|I|I
+Mandatory||Assignment Instance Reference||||Reference to the Assignment instance||||O|I|I|I
+Initiate||Assignment Initiate Action Reference||||Reference to an Initiate service call||||O
+Initiate||Assignment Initiate Action Record||||The Initiate service call input and output record||||I/O
+Initiate||Assignment Instance Status||||The status of the Assignment instance (e.g. initialised, pending, active)||||O
+||Assignment Instance Record|##|||The assignment captures the distribution of product inventory to schedule or on request from a location. Note there will usually be optimization of delivery schedules, inventory holdings and the coordinated delivery of multiple items held at a particular location.||||IO|IO||IO|O
+|||Product Inventory Assignment Request Type|||Defines the type of assignment (e.g. to schedule, ad-hoc inventory request)||||IO|IO||IO|O
+|||Product Inventory Assignment Request Record|||Contains details of the product inventory request, in particular the item type, amount and delivery arrangements||||IO|IO||IO|O
+|||Product Inventory Assignment Delivery Record |||Details of the distribution of product inventory to a location||||O|IO||IO|O
+|||Product Inventory Assignment Costs|||Details of inventory and delivery related costs||||O|IO||O|O
+|||Date Type|##||Key dates associated with the assignment (e.g. order date, confirmation date, delivery date)||||IO|IO||IO|O
+||||Date||Value of the specific date type||||IO|IO||IO|O
+Update||Assignment Update Action Task Reference||||Reference to an update service call|||||O
+Update||Assignment Update Action Task Record||||The update service call consolidated processing record|||||I/O
+Update||Assignment Update Action Request||||Details of the update action service request|||||I
+Update||Update Response Record||||Details of the Update action service response|||||O
+Exchange||Assignment Exchange Action Task Reference||||Reference to a Assignment instance exchange service call||||||O
+Exchange||Assignment Exchange Action Task Record||||The exchange service call consolidated processing record||||||I/O
+Exchange||Assignment Exchange Action Request|##|||Details of the exchange action service request||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||I
+Exchange||Assignment Exchange Action Response||||Details of the exchange action service response||||||O
+Exchange||Assignment Instance Status||||The status of the Assignment instance (e.g. accepted, rejected, verified)||||||O
+Request||Assignment Request Action Task Reference||||Reference to a Assignment instance request service call|||||||O
+Request||Assignment Request Action Task Record||||The request service call consolidated processing record|||||||I/O
+Request||Assignment Request Record Reference||||Reference to the Assignment service request record|||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||I
+Request||Request Response Record||||Details of the request action service response|||||||O
+Retrieve||Assignment Retrieve Action Task Reference||||Reference to a Assignment instance retrieve service call||||||||O
+Retrieve||Assignment Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||I/O
+Retrieve||Assignment Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+Retrieve||Assignment Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+Retrieve||Assignment Instance Report|##|||A specific Assignment instance formatted report||||||||IO
+Retrieve|||Assignment Instance Report Reference|||Reference to the control record instance report||||||||I
+Retrieve|||Assignment Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Assignment Instance Report Type|||The type of external report available||||||||O
+Retrieve|||Assignment Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||O
+Retrieve|||Assignment Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+Retrieve||Assignment Instance Analysis|##|||A specific Assignment instance analytical report||||||||IO
+Retrieve|||Assignment Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+Retrieve|||Assignment Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+Retrieve|||Assignment Instance Analysis Report Type|||The type of external performance analysis report available||||||||O
+Retrieve|||Assignment Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||O
+Retrieve|||Assignment Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O

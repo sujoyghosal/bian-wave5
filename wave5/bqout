@@ -1,0 +1,43 @@
+BQ Award Instance Record|Award||||||
+Mandatory||Reward Points Transaction Instance Reference||||Reference to the parent Reward Points Transaction instance|||||||||||I|I|I
+Mandatory||Award Instance Reference||||Reference to the Award instance|||||||||||O|I|I
+Initiate||Award Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Initiate||Award Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Initiate||Award Instance Status||||The status of the Award instance (e.g. initialised, pending, active)|||||||||||O
+||Award Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Reward Points Awards And Redemption.
+||||||||||||||
+||Award Preconditions||||The required status/situation prior to the execution of the task|||||||||||IO|IO|IO|O
+||Award Task Schedule||||The timing and key actions/milestones involved in completing the transaction task|||||||||||IO|IO|IO|O
+||Awards||||The Reward Points Transaction specific Business Service|||||||||||IO|IO|IO|O
+||Award Postconditions||||The completion status and any triggered/dependent actions once the task has been completed|||||||||||IO|IO|IO|O
+||Award Awards Service Type||||Reference to the specific business service type|||||||||||IO|IO|IO|O
+||Award Awards Service Description||||Description of the performed business service|||||||||||IO|IO|IO|O
+||Award Awards Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|IO|IO|O
+||Award Awards Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|IO|IO|O
+||Award Awards Service Name|||||||||||||||IO|IO|IO|O
+Update||Award Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Award Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Award Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Exchange||Award Exchange Action Task Reference||||Reference to a Award instance exchange service call|||||||||||||O
+Exchange||Award Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||I/O
+Exchange||Award Exchange Action Request|##|||Details of the exchange action service request|||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||I
+Exchange||Award Exchange Action Response||||Details of the exchange action service response|||||||||||||O
+Exchange||Award Instance Status||||The status of the Award instance (e.g. accepted, rejected, verified)|||||||||||||O
+Retrieve||Award Retrieve Action Task Reference||||Reference to a Award instance retrieve service call||||||||||||||O
+Retrieve||Award Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Award Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Award Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Award Instance Report|##|||A specific Award instance formatted report||||||||||||||IO
+Retrieve|||Award Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Award Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Award Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Award Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Award Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Award Instance Analysis|##|||A specific Award instance analytical report||||||||||||||IO
+Retrieve|||Award Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Award Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Award Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Award Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Award Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O

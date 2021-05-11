@@ -1,0 +1,18 @@
+CR Sales Specialist Support Administrative Plan Instance Record	CR Sales Specialist Support Administrative Plan Instance Record	Sales Specialist Support Administrative Plan Instance Record	##			The administration of providing access to sales specialists to support business development activity. This includes keeping track of available specialists and assigning them to meet requests. 	IO	IO	IO	O	IO					O
+			Sales Specialist Support Resource Allocation Service Schedule			Maintains the allocation records of available sales specialist service resources. This includes all past and future booking commitments	IO	IO	IO	O	IO					O
+			Sales Specialist Support Resource Reference 			Reference to a sales specialist support resource	IO	IO	IO	O	IO					O
+			Sales Specialist Support Resource Record 	##		Details about a registered sales specialist support resource	IO	IO	IO	O	IO					O
+				Sales Specialist Support Resource Qualification Profile		Details the qualification, expertise and level of experience of a servicing specialist	O	IO	O	O	O					O
+				Sales Specialist Support Location Reference		Reference to the locations service by the resource where face to face meetings are required	O	IO	O	O	O					O
+				Sales Specialist Support Resource Availability Schedule 		Details the time the resource plans to be and is actually available for assignments	IO	IO	IO	O	IO					O
+				Sales Specialist Support Resource Status		Tracks the current status indicating availability for assignment	IO	IO	IO	O	IO					O
+				Sales Specialist Support Assignment Record		Reference to a consolidated record of assignment instances handled by the support resource. This is used to track utilization and performance	IO	IO	IO	O	IO					O
+BQ Assignment Instance Record	BQ Assignment Instance Record	Assignment Instance Record	##			The allocation captures a single assignment instance. Note these records are captured in the Assignment Record for the support resource					IO	IO		IO	IO	O
+			Sales Specialist Support Assignment Request Type			Defines the type of assignment (e.g. in person, phone conference)					IO	IO			IO	O
+			Sales Specialist Support Assignment Request Record			Contains details of the product specialist support request, in particular the product or service of interest and the specific topics to be covered					I	IO			IO	O
+			Sales Specialist Support Session Work Products 			File of any meeting notes, work products and administrative documentation generated during the assignment					O	IO			O	O
+			Sales Specialist Support Assignment Location			The location of the customer interaction (e.g. branch, phone, customer site)					O	IO		IO	IO	O
+			Sales Specialist Support Assignment Fee			Details of time and expenses booked and fees associated with the assignment and if appropriate reference to charges made to the customer					IO	IO		IO	IO	O
+			Sales Specialist Support Assignment Result			The result of the customer interaction, including any suggested follow-up tasks					O	IO		IO	O	O
+			Date Type	##		Key dates associated with the assignment (e.g. booking date, confirmation date, execution date, follow-up/evaluation date)					IO	IO		IO	IO	O
+				Date		Value of the specific date type					IO	IO		IO	IO	O

@@ -1,0 +1,524 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Financial Market Analysis'
+ description: >
+
+    ## Executive Summary:
+
+    Provide different types of financial market analysis using available financial market information and research
+
+    ## Example of Use:
+
+    A competitor financial pricing analysis is requested for a company issuing corporate paper
+
+    ## Description:
+
+    Analyze available sources of internal and external financial market information and research to develop insights and opinions on any aspect of financial market activity and pricing
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-financial-market-analysis/1.0.0
+schemes:
+ - https
+paths:
+  /financial-market-analysis/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDFinancialMarketAnalysis
+      summary: Activate  a SDFinancialMarketAnalysis servicing session
+      description: Activate  a  SDFinancialMarketAnalysis servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDFinancialMarketAnalysis Request Payload
+        schema:
+          $ref: '#/definitions/SDFinancialMarketAnalysisActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDFinancialMarketAnalysisActivateOutputModel'
+  /financial-market-analysis/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDFinancialMarketAnalysis
+      summary: Update an active SDFinancialMarketAnalysis session configuration
+      description: Update an active SDFinancialMarketAnalysis session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDFinancialMarketAnalysis Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDFinancialMarketAnalysis Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDFinancialMarketAnalysisConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDFinancialMarketAnalysisConfigureOutputModel'
+  /financial-market-analysis/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDFinancialMarketAnalysis
+      summary: "Capturing feedback against the SDFinancialMarketAnalysis service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDFinancialMarketAnalysis service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDFinancialMarketAnalysis Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDFinancialMarketAnalysis Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDFinancialMarketAnalysisFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDFinancialMarketAnalysisFeedbackOutputModel'
+  /financial-market-analysis/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDFinancialMarketAnalysis
+      summary: Analytical views maintained by the SDFinancialMarketAnalysis service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDFinancialMarketAnalysis service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDFinancialMarketAnalysis Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDFinancialMarketAnalysisRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDFinancialMarketAnalysisRetrieveOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateFinancialMarketAnalysis
+      summary: Details of a new FinancialMarketAnalysis instance
+      description: Instantiate a new Financial Market Analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialMarketAnalysis Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketAnalysisInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new FinancialMarketAnalysis instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketAnalysisInitiateOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateFinancialMarketAnalysis
+      summary: Update to any amendable fields of the FinancialMarketAnalysis instance
+      description: Update details relating to Financial Market Analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Analysis Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketAnalysisUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Financial Market Analysis Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketAnalysisUpdateOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeFinancialMarketAnalysisUpdate
+      summary: Invoke an automated execute action against the FinancialMarketAnalysis instance
+      description: Execute an available automated action for Financial Market Analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Analysis Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketAnalysisExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Financial Market Analysis Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketAnalysisExecuteOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestFinancialMarketAnalysisUpdate
+      summary: Invoke a service request action against the FinancialMarketAnalysis instance
+      description: Request manual intervention or a decision with respect to Financial Market Analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Analysis Request Payload
+        schema:
+          $ref: '#/definitions/CRFinancialMarketAnalysisRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Financial Market Analysis Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketAnalysisRequestOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFinancialMarketAnalysis
+      summary: Invoke a reporting action to obtain a Financial Market Analysis instance related report
+      description: Retrieve details about any aspect of Financial Market Analysis
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRFinancialMarketAnalysisRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Financial Market Analysis Instance
+          schema:
+            $ref: '#/definitions/CRFinancialMarketAnalysisRetrieveOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}/financialmarketinsight/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateFinancialMarketAnalysisFinancialMarketInsight
+      summary: Details of a new FinancialMarketInsight instance
+      description: Instantiate a new Financial Market Insight
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Financial Market Analysis Request Payload
+        schema:
+          $ref: '#/definitions/BQFinancialMarketInsightInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Financial Market Analysis instance
+          schema:
+            $ref: '#/definitions/BQFinancialMarketInsightInitiateOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}/financialmarketinsight/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateFinancialMarketAnalysisFinancialMarketInsight
+      summary: Update to any amendable fields of the FinancialMarketInsight instance
+      description: Update details relating to Financial Market Insight
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialMarketInsight Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialMarketInsight Request Payload
+        schema:
+          $ref: '#/definitions/BQFinancialMarketInsightUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated FinancialMarketInsight Instance
+          schema:
+            $ref: '#/definitions/BQFinancialMarketInsightUpdateOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}/financialmarketinsight/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeFinancialMarketAnalysisFinancialMarketInsightUpdate
+      summary: Invoke an automated execute action against the FinancialMarketInsight instance
+      description: Execute an available automated action for Financial Market Insight
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialMarketInsight Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialMarketInsight request payload
+        schema:
+          $ref: '#/definitions/BQFinancialMarketInsightExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of FinancialMarketInsight Instance Record
+          schema:
+            $ref: '#/definitions/BQFinancialMarketInsightExecuteOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}/financialmarketinsight/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestFinancialMarketAnalysisFinancialMarketInsightUpdate
+      summary: Invoke a service request action against the FinancialMarketInsight instance
+      description: Request manual intervention or a decision with respect to Financial Market Insight
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialMarketInsight Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: FinancialMarketInsight request payload
+        schema:
+          $ref: '#/definitions/BQFinancialMarketInsightRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of FinancialMarketInsight Instance Record
+          schema:
+            $ref: '#/definitions/BQFinancialMarketInsightRequestOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}/financialmarketinsight/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveFinancialMarketAnalysisFinancialMarketInsight
+      summary: Invoke a reporting action to obtain a FinancialMarketInsight instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: FinancialMarketInsight Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFinancialMarketInsightRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved FinancialMarketInsight Instance Record
+          schema:
+            $ref: '#/definitions/BQFinancialMarketInsightRetrieveOutputModel'
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveFinancialMarketAnalysisReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- FinancialMarketAnalysis Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /financial-market-analysis/financial-market-analysis/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveFinancialMarketAnalysisBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'FinancialMarketInsight', ]
+  /financial-market-analysis/{sd-reference-id}/financial-market-analysis/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveFinancialMarketAnalysisBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Financial Market Analysis Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Financial Market Analysis Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- FinancialMarketInsight
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- FinancialMarketInsight Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [FinancialMarketInsightID1, FinancialMarketInsightID2]

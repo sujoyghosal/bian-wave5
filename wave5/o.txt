@@ -1,0 +1,136 @@
+Mandatory||Reward Points Awards And Redemption Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||Reward Points Transaction Instance Reference||||Reference to the Reward Points Transaction instance|O|I|I|I|I
+Initiate||Reward Points Transaction Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Reward Points Transaction Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Reward Points Transaction Instance Status||||The status of the Reward Points Transaction instance (e.g. initialised, pending, active)|IO
+CR Reward Points Transaction Instance Record|CR Reward Points Transaction Instance Record|Reward Points Transaction Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Reward Points Awards And Redemption.
+Example: Execute a payment transaction.||||||||||||||
+||Reward Points Transaction Parameter Type||||A Classification value that distinguishes between business service transaction within Reward Points Transaction|IO|IO|IO|IO|IO|O||||||||
+||Reward Points Transaction Selected Option||||A selected optional business service as subject matter of Reward Points Transaction|IO|IO|IO|IO|IO|O||||||||
+||Reward Points Transaction Status||||The status of Reward Points Transaction|IO|IO|IO|IO|IO|O||||||||
+||Reward Points Transaction Type||||A Classification value that specifies type of business action for this Reward Points Transaction|I|I|I|I|I|O||||||||
+||Reward Points Transaction Transaction Type||||A Classification value that specifies type of transaction for this Reward Points Transaction|I|I|I|I|I|O||||||||
+||Reward Points Transaction Transaction||||Reference to Reward Points Transaction||||||||||||||
+Update||Reward Points Transaction Update Action Task Reference||||Reference to an update service call||O
+Update||Reward Points Transaction Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+EXCHANGE||Reward Points Transaction Exchange Action Task Reference||||Reference to a Reward Points Transaction instance exchange service call|||O
+EXCHANGE||Reward Points Transaction Exchange Action Task Record||||The exchange service call consolidated processing record|||I/O
+EXCHANGE||Reward Points Transaction Exchange Action Request|##|||Details of the exchange action service request|||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||I
+EXCHANGE||Reward Points Transaction Exchange Action Response||||Details of the exchange action service response|||O
+EXECUTE||Reward Points Transaction Execute Action Task Reference||||Reference to a Reward Points Transaction instance execute service call||||O
+EXECUTE||Reward Points Transaction Execute Action Task Record||||The execute service call consolidated processing record||||I/O
+EXECUTE||Execute Record Reference||||Reference to the execute transaction/record||||O
+EXECUTE||Execute Record Type|##|||Copy in associated API description (less 5 header characters)||||I
+EXECUTE|||Execute Input Record|||Execute transaction/record (e.g. deposit, withdrawal, fee/penalty, interest)||||I
+EXECUTE||Execute Response Record||||Details of the execute action service response||||O
+REQUEST||Reward Points Transaction Request Action Task Reference||||Reference to a Reward Points Transaction instance request service call|||||O
+REQUEST||Reward Points Transaction Request Action Task Record||||The request service call consolidated processing record|||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record|||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||I
+REQUEST||Request Response Record||||Details of the request action service response|||||O
+RETRIEVE||Reward Points Transaction Retrieve Action Task Reference||||Reference to a Reward Points Transaction instance retrieve service call||||||O
+RETRIEVE||Reward Points Transaction Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||IO
+RETRIEVE||Reward Points Transaction Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||I
+RETRIEVE||Reward Points Transaction Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||O
+RETRIEVE||Reward Points Transaction Instance Report Record|##|||A specific Reward Points Transaction instance formatted report||||||IO
+RETRIEVE|||Reward Points Transaction Instance Report Reference|||Reference to the control record instance report||||||I
+RETRIEVE|||Reward Points Transaction Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Reward Points Transaction Instance Report Type|||The type of external report available||||||IO
+RETRIEVE|||Reward Points Transaction Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||I
+RETRIEVE|||Reward Points Transaction Instance Report|||The external report in any suitable form including selection filters where appropriate||||||O
+RETRIEVE||Reward Points Transaction Instance Analysis|##|||A specific Reward Points Transaction instance analytical report||||||IO
+RETRIEVE|||Reward Points Transaction Instance Analysis Reference|||Reference to the control record instance analysis view||||||I
+RETRIEVE|||Reward Points Transaction Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||Reward Points Transaction Instance Analysis Report Type|||The type of external performance analysis report available||||||IO
+RETRIEVE|||Reward Points Transaction Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||I
+RETRIEVE|||Reward Points Transaction Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||O
+BQ Redemption Instance Record|Redemption||||||
+Mandatory||Reward Points Transaction Instance Reference||||Reference to the parent Reward Points Transaction instance|||||||I|I|I
+Mandatory||Redemption Instance Reference||||Reference to the Redemption instance|||||||O|I|I
+Initiate||Redemption Initiate Action Reference||||Reference to an Initiate service call|||||||O
+Initiate||Redemption Initiate Action Record||||The Initiate service call input and output record|||||||I/O
+Initiate||Redemption Instance Status||||The status of the Redemption instance (e.g. initialised, pending, active)|||||||O
+||Redemption Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Reward Points Awards And Redemption.
+||||||||||||||
+||Redemption Preconditions||||The required status/situation prior to the execution of the task|||||||IO|IO|IO|O||||
+||Redemption Task Schedule||||The timing and key actions/milestones involved in completing the transaction task|||||||IO|IO|IO|O||||
+||Awards Redemption||||The Reward Points Transaction specific Business Service|||||||IO|IO|IO|O||||
+||Redemption Postconditions||||The completion status and any triggered/dependent actions once the task has been completed|||||||IO|IO|IO|O||||
+||Redemption Awards Redemption Service Type||||Reference to the specific business service type|||||||IO|IO|IO|O||||
+||Redemption Awards Redemption Service Description||||Description of the performed business service|||||||IO|IO|IO|O||||
+||Redemption Awards Redemption Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||IO|IO|IO|O||||
+||Redemption Awards Redemption Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||IO|IO|IO|O||||
+||Redemption Awards Redemption Service Name|||||||||||IO|IO|IO|O||||
+Update||Redemption Update Action Task Reference||||Reference to an update service call||||||||O
+Update||Redemption Update Action Task Record||||The update service call consolidated processing record||||||||I/O
+Update||Redemption Update Action Request||||Details of the update action service request||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||O
+Exchange||Redemption Exchange Action Task Reference||||Reference to a Redemption instance exchange service call|||||||||O
+Exchange||Redemption Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||I/O
+Exchange||Redemption Exchange Action Request|##|||Details of the exchange action service request|||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||I
+Exchange||Redemption Exchange Action Response||||Details of the exchange action service response|||||||||O
+Exchange||Redemption Instance Status||||The status of the Redemption instance (e.g. accepted, rejected, verified)|||||||||O
+Retrieve||Redemption Retrieve Action Task Reference||||Reference to a Redemption instance retrieve service call||||||||||O
+Retrieve||Redemption Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||I/O
+Retrieve||Redemption Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||I
+Retrieve||Redemption Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||O
+Retrieve||Redemption Instance Report|##|||A specific Redemption instance formatted report||||||||||IO
+Retrieve|||Redemption Instance Report Reference|||Reference to the control record instance report||||||||||I
+Retrieve|||Redemption Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Redemption Instance Report Type|||The type of external report available||||||||||O
+Retrieve|||Redemption Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||O
+Retrieve|||Redemption Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||O
+Retrieve||Redemption Instance Analysis|##|||A specific Redemption instance analytical report||||||||||IO
+Retrieve|||Redemption Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||I
+Retrieve|||Redemption Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||O
+Retrieve|||Redemption Instance Analysis Report Type|||The type of external performance analysis report available||||||||||O
+Retrieve|||Redemption Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||O
+Retrieve|||Redemption Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||O
+BQ Award Instance Record|Award||||||
+Mandatory||Reward Points Transaction Instance Reference||||Reference to the parent Reward Points Transaction instance|||||||||||I|I|I
+Mandatory||Award Instance Reference||||Reference to the Award instance|||||||||||O|I|I
+Initiate||Award Initiate Action Reference||||Reference to an Initiate service call|||||||||||O
+Initiate||Award Initiate Action Record||||The Initiate service call input and output record|||||||||||I/O
+Initiate||Award Instance Status||||The status of the Award instance (e.g. initialised, pending, active)|||||||||||O
+||Award Instance Record||||Execute a well-bounded financial transaction/task, typically involving largely automated/structured fulfillment processing within Reward Points Awards And Redemption.
+||||||||||||||
+||Award Preconditions||||The required status/situation prior to the execution of the task|||||||||||IO|IO|IO|O
+||Award Task Schedule||||The timing and key actions/milestones involved in completing the transaction task|||||||||||IO|IO|IO|O
+||Awards||||The Reward Points Transaction specific Business Service|||||||||||IO|IO|IO|O
+||Award Postconditions||||The completion status and any triggered/dependent actions once the task has been completed|||||||||||IO|IO|IO|O
+||Award Awards Service Type||||Reference to the specific business service type|||||||||||IO|IO|IO|O
+||Award Awards Service Description||||Description of the performed business service|||||||||||IO|IO|IO|O
+||Award Awards Service Inputs and Ouputs||||Mandatory and optional inputs and output information for the business service|||||||||||IO|IO|IO|O
+||Award Awards Service Work Product||||Documentation, meeting schedules, notes, reasearch. calculations and any other work products produced by the business service|||||||||||IO|IO|IO|O
+||Award Awards Service Name|||||||||||||||IO|IO|IO|O
+Update||Award Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Award Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Award Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Exchange||Award Exchange Action Task Reference||||Reference to a Award instance exchange service call|||||||||||||O
+Exchange||Award Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||I/O
+Exchange||Award Exchange Action Request|##|||Details of the exchange action service request|||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||I
+Exchange||Award Exchange Action Response||||Details of the exchange action service response|||||||||||||O
+Exchange||Award Instance Status||||The status of the Award instance (e.g. accepted, rejected, verified)|||||||||||||O
+Retrieve||Award Retrieve Action Task Reference||||Reference to a Award instance retrieve service call||||||||||||||O
+Retrieve||Award Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||I/O
+Retrieve||Award Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||I
+Retrieve||Award Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||O
+Retrieve||Award Instance Report|##|||A specific Award instance formatted report||||||||||||||IO
+Retrieve|||Award Instance Report Reference|||Reference to the control record instance report||||||||||||||I
+Retrieve|||Award Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Award Instance Report Type|||The type of external report available||||||||||||||O
+Retrieve|||Award Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||O
+Retrieve|||Award Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||O
+Retrieve||Award Instance Analysis|##|||A specific Award instance analytical report||||||||||||||IO
+Retrieve|||Award Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||I
+Retrieve|||Award Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||O
+Retrieve|||Award Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||O
+Retrieve|||Award Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||O
+Retrieve|||Award Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||O

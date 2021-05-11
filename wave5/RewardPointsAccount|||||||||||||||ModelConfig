@@ -1,0 +1,134 @@
+CR Reward Points Log||||||||||||||| Instance Record|Reward Points Log|||||||||||||||||||||CR Reward Points Log||||||||||||||| Initiate|CR Reward Points Log||||||||||||||| Update|CR Reward Points Log||||||||||||||| Control|CR Reward Points Log||||||||||||||| Exchange|CR Reward Points Log||||||||||||||| Capture|CR Reward Points Log||||||||||||||| Request|CR Reward Points Log||||||||||||||| Grant|CR Reward Points Log||||||||||||||| Retrieve|BQ BQ Expiration Initiate|BQ BQ Expiration Update|BQ BQ Expiration Capture|BQ BQ Expiration Retrieve|BQ BQ Capture Initiate|BQ BQ Capture Update|BQ BQ Capture Capture|BQ BQ Capture Retrieve|
+Mandatory||Reward Points Account||||||||||||||| Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the Reward Points Log||||||||||||||| instance|O|I|I|I|I|I|I
+Initiate||Reward Points Log||||||||||||||| Initiate Action Reference||||Reference to an Initiate service call|O
+Initiate||Reward Points Log||||||||||||||| Initiate Action Record||||The Initiate service call input and output record|IO
+Initiate||Reward Points Log||||||||||||||| Instance Status||||The status of the Reward Points Log||||||||||||||| instance (e.g. initialised, pending, active)|IO
+||Reward Points Account||||||||||||||| Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the Reward Points Log||||||||||||||| instance|I|I|I|I|I|I|I
+Update||Reward Points Log||||||||||||||| Update Action Task Reference||||Reference to an update service call||O
+Update||Reward Points Log||||||||||||||| Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+Mandatory||Reward Points Account||||||||||||||| Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the Reward Points Log||||||||||||||| instance|I|I|I|I|I|I|I
+CONTROL||Reward Points Log||||||||||||||| Control Action Task Reference||||Reference to a Reward Points Log||||||||||||||| instance control processing service call|||O
+CONTROL||Reward Points Log||||||||||||||| Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||Reward Points Log||||||||||||||| Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||Reward Points Log||||||||||||||| Control Action Response||||Details of the control action service response|||O
+Mandatory||Reward Points Account||||||||||||||| Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the Reward Points Log||||||||||||||| instance|I|I|I|I|I|I|I
+EXCHANGE||Reward Points Log||||||||||||||| Exchange Action Task Reference||||Reference to a Reward Points Log||||||||||||||| instance exchange service call||||O
+EXCHANGE||Reward Points Log||||||||||||||| Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||Reward Points Log||||||||||||||| Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||Reward Points Log||||||||||||||| Exchange Action Response||||Details of the exchange action service response||||O
+Mandatory||Reward Points Account||||||||||||||| Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the Reward Points Log||||||||||||||| instance|I|I|I|I|I|I|I
+CAPTURE||Reward Points Log||||||||||||||| Capture Action Task Reference||||Reference to a Reward Points Log||||||||||||||| instance capture service call|||||O
+CAPTURE||Reward Points Log||||||||||||||| Capture Action Task Record||||The capture service call consolidated processing record|||||I/O
+CAPTURE||Capture Record Reference||||Reference to the structured input transaction/record|||||O
+CAPTURE||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||I
+CAPTURE|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||I
+CAPTURE||Capture Response Record||||Details of the capture action service response|||||O
+Mandatory||Reward Points Account||||||||||||||| Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the Reward Points Log||||||||||||||| instance|I|I|I|I|I|I|I
+REQUEST||Reward Points Log||||||||||||||| Request Action Task Reference||||Reference to a Reward Points Log||||||||||||||| instance request service call||||||O
+REQUEST||Reward Points Log||||||||||||||| Request Action Task Record||||The request service call consolidated processing record||||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record||||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||I
+REQUEST||Request Response Record||||Details of the request action service response||||||O
+Mandatory||Reward Points Account||||||||||||||| Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the Reward Points Log||||||||||||||| instance|I|I|I|I|I|I|I
+GRANT||Reward Points Log||||||||||||||| Grant Action Task Reference||||Reference to a Reward Points Log||||||||||||||| instance grant service call|||||||O
+GRANT||Reward Points Log||||||||||||||| Grant Action Task Record||||The grant service call consolidated processing record|||||||I/O
+GRANT||Grant Request Record Type||||Grant request type (e.g. access permission)|||||||I
+GRANT||Grant Request Record Reference||||Reference to the grant request record|||||||O
+GRANT||Grant Request Input Record|##|||Grant request record (e.g. access permission)|||||||I
+GRANT|||Grant Request Details|||Details of the permissions requested|||||||I
+GRANT||Grant Request Response Record |##|||Details of the grant request action service response|||||||O
+GRANT|||Grant Permission Details|||Details of the permissions granted|||||||O
+Mandatory||Reward Points Account||||||||||||||| Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I|I|I
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the Reward Points Log||||||||||||||| instance|I|I|I|I|I|I|I
+RETRIEVE||Reward Points Log||||||||||||||| Retrieve Action Task Reference||||Reference to a Reward Points Log||||||||||||||| instance retrieve service call||||||||O
+RETRIEVE||Reward Points Log||||||||||||||| Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||IO
+RETRIEVE||Reward Points Log||||||||||||||| Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||I
+RETRIEVE||Reward Points Log||||||||||||||| Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||O
+RETRIEVE||Reward Points Log||||||||||||||| Instance Report Record|##|||A specific Reward Points Log||||||||||||||| instance formatted report||||||||IO
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Report Reference|||Reference to the control record instance report||||||||I
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Report Type|||The type of external report available||||||||IO
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||I
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||O
+RETRIEVE||Reward Points Log||||||||||||||| Instance Analysis|##|||A specific Reward Points Log||||||||||||||| instance analytical report||||||||IO
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Analysis Reference|||Reference to the control record instance analysis view||||||||I
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||O
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Analysis Report Type|||The type of external performance analysis report available||||||||IO
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||I
+RETRIEVE|||Reward Points Log||||||||||||||| Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||O
+BQ BQ Expiration Instance Record|BQ Expiration||||||
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the parent Reward Points Log||||||||||||||| instance|||||||||I|I|I
+Mandatory||BQ Expiration Instance Reference||||Reference to the BQ Expiration instance|||||||||O|I|I
+Initiate||BQ Expiration Initiate Action Reference||||Reference to an Initiate service call|||||||||O
+Initiate||BQ Expiration Initiate Action Record||||The Initiate service call input and output record|||||||||I/O
+Initiate||BQ Expiration Instance Status||||The status of the BQ Expiration instance (e.g. initialised, pending, active)|||||||||O
+Update||BQ Expiration Update Action Task Reference||||Reference to an update service call||||||||||O
+Update||BQ Expiration Update Action Task Record||||The update service call consolidated processing record||||||||||I/O
+Update||BQ Expiration Update Action Request||||Details of the update action service request||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||O
+Capture||BQ Expiration Capture Action Task Reference||||Reference to a BQ Expiration instance capture service call|||||||||||O
+Capture||BQ Expiration Capture Action Task Record||||The capture service call consolidated processing record|||||||||||I/O
+Capture||BQ Expiration Capture Record Reference||||Reference to the BQ Expiration structured input transaction/record|||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||O
+Retrieve||BQ Expiration Retrieve Action Task Reference||||Reference to a BQ Expiration instance retrieve service call||||||||||||O
+Retrieve||BQ Expiration Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||I/O
+Retrieve||BQ Expiration Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||I
+Retrieve||BQ Expiration Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||O
+Retrieve||BQ Expiration Instance Report|##|||A specific BQ Expiration instance formatted report||||||||||||IO
+Retrieve|||BQ Expiration Instance Report Reference|||Reference to the control record instance report||||||||||||I
+Retrieve|||BQ Expiration Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||BQ Expiration Instance Report Type|||The type of external report available||||||||||||O
+Retrieve|||BQ Expiration Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||O
+Retrieve|||BQ Expiration Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||O
+Retrieve||BQ Expiration Instance Analysis|##|||A specific BQ Expiration instance analytical report||||||||||||IO
+Retrieve|||BQ Expiration Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||I
+Retrieve|||BQ Expiration Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||O
+Retrieve|||BQ Expiration Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||O
+Retrieve|||BQ Expiration Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||O
+Retrieve|||BQ Expiration Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||O
+BQ BQ Capture Instance Record|BQ Capture||||||
+Mandatory||Reward Points Log||||||||||||||| Instance Reference||||Reference to the parent Reward Points Log||||||||||||||| instance|||||||||||||I|I|I
+Mandatory||BQ Capture Instance Reference||||Reference to the BQ Capture instance|||||||||||||O|I|I
+Initiate||BQ Capture Initiate Action Reference||||Reference to an Initiate service call|||||||||||||O
+Initiate||BQ Capture Initiate Action Record||||The Initiate service call input and output record|||||||||||||I/O
+Initiate||BQ Capture Instance Status||||The status of the BQ Capture instance (e.g. initialised, pending, active)|||||||||||||O
+Update||BQ Capture Update Action Task Reference||||Reference to an update service call||||||||||||||O
+Update||BQ Capture Update Action Task Record||||The update service call consolidated processing record||||||||||||||I/O
+Update||BQ Capture Update Action Request||||Details of the update action service request||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||O
+Capture||BQ Capture Capture Action Task Reference||||Reference to a BQ Capture instance capture service call|||||||||||||||O
+Capture||BQ Capture Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||I/O
+Capture||BQ Capture Capture Record Reference||||Reference to the BQ Capture structured input transaction/record|||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||O
+Retrieve||BQ Capture Retrieve Action Task Reference||||Reference to a BQ Capture instance retrieve service call||||||||||||||||O
+Retrieve||BQ Capture Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||BQ Capture Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||BQ Capture Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||BQ Capture Instance Report|##|||A specific BQ Capture instance formatted report||||||||||||||||IO
+Retrieve|||BQ Capture Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||BQ Capture Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||BQ Capture Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||BQ Capture Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||BQ Capture Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||BQ Capture Instance Analysis|##|||A specific BQ Capture instance analytical report||||||||||||||||IO
+Retrieve|||BQ Capture Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||BQ Capture Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||BQ Capture Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||BQ Capture Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||BQ Capture Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O

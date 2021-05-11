@@ -1,0 +1,801 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Central Cash Handling'
+ description: >
+
+    ## Executive Summary:
+
+    Track cash inventory, project demand and allocate inventory across the branch/ATM network
+
+    ## Example of Use:
+
+    The central cash management function reviews the current and projected available float at locations across the network to ensure adequate supply to meet projected demand
+
+    ## Description:
+
+    This service domain is responsible for tracking the available cash inventory held centrally and distributed/collected throughout the branch/ATM network and making allocation/redistribution requests to ensure adequate float is available at all locations and that excess cash at any location is transferred to central secure locations as appropriate. Also coordinating with other banks and central banks to ensure sufficient cash is on hand to support the branch network requirements
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-central-cash-handling/1.0.0
+schemes:
+ - https
+paths:
+  /central-cash-handling/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCentralCashHandling
+      summary: Activate  a SDCentralCashHandling servicing session
+      description: Activate  a  SDCentralCashHandling servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCentralCashHandling Request Payload
+        schema:
+          $ref: '#/definitions/SDCentralCashHandlingActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCentralCashHandlingActivateOutputModel'
+  /central-cash-handling/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCentralCashHandling
+      summary: Update an active SDCentralCashHandling session configuration
+      description: Update an active SDCentralCashHandling session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCentralCashHandling Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCentralCashHandling Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCentralCashHandlingConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCentralCashHandlingConfigureOutputModel'
+  /central-cash-handling/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCentralCashHandling
+      summary: "Capturing feedback against the SDCentralCashHandling service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCentralCashHandling service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCentralCashHandling Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCentralCashHandling Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCentralCashHandlingFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCentralCashHandlingFeedbackOutputModel'
+  /central-cash-handling/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCentralCashHandling
+      summary: Analytical views maintained by the SDCentralCashHandling service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCentralCashHandling service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCentralCashHandling Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCentralCashHandlingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCentralCashHandlingRetrieveOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCentralCashAllocation
+      summary: Details of a new CentralCashAllocation instance
+      description: Instantiate a new Central Cash Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CentralCashAllocation Request Payload
+        schema:
+          $ref: '#/definitions/CRCentralCashAllocationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new CentralCashAllocation instance
+          schema:
+            $ref: '#/definitions/CRCentralCashAllocationInitiateOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCentralCashAllocation
+      summary: Update to any amendable fields of the CentralCashAllocation instance
+      description: Update details relating to Central Cash Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Central Cash Allocation Request Payload
+        schema:
+          $ref: '#/definitions/CRCentralCashAllocationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Central Cash Allocation Instance
+          schema:
+            $ref: '#/definitions/CRCentralCashAllocationUpdateOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCentralCashAllocationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Central Cash Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Central Cash Allocation Request Payload
+        schema:
+          $ref: '#/definitions/CRCentralCashAllocationControlInputModel'
+      responses:
+        200:
+          description: Successful control of Central Cash Allocation Instance
+          schema:
+            $ref: '#/definitions/CRCentralCashAllocationControlOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCentralCashAllocationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Central Cash Allocation processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Central Cash Allocation Request Payload
+        schema:
+          $ref: '#/definitions/CRCentralCashAllocationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Central Cash Allocation Instance
+          schema:
+            $ref: '#/definitions/CRCentralCashAllocationExchangeOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureCentralCashAllocationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Central Cash Allocation activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Central Cash Allocation Request Payload
+        schema:
+          $ref: '#/definitions/CRCentralCashAllocationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of Central Cash Allocation Instance
+          schema:
+            $ref: '#/definitions/CRCentralCashAllocationCaptureOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCentralCashHandling
+      summary: Invoke a reporting action to obtain a Central Cash Allocation instance related report
+      description: Retrieve details about any aspect of Central Cash Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCentralCashAllocationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Central Cash Allocation Instance
+          schema:
+            $ref: '#/definitions/CRCentralCashAllocationRetrieveOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/trackingandallocation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCentralCashAllocationTrackingandAllocation
+      summary: Details of a new TrackingandAllocation instance
+      description: Instantiate a new Tracking and Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Central Cash Allocation Request Payload
+        schema:
+          $ref: '#/definitions/BQTrackingandAllocationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Central Cash Allocation instance
+          schema:
+            $ref: '#/definitions/BQTrackingandAllocationInitiateOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/trackingandallocation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCentralCashAllocationTrackingandAllocation
+      summary: Update to any amendable fields of the TrackingandAllocation instance
+      description: Update details relating to Tracking and Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TrackingandAllocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TrackingandAllocation Request Payload
+        schema:
+          $ref: '#/definitions/BQTrackingandAllocationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated TrackingandAllocation Instance
+          schema:
+            $ref: '#/definitions/BQTrackingandAllocationUpdateOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/trackingandallocation/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCentralCashAllocationTrackingandAllocationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Tracking and Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TrackingandAllocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TrackingandAllocation request payload
+        schema:
+          $ref: '#/definitions/BQTrackingandAllocationControlInputModel'
+      responses:
+        200:
+          description: Successful control of TrackingandAllocation Instance Record
+          schema:
+            $ref: '#/definitions/BQTrackingandAllocationControlOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/trackingandallocation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCentralCashAllocationTrackingandAllocationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Tracking and Allocation processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TrackingandAllocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TrackingandAllocation request payload
+        schema:
+          $ref: '#/definitions/BQTrackingandAllocationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of TrackingandAllocation Instance Record
+          schema:
+            $ref: '#/definitions/BQTrackingandAllocationExchangeOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/trackingandallocation/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureCentralCashAllocationTrackingandAllocationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Tracking and Allocation activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TrackingandAllocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: TrackingandAllocation request payload
+        schema:
+          $ref: '#/definitions/BQTrackingandAllocationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of TrackingandAllocation Instance Record
+          schema:
+            $ref: '#/definitions/BQTrackingandAllocationCaptureOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/trackingandallocation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCentralCashAllocationTrackingandAllocation
+      summary: Invoke a reporting action to obtain a TrackingandAllocation instance related report.
+      description: Retrieve details about any aspect of Tracking and Allocation .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: TrackingandAllocation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQTrackingandAllocationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved TrackingandAllocation Instance Record
+          schema:
+            $ref: '#/definitions/BQTrackingandAllocationRetrieveOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/projectionandallocation/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCentralCashAllocationProjectionandAllocation
+      summary: Details of a new ProjectionandAllocation instance
+      description: Instantiate a new Projection and Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Central Cash Allocation Request Payload
+        schema:
+          $ref: '#/definitions/BQProjectionandAllocationInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Central Cash Allocation instance
+          schema:
+            $ref: '#/definitions/BQProjectionandAllocationInitiateOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/projectionandallocation/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCentralCashAllocationProjectionandAllocation
+      summary: Update to any amendable fields of the ProjectionandAllocation instance
+      description: Update details relating to Projection and Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProjectionandAllocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProjectionandAllocation Request Payload
+        schema:
+          $ref: '#/definitions/BQProjectionandAllocationUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated ProjectionandAllocation Instance
+          schema:
+            $ref: '#/definitions/BQProjectionandAllocationUpdateOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/projectionandallocation/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCentralCashAllocationProjectionandAllocationUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Projection and Allocation
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProjectionandAllocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProjectionandAllocation request payload
+        schema:
+          $ref: '#/definitions/BQProjectionandAllocationControlInputModel'
+      responses:
+        200:
+          description: Successful control of ProjectionandAllocation Instance Record
+          schema:
+            $ref: '#/definitions/BQProjectionandAllocationControlOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/projectionandallocation/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCentralCashAllocationProjectionandAllocationUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Projection and Allocation processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProjectionandAllocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProjectionandAllocation request payload
+        schema:
+          $ref: '#/definitions/BQProjectionandAllocationExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of ProjectionandAllocation Instance Record
+          schema:
+            $ref: '#/definitions/BQProjectionandAllocationExchangeOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/projectionandallocation/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureCentralCashAllocationProjectionandAllocationUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture Projection and Allocation activity or event related information
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProjectionandAllocation Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ProjectionandAllocation request payload
+        schema:
+          $ref: '#/definitions/BQProjectionandAllocationCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of ProjectionandAllocation Instance Record
+          schema:
+            $ref: '#/definitions/BQProjectionandAllocationCaptureOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/projectionandallocation/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCentralCashAllocationProjectionandAllocation
+      summary: Invoke a reporting action to obtain a ProjectionandAllocation instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ProjectionandAllocation Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQProjectionandAllocationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ProjectionandAllocation Instance Record
+          schema:
+            $ref: '#/definitions/BQProjectionandAllocationRetrieveOutputModel'
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCentralCashHandlingReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CentralCashHandling Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /central-cash-handling/central-cash-allocation/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCentralCashHandlingBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'ProjectionandAllocation',  'TrackingandAllocation', ]
+  /central-cash-handling/{sd-reference-id}/central-cash-allocation/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCentralCashHandlingBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Central Cash Handling Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Central Cash Allocation Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- TrackingandAllocation
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- TrackingandAllocation Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [TrackingandAllocationID1, TrackingandAllocationID2]

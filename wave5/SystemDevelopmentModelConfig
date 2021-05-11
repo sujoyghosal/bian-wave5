@@ -1,0 +1,282 @@
+CR IT System Development Project Instance Record|IT System Development Project||||||CR IT System Development Project Create|CR IT System Development Project Update|CR IT System Development Project Control|CR IT System Development Project Exchange|CR IT System Development Project Request|CR IT System Development Project Retrieve|BQ Functional Specification Update|BQ Functional Specification Exchange|BQ Functional Specification Capture|BQ Functional Specification Request|BQ Functional Specification Retrieve|BQ Technical Specification Update|BQ Technical Specification Exchange|BQ Technical Specification Capture|BQ Technical Specification Request|BQ Technical Specification Retrieve|BQ Software and Data specification Update|BQ Software and Data specification Exchange|BQ Software and Data specification Capture|BQ Software and Data specification Request|BQ Software and Data specification Retrieve|BQ Testing Specification Update|BQ Testing Specification Exchange|BQ Testing Specification Capture|BQ Testing Specification Request|BQ Testing Specification Retrieve|BQ Usage Specification Update|BQ Usage Specification Exchange|BQ Usage Specification Capture|BQ Usage Specification Request|BQ Usage Specification Retrieve|
+Mandatory||System Development Servicing Session Reference||||Reference to the active servicing session|I|I|I|I|I
+Mandatory||IT System Development Project Instance Reference||||Reference to the IT System Development Project instance|O|I|I|I|I
+Create||IT System Development Project Create Action Reference||||Reference to an Create service call|O
+Create||IT System Development Project Create Action Record||||The Create service call input and output record|IO
+Create||IT System Development Project Instance Status||||The status of the IT System Development Project instance (e.g. initialised, pending, active)|IO
+||IT System Development Project Instance Record|##|||The overall system development project plan|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+|||System Development Project Name|||The reference to and descriptive name of the deployment project|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+|||System Development Project Type|||The type of deployment project (e.g. service update, new product release)|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+|||System Development Project Description|||A description of the scope, goal and make-up of the product deployment project|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+|||System Development Implementation Plan|##||The derived deployment execution plan, covering tasks from the completion and acceptance of the deployment plan through to completion of the deployment including post deployment analysis tasks if required. Consolidates the different aspects of the plan. (Captures both planned and actual results)|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+||||System Development Budget||The financial considerations for the deployment (includes planning and execution)|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+||||System Development Project Organization||The organizational aspects of the deployment effort (includes planning and execution)|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+||||System Development Project Schedule||The deployment schedule of events, planned and actual (includes planning and execution tasks)|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+||||Date Type|##|Key dates associated with the development of the deployment plan (e.g. planning start date, deployment plan approval, deployment plan sign-off)|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+|||||Date|Value of the specific date type|IO|IO|||IO|O|||IO||O|||IO||O|||IO||O|||IO||O|||IO||O
+Update||IT System Development Project Update Action Task Reference||||Reference to an update service call||O
+Update||IT System Development Project Update Action Task Record||||The update service call consolidated processing record||I/O
+Update||Update Action Request||||Details of the update action service request||I
+Update||Update Response Record||||Details of the Update action service response||O
+CONTROL||IT System Development Project Control Action Task Reference||||Reference to a IT System Development Project instance control processing service call|||O
+CONTROL||IT System Development Project Control Action Task Record||||The processing control service call consolidated processing record|||I/O
+CONTROL||IT System Development Project Control Action Request|##|||Details of the control action service request|||I
+CONTROL|||Control Action Type|||The type of processing action requested (e.g. suspend, skip, terminate)|||I
+CONTROL||IT System Development Project Control Action Response||||Details of the control action service response|||O
+EXCHANGE||IT System Development Project Exchange Action Task Reference||||Reference to a IT System Development Project instance exchange service call||||O
+EXCHANGE||IT System Development Project Exchange Action Task Record||||The exchange service call consolidated processing record||||I/O
+EXCHANGE||IT System Development Project Exchange Action Request|##|||Details of the exchange action service request||||I
+EXCHANGE|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||I
+EXCHANGE||IT System Development Project Exchange Action Response||||Details of the exchange action service response||||O
+REQUEST||IT System Development Project Request Action Task Reference||||Reference to a IT System Development Project instance request service call|||||O
+REQUEST||IT System Development Project Request Action Task Record||||The request service call consolidated processing record|||||I/O
+REQUEST||Request Record Reference||||Reference to the service request record|||||O
+REQUEST||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||I
+REQUEST|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||I
+REQUEST||Request Response Record||||Details of the request action service response|||||O
+RETRIEVE||IT System Development Project Retrieve Action Task Reference||||Reference to a IT System Development Project instance retrieve service call||||||O
+RETRIEVE||IT System Development Project Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||IO
+RETRIEVE||IT System Development Project Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||I
+RETRIEVE||IT System Development Project Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||O
+RETRIEVE||IT System Development Project Instance Report Record|##|||A specific IT System Development Project instance formatted report||||||IO
+RETRIEVE|||IT System Development Project Instance Report Reference|||Reference to the control record instance report||||||I
+RETRIEVE|||IT System Development Project Instance Report Data|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||IT System Development Project Instance Report Type|||The type of external report available||||||IO
+RETRIEVE|||IT System Development Project Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||I
+RETRIEVE|||IT System Development Project Instance Report|||The external report in any suitable form including selection filters where appropriate||||||O
+RETRIEVE||IT System Development Project Instance Analysis|##|||A specific IT System Development Project instance analytical report||||||IO
+RETRIEVE|||IT System Development Project Instance Analysis Reference|||Reference to the control record instance analysis view||||||I
+RETRIEVE|||IT System Development Project Instance Analysis Data|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||O
+RETRIEVE|||IT System Development Project Instance Analysis Report Type|||The type of external performance analysis report available||||||IO
+RETRIEVE|||IT System Development Project Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||I
+RETRIEVE|||IT System Development Project Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||O
+BQ Functional Specification Instance Record|Functional Specification||||||
+Mandatory||IT System Development Project Instance Reference||||Reference to the parent IT System Development Project instance|||||||I|I|I|I
+Mandatory||Functional Specification Instance Reference||||Reference to the Functional Specification instance|||||||I|I|I|I
+||Functional Specification Instance Record|##|||Covers aspects of the development deliverables that define the functional requirements|||||||IO||IO|IO|O||||||||||||||||||||
+|||Functional Specification Task Definition|||Details the functional specification tasks and deliverables of system development project|||||||IO||IO|IO|O||||||||||||||||||||
+|||Functional Specification Task Work Products |||Collection of design and development work products used in the definition of functional requirements|||||||IO||IO|IO|O||||||||||||||||||||
+|||Document Directory Entry Instance Reference|||Reference to associated project documents|||||||IO||IO|IO|O||||||||||||||||||||
+|||System Functional Specification|||The functional specification as a suitably structured and formatted document|||||||IO|||IO|O||||||||||||||||||||
+Update||Functional Specification Update Action Task Reference||||Reference to an update service call|||||||O
+Update||Functional Specification Update Action Task Record||||The update service call consolidated processing record|||||||I/O
+Update||Functional Specification Update Action Request||||Details of the update action service request|||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||O
+Exchange||Functional Specification Exchange Action Task Reference||||Reference to a Functional Specification instance exchange service call||||||||O
+Exchange||Functional Specification Exchange Action Task Record||||The exchange service call consolidated processing record||||||||I/O
+Exchange||Functional Specification Exchange Action Request|##|||Details of the exchange action service request||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||I
+Exchange||Functional Specification Exchange Action Response||||Details of the exchange action service response||||||||O
+Exchange||Functional Specification Instance Status||||The status of the Functional Specification instance (e.g. accepted, rejected, verified)||||||||O
+Capture||Functional Specification Capture Action Task Reference||||Reference to a Functional Specification instance capture service call|||||||||O
+Capture||Functional Specification Capture Action Task Record||||The capture service call consolidated processing record|||||||||I/O
+Capture||Functional Specification Capture Record Reference||||Reference to the Functional Specification structured input transaction/record|||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||O
+Request||Functional Specification Request Action Task Reference||||Reference to a Functional Specification instance request service call||||||||||O
+Request||Functional Specification Request Action Task Record||||The request service call consolidated processing record||||||||||I/O
+Request||Functional Specification Request Record Reference||||Reference to the Functional Specification service request record||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||O
+Retrieve||Functional Specification Retrieve Action Task Reference||||Reference to a Functional Specification instance retrieve service call|||||||||||O
+Retrieve||Functional Specification Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||I/O
+Retrieve||Functional Specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||I
+Retrieve||Functional Specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||O
+Retrieve||Functional Specification Instance Report|##|||A specific Functional Specification instance formatted report|||||||||||IO
+Retrieve|||Functional Specification Instance Report Reference|||Reference to the control record instance report|||||||||||I
+Retrieve|||Functional Specification Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Functional Specification Instance Report Type|||The type of external report available|||||||||||O
+Retrieve|||Functional Specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||O
+Retrieve|||Functional Specification Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||O
+Retrieve||Functional Specification Instance Analysis|##|||A specific Functional Specification instance analytical report|||||||||||IO
+Retrieve|||Functional Specification Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||I
+Retrieve|||Functional Specification Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||O
+Retrieve|||Functional Specification Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||O
+Retrieve|||Functional Specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||O
+Retrieve|||Functional Specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||O
+BQ Technical Specification Instance Record|Technical Specification||||||
+Mandatory||IT System Development Project Instance Reference||||Reference to the parent IT System Development Project instance||||||||||||I|I|I|I
+Mandatory||Technical Specification Instance Reference||||Reference to the Technical Specification instance||||||||||||I|I|I|I
+||Technical Specification Instance Record|##|||Covers aspects of the development deliverables that define the technical system requirements||||||||||||IO||IO|IO|O|||||||||||||||
+|||Technical Specification Task Definition|||Details the technical specification tasks and deliverables of system development project||||||||||||IO||IO|IO|O|||||||||||||||
+|||Technical Specification Task Work Products |||Collection of design and development work products used in the definition of technical requirements||||||||||||IO||IO|IO|O|||||||||||||||
+|||Document Directory Entry Instance Reference|||Reference to associated project documents||||||||||||IO||IO|IO|O|||||||||||||||
+|||System Technical Specification|||The technical specification as a suitably structured and formatted document||||||||||||IO|||IO|O|||||||||||||||
+Update||Technical Specification Update Action Task Reference||||Reference to an update service call||||||||||||O
+Update||Technical Specification Update Action Task Record||||The update service call consolidated processing record||||||||||||I/O
+Update||Technical Specification Update Action Request||||Details of the update action service request||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||O
+Exchange||Technical Specification Exchange Action Task Reference||||Reference to a Technical Specification instance exchange service call|||||||||||||O
+Exchange||Technical Specification Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||I/O
+Exchange||Technical Specification Exchange Action Request|##|||Details of the exchange action service request|||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||I
+Exchange||Technical Specification Exchange Action Response||||Details of the exchange action service response|||||||||||||O
+Exchange||Technical Specification Instance Status||||The status of the Technical Specification instance (e.g. accepted, rejected, verified)|||||||||||||O
+Capture||Technical Specification Capture Action Task Reference||||Reference to a Technical Specification instance capture service call||||||||||||||O
+Capture||Technical Specification Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||I/O
+Capture||Technical Specification Capture Record Reference||||Reference to the Technical Specification structured input transaction/record||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||O
+Request||Technical Specification Request Action Task Reference||||Reference to a Technical Specification instance request service call|||||||||||||||O
+Request||Technical Specification Request Action Task Record||||The request service call consolidated processing record|||||||||||||||I/O
+Request||Technical Specification Request Record Reference||||Reference to the Technical Specification service request record|||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||O
+Retrieve||Technical Specification Retrieve Action Task Reference||||Reference to a Technical Specification instance retrieve service call||||||||||||||||O
+Retrieve||Technical Specification Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||I/O
+Retrieve||Technical Specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||I
+Retrieve||Technical Specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||O
+Retrieve||Technical Specification Instance Report|##|||A specific Technical Specification instance formatted report||||||||||||||||IO
+Retrieve|||Technical Specification Instance Report Reference|||Reference to the control record instance report||||||||||||||||I
+Retrieve|||Technical Specification Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Technical Specification Instance Report Type|||The type of external report available||||||||||||||||O
+Retrieve|||Technical Specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||O
+Retrieve|||Technical Specification Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||O
+Retrieve||Technical Specification Instance Analysis|##|||A specific Technical Specification instance analytical report||||||||||||||||IO
+Retrieve|||Technical Specification Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||I
+Retrieve|||Technical Specification Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||O
+Retrieve|||Technical Specification Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||O
+Retrieve|||Technical Specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||O
+Retrieve|||Technical Specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||O
+BQ Software and Data specification Instance Record|Software and Data specification||||||
+Mandatory||IT System Development Project Instance Reference||||Reference to the parent IT System Development Project instance|||||||||||||||||I|I|I|I
+Mandatory||Software and Data specification Instance Reference||||Reference to the Software and Data specification instance|||||||||||||||||I|I|I|I
+||Software and Data Specification Instance Record|##|||The 'executable' software and data definitions that make up the developed system in whatever form is suited to deployment|||||||||||||||||IO||IO|IO|O||||||||||
+|||Software and Data Specification Task Definition|||Details the software and data specification/development tasks and deliverables of system development project|||||||||||||||||IO||IO|IO|O||||||||||
+|||Software and Data Specification Task Work Products |||Collection of design and development work products used in the implementation of the software and data specification|||||||||||||||||IO||IO|IO|O||||||||||
+|||Document Directory Entry Instance Reference|||Reference to associated project documents|||||||||||||||||IO||IO|IO|O||||||||||
+|||System Software and Data Specification|||The developed software and data specification in a format suited for production deployment|||||||||||||||||IO|||IO|O||||||||||
+Update||Software and Data specification Update Action Task Reference||||Reference to an update service call|||||||||||||||||O
+Update||Software and Data specification Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||I/O
+Update||Software and Data specification Update Action Request||||Details of the update action service request|||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||O
+Exchange||Software and Data specification Exchange Action Task Reference||||Reference to a Software and Data specification instance exchange service call||||||||||||||||||O
+Exchange||Software and Data specification Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||I/O
+Exchange||Software and Data specification Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||I
+Exchange||Software and Data specification Exchange Action Response||||Details of the exchange action service response||||||||||||||||||O
+Exchange||Software and Data specification Instance Status||||The status of the Software and Data specification instance (e.g. accepted, rejected, verified)||||||||||||||||||O
+Capture||Software and Data specification Capture Action Task Reference||||Reference to a Software and Data specification instance capture service call|||||||||||||||||||O
+Capture||Software and Data specification Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||I/O
+Capture||Software and Data specification Capture Record Reference||||Reference to the Software and Data specification structured input transaction/record|||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||O
+Request||Software and Data specification Request Action Task Reference||||Reference to a Software and Data specification instance request service call||||||||||||||||||||O
+Request||Software and Data specification Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||I/O
+Request||Software and Data specification Request Record Reference||||Reference to the Software and Data specification service request record||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||O
+Retrieve||Software and Data specification Retrieve Action Task Reference||||Reference to a Software and Data specification instance retrieve service call|||||||||||||||||||||O
+Retrieve||Software and Data specification Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||I/O
+Retrieve||Software and Data specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||I
+Retrieve||Software and Data specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||O
+Retrieve||Software and Data specification Instance Report|##|||A specific Software and Data specification instance formatted report|||||||||||||||||||||IO
+Retrieve|||Software and Data specification Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||I
+Retrieve|||Software and Data specification Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||O
+Retrieve|||Software and Data specification Instance Report Type|||The type of external report available|||||||||||||||||||||O
+Retrieve|||Software and Data specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||O
+Retrieve|||Software and Data specification Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||O
+Retrieve||Software and Data specification Instance Analysis|##|||A specific Software and Data specification instance analytical report|||||||||||||||||||||IO
+Retrieve|||Software and Data specification Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||I
+Retrieve|||Software and Data specification Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||O
+Retrieve|||Software and Data specification Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||O
+Retrieve|||Software and Data specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||O
+Retrieve|||Software and Data specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||O
+BQ Testing Specification Instance Record|Testing Specification||||||
+Mandatory||IT System Development Project Instance Reference||||Reference to the parent IT System Development Project instance||||||||||||||||||||||I|I|I|I
+Mandatory||Testing Specification Instance Reference||||Reference to the Testing Specification instance||||||||||||||||||||||I|I|I|I
+||Testing Specification Instance Record|##|||The testing harness and script specifications for functional, performance, acceptance and integration testing activities||||||||||||||||||||||IO||IO|IO|O|||||
+|||Testing Specification Task Definition|||Details the testing tasks and deliverables of system development project||||||||||||||||||||||IO||IO|IO|O|||||
+|||Testing Specification Task Work Products |||Collection of design and development work products used in the testing of the developed system||||||||||||||||||||||IO||IO|IO|O|||||
+|||Document Directory Entry Instance Reference|||Reference to associated project documents||||||||||||||||||||||IO||IO|IO|O|||||
+|||System Testing Specification|||The testing specification and results as a suitably structured and formatted document||||||||||||||||||||||IO|||IO|O|||||
+Update||Testing Specification Update Action Task Reference||||Reference to an update service call||||||||||||||||||||||O
+Update||Testing Specification Update Action Task Record||||The update service call consolidated processing record||||||||||||||||||||||I/O
+Update||Testing Specification Update Action Request||||Details of the update action service request||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response||||||||||||||||||||||O
+Exchange||Testing Specification Exchange Action Task Reference||||Reference to a Testing Specification instance exchange service call|||||||||||||||||||||||O
+Exchange||Testing Specification Exchange Action Task Record||||The exchange service call consolidated processing record|||||||||||||||||||||||I/O
+Exchange||Testing Specification Exchange Action Request|##|||Details of the exchange action service request|||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)|||||||||||||||||||||||I
+Exchange||Testing Specification Exchange Action Response||||Details of the exchange action service response|||||||||||||||||||||||O
+Exchange||Testing Specification Instance Status||||The status of the Testing Specification instance (e.g. accepted, rejected, verified)|||||||||||||||||||||||O
+Capture||Testing Specification Capture Action Task Reference||||Reference to a Testing Specification instance capture service call||||||||||||||||||||||||O
+Capture||Testing Specification Capture Action Task Record||||The capture service call consolidated processing record||||||||||||||||||||||||I/O
+Capture||Testing Specification Capture Record Reference||||Reference to the Testing Specification structured input transaction/record||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response||||||||||||||||||||||||O
+Request||Testing Specification Request Action Task Reference||||Reference to a Testing Specification instance request service call|||||||||||||||||||||||||O
+Request||Testing Specification Request Action Task Record||||The request service call consolidated processing record|||||||||||||||||||||||||I/O
+Request||Testing Specification Request Record Reference||||Reference to the Testing Specification service request record|||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)|||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)|||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response|||||||||||||||||||||||||O
+Retrieve||Testing Specification Retrieve Action Task Reference||||Reference to a Testing Specification instance retrieve service call||||||||||||||||||||||||||O
+Retrieve||Testing Specification Retrieve Action Task Record||||The retrieve service call consolidated processing record||||||||||||||||||||||||||I/O
+Retrieve||Testing Specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)||||||||||||||||||||||||||I
+Retrieve||Testing Specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)||||||||||||||||||||||||||O
+Retrieve||Testing Specification Instance Report|##|||A specific Testing Specification instance formatted report||||||||||||||||||||||||||IO
+Retrieve|||Testing Specification Instance Report Reference|||Reference to the control record instance report||||||||||||||||||||||||||I
+Retrieve|||Testing Specification Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected||||||||||||||||||||||||||O
+Retrieve|||Testing Specification Instance Report Type|||The type of external report available||||||||||||||||||||||||||O
+Retrieve|||Testing Specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)||||||||||||||||||||||||||O
+Retrieve|||Testing Specification Instance Report|||The external report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||O
+Retrieve||Testing Specification Instance Analysis|##|||A specific Testing Specification instance analytical report||||||||||||||||||||||||||IO
+Retrieve|||Testing Specification Instance Analysis Reference|||Reference to the control record instance analysis view||||||||||||||||||||||||||I
+Retrieve|||Testing Specification Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected||||||||||||||||||||||||||O
+Retrieve|||Testing Specification Instance Analysis Report Type|||The type of external performance analysis report available||||||||||||||||||||||||||O
+Retrieve|||Testing Specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)||||||||||||||||||||||||||O
+Retrieve|||Testing Specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate||||||||||||||||||||||||||O
+BQ Usage Specification Instance Record|Usage Specification||||||
+Mandatory||IT System Development Project Instance Reference||||Reference to the parent IT System Development Project instance|||||||||||||||||||||||||||I|I|I|I
+Mandatory||Usage Specification Instance Reference||||Reference to the Usage Specification instance|||||||||||||||||||||||||||I|I|I|I
+||Usage Specification Instance Record|##|||The training, usage guidelines and product support requirements specification|||||||||||||||||||||||||||IO||IO|IO|O
+|||Usage Specification Task Definition|||Details the usage guidelines specification tasks and deliverables of the system development project|||||||||||||||||||||||||||IO||IO|IO|O
+|||Usage Specification Task Work Products |||Collection of design and development work products used in the definition of usage guidelines etc.|||||||||||||||||||||||||||IO||IO|IO|O
+|||Document Directory Entry Instance Reference|||Reference to associated project documents|||||||||||||||||||||||||||IO||IO|IO|O
+|||System Functional Specification|||The usage guideline specification as a suitably structured and formatted document|||||||||||||||||||||||||||IO|||IO|O
+Update||Usage Specification Update Action Task Reference||||Reference to an update service call|||||||||||||||||||||||||||O
+Update||Usage Specification Update Action Task Record||||The update service call consolidated processing record|||||||||||||||||||||||||||I/O
+Update||Usage Specification Update Action Request||||Details of the update action service request|||||||||||||||||||||||||||I
+Update||Update Response Record||||Details of the Update action service response|||||||||||||||||||||||||||O
+Exchange||Usage Specification Exchange Action Task Reference||||Reference to a Usage Specification instance exchange service call||||||||||||||||||||||||||||O
+Exchange||Usage Specification Exchange Action Task Record||||The exchange service call consolidated processing record||||||||||||||||||||||||||||I/O
+Exchange||Usage Specification Exchange Action Request|##|||Details of the exchange action service request||||||||||||||||||||||||||||I
+Exchange|||Exchange Action Type|||The type of exchange (e.g. accept, reject, verify)||||||||||||||||||||||||||||I
+Exchange||Usage Specification Exchange Action Response||||Details of the exchange action service response||||||||||||||||||||||||||||O
+Exchange||Usage Specification Instance Status||||The status of the Usage Specification instance (e.g. accepted, rejected, verified)||||||||||||||||||||||||||||O
+Capture||Usage Specification Capture Action Task Reference||||Reference to a Usage Specification instance capture service call|||||||||||||||||||||||||||||O
+Capture||Usage Specification Capture Action Task Record||||The capture service call consolidated processing record|||||||||||||||||||||||||||||I/O
+Capture||Usage Specification Capture Record Reference||||Reference to the Usage Specification structured input transaction/record|||||||||||||||||||||||||||||O
+Capture||Capture Record Type|##|||Copy in associated API description (less 5 header characters)|||||||||||||||||||||||||||||I
+Capture|||Capture Input Record|||Structured input transaction/record (e.g. timesheet, event record, account posting)|||||||||||||||||||||||||||||I
+Capture||Capture Response Record||||Details of the capture action service response|||||||||||||||||||||||||||||O
+Request||Usage Specification Request Action Task Reference||||Reference to a Usage Specification instance request service call||||||||||||||||||||||||||||||O
+Request||Usage Specification Request Action Task Record||||The request service call consolidated processing record||||||||||||||||||||||||||||||I/O
+Request||Usage Specification Request Record Reference||||Reference to the Usage Specification service request record||||||||||||||||||||||||||||||O
+Request||Request Record Type|##|||Request service record type (e.g. reworking, refresh, workstep)||||||||||||||||||||||||||||||I
+Request|||Request Input Record|||Request service record (e.g. rework function, refresh record, process workstep)||||||||||||||||||||||||||||||I
+Request||Request Response Record||||Details of the request action service response||||||||||||||||||||||||||||||O
+Retrieve||Usage Specification Retrieve Action Task Reference||||Reference to a Usage Specification instance retrieve service call|||||||||||||||||||||||||||||||O
+Retrieve||Usage Specification Retrieve Action Task Record||||The retrieve service call consolidated processing record|||||||||||||||||||||||||||||||I/O
+Retrieve||Usage Specification Retrieve Action Request||||Details of the retrieve action service request (lists requested reports)|||||||||||||||||||||||||||||||I
+Retrieve||Usage Specification Retrieve Action Response||||Details of the retrieve action service response (lists returned reports)|||||||||||||||||||||||||||||||O
+Retrieve||Usage Specification Instance Report|##|||A specific Usage Specification instance formatted report|||||||||||||||||||||||||||||||IO
+Retrieve|||Usage Specification Instance Report Reference|||Reference to the control record instance report|||||||||||||||||||||||||||||||I
+Retrieve|||Usage Specification Instance Report Record|||The input information used to assemble the report that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||O
+Retrieve|||Usage Specification Instance Report Type|||The type of external report available|||||||||||||||||||||||||||||||O
+Retrieve|||Usage Specification Instance Report Parameters|||The selection parameters for the report (e.g. period, content type)|||||||||||||||||||||||||||||||O
+Retrieve|||Usage Specification Instance Report|||The external report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||O
+Retrieve||Usage Specification Instance Analysis|##|||A specific Usage Specification instance analytical report|||||||||||||||||||||||||||||||IO
+Retrieve|||Usage Specification Instance Analysis Reference|||Reference to the control record instance analysis view|||||||||||||||||||||||||||||||I
+Retrieve|||Usage Specification Instance Analysis Record|||The inputs and results of the instance analysis that can be on-going, periodic and actual and projected|||||||||||||||||||||||||||||||O
+Retrieve|||Usage Specification Instance Analysis Report Type|||The type of external performance analysis report available|||||||||||||||||||||||||||||||O
+Retrieve|||Usage Specification Instance Analysis Parameters|||The selection parameters for the analysis (e.g. period, algorithm type)|||||||||||||||||||||||||||||||O
+Retrieve|||Usage Specification Instance Analysis Report|||The external analysis report in any suitable form including selection filters where appropriate|||||||||||||||||||||||||||||||O

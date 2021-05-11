@@ -1,0 +1,14 @@
+sd=Securities Position Keeping	This service domain maintains a securities transaction log to support securities investment activity	Example of use:An investment account is set up for a customer and the underlying securities position keeping facility is initialized to track subsequent transactions	Maintain a log of securities transactions for investment account management information, tracking and reconciliation purposes. The facility simply maintains transaction activity details for a collection of instruments, which includes dividend and other corporate action related actions where appropriate. The transaction log is used to maintain the holding positions
+sdpath=securities-position-keeping
+crpath=securities-position-log
+crr=Securities Position Log Instance
+mcr=Securities Position Log
+bqs=TransactionCapture
+CONFIG
+SecuritiesPositionLog	initiate	Initiate a position keeping transaction log		initiateSecuritiesPositionLog		#desc
+SecuritiesPositionLog	update	Update details for an active financial transaction log, including reflecting an account block (this is managed by the fulfillment SD)		updateSecuritiesPositionLog		#desc
+SecuritiesPositionLog	control	Control the processing of the log (e.g. suspend)		controlSecuritiesPositionLog		#desc
+SecuritiesPositionLog	retrieve	Retrieve information about the log		retrieveSecuritiesPositionLog		#desc
+TransactionCapture	update	Update details of a captured financial transaction	updateSecuritiesPositionLogTransactionCapture	updateSecuritiesPositionLogTransactionCapture		Update to any amendable fields of the Transaction Capture instance
+TransactionCapture	capture	Capture details of a financial transaction in the log	captureSecuritiesPositionLogTransactionCapture	captureSecuritiesPositionLogTransactionCapture		Provide a structured input transaction/record (e.g. timesheet, event)
+TransactionCapture	retrieve	Retrieve details of financial transactions captured in the log	retrieveSecuritiesPositionLogTransactionCapture	retrieveSecuritiesPositionLogTransactionCapture		Invoke a reporting action to obtain a Transaction Capture instance related report

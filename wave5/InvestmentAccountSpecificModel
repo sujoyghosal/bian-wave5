@@ -1,0 +1,75 @@
+CR Investment Account Fulfillment Arrangement Instance Record	CR Investment Account Fulfillment Arrangement Instance Record	Investment Account Fulfillment Arrangement Instance Record	##			The control record maintains all details for an investment account product instance	IO	IO		O	IO					IO					IO					
+			Product Instance Reference 			Reference to the investment account product instance	I	IO		O	IO					IO					IO					
+			Investment Account Number			The associated investment account number in any suitable format	O	IO		O	IO					IO					IO					
+			Customer Reference			Reference to the account primary party/owner	I	IO		O	IO					IO					IO					
+			Bank Branch/Location Reference			Bank branch associated with the account for booking purposes	I	IO		O	IO					IO					IO					
+			Linked Cash Account	##		Definition of the linked cash account used as the source or target of cash to support securities deposits and withdrawals	IO	IO		O	IO					IO					IO					
+				Link Type		The type of cash account linkage (e.g. demand, margin)	IO	IO		O	IO					IO					IO					
+				Account Details		Details of the linked account	IO	IO		O	IO					IO					IO					
+			Investment Account Type			The type of investment account (e.g. discretionary, retirement, margin, restricted instrument category - securities, off-balance sheet)	I	IO		O	IO					IO					IO					
+			Investment Account Instrument Profile			Details the range of instruments that are tracked by the facility (each instrument has its own transaction record/holding position	IO	IO		O	IO					IO					IO					
+			Investment Account Instrument Record	##		Details for an individual tracked instrument type - the investment account can track the holdings for multiple securities	IO	IO		O	IO					IO					IO					
+				Instrument Type		Reference to the type of investment instrument being tracked (e.g. equity, commodity, FX/MM, derivative)	IO	IO		O	IO					IO					IO					
+				Instrument Reference		The specific instrument trading identifier (e.g. NASDAQ Id)	IO	IO		O	IO					IO					IO					
+				Trading Marketplace Reference		Reference to the market where the instrument is quoted/traded (e.g. ISE Equities Marketplace)	IO	IO		O	IO					IO					IO					
+				Instrument Position Record	##	Position limits and holding position that are tracked by the account	IO	IO		O	IO					IO					IO					
+					Instrument Position Limit Type	The type of position maintained for the account (e.g. min/max holdings,)	IO	IO		O	IO					IO					IO					
+					Instrument Position Limit Settings	The position definition, associated limit settings and rules	IO	IO		O	IO					IO					IO					
+					Instrument Position Holding	The current calculated holding/position	O	IO		O	IO					IO					IO					
+				Instrument Processing Schedule	##	Details of known scheduled events related to the instrument (e.g. dividend payment date)	IO	IO		O	IO					IO					IO					
+					Instrument Event Type	The type of event impacting the state of the instrument (e.g. corporate actions)	IO	IO		O	IO					IO					IO					
+					Instrument Event Description	Details of the event associated actions or impact	IO	IO		O	IO					IO					IO					
+					Instrument Event Date	The date/time the event is anticipated/occurs	IO	IO		O	IO					IO					IO					
+			Tax Reference 			Reference identifier linking the investment account to appropriate tax handling	I	IO		O	IO					IO					IO					
+			Entitlement Option Definition			The definition of an applicable entitlement option	IO	IO		O	IO					IO					IO					
+			Entitlement Option Setting			The setting for the entitlement option	IO	IO		O	IO					IO					IO					
+			Restriction Option Definition			The definition of an applicable restriction option	O	IO		O	IO					IO					IO					
+			Restriction Option Setting			The setting for the restriction option	IO	IO		O	IO					IO					IO					
+			Linked Accounts	##		Definition of the associations to the account 	I	IO		O	IO					IO					IO					
+				Link Type		The type and purpose for the link (e.g. funding/margin account)	I	IO		O	IO					IO					IO					
+				Account Details		Details of the linked cash account	I	IO		O	IO					IO					IO					
+			Date Type	##		Key dates associated with the investment account (e.g. opening date, closing date)	IO	IO		O	IO					IO					IO					
+				Date		Value of the date type	IO	IO		O	IO					IO					IO					
+BQ Deposits & Withdrawals Instance Record 	BQ Deposits & Withdrawals Instance Record 	Deposits & Withdrawals Instance Record 	##			Processes securities deposits and withdrawals against the investment account					IO	IO		IO	O											
+			Securities Deposit Type			The type of securities deposit transaction that can be applied to the investment account (e.g. immediate, scheduled, earmarked)					IO	IO		I	O											
+			Securities Withdrawal Type			The type of securities withdrawal transaction that can be applied to the account (e.g. immediate, scheduled, earmarked)					IO	IO		I	O											
+			Securities Deposit Transaction	##		Details of the securities deposit transaction						IO		IO	O											
+				Securities Deposit Transaction Source Reference		Identifies the source of the deposit						IO		I	O											
+				Securities Deposit Transaction Deposit Type		The type of securities deposit made with the transaction						IO		IO	O											
+				Securities Deposit Transaction Description 		Any necessary details describing the purpose or reference properties of the deposit						IO		I	O											
+				Securities Deposit Transaction Amount		The volume or value of securities deposited						IO		IO	O											
+				Securities Deposit Transaction Date		The date and time the deposit was initiated						IO		IO	O											
+			Securities Withdrawal Transaction	##		Details of the securities withdrawal transaction						IO		IO	O											
+				Securities Withdrawal Transaction Source Reference		Identifies the target for the withdrawal						IO		I	O											
+				Securities Withdrawal Transaction Withdrawal Type		The type of securities withdrawal made with the transaction						IO		IO	O											
+				Securities Withdrawal Transaction Description 		Any necessary details describing the purpose or reference properties of the withdrawal						IO		I	O											
+				Securities Withdrawal Transaction Amount		The volume or value of the withdrawn securities						IO		IO	O											
+				Securities Withdrawal Transaction Date		The date and time the withdrawal was initiated						IO		IO	O											
+BQ Corporate Actions Instance Record 	BQ Corporate Actions Instance Record 	Corporate Actions Instance Record 	##			Applies the result of corporate actions to the investment account										IO			IO	O						
+			Corporate Action Type			The type of corporate action that can be applied										I			I	O						
+			Corporate Action Application Schedule			The processing schedule for applying the type of corporate action to the investment account										IO			I	O						
+			Corporate Action Instrument Type			The instrument type that the corporate action impacts (will be one that the investment account tracks)										IO			I	O						
+			Corporate Action Transaction	##		Details of the transaction and its impact on the securities holding in the investment account													IO	O						
+				Corporate Action Transaction Type		The type of corporate action applied to the securities holdings													I	O						
+				Corporate Action Transaction Description 		Details describing the purpose and impact of processing the action													IO	O						
+				Corporate Action Work Products		File of consolidated notes, forms and documents for the corporate action													O	O						
+				Document Directory Entry Instance Reference		Reference to associated documents													IO	O						
+				Corporate Action Transaction Result		The outcome of applying the action to the account (can be simple confirmation)													O	O						
+				Corporate Action Transaction Date		The date and time the corporate action was processed to the account													IO	O						
+BQ Service Fees Instance Record	BQ Service Fees Instance Record	Service Fees Instance Record	##			Applies service fees and penalties to the investment account															IO			IO		O
+			Fee Configuration Profile	##		The profile of applicable fees and penalties															IO			IO		O
+				Fee Definition 		Definition of the fee or penalty including when and how to apply															O			O		O
+				Fee Type		The fee or penalty type applied															I			I		O
+			Fee Application Record	##		The record of applied fees and penalties including transactions and accrued amounts																		IO		O
+				Fee Transaction	##	A record of an applied fee or penalty																		IO		O
+					Transaction Description	General description of the fee or penalty transaction																		I		O
+					Transaction Fee Type	The fee or penalty type applied																		IO		O
+					Transaction Fee Charge	The derived fee or penalty amount applied																		O		O
+					Payment Order Procedure Instance Reference	Reference to the payment order raised to apply the fees (will move funds to/from the appropriate accounts)																		O		O
+				Fee Projections and Commitments	##	A record of projected fees and penalties																		IO		O
+					Projected Transaction Description	General description of the projected fee or penalty																		I		O
+					Projected Transaction Fee Type	The fee or penalty type																		IO		O
+					Projected Transaction Fee Charge	The anticipated fee or penalty amount																		O		O
+				Fee Accrual Amount	##	Tracking of accumulated fees and penalties																		IO		O
+					Accrual Fee Type	The fee or penalty type being tracked																		IO		O
+					Accrual Fee Charge	The accrued amount of fees and penalties																		O		O

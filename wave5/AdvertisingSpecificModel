@@ -1,0 +1,29 @@
+CR Advertising Campaign Management Plan Instance Record	Advertising Campaign Management Plan Instance Record	Advertising Campaign Portfolio	##			The collection of advertising campaigns that is used to assess performance and coverage and direct development and execution activity	IO	IO	IO		O													
+			Advertising Campaign Type			The type of advertising campaign (e.g. media, mailshot, web-based)	IO	IO	IO		O													
+			Advertising Campaign Description			A description of the campaign that clarifies the content and media to be used in the advertising campaign and outlines the target audience	IO	IO	IO		O													
+			Advertising Campaign Metrics	##		Metrics that are defined to assess the target and actual impact of the campaign	IO	IO	IO		O													
+				Advertising Campaign Metric Definition		A description of the metric, defining how it is to be measured in deployment	IO	IO	IO		O													
+				Advertising Campaign Metric Goal		A description of the target performance for the metric that can be defined for different usage scenarios as appropriate	iO	IO	iO		O													
+			Advertising Campaign Performance Record 	##		Maintains a record of the use and impact of the advertising campaign	IO	IO			O													
+				Advertising Campaign Procedure Instance Reference	##	Reference to the advertising campaign execution	IO	IO			O													
+					Advertising Campaign Execution Plan	The execution plan for the advertising campaign, including external agencies employed, content development and execution tasks	IO	IO			O													
+					Employee/Business Unit Reference 	Reference to the business unit responsible for the campaign execution	IO	IO			O													
+					Advertising Campaign Duration	The period over which the advertising is executed	IO	IO			O													
+					Advertising Campaign Procedure Result	The result/impact of the overall advertising campaign event (can refer to any detected up-tick in sales or servicing activity)	I	IO			O													
+BQ Market Tracking Instance Record	BQ Market Tracking Instance Record	Market Tracking Instance Record	##			Tracking multiple sources of intelligence that is used to assess the competitive coverage and performance of advertising campaign activity						IO	IO	IO	O									
+			Market Tracking Work Task Type			The type of work task (e.g. track advertising activity, assess advertising impact)						IO	IO	IO	O									
+			Market Tracking Work Task	##		The make-up of the market tracking task performed, includes consolidation and analysis of market research to assess competitor advertising activity and impact of advertising campaigns						IO	IO	IO	O									
+				General Market Research Directory Entry Instance Reference		Reference to an internally maintained market research viewpoint						IO	IO	IO	O									
+				General Market Research Directory Entry Instance Record		The market research viewpoint definition and content						IO	I	I	O									
+			Market Tracking Work Task Work Products 			File of consolidated notes, evaluations and findings for the market tracking work task						IO	IO	IO	O									
+			Market Tracking Work Task Result			Details of the outcome or result of the work task - typically points of view drawn from the market research						IO	O	O	O									
+			Market Tracking Work Task Date-Time			The date-time the market tracking task is performed						IO	IO	IO	O									
+BQ Performance Assessment Instance Record	BQ Performance Assessment Instance Record	Performance Assessment Instance Record	##			Performance assessment of the advertising campaign activity										IO	IO	IO	IO	O				
+			Performance Assessment Work Task Type			The type of work task (e.g. track customer and prospect response to advertising)										IO	IO	IO	IO	O				
+			Performance Assessment Work Task			The make-up of the market tracking task performed, includes consolidation and analysis of market research										IO	IO	IO	IO	O				
+			Performance Assessment Work Task Work Products 			File of consolidated notes, evaluations and findings for the work task										IO	IO	IO	IO	O				
+			Performance Assessment Work Task Result			Details of the outcome or result of the work task - indication of the need to amend, redirect and/or expand advertising campaign activity										O	IO	O	O	O				
+			Performance Assessment Work Task Date-Time			The date-time the performance assessment task is performed										IO	IO	IO	IO	O				
+BQ Campaign Direction Instance Record	BQ Campaign Direction Instance Record	Campaign Direction Instance Record	##			Direct advertising campaign design and execution activity (based on market insights and assessed performance)															IO	IO	IO	O
+			Advertising Campaign Development Schedule			Schedule of planned and actual advertising campaign design development and refinement activity															IO	IO	IO	O
+			Advertising Campaign Execution Schedule			Schedule of planned and actual customer campaign execution activities															IO	IO	IO	O

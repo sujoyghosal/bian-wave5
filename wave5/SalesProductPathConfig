@@ -1,0 +1,16 @@
+sd=Sales Product	A representation of a product as sold to a customer, covering the operational fulfillment requirements	A bank packages its Current Account product with features suited to students as part of a prospect campaign	A sales product defines specific constraints and terms that augment the features of the base product it 'wraps'. It is used to support customization or core products to address specific market needs and opportunities with more narrowly targeted products
+sdpath=sales-product
+crpath=product-and-service-agreement
+crr=Product And Service Agreement Instance
+mcr=Product And Service Agreement
+bqs=OperationalTerm
+CONFIG
+ProductAndServiceAgreement	evaluate	Set-up the operational terms agreement for a sales product instance (this links to the underlying base product)		evaluateProductAndServiceAgreement		#desc
+ProductAndServiceAgreement	update	Update sales product operational terms agreement		updateProductAndServiceAgreement		#desc
+ProductAndServiceAgreement	control	Control the execution/application of the operational terms (e.g. suspend)		controlProductAndServiceAgreement		#desc
+ProductAndServiceAgreement	retrieve	Retrieve details about the sales product operational terms agreement		retrieveProductAndServiceAgreement		#desc
+OperationalTerm	evaluate	Set up specific operational arrangements under the agreement	evaluateProductAndServiceAgreementOperationalTerm	evaluateProductAndServiceAgreementOperationalTerm		Details of a new Operational Term instance
+OperationalTerm	update	Update details of an operational term arrangement	updateProductAndServiceAgreementOperationalTerm	updateProductAndServiceAgreementOperationalTerm		Update to any amendable fields of the Operational Term instance
+OperationalTerm	exchange	Accept, reject etc an operational term arrangement	exchangeProductAndServiceAgreementOperationalTerm	exchangeProductAndServiceAgreementOperationalTerm		Handle an external exchange (e.g. accept, reject, verify)
+OperationalTerm	grant	Provide a permission grant associated with an operational term arrangement	grantProductAndServiceAgreementOperationalTerm	grantProductAndServiceAgreementOperationalTerm		Invoke a grant request action from the Operational Term instance to obtain access permission
+OperationalTerm	retrieve	Retrieve details about an individual arrangement	retrieveProductAndServiceAgreementOperationalTerm	retrieveProductAndServiceAgreementOperationalTerm		Invoke a reporting action to obtain a Operational Term instance related report

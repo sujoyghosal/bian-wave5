@@ -1,0 +1,22 @@
+SD=Reward Points Awards And Redemption
+CR=Reward Points Transaction
+BQs= Redemption Award
+This service domain handles the allocation and redemption of rewards points for customer transaction activity. In order to determine the reward point transaction and apply associated costs the service domain will access reward point arrangement agreements with the customers, merchants and related rewards programs. Note that the interactions between reward programs can be quite complex when 3rd party reward programs are integrated with the bank's own reward programs
+A customer redeems bank reward points in order to finance a purchase with a bank associated vendor for air travel. The financial transaction engages the service domain in order to determine redemption requirements and associated payment requirements
+Handle the allocation and redemption of rewards points for customer transaction activity
+CR - Reward Points Transaction						BQ - Redemption				BQ - Award			
+In	Up	Ec	Ex	Rq	Re	In	Up	Ec	Re	In	Up	Ec	Re
+InCR Instantiate a new Reward Points Transaction
+UpCR Update details relating to Reward Points Transaction
+EcCR Accept, verify, etc. aspects of Reward Points Transaction processing
+ExCR Execute an available automated action for Reward Points Transaction
+RqCR Request manual intervention or a decision with respect to Reward Points Transaction
+ReCR Retrieve details about any aspect of Reward Points Transaction
+InBQ Instantiate a new Redemption
+UpBQ Update details relating to Redemption
+EcBQ Accept, verify, etc. aspects of Redemption processing
+ReBQ Retrieve details about any aspect of Redemption
+InBQ Instantiate a new Award
+UpBQ Update details relating to Award
+EcBQ Accept, verify, etc. aspects of Award processing
+ReBQ Retrieve details about any aspect of Award

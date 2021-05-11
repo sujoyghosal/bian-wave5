@@ -1,0 +1,426 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Interactive Help'
+ description: >
+
+    ## Executive Summary:
+
+    Operate the automated facility that provides interactive context sensitive servicing guidance to employees and self-serve customers
+
+    ## Example of Use:
+
+    A new customer servicing representative obtains guidance for a product fulfillment issue raised during a customer contact
+
+    ## Description:
+
+    Operate the automated facility that provides interactive help and guidance for servicing to employees and self-service customers. The facility automatically determines the context for the help request and selects stored guidance that is presented to the user. The initial selection can be dynamically refined by the user to focus in on specific requirements as necessary. User feedback as to the content and coverage of the guidance can be captured
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-interactive-help/1.0.0
+schemes:
+ - https
+paths:
+  /interactive-help/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDInteractiveHelp
+      summary: Activate  a SDInteractiveHelp servicing session
+      description: Activate  a  SDInteractiveHelp servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDInteractiveHelp Request Payload
+        schema:
+          $ref: '#/definitions/SDInteractiveHelpActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDInteractiveHelpActivateOutputModel'
+  /interactive-help/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDInteractiveHelp
+      summary: Update an active SDInteractiveHelp session configuration
+      description: Update an active SDInteractiveHelp session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInteractiveHelp Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInteractiveHelp Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDInteractiveHelpConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDInteractiveHelpConfigureOutputModel'
+  /interactive-help/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDInteractiveHelp
+      summary: "Capturing feedback against the SDInteractiveHelp service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDInteractiveHelp service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInteractiveHelp Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDInteractiveHelp Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDInteractiveHelpFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDInteractiveHelpFeedbackOutputModel'
+  /interactive-help/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDInteractiveHelp
+      summary: Analytical views maintained by the SDInteractiveHelp service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDInteractiveHelp service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDInteractiveHelp Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDInteractiveHelpRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDInteractiveHelpRetrieveOutputModel'
+  /interactive-help/{sd-reference-id}/interactive-help-service-operating-session/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateInteractiveHelpServiceOperatingSession
+      summary: Details of a new InteractiveHelpServiceOperatingSession instance
+      description: Initialize the interactive help facility
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interactive Help Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: InteractiveHelpServiceOperatingSession Request Payload
+        schema:
+          $ref: '#/definitions/CRInteractiveHelpServiceOperatingSessionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new InteractiveHelpServiceOperatingSession instance
+          schema:
+            $ref: '#/definitions/CRInteractiveHelpServiceOperatingSessionInitiateOutputModel'
+  /interactive-help/{sd-reference-id}/interactive-help-service-operating-session/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlInteractiveHelpServiceOperatingSessionUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the execution of the interactive help service (e.g. constrain access)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interactive Help Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Interactive Help Service Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Interactive Help Service Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/CRInteractiveHelpServiceOperatingSessionControlInputModel'
+      responses:
+        200:
+          description: Successful control of Interactive Help Service Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRInteractiveHelpServiceOperatingSessionControlOutputModel'
+  /interactive-help/{sd-reference-id}/interactive-help-service-operating-session/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveInteractiveHelp
+      summary: Invoke a reporting action to obtain a Interactive Help Service Operating Session instance related report
+      description: Retrieve details about the interactive help service session
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interactive Help Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Interactive Help Service Operating Session Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRInteractiveHelpServiceOperatingSessionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Interactive Help Service Operating Session Instance
+          schema:
+            $ref: '#/definitions/CRInteractiveHelpServiceOperatingSessionRetrieveOutputModel'
+  /interactive-help/{sd-reference-id}/interactive-help-service-operating-session/{cr-reference-id}/serviceselection/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateInteractiveHelpServiceOperatingSessionServiceSelection
+      summary: Details of a new ServiceSelection instance
+      description: Initiate an interactive help service exchange
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interactive Help Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Interactive Help Service Operating Session Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Interactive Help Service Operating Session Request Payload
+        schema:
+          $ref: '#/definitions/BQServiceSelectionInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Interactive Help Service Operating Session instance
+          schema:
+            $ref: '#/definitions/BQServiceSelectionInitiateOutputModel'
+  /interactive-help/{sd-reference-id}/interactive-help-service-operating-session/{cr-reference-id}/serviceselection/{bq-reference-id}/capture:
+    put:
+      tags:
+      - capture
+      operationId: captureInteractiveHelpServiceOperatingSessionServiceSelectionUpdate
+      summary: Provide a structured input transaction/record (e.g. timesheet, event)
+      description: Capture user feedback relating to the service exchange
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interactive Help Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Interactive Help Service Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ServiceSelection Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ServiceSelection request payload
+        schema:
+          $ref: '#/definitions/BQServiceSelectionCaptureInputModel'
+      responses:
+        200:
+          description: Successful capture of ServiceSelection Instance Record
+          schema:
+            $ref: '#/definitions/BQServiceSelectionCaptureOutputModel'
+  /interactive-help/{sd-reference-id}/interactive-help-service-operating-session/{cr-reference-id}/serviceselection/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeInteractiveHelpServiceOperatingSessionServiceSelectionUpdate
+      summary: Invoke an automated execute action against the ServiceSelection instance
+      description: Execute an automated action within the exchange (e.g. key-work selection)
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interactive Help Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Interactive Help Service Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ServiceSelection Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: ServiceSelection request payload
+        schema:
+          $ref: '#/definitions/BQServiceSelectionExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of ServiceSelection Instance Record
+          schema:
+            $ref: '#/definitions/BQServiceSelectionExecuteOutputModel'
+  /interactive-help/{sd-reference-id}/interactive-help-service-operating-session/{cr-reference-id}/serviceselection/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveInteractiveHelpServiceOperatingSessionServiceSelection
+      summary: Invoke a reporting action to obtain a ServiceSelection instance related report.
+      description: Retrieve details about an interactive help service exchange .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interactive Help Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Interactive Help Service Operating Session Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: ServiceSelection Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQServiceSelectionRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved ServiceSelection Instance Record
+          schema:
+            $ref: '#/definitions/BQServiceSelectionRetrieveOutputModel'
+  /interactive-help/{sd-reference-id}/interactive-help-service-operating-session:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInteractiveHelpReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interactive Help Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- InteractiveHelp Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /interactive-help/interactive-help-service-operating-session/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInteractiveHelpBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'ServiceSelection', ]
+  /interactive-help/{sd-reference-id}/interactive-help-service-operating-session/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveInteractiveHelpBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Interactive Help Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Interactive Help Service Operating Session Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- ServiceSelection
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- ServiceSelection Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ServiceSelectionID1, ServiceSelectionID2]

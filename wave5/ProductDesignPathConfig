@@ -1,0 +1,22 @@
+sd=Product Design	Develop/refine product designs and supporting specification details	Product management identifies an opportunity to amend key features of a product to target a market segment	Design and refine bank product and service specifications. This addresses multiple aspects including the core product specification definition, legal, tax and regulatory compliance, pricing, risk and performance assessments, testing and supporting systems and production requirements definition
+sdpath=product-design
+crpath=product-or-service-specification
+crr=Product or Service Specification Instance
+mcr=Product or Service Specification
+bqs=FunctionalRequirements Testing Production
+CONFIG
+ProductorServiceSpecification	create	Create or register an imported product or service specification		createProductorServiceSpecification		#desc
+ProductorServiceSpecification	execute	Execute an automated action against a product or service specification (e.g. download elements of the specification)		executeProductorServiceSpecification		#desc
+ProductorServiceSpecification	request	Request manual intervention to a specification (e.g. schedule deployment or testing activity)		requestProductorServiceSpecification		#desc
+ProductorServiceSpecification	retrieve	Retrieve details about a product or service specification		retrieveProductorServiceSpecification		#desc
+FunctionalRequirements	update	Update the functional requirements or other properties of a the specification	updateProductorServiceSpecificationFunctionalRequirements	updateProductorServiceSpecificationFunctionalRequirements		Update to any amendable fields of the Functional Requirements instance
+FunctionalRequirements	exchange	accept or reject requirements detailed in the specification	exchangeProductorServiceSpecificationFunctionalRequirements	exchangeProductorServiceSpecificationFunctionalRequirements		Handle an external exchange (e.g. accept, reject, verify)
+FunctionalRequirements	capture	Capture usage reports for the product or service specification	captureProductorServiceSpecificationFunctionalRequirements	captureProductorServiceSpecificationFunctionalRequirements		Provide a structured input transaction/record (e.g. timesheet, event)
+FunctionalRequirements	request	Request changes or improvements to the specification	requestProductorServiceSpecificationFunctionalRequirements	requestProductorServiceSpecificationFunctionalRequirements		Invoke a service request action against the Functional Requirements instance
+FunctionalRequirements	retrieve	Retrieve details about the product or service specification and any associated properties	retrieveProductorServiceSpecificationFunctionalRequirements	retrieveProductorServiceSpecificationFunctionalRequirements		Invoke a reporting action to obtain a Functional Requirements instance related report
+Testing	update	Update user specification testing content	updateProductorServiceSpecificationTesting	updateProductorServiceSpecificationTesting		Update to any amendable fields of the Testing instance
+Testing	exchange	Accept or reject specification testing results	exchangeProductorServiceSpecificationTesting	exchangeProductorServiceSpecificationTesting		Handle an external exchange (e.g. accept, reject, verify)
+Testing	retrieve	Retrieve details of the specification testing results	retrieveProductorServiceSpecificationTesting	retrieveProductorServiceSpecificationTesting		Invoke a reporting action to obtain a Testing instance related report
+Production	execute	Get automated support for product or service specification deployment (e.g. access to systems and operational requirements)	executeProductorServiceSpecificationProduction	executeProductorServiceSpecificationProduction		Invoke an automated execute action against the Production instance
+Production	request	Request production support for a product or service specification (e.g. deployment/training assistance)	requestProductorServiceSpecificationProduction	requestProductorServiceSpecificationProduction		Invoke a service request action against the Production instance
+Production	retrieve	Retrieve details and documentation covering product or service production deployment	retrieveProductorServiceSpecificationProduction	retrieveProductorServiceSpecificationProduction		Invoke a reporting action to obtain a Production instance related report

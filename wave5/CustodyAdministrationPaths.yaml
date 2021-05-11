@@ -1,0 +1,1071 @@
+swagger: '2.0'
+info:
+ version: '1.0.0'
+ title: 'Service Domain - Custody Administration'
+ description: >
+
+    ## Executive Summary:
+
+    A service to provide safe custody services for marketable securities for bank customers
+
+    ## Example of Use:
+
+    A customer uses the banks custodial services to handle their investment portfolio holdings
+
+    ## Description:
+
+    Administer the securities scrip (paper and electronic) holdings for a custodial arrangement. This includes administering the physical movements of securities, safe storage, the processing of associated dividends and interest and securities reporting
+
+host: virtserver.swaggerhub.com
+basePath: /BIAN/sd-custody-administration/1.0.0
+schemes:
+ - https
+paths:
+  /custody-administration/activation:
+    post:
+      tags:
+      - activate
+      operationId: activateSDCustodyAdministration
+      summary: Activate  a SDCustodyAdministration servicing session
+      description: Activate  a  SDCustodyAdministration servicing session
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: true
+        description: SDCustodyAdministration Request Payload
+        schema:
+          $ref: '#/definitions/SDCustodyAdministrationActivateInputModel'
+      responses:
+        201:
+          description: Successful Service Activation
+          schema:
+            $ref: '#/definitions/SDCustodyAdministrationActivateOutputModel'
+  /custody-administration/{sd-reference-id}/configuration:
+    put:
+      tags:
+      - configure
+      operationId: configureSDCustodyAdministration
+      summary: Update an active SDCustodyAdministration session configuration
+      description: Update an active SDCustodyAdministration session configuration
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustodyAdministration Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCustodyAdministration Configure Request Payload
+        schema:
+          $ref: '#/definitions/SDCustodyAdministrationConfigureInputModel'
+      responses:
+        200:
+          description: Successful Service Configuration
+          schema:
+            $ref: '#/definitions/SDCustodyAdministrationConfigureOutputModel'
+  /custody-administration/{sd-reference-id}/feedback:
+    put:
+      tags:
+      - feedback
+      operationId: feedbackSDCustodyAdministration
+      summary: "Capturing feedback against the SDCustodyAdministration service that can target different levels of detail: SD/CR/BQ"
+      description:  "Capturing feedback against the SDCustodyAdministration service that can target different levels of detail: SD/CR/BQ"
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustodyAdministration Servicing Session Reference
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SDCustodyAdministration Feedback Request Payload
+        schema:
+          $ref: '#/definitions/SDCustodyAdministrationFeedbackInputModel'
+      responses:
+        200:
+          description: Successful Service Feedback
+          schema:
+            $ref: '#/definitions/SDCustodyAdministrationFeedbackOutputModel'
+  /custody-administration/{sd-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveSDCustodyAdministration
+      summary: Analytical views maintained by the SDCustodyAdministration service center for management reporting and analysis purposes
+      description: Analytical views maintained by the SDCustodyAdministration service center for management reporting and analysis purposes
+      produces:
+      - application/json
+      parameters:
+      - in: path
+        name: sd-reference-id
+        required: true
+        description: SDCustodyAdministration Servicing Session Reference
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/SDCustodyAdministrationRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successful Service Retrieve
+          schema:
+            $ref: '#/definitions/SDCustodyAdministrationRetrieveOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCustodyArrangement
+      summary: Details of a new CustodyArrangement instance
+      description: Instantiate a new Custody Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: CustodyArrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCustodyArrangementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of new CustodyArrangement instance
+          schema:
+            $ref: '#/definitions/CRCustodyArrangementInitiateOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustodyArrangement
+      summary: Update to any amendable fields of the CustodyArrangement instance
+      description: Update details relating to Custody Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Custody Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCustodyArrangementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Custody Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCustodyArrangementUpdateOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCustodyArrangementUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Custody Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Custody Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCustodyArrangementControlInputModel'
+      responses:
+        200:
+          description: Successful control of Custody Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCustodyArrangementControlOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCustodyArrangementUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Custody Arrangement processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Custody Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCustodyArrangementExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Custody Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCustodyArrangementExchangeOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCustodyArrangementUpdate
+      summary: Invoke an automated execute action against the CustodyArrangement instance
+      description: Execute an available automated action for Custody Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Custody Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCustodyArrangementExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Custody Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCustodyArrangementExecuteOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustodyArrangementUpdate
+      summary: Invoke a service request action against the CustodyArrangement instance
+      description: Request manual intervention or a decision with respect to Custody Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Custody Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/CRCustodyArrangementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Custody Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCustodyArrangementRequestOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustodyAdministration
+      summary: Invoke a reporting action to obtain a Custody Arrangement instance related report
+      description: Retrieve details about any aspect of Custody Arrangement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/CRCustodyArrangementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully Retrieved Custody Arrangement Instance
+          schema:
+            $ref: '#/definitions/CRCustodyArrangementRetrieveOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/safekeeping/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustodyArrangementSafeKeeping
+      summary: Update to any amendable fields of the SafeKeeping instance
+      description: Update details relating to Safe Keeping
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SafeKeeping Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SafeKeeping Request Payload
+        schema:
+          $ref: '#/definitions/BQSafeKeepingUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated SafeKeeping Instance
+          schema:
+            $ref: '#/definitions/BQSafeKeepingUpdateOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/safekeeping/{bq-reference-id}/control:
+    put:
+      tags:
+      - control
+      operationId: controlCustodyArrangementSafeKeepingUpdate
+      summary: Request specific processing (e.g. suspend, skip, terminate)
+      description: Control the processing of Safe Keeping
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SafeKeeping Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SafeKeeping request payload
+        schema:
+          $ref: '#/definitions/BQSafeKeepingControlInputModel'
+      responses:
+        200:
+          description: Successful control of SafeKeeping Instance Record
+          schema:
+            $ref: '#/definitions/BQSafeKeepingControlOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/safekeeping/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustodyArrangementSafeKeepingUpdate
+      summary: Invoke a service request action against the SafeKeeping instance
+      description: Request manual intervention or a decision with respect to Safe Keeping
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SafeKeeping Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SafeKeeping request payload
+        schema:
+          $ref: '#/definitions/BQSafeKeepingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of SafeKeeping Instance Record
+          schema:
+            $ref: '#/definitions/BQSafeKeepingRequestOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/safekeeping/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustodyArrangementSafeKeeping
+      summary: Invoke a reporting action to obtain a SafeKeeping instance related report.
+      description: Retrieve details about any aspect of Safe Keeping .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SafeKeeping Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQSafeKeepingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved SafeKeeping Instance Record
+          schema:
+            $ref: '#/definitions/BQSafeKeepingRetrieveOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/dividendsandinterest/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCustodyArrangementDividendsandInterest
+      summary: Details of a new DividendsandInterest instance
+      description: Instantiate a new Dividends and Interest
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Custody Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQDividendsandInterestInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Custody Arrangement instance
+          schema:
+            $ref: '#/definitions/BQDividendsandInterestInitiateOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/dividendsandinterest/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustodyArrangementDividendsandInterest
+      summary: Invoke a reporting action to obtain a DividendsandInterest instance related report.
+      description: Retrieve details about any aspect of Dividends and Interest .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: DividendsandInterest Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQDividendsandInterestRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved DividendsandInterest Instance Record
+          schema:
+            $ref: '#/definitions/BQDividendsandInterestRetrieveOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/securitiesreporting/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCustodyArrangementSecuritiesReporting
+      summary: Details of a new SecuritiesReporting instance
+      description: Instantiate a new Securities Reporting
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Custody Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQSecuritiesReportingInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Custody Arrangement instance
+          schema:
+            $ref: '#/definitions/BQSecuritiesReportingInitiateOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/securitiesreporting/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCustodyArrangementSecuritiesReportingUpdate
+      summary: Invoke an automated execute action against the SecuritiesReporting instance
+      description: Execute an available automated action for Securities Reporting
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SecuritiesReporting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SecuritiesReporting request payload
+        schema:
+          $ref: '#/definitions/BQSecuritiesReportingExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of SecuritiesReporting Instance Record
+          schema:
+            $ref: '#/definitions/BQSecuritiesReportingExecuteOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/securitiesreporting/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustodyArrangementSecuritiesReportingUpdate
+      summary: Invoke a service request action against the SecuritiesReporting instance
+      description: Request manual intervention or a decision with respect to Securities Reporting
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SecuritiesReporting Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: SecuritiesReporting request payload
+        schema:
+          $ref: '#/definitions/BQSecuritiesReportingRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of SecuritiesReporting Instance Record
+          schema:
+            $ref: '#/definitions/BQSecuritiesReportingRequestOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/securitiesreporting/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustodyArrangementSecuritiesReporting
+      summary: Invoke a reporting action to obtain a SecuritiesReporting instance related report.
+      description: Retrieve details about any aspect of Securities Reporting .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: SecuritiesReporting Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQSecuritiesReportingRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved SecuritiesReporting Instance Record
+          schema:
+            $ref: '#/definitions/BQSecuritiesReportingRetrieveOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/fees/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCustodyArrangementFees
+      summary: Details of a new Fees instance
+      description: Instantiate a new Fees
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Custody Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQFeesInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Custody Arrangement instance
+          schema:
+            $ref: '#/definitions/BQFeesInitiateOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/fees/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustodyArrangementFees
+      summary: Update to any amendable fields of the Fees instance
+      description: Update details relating to Fees
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fees Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fees Request Payload
+        schema:
+          $ref: '#/definitions/BQFeesUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Fees Instance
+          schema:
+            $ref: '#/definitions/BQFeesUpdateOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/fees/{bq-reference-id}/exchange:
+    put:
+      tags:
+      - exchange
+      operationId: exchangeCustodyArrangementFeesUpdate
+      summary: Handle an external exchange (e.g. accept, reject, verify)
+      description: Accept, verify, etc. aspects of Fees processing
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fees Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Fees request payload
+        schema:
+          $ref: '#/definitions/BQFeesExchangeInputModel'
+      responses:
+        200:
+          description: Successful exchange of Fees Instance Record
+          schema:
+            $ref: '#/definitions/BQFeesExchangeOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/fees/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustodyArrangementFees
+      summary: Invoke a reporting action to obtain a Fees instance related report.
+      description: Retrieve details about any aspect of Fees .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Fees Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQFeesRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Fees Instance Record
+          schema:
+            $ref: '#/definitions/BQFeesRetrieveOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/settlement/initiation:
+    post:
+      tags:
+      - initiate
+      operationId: initiateCustodyArrangementSettlement
+      summary: Details of a new Settlement instance
+      description: Instantiate a new Settlement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Custody Arrangement Request Payload
+        schema:
+          $ref: '#/definitions/BQSettlementInitiateInputModel'
+      responses:
+        201:
+          description: Successful initiation of Custody Arrangement instance
+          schema:
+            $ref: '#/definitions/BQSettlementInitiateOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/settlement/{bq-reference-id}/update:
+    put:
+      tags:
+      - update
+      operationId: updateCustodyArrangementSettlement
+      summary: Update to any amendable fields of the Settlement instance
+      description: Update details relating to Settlement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Settlement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Settlement Request Payload
+        schema:
+          $ref: '#/definitions/BQSettlementUpdateInputModel'
+      responses:
+        200:
+          description: Successfully Updated Settlement Instance
+          schema:
+            $ref: '#/definitions/BQSettlementUpdateOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/settlement/{bq-reference-id}/execution:
+    put:
+      tags:
+      - execute
+      operationId: executeCustodyArrangementSettlementUpdate
+      summary: Invoke an automated execute action against the Settlement instance
+      description: Execute an available automated action for Settlement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Settlement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Settlement request payload
+        schema:
+          $ref: '#/definitions/BQSettlementExecuteInputModel'
+      responses:
+        200:
+          description: Successful execution of Settlement Instance Record
+          schema:
+            $ref: '#/definitions/BQSettlementExecuteOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/settlement/{bq-reference-id}/requisition:
+    put:
+      tags:
+      - request
+      operationId: requestCustodyArrangementSettlementUpdate
+      summary: Invoke a service request action against the Settlement instance
+      description: Request manual intervention or a decision with respect to Settlement
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Settlement Instance Reference
+        required: true
+        type: string
+      - in: body
+        name: body
+        required: true
+        description: Settlement request payload
+        schema:
+          $ref: '#/definitions/BQSettlementRequestInputModel'
+      responses:
+        200:
+          description: Successful requisition of Settlement Instance Record
+          schema:
+            $ref: '#/definitions/BQSettlementRequestOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/settlement/{bq-reference-id}/:
+    get:
+      tags:
+      - retrieve
+      operationId: retrieveCustodyArrangementSettlement
+      summary: Invoke a reporting action to obtain a Settlement instance related report.
+      description:  .The retrieve operation can have sub qualifiers beyond BQ level, please reffer to the model heriarchy to extend beyond BQ level into APIs retrieving sub-qualifier level information.
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name: bq-reference-id
+        in: path
+        description: Settlement Instance Reference
+        required: true
+        type: string
+      - in: query
+        name: queryparams
+        required: false
+        description: Query params from schema '#/definitions/BQSettlementRetrieveInputModel'
+        type: string
+      responses:
+        200:
+          description: Successfully  Retrieved Settlement Instance Record
+          schema:
+            $ref: '#/definitions/BQSettlementRetrieveOutputModel'
+  /custody-administration/{sd-reference-id}/custody-arrangement:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustodyAdministrationReferenceIds
+      summary: Retrieve CR Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- CustodyAdministration Instance Status='active'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: ['ID726464', 'ID7264642']
+  /custody-administration/custody-arrangement/behavior-qualifiers/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustodyAdministrationBehaviorQualifiers
+      summary: Retrieve BQ names
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [ 'Fees',  'SecuritiesReporting',  'DividendsandInterest',  'SafeKeeping',  'Settlement', ]
+  /custody-administration/{sd-reference-id}/custody-arrangement/{cr-reference-id}/{behavior-qualifier}/:
+    get:
+      tags:
+      - retrieve
+      operationId: RetrieveCustodyAdministrationBehaviorQualifierReferenceIds
+      summary: Retrieve Behavior Qualifier Reference Ids
+      produces:
+      - application/json
+      parameters:
+      - name: sd-reference-id
+        in: path
+        description: Custody Administration Servicing Session Reference
+        required: true
+        type: string
+      - name: cr-reference-id
+        in: path
+        description: Custody Arrangement Instance Reference
+        required: true
+        type: string
+      - name : behavior-qualifier
+        in: path
+        description: Behavior Qualifier Name. ex- Settlement
+        required: true
+        type: string
+      - name : collection-filter
+        in: query
+        description: Filter to refine the result set. ex- Settlement Instance Status = 'pending'
+        required: false
+        type: string
+      responses:
+        200:
+          description: Successful
+          schema:
+            type: array
+            items:
+              type: string
+            example: [SettlementID1, SettlementID2]
