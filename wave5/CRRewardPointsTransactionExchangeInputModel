@@ -1,0 +1,47 @@
+ CRRewardPointsTransactionExchangeInputModel:
+  type: object
+  properties: 
+   rewardPointsAwardsAndRedemptionServicingSessionReference:
+    type: string
+    example: "RPAARSSR799669"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the active servicing session
+   rewardPointsTransactionInstanceReference:
+    type: string
+    example: "RPTIR743344"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Reward Points Transaction instance
+   rewardPointsTransactionParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service transaction within Reward Points Transaction
+   rewardPointsTransactionSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Transaction
+   rewardPointsTransactionStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of Reward Points Transaction
+   rewardPointsTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that specifies type of business action for this Reward Points Transaction
+   rewardPointsTransactionTransactionType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that specifies type of transaction for this Reward Points Transaction

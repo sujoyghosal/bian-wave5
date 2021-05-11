@@ -1,0 +1,47 @@
+ CRRewardPointsTransactionInitiateOutputModel:
+  type: object
+  properties: 
+   rewardPointsTransactionInstanceReference:
+    type: string
+    example: "RPTIR781775"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to the Reward Points Transaction instance
+   rewardPointsTransactionInitiateActionReference:
+    type: string
+    example: "RPTIAR718240"
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::ISO20022andUNCEFACT::Identifier
+      general-info: Reference to an Initiate service call
+   rewardPointsTransactionInitiateActionRecord:
+    type: object
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Binary
+      general-info: The Initiate service call input and output record
+   rewardPointsTransactionInstanceStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of the Reward Points Transaction instance (e.g. initialised, pending, active)
+   rewardPointsTransactionParameterType:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A Classification value that distinguishes between business service transaction within Reward Points Transaction
+   rewardPointsTransactionSelectedOption:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: A selected optional business service as subject matter of Reward Points Transaction
+   rewardPointsTransactionStatus:
+    type: string
+    description: |
+     `status: Not Mapped`
+      core-data-type-reference: BIAN::DataTypesLibrary::CoreDataTypes::UNCEFACT::Text
+      general-info: The status of Reward Points Transaction
