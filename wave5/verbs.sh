@@ -1,5 +1,6 @@
 rm -rf Verbs
-cat $1"Headers"|sed -e $'s/\t/|/g'>p
+#cat $1"Headers"|sed -e $'s/\t/|/g'>p
+cat $1"Headers"|sed -E 's/[ '$'\t'']+$//'|sed -e $'s/\t/|/g'>p
 sd=`cat p|head -1|tail -1|cut -f2 -d"="`
 cr=`cat p|head -2|tail -1|cut -f2 -d"="`
 allBQs=`cat p|head -3|tail -1|cut -f2 -d"="`
@@ -121,3 +122,4 @@ cat crbqmodel.txt|tail +8>>$modelcfg
 echo "Generating $globalCount endpoints"
 generateNewSwagger.sh  `echo $sd|sed 's/[ (/-]//g'` $globalCount
 echo "Done"
+#rm -rf a out bqfile bqout o.txt crbqmodel.txt crbqpath.txt m infile
