@@ -1,4 +1,8 @@
 #Path Generation - Execute as "processPathConfig.sh [sd name e.g. CardClearing]" 
+######################   This script generates the 'path' part of the yamls
+######################   A file named <SD>Paths.yaml is generated as output.
+######################   Author: Sujoy Ghosal
+
 readConfig="false"
 input=$1"PathConfig"
 output=$1"Paths.yaml"
@@ -77,6 +81,10 @@ do
         actionRaw=`echo $line|cut -f2 -d"|"`
         actionRaw="$(tr '[:lower:]' '[:upper:]' <<< ${actionRaw:0:1})${actionRaw:1}"
         desc=`echo $line|cut -f3 -d"|"|sed 's/[:""]/ /g'`
+        if [ -z "$desc" ]
+        then
+                    desc=" " 
+        fi
         extOp=`echo $line|cut -f4 -d"|"`
         extApi=`echo $line|cut -f5 -d"|"`
         summary=`echo $line|cut -f7 -d"|"|sed 's/[:]/ /g'`

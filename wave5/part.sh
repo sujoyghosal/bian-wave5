@@ -1,3 +1,8 @@
+######################   This script perform model generation and  ISO Mapping 
+######################   of attributes in Control Record and BQs
+######################   A file named <SD>Model.yaml is generated as output.
+######################   Author: Sujoy Ghosal
+
 input=$1"ModelConfig"
 output=$1"Model.yaml"
 isofile=$1"ISOConfig"

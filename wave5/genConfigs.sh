@@ -1,3 +1,7 @@
+######################   This script reads the Header and SpecificModel configs
+######################   and generates intermediate config files for further processing
+######################   Author: Sujoy Ghosal
+
 #genSDRecords.sh $1
 cat CR|sed -e $'s/\t/|/g' -e $'s/"//g'>p
 cat $1SpecificModel|sed -e $'s/\t/|/g' -e $'s/"//g'>s
