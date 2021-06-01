@@ -1,3 +1,8 @@
+######################   Top level script that orchestrates across other
+######################   scripts that perform model generation and path
+######################   generation for BIAN APIs
+######################   Author: Sujoy Ghosal
+
 rm -rf Verbs
 #cat $1"Headers"|sed -e $'s/\t/|/g'>p
 cat $1"Headers"|sed -E 's/[ '$'\t'']+$//'|sed -e $'s/\t/|/g'>p
