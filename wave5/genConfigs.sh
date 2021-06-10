@@ -4,7 +4,9 @@
 
 #genSDRecords.sh $1
 cat CR|sed -e $'s/\t/|/g' -e $'s/"//g'>p
-cat $1SpecificModel|sed -e $'s/\t/|/g' -e $'s/"//g'>s
+echo "Here..arg=$1SpecificModel"
+#cat $1"SpecificModel"|sed -e $'s/\t/|/g' -e $'s/"//g'>s
+cat $1"SpecificModel"|sed -e $'s/\t/|/g' -e $'s/"//g'|tr -d '\r'>s
 cp BQ.txt BQ
 i=""
 #echo "Enter SD"

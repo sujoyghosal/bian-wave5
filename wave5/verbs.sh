@@ -5,7 +5,8 @@
 
 rm -rf Verbs
 #cat $1"Headers"|sed -e $'s/\t/|/g'>p
-cat $1"Headers"|sed -E 's/[ '$'\t'']+$//'|sed -e $'s/\t/|/g'>p
+#cat $1"Headers"|sed -E 's/[ '$'\t'']+$//'|sed -e $'s/\t/|/g'>p
+cat $1"Headers"|sed -E 's/[ '$'\t'']+$//'|sed -e $'s/\t/|/g'|tr -d '\r'>p
 sd=`cat p|head -1|tail -1|cut -f2 -d"="`
 cr=`cat p|head -2|tail -1|cut -f2 -d"="`
 allBQs=`cat p|head -3|tail -1|cut -f2 -d"="`
@@ -111,7 +112,8 @@ echo "done">>Verbs
 echo ""
 echo "********** Showing config file to be processed by genConfigs.sh...please validate and proceed ********"
 cat Verbs
-sd=`echo $sd|sed 's/[ (/-]//g'`
+#sd=`echo $sd|sed 's/[ (/-]//g'`
+sd=`echo $sd|sed 's/[ (/-]//g'|tr -d '\r'`
 echo "Running genConfigs $sd"
 genConfigs.sh $sd<Verbs
 echo "Generating Swagger :)"
